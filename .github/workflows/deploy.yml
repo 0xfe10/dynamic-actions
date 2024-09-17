@@ -76,6 +76,7 @@ jobs:
       PLAYBOOKS: '
       any-cors
       babosa-prd
+      babosa-pre
       babosa-stg
       crab-nodes
       darwinia-nodes

@@ -1,8 +1,1 @@
-[prtmax/endfather] Update playbooks/babosa-pre/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-pre/host_vars/cn1.ek.iprtapp.com.yml*;: Fix CI.
-
-Actions Context:
-* Actor: 0xfe10
-* Git Ref: preview_newenv
-* Build started at: 2024-09-17T13:51:01Z
-* Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10904478156
+enable deploy babosa-pre
