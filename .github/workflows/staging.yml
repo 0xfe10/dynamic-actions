@@ -5,7 +5,7 @@ on:
     branches:
       - '**'
 env:
-  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY: uhub.service.ucloud.cn
 
 jobs:
 
@@ -106,8 +106,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
-          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+          username: ${{ secrets.REGISTRY_UHUB_USERNAME }}
+          password: ${{ secrets.REGISTRY_UHUB_PASSWORD }}
 
       - uses: benjlevesque/short-sha@v1.2
 
@@ -118,7 +118,7 @@ jobs:
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:${{ matrix.package.SLUG }}-sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/coocn/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
@@ -223,15 +223,15 @@ jobs:
         run: |
           TEMPLATE_FILE=.maintain/playbooks.yml
 
-          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk
+          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/coocn
 
-          #IMAGE_TAG_LAUNCHER_BOOGIE=${IMAGE_TAG_BASE}:launcher-boogie-sha-${{ env.SHA }}
-          IMAGE_TAG_TASK_INFRA=${IMAGE_TAG_BASE}:task-infra-sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_ANALYSIS=${IMAGE_TAG_BASE}:launcher-analysis-sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_LABELEXPERT=${IMAGE_TAG_BASE}:launcher-labelexpert-sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_METAPRINT=${IMAGE_TAG_BASE}:launcher-metaprint-sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_UNIVERSAL=${IMAGE_TAG_BASE}:launcher-universal-sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_WOODII=${IMAGE_TAG_BASE}:launcher-woodii-sha-${{ env.SHA }}
+          #IMAGE_TAG_LAUNCHER_BOOGIE=${IMAGE_TAG_BASE}/launcher-boogie:sha-${{ env.SHA }}
+          IMAGE_TAG_TASK_INFRA=${IMAGE_TAG_BASE}/task-infra:sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_ANALYSIS=${IMAGE_TAG_BASE}/launcher-analysis:sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_LABELEXPERT=${IMAGE_TAG_BASE}/launcher-labelexpert:sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_METAPRINT=${IMAGE_TAG_BASE}/launcher-metaprint:sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_UNIVERSAL=${IMAGE_TAG_BASE}/launcher-universal:sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_WOODII=${IMAGE_TAG_BASE}/launcher-woodii:sha-${{ env.SHA }}
 
           #yq e ".docker_app_runner.container.launcher_boogie.image = \"${IMAGE_TAG_LAUNCHER_BOOGIE}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.task_infra.image = \"${IMAGE_TAG_TASK_INFRA}\"" --inplace ${TEMPLATE_FILE}
