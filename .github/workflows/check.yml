@@ -1,0 +1,180 @@
+name: '[psdk] Check'
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  RUST_TOOLCHAIN: stable
+
+jobs:
+
+  check-java:
+    name: Check psdk-java
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.14.0
+        with:
+          java-version: 17
+          maven-version: 3.9.8
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Check psdk
+        working-directory: java
+        run: mvn clean package -Dmaven.test.skip=true
+
+
+  check-rust:
+    name: Check psdk-rust
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Install rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+
+      - name: Rust clippy
+        working-directory: rust
+        run: cargo clippy -- -D warnings
+
+      - name: Check psdk
+        working-directory: rust
+        run: cargo build
+
+      - uses: fewensa/actions/wxpusher@main
+        if: failure()
+        with:
+          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+          summary: 'PSDK 检查失败 RUST'
+          topic: 31703
+
+
+  check-dart:
+    name: Check psdk-dart
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v3
+        with:
+          channel: stable
+
+      - name: Setup git credential
+        run: |
+          git config --global credential.helper store
+          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
+
+      - name: Setup melos
+        run: dart pub global activate melos
+
+      - name: Lint psdk
+        working-directory: dart
+        run: |
+          melos bootstrap
+          melos run lint:all --no-select
+
+      - name: Check psdk
+        working-directory: dart
+        run: |
+          melos bootstrap
+          melos run test --no-select
+
+      - uses: fewensa/actions/wxpusher@main
+        if: failure()
+        with:
+          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+          summary: 'PSDK 检查失败 DART'
+          topic: 31703
+
+  check-js:
+    name: Check psdk-js
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check psdk
+        working-directory: js
+        run: |
+          yarn install
+          npm run build:all
+          npm run package:all
+          npm run test:all
+
+      - uses: fewensa/actions/wxpusher@main
+        if: failure()
+        with:
+          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+          summary: 'PSDK 检查失败 JS'
+          topic: 31703
+
+#  check-swift:
+#    name: Check psdk-swift
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        project:
+#          - esc
+#          - tspl
+#          - cpcl
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: Checkout
+#        uses: fewensa/actions/clone-any@main
+#        with:
+#          platform: gitlab
+#          repository: prtmax/psdk
+#          access_token: '${{ secrets.GITLAB_TOKEN }}'
+#          ref_file: .github/ref.txt
+#
+#      - uses: swift-actions/setup-swift@v2
+#
+#      - name: Check psdk
+#        working-directory: swift/fruits/${{ matrix.project }}
+#        run: swift build -c release
+#
+#      - uses: fewensa/actions/wxpusher@main
+#        if: failure()
+#        with:
+#          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+#          summary: 'PSDK 检查失败 SWIFT ${{ matrix.project }}'
+#          topic: 31703
+

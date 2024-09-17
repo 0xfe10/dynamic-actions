@@ -1,0 +1,179 @@
+name: '[psdk] Release'
+
+on:
+  push:
+    tags:
+      - "v*-psdk"
+
+jobs:
+
+  release-java:
+    name: Release psdk-java
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.14.0
+        with:
+          java-version: 17
+          maven-version: 3.9.8
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Setup maven authorization
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+            <servers>
+              <server>
+                <id>gitlab-maven</id>
+                <configuration>
+                  <httpHeaders>
+                    <property>
+                      <name>Private-Token</name>
+                      <value>${{ secrets.GITLAB_PAT_DEV }}</value>
+                    </property>
+                  </httpHeaders>
+                </configuration>
+              </server>
+            </servers>
+          </settings>
+          ' > ~/ci_settings.xml
+
+      - name: Deploy maven
+        working-directory: java
+        run: mvn clean deploy -P release -D maven.test.skip=true -s ~/ci_settings.xml
+
+      - uses: fewensa/actions/wxpusher@main
+        if: failure()
+        with:
+          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+          summary: 'PSDK 发布失败 JAVA'
+          topic: 31703
+
+
+  release-js:
+    name: Release psdk-js
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup npm token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
+      - name: Check psdk
+        working-directory: js
+        run: |
+          yarn install
+          yarn build:all
+          yarn package:all
+
+      - name: Publish npm
+        working-directory: js
+        run: npx lerna publish from-package --yes
+
+      - uses: fewensa/actions/wxpusher@main
+        if: failure()
+        with:
+          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+          summary: 'PSDK 发布失败 JS'
+          topic: 31703
+
+
+  release-ohpm:
+    name: Release psdk-ohpm
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/fewensa/docker-image/harmonytools:sha-a57fe85
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Install deps
+        run: apt-get install -y expect
+
+      - name: Setup ohpm
+        run: |
+          mkdir -p ${{ github.workspace }}
+          echo "${{ secrets.OHPM_SSH_PRIVATE }}" > ${{ github.workspace }}/your-keypath
+          ohpm config set key_path ${{ github.workspace }}/your-keypath
+          ohpm config set publish_id ${{ secrets.OHPM_PUBLISH_ID }}
+          ohpm --version
+
+      - name: Publish ohpm
+        working-directory: js
+        env:
+          OHPM_PUBLISH_ID: ${{ secrets.OHPM_PUBLISH_ID }}
+          OHPM_SSH_PASSPHRASE: ${{ secrets.OHPM_SSH_PASSPHRASE }}
+        run: |
+          yarn install
+          yarn ohpm:package --verbose --force --publish --clean
+
+
+#  release-dart:
+#    name: Release psdk-dart
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: Checkout
+#        uses: fewensa/actions/clone-any@main
+#        with:
+#          platform: gitlab
+#          repository: prtmax/psdk
+#          access_token: '${{ secrets.GITLAB_TOKEN }}'
+#          ref_file: .github/ref.txt
+#
+#      - name: Setup Flutter SDK
+#        uses: flutter-actions/setup-flutter@v3
+#        with:
+#          channel: stable
+#
+#      - name: Setup authorization
+#        run: |
+#          git config --global credential.helper store
+#          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
+#          mkdir -p ~/.config/dart
+#          echo "${{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
+#
+#      - name: Setup melos
+#        run: dart pub global activate melos
+#
+#      - name: Publish dart
+#        working-directory: dart
+#        run: |
+#          melos bootstrap
+#          melos run lint:all --no-select
+#          melos publish --no-private --yes --no-dry-run
+#
+#      - uses: fewensa/actions/wxpusher@main
+#        if: failure()
+#        with:
+#          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+#          summary: 'PSDK 发布失败 DART'
+#          topic: 31703
