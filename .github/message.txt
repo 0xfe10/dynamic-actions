@@ -1,1 +1,5 @@
-Bump actions/checkout@v4
+Merge branch 'ble_native' into 'main'
+
+Ble native
+
+See merge request prtmax/psdk!129
