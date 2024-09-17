@@ -74,6 +74,7 @@ jobs:
       NEED_RUN: ${{ steps.generate_matrix.outputs.NEED_RUN }}
     env:
       PLAYBOOKS: '
+      any-cors
       babosa-prd
       babosa-stg
       crab-nodes
