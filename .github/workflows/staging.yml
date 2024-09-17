@@ -15,7 +15,7 @@ jobs:
     outputs:
       ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Ensure main
         id: ensure_main
@@ -37,7 +37,7 @@ jobs:
         package:
           - babosa
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.14.0
@@ -89,7 +89,7 @@ jobs:
           - LAUNCHER: tasks/infra
             SLUG: task-infra
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -145,7 +145,7 @@ jobs:
           - cornerstone
           - analysis
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -209,7 +209,7 @@ jobs:
     needs:
       - migrate-db
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -285,7 +285,7 @@ jobs:
         package:
           - woodii
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Checkout
         uses: fewensa/actions/clone-any@main
