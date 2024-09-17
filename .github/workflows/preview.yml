@@ -13,7 +13,7 @@ jobs:
     name: Ensure preview
     runs-on: ubuntu-latest
     outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+      ENSURE_MAIN: ${{ steps.ensure_preview.outputs.ENSURE_MAIN }}
     steps:
       - uses: actions/checkout@v4
 

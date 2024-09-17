@@ -1,5 +1,1 @@
-Merge branch 'devenv' into 'preview_newenv'
-
-Add pre env
-
-See merge request prtmax/endfather!338
+Fix CI
