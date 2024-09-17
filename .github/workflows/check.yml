@@ -1,0 +1,84 @@
+name: '[endfather] Check'
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  check-app-java:
+    name: Check app java
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - babosa
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.14.0
+        with:
+          java-version: 17
+          maven-version: 3.9.8
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/endfather
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Check ${{ matrix.package }}
+        working-directory: ${{ matrix.package }}
+        run: mvn clean package -Dmaven.test.skip=true
+
+      - uses: fewensa/actions/tepusher@main
+        if: failure()
+        with:
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: C1776236406
+          vars: |
+            app: babosa
+
+  check-app-node:
+    name: Check app node
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - woodii
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/endfather
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Check ${{ matrix.package }}
+        run: |
+          export NODE_OPTIONS=--max-old-space-size=4096
+          cd ${{ matrix.package }}
+          yarn install
+          yarn build:stg
+
+      - uses: fewensa/actions/tepusher@main
+        if: failure()
+        with:
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: C1776236406
+          vars: |
+            app: ${{ matrix.package }}
