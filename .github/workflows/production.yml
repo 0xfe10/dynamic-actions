@@ -286,7 +286,7 @@ jobs:
           vercel_group: provence
           preview_output: true
           workdir: ${{ matrix.package }}
-          project_name: endfather-woodii
+          project_name: endfather-woodii-prd
           script_build: yarn build:prd
           dist_path: dist-prd
           enable_cache: true

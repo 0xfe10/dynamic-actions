@@ -20,7 +20,7 @@ jobs:
       - name: Ensure main
         id: ensure_main
         run: |
-          if grep -q 'main' .github/branch.txt; then
+          if grep -q 'main' .github/ref.txt; then
             echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
           else
             echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
@@ -303,11 +303,11 @@ jobs:
           vercel_group: provence
           preview_output: true
           workdir: ${{ matrix.package }}
-          project_name: endfather-woodii
+          project_name: endfather-woodii-stg
           script_build: yarn build:stg
           dist_path: dist-stg
           enable_cache: true
-          alias_domain: 'woodii-stg.iprtapp.com'
+          prod_mode: true
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
