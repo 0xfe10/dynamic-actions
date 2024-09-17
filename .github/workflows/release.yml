@@ -59,7 +59,7 @@ jobs:
           template: .maintain/notify/release-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121
+          aters: wxid_who8wxwf7pm121,weiqiang220284
           vars: |
             project: psdk
             language: java
@@ -102,7 +102,7 @@ jobs:
           template: .maintain/notify/release-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121
+          aters: wxid_who8wxwf7pm121,weiqiang220284
           vars: |
             project: psdk
             language: js
@@ -149,7 +149,7 @@ jobs:
           template: .maintain/notify/release-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121
+          aters: wxid_who8wxwf7pm121,weiqiang220284
           vars: |
             project: psdk
             language: ohpm
@@ -196,7 +196,7 @@ jobs:
 #          template: .maintain/notify/release-failed.md
 #          token: ${{ secrets.WEPLUSBOT_TOKEN }}
 #          receiver: 66bc2051e4b0e36f485a957b
-#          aters: wxid_who8wxwf7pm121
+#          aters: wxid_who8wxwf7pm121,weiqiang220284
 #          vars: |
 #            project: psdk
 #            language: dart
