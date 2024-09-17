@@ -1,0 +1,211 @@
+name: '[ansible] Deploy'
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  SSL_IPRTAPP_CERT_PEM: ${{ secrets.ANSIBLE_SSL_IPRTAPP_CERT_PEM }}
+  SSL_IPRTAPP_KEY_PEM: ${{ secrets.ANSIBLE_SSL_IPRTAPP_KEY_PEM }}
+  SSL_KAHUB_CERT_PEM: ${{ secrets.ANSIBLE_SSL_KAHUB_CERT_PEM }}
+  SSL_KAHUB_KEY_PEM: ${{ secrets.ANSIBLE_SSL_KAHUB_KEY_PEM }}
+
+jobs:
+
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Ensure main
+        id: ensure_main
+        run: |
+          if grep -q 'main' .github/ref.txt; then
+            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          fi
+
+  deploy-essentials:
+    name: Deploy essentials
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: repotea-workflow/ansible-mine
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Verify essentials file changed
+        uses: tj-actions/changed-files@v37.4.0
+        id: changed_files
+        with:
+          files: |
+            inventories/hosts.ini
+            playbooks/_essentials/*
+            playbooks/essentials.yml
+
+      - name: Deploy essentials
+        id: deploy-essentials
+        if: steps.changed_files.outputs.any_changed == 'true'
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: playbooks/essentials.yml
+          key: "${{ secrets.ANSIBLE_SSH_PRIVATE_KEY }}"
+          options: --user ansible
+
+  matrix:
+    name: Generate matrix
+    runs-on: ubuntu-latest
+    needs: [deploy-essentials]
+    outputs:
+      MATRIX: ${{ steps.generate_matrix.outputs.MATRIX }}
+      NEED_RUN: ${{ steps.generate_matrix.outputs.NEED_RUN }}
+    env:
+      PLAYBOOKS: '
+      babosa-prd
+      babosa-stg
+      crab-nodes
+      darwinia-nodes
+      fmz
+      grafana
+      ingress
+      minio
+      mysql
+      oms-jphs
+      oms-zkr
+      onlyoffice
+      ormpipe
+      prometheus
+      wiot
+      '
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: repotea-workflow/ansible-mine
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Detect file changes
+        uses: tj-actions/changed-files@v37.4.0
+        id: changed_files
+        with:
+          files: |
+            playbooks/**
+            roles/**
+
+      - name: Generate matrix
+        id: generate_matrix
+        run: |
+          CHANGED_FILES="${{ steps.changed_files.outputs.all_changed_files }}"
+          NEED_RUN=false
+          if [[ ${CHANGED_FILES} == *"roles"* ]] || [[ "${CHANGED_FILES}" == *"essentials"* ]]; then
+            echo "${PLAYBOOKS}" > playbooks.raw.txt
+            NEED_RUN=true
+          else
+            echo '' > playbooks.raw.txt
+            for PLAYBOOK in ${PLAYBOOKS}; do
+              if [[ ${CHANGED_FILES} == *"${PLAYBOOK}"* ]]; then
+                echo ${PLAYBOOK} >> playbooks.raw.txt
+                NEED_RUN=true
+              fi
+            done
+          fi
+
+          sed -i 's/ /\n/g' playbooks.raw.txt
+          MATRIX=$(cat playbooks.raw.txt | jq -Rnc '[inputs|select(length>0)]')
+          echo "MATRIX=$(echo $MATRIX)" >> "$GITHUB_OUTPUT"
+          echo "NEED_RUN=${NEED_RUN}" >> "$GITHUB_OUTPUT"
+
+  deploy-playbooks:
+    name: Deploy playbook
+    runs-on: ubuntu-latest
+    needs: [matrix]
+    if: ${{ needs.matrix.outputs.NEED_RUN == 'true' }}
+    strategy:
+      matrix:
+        playbook: ${{ fromJSON(needs.matrix.outputs.MATRIX) }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: repotea-workflow/ansible-mine
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: playbooks/${{ matrix.playbook }}/playbook.yml
+          key: "${{ secrets.ANSIBLE_SSH_PRIVATE_KEY }}"
+          options: --user ansible --verbose --diff
+
+
+      # ###############################
+
+      - uses: fewensa/actions/tepusher@main
+        if: ${{ failure() && matrix.playbook == 'babosa-stg' }} 
+        with:
+          template: .maintain/notify/deploy-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: C1776236406
+          pattos: C1776236406
+          vars: |
+            environment: 测试环境
+            app: ${{ matrix.playbook }}
+
+      - uses: fewensa/actions/tepusher@main
+        if: ${{ success() && matrix.playbook == 'babosa-stg' }} 
+        with:
+          template: .maintain/notify/deploy-success.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: C1776236406,wxid_ntwefy6w95622,wxid_5634706356812,wxid_ny8c0ty1bz2o22
+          vars: |
+            environment: 测试环境
+            app: ${{ matrix.playbook }}
+
+
+
+      - uses: fewensa/actions/tepusher@main
+        if: ${{ failure() && matrix.playbook == 'babosa-prd' }} 
+        with:
+          template: .maintain/notify/deploy-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: C1776236406
+          pattos: C1776236406
+          vars: |
+            environment: 正式环境
+            app: ${{ matrix.playbook }}
+
+      - uses: fewensa/actions/tepusher@main
+        if: ${{ success() && matrix.playbook == 'babosa-prd' }} 
+        with:
+          template: .maintain/notify/deploy-success.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: C1776236406,wxid_ntwefy6w95622,wxid_5634706356812,wxid_ny8c0ty1bz2o22
+          vars: |
+            environment: 正式环境
+            app: ${{ matrix.playbook }}
+
