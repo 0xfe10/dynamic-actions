@@ -1,8 +1,1 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Test.
-
-Actions Context:
-* Actor: 0xfe10
-* Git Ref: main
-* Build started at: 2024-09-17T11:26:32Z
-* Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10902089655
+babosa-pre
