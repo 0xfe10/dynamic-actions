@@ -1,0 +1,86 @@
+name: '[wiot] Publish'
+
+on:
+  push:
+#    branches:
+#      - '**'
+    tags:
+      - "v*-wiot"
+
+env:
+  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+
+jobs:
+
+  build-docker-image:
+    name: Build docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/wiot
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+
+      - uses: benjlevesque/short-sha@v1.2
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: .
+          file: Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
+
+  deploy-ansible:
+    name: Deploy ansible
+    runs-on: ubuntu-latest
+    needs:
+      - build-docker-image
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/wiot
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v1.2
+      - name: Generate variables
+        run: |
+          TEMPLATE_FILE=.maintain/playbooks.yml
+          DEPLOYMENT_FILE=playbooks/wiot/host_vars/cn1.ek.iprtapp.com.yml
+          IMAGE_TAG=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
+
+          yq e ".docker_app_runner.container.wiot.image = \"${IMAGE_TAG}\"" --inplace ${TEMPLATE_FILE}
+          mkdir dist
+          jq -n \
+            --arg file ${DEPLOYMENT_FILE} \
+            --arg content "$(cat ${TEMPLATE_FILE})" \
+            '{file: $file, content: $content}' >> dist/change.json
+
+          jq -crs '.' < dist/change.json > dist/changes.json
+          cat dist/changes.json
+
+      - name: Deploy
+        uses: fewensa/actions/ansible-deploy@main
+        with:
+          trigger_url: ${{ secrets.CI_TRIGGER_ENDPOINT }}
+          trigger_token: ${{ secrets.CI_TRIGGER_TOKEN }}
+          project_name: prtmax/wiot
+          changes: dist/changes.json
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+
