@@ -34,6 +34,16 @@ jobs:
         working-directory: java
         run: mvn clean package -Dmaven.test.skip=true
 
+      - uses: fewensa/actions/tepusher@main
+        if: failure()
+        with:
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: java
 
   check-rust:
     name: Check psdk-rust
@@ -61,12 +71,16 @@ jobs:
         working-directory: rust
         run: cargo build
 
-      - uses: fewensa/actions/wxpusher@main
+      - uses: fewensa/actions/tepusher@main
         if: failure()
         with:
-          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-          summary: 'PSDK 检查失败 RUST'
-          topic: 31703
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: rust
 
 
   check-dart:
@@ -107,12 +121,16 @@ jobs:
           melos bootstrap
           melos run test --no-select
 
-      - uses: fewensa/actions/wxpusher@main
+      - uses: fewensa/actions/tepusher@main
         if: failure()
         with:
-          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-          summary: 'PSDK 检查失败 DART'
-          topic: 31703
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: dart
 
   check-js:
     name: Check psdk-js
@@ -139,12 +157,16 @@ jobs:
           npm run package:all
           npm run test:all
 
-      - uses: fewensa/actions/wxpusher@main
+      - uses: fewensa/actions/tepusher@main
         if: failure()
         with:
-          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-          summary: 'PSDK 检查失败 JS'
-          topic: 31703
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: js
 
 #  check-swift:
 #    name: Check psdk-swift
@@ -171,10 +193,14 @@ jobs:
 #        working-directory: swift/fruits/${{ matrix.project }}
 #        run: swift build -c release
 #
-#      - uses: fewensa/actions/wxpusher@main
+#      - uses: fewensa/actions/tepusher@main
 #        if: failure()
 #        with:
-#          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-#          summary: 'PSDK 检查失败 SWIFT ${{ matrix.project }}'
-#          topic: 31703
+#          template: .maintain/notify/check-failed.md
+#          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+#          receiver: 66bc2051e4b0e36f485a957b
+#          aters: wxid_who8wxwf7pm121
+#          vars: |
+#            project: psdk
+#            language: swift
 

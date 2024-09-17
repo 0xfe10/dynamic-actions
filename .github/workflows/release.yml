@@ -53,12 +53,16 @@ jobs:
         working-directory: java
         run: mvn clean deploy -P release -D maven.test.skip=true -s ~/ci_settings.xml
 
-      - uses: fewensa/actions/wxpusher@main
+      - uses: fewensa/actions/tepusher@main
         if: failure()
         with:
-          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-          summary: 'PSDK 发布失败 JAVA'
-          topic: 31703
+          template: .maintain/notify/release-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: java
 
 
   release-js:
@@ -92,12 +96,16 @@ jobs:
         working-directory: js
         run: npx lerna publish from-package --yes
 
-      - uses: fewensa/actions/wxpusher@main
+      - uses: fewensa/actions/tepusher@main
         if: failure()
         with:
-          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-          summary: 'PSDK 发布失败 JS'
-          topic: 31703
+          template: .maintain/notify/release-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: js
 
 
   release-ohpm:
@@ -135,6 +143,17 @@ jobs:
           yarn install
           yarn ohpm:package --verbose --force --publish --clean
 
+      - uses: fewensa/actions/tepusher@main
+        if: failure()
+        with:
+          template: .maintain/notify/release-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_who8wxwf7pm121
+          vars: |
+            project: psdk
+            language: ohpm
+
 
 #  release-dart:
 #    name: Release psdk-dart
@@ -171,9 +190,13 @@ jobs:
 #          melos run lint:all --no-select
 #          melos publish --no-private --yes --no-dry-run
 #
-#      - uses: fewensa/actions/wxpusher@main
+#      - uses: fewensa/actions/tepusher@main
 #        if: failure()
 #        with:
-#          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
-#          summary: 'PSDK 发布失败 DART'
-#          topic: 31703
+#          template: .maintain/notify/release-failed.md
+#          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+#          receiver: 66bc2051e4b0e36f485a957b
+#          aters: wxid_who8wxwf7pm121
+#          vars: |
+#            project: psdk
+#            language: dart
