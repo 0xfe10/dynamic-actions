@@ -1,5 +1,1 @@
-Merge branch 'improve-count-user' into 'main'
-
 Fix metrics query
-
-See merge request prtmax/endfather!340
