@@ -181,7 +181,7 @@ jobs:
           template: .maintain/notify/deploy-success.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: 66bc2051e4b0e36f485a957b
-          aters: C1776236406,wxid_ntwefy6w95622,wxid_5634706356812,wxid_ny8c0ty1bz2o22
+          aters: ${{ matrix.playbook == 'babosa-prd' && 'C1776236406,wxid_ntwefy6w95622,wxid_5634706356812,wxid_ny8c0ty1bz2o22' || 'C1776236406' }}
           vars: |
             environment: ${{ matrix.playbook == 'babosa-stg' && '测试环境' || matrix.playbook == 'babosa-prd' && '正式环境' || matrix.playbook == 'babosa-pre' && '预览环境' }}
             app: ${{ matrix.playbook }}

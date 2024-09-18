@@ -1,12 +1,1 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'preview_newenv' into 'main'
-
-Preview newenv
-
-See merge request prtmax/endfather!339.
-
-Actions Context:
-* Actor: 0xfe10
-* Git Ref: v0.0.110
-* Build started at: 2024-09-17T14:19:26Z
-* Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10904995089
+Update deploy.yml
