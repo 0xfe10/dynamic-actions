@@ -1,4 +1,4 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'improve-count-user' into 'main'
+[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'improve-count-user' into 'main'
 
 Fix metrics query
 
@@ -6,7 +6,7 @@ See merge request prtmax/endfather!340.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: main
-* Build started at: 2024-09-18T02:58:07Z
+* Git Ref: v0.0.111
+* Build started at: 2024-09-18T02:58:36Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10914751219
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10914755041
