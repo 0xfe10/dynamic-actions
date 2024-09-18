@@ -1,1 +1,5 @@
+Merge branch 'fix-analysis' into 'main'
+
 Fix metrics query
+
+See merge request prtmax/endfather!341
