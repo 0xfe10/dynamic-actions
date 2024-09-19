@@ -1,5 +1,1 @@
-Merge branch 'fix-analysis' into 'main'
-
-Fix metrics query
-
-See merge request prtmax/endfather!341
+添加打印内容边距属性
