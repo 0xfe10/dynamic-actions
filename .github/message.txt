@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-analysis' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'add_printer_attribute' into 'main'
 
-Fix metrics query
+添加打印内容边距属性
 
-See merge request prtmax/endfather!341.
+See merge request prtmax/endfather!342.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.112
-* Build started at: 2024-09-18T03:19:28Z
+* Git Ref: main
+* Build started at: 2024-09-19T01:54:50Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10914965111
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10933047173
