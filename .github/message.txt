@@ -1,5 +1,1 @@
-Merge branch 'add_printer_attribute' into 'main'
-
-添加打印内容边距属性
-
-See merge request prtmax/endfather!342
+用户使用登录设备机型统计：品牌、机型、系统版本统计
