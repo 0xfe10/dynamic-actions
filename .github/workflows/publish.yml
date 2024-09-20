@@ -1,0 +1,158 @@
+name: '[labeldesktop] Publish'
+
+on:
+  push:
+#    branches:
+#      - '**'
+    tags:
+      - "v*-labeldesktop"
+
+jobs:
+
+
+  build:
+    name: Build labeldesktop
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/labeldesktop
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v3
+        with:
+          channel: stable
+          version: 3.19.6
+
+      - run: flutter --version
+
+      - name: Setup git credential
+        run: |
+          git config --global credential.helper store
+          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
+
+      - name: Install deps
+        run: |
+          flutter pub global activate get_cli
+          flutter pub upgrade
+          get generate locales assets/locales
+
+      - name: Check build
+        run: |
+          flutter build windows
+
+      - name: Prepare publish
+        run: |
+          sh -f scripts/after-build.sh
+
+      - name: Compile Installer
+        uses: Minionguyjpro/Inno-Setup-Action@v1.2.4
+        with:
+          path: labeldesktop.iss
+          options: /O+
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact-release
+          path: |
+            Output
+
+      - uses: fewensa/actions/wxpusher@main
+        if: failure()
+        with:
+          token: ${{ secrets.WXPUSHER_EF_TOKEN }}
+          summary: 'labeldesktop failed P'
+          topic: 31703
+
+  publish:
+    name: Publish build
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/labeldesktop
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: artifact-release
+          path: Output
+
+      - name: Publish release
+        uses: docker://minio/minio:RELEASE.2024-08-03T04-33-23Z
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          MIO_IPRT_ENDPOINT: ${{ secrets.MIO_IPRT_ENDPOINT }}
+          MIO_IPRT_AK: ${{ secrets.MIO_IPRT_AK }}
+          MIO_IPRT_SK: ${{ secrets.MIO_IPRT_SK }}
+          PUBLISH_MODE: release
+        with:
+          entrypoint: /bin/bash
+          args: -f scripts/release-win-ci.sh
+
+      - name: Read distribute
+        id: read_distribute
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./distribute.txt
+
+      - uses: fewensa/actions/tepusher@main
+        with:
+          template: .maintain/notify/publish-success.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_ntwefy6w95622,wxid_5634706356812,wxid_ny8c0ty1bz2o22
+          vars: |
+            environment: 正式环境
+            download_link: '${{ steps.read_distribute.outputs.content }}'
+
+  notify:
+    name: Notify failure
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - publish
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/labeldesktop
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: fewensa/actions/tepusher@main
+        with:
+          template: .maintain/notify/publish-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: 66bc2051e4b0e36f485a957b
+          aters: wxid_c03ku3qjihen22,xiaowen407086,wxid_2pu4u5rwsu9k22
+          pattos: xiaowen407086
+          vars: |
+            environment: 正式环境
+
+  clean-artifacts:
+    name: Clean artifacts
+    runs-on: ubuntu-latest
+    needs:
+      - publish
+    if: always()
+    steps:
+      - uses: geekyeggo/delete-artifact@v5
+        with:
+          name: artifact-release
+
