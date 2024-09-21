@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'add_printer_attribute' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'improve_device_prefix' into 'main'
 
-添加打印内容边距属性
+设备前缀添加关键字查询
 
-See merge request prtmax/endfather!342.
+See merge request prtmax/endfather!344.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-09-19T01:54:50Z
+* Build started at: 2024-09-21T06:47:44Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10933047173
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10970516510
