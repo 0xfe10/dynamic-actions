@@ -1,5 +1,1 @@
-Merge branch 'improve_device_prefix' into 'main'
-
-设备前缀添加关键字查询
-
-See merge request prtmax/endfather!344
+count print region
