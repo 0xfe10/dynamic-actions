@@ -1,1 +1,5 @@
-clean start time
+Merge branch 'fix-device-stat' into 'main'
+
+Fix device stat
+
+See merge request prtmax/endfather!343
