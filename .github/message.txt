@@ -1,1 +1,4 @@
-打印区域分布
+Merge branch 'fix-device-stat' of https://gitlab.com/prtmax/endfather into fix-device-stat
+
+# Conflicts:
+#	traice/analysis/records/V0000021__analysis_more_improve.sql
