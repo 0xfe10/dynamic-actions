@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'improve_device_prefix' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-device-stat' into 'main'
 
-设备前缀添加关键字查询
+Fix device stat
 
-See merge request prtmax/endfather!344.
+See merge request prtmax/endfather!343.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-09-21T06:47:44Z
+* Build started at: 2024-09-23T16:00:57Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10970516510
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/10998025033
