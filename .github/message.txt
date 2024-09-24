@@ -1,8 +1,8 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: improve brand detect.
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: update detect.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.119
-* Build started at: 2024-09-24T05:32:20Z
+* Git Ref: main
+* Build started at: 2024-09-24T05:35:46Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007639999
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007676866
