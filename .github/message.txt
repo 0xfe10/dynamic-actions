@@ -1,8 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: update detect.
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-device-order' into 'main'
+
+修改设备名称等按数量倒序排序
+
+See merge request prtmax/endfather!350.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.120
-* Build started at: 2024-09-24T05:35:59Z
+* Git Ref: main
+* Build started at: 2024-09-24T05:41:29Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007679133
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007733998
