@@ -1,5 +1,1 @@
-Merge branch 'fix-device-stat' into 'main'
-
-修改统计设备信息
-
-See merge request prtmax/endfather!347
+fix missing filed
