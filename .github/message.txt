@@ -1,4 +1,4 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-device-other' into 'main'
+[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-device-other' into 'main'
 
 品牌匹配不上设置其他
 
@@ -6,7 +6,7 @@ See merge request prtmax/endfather!351.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: main
-* Build started at: 2024-09-24T07:36:34Z
+* Git Ref: v0.0.123
+* Build started at: 2024-09-24T07:36:58Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11009186443
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11009192860
