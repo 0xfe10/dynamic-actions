@@ -1,1 +1,1 @@
-improve brand detect
+update detect
