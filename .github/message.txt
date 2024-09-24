@@ -1,8 +1,8 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: increase gap for since clean.
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: fix data clean.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.116
-* Build started at: 2024-09-24T05:07:37Z
+* Git Ref: main
+* Build started at: 2024-09-24T05:22:19Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007381814
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007530006
