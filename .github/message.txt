@@ -1,8 +1,8 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'main' of https://gitlab.com/prtmax/endfather.
+[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'main' of https://gitlab.com/prtmax/endfather.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: main
-* Build started at: 2024-09-24T04:57:45Z
+* Git Ref: v0.0.115
+* Build started at: 2024-09-24T05:00:53Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007279802
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11007307149
