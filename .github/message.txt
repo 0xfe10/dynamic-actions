@@ -1,8 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: fix missing filed.
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-device-stat' into 'main'
+
+修改设备统计字段名称
+
+See merge request prtmax/endfather!349.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.114
-* Build started at: 2024-09-24T02:13:36Z
+* Git Ref: main
+* Build started at: 2024-09-24T04:12:31Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11005716600
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11006853337
