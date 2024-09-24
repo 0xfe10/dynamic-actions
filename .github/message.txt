@@ -1,1 +1,5 @@
-format
+Merge branch 'fix-device-other' into 'main'
+
+品牌匹配不上设置其他
+
+See merge request prtmax/endfather!351
