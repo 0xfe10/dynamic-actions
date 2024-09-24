@@ -1,1 +1,1 @@
-add missing field
+improve brand detect
