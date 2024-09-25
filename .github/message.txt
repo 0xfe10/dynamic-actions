@@ -1,1 +1,5 @@
-修改版本表发布时间去掉自动更新
+Merge branch 'fix-version-time-release' into 'main'
+
+Fix version time release
+
+See merge request prtmax/endfather!352
