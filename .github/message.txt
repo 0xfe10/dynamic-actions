@@ -1,1 +1,5 @@
-优化版本号输入
+Merge branch 'version_improve' into 'main'
+
+Version improve
+
+See merge request prtmax/endfather!353
