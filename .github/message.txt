@@ -1,5 +1,1 @@
-Merge branch 'improve_version' into 'main'
-
-优化版本号输入
-
-See merge request prtmax/endfather!355
+苹果机型根据os数据映射获取
