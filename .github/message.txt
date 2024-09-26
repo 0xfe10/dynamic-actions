@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'version_improve' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'improve_version' into 'main'
 
-Version improve
+优化版本号输入
 
-See merge request prtmax/endfather!353.
+See merge request prtmax/endfather!355.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-09-25T05:51:47Z
+* Build started at: 2024-09-26T03:01:26Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11027114013
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11044770808
