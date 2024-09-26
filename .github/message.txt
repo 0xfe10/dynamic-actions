@@ -1,5 +1,1 @@
-Merge branch 'v_1_0_3' into 'main'
-
-1.0.3 微软商店包，版本更新跳转到微软商店
-
-See merge request prtmax/labeldesktop!12
+Merge branch 'main' into v_1_1_0
