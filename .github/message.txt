@@ -1,1 +1,1 @@
-Add app for profile
+打印、搜索、模板创建和模板使用增加设备类型
