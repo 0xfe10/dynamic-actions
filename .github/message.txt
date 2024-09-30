@@ -1,4 +1,1 @@
-Merge branch 'refs/heads/main' into fix-user-passwd
-
-# Conflicts:
-#	babosa/commons/types-upper/src/main/java/in/kahub/endfather/babosa/common/types/upper/form/cornerstone/UserForm.java
+增加打印类型
