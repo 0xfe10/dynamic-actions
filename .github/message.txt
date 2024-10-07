@@ -1,5 +1,1 @@
-Merge branch 'improve_version' into 'main'
-
-优化版本号输入
-
-See merge request prtmax/endfather!355
+蓝牙连接记录统计
