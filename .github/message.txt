@@ -1,1 +1,5 @@
-打印机汇总
+Merge branch 'fix-version-stat' into 'main'
+
+Fix version stat
+
+See merge request prtmax/endfather!354
