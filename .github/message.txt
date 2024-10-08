@@ -1,1 +1,5 @@
+Merge branch 'prepare-to-release' into 'main'
+
 Prepare release
+
+See merge request prtmax/endfather!363
