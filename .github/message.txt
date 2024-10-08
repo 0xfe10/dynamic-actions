@@ -1,9 +1,12 @@
-[repotea-workspace/oms-zkr] Update playbooks/oms-zkr/host_vars/cn1.ucloud.ztokr.com.yml*;playbooks/oms-zkr/host_vars/cn1.ucloud.ztokr.com.yml*;: default origin.
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-version-stat' into 'main'
+
+Fix version stat
+
+See merge request prtmax/endfather!354.
 
 Actions Context:
-* Actor: fewensa
-* Git Ref: prod
-* Build started at: 2024-10-07T08:00:40Z
+* Actor: 0xfe10
+* Git Ref: main
+* Build started at: 2024-10-08T07:30:21Z
 * Source: push
-* Workflow: https://gitlab.com/repotea-workspace/oms-zkr/-/jobs/8007501849
-* All workflows: https://gitlab.com/repotea-workspace/oms-zkr/-/pipelines/1484139053
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11230667998
