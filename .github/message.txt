@@ -1,4 +1,4 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-version-issue' into 'main'
+[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-version-issue' into 'main'
 
 fix version issue
 
@@ -6,7 +6,7 @@ See merge request prtmax/endfather!364.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: main
-* Build started at: 2024-10-08T16:31:59Z
+* Git Ref: v0.0.125
+* Build started at: 2024-10-08T16:32:46Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11239770320
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11239780872
