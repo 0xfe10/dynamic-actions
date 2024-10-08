@@ -1,1 +1,1 @@
-main
+prepare-to-release
