@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-version-issue' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-summary-version' into 'main'
 
-fix version issue
+用户唤起app排除版本号或平台系统为空的记录
 
-See merge request prtmax/endfather!364.
+See merge request prtmax/endfather!365.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.125
-* Build started at: 2024-10-08T16:32:46Z
+* Git Ref: main
+* Build started at: 2024-10-09T02:29:28Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11239780872
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11247128776
