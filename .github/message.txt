@@ -1,5 +1,1 @@
-Merge branch 'fix-version-issue' into 'main'
-
-fix version issue
-
-See merge request prtmax/endfather!364
+用户唤起app排除版本号或平台系统为空的记录
