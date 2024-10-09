@@ -1,1 +1,5 @@
-蓝牙连接记录统计
+Merge branch 'fix-summary-version' into 'main'
+
+用户唤起app排除版本号或平台系统为空的记录
+
+See merge request prtmax/endfather!365
