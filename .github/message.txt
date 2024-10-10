@@ -1,5 +1,5 @@
-Merge branch 'main' into 'metaprint-stat'
+Merge branch 'fix-guest-user' into 'main'
 
-# Conflicts:
-#   babosa/launchers/analysis/src/main/java/in/kahub/endfather/babosa/launcher/analysis/route/v1/GrafanaRoute.java
-#   babosa/utilities/generic/src/main/java/in/kahub/endfather/babosa/utility/generic/kit/AiyinKit.java
+游客账号根据app查询
+
+See merge request prtmax/endfather!367
