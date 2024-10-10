@@ -1,5 +1,1 @@
-Merge branch 'fix-guest-user' into 'main'
-
-游客账号根据app查询
-
-See merge request prtmax/endfather!367
+设置profile中app值
