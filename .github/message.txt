@@ -1,1 +1,1 @@
-mac  相册权限
+mac  titlebar
