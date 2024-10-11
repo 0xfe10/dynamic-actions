@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-guest-user' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-profile-app' into 'main'
 
-游客账号根据app查询
+设置profile中app值
 
-See merge request prtmax/endfather!367.
+See merge request prtmax/endfather!368.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-10-09T07:14:03Z
+* Build started at: 2024-10-11T15:03:43Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11250043004
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11294702181
