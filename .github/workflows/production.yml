@@ -17,7 +17,7 @@ jobs:
         package:
           - babosa
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.14.0
@@ -69,7 +69,7 @@ jobs:
           - LAUNCHER: tasks/infra
             SLUG: task-infra
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -125,7 +125,7 @@ jobs:
           - cornerstone
           - analysis
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -194,7 +194,7 @@ jobs:
     needs:
       - migrate-db
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -268,7 +268,7 @@ jobs:
         package:
           - woodii
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Checkout
         uses: fewensa/actions/clone-any@main
@@ -286,7 +286,7 @@ jobs:
           vercel_group: provence
           preview_output: true
           workdir: ${{ matrix.package }}
-          project_name: endfather-woodii
+          project_name: endfather-woodii-prd
           script_build: yarn build:prd
           dist_path: dist-prd
           enable_cache: true

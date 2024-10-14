@@ -1,5 +1,1 @@
-Merge branch 'fix-profile-app' into 'main'
-
-设置profile中app值
-
-See merge request prtmax/endfather!368
+模板查询列表增加ids参数和增加模板详情接口
