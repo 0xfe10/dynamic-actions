@@ -1,1 +1,1 @@
-java 新增device-network
+ble write 方法加锁
