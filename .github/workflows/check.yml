@@ -14,7 +14,7 @@ jobs:
         package:
           - babosa
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.14.0
@@ -52,7 +52,7 @@ jobs:
         package:
           - woodii
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
