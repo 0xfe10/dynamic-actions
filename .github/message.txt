@@ -1,1 +1,1 @@
-ble write 方法加锁
+classic write 方法加锁
