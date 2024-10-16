@@ -1,5 +1,1 @@
-Merge branch 'fix-profile-app' into 'main'
-
-设置profile中app值
-
-See merge request prtmax/endfather!368
+更新意见反馈全部已读
