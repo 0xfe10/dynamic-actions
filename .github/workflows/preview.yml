@@ -1,4 +1,4 @@
-name: '[endfather] Staging'
+name: '[endfather] Preview'
 
 on:
   push:
@@ -9,29 +9,29 @@ env:
 
 jobs:
 
-  ensure-main:
-    name: Ensure main
+  ensure-preview:
+    name: Ensure preview
     runs-on: ubuntu-latest
     outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+      ENSURE_PREVIEW: ${{ steps.ensure_preview.outputs.ENSURE_PREVIEW }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Ensure main
-        id: ensure_main
+      - name: Ensure preview
+        id: ensure_preview
         run: |
-          if grep -q 'main' .github/branch.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          if grep -q 'preview' .github/branch.txt; then
+            echo "ENSURE_PREVIEW=true" >> $GITHUB_OUTPUT
           else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+            echo "ENSURE_PREVIEW=false" >> $GITHUB_OUTPUT
           fi
 
   build-app-java:
     name: Build app java
     runs-on: ubuntu-latest
     needs:
-      - ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+      - ensure-preview
+    if: needs.ensure-preview.outputs.ENSURE_PREVIEW == 'true'
     strategy:
       matrix:
         package:
@@ -129,85 +129,14 @@ jobs:
           aters: C1776236406
           pattos: C1776236406
           vars: |
-            environment: 测试环境
+            environment: 预览环境
             app: ${{ matrix.package.LAUNCHER }}
-
-
-  migrate-db:
-    name: Migrate database
-    runs-on: ubuntu-latest
-    needs:
-      - build-docker-image
-    strategy:
-      matrix:
-        project:
-          #- boogie
-          - cornerstone
-          - analysis
-    steps:
-      - uses: actions/checkout@v4
-      - name: Checkout
-        uses: fewensa/actions/clone-any@main
-        with:
-          platform: gitlab
-          repository: prtmax/endfather
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
-          ref_file: .github/ref.txt
-
-      # - name: Migrate boogie
-      #   uses: docker://flyway/flyway:10-alpine
-      #   if: ${{ matrix.project == 'boogie' }}
-      #   with:
-      #     args: >
-      #       -url="jdbc:mysql://${{ secrets.BABOSA_DB_BOOGIE_HOST_STG }}/boogie_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
-      #       -user=${{ secrets.BABOSA_DB_BOOGIE_USER_STG }}
-      #       -password=$${{ secrets.BABOSA_DB_BOOGIE_PASSWORD_STG }}
-      #       -locations=filesystem:./traice/boogie/records
-      #       -encoding=UTF-8
-      #       migrate
-
-      - name: Migrate cornerstone
-        uses: docker://flyway/flyway:10-alpine
-        if: ${{ matrix.project == 'cornerstone' }}
-        with:
-          args: >
-            -url="jdbc:mysql://${{ secrets.BABOSA_DB_CORNERSTONE_HOST_STG }}/babosa_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
-            -user=${{ secrets.BABOSA_DB_CORNERSTONE_USER_STG }}
-            -password=${{ secrets.BABOSA_DB_CORNERSTONE_PASSWORD_STG }}
-            -locations=filesystem:./traice/cornerstone/records
-            -encoding=UTF-8
-            migrate
-
-      - name: Migrate analysis
-        uses: docker://flyway/flyway:10-alpine
-        if: ${{ matrix.project == 'analysis' }}
-        with:
-          args: >
-            -url="jdbc:mysql://${{ secrets.BABOSA_DB_ANALYSIS_HOST_STG }}/analysis_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
-            -user=${{ secrets.BABOSA_DB_ANALYSIS_USER_STG }}
-            -password=${{ secrets.BABOSA_DB_ANALYSIS_PASSWORD_STG }}
-            -locations=filesystem:./traice/analysis/records
-            -encoding=UTF-8
-            migrate
-
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/migrate-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: C1776236406
-          pattos: C1776236406
-          vars: |
-            environment: 测试环境
-            app: ${{ matrix.project }}
-
 
   deploy-app-java:
     name: Deploy app java
     runs-on: ubuntu-latest
     needs:
-      - migrate-db
+      - build-docker-image
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
@@ -243,7 +172,7 @@ jobs:
 
           mkdir dist
 
-          DEPLOYMENT_FILE=playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml
+          DEPLOYMENT_FILE=playbooks/babosa-pre/host_vars/cn1.ek.iprtapp.com.yml
 
           jq -n \
             --arg file ${DEPLOYMENT_FILE} \
@@ -272,14 +201,14 @@ jobs:
           aters: C1776236406
           pattos: C1776236406
           vars: |
-            environment: 测试环境
+            environment: 预览环境
             app: babosa
 
   deploy-app-node:
     name: Build app node
     runs-on: ubuntu-latest
-    needs: ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    needs: ensure-preview
+    if: needs.ensure-preview.outputs.ENSURE_PREVIEW == 'true'
     strategy:
       matrix:
         package:
@@ -304,10 +233,10 @@ jobs:
           preview_output: true
           workdir: ${{ matrix.package }}
           project_name: endfather-woodii
-          script_build: yarn build:stg
-          dist_path: dist-stg
+          script_build: yarn build:pre
+          dist_path: dist-pre
           enable_cache: true
-          alias_domain: 'woodii-stg.iprtapp.com'
+          alias_domain: 'woodii-pre.iprtapp.com'
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
@@ -318,7 +247,7 @@ jobs:
           aters: C1776236406
           pattos: C1776236406
           vars: |
-            environment: 测试环境
+            environment: 预览环境
             app: ${{ matrix.package }}
 
   clean-artifacts:
@@ -331,3 +260,4 @@ jobs:
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: artifact-java
+
