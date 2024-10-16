@@ -1,5 +1,1 @@
-Merge branch 'main' into 'fix-barcode'
-
-# Conflicts:
-#   babosa/accomplishes/pom.xml
-#   babosa/pom.xml
+修改条形码查询
