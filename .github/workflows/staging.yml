@@ -5,7 +5,7 @@ on:
     branches:
       - '**'
 env:
-  DOCKER_REGISTRY: uhub.service.ucloud.cn
+  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
 
 jobs:
 
@@ -15,12 +15,12 @@ jobs:
     outputs:
       ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Ensure main
         id: ensure_main
         run: |
-          if grep -q 'main' .github/branch.txt; then
+          if grep -q 'main' .github/ref.txt; then
             echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
           else
             echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
@@ -37,7 +37,7 @@ jobs:
         package:
           - babosa
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.14.0
@@ -89,7 +89,7 @@ jobs:
           - LAUNCHER: tasks/infra
             SLUG: task-infra
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -106,8 +106,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.REGISTRY_UHUB_USERNAME }}
-          password: ${{ secrets.REGISTRY_UHUB_PASSWORD }}
+          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
 
       - uses: benjlevesque/short-sha@v1.2
 
@@ -118,7 +118,7 @@ jobs:
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/coocn/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:${{ matrix.package.SLUG }}-sha-${{ env.SHA }}
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
@@ -145,7 +145,7 @@ jobs:
           - cornerstone
           - analysis
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -209,7 +209,7 @@ jobs:
     needs:
       - migrate-db
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: fewensa/actions/clone-any@main
         with:
@@ -223,15 +223,15 @@ jobs:
         run: |
           TEMPLATE_FILE=.maintain/playbooks.yml
 
-          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/coocn
+          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk
 
-          #IMAGE_TAG_LAUNCHER_BOOGIE=${IMAGE_TAG_BASE}/launcher-boogie:sha-${{ env.SHA }}
-          IMAGE_TAG_TASK_INFRA=${IMAGE_TAG_BASE}/task-infra:sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_ANALYSIS=${IMAGE_TAG_BASE}/launcher-analysis:sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_LABELEXPERT=${IMAGE_TAG_BASE}/launcher-labelexpert:sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_METAPRINT=${IMAGE_TAG_BASE}/launcher-metaprint:sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_UNIVERSAL=${IMAGE_TAG_BASE}/launcher-universal:sha-${{ env.SHA }}
-          IMAGE_TAG_LAUNCHER_WOODII=${IMAGE_TAG_BASE}/launcher-woodii:sha-${{ env.SHA }}
+          #IMAGE_TAG_LAUNCHER_BOOGIE=${IMAGE_TAG_BASE}:launcher-boogie-sha-${{ env.SHA }}
+          IMAGE_TAG_TASK_INFRA=${IMAGE_TAG_BASE}:task-infra-sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_ANALYSIS=${IMAGE_TAG_BASE}:launcher-analysis-sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_LABELEXPERT=${IMAGE_TAG_BASE}:launcher-labelexpert-sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_METAPRINT=${IMAGE_TAG_BASE}:launcher-metaprint-sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_UNIVERSAL=${IMAGE_TAG_BASE}:launcher-universal-sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_WOODII=${IMAGE_TAG_BASE}:launcher-woodii-sha-${{ env.SHA }}
 
           #yq e ".docker_app_runner.container.launcher_boogie.image = \"${IMAGE_TAG_LAUNCHER_BOOGIE}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.task_infra.image = \"${IMAGE_TAG_TASK_INFRA}\"" --inplace ${TEMPLATE_FILE}
@@ -285,7 +285,7 @@ jobs:
         package:
           - woodii
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Checkout
         uses: fewensa/actions/clone-any@main
@@ -303,11 +303,11 @@ jobs:
           vercel_group: provence
           preview_output: true
           workdir: ${{ matrix.package }}
-          project_name: endfather-woodii
+          project_name: endfather-woodii-stg
           script_build: yarn build:stg
           dist_path: dist-stg
           enable_cache: true
-          alias_domain: 'woodii-stg.iprtapp.com'
+          prod_mode: true
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
