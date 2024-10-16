@@ -1,4 +1,1 @@
-Merge remote-tracking branch 'origin/v_1_1_0' into v_1_1_0
-
-# Conflicts:
-#	pubspec.lock
+原生通道，macOS 退出app拦截
