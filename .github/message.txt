@@ -1,5 +1,1 @@
-Merge branch 'metaprint-stat' into 'main'
-
-Metaprint stat
-
-See merge request prtmax/endfather!359
+增加当ids为ALL时对参数belong的检验
