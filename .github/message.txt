@@ -1,1 +1,5 @@
-近7天新增用户分布地图统计
+Merge branch 'fix-printer-stat' into 'main'
+
+恢复打印机机型统计
+
+See merge request prtmax/endfather!370
