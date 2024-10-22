@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-chat' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-printer-stat' into 'main'
 
-更新意见反馈全部已读
+恢复打印机机型统计
 
-See merge request prtmax/endfather!369.
+See merge request prtmax/endfather!370.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-10-21T02:16:26Z
+* Build started at: 2024-10-22T13:26:29Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11431959428
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11461212700
