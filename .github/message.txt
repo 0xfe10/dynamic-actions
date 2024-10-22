@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-printer-stat' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'nextv' into 'main'
 
-恢复打印机机型统计
+New release
 
-See merge request prtmax/endfather!370.
+See merge request prtmax/endfather!371.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-10-22T13:26:29Z
+* Build started at: 2024-10-22T13:53:24Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11461212700
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11461713418
