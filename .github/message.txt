@@ -1,1 +1,1 @@
-macos id
+add LSApplicationCategory key/value in info.plist
