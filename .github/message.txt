@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'nextv' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-summary-printer' into 'main'
 
-New release
+修改打印机汇总累计打印次数和累计打印数默认值为0
 
-See merge request prtmax/endfather!371.
+See merge request prtmax/endfather!372.
 
 Actions Context:
 * Actor: 0xfe10
-* Git Ref: v0.0.129
-* Build started at: 2024-10-22T13:53:53Z
+* Git Ref: main
+* Build started at: 2024-10-23T03:07:09Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11461722161
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11472272968
