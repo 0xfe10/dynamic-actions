@@ -1,1 +1,1 @@
-macos release com.apple.security.network.server删除
+注销账号（1）
