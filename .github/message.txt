@@ -1,5 +1,1 @@
-Merge branch 'fix-summary-printer' into 'main'
-
-修改打印机汇总累计打印次数和累计打印数默认值为0
-
-See merge request prtmax/endfather!372
+migrate
