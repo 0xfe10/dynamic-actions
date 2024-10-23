@@ -1,1 +1,1 @@
-new-stat
+fix-summary-printer

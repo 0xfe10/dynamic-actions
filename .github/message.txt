@@ -1,1 +1,5 @@
-近7天打印量统计
+Merge branch 'nextv' into 'main'
+
+New release
+
+See merge request prtmax/endfather!371
