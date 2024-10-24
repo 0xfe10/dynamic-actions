@@ -1,5 +1,1 @@
-Merge branch 'release-next' into 'main'
-
-Next release
-
-See merge request prtmax/endfather!375
+修改增加位置信息
