@@ -1,12 +1,12 @@
-[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'fix-summary-printer' into 'main'
+[prtmax/endfather] Update playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml*;: Merge branch 'release-next' into 'main'
 
-Fix summary printer
+Next release
 
-See merge request prtmax/endfather!374.
+See merge request prtmax/endfather!375.
 
 Actions Context:
 * Actor: 0xfe10
 * Git Ref: main
-* Build started at: 2024-10-24T06:17:41Z
+* Build started at: 2024-10-24T06:29:35Z
 * Source: push
-* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11493716708
+* Workflows: https://github.com/0xfe10/dynamic-actions/actions/runs/11493861706
