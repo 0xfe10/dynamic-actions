@@ -1,1 +1,5 @@
-近7天打印量热力图
+Merge branch 'newv' into 'main'
+
+New version
+
+See merge request prtmax/endfather!373
