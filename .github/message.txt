@@ -1,1 +1,1 @@
-修改打印机汇总打印张数被覆盖，cuid不更新问题
+去掉更新a_summary_printer表cuid数据脚本
