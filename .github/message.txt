@@ -1,1 +1,5 @@
-去除删除a_summary_printer数据
+Merge branch 'fix-summary-printer' into 'main'
+
+Fix summary printer
+
+See merge request prtmax/endfather!376
