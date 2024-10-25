@@ -1,1 +1,1 @@
-调用公共的方法设置ip经纬度信息
+去除删除a_summary_printer数据
