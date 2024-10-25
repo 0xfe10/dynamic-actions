@@ -1,1 +1,5 @@
-修改相关表字符集
+Merge branch 'release-next' into 'main'
+
+Next release
+
+See merge request prtmax/endfather!375
