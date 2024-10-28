@@ -1,5 +1,1 @@
-Merge branch 'summary-printer' into 'main'
-
-修改打印机汇总打印张数被覆盖，cuid不更新问题
-
-See merge request prtmax/endfather!378
+模板添加变量相关字段信息
