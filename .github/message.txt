@@ -1,5 +1,1 @@
-Merge branch 'main' into 'fix-barcode'
-
-# Conflicts:
-#   babosa/commons/types-upper/src/main/java/in/kahub/endfather/babosa/common/types/upper/form/application/TemplateForm.java
-#   babosa/components/application/src/main/resources/sql/Template.md
+修改脚本文件名称
