@@ -1,1 +1,5 @@
-修改扫码识别条形码查询返回数据解析
+Merge branch 'var-template' into 'main'
+
+模板添加变量相关字段信息
+
+See merge request prtmax/endfather!379
