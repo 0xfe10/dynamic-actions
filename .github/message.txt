@@ -1,5 +1,1 @@
-Merge branch 'var-template' into 'main'
-
-模板添加变量相关字段信息
-
-See merge request prtmax/endfather!379
+编辑模板background_color信息，为空保持原数据信息
