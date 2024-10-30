@@ -1,5 +1,1 @@
-Merge branch 'template-metadata' into 'main'
-
-编辑模板background_color信息，为空保持原数据信息
-
-See merge request prtmax/endfather!381
+修改设备机型统计
