@@ -1,1 +1,1 @@
-修改新统计查询时间
+type_upper去除accomplish-barcode依赖
