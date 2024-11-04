@@ -1,5 +1,5 @@
-Merge branch 'fix-barcode' into 'main'
+Merge branch 'profile' into 'main'
 
-Fix barcode
+update profile column
 
-See merge request prtmax/endfather!361
+See merge request prtmax/endfather!380
