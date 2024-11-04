@@ -1,1 +1,1 @@
-type_upper去除accomplish-barcode依赖
+update types
