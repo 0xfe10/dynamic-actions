@@ -125,7 +125,7 @@ jobs:
         with:
           template: .maintain/notify/build-failed-docker-image.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
           aters: C1776236406
           pattos: C1776236406
           vars: |
@@ -197,7 +197,7 @@ jobs:
         with:
           template: .maintain/notify/deploy-app.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
           aters: C1776236406
           pattos: C1776236406
           vars: |
@@ -243,7 +243,7 @@ jobs:
         with:
           template: .maintain/notify/deploy-app.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
           aters: C1776236406
           pattos: C1776236406
           vars: |
