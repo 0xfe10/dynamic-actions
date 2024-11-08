@@ -1,1 +1,1 @@
-Merge branch 'v_1_1_0' of https://gitlab.com/prtmax/labeldesktop into v_1_1_0
+流水号打印修改
