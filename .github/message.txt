@@ -1,1 +1,5 @@
-CI
+Merge branch 'update-ci' into 'v_1_1_0'
+
+Update ci
+
+See merge request prtmax/labeldesktop!13
