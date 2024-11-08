@@ -113,7 +113,7 @@ jobs:
           template: .maintain/notify/publish-success.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_5634706356812,wxid_ag5na9b93xq822
+          aters: wxid_c03ku3qjihen22,xiaowen407086,wxid_2pu4u5rwsu9k22,wxid_ag5na9b93xq822,wxid_5634706356812
           vars: |
             environment: 正式环境
             download_link: '${{ steps.read_distribute.outputs.content }}'
@@ -140,7 +140,7 @@ jobs:
           template: .maintain/notify/publish-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
-          aters: wxid_c03ku3qjihen22,xiaowen407086,wxid_2pu4u5rwsu9k22,wxid_ag5na9b93xq822,wxid_5634706356812
+          aters: xiaowen407086,wxid_c03ku3qjihen22,wxid_5634706356812
           vars: |
             environment: 正式环境
 
