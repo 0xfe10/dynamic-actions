@@ -9,7 +9,11 @@ jobs:
 
   check:
     name: Check
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - macos-latest
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
@@ -49,14 +53,20 @@ jobs:
           get generate locales assets/locales
 
       - name: Check build
-        run: |
-          flutter build windows
+        if: matrix.os == 'windows-latest'
+        run: flutter build windows
 
       - name: Compile Installer
+        if: matrix.os == 'windows-latest'
         uses: Minionguyjpro/Inno-Setup-Action@v1.2.4
         with:
           path: labeldesktop.iss
           options: /O+
+
+      - name: Check build
+        if: matrix.os == 'macos-latest'
+        run: flutter build macos
+
 
   # notify:
   #   name: Notify failure
