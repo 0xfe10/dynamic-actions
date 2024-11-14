@@ -7,9 +7,14 @@ on:
 
 jobs:
 
-  check:
-    name: Check
-    runs-on: windows-latest
+  check-win:
+    name: Check Windows
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
