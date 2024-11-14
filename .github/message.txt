@@ -1,5 +1,1 @@
-Merge branch 'fewensa-main-patch-fcaf' into 'v_1_1_0'
-
-CI
-
-See merge request prtmax/labeldesktop!14
+rolling publish
