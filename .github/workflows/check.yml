@@ -24,7 +24,7 @@ jobs:
         uses: flutter-actions/setup-flutter@v3
         with:
           channel: stable
-          #version: 3.19.6
+          #version: 3.24.4
 
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
@@ -80,4 +80,5 @@ jobs:
   #         token: ${{ secrets.WEPLUSBOT_TOKEN }}
   #         receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
   #         aters: xiaowen407086,wxid_c03ku3qjihen22
+
 
