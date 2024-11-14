@@ -65,26 +65,25 @@ jobs:
           flutter pub get
           flutter build macos
 
-  # notify:
-  #   name: Notify failure
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - check
-  #   if: ${{ always() && contains(needs.*.result, 'failure') }}
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Checkout
-  #       uses: fewensa/actions/clone-any@main
-  #       with:
-  #         platform: gitlab
-  #         repository: prtmax/labeldesktop
-  #         access_token: '${{ secrets.GITLAB_TOKEN }}'
-  #         ref_file: .github/ref.txt
+  notify:
+    name: Notify failure
+    runs-on: ubuntu-latest
+    needs:
+      - check
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/xprint
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
 
-  #     - uses: fewensa/actions/tepusher@main
-  #       with:
-  #         template: .maintain/notify/check-failed.md
-  #         token: ${{ secrets.WEPLUSBOT_TOKEN }}
-  #         receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
-  #         aters: xiaowen407086,wxid_c03ku3qjihen22
+      - uses: fewensa/actions/tepusher@main
+        with:
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
 
