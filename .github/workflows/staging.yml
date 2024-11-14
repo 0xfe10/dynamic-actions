@@ -7,29 +7,29 @@ on:
 
 jobs:
 
-  # ensure-main:
-  #   name: Ensure main
-  #   runs-on: ubuntu-latest
-  #   outputs:
-  #     ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #
-  #     - name: Ensure main
-  #       id: ensure_main
-  #       run: |
-  #         if grep -q 'main' .github/ref.txt; then
-  #           echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-  #         else
-  #           echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-  #         fi
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+    steps:
+      - uses: actions/checkout@v2
+  
+      - name: Ensure main
+        id: ensure_main
+        run: |
+          if grep -q 'main' .github/ref.txt; then
+            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          fi
 
   build:
     name: Build
     runs-on: windows-latest
-    # needs:
-    #   - ensure-main
-    # if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
@@ -46,7 +46,8 @@ jobs:
           channel: stable
           #version: 3.19.6
 
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           toolchain: stable
 

@@ -29,7 +29,8 @@ jobs:
           channel: stable
           #version: 3.19.6
 
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           toolchain: stable
 
