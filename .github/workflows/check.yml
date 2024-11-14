@@ -7,8 +7,8 @@ on:
 
 jobs:
 
-  check-win:
-    name: Check Windows
+  check:
+    name: Check
     strategy:
       matrix:
         os:
@@ -25,11 +25,11 @@ jobs:
           access_token: '${{ secrets.GITLAB_TOKEN }}'
           ref_file: .github/ref.txt
 
-      # - name: Setup Flutter SDK
-      #   uses: flutter-actions/setup-flutter@v3
-      #   with:
-      #     channel: stable
-      #     #version: 3.24.4
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v3
+        with:
+          channel: stable
+          #version: 3.24.4
 
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
@@ -40,21 +40,30 @@ jobs:
         run: |
           rustc --version
           cargo --version
-          # flutter --version
+          flutter --version
 
       - name: Setup git credential
         run: |
           git config --global credential.helper store
           echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
 
-      # - name: Install deps
-      #   run: |
-      #     flutter pub global activate get_cli
-      #     flutter pub upgrade
-      #     get generate locales assets/locales
-
       - name: Check xprint
-        run: cargo b --release --manifest-path=xprint/rust/Cargo.toml
+        working-directory: xprint/rust
+        run: cargo b --release
+
+      - name: Check bxprint_flutter
+        working-directory: wrapper/bxprint_flutter/example
+        if: matrix.os == 'windows-latest'
+        run: |
+          flutter pub get
+          flutter build windows
+
+      - name: Check bxprint_flutter
+        working-directory: wrapper/bxprint_flutter/example
+        if: matrix.os == 'macos-latest'
+        run: |
+          flutter pub get
+          flutter build macos
 
   # notify:
   #   name: Notify failure
