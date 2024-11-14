@@ -7,29 +7,34 @@ on:
 
 jobs:
 
-  ensure-main:
-    name: Ensure main
-    runs-on: ubuntu-latest
-    outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
-    steps:
-      - uses: actions/checkout@v2
+  # ensure-main:
+  #   name: Ensure main
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+  #   steps:
+  #     - uses: actions/checkout@v2
   
-      - name: Ensure main
-        id: ensure_main
-        run: |
-          if grep -q 'main' .github/ref.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-          else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-          fi
+  #     - name: Ensure main
+  #       id: ensure_main
+  #       run: |
+  #         if grep -q 'main' .github/ref.txt; then
+  #           echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+  #         else
+  #           echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+  #         fi
 
   build:
     name: Build
-    runs-on: windows-latest
-    needs:
-      - ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          # - macos-latest
+    runs-on: ${{ matrix.os }}
+    # needs:
+    #   - ensure-main
+    # if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
@@ -69,6 +74,7 @@ jobs:
           get generate locales assets/locales
 
       - name: Check build
+        if: matrix.os == 'windows-latest'
         run: |
           flutter build windows
 
@@ -77,10 +83,15 @@ jobs:
           sh -f scripts/after-build.sh
 
       - name: Compile Installer
+        if: matrix.os == 'windows-latest'
         uses: Minionguyjpro/Inno-Setup-Action@v1.2.4
         with:
           path: labeldesktop.iss
           options: /O+
+
+      - name: Check build
+        if: matrix.os == 'macos-latest'
+        run: flutter build macos
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
