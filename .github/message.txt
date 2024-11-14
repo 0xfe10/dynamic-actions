@@ -1,1 +1,1 @@
-disable check
+test
