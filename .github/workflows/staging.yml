@@ -170,8 +170,7 @@ jobs:
           template: .maintain/notify/publish-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
-          aters: wxid_c03ku3qjihen22,xiaowen407086,wxid_2pu4u5rwsu9k22,wxid_ag5na9b93xq822
-          pattos: xiaowen407086
+          aters: xiaowen407086
           vars: |
             environment: 测试环境
 
