@@ -1,1 +1,1 @@
-enable ci
+test ci
