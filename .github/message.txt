@@ -1,1 +1,5 @@
-enable macos
+Merge branch 'multiple-print' into 'main'
+
+multilpe print
+
+See merge request prtmax/xprint!24
