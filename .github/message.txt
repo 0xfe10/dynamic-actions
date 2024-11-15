@@ -1,5 +1,1 @@
-Merge branch 'add_printer_attribute' into 'main'
-
-添加打印机默认速度
-
-See merge request prtmax/endfather!389
+打印机列表IP归属地列宽度
