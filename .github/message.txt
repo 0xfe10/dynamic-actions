@@ -1,1 +1,5 @@
-打印机列表IP归属地列宽度
+Merge branch 'fix-user-passwd' into 'main'
+
+Fix user passwd
+
+See merge request prtmax/endfather!357
