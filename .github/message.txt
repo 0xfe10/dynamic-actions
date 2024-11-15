@@ -1,1 +1,5 @@
-修改近7天打印量改为按国家统计打印量
+Merge branch 'test-ci' into 'main'
+
+Test ci
+
+See merge request prtmax/endfather!386
