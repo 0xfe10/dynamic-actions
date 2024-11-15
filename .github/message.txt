@@ -1,1 +1,5 @@
+Merge branch 'fix-print-issue' into 'main'
+
 fix print issue
+
+See merge request prtmax/xprint!26
