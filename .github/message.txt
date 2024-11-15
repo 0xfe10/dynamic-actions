@@ -1,5 +1,1 @@
-Merge branch 'test-ci' into 'main'
-
-Test ci
-
-See merge request prtmax/endfather!386
+后台统计：版本分析和打印机列表
