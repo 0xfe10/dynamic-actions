@@ -1,5 +1,1 @@
-Merge branch 'mtlcps' into 'main'
-
-Fix multiple colums issue
-
-See merge request prtmax/xprint!25
+Merge branch 'main' of https://gitlab.com/prtmax/xprint
