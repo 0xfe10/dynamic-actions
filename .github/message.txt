@@ -1,5 +1,1 @@
-Merge branch 'user-passwd' into 'main'
-
-修改密码和用户修复缺少参数类
-
-See merge request prtmax/endfather!390
+后台管理统计：版本分析和打印机列表接口移动到analysis项目中
