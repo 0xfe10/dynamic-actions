@@ -1,5 +1,1 @@
-Merge branch 'ip-position' into 'main'
-
-Ip position
-
-See merge request prtmax/endfather!387
+修改密码和用户修复缺少参数类
