@@ -1,1 +1,1 @@
-clippy
+clean
