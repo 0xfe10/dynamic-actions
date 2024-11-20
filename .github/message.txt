@@ -1,1 +1,5 @@
-fix idle seconds
+Merge branch 'test-macos' into 'main'
+
+Fix macos print with socket
+
+See merge request prtmax/xprint!28
