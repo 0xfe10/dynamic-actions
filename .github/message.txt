@@ -1,1 +1,5 @@
-微软商店配置
+Merge branch 'v_1_1_0' into 'main'
+
+110
+
+See merge request prtmax/labeldesktop!15
