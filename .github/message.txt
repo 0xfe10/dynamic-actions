@@ -1,5 +1,1 @@
-Merge branch 'release-v00125' into 'main'
-
-Release v00125
-
-See merge request prtmax/endfather!393
+修复platform_os实体类字段名称
