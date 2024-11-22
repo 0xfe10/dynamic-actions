@@ -1,4 +1,5 @@
-Merge branch 'main' into 'new-stat'
+Merge branch 'new-stat' into 'main'
 
-# Conflicts:
-#   babosa/utilities/generic/src/main/java/in/kahub/endfather/babosa/utility/generic/kit/AiyinKit.java
+New stat
+
+See merge request prtmax/endfather!385
