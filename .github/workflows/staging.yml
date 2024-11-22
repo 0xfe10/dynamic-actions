@@ -7,29 +7,34 @@ on:
 
 jobs:
 
-  ensure-main:
-    name: Ensure main
-    runs-on: ubuntu-latest
-    outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Ensure main
-        id: ensure_main
-        run: |
-          if grep -q 'main' .github/ref.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-          else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-          fi
+  # ensure-main:
+  #   name: Ensure main
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+  #   steps:
+  #     - uses: actions/checkout@v2
+  
+  #     - name: Ensure main
+  #       id: ensure_main
+  #       run: |
+  #         if grep -q 'main' .github/ref.txt; then
+  #           echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+  #         else
+  #           echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+  #         fi
 
   build:
     name: Build
-    runs-on: windows-latest
-    needs:
-      - ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          # - macos-latest
+    runs-on: ${{ matrix.os }}
+    # needs:
+    #   - ensure-main
+    # if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
@@ -44,9 +49,18 @@ jobs:
         uses: flutter-actions/setup-flutter@v3
         with:
           channel: stable
-          version: 3.19.6
+          #version: 3.19.6
 
-      - run: flutter --version
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Test deps
+        run: |
+          rustc --version
+          cargo --version
+          flutter --version
 
       - name: Setup git credential
         run: |
@@ -60,6 +74,7 @@ jobs:
           get generate locales assets/locales
 
       - name: Check build
+        if: matrix.os == 'windows-latest'
         run: |
           flutter build windows
 
@@ -68,10 +83,15 @@ jobs:
           sh -f scripts/after-build.sh
 
       - name: Compile Installer
+        if: matrix.os == 'windows-latest'
         uses: Minionguyjpro/Inno-Setup-Action@v1.2.4
         with:
           path: labeldesktop.iss
           options: /O+
+
+      - name: Check build
+        if: matrix.os == 'macos-latest'
+        run: flutter build macos
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -105,6 +125,7 @@ jobs:
         uses: docker://minio/minio:RELEASE.2024-08-03T04-33-23Z
         env:
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          MIO_IPRT_ENDPOINT_VIEW: ${{ secrets.MIO_IPRT_ENDPOINT_VIEW }}
           MIO_IPRT_ENDPOINT: ${{ secrets.MIO_IPRT_ENDPOINT }}
           MIO_IPRT_AK: ${{ secrets.MIO_IPRT_AK }}
           MIO_IPRT_SK: ${{ secrets.MIO_IPRT_SK }}
@@ -122,8 +143,8 @@ jobs:
         with:
           template: .maintain/notify/publish-success.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_ntwefy6w95622,wxid_5634706356812,wxid_ny8c0ty1bz2o22
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          aters: wxid_5634706356812,wxid_ag5na9b93xq822
           vars: |
             environment: 测试环境
             download_link: '${{ steps.read_distribute.outputs.content }}'
@@ -149,9 +170,8 @@ jobs:
         with:
           template: .maintain/notify/publish-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_c03ku3qjihen22,xiaowen407086,wxid_2pu4u5rwsu9k22
-          pattos: xiaowen407086
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          aters: xiaowen407086
           vars: |
             environment: 测试环境
 
@@ -165,4 +185,7 @@ jobs:
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: artifact-release
+
+
+
 
