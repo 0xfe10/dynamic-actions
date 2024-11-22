@@ -1,5 +1,1 @@
-Merge branch 'tracking-print' into 'main'
-
-追踪打印增加打印类型
-
-See merge request prtmax/endfather!391
+include migrate
