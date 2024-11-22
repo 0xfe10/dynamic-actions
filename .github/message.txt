@@ -1,1 +1,1 @@
-fix win
+fix macos columns print
