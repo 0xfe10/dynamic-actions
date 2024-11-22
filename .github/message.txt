@@ -1,5 +1,1 @@
-Merge branch 'v_1_1_0' into 'main'
-
-110
-
-See merge request prtmax/labeldesktop!15
+win7  1.0.0
