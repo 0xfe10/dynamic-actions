@@ -1,1 +1,5 @@
+Merge branch 'new-stat' into 'main'
+
 修复platform_os实体类字段名称
+
+See merge request prtmax/endfather!394
