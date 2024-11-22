@@ -1,5 +1,1 @@
-Merge branch 'woodii-stat' into 'main'
-
-后台统计：版本分析和打印机列表
-
-See merge request prtmax/endfather!388
+添加excel和fill统计相关信息
