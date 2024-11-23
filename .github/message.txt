@@ -1,5 +1,1 @@
-Merge branch 'barcode-excel' into 'main'
-
-Barcode excel
-
-See merge request prtmax/endfather!396
+读取excel文件信息
