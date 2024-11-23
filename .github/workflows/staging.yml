@@ -143,8 +143,7 @@ jobs:
         with:
           template: .maintain/notify/publish-success.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
-          aters: wxid_5634706356812,wxid_ag5na9b93xq822
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
           vars: |
             environment: 测试环境
             download_link: '${{ steps.read_distribute.outputs.content }}'
@@ -170,8 +169,7 @@ jobs:
         with:
           template: .maintain/notify/publish-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
-          aters: xiaowen407086
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
           vars: |
             environment: 测试环境
 
