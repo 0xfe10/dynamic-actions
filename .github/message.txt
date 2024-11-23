@@ -1,1 +1,1 @@
-macos print options
+better log
