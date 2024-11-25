@@ -1,0 +1,72 @@
+name: Build legacy-sdk iOS
+
+
+on:
+  push:
+
+jobs:
+  build-ios:
+    name: Build iOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: fewensa/actions
+          path: .github/actions
+
+      - name: Checkout
+        uses: ./.github/actions/clone-any
+        with:
+          platform: gitlab
+          repository: prtmax/legacy-psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+
+      - name: Install dependencies
+        run: |
+          brew install tree
+          brew install p7zip
+          brew install minio-mc
+
+      - name: Setup minio
+        run: |
+          mc config host add kahub ${{ secrets.MIO_ENDPOINT }} ${{ secrets.MIO_AK }} ${{ secrets.MIO_SK }}
+
+      - name: Build framework
+        run: |
+          set -xe
+          cd BY248BT/BY248BT-ios-sdk
+
+          xcodebuild -quiet \
+            -project BeeprtPrinterBY.xcodeproj \
+            -list
+
+          xcodebuild -quiet \
+            -project BeeprtPrinterBY.xcodeproj \
+            -scheme BeeprtPrinterBY \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            ONLY_ACTIVE_ARCH=NO \
+            CONFIGURATION_BUILD_DIR=. \
+            clean build
+
+      - name: List build
+        run: |
+          set -xe
+          cd BY248BT/BY248BT-ios-sdk
+          ls -la
+          ls -la build
+          ls -la build/Build
+          tree build
+
+      - name: Upload SDK
+        run: |
+          set -xe
+          cd BY248BT/BY248BT-ios-sdk
+
+          # tar -zcvf prtmax-legacy-ios-by248bt.tgz build
+          # mc cp prtmax-legacy-ios-by248bt.tgz kahub/open/public/
+
+          7z a -tzip prtmax-legacy-ios-by248bt.zip ./build
+          mc cp prtmax-legacy-ios-by248bt.zip kahub/open/public/
+
