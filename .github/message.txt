@@ -1,1 +1,1 @@
-disable step group count
+test stream print
