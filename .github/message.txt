@@ -1,5 +1,1 @@
-Merge branch 'fewensa-main-patch-9e14' into 'main'
-
-udpate notify
-
-See merge request prtmax/labeldesktop!16
+Mac 打印（6）
