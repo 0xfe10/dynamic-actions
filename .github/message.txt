@@ -1,1 +1,5 @@
-test print
+Merge branch 'tmsp' into 'improve-macos'
+
+cups stream print
+
+See merge request prtmax/xprint!31
