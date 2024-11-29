@@ -1,1 +1,1 @@
-disable sandbox and fix print
+two mode to print for macos
