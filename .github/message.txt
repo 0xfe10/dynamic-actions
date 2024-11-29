@@ -1,1 +1,1 @@
-two mode to print for macos
+test print
