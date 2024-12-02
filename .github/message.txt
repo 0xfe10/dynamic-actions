@@ -1,5 +1,1 @@
-Merge branch 'test' into 'main'
-
-测试提交启动测试环境
-
-See merge request prtmax/endfather!406
+去掉main方法
