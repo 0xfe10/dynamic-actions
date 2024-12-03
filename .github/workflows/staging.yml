@@ -125,7 +125,9 @@ jobs:
         with:
           template: .maintain/notify/build-failed-docker-image.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          aters: C1776236406
+          pattos: C1776236406
           vars: |
             environment: 测试环境
             app: ${{ matrix.package.LAUNCHER }}
@@ -193,7 +195,9 @@ jobs:
         with:
           template: .maintain/notify/migrate-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          aters: C1776236406
+          pattos: C1776236406
           vars: |
             environment: 测试环境
             app: ${{ matrix.project }}
@@ -239,7 +243,7 @@ jobs:
 
           mkdir dist
 
-          DEPLOYMENT_FILE=playbooks/babosa-stg/host_vars/iprtapp-cn1-ek.yml
+          DEPLOYMENT_FILE=playbooks/babosa-stg/host_vars/cn1.ek.iprtapp.com.yml
 
           jq -n \
             --arg file ${DEPLOYMENT_FILE} \
@@ -264,7 +268,9 @@ jobs:
         with:
           template: .maintain/notify/deploy-app.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          aters: C1776236406
+          pattos: C1776236406
           vars: |
             environment: 测试环境
             app: babosa
@@ -308,7 +314,9 @@ jobs:
         with:
           template: .maintain/notify/deploy-app.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          aters: C1776236406
+          pattos: C1776236406
           vars: |
             environment: 测试环境
             app: ${{ matrix.package }}
