@@ -20,11 +20,12 @@ jobs:
       - name: Ensure main
         id: ensure_main
         run: |
-          if grep -q 'main' .github/branch.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-          else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-          fi
+          # if grep -q 'main' .github/branch.txt; then
+          #   echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          # else
+          #   echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          # fi
+          echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
 
   build-app-java:
     name: Build app java
@@ -313,13 +314,13 @@ jobs:
             environment: 测试环境
             app: ${{ matrix.package }}
 
-  clean-artifacts:
-    name: Clean artifacts
-    runs-on: ubuntu-latest
-    needs:
-      - build-docker-image
-    if: always()
-    steps:
-      - uses: geekyeggo/delete-artifact@v5
-        with:
-          name: artifact-java
+  # clean-artifacts:
+  #   name: Clean artifacts
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - build-docker-image
+  #   if: always()
+  #   steps:
+  #     - uses: geekyeggo/delete-artifact@v5
+  #       with:
+  #         name: artifact-java
