@@ -1,5 +1,1 @@
-Merge branch 'improve-macos' into 'main'
-
-Improve macos
-
-See merge request prtmax/xprint!29
+merge main
