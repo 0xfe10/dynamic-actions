@@ -313,13 +313,13 @@ jobs:
             environment: 测试环境
             app: ${{ matrix.package }}
 
-  # clean-artifacts:
-  #   name: Clean artifacts
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - build-docker-image
-  #   if: always()
-  #   steps:
-  #     - uses: geekyeggo/delete-artifact@v5
-  #       with:
-  #         name: artifact-java
+  clean-artifacts:
+    name: Clean artifacts
+    runs-on: ubuntu-latest
+    needs:
+      - build-docker-image
+    if: always()
+    steps:
+      - uses: geekyeggo/delete-artifact@v5
+        with:
+          name: artifact-java
