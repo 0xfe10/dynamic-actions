@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/mac' into mac
+mac 频率20
