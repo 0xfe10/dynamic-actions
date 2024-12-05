@@ -1,5 +1,5 @@
-Merge branch 'apitrace-stat' into 'main'
+Merge branch 'template-customized' into 'preview'
 
-过滤domain为空数据
+模板是否含有变量参数为null查询非变量模板
 
-See merge request prtmax/endfather!412
+See merge request prtmax/endfather!414
