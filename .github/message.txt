@@ -1,5 +1,1 @@
-Merge branch 'apitrace-stat' into 'main'
-
-过滤domain为空数据
-
-See merge request prtmax/endfather!412
+模版默认查询非变量模版，个人模版默认查询所有模版
