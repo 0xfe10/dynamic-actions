@@ -1,1 +1,1 @@
-Merge branch 'mac' of https://gitlab.com/prtmax/labeldesktop into mac
+插件更新
