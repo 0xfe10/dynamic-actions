@@ -1,1 +1,1 @@
-mac 频率20
+Merge branch 'mac' of https://gitlab.com/prtmax/labeldesktop into mac
