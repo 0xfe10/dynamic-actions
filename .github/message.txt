@@ -1,1 +1,5 @@
-修改脚本名称
+Merge branch 'version-windows7' into 'main'
+
+win7无需版本更新
+
+See merge request prtmax/endfather!418
