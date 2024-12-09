@@ -1,5 +1,1 @@
-Merge branch 'template-customized' into 'main'
-
-模版默认查询非变量模版，个人模版默认查询所有模版
-
-See merge request prtmax/endfather!417
+调整api域名配置
