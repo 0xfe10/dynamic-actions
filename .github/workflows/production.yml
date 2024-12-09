@@ -228,7 +228,7 @@ jobs:
 
           mkdir dist
 
-          DEPLOYMENT_FILE=playbooks/babosa-prd/host_vars/iprtapp-cn1-ek.yml
+          DEPLOYMENT_FILE=playbooks/babosa-prd/host_vars/cn1.ek.iprtapp.com.yml
 
           jq -n \
             --arg file ${DEPLOYMENT_FILE} \

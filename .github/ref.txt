@@ -1,1 +1,1 @@
-model-manage
+cloud-print
