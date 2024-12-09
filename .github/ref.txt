@@ -1,1 +1,1 @@
-endpoint
+model-manage
