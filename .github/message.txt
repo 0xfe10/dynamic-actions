@@ -1,5 +1,1 @@
-Merge branch 'version-windows7' into 'main'
-
-win7测试
-
-See merge request prtmax/endfather!420
+功能及机型分类功能
