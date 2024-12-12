@@ -1,5 +1,1 @@
-Merge branch 'update-version' into 'main'
-
-版本更新
-
-See merge request prtmax/endfather!421
+机型返回增加排序信息
