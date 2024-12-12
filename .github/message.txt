@@ -1,1 +1,5 @@
-app首页机型功能
+Merge branch 'update-version' into 'main'
+
+版本更新
+
+See merge request prtmax/endfather!421
