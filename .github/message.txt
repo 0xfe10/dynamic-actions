@@ -1,1 +1,5 @@
+Merge branch 'fix-locale' into 'main'
+
 metaprint添加locale相关接口
+
+See merge request prtmax/endfather!423
