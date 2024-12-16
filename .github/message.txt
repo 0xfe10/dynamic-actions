@@ -1,5 +1,1 @@
-Merge branch 'specification-code' into 'main'
-
-规格编码配置多个支持查询
-
-See merge request prtmax/endfather!422
+metaprint添加locale相关接口
