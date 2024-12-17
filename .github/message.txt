@@ -1,5 +1,1 @@
-Merge branch 'caiwei12-main-patch-98855' into 'main'
-
-Update .env.pre
-
-See merge request prtmax/endfather!425
+固件版本
