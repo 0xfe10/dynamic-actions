@@ -1,5 +1,1 @@
-Merge branch 'model-manage' into 'preview'
-
-Model manage
-
-See merge request prtmax/endfather!424
+固件版本
