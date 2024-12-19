@@ -1,1 +1,5 @@
+Merge branch 'model-manage' into 'preview'
+
 分类功能增加蓝牙前缀和是否定制机型信息返回
+
+See merge request prtmax/endfather!429
