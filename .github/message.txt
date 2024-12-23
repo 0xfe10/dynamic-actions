@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/ota' into ota
+固件版本更新日志
