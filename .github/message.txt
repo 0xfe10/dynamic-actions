@@ -1,1 +1,6 @@
-ota 设备详情页
+Merge branch 'preview' into 'specification-classification'
+
+# Conflicts:
+#   woodii/src/api/universal/classification.ts
+#   woodii/src/views/app/universal/specification/classification.vue
+#   woodii/src/views/app/universal/specification/template/manage.vue
