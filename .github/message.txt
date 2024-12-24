@@ -1,6 +1,5 @@
-Merge branch 'preview' into 'specification-classification'
+Merge branch 'specification-classification' into 'preview'
 
-# Conflicts:
-#   woodii/src/api/universal/classification.ts
-#   woodii/src/views/app/universal/specification/classification.vue
-#   woodii/src/views/app/universal/specification/template/manage.vue
+Specification classification
+
+See merge request prtmax/endfather!432
