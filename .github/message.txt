@@ -1,1 +1,1 @@
-Merge branch 'refs/heads/preview' into ota
+删除机型管理序列号
