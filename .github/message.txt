@@ -1,1 +1,1 @@
-用户是否可注销校验
+user deactivated
