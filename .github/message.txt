@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/ota' into ota
+设备导入去除固件版本关键字V
