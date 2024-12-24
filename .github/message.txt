@@ -1,5 +1,1 @@
-Merge branch 'specification-classification' into 'preview'
-
-Specification classification
-
-See merge request prtmax/endfather!432
+Merge remote-tracking branch 'origin/ota' into ota
