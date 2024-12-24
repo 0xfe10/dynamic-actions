@@ -1,1 +1,5 @@
-固件推送
+Merge branch 'fix-push' into 'main'
+
+修改发布测试环境
+
+See merge request prtmax/endfather!431
