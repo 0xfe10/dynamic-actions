@@ -1,1 +1,1 @@
-添加是否显示分辨率属性
+Merge remote-tracking branch 'origin/ota' into ota
