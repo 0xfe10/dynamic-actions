@@ -1,5 +1,5 @@
-Merge branch 'ota' into 'preview'
+Merge branch 'preview' into 'main'
 
-Ota
+Preview
 
-See merge request prtmax/endfather!438
+See merge request prtmax/endfather!436
