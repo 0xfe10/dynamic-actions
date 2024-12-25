@@ -87,8 +87,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
-          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+          username: ${{ secrets.REGISTRY_UHUB_USERNAME }}
+          password: ${{ secrets.REGISTRY_UHUB_PASSWORD }}
 
       - uses: benjlevesque/short-sha@v1.2
 
