@@ -1,1 +1,1 @@
-user-deactivate
+ota
