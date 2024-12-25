@@ -5,7 +5,8 @@ on:
     tags:
       - "v*-endfather"
 env:
-  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+  # DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY: uhub.service.ucloud.cn
 
 jobs:
 
@@ -98,7 +99,7 @@ jobs:
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:${{ matrix.package.SLUG }}-sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/coocn/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
@@ -208,7 +209,7 @@ jobs:
         run: |
           TEMPLATE_FILE=.maintain/playbooks.yml
 
-          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk
+          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/coocn
 
           #IMAGE_TAG_LAUNCHER_BOOGIE=${IMAGE_TAG_BASE}:launcher-boogie-sha-${{ env.SHA }}
           IMAGE_TAG_TASK_INFRA=${IMAGE_TAG_BASE}:task-infra-sha-${{ env.SHA }}
