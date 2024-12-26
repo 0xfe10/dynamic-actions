@@ -1,1 +1,1 @@
-视频/说明书 调整td min width
+fix product modify
