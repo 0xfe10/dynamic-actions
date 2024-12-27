@@ -1,1 +1,5 @@
-设备sn唯一性校验、耗材分类增加宽和高字段
+Merge branch 'firmware' into 'preview'
+
+Firmware
+
+See merge request prtmax/endfather!443
