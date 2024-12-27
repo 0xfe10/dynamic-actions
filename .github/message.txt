@@ -1,5 +1,1 @@
-Merge branch 'preview-fix-product-modify' into 'main'
-
-fix product modify
-
-See merge request prtmax/endfather!442
+机型管理
