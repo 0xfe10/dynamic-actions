@@ -1,5 +1,1 @@
-Merge branch 'firmware' into 'preview'
-
-Firmware
-
-See merge request prtmax/endfather!443
+设备管理选择当前固件版本根据选择机型过滤
