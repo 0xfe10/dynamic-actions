@@ -1,4 +1,5 @@
-Merge branch 'preview' into 'model-classification'
+Merge branch 'model-classification' into 'preview'
 
-# Conflicts:
-#   babosa/commons/types-upper/src/main/java/in/kahub/endfather/babosa/common/types/upper/form/application/FirmwareForm.java
+Model classification
+
+See merge request prtmax/endfather!444
