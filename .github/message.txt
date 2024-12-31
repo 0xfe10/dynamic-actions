@@ -1,1 +1,5 @@
+Merge branch 'fix-subscribe-id' into 'main'
+
 Fix subscribe issue
+
+See merge request prtmax/endfather!448
