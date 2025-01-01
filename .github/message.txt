@@ -1,5 +1,1 @@
-Merge branch 'fix-static-query' into 'main'
-
-fix query sql
-
-See merge request prtmax/endfather!454
+printmap socket
