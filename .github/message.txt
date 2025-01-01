@@ -1,1 +1,1 @@
-disable analysis cache
+test socketio
