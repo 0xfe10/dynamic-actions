@@ -224,6 +224,16 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:sha-${{ env.SHA }}
 
+      - uses: fewensa/actions/tepusher@main
+        if: failure()
+        with:
+          template: .maintain/notify/build-failed-docker-image.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          vars: |
+            environment: 正式环境
+            app: ${{ matrix.project }}
+
   deploy-app-backend:
     name: Deploy app backend
     runs-on: ubuntu-latest
