@@ -1,1 +1,1 @@
-delete locale excel example
+improve firmware record query
