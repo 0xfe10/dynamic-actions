@@ -41,7 +41,7 @@ jobs:
         uses: fewensa/actions/clone-any@main
         with:
           platform: gitlab
-          repository: prtmax/endfather
+          repository: prtmax/maprintrace
           access_token: '${{ secrets.GITLAB_TOKEN }}'
           ref_file: .github/ref.txt
 
