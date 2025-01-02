@@ -1,5 +1,1 @@
-Merge branch 'add-cors' into 'main'
-
-Add cors
-
-See merge request prtmax/endfather!457
+io cors
