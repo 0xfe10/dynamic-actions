@@ -1,1 +1,1 @@
-优化设备信息案例下载
+delete locale excel example
