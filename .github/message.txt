@@ -1,5 +1,1 @@
-Merge branch 'fix-sql-issue' into 'main'
-
-Fix sql migrate issue
-
-See merge request prtmax/endfather!456
+Merge branch 'main' into fix-realtime-issue
