@@ -67,8 +67,8 @@ jobs:
             babosa/launchers/*/target/dist/*.gz
             babosa/tasks/*/target/dist/*.gz
 
-  build-docker-image:
-    name: Build docker image
+  build-docker-image-babosa:
+    name: Build docker image babosa
     runs-on: ubuntu-latest
     needs:
       - build-app-java
@@ -131,12 +131,11 @@ jobs:
             environment: 测试环境
             app: ${{ matrix.package.LAUNCHER }}
 
-
   migrate-db:
     name: Migrate database
     runs-on: ubuntu-latest
     needs:
-      - build-docker-image
+      - build-docker-image-babosa
     strategy:
       matrix:
         project:
@@ -199,12 +198,59 @@ jobs:
             environment: 测试环境
             app: ${{ matrix.project }}
 
+  build-docker-image-madman:
+    name: Build docker image madman
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    strategy:
+      matrix:
+        package:
+          - realtime
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-any@main
+        with:
+          platform: gitlab
+          repository: prtmax/endfather
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
 
-  deploy-app-java:
-    name: Deploy app java
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: benjlevesque/short-sha@v1.2
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: madman
+          file: madman/docker/${{ matrix.package }}.Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:sha-${{ env.SHA }}
+
+      - uses: fewensa/actions/tepusher@main
+        if: failure()
+        with:
+          template: .maintain/notify/build-failed-docker-image.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          vars: |
+            environment: 测试环境
+            app: ${{ matrix.package}}
+
+  deploy-app-backend:
+    name: Deploy app backend
     runs-on: ubuntu-latest
     needs:
       - migrate-db
+      - build-docker-image-madman
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
@@ -229,6 +275,7 @@ jobs:
           IMAGE_TAG_LAUNCHER_METAPRINT=${IMAGE_TAG_BASE}/launcher-metaprint:sha-${{ env.SHA }}
           IMAGE_TAG_LAUNCHER_UNIVERSAL=${IMAGE_TAG_BASE}/launcher-universal:sha-${{ env.SHA }}
           IMAGE_TAG_LAUNCHER_WOODII=${IMAGE_TAG_BASE}/launcher-woodii:sha-${{ env.SHA }}
+          IMAGE_TAG_MADMAN_REALTIME=${IMAGE_TAG_BASE}/madman-realtime:sha-${{ env.SHA }}
 
           #yq e ".docker_app_runner.container.launcher_boogie.image = \"${IMAGE_TAG_LAUNCHER_BOOGIE}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.task_infra.image = \"${IMAGE_TAG_TASK_INFRA}\"" --inplace ${TEMPLATE_FILE}
@@ -237,6 +284,7 @@ jobs:
           yq e ".docker_app_runner.container.launcher_metaprint.image = \"${IMAGE_TAG_LAUNCHER_METAPRINT}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.launcher_universal.image = \"${IMAGE_TAG_LAUNCHER_UNIVERSAL}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.launcher_woodii.image = \"${IMAGE_TAG_LAUNCHER_WOODII}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.madman_realtime.image = \"${IMAGE_TAG_MADMAN_REALTIME}\"" --inplace ${TEMPLATE_FILE}
 
           mkdir dist
 
@@ -318,7 +366,7 @@ jobs:
     name: Clean artifacts
     runs-on: ubuntu-latest
     needs:
-      - build-docker-image
+      - build-docker-image-babosa
     if: always()
     steps:
       - uses: geekyeggo/delete-artifact@v5
