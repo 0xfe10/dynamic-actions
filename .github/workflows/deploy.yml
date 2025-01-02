@@ -65,7 +65,7 @@ jobs:
         name: Deploy to Vercel
         with:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
-          vercel_group: itering
+          vercel_group: provence
           preview_output: true
           project_name: maprintrace
           dist_path: out
