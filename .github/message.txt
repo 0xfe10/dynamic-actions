@@ -1,1 +1,5 @@
+Merge branch 'home-capabilities' into 'main'
+
 首页功能修改返回数据格式及字段名称
+
+See merge request prtmax/endfather!462
