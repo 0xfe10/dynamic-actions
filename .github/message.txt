@@ -1,5 +1,1 @@
-Merge branch 'fix-bug' into 'main'
-
-Fix bug
-
-See merge request prtmax/endfather!459
+人像素描风格化增加副标题和副标题字体返回
