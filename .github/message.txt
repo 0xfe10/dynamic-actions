@@ -1,1 +1,5 @@
-improve firmware record query
+Merge branch 'io-cors' into 'main'
+
+io cors
+
+See merge request prtmax/endfather!458
