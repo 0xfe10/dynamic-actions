@@ -1,5 +1,5 @@
-Merge branch 'home-capabilities' into 'main'
+Merge branch 'hotfix-release' into 'main'
 
-首页功能修改返回数据格式及字段名称
+Hotfix release
 
-See merge request prtmax/endfather!462
+See merge request prtmax/endfather!460
