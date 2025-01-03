@@ -1,1 +1,5 @@
-添加固件版本号校验版本包含已失效版本
+Merge branch 'fix-bug' into 'main'
+
+Fix bug
+
+See merge request prtmax/endfather!459
