@@ -1,1 +1,1 @@
-修复全屏边款显示问题
+improve point show
