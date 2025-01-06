@@ -1,1 +1,1 @@
-Add ip for subscribe print location
+Merge branch 'main' of https://gitlab.com/prtmax/endfather
