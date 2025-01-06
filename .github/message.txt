@@ -1,1 +1,5 @@
-pick main for woodii
+Merge branch 'user-deactivate' into 'main'
+
+User deactivate
+
+See merge request prtmax/endfather!433
