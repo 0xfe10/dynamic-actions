@@ -1,1 +1,5 @@
-java 优化条码生成
+Merge branch 'upgrade-taro' into 'main'
+
+Bump tarojs
+
+See merge request prtmax/psdk!134
