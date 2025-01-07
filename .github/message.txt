@@ -1,1 +1,1 @@
-allow count
+point view
