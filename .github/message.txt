@@ -1,5 +1,1 @@
-Merge branch 'model-manage' into 'main'
-
-机型管理图片显示问题
-
-See merge request prtmax/endfather!466
+ota 固件版本管理删除
