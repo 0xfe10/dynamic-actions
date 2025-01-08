@@ -1,5 +1,1 @@
-Merge branch 'redeploy-test' into 'main'
-
-重新部署测试环境
-
-See merge request prtmax/endfather!465
+机型管理图片显示问题
