@@ -1,1 +1,1 @@
-remote-login
+redeploy-test
