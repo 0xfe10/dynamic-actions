@@ -1,1 +1,5 @@
-后台管理模板分页增加用户id查询
+Merge branch 'firmware-delete' into 'main'
+
+Firmware delete
+
+See merge request prtmax/endfather!469

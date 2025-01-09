@@ -1,1 +1,1 @@
-firmware-delete
+main
