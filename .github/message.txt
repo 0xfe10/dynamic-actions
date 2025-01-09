@@ -1,5 +1,1 @@
-Merge branch 'firmware-delete' into 'main'
-
-Firmware delete
-
-See merge request prtmax/endfather!469
+人像素描增加调用限制和调用记录
