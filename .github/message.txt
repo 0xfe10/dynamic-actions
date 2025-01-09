@@ -1,1 +1,1 @@
-create native package
+revert ohos bluetooh
