@@ -1,1 +1,1 @@
-Merge branch 'main' into paper-type
+format sql
