@@ -1,1 +1,5 @@
-耗材分类添加纸张类型
+Merge branch 'invoke-limit' into 'main'
+
+人像素描增加调用限制和调用记录
+
+See merge request prtmax/endfather!470
