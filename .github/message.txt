@@ -1,1 +1,5 @@
+Merge branch 'consumables-classification' into 'main'
+
 耗材分类返回数据结构更改
+
+See merge request prtmax/endfather!474
