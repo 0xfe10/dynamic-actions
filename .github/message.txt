@@ -1,1 +1,5 @@
-调用限制后台管理接口
+Merge branch 'consumables-classification' into 'main'
+
+耗材分类纸张类型为必填
+
+See merge request prtmax/endfather!473
