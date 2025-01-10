@@ -1,1 +1,1 @@
-main
+paper-type
