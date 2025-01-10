@@ -1,1 +1,5 @@
-耗材分类增加纸张类型
+Merge branch 'paper-type' into 'main'
+
+Paper type
+
+See merge request prtmax/endfather!472
