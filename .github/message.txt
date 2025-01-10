@@ -1,5 +1,1 @@
-Merge branch 'consumables-classification' into 'main'
-
-耗材分类纸张类型为必填
-
-See merge request prtmax/endfather!473
+耗材分类返回数据结构更改
