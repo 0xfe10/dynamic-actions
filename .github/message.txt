@@ -1,5 +1,1 @@
-Merge branch 'paper-type' into 'main'
-
-Paper type
-
-See merge request prtmax/endfather!477
+去掉用户注销相关和模板查询
