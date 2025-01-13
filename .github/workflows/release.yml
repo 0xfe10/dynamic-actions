@@ -138,7 +138,7 @@ jobs:
           OHPM_SSH_PASSPHRASE: ${{ secrets.OHPM_SSH_PASSPHRASE }}
         run: |
           yarn install
-          yarn ohpm:package --verbose --force --publish --clean
+          yarn ohpm:package --verbose --force --clean --publish
 
       - uses: fewensa/actions/tepusher@main
         if: failure()
