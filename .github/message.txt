@@ -1,1 +1,5 @@
-v0.7.4
+Merge branch 'upgrade-taro' into 'main'
+
+Bump tarojs
+
+See merge request prtmax/psdk!134
