@@ -1,5 +1,5 @@
-Merge branch 'invoke-limit-woodii' into 'main'
+Merge branch 'paper-type' into 'main'
 
-Invoke limit woodii
+Paper type
 
-See merge request prtmax/endfather!476
+See merge request prtmax/endfather!477
