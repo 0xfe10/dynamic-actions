@@ -1,5 +1,1 @@
-Merge branch 'upgrade-taro' into 'main'
-
-Bump tarojs
-
-See merge request prtmax/psdk!134
+Release js v0.7.5

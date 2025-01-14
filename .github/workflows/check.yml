@@ -39,8 +39,7 @@ jobs:
         with:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121,weiqiang220284
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
           vars: |
             project: psdk
             language: java
@@ -76,8 +75,7 @@ jobs:
         with:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121,weiqiang220284
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
           vars: |
             project: psdk
             language: rust
@@ -126,8 +124,7 @@ jobs:
         with:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121,weiqiang220284
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
           vars: |
             project: psdk
             language: dart
@@ -162,8 +159,7 @@ jobs:
         with:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: 66bc2051e4b0e36f485a957b
-          aters: wxid_who8wxwf7pm121,weiqiang220284
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
           vars: |
             project: psdk
             language: js
@@ -198,8 +194,7 @@ jobs:
 #        with:
 #          template: .maintain/notify/check-failed.md
 #          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-#          receiver: 66bc2051e4b0e36f485a957b
-#          aters: wxid_who8wxwf7pm121,weiqiang220284
+#          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
 #          vars: |
 #            project: psdk
 #            language: swift
