@@ -1,5 +1,1 @@
-Merge branch 'release-157' into 'main'
-
-release 157
-
-See merge request prtmax/endfather!482
+添加打印机属性
