@@ -1,5 +1,1 @@
-Merge branch 'artifacts' into 'main'
-
-标签管家素材相关接口
-
-See merge request prtmax/endfather!483
+修改设备修改属性导致设备蓝牙信息丢失
