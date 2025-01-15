@@ -1,1 +1,5 @@
+Merge branch 'device-property' into 'main'
+
 修改设备修改属性导致设备蓝牙信息丢失
+
+See merge request prtmax/endfather!484
