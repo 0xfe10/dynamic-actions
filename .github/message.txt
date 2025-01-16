@@ -1,5 +1,1 @@
-Merge branch 'add_property' into 'main'
-
-Add property
-
-See merge request prtmax/endfather!487
+视频教程后台管理机型支持多选
