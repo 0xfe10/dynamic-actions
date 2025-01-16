@@ -1,1 +1,5 @@
-后台管理功能增加角标
+Merge branch 'capability' into 'main'
+
+Capability
+
+See merge request prtmax/endfather!486
