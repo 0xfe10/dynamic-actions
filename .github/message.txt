@@ -1,1 +1,1 @@
-Release js v0.7.5
+Rename RawOhosBluetoothClassic
