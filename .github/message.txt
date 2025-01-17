@@ -1,1 +1,1 @@
-js Release 0.7.6
+typescript 移到devDependencies
