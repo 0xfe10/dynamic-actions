@@ -1,1 +1,5 @@
-0
+Merge branch 'mac' into 'main'
+
+Mac
+
+See merge request prtmax/labeldesktop!17
