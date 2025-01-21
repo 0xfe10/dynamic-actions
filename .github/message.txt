@@ -1,1 +1,1 @@
-typescript 移到devDependencies
+NetConnectedDevice write
