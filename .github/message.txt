@@ -1,1 +1,5 @@
-扫码匹配和图片文字匹配返回匹配数据
+Merge branch 'release-v0059' into 'main'
+
+data migration
+
+See merge request prtmax/endfather!490
