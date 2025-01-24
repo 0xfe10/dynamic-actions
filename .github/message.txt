@@ -1,5 +1,1 @@
-Merge branch 'recog' into 'main'
-
-Recog
-
-See merge request prtmax/endfather!491
+logo识别相同logo返回多条取置信度最高数据
