@@ -1,1 +1,1 @@
-recog-logo
+main
