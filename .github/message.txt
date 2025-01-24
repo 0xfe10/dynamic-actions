@@ -1,5 +1,1 @@
-Merge branch 'label-variable' into 'main'
-
-修改扫码变量
-
-See merge request prtmax/endfather!494
+修改字段类型
