@@ -16,13 +16,12 @@ jobs:
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@new-clone-action
         with:
-          platform: gitlab
           repository: prtmax/xprint
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - name: Setup Flutter SDK
