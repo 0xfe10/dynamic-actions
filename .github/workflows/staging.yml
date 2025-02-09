@@ -36,13 +36,12 @@ jobs:
     #   - ensure-main
     # if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/labeldesktop
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - name: Setup Flutter SDK
@@ -107,13 +106,12 @@ jobs:
     needs:
       - build
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/labeldesktop
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - uses: actions/download-artifact@v4
@@ -156,13 +154,12 @@ jobs:
       - publish
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/labeldesktop
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - uses: fewensa/actions/tepusher@main
