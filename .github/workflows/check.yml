@@ -6,7 +6,6 @@ on:
       - '**'
 
 jobs:
-
   check:
     name: Check
     strategy:
