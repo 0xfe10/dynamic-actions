@@ -15,20 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/psdk
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
 
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.14.0
         with:
           java-version: 17
           maven-version: 3.9.8
-
-      - name: Checkout
-        uses: fewensa/actions/clone-any@main
-        with:
-          platform: gitlab
-          repository: prtmax/psdk
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
-          ref_file: .github/ref.txt
 
       - name: Check psdk
         working-directory: java
@@ -50,11 +49,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/psdk
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - name: Install rust toolchain
@@ -87,11 +85,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/psdk
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - name: Setup Flutter SDK
@@ -135,11 +132,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/psdk
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - uses: actions/setup-node@v4
@@ -176,11 +172,10 @@ jobs:
 #    steps:
 #      - uses: actions/checkout@v4
 #      - name: Checkout
-#        uses: fewensa/actions/clone-any@main
+#        uses: fewensa/actions/clone-dyn@main
 #        with:
-#          platform: gitlab
 #          repository: prtmax/psdk
-#          access_token: '${{ secrets.GITLAB_TOKEN }}'
+#          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
 #          ref_file: .github/ref.txt
 #
 #      - uses: swift-actions/setup-swift@v2
