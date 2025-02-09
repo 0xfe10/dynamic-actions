@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@new-clone-action
+        uses: fewensa/actions/clone-dyn@main
         with:
           repository: prtmax/xprint
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
