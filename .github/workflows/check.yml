@@ -84,4 +84,3 @@ jobs:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
           receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-
