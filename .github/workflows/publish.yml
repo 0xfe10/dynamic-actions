@@ -42,7 +42,7 @@ jobs:
       - name: Setup git credential
         run: |
           git config --global credential.helper store
-          echo 'https://${{ secrets.GH_TOKEN_0XFE10 }}@github.com' > ~/.git-credentials
+          echo 'https://0xfe10:${{ secrets.GH_TOKEN_0XFE10 }}@github.com' > ~/.git-credentials
 
       - name: Install deps
         run: |
