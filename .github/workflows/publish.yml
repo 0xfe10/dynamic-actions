@@ -59,7 +59,7 @@ jobs:
       - name: Generate variables
         run: |
           TEMPLATE_FILE=.maintain/playbooks.yml
-          DEPLOYMENT_FILE=playbooks/wiot/host_vars/cn1.ek.iprtapp.com.yml
+          DEPLOYMENT_FILE=playbooks/wiot/host_vars/iprtapp-cn1-ek.yml
           IMAGE_TAG=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
 
           yq e ".docker_app_runner.container.wiot.image = \"${IMAGE_TAG}\"" --inplace ${TEMPLATE_FILE}
