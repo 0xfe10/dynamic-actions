@@ -1,7 +1,1 @@
-Migrate to github (#2)
-
-* Migrate to github
-
-* Update clone
-
-* Fix java actoins
+change repository
