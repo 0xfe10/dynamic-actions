@@ -1,1 +1,1 @@
-recognize-character
+main
