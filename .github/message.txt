@@ -1,1 +1,1 @@
-hexoutput
+psdk rust init
