@@ -1,1 +1,1 @@
-psdk rust init
+psdk
