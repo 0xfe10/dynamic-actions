@@ -1,1 +1,1 @@
-compatible phjinfo
+add tspl cmd
