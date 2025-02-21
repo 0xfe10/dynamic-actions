@@ -1,1 +1,1 @@
-change use tiny skia
+compatible phjinfo
