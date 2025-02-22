@@ -1,1 +1,1 @@
-clippy
+format and fix output
