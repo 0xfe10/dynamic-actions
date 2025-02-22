@@ -287,7 +287,6 @@ jobs:
             --arg file ${DEPLOYMENT_FILE} \
             --arg content "$(cat ${TEMPLATE_FILE})" \
             '{file: $file, content: $content}' >> dist/change.json
-          jq -crs '.' < dist/change.json > dist/changes.json
 
       - name: Deploy
         uses: fewensa/actions/ansible-deploy@main
