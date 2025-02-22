@@ -1,1 +1,24 @@
-修改注销接口路径
+Feature user deative (#16)
+
+* 异地登录判断
+
+* 异地登录
+
+* user deactivate
+
+* 账户冻结
+
+* 用户注销根据用户id查询邮箱或手机号
+
+* 用户注销
+
+* 用户注销修改保留原注销逻辑
+
+* 修改用户注销脚本名称
+
+* 修改注销接口路径
+
+---------
+
+Co-authored-by: caiwei12 <1776236406@qq.com>
+Co-authored-by: fewensa <osuni@protonmail.com>
