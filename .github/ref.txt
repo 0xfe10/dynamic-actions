@@ -1,1 +1,1 @@
-label_variable
+main
