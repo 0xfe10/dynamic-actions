@@ -282,9 +282,9 @@ jobs:
 
       - name: Deploy
         uses: fewensa/actions/ansible-deploy@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
         with:
-          trigger_url: ${{ secrets.CI_TRIGGER_ENDPOINT }}
-          trigger_token: ${{ secrets.CI_TRIGGER_TOKEN }}
           project_name: prtmax/endfather
           changes: dist/changes.json
           ac_git_ref: __origin__/.github/ref.txt
