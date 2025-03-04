@@ -232,6 +232,7 @@ jobs:
           tar -zcf $RELEASE_PKG_NAME.tar.gz $RELEASE_PKG_NAME
           mkdir clang-dist
           mv $RELEASE_PKG_NAME.tar.gz clang-dist
+          mv clang-dist ../../../
 
       - uses: actions/upload-artifact@v4
         with:
