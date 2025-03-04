@@ -255,6 +255,9 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
+      - uses: benjlevesque/short-sha@v3.0
+      - uses: olegtarasov/get-tag@v2.1
+
       - uses: actions/download-artifact@v4
         with:
           path: clang-dist
@@ -269,7 +272,7 @@ jobs:
           MIO_IPRT_SK: ${{ secrets.MIO_IPRT_SK }}
         with:
           entrypoint: /bin/bash
-          args: -f scripts/release-calng.sh
+          args: -f scripts/release-clang.sh
 
 
   clean-artifacts:
