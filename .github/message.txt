@@ -1,1 +1,1 @@
-revert ci
+CI
