@@ -224,7 +224,9 @@ jobs:
           make package
 
       - name: Organizing releases
+        working-directory: clang
         run: |
+          cd compatible/hjinfo
           RELEASE_PKG_NAME=${{ matrix.package.name }}-${{ matrix.os.architecture }}
           mv dist $RELEASE_PKG_NAME
           tar -zcf $RELEASE_PKG_NAME.tar.gz -C $RELEASE_PKG_NAME
