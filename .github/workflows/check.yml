@@ -77,6 +77,23 @@ jobs:
             project: psdk
             language: rust
 
+  check-clang:
+    name: Check psdk-clang
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/psdk
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Make
+        working-directory: clang
+        run: |
+          cd compatible/hjinfo
+          make
 
   check-dart:
     name: Check psdk-dart
