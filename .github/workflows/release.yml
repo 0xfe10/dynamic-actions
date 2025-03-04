@@ -227,7 +227,7 @@ jobs:
         working-directory: clang
         run: |
           cd compatible/hjinfo
-          RELEASE_PKG_NAME=${{ matrix.package.name }}-${{ matrix.os.architecture }}
+          RELEASE_PKG_NAME=${{ matrix.package.name }}_${{ matrix.os.architecture }}
           mv dist $RELEASE_PKG_NAME
           tar -zcf $RELEASE_PKG_NAME.tar.gz $RELEASE_PKG_NAME
           mkdir clang-dist
