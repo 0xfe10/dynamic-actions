@@ -221,7 +221,7 @@ jobs:
         working-directory: clang
         run: |
           cd compatible/hjinfo
-          make
+          make package
 
       - name: Organizing releases
         run: |
