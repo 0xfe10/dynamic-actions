@@ -240,7 +240,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: artifact-clang-${{ matrix.os.name }}-${{ matrix.package.name }}
+          name: artifact-clang-${{ matrix.os.architecture }}-${{ matrix.package.name }}
           path: clang-dist
           overwrite: true
 
