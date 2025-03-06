@@ -275,7 +275,7 @@ jobs:
         run: |
           DIRECTORY="clang-dist"
           cd ${DIRECTORY}
-          for DIR in "*/"; do
+          for DIR in $(ls); do
             DIRNAME=$(basename "$DIR")
             tar -czvf "${DIRNAME}.tar.gz" "$DIR"
             rm -rf "$DIR"
