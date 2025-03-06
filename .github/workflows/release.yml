@@ -241,9 +241,8 @@ jobs:
           cd compatible/hjinfo
           RELEASE_PKG_NAME=${{ matrix.package.name }}-${{ matrix.os.architecture }}
           mv dist $RELEASE_PKG_NAME
-          tar -zcf $RELEASE_PKG_NAME.tar.gz $RELEASE_PKG_NAME
           mkdir clang-dist
-          mv $RELEASE_PKG_NAME.tar.gz clang-dist
+          mv $RELEASE_PKG_NAME clang-dist
           mv clang-dist ../../../
 
       - uses: actions/upload-artifact@v4
@@ -273,6 +272,15 @@ jobs:
         with:
           path: clang-dist
           merge-multiple: true
+
+      - name: tar dist
+        run: |
+          DIRECTORY="clang-dist"
+          for DIR in "$DIRECTORY"/*/; do
+            DIRNAME=$(basename "$DIR")
+            tar -czvf "$DIRECTORY/${DIRNAME}.tar.gz" "$DIR"
+            rm -rf "$DIR"
+          done
 
       - name: Publish release
         uses: docker://minio/minio:RELEASE.2024-08-03T04-33-23Z
