@@ -203,10 +203,18 @@ jobs:
     strategy:
       matrix:
         os:
+          - image: dockcross/linux-arm64
+            architecture: arm64
           - image: dockcross/linux-armv7
             architecture: armv7
           - image: dockcross/linux-x64
             architecture: x86_64
+          - image: dockcross/linux-x86
+            architecture: x86
+          - image: dockcross/linux-riscv64
+            architecture: riscv64
+          - image: dockcross/linux-riscv32
+            architecture: riscv32
         package:
           - name: hjinfo
             path: compatible/hjinfo
