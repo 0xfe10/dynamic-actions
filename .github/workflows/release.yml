@@ -274,9 +274,10 @@ jobs:
       - name: tar dist
         run: |
           DIRECTORY="clang-dist"
-          for DIR in "$DIRECTORY"/*/; do
+          cd ${DIRECTORY}
+          for DIR in "*/"; do
             DIRNAME=$(basename "$DIR")
-            tar -czvf "$DIRECTORY/${DIRNAME}.tar.gz" "$DIR"
+            tar -czvf "${DIRNAME}.tar.gz" "$DIR"
             rm -rf "$DIR"
           done
 
