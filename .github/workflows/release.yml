@@ -217,8 +217,10 @@ jobs:
             architecture: linux-riscv32
           - image: dockcross/windows-arm64
             architecture: windows-arm64
+            makeoptions: TARGET_OS=windows
           - image: dockcross/windows-armv7
             architecture: windows-armv7
+            makeoptions: TARGET_OS=windows
         package:
           - name: hjinfo
             path: compatible/hjinfo
@@ -237,7 +239,7 @@ jobs:
           cd compatible/hjinfo
           docker run --rm ${{ matrix.os.image }} > ./dockcross
           chmod +x ./dockcross
-          ./dockcross make package
+          ./dockcross make package ${{ matrix.os.makeoptions }}
 
       - name: Organizing releases
         working-directory: clang
