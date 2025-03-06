@@ -221,6 +221,12 @@ jobs:
           - image: dockcross/windows-armv7
             architecture: windows-armv7
             makeoptions: TARGET_OS=windows
+          - image: dockcross/windows-shared-x64
+            architecture: windows-shared-x64
+            makeoptions: TARGET_OS=windows
+          - image: dockcross/windows-shared-x86
+            architecture: windows-shared-x86
+            makeoptions: TARGET_OS=windows
         package:
           - name: hjinfo
             path: compatible/hjinfo
