@@ -205,7 +205,7 @@ jobs:
         os:
           - image: dockcross/linux-armv7
             architecture: armv7
-          - image: dockercross/linux-x64
+          - image: dockcross/linux-x64
             architecture: x86_64
         package:
           - name: hjinfo
