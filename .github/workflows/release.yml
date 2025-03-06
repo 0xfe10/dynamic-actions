@@ -204,17 +204,17 @@ jobs:
       matrix:
         os:
           - image: dockcross/linux-arm64
-            architecture: arm64
+            architecture: linux-arm64
           - image: dockcross/linux-armv7
-            architecture: armv7
+            architecture: linux-armv7
           - image: dockcross/linux-x64
-            architecture: x86_64
+            architecture: linux-x86_64
           - image: dockcross/linux-x86
-            architecture: x86
+            architecture: linux-x86
           - image: dockcross/linux-riscv64
-            architecture: riscv64
+            architecture: linux-riscv64
           - image: dockcross/linux-riscv32
-            architecture: riscv32
+            architecture: linux-riscv32
         package:
           - name: hjinfo
             path: compatible/hjinfo
@@ -239,15 +239,13 @@ jobs:
         working-directory: clang
         run: |
           cd compatible/hjinfo
-          RELEASE_PKG_NAME=${{ matrix.package.name }}-${{ matrix.os.architecture }}
-          mv dist $RELEASE_PKG_NAME
-          mkdir clang-dist
-          mv $RELEASE_PKG_NAME clang-dist
+          mkdir -p clang-dist/${{ matrix.package.name }}
+          mv dist clang-dist/${{ matrix.package.name }}/${{ matrix.os.architecture }}
           mv clang-dist ../../../
 
       - uses: actions/upload-artifact@v4
         with:
-          name: artifact-clang-${{ matrix.os.architecture }}-${{ matrix.package.name }}
+          name: artifact-clang-${{ matrix.package.name }}-${{ matrix.os.architecture }}
           path: clang-dist
           overwrite: true
 
