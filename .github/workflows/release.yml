@@ -257,6 +257,9 @@ jobs:
         run: |
           cd compatible/hjinfo
           mkdir -p clang-dist/${{ matrix.package.name }}
+          cd dist
+          sha1sum * > sha1.txt
+          cd ../
           mv dist clang-dist/${{ matrix.package.name }}/${{ matrix.os.architecture }}
           mv clang-dist ../../../
 

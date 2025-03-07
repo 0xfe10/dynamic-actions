@@ -1,1 +1,1 @@
-arm musl
+sha1
