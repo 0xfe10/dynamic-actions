@@ -1,1 +1,1 @@
-CI
+arm musl
