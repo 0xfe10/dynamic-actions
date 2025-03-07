@@ -204,6 +204,8 @@ jobs:
         os:
           - image: dockcross/linux-arm64
             architecture: linux-arm64
+          - image: dockcross/linux-arm64-musl
+            architecture: linux-arm64-musl
           - image: dockcross/linux-armv7
             architecture: linux-armv7
           - image: dockcross/linux-armv7l-musl
