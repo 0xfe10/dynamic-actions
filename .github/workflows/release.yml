@@ -241,7 +241,6 @@ jobs:
       - name: Build ${{ matrix.package.path }}
         working-directory: clang
         run: |
-          cd compatible/hjinfo
           docker run --rm ${{ matrix.os.image }} > ./dockcross
           chmod +x ./dockcross
           ./dockcross scripts/dockcross-build.sh ${{ matrix.package.name }} ${{ matrix.package.path }} ${{ matrix.os.architecture }}
