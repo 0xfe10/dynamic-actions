@@ -243,7 +243,11 @@ jobs:
         run: |
           docker run --rm ${{ matrix.os.image }} > ./dockcross
           chmod +x ./dockcross
-          ./dockcross scripts/dockcross-build.sh ${{ matrix.package.name }} ${{ matrix.package.path }} ${{ matrix.os.architecture }}
+          ./dockcross scripts/dockcross-build.sh \
+            ${{ matrix.package.name }} \
+            ${{ matrix.package.path }} \
+            ${{ matrix.os.architecture }}
+          mv clang-dist ../
 
       - uses: actions/upload-artifact@v4
         with:
