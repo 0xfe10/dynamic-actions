@@ -93,7 +93,7 @@ jobs:
         working-directory: clang
         run: |
           cd compatible/hjinfo
-          make
+          ./scripts/build.sh
 
   check-dart:
     name: Check psdk-dart
