@@ -210,10 +210,6 @@ jobs:
             architecture: linux-armv7
           - image: dockcross/linux-armv7l-musl
             architecture: linux-armv7l-musl
-          - image: dockcross/linux-armv6-musl
-            architecture: linux-armv6-musl
-          - image: dockcross/linux-armv5-musl
-            architecture: linux-armv5-musl
           - image: dockcross/linux-x64
             architecture: linux-x86_64
           - image: dockcross/linux-x86
@@ -224,16 +220,12 @@ jobs:
             architecture: linux-riscv32
           - image: dockcross/windows-arm64
             architecture: windows-arm64
-            makeoptions: TARGET_OS=windows
           - image: dockcross/windows-armv7
             architecture: windows-armv7
-            makeoptions: TARGET_OS=windows
           - image: dockcross/windows-shared-x64
             architecture: windows-shared-x64
-            makeoptions: TARGET_OS=windows
           - image: dockcross/windows-shared-x86
             architecture: windows-shared-x86
-            makeoptions: TARGET_OS=windows
         package:
           - name: hjinfo
             path: compatible/hjinfo
@@ -252,18 +244,7 @@ jobs:
           cd compatible/hjinfo
           docker run --rm ${{ matrix.os.image }} > ./dockcross
           chmod +x ./dockcross
-          ./dockcross make package ${{ matrix.os.makeoptions }}
-
-      - name: Organizing releases
-        working-directory: clang
-        run: |
-          cd compatible/hjinfo
-          mkdir -p clang-dist/${{ matrix.package.name }}
-          cd dist
-          sha1sum * > sha1.txt
-          cd ../
-          mv dist clang-dist/${{ matrix.package.name }}/${{ matrix.os.architecture }}
-          mv clang-dist ../../../
+          ./dockcross scripts/dockcross-build.sh ${{ matrix.package.name }} ${{ matrix.package.path }} ${{ matrix.os.architecture }}
 
       - uses: actions/upload-artifact@v4
         with:
