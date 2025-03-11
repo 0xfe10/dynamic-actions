@@ -221,22 +221,22 @@ jobs:
           #   architecture: linux-riscv64
           # - image: dockcross/linux-riscv32
           #   architecture: linux-riscv32
-          # - image: dockcross/windows-arm64
-          #   architecture: windows-arm64
-          # - image: dockcross/windows-armv7
-          #   architecture: windows-armv7
-          - image: dockcross/windows-shared-x64
-            architecture: windows-shared-x64
-            linktype: shared
-          - image: dockcross/windows-shared-x86
-            architecture: windows-shared-x86
-            linktype: shared
-          - image: dockcross/windows-static-x64
-            architecture: windows-static-x64
-            linktype: static
-          - image: dockcross/windows-static-x86
-            architecture: windows-static-x86
-            linktype: static
+          - image: dockcross/windows-arm64
+            architecture: windows-arm64
+          - image: dockcross/windows-armv7
+            architecture: windows-armv7
+          # - image: dockcross/windows-shared-x64
+          #   architecture: windows-shared-x64
+          #   linktype: shared
+          # - image: dockcross/windows-shared-x86
+          #   architecture: windows-shared-x86
+          #   linktype: shared
+          # - image: dockcross/windows-static-x64
+          #   architecture: windows-static-x64
+          #   linktype: static
+          # - image: dockcross/windows-static-x86
+          #   architecture: windows-static-x86
+          #   linktype: static
         package:
           - name: hjinfo
             path: compatible/hjinfo
