@@ -1,1 +1,1 @@
-CI and rename linux x64
+ci
