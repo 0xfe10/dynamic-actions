@@ -200,10 +200,10 @@ jobs:
     name: Build psdk-clang
     runs-on: ubuntu-latest
     strategy:
-      linktype:
-        - shared
-        - static
       matrix:
+        linktype:
+          - shared
+          - static
         os:
           # - image: dockcross/linux-arm64
           #   architecture: linux-arm64
