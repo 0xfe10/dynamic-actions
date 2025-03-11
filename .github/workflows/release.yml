@@ -205,38 +205,40 @@ jobs:
           - shared
           - static
         os:
-          # - image: dockcross/linux-arm64
-          #   architecture: linux-arm64
-          # - image: dockcross/linux-arm64-musl
-          #   architecture: linux-arm64-musl
-          # - image: dockcross/linux-armv7
-          #   architecture: linux-armv7
-          # - image: dockcross/linux-armv7l-musl
-          #   architecture: linux-armv7l-musl
-          # - image: dockcross/linux-x64
-          #   architecture: linux-x86_64
-          # - image: dockcross/linux-x86
-          #   architecture: linux-x86
-          # - image: dockcross/linux-riscv64
-          #   architecture: linux-riscv64
-          # - image: dockcross/linux-riscv32
-          #   architecture: linux-riscv32
+          - image: dockcross/linux-arm64
+            architecture: linux-arm64
+          - image: dockcross/linux-arm64-musl
+            architecture: linux-arm64-musl
+          - image: dockcross/linux-armv7
+            architecture: linux-armv7
+          - image: dockcross/linux-armv7l-musl
+            architecture: linux-armv7l-musl
+          - image: dockcross/linux-x64
+            architecture: linux-x86_64
+          - image: dockcross/linux-x86
+            architecture: linux-x86
+          - image: dockcross/linux-riscv64
+            architecture: linux-riscv64
+          - image: dockcross/linux-riscv32
+            architecture: linux-riscv32
           - image: dockcross/windows-arm64
             architecture: windows-arm64
+            linktype: static
           - image: dockcross/windows-armv7
             architecture: windows-armv7
-          # - image: dockcross/windows-shared-x64
-          #   architecture: windows-shared-x64
-          #   linktype: shared
-          # - image: dockcross/windows-shared-x86
-          #   architecture: windows-shared-x86
-          #   linktype: shared
-          # - image: dockcross/windows-static-x64
-          #   architecture: windows-static-x64
-          #   linktype: static
-          # - image: dockcross/windows-static-x86
-          #   architecture: windows-static-x86
-          #   linktype: static
+            linktype: static
+          - image: dockcross/windows-shared-x64
+            architecture: windows-shared-x64
+            linktype: shared
+          - image: dockcross/windows-shared-x86
+            architecture: windows-shared-x86
+            linktype: shared
+          - image: dockcross/windows-static-x64
+            architecture: windows-static-x64
+            linktype: static
+          - image: dockcross/windows-static-x86
+            architecture: windows-static-x86
+            linktype: static
         package:
           - name: hjinfo
             path: compatible/hjinfo
