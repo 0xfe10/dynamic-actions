@@ -214,7 +214,7 @@ jobs:
           - image: dockcross/linux-armv7l-musl
             architecture: linux-armv7l-musl
           - image: dockcross/linux-x64
-            architecture: linux-x86_64
+            architecture: linux-x64
           - image: dockcross/linux-x86
             architecture: linux-x86
           - image: dockcross/linux-riscv64
@@ -266,7 +266,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ matrix.os.linktype == '' || matrix.os.linktype == matrix.linktype }}
         with:
-          name: artifact-clang-${{ matrix.package.name }}-${{ matrix.os.architecture }}
+          name: artifact-clang-${{ matrix.package.name }}-${{ matrix.os.architecture }}-${{ matrix.linktype }}
           path: clang-dist
           overwrite: true
 
