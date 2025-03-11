@@ -1,1 +1,1 @@
-clang-test
+try-clang-build
