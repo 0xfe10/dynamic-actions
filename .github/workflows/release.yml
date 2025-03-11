@@ -4,9 +4,9 @@ on:
   push:
     tags:
       - "v*-psdk"
-  push:
-    branches:
-      - '**'
+  # push:
+  #   branches:
+  #     - '**'
 
 jobs:
 
