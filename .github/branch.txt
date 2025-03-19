@@ -1,1 +1,1 @@
-one-click-login
+main
