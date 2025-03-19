@@ -1,1 +1,1 @@
-disable release
+main.c
