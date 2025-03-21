@@ -67,7 +67,6 @@ jobs:
       - name: Generate variables
         run: |
           TEMPLATE_FILE=playbooks.yml
-          echo '' > ${TEMPLATE_FILE}
 
           IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
 
