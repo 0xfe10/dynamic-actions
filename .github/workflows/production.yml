@@ -39,7 +39,7 @@ jobs:
       - uses: benjlevesque/short-sha@v3.0
 
       - name: Publish docker image hash
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v3
         with:
           push: true
           file: docker/${{ matrix.package }}.Dockerfile
