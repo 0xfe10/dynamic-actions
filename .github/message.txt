@@ -1,1 +1,1 @@
-Merge branch 'genesis' of https://github.com/prtmax/guestkey into genesis
+fix project name
