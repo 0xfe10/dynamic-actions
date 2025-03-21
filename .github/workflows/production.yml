@@ -44,6 +44,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          context: .
           file: docker/${{ matrix.package }}.Dockerfile
           tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-${{ matrix.package }}:sha-${{ env.SHA }}
 
