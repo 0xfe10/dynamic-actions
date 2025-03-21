@@ -58,7 +58,7 @@ jobs:
       - name: Checkout
         uses: fewensa/actions/clone-dyn@main
         with:
-          repository: prtmax/endfather
+          repository: prtmax/guestkey
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
@@ -67,6 +67,7 @@ jobs:
       - name: Generate variables
         run: |
           TEMPLATE_FILE=.maintain/playbooks.yml
+          echo '' > ${TEMPLATE_FILE}
 
           IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
 
