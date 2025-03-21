@@ -26,6 +26,9 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
+      - name: Check
+        run: ls -la
+
       - name: Docker login
         uses: docker/login-action@v1
         with:
