@@ -36,8 +36,7 @@ jobs:
           node-version: '22'
 
       - name: Check build
-        working-directory: launchers/${{ matrix.launcher }}
         run: |
           pnpm install
-          pnpm build
+          pnpm --filter @aynhub/${{ matrix.launcher }} build
 
