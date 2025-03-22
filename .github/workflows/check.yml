@@ -16,7 +16,7 @@ jobs:
           - windows-latest
         launcher:
           - launcher-hatch
-          - launcher-code
+          - launcher-codegen
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
