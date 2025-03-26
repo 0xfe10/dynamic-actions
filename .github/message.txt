@@ -1,1 +1,7 @@
-auth and org modify
+Feature auth with jwt (#2)
+
+* Test
+
+* Test auth
+
+* auth and org modify
