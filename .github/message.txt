@@ -1,7 +1,1 @@
-Feature auth with jwt (#2)
-
-* Test
-
-* Test auth
-
-* auth and org modify
+Merge branch 'main' into graphql-filename
