@@ -1,1 +1,1 @@
-更改graphql文件名称和查询机构信息
+auth and org modify
