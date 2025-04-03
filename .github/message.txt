@@ -1,1 +1,1 @@
-clippy
+fix paper feed
