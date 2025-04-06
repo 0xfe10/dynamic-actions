@@ -3,16 +3,36 @@ name: '[oms-zkr] Deploy'
 on:
   push:
     branches:
-      - 'migrate-github'
+      - '**'
 
 env:
   #DOCKER_REGISTRY: uhub.service.ucloud.cn
   DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
 
 jobs:
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure main
+        id: ensure_main
+        run: |
+          if grep -q 'migrate-github' .github/branch.txt; then
+            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          fi
+
   build-java-pompeii:
     name: Build java (pompeii)
     runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v4
       - name: Setup Maven Action
@@ -51,6 +71,9 @@ jobs:
   build-node:
     name: Build node
     runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     strategy:
       matrix:
         package:
