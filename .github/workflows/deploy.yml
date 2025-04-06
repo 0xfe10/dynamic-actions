@@ -99,7 +99,6 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Build project
-        working-directory: ${{ matrix.package.NAME }}
         run: |
           docker run --rm \
             -v ${{ github.workspace }}/${{ matrix.package.NAME }}:/app \
