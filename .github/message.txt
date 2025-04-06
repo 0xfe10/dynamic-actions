@@ -1,1 +1,1 @@
-add GitHub workflows for deployment and branch triggering
+Migrate to github (#1)
