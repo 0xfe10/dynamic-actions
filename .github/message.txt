@@ -1,1 +1,1 @@
-Update deployment workflow to ensure main branch conditions and allow all branches for triggering
+Update database secrets in migration job for OMSK configuration
