@@ -1,1 +1,1 @@
-Update database secrets in migration job for OMSK configuration
+Fix environment variable assignments in migration job for OMSK configuration

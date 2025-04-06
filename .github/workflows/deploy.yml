@@ -144,9 +144,9 @@ jobs:
       - name: Migrate
         env:
           RDS_DB_HOST: ${{ secrets.OMSK_RDS_DB_HOST }}
-          RDS_DB_PORT: ${{ secrets.OMSK_RDS_DB_PASSWORD }}
-          RDS_DB_USER: ${{ secrets.OMSK_RDS_DB_PORT }}
-          RDS_DB_PASSWORD: ${{ secrets.OMSK_RDS_DB_USER }}
+          RDS_DB_PORT: ${{ secrets.OMSK_RDS_DB_PORT }}
+          RDS_DB_USER: ${{ secrets.OMSK_RDS_DB_USER }}
+          RDS_DB_PASSWORD: ${{ secrets.OMSK_RDS_DB_PASSWORD }}
         run: |
           cd pompeii
           export RDS_DB_SCHEMA=pompeii_zkr_prod;
