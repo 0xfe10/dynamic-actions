@@ -1,1 +1,1 @@
-Remove working-directory specification from build step in deploy workflow
+Refactor findParents method to use raw data stream for outlet retrieval
