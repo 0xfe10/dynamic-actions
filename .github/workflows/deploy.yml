@@ -1,0 +1,179 @@
+name: '[oms-jphs] Deploy'
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  #DOCKER_REGISTRY: uhub.service.ucloud.cn
+  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+
+jobs:
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure main
+        id: ensure_main
+        run: |
+          if grep -q 'main' .github/branch.txt; then
+            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          fi
+
+  build-java:
+    name: Build java
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.18.0
+        with:
+          java-version: 17
+          maven-version: 3.9.8
+
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/zoms-jphs
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Build
+        working-directory: zoms-api
+        run: mvn clean package -Dmaven.test.skip=true
+
+      - uses: benjlevesque/short-sha@v3.0
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: zoms-api
+          file: zoms-api/docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:zomsapi-sha-${{ env.SHA }}
+
+  build-node:
+    name: Build node
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/zoms-jphs
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Build project
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/zoms-web:/app \
+            -w /app \
+            -e CI=true \
+            -e NODE_OPTIONS=--max_old_space_size=4096 \
+            node:10.16-alpine \
+            sh -c 'npm i && npm run build:prod'
+
+      - uses: benjlevesque/short-sha@v3.0
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: zoms-web
+          file: zoms-web/docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:zomsweb-sha-${{ env.SHA }}
+
+  migrate-db:
+    name: Migrate database
+    runs-on: ubuntu-latest
+    needs:
+      - build-java
+      - build-node
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/zoms-jphs
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Migrate
+        env:
+          RDS_DB_HOST: ${{ secrets.OMSJ_RDS_DB_HOST }}
+          RDS_DB_PORT: ${{ secrets.OMSJ_RDS_DB_PORT }}
+          RDS_DB_USER: ${{ secrets.OMSJ_RDS_DB_USER }}
+          RDS_DB_PASSWORD: ${{ secrets.OMSJ_RDS_DB_PASSWORD }}
+        run: |
+          cd zoms-api
+          export RDS_DB_SCHEMA=zoms_jphs_prod;
+          sh -f ci/flyway.sh migrate
+
+  deploy-app:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    needs:
+      - migrate-db
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/zoms-jphs
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Generate variables
+        run: |
+          TEMPLATE_FILE=playbooks.yml
+          > ${TEMPLATE_FILE}
+
+          IMAGE_TAG_API=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:zomsapi-sha-${{ env.SHA }}
+          IMAGE_TAG_WEB=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:zomsweb-sha-${{ env.SHA }}
+          yq e ".docker_app_runner.container.omsj_api.image = \"${IMAGE_TAG_API}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.omsj_web.image = \"${IMAGE_TAG_WEB}\"" --inplace ${TEMPLATE_FILE}
+          mkdir dist
+
+          jq -n \
+            --arg file playbooks/oms-jphs/host_vars/cn1.ucloud.ztokr.com.yml \
+            --arg content "$(cat ${TEMPLATE_FILE})" \
+            '{file: $file, content: $content}' >> dist/change.json
+          jq -crs '.' < dist/change.json > dist/changes.json
+          cat dist/changes.json
+
+      - name: Deploy
+        uses: fewensa/actions/ansible-deploy@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+        with:
+          project_name: repotea-workspace/zoms-jphs
+          changes: dist/changes.json
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
