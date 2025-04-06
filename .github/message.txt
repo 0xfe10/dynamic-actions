@@ -1,1 +1,530 @@
-Update branch check in deploy workflow to ensure 'main' is referenced
+Prod (#2)
+
+* fix apidoc
+
+* fix apidoc
+
+* CI
+
+* simplify
+
+* test
+
+* bump enoa
+
+* fix no odetails
+
+* ident valid and weight crate
+
+* condition
+
+* test
+
+* fix
+
+* fix ident valid
+
+* CI
+
+* DEPLOY_REGION
+
+* deploy app
+
+* generic
+
+* build image
+
+* change connection timeout
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* CI
+
+* add exclude outlets
+
+* archive
+
+* fix bug
+
+* first archive running
+
+* fix
+
+* fix
+
+* custom page size
+
+* fix
+
+* fix trace default ctime
+
+* fix ci
+
+* CI
+
+* Update export title
+
+* large billfolw
+
+* ci
+
+* Fix fare
+
+* Fix fare
+
+* valid
+
+* fix compile
+
+* Remove choice confirm
+
+* crate search
+
+* download crate search table
+
+* open time cond
+
+* fix check bug
+
+* Add ident vimage
+
+* init babylon
+
+* uniapp wrapper
+
+* Complete upload
+
+* ci
+
+* order check and better export
+
+* fix base server
+
+* best url param
+
+* export idcard
+
+* better view
+
+* fix jszip
+
+* fix export zip
+
+* better file name
+
+* fix duplicate image
+
+* fix bill
+
+* fix server
+
+* fix
+
+* fix realu error
+
+* fix unsafe original file name
+
+* no verify
+
+* release crate search to outlets
+
+* test
+
+* Finished send sms
+
+* Download special idcard image
+
+* Oss file name and trace search api
+
+* Try fix forward
+
+* Common waybill trace search
+
+* Fix remain financial check
+
+* Fix max request size to 5mb and support download image url
+
+* Add missing sql filed
+
+* Support cn api
+
+* Export ident vimage url for declaration spec page
+
+* Fix wrong first price
+
+* Fix wrong over area bug
+
+* Fix wrong over area fee
+
+* Auto audit product
+
+* Enable cn bill for roman
+
+* validate receiver phone
+
+* fix phone validator
+
+* Fix id image export
+
+* price check
+
+* fix bug about split project
+
+* try fix bug about calculate price
+
+* Fix wrong sql
+
+* Fix max money detect bug
+
+* New tax cloc logic and fix order tax cloc
+
+* Update jwt secret
+
+* fix wrong balance detect
+
+* fix bill check
+
+* fix bill check part 2
+
+* update phone number check
+
+* fix phone check
+
+* Add smsjob service
+
+* Fix order create
+
+* Check product exists
+
+* Add apidoc
+
+* Try fix ident vimage duplicate issue
+
+* Update romain large price to 5
+
+* Increase pool size
+
+* Fix product modify
+
+* Fake commit
+
+* 12.5 to 13.8
+
+* CI
+
+* CI
+
+* CI
+
+* Deny id cards
+
+* CI
+
+* CI
+
+* ci
+
+* disable deploy pompeii
+
+* Update homepage
+
+* Improve order inspect
+
+* Fix CI
+
+* Improve order inspect
+
+* Improve CI and order validator
+
+* Fix CI
+
+* CI
+
+* Add remark for roman
+
+* Add restrict
+
+* Update 发货人名称 to 发件人名称
+
+* migrate website access use raw ip
+
+* change use raw ip to deply
+
+* Set order detail datetime to current time
+
+* Try use new trigger format
+
+* Temple disable deploy babylon
+
+* CI
+
+* fix ci
+
+* Migrate deploy to new server
+
+* Update .gitlab-ci.yml
+
+* Update link
+
+* Try to build omsk
+
+* Build omsk
+
+* Build omsk
+
+* Fix build
+
+* Fix oss
+
+* Updat api host
+
+* Use ali oss domain
+
+* Improve expire time
+
+* CI
+
+* Enable sms schedule task
+
+* Add deny ident cards
+
+* add uq index for order and oinf
+
+* fix ci
+
+* Update deny ident card
+
+* add new deny idecard
+
+* improve ident vimage check
+
+* ident vimage
+
+* add weight to order search
+
+* add weight to order search
+
+* change oss upload new upyun
+
+* fix babylon
+
+* improve vimage link
+
+* improve image upload size
+
+* fix order view
+
+* try to fix order view
+
+* try to fix order view
+
+* fix idimage preview
+
+* fix idvimage preview
+
+* fix link
+
+* trigger ci
+
+* fix duplicte order
+
+* fix syntax
+
+* update avatar state
+
+* update trace query
+
+* fix add transport
+
+* change trace query order
+
+* push trace use multiple thread
+
+* reorder trace push
+
+* update trace order
+
+* add data info when product modified
+
+* add deny phone and idcard, update min money
+
+* add deny phone and idcard part 2
+
+* add deny idcards
+
+* increase task thread pool
+
+* try to add thread
+
+* merge trace operate
+
+* plus trace times multiple
+
+* improve trace push
+
+* improve trace push part 2
+
+* order image
+
+* release cron
+
+* fix sh
+
+* try to fix oss presigned
+
+* bump jdk
+
+* add order image log
+
+* update order image fixed delay
+
+* update order image size
+
+* fix query
+
+* improve data response
+
+* remove tax
+
+* taxcol
+
+* order valid
+
+* improve taxctl
+
+* add template
+
+* taxctl
+
+* support old java version
+
+* clean tax and disable order image generate
+
+* add deny identify code and phone
+
+* Update .gitlab-ci.yml
+
+* update taxctl
+
+* fix wrong taxctl description
+
+* order image import and export
+
+* fix order image link
+
+* fix order image generate
+
+* Add user remarks
+
+* Fix yq
+
+* Add deny idcard and phone
+
+* Fix push waybill and add multithread
+
+* Add deny phone and idcard
+
+* Update Dockerfile
+
+* Code shrink
+
+* Update jwt
+
+* query sms job by trace states
+
+* add deny dard and phone
+
+* deny info
+
+* wuhan custom
+
+* calc quote
+
+* udpate template
+
+* deny
+
+* default origin
+
+* check total money
+
+* fix ci
+
+* fix ci
+
+* 1000 -> 2000
+
+* fix order info
+
+* fix outlets quote
+
+* order validator
+
+* format
+
+* migrate
+
+* try to fix taxctl
+
+* Migrate to github (#1)
+
+* Test build image
+
+* trigger
+
+* CI
+
+* CI
+
+* CI
+
+* Refactor GitHub Actions workflow: rename build job and update Docker images
+
+* Fix Docker run command in deployment workflow to correctly set working directory
+
+* Fix Docker volume path in deployment workflow and update import path in types.js
+
+* Reorganize Maven setup in deployment workflow and restore short SHA action
+
+* Remove duplicate short SHA action in deployment workflow
+
+* Reintroduce Maven setup action in deployment workflow
+
+* CI
+
+* Update deployment workflow name and target branch for migration
+
+* Add GitHub Actions workflows for branch triggering and deployment
+
+* Update deployment workflow to ensure main branch conditions and allow all branches for triggering
+
+* Update database secrets in migration job for OMSK configuration
+
+* Fix environment variable assignments in migration job for OMSK configuration
+
+* Update branch check in deploy workflow to ensure 'main' is referenced
+
+---------
+
+Co-authored-by: fewensa <fewensa@protonmail.com>
+Co-authored-by: fewensa <osuni@protonmail.com>
