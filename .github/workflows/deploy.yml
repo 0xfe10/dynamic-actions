@@ -1,0 +1,177 @@
+name: '[oms-zkr] Deploy'
+
+on:
+  push:
+    branches:
+      - 'migrate-github'
+
+env:
+  #DOCKER_REGISTRY: uhub.service.ucloud.cn
+  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+
+jobs:
+  build-java-pompeii:
+    name: Build java (pompeii)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.18.0
+        with:
+          java-version: 17
+          maven-version: 3.9.8
+
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/oms-zkr
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Build
+        working-directory: pompeii
+        run: mvn clean package -Dmaven.test.skip=true
+
+      - uses: benjlevesque/short-sha@v3.0
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: pompeii
+          file: pompeii/docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:pompeii-sha-${{ env.SHA }}
+
+  build-node:
+    name: Build node
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - NAME: cusco
+            INSTALL: npm i
+            BUILD: npm run build:prod
+            DOCKER_IMAGE: node:10.16-alpine
+          - NAME: roman
+            INSTALL: npm i
+            BUILD: npm run build:prod
+            DOCKER_IMAGE: node:10.16-alpine
+          - NAME: babylon
+            INSTALL: yarn install
+            BUILD: yarn build:h5
+            DOCKER_IMAGE: node:16.20.1-alpine
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/oms-zkr
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Build project
+        working-directory: ${{ matrix.package.NAME }}
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/${{ matrix.package.NAME }}:/app \
+            -w /app \
+            -e CI=true \
+            -e NODE_OPTIONS=--max_old_space_size=4096 \
+            ${{ matrix.package.DOCKER_IMAGE }} \
+            sh -c '${{ matrix.package.INSTALL }} && ${{ matrix.package.BUILD }}'
+
+      - uses: benjlevesque/short-sha@v3.0
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: ${{ matrix.package.NAME }}
+          file: ${{ matrix.package.NAME }}/docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:${{ matrix.package.NAME }}-sha-${{ env.SHA }}
+
+
+  migrate-db:
+    name: Migrate database
+    runs-on: ubuntu-latest
+    needs:
+      - build-java-pompeii
+      - build-node
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/oms-zkr
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Migrate
+        env:
+          RDS_DB_HOST: ${{ secrets.RDS_DB_HOST }}
+          RDS_DB_PORT: ${{ secrets.RDS_DB_PORT }}
+          RDS_DB_USER: ${{ secrets.RDS_DB_USER }}
+          RDS_DB_PASSWORD: ${{ secrets.RDS_DB_PASSWORD }}
+        run: |
+          cd pompeii
+          export RDS_DB_SCHEMA=pompeii_zkr_prod;
+          sh -f cicd/liquibase.sh update
+
+  deploy-app:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    needs:
+      - migrate-db
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/oms-zkr
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Generate variables
+        run: |
+          TEMPLATE_FILE=playbooks.yml
+          > ${TEMPLATE_FILE}
+
+          IMAGE_TAG_POMPEII=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:pompeii-sha-${{ env.SHA }}
+          IMAGE_TAG_CUSCO=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:cusco-sha-${{ env.SHA }}
+          IMAGE_TAG_ROMAN=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:roman-sha-${{ env.SHA }}
+          IMAGE_TAG_BABYLON=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:babylon-sha-${{ env.SHA }}
+          yq e ".docker_app_runner.container.omsk_pompeii.image = \"${IMAGE_TAG_POMPEII}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.omsk_cusco.image = \"${IMAGE_TAG_CUSCO}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.omsk_roman.image = \"${IMAGE_TAG_ROMAN}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.omsk_babylon.image = \"${IMAGE_TAG_BABYLON}\"" --inplace ${TEMPLATE_FILE}
+          mkdir dist
+
+          jq -n \
+            --arg file playbooks/oms-zkr/host_vars/cn1.ucloud.ztokr.com.yml \
+            --arg content "$(cat ${TEMPLATE_FILE})" \
+            '{file: $file, content: $content}' >> dist/change.json
+          jq -crs '.' < dist/change.json > dist/changes.json
+          cat dist/changes.json
+
+      - name: Deploy
+        uses: fewensa/actions/ansible-deploy@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+        with:
+          project_name: repotea-workspace/oms-zkr
+          changes: dist/changes.json
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
