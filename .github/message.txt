@@ -1,6 +1,5 @@
-Merge remote-tracking branch 'origin/portrait' into portrait
+Portrait (#71)
 
-# Conflicts:
-#	babosa/commons/types-frame/src/main/java/in/kahub/endfather/babosa/common/types/frame/model/application/Portrait.java
-#	woodii/src/api/universal/portrait.ts
-#	woodii/src/views/app/universal/portrait.vue
+* ai人像接入豆包api
+
+* 人像增加风格图字段
