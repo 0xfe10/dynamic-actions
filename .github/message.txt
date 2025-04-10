@@ -1,1 +1,1 @@
-修改根据locale返回oss信息 (#74)
+修改根据locale返回oss信息
