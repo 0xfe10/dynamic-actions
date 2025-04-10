@@ -1,1 +1,1 @@
-rust cpcl
+Revert release CI
