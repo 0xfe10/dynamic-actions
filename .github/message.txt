@@ -1,1 +1,1 @@
-Refactor OrderValidator to streamline outlet ID retrieval and enhance product quantity validation logic
+Fix typo in product tax number variable name in OrderValidator
