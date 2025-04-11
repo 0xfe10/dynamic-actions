@@ -1,1 +1,1 @@
-Refactor outlet parent retrieval logic for clarity and efficiency
+Refactor OrderValidator to streamline outlet ID retrieval and enhance product quantity validation logic
