@@ -1,1 +1,1 @@
-Add conan profile for arm-openwrt-linux-gnueabi
+Add OpenWRT ARMv32 support to release workflow

@@ -239,6 +239,8 @@ jobs:
             architecture: linux-riscv64
           - image: dockcross/linux-riscv32
             architecture: linux-riscv32
+          - image: ghcr.io/repotea-workflow/devlife/dockcross-openwrt-armv32-sunxi
+            architecture: arm-openwrt-linux-gnueabi
         package:
           - name: hjinfo
             path: compatible/hjinfo
