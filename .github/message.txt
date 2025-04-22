@@ -1,1 +1,1 @@
-CI
+Update setup script and dependencies for xusql setup process
