@@ -55,11 +55,11 @@ jobs:
             unixodbc unixodbc-dev \
             gcc-x86-64-linux-gnu
 
-      # - name: Install dependencies (macos)
-      #   if: matrix.package.target == 'macos'
-      #   run: |
-      #     brew install coreutils
-      #     brew install unixodbc
+      - name: Install dependencies (macos)
+        if: matrix.package.target == 'macos'
+        run: |
+          brew install coreutils
+          brew install unixodbc
 
       - name: Check xusql
         working-directory: core
