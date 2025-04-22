@@ -1,1 +1,1 @@
-Update setup script and dependencies for xusql setup process
+Fix download URL versioning in setup script
