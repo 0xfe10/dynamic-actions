@@ -1,1 +1,1 @@
-Fix download URL versioning in setup script
+Merge branch 'go0flutter' of https://github.com/prtmax/xusql into go2flutter
