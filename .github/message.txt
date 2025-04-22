@@ -1,1 +1,1 @@
-fix: Update workflow to correctly set package targets and working directory
+CI
