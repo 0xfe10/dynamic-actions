@@ -13,7 +13,9 @@ jobs:
         package:
           - os: windows-latest
             target: windows
-          - os: macos-latest
+          # - os: macos-latest
+          #   target: macos
+          - os: ubuntu-latest
             target: linux
     runs-on: ${{ matrix.package.os }}
     steps:
