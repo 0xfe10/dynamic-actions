@@ -13,8 +13,8 @@ jobs:
         package:
           - os: windows-latest
             target: windows
-          # - os: macos-latest
-          #   target: macos
+          - os: macos-latest
+            target: macos
           - os: ubuntu-latest
             target: linux
     runs-on: ${{ matrix.package.os }}
@@ -27,10 +27,10 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - name: Setup Flutter SDK
-        uses: flutter-actions/setup-flutter@v3
-        with:
-          channel: stable
+      # - name: Setup Flutter SDK
+      #   uses: flutter-actions/setup-flutter@v3
+      #   with:
+      #     channel: stable
 
       - uses: actions/setup-go@v5
         with:
@@ -41,10 +41,11 @@ jobs:
           go version
           flutter --version
 
-      - name: Install dependencies (windows)
-        if: matrix.package.target == 'windows'
-        run: |
-          choco install sqlserver-odbcdriver
+      # - name: Install dependencies (windows)
+      #   if: matrix.package.target == 'windows'
+      #   run: |
+      #     choco install zip
+      #     choco install sqlserver-odbcdriver
 
       - name: Install dependencies (linux)
         if: matrix.package.target == 'linux'
@@ -54,10 +55,11 @@ jobs:
             unixodbc unixodbc-dev \
             gcc-x86-64-linux-gnu
 
-      - name: Install dependencies (macos)
-        if: matrix.package.target == 'macos'
-        run: |
-          brew install unixodbc
+      # - name: Install dependencies (macos)
+      #   if: matrix.package.target == 'macos'
+      #   run: |
+      #     brew install coreutils
+      #     brew install unixodbc
 
       - name: Check xusql
         working-directory: core
