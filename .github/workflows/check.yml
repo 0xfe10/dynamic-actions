@@ -1,0 +1,80 @@
+name: '[xusql] Check'
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  check:
+    name: Check
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/xusql
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Setup Flutter SDK
+        uses: flutter-actions/setup-flutter@v3
+        with:
+          channel: stable
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '^1.24.2'
+
+      - name: Test deps
+        run: |
+          go version
+          flutter --version
+
+      - name: Check xusql
+        working-directory: xusql
+        run: |
+          go mod tidy
+          go mod vendor
+          go build -o xusql ./cli/main.go
+
+      # - name: Check bxusql_flutter
+      #   working-directory: wrapper/bxusql_flutter/example
+      #   if: matrix.os == 'windows-latest'
+      #   run: |
+      #     flutter pub get
+      #     flutter build windows
+
+      # - name: Check bxusql_flutter
+      #   working-directory: wrapper/bxusql_flutter/example
+      #   if: matrix.os == 'macos-latest'
+      #   run: |
+      #     flutter pub get
+      #     flutter build macos
+
+  notify:
+    name: Notify failure
+    runs-on: ubuntu-latest
+    needs:
+      - check
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/xusql
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: fewensa/actions/tepusher@main
+        with:
+          template: .maintain/notify/check-failed.md
+          token: ${{ secrets.WEPLUSBOT_TOKEN }}
+          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
