@@ -40,10 +40,10 @@ jobs:
           cargo --version
           flutter --version
 
-      - name: Setup git credential
-        run: |
-          git config --global credential.helper store
-          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
+      # - name: Setup git credential
+      #   run: |
+      #     git config --global credential.helper store
+      #     echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
 
       - name: Check xprint
         working-directory: xprint/rust
@@ -70,13 +70,12 @@ jobs:
       - check
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/xprint
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - uses: fewensa/actions/tepusher@main
