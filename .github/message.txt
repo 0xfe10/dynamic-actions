@@ -1,13 +1,1 @@
-feat: Initial commit of dxusql package with basic structure and functionality
-
-- Added CHANGELOG.md and README.md for dxusql package.
-- Configured analysis options with recommended lints.
-- Implemented example for starting the server in dxusql.
-- Created core library files for dxusql and its Linux implementation.
-- Added pubspec.yaml with dependencies for dxusql and its platform-specific packages.
-- Included build script for compiling the example.
-- Set up test structure with initial test cases.
-- Created dxusql_linux package with FFI bindings and native library integration.
-- Added example and test files for dxusql_linux package.
-- Created dxusql_macos and dxusql_windows packages with basic structure and example implementations.
-- Configured .gitignore files for all packages to exclude unnecessary files.
+go2flutter
