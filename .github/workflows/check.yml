@@ -10,10 +10,12 @@ jobs:
     name: Check
     strategy:
       matrix:
-        os:
-          - windows-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
+        package:
+          - os: windows-latest
+            target: windows
+          - os: macos-latest
+            target: linux
+    runs-on: ${{ matrix.package.os }}
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
@@ -38,11 +40,11 @@ jobs:
           flutter --version
 
       - name: Check xusql
-        working-directory: xusql
+        working-directory: core
         run: |
           go mod tidy
           go mod vendor
-          go build -o xusql ./cli/main.go
+          make ${{ matrix.package.target }}
 
       # - name: Check bxusql_flutter
       #   working-directory: wrapper/bxusql_flutter/example

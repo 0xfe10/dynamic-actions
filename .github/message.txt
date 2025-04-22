@@ -1,12 +1,1 @@
-Refactor project structure and update configurations
-
-- Renamed project from go_example to example across all configurations and files.
-- Updated app name, bundle identifier, and copyright year in AppInfo.xcconfig.
-- Removed unnecessary methods from AppDelegate.swift.
-- Updated Runner.xcscheme to reflect new app name.
-- Cleaned up RunnerTests.swift by removing outdated tests and adding a placeholder.
-- Updated pubspec.yaml and pubspec.lock to reflect new project name and dependencies.
-- Removed unused web assets including favicon and icons.
-- Cleaned up index.html and manifest.json files from the web directory.
-- Updated CMakeLists.txt and resource files for Windows to match new project name.
-- Added .metadata and Podfile.lock for project tracking and dependency management.
+fix: Update workflow to correctly set package targets and working directory
