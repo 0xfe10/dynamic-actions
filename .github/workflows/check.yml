@@ -60,6 +60,7 @@ jobs:
         run: |
           brew install coreutils
           brew install unixodbc
+          pkg-config --libs odbc
 
       - name: Check xusql
         working-directory: core
