@@ -65,10 +65,6 @@ jobs:
       - name: Check xusql
         working-directory: core
         run: |
-          if [ "${{ matrix.package.target }}" == "macos" ]; then
-            export CGO_CFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.12/include"
-            export CGO_LDFLAGS="-L/opt/homebrew/Cellar/unixodbc/2.3.12/lib"
-          fi
           go mod tidy
           go mod vendor
           make ${{ matrix.package.target }}
