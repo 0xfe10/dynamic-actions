@@ -1,1 +1,1 @@
-fix: 填充打印变量模板同步问题修改
+Merge branch 'v_1_3_0' of https://github.com/prtmax/labeldesktop into v_1_3_0
