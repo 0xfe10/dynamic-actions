@@ -39,7 +39,7 @@ jobs:
       - name: Test deps
         run: |
           go version
-          flutter --version
+          #flutter --version
 
       # - name: Install dependencies (windows)
       #   if: matrix.package.target == 'windows'
