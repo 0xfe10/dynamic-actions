@@ -1,1 +1,7 @@
-Merge branch 'go0flutter' of https://github.com/prtmax/xusql into go2flutter
+Add directory printing functionality and update dependencies
+
+- Implemented _printDir method to log temporary and application document directories.
+- Updated UI to include buttons for testing directory access and getting version.
+- Modified entitlements to allow user-selected file read/write.
+- Changed path_provider dependency from transitive to direct in pubspec.lock.
+- Added path_provider dependency in pubspec.yaml.
