@@ -81,7 +81,7 @@ jobs:
       - name: Copy dist (macos)
         if: matrix.package.target == 'macos'
         run: |
-          mkdir -p dist
+          mkdir -p dist/macos-universal
           mv macos/libxusql.dylib dist/macos-universal/libxusql.dylib
 
       - uses: actions/upload-artifact@v4
