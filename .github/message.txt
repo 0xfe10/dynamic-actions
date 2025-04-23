@@ -1,1 +1,1 @@
-feat: Enhance server startup logging and clarify socket directory path
+fix: Update default XUSQL_VERSION to v0.0.7 in setup script
