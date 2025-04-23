@@ -1,2 +1,1 @@
-fix: update default XUSQL_VERSION to v0.0.13 in setup script
-refactor: improve string replacement logic in handleConnection function
+feat: enhance response handling and update connection methods to return specific types
