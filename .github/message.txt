@@ -1,1 +1,1 @@
-Merge branch 'improve' of https://github.com/prtmax/xusql into improve
+fix: update default version to v0.0.16 in setup script; refactor data handling in WorkspaceView and XusqlClient
