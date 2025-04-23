@@ -1,1 +1,1 @@
-improve
+fix: update database connection details and correct connection name
