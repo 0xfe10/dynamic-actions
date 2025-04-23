@@ -1,1 +1,1 @@
-feat: Implement XusqlClient for socket communication and JSON-RPC protocol support
+fix: Update default XUSQL_VERSION to v0.0.10 in setup script and correct function call in socket reader
