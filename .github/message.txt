@@ -1,1 +1,1 @@
-fix: update database connection details and correct connection name
+update default XUSQL_VERSION to v0.0.12 in setup script
