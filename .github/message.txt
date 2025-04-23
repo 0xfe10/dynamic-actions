@@ -1,1 +1,1 @@
-refactor: update connection string and improve close method in XusqlClient
+feat: update addConnection method to return a String and enhance entitlements for network client
