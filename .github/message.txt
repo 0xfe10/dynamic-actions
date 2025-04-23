@@ -1,1 +1,1 @@
-update default XUSQL_VERSION to v0.0.12 in setup script
+refactor: update connection string and improve close method in XusqlClient
