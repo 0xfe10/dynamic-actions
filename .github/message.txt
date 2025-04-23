@@ -1,1 +1,1 @@
-feat: enhance response handling and update connection methods to return specific types
+feat: implement safe result handling in XusqlClient methods and update connection methods to use it
