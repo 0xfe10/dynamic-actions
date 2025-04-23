@@ -1,1 +1,1 @@
-fix: Update macOS directory path for xusql installation
+fix: Update default XUSQL_VERSION to v0.0.8 in setup script
