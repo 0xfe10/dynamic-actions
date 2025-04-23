@@ -1,1 +1,1 @@
-feat: update addConnection method to return a String and enhance entitlements for network client
+Merge remote-tracking branch 'origin/main' into improve
