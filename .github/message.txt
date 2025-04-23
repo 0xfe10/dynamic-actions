@@ -1,1 +1,1 @@
-feat: implement SQL execution functionality and update connection handling in UI
+Merge branch 'improve' of https://github.com/prtmax/xusql into improve
