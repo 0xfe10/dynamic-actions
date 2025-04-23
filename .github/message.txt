@@ -1,1 +1,1 @@
-docs: update README to include build instructions and project overview
+refactor: update connection handling and remove unused protocol definitions
