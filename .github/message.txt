@@ -1,1 +1,1 @@
-refactor: simplify loading state management and improve UI components in MyHomePage
+feat: update version to v0.0.14 and refactor connection handling to use new client methods
