@@ -1,1 +1,1 @@
-feat: update version to v0.0.14 and refactor connection handling to use new client methods
+docs: update README to include build instructions and project overview
