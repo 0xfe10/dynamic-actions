@@ -1,1 +1,11 @@
-refactor: update connection handling and remove unused protocol definitions
+feat: Integrate url_launcher plugin for Linux and MacOS
+
+- Added url_launcher_linux and url_launcher_macos to the generated_plugin_registrant files for Linux and MacOS.
+- Updated generated_plugins.cmake to include url_launcher for both platforms.
+- Modified Podfile.lock to include url_launcher_macos dependency.
+- Enhanced AppDelegate.swift to register the UrlLauncherPlugin.
+- Updated pubspec.lock with new dependencies and versions.
+- Introduced global.dart and manage.dart files for managing database connections.
+- Created workspace.dart for SQL code editing and execution with a UI.
+- Implemented connection management and UI for adding/removing connections.
+- Added loading indicators and error handling in the UI.
