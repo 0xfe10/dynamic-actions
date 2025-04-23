@@ -1,1 +1,1 @@
-refactor: remove loading state management for connection listing in _loadConnections method
+refactor: simplify loading state management and improve UI components in MyHomePage
