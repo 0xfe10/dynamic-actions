@@ -1,1 +1,2 @@
-Merge remote-tracking branch 'origin/main' into improve
+fix: update default XUSQL_VERSION to v0.0.13 in setup script
+refactor: improve string replacement logic in handleConnection function
