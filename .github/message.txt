@@ -1,1 +1,1 @@
-feat: Add temporary directory cleanup and update Flutter SDK path
+feat: Enhance server startup logging and clarify socket directory path
