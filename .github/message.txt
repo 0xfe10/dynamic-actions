@@ -1,1 +1,1 @@
-feat: implement database catalog structure for multiple vendors; add AdvanceClient for SQL queries; increase batch size for connection handling
+fix: update default version to v0.0.17 in setup script
