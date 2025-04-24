@@ -1,1 +1,1 @@
-feat: enhance workspace with tree view and SQL data handling; add hex conversion utilities
+fix: improve tree view loading state and connection handling in WorkspaceView
