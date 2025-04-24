@@ -1,1 +1,1 @@
-fix: update default version to v0.0.17 in setup script
+fix: update default version to v0.0.18 in setup script; enhance SQL operation handling to support byte arrays and improve data batching
