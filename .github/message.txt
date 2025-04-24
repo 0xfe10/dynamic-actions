@@ -1,1 +1,1 @@
-fix: update default version to v0.0.16 in setup script; refactor data handling in WorkspaceView and XusqlClient
+feat: implement database catalog structure for multiple vendors; add AdvanceClient for SQL queries; increase batch size for connection handling
