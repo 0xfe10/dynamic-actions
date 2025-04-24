@@ -1,1 +1,1 @@
-Merge branch 'improve' of https://github.com/prtmax/xusql into improve
+feat: enhance workspace with tree view and SQL data handling; add hex conversion utilities
