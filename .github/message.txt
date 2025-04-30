@@ -1,1 +1,1 @@
-test windows
+Update app icons for macOS and Windows with new binary files
