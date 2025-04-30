@@ -1,1 +1,10 @@
-Update app icons for macOS and Windows with new binary files
+feat: Integrate url_launcher plugin for Linux and macOS
+
+- Added url_launcher plugin registration in Linux and macOS generated files.
+- Updated CMake files to include url_launcher and fxusql plugins.
+- Enhanced pubspec.lock with new dependencies including animated_tree_view, data_table_2, and others.
+- Implemented global application context management for XusqlClient.
+- Developed connection management UI in ManageView for adding/removing connections.
+- Created WorkspaceView for SQL execution and data preview with a tree structure for catalog navigation.
+- Added helper functions for hex and byte conversions.
+- Improved error handling and loading indicators in UI components.
