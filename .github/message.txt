@@ -1,1 +1,1 @@
-Merge branch 'morefix' of https://github.com/prtmax/xusql into morefix
+feat: Link libxusql.so to the application and add error handling for missing library
