@@ -1,1 +1,3 @@
-Update fxusql checksum in Podfile.lock
+Test new repo (#2)
+
+Co-authored-by: fewensa <osuni@protonmail.com>
