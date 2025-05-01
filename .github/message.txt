@@ -1,1 +1,1 @@
-feat: Link libxusql.so to the application and add error handling for missing library
+fix: Comment out vendored_libraries entry in Podspec to avoid potential conflicts
