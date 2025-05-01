@@ -1,1 +1,1 @@
-feat: Update macOS project configuration and integrate new dependencies
+Merge branch 'morefix' of https://github.com/prtmax/xusql into morefix
