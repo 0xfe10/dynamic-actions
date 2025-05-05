@@ -1,1 +1,1 @@
-优化window bluetooth
+移除window BluetoothState
