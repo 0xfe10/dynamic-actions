@@ -173,7 +173,7 @@ jobs:
         with:
           version: '>= 363.0.0'
 
-     -  name: Write secret to file
+      - name: Write secret to file
         run: |
           mkdir -p ~/.config
           cat << EOF > ~/.config/gcp-service-account-autoci.json
@@ -208,7 +208,6 @@ jobs:
           vars: |
             project: psdk
             language: dart
-
 
 
   build-clang:
