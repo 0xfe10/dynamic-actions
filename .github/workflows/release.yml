@@ -168,26 +168,12 @@ jobs:
         with:
           channel: stable
 
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v2'
-        with:
-          version: '>= 363.0.0'
-
-      - name: Write secret to file
-        run: |
-          mkdir -p ~/.config
-          cat << EOF > ~/.config/gcp-service-account-autoci.json
-          ${{ secrets.GCP_SERVICE_ACCOUNT_AUTOCI }}
-          EOF
-
       - name: Setup authorization
         run: |
-          # mkdir -p ~/.config/dart
-          # echo "{{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
-
-          AUTH_FILE=~/.config/gcp-service-account-autoci.json
-          gcloud auth activate-service-account --key-file=$AUTH_FILE
-          gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
+          git config --global credential.helper store
+          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
+          mkdir -p ~/.config/dart
+          echo "${{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
 
       - name: Setup melos
         run: dart pub global activate melos
