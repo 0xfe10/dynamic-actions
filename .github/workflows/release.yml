@@ -168,18 +168,14 @@ jobs:
         with:
           channel: stable
 
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v2'
-        with:
-          version: '>= 363.0.0'
+      # - name: 'Set up Cloud SDK'
+      #   uses: 'google-github-actions/setup-gcloud@v2'
+      #   with:
+      #     version: '>= 363.0.0'
 
       - name: Write secret to file
         run: |
           mkdir -p ~/.config/dart
-
-          cat << EOF > ~/.config/gcp-service-account-autoci.json
-          ${{ secrets.GCP_SERVICE_ACCOUNT_AUTOCI }}
-          EOF
 
           cat << EOF > ~/.config/dart/pub-credentials.json
           ${{ secrets.PUB_DEV_TOKEN }}
