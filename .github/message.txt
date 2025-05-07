@@ -1,7 +1,41 @@
-Clang new platforms (#8)
+Ble native (#10)
 
-* Fix text length calculation in CInverse clause method
+* 新增红黑打印指令
 
-* Add conan profile for arm-openwrt-linux-gnueabi
+* 优化usb权限检测
 
-* Add OpenWRT ARMv32 support to release workflow
+* canvas 新增自定义字体
+
+* 新增 自检页指令
+
+* 新增碳尾跟热转印机器查询指令
+
+* WindowsBluetooth
+
+* 优化window bluetooth
+
+* 移除window BluetoothState
+
+* 新增dart tcp打印
+
+* dart tcp打印 使用add方法发送 Uint8List 类型的数据
+
+* dart version: 0.1.1
+
+* dart 解决报错
+
+* dart 解决报错1
+
+* Test gcp
+
+* test gcp
+
+* Test gcp
+
+* Test
+
+* Test gcp
+
+---------
+
+Co-authored-by: JCZ <615315510@qq.com>
