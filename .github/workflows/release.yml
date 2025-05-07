@@ -179,9 +179,9 @@ jobs:
           # echo "{{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
 
           AUTH_FILE=~/.config/gcp-service-account-autoci.json
-
           mkdir -p ~/.config
-          echo "${{ secrets.GCP_SERVICE_ACCOUNT_AUTOCI }}" >> ${AUTH_FILE}
+
+          printf "%s" "${{ secrets.GCP_SERVICE_ACCOUNT_AUTOCI }}" > "${AUTH_FILE}"
           gcloud auth activate-service-account --key-file=${AUTH_FILE}
           gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
 
