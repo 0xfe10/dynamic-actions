@@ -1,1 +1,7 @@
-Test gcp
+Clang new platforms (#8)
+
+* Fix text length calculation in CInverse clause method
+
+* Add conan profile for arm-openwrt-linux-gnueabi
+
+* Add OpenWRT ARMv32 support to release workflow
