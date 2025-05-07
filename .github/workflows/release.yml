@@ -175,19 +175,23 @@ jobs:
 
       - name: Write secret to file
         run: |
-          mkdir -p ~/.config
+          mkdir -p ~/.config/dart
+
           cat << EOF > ~/.config/gcp-service-account-autoci.json
           ${{ secrets.GCP_SERVICE_ACCOUNT_AUTOCI }}
           EOF
 
-      - name: Setup authorization
-        run: |
-          # mkdir -p ~/.config/dart
-          # echo "{{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
+          cat << EOF > ~/.config/dart/pub-credentials.json
+          ${{ secrets.PUB_DEV_TOKEN }}
+          EOF
 
-          AUTH_FILE=~/.config/gcp-service-account-autoci.json
-          gcloud auth activate-service-account --key-file=$AUTH_FILE
-          gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
+      # - name: Setup authorization
+      #   run: |
+      #     # echo "{{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
+
+      #     # AUTH_FILE=~/.config/gcp-service-account-autoci.json
+      #     # gcloud auth activate-service-account --key-file=$AUTH_FILE
+      #     # gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
 
       - name: Setup melos
         run: dart pub global activate melos
