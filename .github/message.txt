@@ -1,1 +1,1 @@
-fix: enhance convertToView function to handle hex type values and update its signature
+Enhance convertToView function to handle hex type names and improve value conversion logic
