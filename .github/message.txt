@@ -1,3 +1,1 @@
-Update pubspec.yaml
-
-降低flutter依赖版本
+fix: enhance convertToView function to handle hex type values and update its signature
