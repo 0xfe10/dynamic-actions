@@ -1,1 +1,1 @@
-Enhance convertToView function to handle hex type names and improve value conversion logic
+Update default XUSQL version to v0.0.20 and refine value conversion in convertToView function
