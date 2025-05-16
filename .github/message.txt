@@ -1,1 +1,1 @@
-Update CI
+Refactor Cargo.toml files for workspace compatibility and update dependencies to use workspace features. Modify CLI argument parsing to use clap instead of structopt, and adjust types for consistency.
