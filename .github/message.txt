@@ -1,1 +1,1 @@
-Update default XUSQL version to v0.0.20 and refine value conversion in convertToView function
+调整返回数据结构
