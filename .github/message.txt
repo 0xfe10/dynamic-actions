@@ -1,1 +1,1 @@
-Refactor command structure for Unix compatibility and deprecate legacy PPD handling
+Add PPD handling for Unix: implement get_ppd function and PpdFormat enum
