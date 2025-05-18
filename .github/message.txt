@@ -1,1 +1,1 @@
-Add PPD handling for Unix: implement get_ppd function and PpdFormat enum
+feat: Add PPD retrieval options for JSON and RAW formats in Unix
