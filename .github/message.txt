@@ -1,1 +1,9 @@
-feat: Add PPD retrieval options for JSON and RAW formats in Unix
+Refactor main.dart for improved UI and functionality
+
+- Updated AppBar with a new background color and title layout.
+- Enhanced body layout with a centered ConstrainedBox for better responsiveness.
+- Improved Card designs for printer management and print tasks with updated padding and margins.
+- Added icons and labels for better visual representation in printer management and print task sections.
+- Streamlined the process of selecting printers and printing files/images with clearer button actions.
+- Introduced a new layout for the test section with improved input handling and button placements.
+- Ensured consistent styling and spacing across various UI elements for a more cohesive look.
