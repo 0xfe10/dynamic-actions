@@ -1,1 +1,1 @@
-feat: Add dynamic copy count input for printing functionality
+feat: Introduce DuplicateMode enum and update print options handling
