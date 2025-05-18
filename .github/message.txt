@@ -1,1 +1,1 @@
-feat: Introduce DuplicateMode enum and update print options handling
+feat: Enhance print options to support duplicate mode handling in Unix and Windows
