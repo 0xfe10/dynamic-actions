@@ -1,1 +1,1 @@
-feat: Enhance print options to support duplicate mode handling in Unix and Windows
+refactor: Remove deprecated PPD-related structs and methods in UnixXPrint
