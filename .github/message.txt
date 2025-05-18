@@ -1,7 +1,1 @@
-Implement PPD file parsing in Rust with comprehensive data structures and metadata handling
-
-- Added data structures for PPD options, groups, and metadata.
-- Implemented parsing logic for PPD files, including handling of UI options, translations, and order dependencies.
-- Introduced utility functions for cleaning and parsing values.
-- Enhanced support for multiple languages in metadata.
-- Included tests for parsing functionality and validation of parsed data.
+Refactor command structure for Unix compatibility and deprecate legacy PPD handling
