@@ -1,1 +1,1 @@
-refactor: Remove deprecated PPD-related structs and methods in UnixXPrint
+feat: Update duplicate mode handling to use column_duplicate_mode in print options
