@@ -1,1 +1,1 @@
-open-platform
+datasource-seq
