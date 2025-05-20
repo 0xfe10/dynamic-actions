@@ -1,1 +1,1 @@
-datasource-seq
+main
