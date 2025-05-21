@@ -1,4 +1,1 @@
 Merge remote-tracking branch 'origin/v_1_3_0' into v_1_3_0
-
-# Conflicts:
-#	lib/views/template/data_source/import/view.dart
