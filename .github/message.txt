@@ -1,1 +1,1 @@
-feat: Update duplicate mode handling to use column_duplicate_mode in print options
+Refactor column copy handling in print functions and improve print file management
