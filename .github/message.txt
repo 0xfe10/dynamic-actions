@@ -1,1 +1,1 @@
-Remove debug print statement for column copies and file printing options
+Update package versions and SHA256 checksums in pubspec.lock
