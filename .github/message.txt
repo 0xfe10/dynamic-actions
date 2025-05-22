@@ -1,1 +1,1 @@
-Refactor main function to initialize window manager and add window listener; rename NativeLibrary to XusqlNanny for consistency across platforms; update plugin registrations and dependencies for screen retriever and window manager.
+Update default XUSQL version to v0.0.21 in setup script; refactor handleConnection to use goroutine for processing incoming data
