@@ -1,1 +1,1 @@
-调整返回数据结构
+Refactor main function to initialize window manager and add window listener; rename NativeLibrary to XusqlNanny for consistency across platforms; update plugin registrations and dependencies for screen retriever and window manager.
