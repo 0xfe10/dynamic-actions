@@ -1,1 +1,11 @@
-column copies for windows
+Fix column copies (#3)
+
+* Refactor column copy handling in print functions and improve print file management
+
+* Enhance print functionality for Windows: refine column copy handling and improve image printing logic
+
+* column copies for windows
+
+---------
+
+Co-authored-by: fewensa <osuni@protonmail.com>
