@@ -1,1 +1,1 @@
-Update default XUSQL version to v0.0.22 in setup script and modify connection handling in server
+wait socket close
