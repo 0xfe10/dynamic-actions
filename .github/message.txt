@@ -1,1 +1,1 @@
-fix: 商品标签打印首次使用时设置默认模板3
+Merge branch 'v_1_3_0' of https://github.com/prtmax/labeldesktop into v_1_3_0
