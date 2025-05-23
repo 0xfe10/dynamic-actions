@@ -1,1 +1,5 @@
-Update default XUSQL version to v0.0.23 in setup script
+Better error message (#6)
+
+* Enhance error messages in database connection and SQL operation handlers for better clarity
+
+* Update default XUSQL version to v0.0.23 in setup script
