@@ -1,1 +1,1 @@
-Merge branch 'v_1_3_0' of https://github.com/prtmax/labeldesktop into v_1_3_0
+蓝牙多列打印修改
