@@ -1,1 +1,1 @@
-1.bug 8
+Merge branch 'v_1_3_0' of https://github.com/prtmax/labeldesktop into v_1_3_0
