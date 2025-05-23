@@ -1,1 +1,1 @@
-wait socket close
+Enhance error messages in database connection and SQL operation handlers for better clarity
