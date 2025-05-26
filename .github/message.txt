@@ -1,1 +1,2 @@
-Merge branch 'v_1_3_0' of https://github.com/prtmax/labeldesktop into v_1_3_0
+1.添加数据源历史记录
+2.下载字体，没下载完成就被加载bug
