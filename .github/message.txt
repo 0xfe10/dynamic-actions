@@ -1,1 +1,1 @@
-wifi set arg add quote
+BluetoothAdapterState listen
