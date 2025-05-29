@@ -67,6 +67,8 @@ jobs:
             SLUG: launcher-woodii
           - LAUNCHER: tasks/infra
             SLUG: task-infra
+          - LAUNCHER: launchers/webhook
+            SLUG: launcher-webhook
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
@@ -258,6 +260,7 @@ jobs:
           IMAGE_TAG_LAUNCHER_UNIVERSAL=${IMAGE_TAG_BASE}/launcher-universal:sha-${{ env.SHA }}
           IMAGE_TAG_LAUNCHER_WOODII=${IMAGE_TAG_BASE}/launcher-woodii:sha-${{ env.SHA }}
           IMAGE_TAG_MADMAN_REALTIME=${IMAGE_TAG_BASE}/madman-realtime:sha-${{ env.SHA }}
+          IMAGE_TAG_LAUNCHER_WEBHOOK=${IMAGE_TAG_BASE}/launcher-webhook:sha-${{ env.SHA }}
 
           #yq e ".docker_app_runner.container.launcher_boogie.image = \"${IMAGE_TAG_LAUNCHER_BOOGIE}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.task_infra.image = \"${IMAGE_TAG_TASK_INFRA}\"" --inplace ${TEMPLATE_FILE}
@@ -267,6 +270,7 @@ jobs:
           yq e ".docker_app_runner.container.launcher_universal.image = \"${IMAGE_TAG_LAUNCHER_UNIVERSAL}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.launcher_woodii.image = \"${IMAGE_TAG_LAUNCHER_WOODII}\"" --inplace ${TEMPLATE_FILE}
           yq e ".docker_app_runner.container.madman_realtime.image = \"${IMAGE_TAG_MADMAN_REALTIME}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.launcher_webhook.image = \"${IMAGE_TAG_LAUNCHER_WEBHOOK}\"" --inplace ${TEMPLATE_FILE}
 
           mkdir dist
 
