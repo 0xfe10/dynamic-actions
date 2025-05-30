@@ -1,1 +1,1 @@
-main
+feature-default-template
