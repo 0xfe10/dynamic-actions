@@ -1,1 +1,1 @@
-Remove 'views' from LIQUIBASE_COMMAND_DIFF_TYPES in liquibase-diff scripts
+Disable migrate view (#144)
