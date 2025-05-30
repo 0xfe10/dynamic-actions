@@ -1,1 +1,1 @@
-Release v176 (#141)
+Refactor SQL queries to remove redundant schema prefix from table names
