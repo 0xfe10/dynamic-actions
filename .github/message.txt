@@ -1,1 +1,1 @@
-Disable migrate view (#144)
+修改应用认证code校验
