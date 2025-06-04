@@ -1,1 +1,1 @@
-新增设置打印机编码指令
+ble use deviceId or mac
