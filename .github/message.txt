@@ -1,1 +1,1 @@
-init frontend
+应用标签模版编辑
