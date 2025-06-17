@@ -1,1 +1,1 @@
-fix: change script shebang from bash to sh for consistency
+fix: format datasource properties for better readability
