@@ -1,0 +1,102 @@
+name: '[aynguide] Production'
+
+on:
+  push:
+    tags:
+      - "v*-aynguide"
+env:
+  DOCKER_REGISTRY: ghcr.io
+
+jobs:
+
+  build-aynguide:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - api
+          - frontend
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/aynguide
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Check
+        working-directory: ${{ matrix.package }}
+        run: |
+          ls -la
+          ls -la docker
+
+      - name: Docker login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Publish docker image hash
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ${{ matrix.package }}
+          file: ${{ matrix.package }}/Dockerfile
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-${{ matrix.package }}:sha-${{ env.SHA }}
+
+  deploy-aynguide:
+    name: Deploy aynguide
+    runs-on: ubuntu-latest
+    needs:
+      - build-aynguide
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/aynguide
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Generate variables
+        run: |
+          TEMPLATE_FILE=playbooks.yml
+          > ${TEMPLATE_FILE}
+
+          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
+
+          IAMGE_AYNGUIDE_API=${IMAGE_TAG_BASE}/aynguide-api:sha-${{ env.SHA }}
+          IAMGE_AYNGUIDE_FRONTEND=${IMAGE_TAG_BASE}/aynguide-frontend:sha-${{ env.SHA }}
+
+          yq e ".docker_app_runner.container.aynguide-api.image = \"${IAMGE_AYNGUIDE_API}\"" --inplace ${TEMPLATE_FILE}
+          yq e ".docker_app_runner.container.aynguide-frontend.image = \"${IAMGE_AYNGUIDE_FRONTEND}\"" --inplace ${TEMPLATE_FILE}
+
+          mkdir dist
+
+          DEPLOYMENT_FILE=playbooks/aynguide/host_vars/iprtapp-cn1-ek.yml
+
+          jq -n \
+            --arg file ${DEPLOYMENT_FILE} \
+            --arg content "$(cat ${TEMPLATE_FILE})" \
+            '{file: $file, content: $content}' >> dist/change.json
+
+          jq -crs '.' < dist/change.json > dist/changes.json
+          cat dist/changes.json
+
+      - name: Deploy
+        uses: fewensa/actions/ansible-deploy@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+        with:
+          project_name: prtmax/aynguide
+          changes: dist/changes.json
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+
