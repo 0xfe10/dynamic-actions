@@ -1,1 +1,1 @@
-fix: correct nginx image tag format in Dockerfile
+fix: change script shebang from bash to sh for consistency
