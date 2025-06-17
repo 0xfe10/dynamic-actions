@@ -1,1 +1,1 @@
-feat: update Dockerfile and add start-prod.sh script for production setup
+fix: remove redundant directory listing in production workflow

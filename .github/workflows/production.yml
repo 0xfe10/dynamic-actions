@@ -30,7 +30,6 @@ jobs:
         working-directory: ${{ matrix.package }}
         run: |
           ls -la
-          ls -la docker
 
       - name: Docker login
         uses: docker/login-action@v1
