@@ -1,1 +1,1 @@
-fix: remove redundant directory listing in production workflow
+fix: correct nginx image tag format in Dockerfile
