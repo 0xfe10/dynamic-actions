@@ -1,1 +1,1 @@
-Update API base URL configuration in environment files and axios instance
+Try to fix frontend (#7)
