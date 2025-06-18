@@ -1,1 +1,2 @@
-fix: format datasource properties for better readability
+fix: update environment variables for mock and console settings
+fix: ensure NODE_ENV is set to production in Dockerfile build step
