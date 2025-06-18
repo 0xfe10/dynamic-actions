@@ -1,3 +1,1 @@
-Merge pull request #6 from prtmax/banner
-
 修改banner
