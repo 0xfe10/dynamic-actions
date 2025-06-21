@@ -1,1 +1,1 @@
-更新 Dockerfile 以复制视图文件，更新 app.ts 中视图路径为动态路径
+更新 Dockerfile 以复制视图文件，更新 app.ts 中视图路径为动态路径 (#8)
