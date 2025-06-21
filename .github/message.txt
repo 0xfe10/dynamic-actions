@@ -1,1 +1,1 @@
-模版分享，其他用户编辑模版 (#180)
+Refactor SQL queries to remove redundant schema prefix from table names (#143)
