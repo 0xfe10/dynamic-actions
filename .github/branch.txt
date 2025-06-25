@@ -1,1 +1,1 @@
-capability-type
+main
