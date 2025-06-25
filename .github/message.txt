@@ -1,1 +1,1 @@
-java 新增usb和经典蓝牙通讯
+RImageMode默认jpg
