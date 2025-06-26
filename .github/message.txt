@@ -1,6 +1,1 @@
-Refactor RelationForm and RelationService to support multiple target types
-
-- Updated RelationForm to change targetType from a single KRelation.Type to a List<KRelation.Type> in QueryRelationsTargetsSourceIds.
-- Modified targets method in RelationService to handle multiple target types by using andIn instead of andEq for querying target types.
-- Adjusted TemplateService to accommodate changes in RelationForm and RelationService, ensuring compatibility with the new target types structure.
-- Enhanced SQL Template.md to reflect the updated query logic for handling multiple classifications and tags.
+添加我的耗材 (#190)
