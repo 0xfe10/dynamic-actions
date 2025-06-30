@@ -1,1 +1,1 @@
-1.模版json下载报错
+Merge branch 'v_1_4_0' of https://github.com/prtmax/labeldesktop into v_1_4_0
