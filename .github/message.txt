@@ -1,1 +1,1 @@
-Merge branch 'v_1_4_0' of https://github.com/prtmax/labeldesktop into v_1_4_0
+Merge remote-tracking branch 'origin/v_1_4_0' into v_1_4_0
