@@ -1,1 +1,1 @@
-template-query
+main
