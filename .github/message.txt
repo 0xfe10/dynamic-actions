@@ -1,4 +1,7 @@
-Merge branch 'main' into scene_improve
+Scene improve (#201)
 
-# Conflicts:
-#	woodii/src/views/app/labelexpert/scene.vue
+* 优化场景编辑
+
+* 优化场景编辑
+
+* 优化场景编辑
