@@ -1,1 +1,1 @@
-模版表增加索引 (#208)
+Add changelog for index creation and data type modifications
