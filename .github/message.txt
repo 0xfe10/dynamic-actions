@@ -1,1 +1,1 @@
-pick #217
+Add stdOssHost method to AiyinKit and update cover/link in TemplateService
