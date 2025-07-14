@@ -1,1 +1,1 @@
-Add stdOssHost method to AiyinKit and update cover/link in TemplateService
+textIn接口接入
