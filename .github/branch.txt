@@ -1,1 +1,1 @@
-gotenberg
+template-image
