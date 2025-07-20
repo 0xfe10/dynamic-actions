@@ -1,1 +1,1 @@
-ota-nn
+update-ci
