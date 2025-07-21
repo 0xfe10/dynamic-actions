@@ -1,1 +1,1 @@
-update-ci
+image-template
