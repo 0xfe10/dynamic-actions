@@ -1,1 +1,1 @@
-CI
+New java image
