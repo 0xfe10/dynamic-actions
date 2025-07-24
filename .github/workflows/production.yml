@@ -263,7 +263,7 @@ jobs:
         uses: tarasyarema/dokploy-deploy-action@main
         with:
           auth_token: ${{ secrets.DOKPLOY_TOKEN_AYN }}
-          application_id: ${{ matrix.package.appid }}
+          application_id: ${{ matrix.project.appid }}
           dokploy_url: ${{ secrets.DOKPLOY_URL }}
           wait_for_completion: false
 
