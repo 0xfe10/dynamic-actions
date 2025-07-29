@@ -1,1 +1,1 @@
-template-type
+main
