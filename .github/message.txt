@@ -1,1 +1,5 @@
-Update Docker build action to v6 and add 'latest' and 'staging' tags for images
+Ai tattoo (#227)
+
+* ai纹身
+
+* 获取纹身元素数据不存在获取区域为en_US的数据
