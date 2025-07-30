@@ -1,1 +1,1 @@
-Refactor AppRequestContextFilter to improve IP address retrieval and clean up code formatting
+Change log level for IP address retrieval to info for better visibility
