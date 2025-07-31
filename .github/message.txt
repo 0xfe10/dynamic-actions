@@ -1,1 +1,1 @@
-场景后台管理
+refactor: update environment variable names and remove unused files
