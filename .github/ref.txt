@@ -1,1 +1,1 @@
-scenario
+area-sms-enable
