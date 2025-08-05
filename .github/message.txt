@@ -1,3 +1,1 @@
-Merge pull request #2 from prtmax/pdd
-
-Pdd
+批量添加 分批次进行
