@@ -1,1 +1,1 @@
-capability-max-version
+main
