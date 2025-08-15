@@ -1,11 +1,43 @@
-Merge branch 'main' into hotfix-v0.0.183
+hotfix-v00183 (#215)
 
-# Conflicts:
-#	babosa/commons/types-frame/src/main/java/in/kahub/endfather/babosa/common/types/frame/mark/KBlacklist.java
-#	babosa/commons/types-frame/src/main/java/in/kahub/endfather/babosa/common/types/frame/model/application/Blacklist.java
-#	babosa/commons/types-upper/src/main/java/in/kahub/endfather/babosa/common/types/upper/form/application/SmsLimitForm.java
-#	babosa/components/application/src/main/java/in/kahub/endfather/babosa/component/application/service/BlacklistService.java
-#	babosa/components/application/src/main/java/in/kahub/endfather/babosa/component/application/service/SmsLimitService.java
-#	babosa/launchers/metaprint/src/main/resources/application-prod.yml
-#	babosa/launchers/metaprint/src/main/resources/application-stg.yml
-#	babosa/launchers/universal/src/main/java/in/kahub/endfather/babosa/launcher/universal/route/v1/VerifyCodeRoute.java
+* 模版编辑报错提示
+
+* pick #217
+
+* 添加erp打印菜单 (#226)
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
+
+* CI
+
+* New java image
+
+* Update Docker build action to v6 and add 'latest' and 'staging' tags for images
+
+* 增加ERP打印
+
+* 修改增加erp打印
+
+* Read real ip
+
+* Refactor AppRequestContextFilter to improve IP address retrieval and clean up code formatting
+
+* Change log level for IP address retrieval to info for better visibility
+
+* Refactor IP address retrieval to enhance logging and improve header order
+
+* 短信发送限制
+
+* 短信发送限制脚本
+
+* sms limit release
+
+* 近7天新增用户分布数据导出
+
+* 各国用户数和近7天用户地区分布导出合并到导出一个接口
+
+* 拼图标签去除必填
+
+---------
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
