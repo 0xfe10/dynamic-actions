@@ -1,1 +1,43 @@
-add changelog for SMS request statistics and various schema updates
+hotfix-v00183 (#215)
+
+* 模版编辑报错提示
+
+* pick #217
+
+* 添加erp打印菜单 (#226)
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
+
+* CI
+
+* New java image
+
+* Update Docker build action to v6 and add 'latest' and 'staging' tags for images
+
+* 增加ERP打印
+
+* 修改增加erp打印
+
+* Read real ip
+
+* Refactor AppRequestContextFilter to improve IP address retrieval and clean up code formatting
+
+* Change log level for IP address retrieval to info for better visibility
+
+* Refactor IP address retrieval to enhance logging and improve header order
+
+* 短信发送限制
+
+* 短信发送限制脚本
+
+* sms limit release
+
+* 近7天新增用户分布数据导出
+
+* 各国用户数和近7天用户地区分布导出合并到导出一个接口
+
+* 拼图标签去除必填
+
+---------
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
