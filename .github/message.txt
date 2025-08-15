@@ -1,1 +1,11 @@
-修改模版分类接口 (#249)
+Merge branch 'main' into hotfix-v0.0.183
+
+# Conflicts:
+#	babosa/commons/types-frame/src/main/java/in/kahub/endfather/babosa/common/types/frame/mark/KBlacklist.java
+#	babosa/commons/types-frame/src/main/java/in/kahub/endfather/babosa/common/types/frame/model/application/Blacklist.java
+#	babosa/commons/types-upper/src/main/java/in/kahub/endfather/babosa/common/types/upper/form/application/SmsLimitForm.java
+#	babosa/components/application/src/main/java/in/kahub/endfather/babosa/component/application/service/BlacklistService.java
+#	babosa/components/application/src/main/java/in/kahub/endfather/babosa/component/application/service/SmsLimitService.java
+#	babosa/launchers/metaprint/src/main/resources/application-prod.yml
+#	babosa/launchers/metaprint/src/main/resources/application-stg.yml
+#	babosa/launchers/universal/src/main/java/in/kahub/endfather/babosa/launcher/universal/route/v1/VerifyCodeRoute.java
