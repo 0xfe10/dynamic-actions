@@ -1,1 +1,1 @@
-1、添加ESC、pos、tspl、wifi协议
+安卓usb 修改读方法UsbRequest ->bulkTransfer
