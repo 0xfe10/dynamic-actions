@@ -1,1 +1,1 @@
-安卓usb 修改读方法UsbRequest ->bulkTransfer
+安卓新增CPCL ota方法
