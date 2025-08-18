@@ -1,1 +1,1 @@
-修改纹身存储oss设置默认locale
+修改纹身存储oss设置默认locale (#258)
