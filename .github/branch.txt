@@ -1,1 +1,1 @@
-query-capabilities
+main
