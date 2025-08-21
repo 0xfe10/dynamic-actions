@@ -1,1 +1,13 @@
-优化链式调用更新问题
+新增go sdk (#11)
+
+* feat: 个人开发分支初始化 - 添加蓝牙设备管理、CPCL打印支持和框架优化
+
+* 1、添加ESC、pos、tspl、wifi协议
+
+* 修复go ESC打印问题
+
+* 优化链式调用更新问题
+
+---------
+
+Co-authored-by: fangjiangchen <fangjiangchen@example.com>
