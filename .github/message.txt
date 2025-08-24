@@ -1,1 +1,5 @@
-Fix CI
+Revert test (#265)
+
+* Revert test
+
+* Fix CI
