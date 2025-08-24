@@ -1,1 +1,1 @@
-Add environment variable for Docker registry in deployment workflow
+Fix Docker image tag syntax in deployment workflow

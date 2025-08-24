@@ -73,9 +73,9 @@ jobs:
           context: .
           file: docker/Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}]/maprintrace:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}]/maprintrace:staging
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}]/maprintrace:latest
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/maprintrace:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/maprintrace:staging
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/maprintrace:latest
 
       - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
