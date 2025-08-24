@@ -296,6 +296,7 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:staging
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:latest
 
   deploy-app-backend:
     name: Deploy app backend

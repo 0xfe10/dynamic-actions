@@ -1,6 +1,1 @@
-Frontend Docker Image (#263)
-
-- Add Docker support with Nginx configuration and update .gitignore
-- Created a Dockerfile to set up an Nginx server using the Alpine image.
-- Added nginx.conf to configure the server for serving static files.
-- Updated .gitignore to exclude 'target' and 'build' directories.
+Just for test
