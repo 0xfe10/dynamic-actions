@@ -5,6 +5,9 @@ on:
     branches:
       - "**"
 
+env:
+  DOCKER_REGISTRY: ghcr.io
+
 jobs:
   ensure-main:
     name: Ensure main
