@@ -1,12 +1,11 @@
-name: '[maprintrace] Deploy'
+name: "[maprintrace] Deploy"
 
 on:
   push:
     branches:
-      - '**'
+      - "**"
 
 jobs:
-
   ensure-main:
     name: Ensure main
     runs-on: ubuntu-latest
@@ -25,24 +24,19 @@ jobs:
           fi
 
   deploy:
-    name: Deploy 
+    name: Deploy
     runs-on: ubuntu-latest
     needs:
       - ensure-main
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
-    strategy:
-      matrix:
-        package:
-          - babosa
     steps:
       - uses: actions/checkout@v4
 
       - name: Checkout
-        uses: fewensa/actions/clone-any@main
+        uses: fewensa/actions/clone-dyn@main
         with:
-          platform: gitlab
           repository: prtmax/maprintrace
-          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: actions/setup-node@v3
@@ -61,6 +55,25 @@ jobs:
         run: |
           mv vercel.json out/
 
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: benjlevesque/short-sha@v1.2
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: .
+          file: docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}]/maprintrace:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}]/maprintrace:staging
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}]/maprintrace:latest
+
       - uses: darwinia-network/devops/actions/smart-vercel@main
         name: Deploy to Vercel
         with:
@@ -71,4 +84,3 @@ jobs:
           dist_path: out
           prod_mode: true
           script_run: false
-

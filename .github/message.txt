@@ -1,1 +1,1 @@
-format and check
+Add GitHub workflows for deployment and branch triggering
