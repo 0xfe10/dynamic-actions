@@ -1,5 +1,1 @@
-Revert test (#265)
-
-* Revert test
-
-* Fix CI
+菜单点击统计历史数据迁移
