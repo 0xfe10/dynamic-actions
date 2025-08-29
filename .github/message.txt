@@ -1,1 +1,1 @@
-universal_ble: ^0.21.0
+ 适配 universal_ble: ^0.21.0
