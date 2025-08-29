@@ -3,14 +3,13 @@ name: '[endfather] Production'
 on:
   push:
     tags:
-      - "v*-endfather"
+      - 'v*-endfather'
 env:
   # DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
   # DOCKER_REGISTRY: uhub.service.ucloud.cn
   DOCKER_REGISTRY: ghcr.io
 
 jobs:
-
   build-app-java:
     name: Build app java
     runs-on: ubuntu-latest
@@ -106,13 +105,12 @@ jobs:
         with:
           template: .maintain/notify/build-failed-docker-image.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          receiver: '#6cfbef7cc90c4d1ab0842b13e483fafb'
           aters: C1776236406
           patto: C1776236406
           vars: |
             environment: 正式环境
             app: ${{ matrix.package.LAUNCHER }}
-
 
   migrate-db:
     name: Migrate database
@@ -134,19 +132,19 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-#      - name: Migrate boogie
-#        uses: docker://liquibase/liquibase:4.23
-#        if: ${{ matrix.project == 'boogie' }}
-#        env:
-#          LIQUIBASE_COMMAND_DRIVER: org.mariadb.jdbc.Driver
-#        with:
-#          args: >
-#            --search-path=./traice/boogie/liquibase
-#            update
-#            --url="jdbc:mariadb://${{ secrets.BABOSA_DB_BOOGIE_HOST_PRD }}/boogie_prd?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
-#            --username=${{ secrets.BABOSA_DB_BOOGIE_USER_PRD }}
-#            --password=${{ secrets.BABOSA_DB_BOOGIE_PASSWORD_PRD }}
-#            --changelog-file=master.xml
+      #      - name: Migrate boogie
+      #        uses: docker://liquibase/liquibase:4.23
+      #        if: ${{ matrix.project == 'boogie' }}
+      #        env:
+      #          LIQUIBASE_COMMAND_DRIVER: org.mariadb.jdbc.Driver
+      #        with:
+      #          args: >
+      #            --search-path=./traice/boogie/liquibase
+      #            update
+      #            --url="jdbc:mariadb://${{ secrets.BABOSA_DB_BOOGIE_HOST_PRD }}/boogie_prd?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+      #            --username=${{ secrets.BABOSA_DB_BOOGIE_USER_PRD }}
+      #            --password=${{ secrets.BABOSA_DB_BOOGIE_PASSWORD_PRD }}
+      #            --changelog-file=master.xml
 
       - name: Migrate cornerstone
         uses: docker://liquibase/liquibase:4.23
@@ -181,7 +179,7 @@ jobs:
         with:
           template: .maintain/notify/migrate-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          receiver: '#6cfbef7cc90c4d1ab0842b13e483fafb'
           aters: C1776236406
           patto: C1776236406
           vars: |
@@ -227,10 +225,62 @@ jobs:
         with:
           template: .maintain/notify/build-failed-docker-image.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          receiver: '#6cfbef7cc90c4d1ab0842b13e483fafb'
           vars: |
             environment: 正式环境
             app: ${{ matrix.project }}
+
+  build-docker-image-frontend:
+    name: Build docker image frontend
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - name: woodii
+            path: woodii
+            command: build:prd
+            dist: dist-prd
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/endfather
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: benjlevesque/short-sha@v1.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: prepare deps
+        working-directory: ${{ matrix.package.path }}
+        run: |
+          npm i -g yarn
+          yarn install
+          yarn ${{ matrix.package.command }}
+
+      - name: after build
+        run: |
+          cd ${{ matrix.package.path }}
+          mv ${{ matrix.package.dist }} target
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ${{ matrix.package.path }}
+          file: ${{ matrix.package.path }}/docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:staging
 
   deploy-app-backend:
     name: Deploy app backend
@@ -258,7 +308,6 @@ jobs:
           - name: launcher-webhook
             appid: _YzpsAJ1Us8F-ik3Z7XAj
     steps:
-
       - name: Deploy app
         uses: tarasyarema/dokploy-deploy-action@main
         with:
@@ -371,7 +420,7 @@ jobs:
         with:
           template: .maintain/notify/deploy-app.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#6cfbef7cc90c4d1ab0842b13e483fafb"
+          receiver: '#6cfbef7cc90c4d1ab0842b13e483fafb'
           aters: C1776236406
           patto: C1776236406
           vars: |
@@ -388,5 +437,3 @@ jobs:
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: artifact-java
-
-

@@ -9,7 +9,6 @@ env:
   DOCKER_REGISTRY: ghcr.io
 
 jobs:
-
   ensure-main:
     name: Ensure main
     runs-on: ubuntu-latest
@@ -125,7 +124,7 @@ jobs:
         with:
           template: .maintain/notify/build-failed-docker-image.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: '#d8bb7fbacf0849f1bb7fcc89a878a1a0'
           vars: |
             environment: 测试环境
             app: ${{ matrix.package.LAUNCHER }}
@@ -191,7 +190,7 @@ jobs:
         with:
           template: .maintain/notify/migrate-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: '#d8bb7fbacf0849f1bb7fcc89a878a1a0'
           vars: |
             environment: 测试环境
             app: ${{ matrix.project }}
@@ -238,10 +237,65 @@ jobs:
         with:
           template: .maintain/notify/build-failed-docker-image.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: '#d8bb7fbacf0849f1bb7fcc89a878a1a0'
           vars: |
             environment: 测试环境
             app: ${{ matrix.package}}
+
+  build-docker-image-frontend:
+    name: Build docker image frontend
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    strategy:
+      matrix:
+        package:
+          - name: woodii
+            path: woodii
+            command: build:stg
+            dist: dist-stg
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: fewensa/actions/clone-dyn@main
+        with:
+          repository: prtmax/endfather
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: benjlevesque/short-sha@v1.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: prepare deps
+        working-directory: ${{ matrix.package.path }}
+        run: |
+          npm i -g yarn
+          yarn install
+          yarn ${{ matrix.package.command }}
+
+      - name: after build
+        run: |
+          cd ${{ matrix.package.path }}
+          mv ${{ matrix.package.dist }} target
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ${{ matrix.package.path }}
+          file: ${{ matrix.package.path }}/docker/Dockerfile
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:staging
 
   deploy-app-backend:
     name: Deploy app backend
@@ -269,7 +323,6 @@ jobs:
           - name: launcher-webhook
             appid: TvpKXQi6h2GAQ38K7cdS6
     steps:
-
       - name: Deploy app
         uses: tarasyarema/dokploy-deploy-action@main
         with:
@@ -380,7 +433,7 @@ jobs:
         with:
           template: .maintain/notify/deploy-app.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+          receiver: '#d8bb7fbacf0849f1bb7fcc89a878a1a0'
           vars: |
             environment: 测试环境
             app: ${{ matrix.package }}
