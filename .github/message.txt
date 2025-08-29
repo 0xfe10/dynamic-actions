@@ -1,1 +1,1 @@
-cpcl ota中 忽略状态异常
+universal_ble: ^0.21.0
