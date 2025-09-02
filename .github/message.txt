@@ -1,1 +1,3 @@
-修改名称增加机型
+Merge pull request #10 from prtmax/fix
+
+Fix
