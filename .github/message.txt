@@ -1,1 +1,1 @@
-summary_device表增加索引 (#273)
+limit_config表增加remark字段
