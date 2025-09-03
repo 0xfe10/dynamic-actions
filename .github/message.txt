@@ -1,1 +1,1 @@
-使用bluetooth_low_energy库
+bluetooth_low_energy 优化
