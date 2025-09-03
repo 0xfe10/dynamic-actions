@@ -1,1 +1,1 @@
-输入框，小数格式
+windows 蓝牙使用bluetooth_low_energy库
