@@ -1,1 +1,1 @@
-ble_native
+bluetooth_low_energy

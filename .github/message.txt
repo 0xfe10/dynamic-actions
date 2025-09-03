@@ -1,1 +1,1 @@
-鸿蒙 监听蓝牙连接状态
+使用bluetooth_low_energy库
