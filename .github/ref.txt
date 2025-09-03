@@ -1,1 +1,1 @@
-summary-device-index
+main
