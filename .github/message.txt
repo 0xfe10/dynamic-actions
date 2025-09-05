@@ -1,1 +1,1 @@
-生成红黑图片比率修改
+Merge branch 'v_1_5_0' of https://github.com/prtmax/labeldesktop into v_1_5_0
