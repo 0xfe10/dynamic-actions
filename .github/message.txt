@@ -1,1 +1,1 @@
-Add hello route
+whitelist hello route
