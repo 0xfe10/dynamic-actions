@@ -1,1 +1,1 @@
-Merge maprintrace
+Refactor Dockerfile to include build steps and add .dockerignore for ignored files
