@@ -15,7 +15,10 @@ jobs:
     strategy:
       matrix:
         package:
-          - erpfastprint
+          - name: erpfastprint
+            dockerfile: Dockerfile
+          - name: maprintrace
+            dockerfile: docker/Dockerfile
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
@@ -26,7 +29,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Check
-        working-directory: ${{ matrix.package }}
+        working-directory: ${{ matrix.package.name }}
         run: |
           ls -la
 
@@ -43,11 +46,11 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ${{ matrix.package }}
-          file: ${{ matrix.package }}/Dockerfile
+          context: ${{ matrix.package.name }}
+          file: ${{ matrix.package.name }}/${{ matrix.package.dockerfile }}
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-${{ matrix.package }}:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-${{ matrix.package }}:latest
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-${{ matrix.package.name }}:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-${{ matrix.package.name }}:latest
 
   # deploy-openapps:
   #   name: Deploy openapps
