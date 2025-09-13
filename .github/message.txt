@@ -1,1 +1,1 @@
-Refactor landing page structure and update deployment workflows
+Remove unnecessary blank line in trigger-branch.yml
