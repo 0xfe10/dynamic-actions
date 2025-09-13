@@ -1,1 +1,1 @@
-Refactor nginx configuration to streamline redirect handling and improve efficiency
+Add mapping for Apple App Site Association file based on hostname
