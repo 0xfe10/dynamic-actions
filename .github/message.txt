@@ -1,1 +1,1 @@
-Add mapping for Apple App Site Association file based on hostname
+Update server block for landing fly to include additional hostname and improve request handling
