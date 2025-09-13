@@ -9,7 +9,7 @@ env:
 
 jobs:
 
-  build-landing:
+  build-landing-page:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: fewensa/actions/clone-dyn@main
         with:
-          repository: prtmax/landing
+          repository: prtmax/landing-page
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
@@ -41,6 +41,6 @@ jobs:
           context: .
           file: Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing:latest
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing-page:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing-page:latest
 

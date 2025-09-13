@@ -1,1 +1,1 @@
-Update tag pattern in production workflow to include full landing-page version
+Rename job and repository references for landing page in production workflow
