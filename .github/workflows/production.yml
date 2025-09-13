@@ -3,7 +3,7 @@ name: '[landing] Production'
 on:
   push:
     tags:
-      - "v*-landing"
+      - "v*-landing-page"
 env:
   DOCKER_REGISTRY: ghcr.io
 

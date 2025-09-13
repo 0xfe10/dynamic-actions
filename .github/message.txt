@@ -1,1 +1,1 @@
-Remove unnecessary blank line in trigger-branch.yml
+Update tag pattern in production workflow to include full landing-page version
