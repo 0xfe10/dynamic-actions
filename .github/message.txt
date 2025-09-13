@@ -1,1 +1,1 @@
-Rename job and repository references for landing page in production workflow
+Refactor nginx configuration to streamline redirect handling and improve efficiency
