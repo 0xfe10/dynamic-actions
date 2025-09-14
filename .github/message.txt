@@ -1,1 +1,1 @@
-wiot ci
+CI

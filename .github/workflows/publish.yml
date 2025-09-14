@@ -2,8 +2,8 @@ name: '[wiot] Publish'
 
 on:
   push:
-    branches:
-      - '**'
+    #branches:
+    #  - '**'
     tags:
       - "v*-wiot"
 
