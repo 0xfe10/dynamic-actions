@@ -8,7 +8,8 @@ on:
       - "v*-wiot"
 
 env:
-  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+  #DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY: ghcr.io
 
 jobs:
 
@@ -24,63 +25,72 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: docker/login-action@v3
-        with:
-          registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
-          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+      # - uses: docker/login-action@v3
+      #   with:
+      #     registry: ${{ env.DOCKER_REGISTRY }}
+      #     username: ${{ secrets.REGISTRY_ALI_USERNAME }}
+      #     password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
 
-      - uses: benjlevesque/short-sha@v1.2
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - uses: benjlevesque/short-sha@v3.0
 
       - name: Publish docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: .
           file: Dockerfile
+          # tags: ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:latest
 
-  deploy-ansible:
-    name: Deploy ansible
-    runs-on: ubuntu-latest
-    needs:
-      - build-docker-image
-    steps:
-      - uses: actions/checkout@v4
-      - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
-        with:
-          repository: prtmax/wiot
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
+  # deploy-ansible:
+  #   name: Deploy ansible
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - build-docker-image
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Checkout
+  #       uses: fewensa/actions/clone-dyn@main
+  #       with:
+  #         repository: prtmax/wiot
+  #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+  #         ref_file: .github/ref.txt
 
-      - uses: benjlevesque/short-sha@v1.2
-      - name: Generate variables
-        run: |
-          TEMPLATE_FILE=.maintain/playbooks.yml
-          DEPLOYMENT_FILE=playbooks/wiot/host_vars/iprtapp-cn1-ek.yml
-          IMAGE_TAG=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
+  #     - uses: benjlevesque/short-sha@v1.2
+  #     - name: Generate variables
+  #       run: |
+  #         TEMPLATE_FILE=.maintain/playbooks.yml
+  #         DEPLOYMENT_FILE=playbooks/wiot/host_vars/iprtapp-cn1-ek.yml
+  #         IMAGE_TAG=${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:wiot-sha-${{ env.SHA }}
 
-          yq e ".docker_app_runner.container.wiot.image = \"${IMAGE_TAG}\"" --inplace ${TEMPLATE_FILE}
-          mkdir dist
-          jq -n \
-            --arg file ${DEPLOYMENT_FILE} \
-            --arg content "$(cat ${TEMPLATE_FILE})" \
-            '{file: $file, content: $content}' >> dist/change.json
+  #         yq e ".docker_app_runner.container.wiot.image = \"${IMAGE_TAG}\"" --inplace ${TEMPLATE_FILE}
+  #         mkdir dist
+  #         jq -n \
+  #           --arg file ${DEPLOYMENT_FILE} \
+  #           --arg content "$(cat ${TEMPLATE_FILE})" \
+  #           '{file: $file, content: $content}' >> dist/change.json
 
-          jq -crs '.' < dist/change.json > dist/changes.json
-          cat dist/changes.json
+  #         jq -crs '.' < dist/change.json > dist/changes.json
+  #         cat dist/changes.json
 
-      - name: Deploy
-        uses: fewensa/actions/ansible-deploy@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-        with:
-          project_name: prtmax/wiot
-          changes: dist/changes.json
-          ac_git_ref: __origin__/.github/ref.txt
-          commit_message: __origin__/.github/message.txt
+  #     - name: Deploy
+  #       uses: fewensa/actions/ansible-deploy@main
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+  #       with:
+  #         project_name: prtmax/wiot
+  #         changes: dist/changes.json
+  #         ac_git_ref: __origin__/.github/ref.txt
+  #         commit_message: __origin__/.github/message.txt
 
       # - name: Deploy
       #   uses: fewensa/actions/ansible-deploy@main
