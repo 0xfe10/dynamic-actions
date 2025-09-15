@@ -1,1 +1,1 @@
-fix: update PowerPoint conversion to use WindowState for minimized state
+feat: update file cleanup management with persistent storage and error handling
