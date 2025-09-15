@@ -1,1 +1,1 @@
-fix: update logging initialization to use tracing-subscriber with log compatibility
+feat: add PowerPoint conversion test script with resource cleanup
