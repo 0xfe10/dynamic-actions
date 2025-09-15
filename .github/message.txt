@@ -1,1 +1,1 @@
-feat: add logging support with log and tracing-log dependencies
+fix: update logging initialization to use tracing-subscriber with log compatibility
