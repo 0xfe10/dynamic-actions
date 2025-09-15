@@ -28,7 +28,7 @@ jobs:
       - name: Checkout Source
         uses: fewensa/actions/clone-dyn@main
         with:
-          repository: prtmax/ayn2pdf
+          repository: prtmax/any2pdf
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
@@ -83,7 +83,7 @@ jobs:
       - name: Checkout Source
         uses: fewensa/actions/clone-dyn@main
         with:
-          repository: prtmax/ayn2pdf
+          repository: prtmax/any2pdf
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 

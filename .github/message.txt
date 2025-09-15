@@ -1,1 +1,1 @@
-fix: downgrade actions/upload-artifact version to v4 in production workflow
+fix: correct repository name from prtmax/ayn2pdf to prtmax/any2pdf in workflow
