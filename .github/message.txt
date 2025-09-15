@@ -1,1 +1,1 @@
-fix: update docker image tags to include 'latest' alongside SHA
+feat: add root route returning 'hello'
