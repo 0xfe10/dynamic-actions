@@ -18,9 +18,7 @@ jobs:
         target:
           - x86_64-unknown-linux-musl
           - x86_64-pc-windows-gnu
-          - x86_64-apple-darwin
           - aarch64-unknown-linux-musl
-          - aarch64-apple-darwin
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -152,8 +150,6 @@ jobs:
           - **Linux (x64)**: any2pdf-x86_64-unknown-linux-musl
           - **Linux (ARM64)**: any2pdf-aarch64-unknown-linux-musl
           - **Windows (x64)**: any2pdf-x86_64-pc-windows-gnu.exe
-          - **macOS (Intel)**: any2pdf-x86_64-apple-darwin
-          - **macOS (Apple Silicon)**: any2pdf-aarch64-apple-darwin
 
       - name: Create Release
         uses: softprops/action-gh-release@v2

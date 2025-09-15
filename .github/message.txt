@@ -1,1 +1,1 @@
-fix: correct repository name from prtmax/ayn2pdf to prtmax/any2pdf in workflow
+fix: remove unsupported target architectures from cross-platform build
