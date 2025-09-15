@@ -1,1 +1,3 @@
-style: improve code consistency and formatting
+Merge pull request #1 from prtmax/feature-ci
+
+Feature CI
