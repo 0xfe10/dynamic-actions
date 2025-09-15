@@ -46,7 +46,9 @@ jobs:
           push: true
           context: ${{ matrix.package }}
           file: ${{ matrix.package }}/Dockerfile
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-${{ matrix.package }}:sha-${{ env.SHA }}
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-${{ matrix.package }}:latest
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-${{ matrix.package }}:sha-${{ env.SHA }}
 
   # deploy-apps:
   #   name: Deploy qurator

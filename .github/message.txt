@@ -1,1 +1,1 @@
-Test
+fix: update docker image tags to include 'latest' alongside SHA
