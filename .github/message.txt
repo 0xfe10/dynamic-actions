@@ -1,1 +1,1 @@
-feat: update file cleanup management with persistent storage and error handling
+feat: add server_url argument for public URL configuration in main function
