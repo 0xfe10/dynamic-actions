@@ -1,1 +1,1 @@
-feat: update OSS file upload structure and URL generation with signed URLs
+feat: remove obsolete OSS lifecycle and path structure documentation, and cleanup test scripts
