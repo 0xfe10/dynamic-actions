@@ -1,1 +1,1 @@
-fix: Remove trailing whitespace in scripts and README
+feat: Update GitHub Actions workflow and add Dockerfile for Any2PDF

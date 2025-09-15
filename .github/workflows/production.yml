@@ -23,7 +23,7 @@ jobs:
           - aarch64-apple-darwin
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout Source
         uses: fewensa/actions/clone-dyn@main
@@ -33,7 +33,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Set up Rust
-        uses: actions-rs/toolchain@v1
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           toolchain: stable
           target: ${{ matrix.target }}
@@ -42,20 +42,20 @@ jobs:
       - name: Install Cross
         run: cargo install cross --git https://github.com/cross-rs/cross
 
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
+      # - name: Cache Dependencies
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       ~/.cargo/bin/
+      #       ~/.cargo/registry/index/
+      #       ~/.cargo/registry/cache/
+      #       ~/.cargo/git/db/
+      #       target/
+      #     key: ${{ runner.os }}-cargo-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Build Static Binary
         run: |
-          cross build --release --target ${{ matrix.target }} --bin any2pdf
+          cross build --release --target=${{ matrix.target }}
 
       - name: Prepare Binary
         run: |
@@ -67,7 +67,7 @@ jobs:
           fi
 
       - name: Upload Binary Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: any2pdf-${{ matrix.target }}
           path: artifacts/*
@@ -78,7 +78,7 @@ jobs:
     needs: build-cross-platform
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout Source
         uses: fewensa/actions/clone-dyn@main
@@ -88,7 +88,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Download Linux Binary
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           name: any2pdf-x86_64-unknown-linux-musl
           path: ./artifacts/
@@ -102,16 +102,6 @@ jobs:
           registry: ${{ env.DOCKER_REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Dockerfile
-        run: |
-          cat > Dockerfile << 'EOF'
-          FROM scratch
-          COPY artifacts/any2pdf-x86_64-unknown-linux-musl /usr/local/bin/any2pdf
-          EXPOSE 3000
-          ENTRYPOINT ["/usr/local/bin/any2pdf"]
-          CMD ["--bind", "0.0.0.0:3000"]
-          EOF
 
       - uses: benjlevesque/short-sha@v3.0
 
@@ -131,10 +121,10 @@ jobs:
     needs: [build-cross-platform, build-docker]
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download All Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           path: ./release-artifacts/
 
@@ -157,13 +147,6 @@ jobs:
           cat > release_notes.md << EOF
           # Any2PDF v${{ steps.version.outputs.version }}
 
-          ## 🚀 Features
-          - HTTP API server with file conversion endpoints
-          - Support for Microsoft Office files (Word, Excel, PowerPoint)
-          - Support for Markdown files
-          - Cross-platform static binaries
-          - Docker container support
-
           ## 📦 Downloads
           Choose the binary for your platform:
           - **Linux (x64)**: any2pdf-x86_64-unknown-linux-musl
@@ -172,31 +155,14 @@ jobs:
           - **macOS (Intel)**: any2pdf-x86_64-apple-darwin
           - **macOS (Apple Silicon)**: any2pdf-aarch64-apple-darwin
 
-          ## 🐳 Docker
-          \`\`\`bash
-          docker run -p 3000:3000 ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}:${{ steps.version.outputs.version }}
-          \`\`\`
-
-          ## 🛠 Usage
-          \`\`\`bash
-          # Start HTTP server
-          ./any2pdf --bind 0.0.0.0:3000
-
-          # Convert file via API
-          curl -X POST http://localhost:3000/api/v1/convert \\
-            -H "Content-Type: application/json" \\
-            -d '{"url": "https://example.com/document.docx"}'
-          \`\`\`
-          EOF
-
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: Any2PDF v${{ steps.version.outputs.version }}
           body_path: release_notes.md
           files: release-assets/*
           draft: false
-          prerelease: false
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
