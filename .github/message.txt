@@ -1,1 +1,1 @@
-chore: format prisma schema for consistency and readability
+style: improve code consistency and formatting
