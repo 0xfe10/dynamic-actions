@@ -1,1 +1,1 @@
-fix: update PowerPoint conversion script to use WindowState instead of Visible
+fix: update PowerPoint conversion to use WindowState for minimized state
