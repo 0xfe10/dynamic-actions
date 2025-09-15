@@ -155,7 +155,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: Any2PDF v${{ steps.version.outputs.version }}
+          #name: Any2PDF v${{ steps.version.outputs.version }}
           body_path: release_notes.md
           files: release-assets/*
           draft: false
