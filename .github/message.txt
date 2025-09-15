@@ -1,1 +1,1 @@
-fix: comment out version name in GitHub release step
+feat: add logging support with log and tracing-log dependencies
