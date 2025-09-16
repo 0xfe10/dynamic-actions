@@ -20,7 +20,7 @@ jobs:
           - name: maprintrace
             dockerfile: docker/Dockerfile
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Checkout
         uses: fewensa/actions/clone-dyn@main
         with:
@@ -58,7 +58,7 @@ jobs:
   #   needs:
   #     - build-openapps
   #   steps:
-  #     - uses: actions/checkout@v4
+  #     - uses: actions/checkout@v5
   #     - name: Checkout
   #       uses: fewensa/actions/clone-dyn@main
   #       with:
