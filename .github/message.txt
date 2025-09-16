@@ -1,0 +1,1 @@
+refactor: rename messaging bridge references to msgbridge and update Docker configurations
