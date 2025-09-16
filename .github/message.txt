@@ -1,1 +1,1 @@
-Rename build and deploy jobs for consistency in production workflow
+fix: update actions/checkout version from v4 to v5 in workflow files
