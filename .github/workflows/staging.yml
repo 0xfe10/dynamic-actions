@@ -46,7 +46,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Check
-        working-directory: ${{ matrix.package }}
+        working-directory: pkgs/${{ matrix.package }}
         run: |
           ls -la
 
