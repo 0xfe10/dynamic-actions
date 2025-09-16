@@ -1,3 +1,1 @@
-Merge pull request #1 from prtmax/feature-ci
-
-Feature CI
+update actions/checkout to v5 in workflow files
