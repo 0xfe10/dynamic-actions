@@ -1,1 +1,1 @@
-graphql-filename
+main
