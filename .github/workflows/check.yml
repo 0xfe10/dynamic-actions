@@ -19,7 +19,7 @@ jobs:
             target: linux
     runs-on: ${{ matrix.package.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Checkout
         uses: fewensa/actions/clone-dyn@main
         with:
@@ -90,7 +90,7 @@ jobs:
       - check
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Checkout
         uses: fewensa/actions/clone-dyn@main
         with:

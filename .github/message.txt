@@ -1,5 +1,1 @@
-Better error message (#6)
-
-* Enhance error messages in database connection and SQL operation handlers for better clarity
-
-* Update default XUSQL version to v0.0.23 in setup script
+fix: update actions/checkout version from v4 to v5 in workflow files
