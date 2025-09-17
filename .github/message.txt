@@ -1,1 +1,1 @@
-chore: update actions/checkout version from v4 to v5 in workflow files
+feat: update OSS configuration to use internal and accelerate endpoints
