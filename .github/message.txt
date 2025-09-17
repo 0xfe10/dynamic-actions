@@ -1,15 +1,1 @@
-Device (#6)
-
-* 关闭文件映射
-
-* 修改测试数据
-
-* 剔除outbox模式
-
-* 添加健康检查
-
-* 修改健康检查返回service名称
-
----------
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+添加oss文件上传功能
