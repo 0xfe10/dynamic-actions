@@ -1,1 +1,1 @@
-feat: increase client request and disconnect timeouts to 900 seconds
+feat: enhance download_file function with multi-threaded support and improved error handling
