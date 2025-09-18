@@ -1,1 +1,1 @@
-feat: enhance download_file function with multi-threaded support and improved error handling
+refactor: remove unnecessary final sync operation in multi-threaded download
