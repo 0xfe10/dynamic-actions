@@ -1,1 +1,1 @@
-feat: update OSS configuration to use internal and accelerate endpoints
+feat: increase client request and disconnect timeouts to 900 seconds
