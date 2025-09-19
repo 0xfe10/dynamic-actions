@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/openapps
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -60,7 +60,7 @@ jobs:
   #   steps:
   #     - uses: actions/checkout@v5
   #     - name: Checkout
-  #       uses: fewensa/actions/clone-dyn@main
+  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
   #       with:
   #         repository: prtmax/openapps
   #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -94,7 +94,7 @@ jobs:
   #         cat dist/changes.json
 
   #     - name: Deploy
-  #       uses: fewensa/actions/ansible-deploy@main
+  #       uses: repotea-workspace/kangumi/github-actions/ansible-deploy@main
   #       env:
   #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
   #       with:
