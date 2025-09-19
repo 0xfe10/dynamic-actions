@@ -1,1 +1,1 @@
-Add server block for handling redirects and error pages
+Refactor nginx configuration for improved redirection handling and file serving
