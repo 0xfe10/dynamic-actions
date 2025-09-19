@@ -25,7 +25,7 @@ jobs:
           java-version: 17
           maven-version: 3.9.8
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -71,7 +71,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -100,7 +100,7 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:latest
 
-      - uses: fewensa/actions/tepusher@main
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: failure()
         with:
           template: .maintain/notify/build-failed-docker-image.md
@@ -126,7 +126,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -174,7 +174,7 @@ jobs:
             --password=${{ secrets.BABOSA_DB_ANALYSIS_PASSWORD_PRD }}
             --changelog-file=master.xml
 
-      - uses: fewensa/actions/tepusher@main
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: failure()
         with:
           template: .maintain/notify/migrate-failed.md
@@ -196,7 +196,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -220,7 +220,7 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:latest
 
-      - uses: fewensa/actions/tepusher@main
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: failure()
         with:
           template: .maintain/notify/build-failed-docker-image.md
@@ -243,7 +243,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -318,7 +318,7 @@ jobs:
 
       # - uses: actions/checkout@v5
       # - name: Checkout
-      #   uses: fewensa/actions/clone-dyn@main
+      #   uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
       #   with:
       #     repository: prtmax/endfather
       #     token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -364,7 +364,7 @@ jobs:
       #     cat dist/changes.json
 
       # - name: Deploy
-      #   uses: fewensa/actions/ansible-deploy@main
+      #   uses: repotea-workspace/kangumi/github-actions/ansible-deploy@main
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
       #   with:
@@ -373,7 +373,7 @@ jobs:
       #     ac_git_ref: __origin__/.github/ref.txt
       #     commit_message: __origin__/.github/message.txt
 
-      # - uses: fewensa/actions/tepusher@main
+      # - uses: repotea-workspace/kangumi/github-actions/tepusher@main
       #   if: failure()
       #   with:
       #     template: .maintain/notify/deploy-app.md
@@ -395,13 +395,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: fewensa/actions/smart-vercel@main
+      - uses: repotea-workspace/kangumi/github-actions/smart-vercel@main
         name: Deploy to Vercel
         with:
           node_version: 20
@@ -415,7 +415,7 @@ jobs:
           enable_cache: true
           prod_mode: true
 
-      - uses: fewensa/actions/tepusher@main
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: failure()
         with:
           template: .maintain/notify/deploy-app.md
