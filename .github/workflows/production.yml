@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Checkout Source
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/any2pdf
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -79,7 +79,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Checkout Source
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/any2pdf
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'

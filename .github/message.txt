@@ -1,1 +1,1 @@
-refactor: remove unnecessary final sync operation in multi-threaded download
+fix: update action references to use repotea-workspace for consistency
