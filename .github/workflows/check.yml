@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/xusql
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -92,13 +92,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/xusql
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: fewensa/actions/tepusher@main
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         with:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}
