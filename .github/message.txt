@@ -1,1 +1,1 @@
-Refactor nginx configuration for improved redirection handling and file serving
+Update nginx configuration to correct alias paths and remove redundant error page definitions
