@@ -1,1 +1,1 @@
-Update base href in index.html for correct landing page URL
+refactor: update action references to repotea-workspace for consistency
