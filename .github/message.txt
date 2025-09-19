@@ -1,1 +1,1 @@
-fix: update actions/checkout version from v4 to v5 in workflow files
+refactor: update action references to repotea-workspace for consistency
