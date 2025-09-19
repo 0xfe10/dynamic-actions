@@ -1,1 +1,1 @@
-Update nginx configuration to correct alias paths and remove redundant error page definitions
+Update base href in index.html for correct landing page URL
