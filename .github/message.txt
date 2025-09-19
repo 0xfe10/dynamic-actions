@@ -1,1 +1,1 @@
-refactor: update action references to repotea-workspace for consistency
+chore: remove trailing newline from staging.yml

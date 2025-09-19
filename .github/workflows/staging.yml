@@ -68,4 +68,3 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package }}:staging
-
