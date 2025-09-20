@@ -1,9 +1,1 @@
-Aliyun oss (#285)
-
-* 更换阿里云oss
-
-* 阿里云oss增加状态
-
-* 阿里云oss
-
-* 阿里云oss
+阿里云oss
