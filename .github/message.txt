@@ -1,1 +1,1 @@
-feat: add ExportPDF converter for Microsoft Office file conversion
+fix: ensure ExportPdfConverter initialization handles errors gracefully
