@@ -1,1 +1,1 @@
-纹身
+Increase Java memory allocation in entrypoint script
