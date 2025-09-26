@@ -1,1 +1,3 @@
-优化定时任务
+Merge pull request #8 from prtmax/feature/upgrade
+
+添加固件升级下发模块
