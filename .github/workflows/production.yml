@@ -50,53 +50,31 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-${{ matrix.package }}:latest
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-${{ matrix.package }}:sha-${{ env.SHA }}
 
-  # deploy-apps:
-  #   name: Deploy qurator
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - build-apps
-  #   steps:
-  #     - uses: actions/checkout@v5
-  #     - name: Checkout
-  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-  #       with:
-  #         repository: prtmax/qurator
-  #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-  #         ref_file: .github/ref.txt
+  deploy-apps:
+    name: Deploy qurator
+    runs-on: ubuntu-latest
+    needs:
+      - build-apps
+    steps:
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/qurator
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
 
-  #     - uses: benjlevesque/short-sha@v3.0
-
-  #     - name: Generate variables
-  #       run: |
-  #         TEMPLATE_FILE=playbooks.yml
-  #         > ${TEMPLATE_FILE}
-
-  #         IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
-
-  #         IAMGE_qurator_API=${IMAGE_TAG_BASE}/qurator-api:sha-${{ env.SHA }}
-  #         IAMGE_qurator_FRONTEND=${IMAGE_TAG_BASE}/qurator-frontend:sha-${{ env.SHA }}
-
-  #         yq e ".docker_app_runner.container.qurator-api.image = \"${IAMGE_qurator_API}\"" --inplace ${TEMPLATE_FILE}
-  #         yq e ".docker_app_runner.container.qurator-frontend.image = \"${IAMGE_qurator_FRONTEND}\"" --inplace ${TEMPLATE_FILE}
-
-  #         mkdir dist
-
-  #         DEPLOYMENT_FILE=playbooks/qurator/host_vars/iprtapp-cn1-ek.yml
-
-  #         jq -n \
-  #           --arg file ${DEPLOYMENT_FILE} \
-  #           --arg content "$(cat ${TEMPLATE_FILE})" \
-  #           '{file: $file, content: $content}' >> dist/change.json
-
-  #         jq -crs '.' < dist/change.json > dist/changes.json
-  #         cat dist/changes.json
-
-  #     - name: Deploy
-  #       uses: repotea-workspace/kangumi/github-actions/ansible-deploy@main
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-  #       with:
-  #         project_name: prtmax/qurator
-  #         changes: dist/changes.json
-  #         ac_git_ref: __origin__/.github/ref.txt
-  #         commit_message: __origin__/.github/message.txt
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          changes: |
+            {
+              "argocd/labelix/suite/overlays/production/qurator/api/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-api:sha-${{ env.SHA }}"
+              },
+              "argocd/labelix/suite/overlays/production/qurator/frontend/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-frontend:sha-${{ env.SHA }}"
+              }
+            }

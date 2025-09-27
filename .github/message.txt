@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/qurator
+refactor: enable deployment workflow for qurator with updated steps
