@@ -1,1 +1,1 @@
-refactor: enable deployment workflow for qurator with updated steps
+chore: add short-sha action before deployment step

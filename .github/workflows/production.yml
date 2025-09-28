@@ -64,6 +64,7 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
+      - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
