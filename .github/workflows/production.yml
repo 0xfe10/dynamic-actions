@@ -82,3 +82,4 @@ jobs:
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-frontend:sha-${{ env.SHA }}"
               }
             }
+
