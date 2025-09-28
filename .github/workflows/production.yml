@@ -69,6 +69,9 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
+          project_name: prtmax/qurator
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           changes: |
             {

@@ -1,1 +1,1 @@
-chore: add short-sha action before deployment step
+feat: add project name and git reference for deployment
