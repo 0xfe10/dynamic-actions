@@ -52,53 +52,39 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-${{ matrix.package.name }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-${{ matrix.package.name }}:latest
 
-  # deploy-openapps:
-  #   name: Deploy openapps
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - build-openapps
-  #   steps:
-  #     - uses: actions/checkout@v5
-  #     - name: Checkout
-  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-  #       with:
-  #         repository: prtmax/openapps
-  #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-  #         ref_file: .github/ref.txt
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-openapps
+    steps:
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/openapps
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
 
-  #     - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: labelix-production-openapps
+          project_name: prtmax/openapps
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+          changes: |
+            {
+              "argocd/labelix/openapps/overlays/production/erpfastprint/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-erpfastprint:sha-${{ env.SHA }}"
+              },
+              "argocd/labelix/openapps/overlays/production/maprintrace/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/openapps-maprintrace:sha-${{ env.SHA }}"
+              }
+            }
 
-  #     - name: Generate variables
-  #       run: |
-  #         TEMPLATE_FILE=playbooks.yml
-  #         > ${TEMPLATE_FILE}
-
-  #         IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
-
-  #         IAMGE_openapps_API=${IMAGE_TAG_BASE}/openapps-api:sha-${{ env.SHA }}
-  #         IAMGE_openapps_FRONTEND=${IMAGE_TAG_BASE}/openapps-frontend:sha-${{ env.SHA }}
-
-  #         yq e ".docker_app_runner.container.openapps-api.image = \"${IAMGE_openapps_API}\"" --inplace ${TEMPLATE_FILE}
-  #         yq e ".docker_app_runner.container.openapps-frontend.image = \"${IAMGE_openapps_FRONTEND}\"" --inplace ${TEMPLATE_FILE}
-
-  #         mkdir dist
-
-  #         DEPLOYMENT_FILE=playbooks/openapps/host_vars/iprtapp-cn1-ek.yml
-
-  #         jq -n \
-  #           --arg file ${DEPLOYMENT_FILE} \
-  #           --arg content "$(cat ${TEMPLATE_FILE})" \
-  #           '{file: $file, content: $content}' >> dist/change.json
-
-  #         jq -crs '.' < dist/change.json > dist/changes.json
-  #         cat dist/changes.json
-
-  #     - name: Deploy
-  #       uses: repotea-workspace/kangumi/github-actions/ansible-deploy@main
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-  #       with:
-  #         project_name: prtmax/openapps
-  #         changes: dist/changes.json
-  #         ac_git_ref: __origin__/.github/ref.txt
-  #         commit_message: __origin__/.github/message.txt
