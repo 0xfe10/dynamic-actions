@@ -81,7 +81,7 @@ jobs:
               "argocd/labelix/suite/overlays/production/guestkey/api/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-api:sha-${{ env.SHA }}"
               },
-              "argocd/labelix/suite/overlays/production/guestkey/frontend/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-frontend:sha-${{ env.SHA }}"
+              "argocd/labelix/suite/overlays/production/guestkey/vision/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-vision:sha-${{ env.SHA }}"
               }
             }

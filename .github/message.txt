@@ -1,1 +1,1 @@
-Update action reference in trigger-tag.yml to use dyn-actions for consistency
+Update deployment patch for vision service in production workflow
