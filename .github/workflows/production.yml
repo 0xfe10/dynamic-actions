@@ -44,3 +44,36 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing-page:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing-page:latest
 
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-landing-page
+    steps:
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/landing-page
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: labelix-production-openapps
+          project_name: prtmax/landing-page
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+          changes: |
+            {
+              "argocd/labelix/openapps/overlays/production/landing-page/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing-page:sha-${{ env.SHA }}"
+              }
+            }
+
