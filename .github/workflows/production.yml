@@ -77,9 +77,9 @@ jobs:
           changes: |
             {
               "argocd/labelix/suite/overlays/production/aynguide/api/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-api:sha-${{ env.SHA }}"
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-api:sha-${{ env.SHA }}"
               },
               "argocd/labelix/suite/overlays/production/aynguide/frontend/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-frontend:sha-${{ env.SHA }}"
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-frontend:sha-${{ env.SHA }}"
               }
             }
