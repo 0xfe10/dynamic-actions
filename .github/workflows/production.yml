@@ -49,7 +49,7 @@ jobs:
           tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-${{ matrix.package }}:sha-${{ env.SHA }}
 
   deploy-apps:
-    name: Deploy aynguide
+    name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
       - build-apps
@@ -63,39 +63,23 @@ jobs:
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
-
-      - name: Generate variables
-        run: |
-          TEMPLATE_FILE=playbooks.yml
-          > ${TEMPLATE_FILE}
-
-          IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
-
-          IAMGE_AYNGUIDE_API=${IMAGE_TAG_BASE}/aynguide-api:sha-${{ env.SHA }}
-          IAMGE_AYNGUIDE_FRONTEND=${IMAGE_TAG_BASE}/aynguide-frontend:sha-${{ env.SHA }}
-
-          yq e ".docker_app_runner.container.aynguide-api.image = \"${IAMGE_AYNGUIDE_API}\"" --inplace ${TEMPLATE_FILE}
-          yq e ".docker_app_runner.container.aynguide-frontend.image = \"${IAMGE_AYNGUIDE_FRONTEND}\"" --inplace ${TEMPLATE_FILE}
-
-          mkdir dist
-
-          DEPLOYMENT_FILE=playbooks/aynguide/host_vars/iprtapp-cn1-ek.yml
-
-          jq -n \
-            --arg file ${DEPLOYMENT_FILE} \
-            --arg content "$(cat ${TEMPLATE_FILE})" \
-            '{file: $file, content: $content}' >> dist/change.json
-
-          jq -crs '.' < dist/change.json > dist/changes.json
-          cat dist/changes.json
-
       - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/ansible-deploy@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: labelix-production-suite
           project_name: prtmax/aynguide
-          changes: dist/changes.json
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
-
+          changes: |
+            {
+              "argocd/labelix/suite/overlays/production/aynguide/api/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-api:sha-${{ env.SHA }}"
+              },
+              "argocd/labelix/suite/overlays/production/aynguide/frontend/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-frontend:sha-${{ env.SHA }}"
+              }
+            }
