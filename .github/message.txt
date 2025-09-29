@@ -1,1 +1,1 @@
-ai照片边框
+Add new changelog files for banner click tracking and OSS updates
