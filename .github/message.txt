@@ -1,1 +1,1 @@
-Release v0.0.211 (#292)
+Remove unused changeSets from changelog for database schema cleanup
