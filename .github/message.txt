@@ -1,1 +1,1 @@
-chore: add empty line for better readability in production workflow
+fix: update deploy job name for consistency
