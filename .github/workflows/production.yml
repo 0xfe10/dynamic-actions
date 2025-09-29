@@ -9,7 +9,7 @@ env:
 
 jobs:
 
-  build-guestkey:
+  build-apps:
     name: Build
     runs-on: ubuntu-latest
     strategy:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/guestkey
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -50,72 +50,38 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-${{ matrix.package }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-${{ matrix.package }}:latest
 
-  deploy-guestkey:
-    name: Deploy guestkey
+  deploy-apps:
+    name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
-      - build-guestkey
+      - build-apps
     steps:
-
-      - name: Deploy vision
-        uses: tarasyarema/dokploy-deploy-action@main
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
-          auth_token: ${{ secrets.DOKPLOY_TOKEN_AYN }}
-          application_id: 3tNUNLte-2DMVppdh6u-z
-          dokploy_url: ${{ secrets.DOKPLOY_URL }}
-          wait_for_completion: false
+          repository: prtmax/guestkey
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
 
-      - name: Deploy api
-        uses: tarasyarema/dokploy-deploy-action@main
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
-          auth_token: ${{ secrets.DOKPLOY_TOKEN_AYN }}
-          application_id: ZcIEwgE2fZ8BSNhX6m0-X
-          dokploy_url: ${{ secrets.DOKPLOY_URL }}
-          wait_for_completion: false
-
-
-      # - uses: actions/checkout@v4
-      # - name: Checkout
-      #   uses: fewensa/actions/clone-dyn@main
-      #   with:
-      #     repository: prtmax/guestkey
-      #     token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-      #     ref_file: .github/ref.txt
-
-      # - uses: benjlevesque/short-sha@v3.0
-
-      # - name: Generate variables
-      #   run: |
-      #     TEMPLATE_FILE=playbooks.yml
-      #     > ${TEMPLATE_FILE}
-
-      #     IMAGE_TAG_BASE=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}
-
-      #     IAMGE_GUESTKEY_API=${IMAGE_TAG_BASE}/guestkey-api:sha-${{ env.SHA }}
-      #     IAMGE_GUESTKEY_VISION=${IMAGE_TAG_BASE}/guestkey-vision:sha-${{ env.SHA }}
-
-      #     yq e ".docker_app_runner.container.guestkey-api.image = \"${IAMGE_GUESTKEY_API}\"" --inplace ${TEMPLATE_FILE}
-      #     yq e ".docker_app_runner.container.guestkey-vision.image = \"${IAMGE_GUESTKEY_VISION}\"" --inplace ${TEMPLATE_FILE}
-
-      #     mkdir dist
-
-      #     DEPLOYMENT_FILE=playbooks/guestkey/host_vars/iprtapp-cn1-ek.yml
-
-      #     jq -n \
-      #       --arg file ${DEPLOYMENT_FILE} \
-      #       --arg content "$(cat ${TEMPLATE_FILE})" \
-      #       '{file: $file, content: $content}' >> dist/change.json
-
-      #     jq -crs '.' < dist/change.json > dist/changes.json
-      #     cat dist/changes.json
-
-      # - name: Deploy
-      #   uses: fewensa/actions/ansible-deploy@main
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-      #   with:
-      #     project_name: prtmax/guestkey
-      #     changes: dist/changes.json
-      #     ac_git_ref: __origin__/.github/ref.txt
-      #     commit_message: __origin__/.github/message.txt
-
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: labelix-production-suite
+          project_name: prtmax/guestkey
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+          changes: |
+            {
+              "argocd/labelix/suite/overlays/production/guestkey/api/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-api:sha-${{ env.SHA }}"
+              },
+              "argocd/labelix/suite/overlays/production/guestkey/frontend/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-frontend:sha-${{ env.SHA }}"
+              }
+            }

@@ -1,1 +1,1 @@
-Hello for healthy
+Update action reference in trigger-tag.yml to use dyn-actions for consistency
