@@ -1,3 +1,1 @@
-Merge pull request #9 from prtmax/chore/weekly
-
-更9月份第四周周报
+更新顶部导航栏和底部信息栏样式
