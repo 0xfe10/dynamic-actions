@@ -1,1 +1,1 @@
-Change log level from warn to debug for device info format errors
+Change log level from warn to debug for device info format errors (#298)

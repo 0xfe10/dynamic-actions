@@ -1,1 +1,1 @@
-make-debug-level-log-wrong-device-info
+main
