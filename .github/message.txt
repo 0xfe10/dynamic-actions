@@ -1,1 +1,1 @@
-Change log level from warn to debug for device info format errors (#298)
+Fix queryCountPrinters method to return an empty list when no printers are provided
