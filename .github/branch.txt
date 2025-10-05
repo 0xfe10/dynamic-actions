@@ -1,1 +1,1 @@
-minisize-i18n
+update-argocd
