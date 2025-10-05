@@ -1,1 +1,1 @@
-轮播图点击统计 (#294)
+Add selection of app, locale, name, and value in I18NService query
