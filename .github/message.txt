@@ -1,1 +1,1 @@
-轮播图点击统计 (#294)
+Refactor deployment workflows by commenting out unused backend deployment steps and updating frontend deployment configurations for GitOps integration.
