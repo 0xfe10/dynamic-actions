@@ -1,1 +1,1 @@
-Fix queryCountPrinters method to return an empty list when no printers are provided (#300)
+Improve error logging in ApitraceAnalysisFilter to provide clearer messages
