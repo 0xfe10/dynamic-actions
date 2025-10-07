@@ -1,1 +1,1 @@
-Add logging for geo data query failures in AuthRoute
+Fix login issue, Optional IP acquisition (#302)
