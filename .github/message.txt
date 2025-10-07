@@ -1,1 +1,1 @@
-Fix login issue, Optional IP acquisition (#302)
+轮播图点击统计增加区域显示
