@@ -1,1 +1,15 @@
-Merge branch 'main' into ai-tattoo
+Ai tattoo (#306)
+
+* ai纹身
+
+* ai彩喷纹身限制
+
+* ai照片
+
+* 纹身风格上传示例图
+
+* 纹身
+
+* ai照片边框
+
+* ai特效彩喷
