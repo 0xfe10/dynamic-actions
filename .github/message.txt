@@ -1,1 +1,9 @@
-优化i18N查询
+Add selection of app, locale, name, and value in I18NService query (#295)
+
+* Add selection of app, locale, name, and value in I18NService query
+
+* 优化i18N查询
+
+---------
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
