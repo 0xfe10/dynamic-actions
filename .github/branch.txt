@@ -1,1 +1,1 @@
-filter
+minisize-i18n
