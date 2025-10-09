@@ -1,1 +1,1 @@
-Update expiration time constant for login token to 10 years
+Update expiration time constant for login token to 10 years (#307)
