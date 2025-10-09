@@ -1,1 +1,1 @@
-Update expiration time constant for login token to 10 years (#307)
+组合识别增加link参数
