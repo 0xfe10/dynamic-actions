@@ -1,3 +1,1 @@
-修改游客登录不进行查询ip地址信息 (#318)
-
-Co-authored-by: caiwei12 <caiw@aiyin.com>
+修改游客登录不进行查询ip地址信息
