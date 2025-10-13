@@ -1,1 +1,1 @@
-Merge branch 'main' into sms
+Enhance error logging in RestExceptionHandler to include exception details
