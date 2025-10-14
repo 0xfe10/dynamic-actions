@@ -1,3 +1,1 @@
-_createUser方法添加事务注解 (#319)
-
-Co-authored-by: caiwei12 <caiw@aiyin.com>
+Add changelog for creating index on b_role_user table
