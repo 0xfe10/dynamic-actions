@@ -1,1 +1,1 @@
-Add changelog for creating index on b_role_user table
+Refactor error logging in RestExceptionHandler to remove exception details from log output
