@@ -1,1 +1,1 @@
-resolve conflicts by keeping PR version
+修复迁移文件时错误
