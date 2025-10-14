@@ -1,1 +1,3 @@
-resolve conflicts by keeping PR version
+Merge pull request #10 from prtmax/feature/web
+
+前端初始化
