@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-      - uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/wiot
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -59,7 +59,7 @@ jobs:
   #   steps:
   #     - uses: actions/checkout@v5
   #     - name: Checkout
-  #     - uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+  #       uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
   #       with:
   #         repository: prtmax/wiot
   #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
