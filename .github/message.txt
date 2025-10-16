@@ -1,1 +1,1 @@
-修改固件管理根据nn号搜索
+返回app数据增加state状态为NORMAL
