@@ -1,1 +1,1 @@
-返回app数据增加state状态为NORMAL
+校验登录账号状态
