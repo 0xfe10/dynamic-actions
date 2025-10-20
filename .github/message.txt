@@ -1,1 +1,3 @@
-更改前端样式
+Merge pull request #12 from prtmax/fix/dashboard
+
+Fix/dashboard
