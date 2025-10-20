@@ -1,1 +1,3 @@
-修改固件升级样式
+Merge pull request #11 from prtmax/feature/firmware_upgrade
+
+添加前端固件升级功能
