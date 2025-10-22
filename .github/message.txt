@@ -1,1 +1,1 @@
-chore: resolve merge conflicts and update translations
+修复菜单权限问题
