@@ -1,1 +1,3 @@
-添加设备划拨
+Merge pull request #13 from prtmax/fix/navigationbar
+
+Fix/navigationbar
