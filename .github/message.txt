@@ -1,1 +1,1 @@
-onlyoffice允许域名字典加载 (#326)
+Refactor error logging in RestExceptionHandler to remove exception details from log output
