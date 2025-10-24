@@ -1,1 +1,3 @@
-添加云打印调试客户端
+Merge pull request #15 from prtmax/fix/debug
+
+Fix/debug
