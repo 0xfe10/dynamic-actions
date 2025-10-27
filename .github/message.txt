@@ -1,1 +1,5 @@
-Update OnlyOffice endpoints in application-prod.yml to use environment variables
+Mail (#331)
+
+* 邮件发送
+
+* 邮件发送
