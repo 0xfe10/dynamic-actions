@@ -1,1 +1,3 @@
-修复客户端id没有存储问题
+Merge pull request #16 from prtmax/fix/fonat
+
+Fix/fonat
