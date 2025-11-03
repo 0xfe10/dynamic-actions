@@ -1,1 +1,19 @@
-Merge branch 'main' into hotfix-v0.0.217
+hotfix-v0.0.217 (#320)
+
+* _createUser方法添加事务注解 (#319)
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
+
+* Add changelog for creating index on b_role_user table
+
+* Refactor error logging in RestExceptionHandler to remove exception details from log output
+
+* Update OnlyOffice endpoints in application-prod.yml to use environment variables
+
+* 修改登录设置登录区域信息报错
+
+* 反馈一页查询条数调整为10条
+
+---------
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
