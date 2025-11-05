@@ -1,1 +1,3 @@
-添加供应商api授权功能
+Merge pull request #17 from prtmax/feature/dealer-api
+
+Feature/dealer api
