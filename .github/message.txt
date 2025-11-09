@@ -1,3 +1,1 @@
-Merge pull request #17 from prtmax/feature/dealer-api
-
-Feature/dealer api
+Add front to ci
