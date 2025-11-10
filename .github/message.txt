@@ -1,1 +1,1 @@
-Add front to ci
+Update environment configurations and Dockerfile for production build
