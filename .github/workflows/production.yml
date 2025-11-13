@@ -38,6 +38,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          context: .
           file: Dockerfile
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sidecarhub:sha-${{ env.SHA }}
