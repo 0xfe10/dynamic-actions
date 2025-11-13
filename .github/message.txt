@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/byteone
+Add deploy steps for production and staging workflows with GitOps integration

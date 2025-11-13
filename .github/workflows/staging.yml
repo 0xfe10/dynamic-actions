@@ -69,3 +69,38 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package }}:staging
+
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-apps
+    steps:
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/byteone
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: iot-staging-byteone
+          project_name: prtmax/byteone
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+          changes: |
+            {
+              "argocd/iot/byteone/overlays/staging/values.yaml": {
+                "app.core.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-core:sha-${{ env.SHA }}",
+                "app.msgbridge.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-msgbridge:sha-${{ env.SHA }}",
+                "app.front.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-front:sha-${{ env.SHA }}"
+              }
+            }
