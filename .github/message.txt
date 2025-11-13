@@ -1,1 +1,5 @@
-Refactor nginx configuration by removing load balancing settings and organizing server directives
+CI for deploy (#18)
+
+* Add deploy steps for production and staging workflows with GitOps integration
+
+* Refactor nginx configuration by removing load balancing settings and organizing server directives
