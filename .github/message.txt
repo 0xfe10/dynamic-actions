@@ -1,5 +1,1 @@
-CI for deploy (#18)
-
-* Add deploy steps for production and staging workflows with GitOps integration
-
-* Refactor nginx configuration by removing load balancing settings and organizing server directives
+fix：修复构建时候变量问题
