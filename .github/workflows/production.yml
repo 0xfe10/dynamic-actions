@@ -15,9 +15,11 @@ jobs:
     strategy:
       matrix:
         package:
-          - core
-          - msgbridge
-          - front
+          - name: core
+          - name: msgbridge
+          - name: front
+            args: |
+              BUILD_MODE=production
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
@@ -28,7 +30,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Check
-        working-directory: pkgs/${{ matrix.package }}
+        working-directory: pkgs/${{ matrix.package.name }}
         run: |
           ls -la
 
@@ -45,11 +47,12 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: pkgs/${{ matrix.package }}
-          file: pkgs/${{ matrix.package }}/Dockerfile
+          context: pkgs/${{ matrix.package.name }}
+          file: pkgs/${{ matrix.package.name }}/Dockerfile
+          build-args: ${{ matrix.package.args || '' }}
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package }}:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package }}:latest
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:latest
 
   deploy-apps:
     name: Deploy Apps
