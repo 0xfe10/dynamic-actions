@@ -1,1 +1,1 @@
-Feature Oss Proxy (#2)
+refactor: optimize proxy settings and increase client body size limits in nginx configuration
