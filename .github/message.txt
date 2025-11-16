@@ -1,1 +1,1 @@
-refactor: optimize proxy settings and increase client body size limits in nginx configuration
+refactor: remove unused timeout and buffering settings in default.conf; adjust temp file write size in nginx.conf
