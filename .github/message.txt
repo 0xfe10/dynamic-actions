@@ -1,1 +1,1 @@
-feat: implement deploy-apps job with dynamic image tagging for argocd
+feat: add Nginx configuration with logging, health check, and OSS proxy support

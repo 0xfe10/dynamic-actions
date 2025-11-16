@@ -19,6 +19,8 @@ jobs:
             dockerfile: Dockerfile
           - name: maprintrace
             dockerfile: docker/Dockerfile
+          - name: orbithubfree
+            dockerfile: Dockerfile
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
