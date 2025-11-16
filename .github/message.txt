@@ -1,1 +1,1 @@
-feat: add Nginx configuration with logging, health check, and OSS proxy support
+Feature Oss Proxy (#2)
