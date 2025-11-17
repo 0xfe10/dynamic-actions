@@ -1,1 +1,1 @@
-商品移动参数classificationId改为classification
+商品接口调整
