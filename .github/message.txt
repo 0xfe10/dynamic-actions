@@ -1,3 +1,1 @@
-Merge pull request #19 from prtmax/reature/startpulldevice
-
-Reature/startpulldevice
+fix:修复设备上线识别异常问题
