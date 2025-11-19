@@ -1,9 +1,1 @@
-Fix/device (#21)
-
-* fix:修复设备上线识别异常问题
-
-* fix:修复设备上下线状态判断问题
-
----------
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+fix:修复设备离线后打印队列异常问题
