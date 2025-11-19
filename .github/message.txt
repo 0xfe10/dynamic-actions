@@ -1,1 +1,3 @@
-fix:修复设备上线识别异常问题
+fix:修复设备上线识别异常问题 (#20)
+
+Co-authored-by: Fangjc <admin@gcoll.top>
