@@ -1,1 +1,1 @@
-featrue:添加go客户端
+fix:修改openapi返回机制
