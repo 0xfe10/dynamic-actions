@@ -1,0 +1,257 @@
+name: '[psdk] Check'
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  RUST_TOOLCHAIN: stable
+
+jobs:
+  check-rust:
+    name: Check psdk-rust
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: fewensa/actions
+          path: .github/actions
+      - name: Checkout
+        uses: ./.github/actions/clone-any
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Install rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+
+      - name: Build psdk
+        working-directory: rust
+        run: cargo build
+
+  build-dylib-android:
+    name: Build dylib-android
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: fewensa/actions
+          path: .github/actions
+      - name: Checkout
+        uses: ./.github/actions/clone-any
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r22
+
+      - name: Install rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+
+      - name: Install deps
+        run: |
+          ##
+          # https://github.com/bbqsrc/cargo-ndk/issues/22
+          # https://github.com/effektio/effektio/pull/113#issuecomment-1155759948
+          # https://github.com/rust-lang/rust/pull/85806
+          cargo install cargo-ndk
+          # cargo install cargo-ndk --version 2.6.0
+
+      - name: Build psdk
+        working-directory: rust/frame/extension/export-jni
+        run: |
+          cargo ndk \
+            -t armeabi-v7a \
+            -t arm64-v8a \
+            -t x86 \
+            -t x86_64 \
+            -o ./jniLibs \
+            build --release
+          cp -r jniLibs/armeabi-v7a jniLibs/armeabi
+
+      - name: Collect shared
+        working-directory: rust/frame/extension/export-jni
+        run: |
+          mkdir -p shared/psdkext/android
+          zip -r jnilibs.zip jniLibs
+          mv jnilibs.zip shared/psdkext/android/
+          mv shared ${GITHUB_WORKSPACE}/
+
+      - name: Upload shared
+        uses: actions/upload-artifact@v2
+        with:
+          name: shared-artifact
+          path: shared
+
+
+  build-dylib-ios:
+    name: Build dylib-ios
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: fewensa/actions
+          path: .github/actions
+      - name: Checkout
+        uses: ./.github/actions/clone-any
+        with:
+          platform: gitlab
+          repository: prtmax/psdk
+          access_token: '${{ secrets.GITLAB_TOKEN }}'
+          ref_file: .github/ref.txt
+
+      - name: Install rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+
+      - name: Install deps
+        run: |
+          brew install tree
+          brew install coreutils
+          cargo install cargo-lipo
+
+      - name: Build psdk
+        working-directory: rust/frame/extension/export-c
+        run: cargo lipo --release --targets aarch64-apple-ios
+
+      - name: Collect shared
+        working-directory: rust
+        run: |
+          mkdir -p shared/psdkext/psdkext
+          mv frame/extension/export-c/target/psdkextc.h shared/psdkext/psdkext/
+          mv target/universal/release/libpsdkextc.a shared/psdkext/psdkext/
+          mv shared ${GITHUB_WORKSPACE}/
+
+      - name: Prepare lib
+        run: |
+          cd shared/psdkext/
+          7z a -tzip psdkext.zip ./psdkext
+          rm -rf psdkext
+          mkdir ios
+          mv psdkext.zip ./ios
+
+      - name: Upload shared
+        uses: actions/upload-artifact@v2
+        with:
+          name: shared-artifact
+          path: shared
+
+#  build-swift-framework:
+#    name: Build swift-framework
+#    runs-on: macos-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/checkout@v4
+#        with:
+#          repository: fewensa/actions
+#          path: .github/actions
+#      - name: Checkout
+#        uses: ./.github/actions/clone-any
+#        with:
+#          platform: gitlab
+#          repository: prtmax/psdk
+#          access_token: '${{ secrets.GITLAB_TOKEN }}'
+#          ref_file: .github/ref.txt
+#
+#      - name: Install dependencies
+#        run: |
+#          brew install p7zip
+#          brew install coreutils
+#
+#      - uses: swift-actions/setup-swift@v1
+#        with:
+#          swift-version: '5.5'
+#
+#      - name: Build framework
+#        run: swift/scripts/build-framework.sh
+#
+#      - name: Collect shared
+#        run: |
+#          mkdir -p shared/psdk/ios
+#          cp -r swift/fruits/*/target/*.framework ./shared/psdk/ios/
+#
+#      - name: Prepare framework
+#        run: |
+#          cd shared/psdk/ios
+#          for F in $(ls); do
+#            7z a -tzip ${F}.zip ./${F}
+#            rm -rf ${F}
+#          done
+#
+#      - name: Upload shared
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: shared-artifact
+#          path: shared
+
+  upload-psdkext:
+    name: Upload psdkext
+    runs-on: ubuntu-latest
+    needs:
+      - build-dylib-android
+      - build-dylib-ios
+#      - build-swift-framework
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: shared-artifact
+          path: shared
+
+      - name: sha256sum
+        run: |
+          (cd shared/psdkext/android && sha256sum * | tee sha256sums.txt)
+          (cd shared/psdkext/ios && sha256sum * | tee sha256sums.txt)
+#          (cd shared/psdk/ios && sha256sum * | tee sha256sums.txt)
+
+      - name: Upload psdkext
+        run: |
+          git config --global credential.helper store
+          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' >> ~/.git-credentials
+
+          git config --global user.email osuni@protonmail.com
+          git config --global user.name fewensa
+
+          git clone https://gitlab.com/prtmax/package-center
+
+          cd package-center
+          git push origin :rolling || true
+          git branch rolling
+          git checkout rolling
+          # git checkout -b rolling origin/rolling || (git branch rolling && git checkout rolling)
+          # git reset --hard 6a12c9e
+
+          mv ../shared/psdkext ./
+          mv ../shared/psdk ./
+
+          TIME=$(date "+%Y-%m-%d %H:%M:%S")
+          COMMIT_MESSAGE="[${TIME}] Update psdkext"
+          git add psdkext || true
+          git add psdk || true
+          git commit -m "${COMMIT_MESSAGE}" || true
+          git push -f origin rolling
+
+  clean-artifacts:
+    name: Clean artifacts
+    runs-on: ubuntu-latest
+    needs: [ upload-psdkext ]
+    if: always()
+    steps:
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: shared-artifact
+

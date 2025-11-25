@@ -21,7 +21,7 @@ jobs:
           java-version: 17
           maven-version: 3.9.8
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -32,15 +32,15 @@ jobs:
         working-directory: java
         run: mvn clean package -Dmaven.test.skip=true
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/check-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: java
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/check-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: java
 
   check-rust:
     name: Check psdk-rust
@@ -48,7 +48,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -67,15 +67,15 @@ jobs:
         working-directory: rust
         run: cargo build
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/check-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: rust
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/check-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: rust
 
   check-clang:
     name: Check psdk-clang
@@ -83,7 +83,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -101,7 +101,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -132,15 +132,15 @@ jobs:
           melos bootstrap
           melos run test --no-select
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/check-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: dart
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/check-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: dart
 
   check-js:
     name: Check psdk-js
@@ -148,7 +148,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -166,15 +166,15 @@ jobs:
           npm run package:all
           npm run test:all
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/check-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: js
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/check-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: js
 
 #  check-swift:
 #    name: Check psdk-swift
@@ -188,7 +188,7 @@ jobs:
 #    steps:
 #      - uses: actions/checkout@v4
 #      - name: Checkout
-#        uses: fewensa/actions/clone-dyn@main
+#        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
 #        with:
 #          repository: prtmax/psdk
 #          token: '${{ secrets.GH_TOKEN_0XFE10 }}'

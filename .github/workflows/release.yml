@@ -22,7 +22,7 @@ jobs:
           java-version: 17
           maven-version: 3.9.8
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -55,15 +55,15 @@ jobs:
         working-directory: java
         run: mvn clean deploy -P release -D maven.test.skip=true -s ~/ci_settings.xml
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/release-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: java
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/release-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: java
 
 
   release-js:
@@ -72,7 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -96,15 +96,15 @@ jobs:
         working-directory: js
         run: npx lerna publish from-package --yes
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/release-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: js
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/release-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: js
 
   release-ohpm:
     name: Release psdk-ohpm
@@ -114,7 +114,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -140,15 +140,15 @@ jobs:
           yarn install
           yarn ohpm:package --verbose --force --clean --publish
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/release-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: ohpm
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/release-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: ohpm
 
 
   release-dart:
@@ -157,7 +157,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -199,15 +199,15 @@ jobs:
           melos run lint:all --no-select
           melos publish --no-private --yes --no-dry-run
 
-      - uses: fewensa/actions/tepusher@main
-        if: failure()
-        with:
-          template: .maintain/notify/release-failed.md
-          token: ${{ secrets.WEPLUSBOT_TOKEN }}
-          receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-          vars: |
-            project: psdk
-            language: dart
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/release-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: dart
 
 
   build-clang:
@@ -261,7 +261,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -294,7 +294,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
