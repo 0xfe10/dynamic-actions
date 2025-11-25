@@ -21,7 +21,7 @@ jobs:
           java-version: 17
           maven-version: 3.9.8
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -48,7 +48,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -83,7 +83,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -101,7 +101,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -148,7 +148,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -188,7 +188,7 @@ jobs:
 #    steps:
 #      - uses: actions/checkout@v4
 #      - name: Checkout
-#        uses: repotea-workspace/kangumi/github-actions/dyn-actions@main
+#        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
 #        with:
 #          repository: prtmax/psdk
 #          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
