@@ -894,7 +894,7 @@ const {
   checkResourcePermission,   // 检查资源:操作权限
   getResourcePermissions,    // 获取资源的CRUD权限
   isSuperAdmin,             // 是否超级管理员
-  isDealerAdmin             // 是否经销商管理员
+  isDealerAdmin             // 是否租户管理员
 } = usePermissions()
 
 // 检查权限

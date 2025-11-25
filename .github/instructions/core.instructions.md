@@ -6,7 +6,7 @@ description: "ByteOne 后端项目开发指导说明"
 # ByteOne 后端项目开发提示词
 
 ## 项目概览
-ByteOne 是基于 GoFrame v2.9 的企业级物联网打印平台，支持多经销商隔离。
+ByteOne 是基于 GoFrame v2.9 的企业级物联网打印平台，支持多租户隔离。
 
 ## 🚨 核心编码规则
 
@@ -433,7 +433,7 @@ func (s *sUser) List(ctx context.Context, req *v1.UserListReq, dealerId ...strin
         res = &v1.UserListRes{}
         db := dao.User.Ctx(ctx)
         
-        // 2. 应用权限过滤 (自动处理超管、经销商管理员、普通用户权限)
+        // 2. 应用权限过滤 (自动处理超管、租户管理员、普通用户权限)
         db = service.Common().FilterPermissionData(ctx, db)
         
         // 3. 应用业务筛选条件
