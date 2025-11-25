@@ -1,1 +1,1 @@
-aliyun-reg
+main
