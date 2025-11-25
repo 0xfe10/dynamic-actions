@@ -1,1 +1,1 @@
-商品匹配 (#367)
+Refactor SQL queries to use standard date functions and improve readability
