@@ -799,6 +799,8 @@ onMounted(() => {
 
 #### 页面布局样式
 
+> **统一边距规则**：页面的外侧留白由 `AppLayout` 控制，具体页面组件不要再额外添加 `padding: 16px` 等值。所有页面容器类（如 `.module-page`、`.device-page`、`.dictionary-page` 等）都应遵循下方结构，保证列表高度和卡片间距一致。
+
 ```vue
 <style scoped>
 /* 页面容器 */
@@ -806,7 +808,8 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  flex: 1;
+  min-height: 100%;
 }
 
 /* 卡片样式 */
@@ -816,16 +819,46 @@ onMounted(() => {
   border-radius: 12px;
 }
 
+/* 数据区占满剩余空间，分页固定在底部 */
+.table-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.table-card :deep(.n-card__content) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.table-card :deep(.n-data-table) {
+  flex: 1;
+  min-height: 0;
+}
+
 /* 表格底部 */
 .table-footer {
   display: flex;
   justify-content: flex-end;
-  margin-top: 16px;
 }
 
 /* 表单项间距 */
 .n-form-item {
   margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .module-page {
+    gap: 12px;
+  }
+
+  .table-card :deep(.n-card__content) {
+    gap: 12px;
+  }
 }
 </style>
 ```
@@ -1000,6 +1033,8 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 ```
+
+> ⚠️ **路径对齐要求**：前端路由的 `path` 必须与数据库菜单（`b_menu`）里写入的路径保持一致。新增菜单一般通过 `pkgs/core/manifest/migrations` 下的 SQL 迁移写入，请在同一个需求里同步更新迁移文件中的 `path` 字段与前端路由，避免出现“菜单跳转找不到页面”的问题。
 
 #### 路由元信息
 

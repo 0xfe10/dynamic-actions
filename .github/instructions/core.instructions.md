@@ -145,27 +145,26 @@ const (
 
 #### API基础结构体模式
 ```go
-// 基础结构体，包含公共字段
-type [模块名]Base struct {
-    Field1 string `json:"field1" description:"字段描述" v:"required#字段是必须的"`
-    Field2 string `json:"field2" description:"字段描述" v:"length:1,50#字段长度限制"`
-}
 
 // 创建请求
 type [模块名]CreateReq struct {
     g.Meta `path:"/[模块路径]" method:"post" summary:"创建[模块]" tags:"[模块]管理"`
-    [模块名]Base
+    Field1 string `json:"field1" description:"字段描述" v:"required#字段是必须的"`
+    Field2 string `json:"field2" description:"字段描述" v:"length:1,50#字段长度限制"`
 }
 
 type [模块名]CreateRes struct {
     Id string `json:"id" description:"[模块]ID"`
+    Field1 string `json:"field1" description:"字段描述"`
+    Field2 string `json:"field2" description:"字段描述"`
 }
 
 // 更新请求
 type [模块名]UpdateReq struct {
     g.Meta `path:"/[模块路径]/{id}" method:"put" summary:"更新[模块]" tags:"[模块]管理"`
     Id     string `json:"id" in:"path" v:"required#[模块]ID不能为空"`
-    [模块名]Base
+    Field1 string `json:"field1" description:"字段描述" v:"required#字段是必须的"`
+    Field2 string `json:"field2" description:"字段描述" v:"length:1,50#字段长度限制"`
 }
 
 type [模块名]UpdateRes struct{}
