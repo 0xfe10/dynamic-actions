@@ -359,8 +359,8 @@ export const myModuleApi = {
         <n-space>
           <!-- 使用权限按钮组件 -->
           <PermissionButton
-            resource="my-module"
-            action="create"
+            :method="permissions.create.method"
+            :path="permissions.create.path"
             type="primary"
             size="small"
             @click="openCreateModal"
@@ -369,8 +369,8 @@ export const myModuleApi = {
           </PermissionButton>
           
           <PermissionButton
-            resource="my-module"
-            action="delete"
+            :method="permissions.batchDelete.method"
+            :path="permissions.batchDelete.path"
             size="small"
             type="error"
             :disabled="!selectedRowKeys.length"
@@ -478,7 +478,14 @@ import { usePermissions } from '@/composables/usePermissions'
 const { t } = useI18n()
 const message = useMessage()
 const dialog = useDialog()
-const { checkResourcePermission } = usePermissions()
+const { checkApiPermission } = usePermissions()
+
+const permissions = {
+  create: { method: 'POST', path: '/api/v1/my-module' },
+  update: { method: 'PUT', path: '/api/v1/my-module/{id}' },
+  delete: { method: 'DELETE', path: '/api/v1/my-module/{id}' },
+  batchDelete: { method: 'POST', path: '/api/v1/my-module/batch-delete' },
+}
 
 // ============ 响应式数据 ============
 const loading = ref(false)
@@ -556,13 +563,13 @@ const columns = computed<DataTableColumns<MyModuleItem>>(() => [
         'div',
         { style: 'display: flex; gap: 8px;' },
         [
-          checkResourcePermission('my-module', 'update') &&
+          checkApiPermission(permissions.update.method, permissions.update.path) &&
             h(
               'a',
               { onClick: () => openEditModal(row) },
               t('common.actions.edit')
             ),
-          checkResourcePermission('my-module', 'delete') &&
+          checkApiPermission(permissions.delete.method, permissions.delete.path) &&
             h(
               'a',
               { 
@@ -775,6 +782,13 @@ onMounted(() => {
 
 ### 4. 页面样式规范
 
+#### 页面边距规范
+
+- 外围留白统一由 `AppLayout` 中的 `app-shell__content` 控制，页面级组件不要额外添加全局 `padding`/`margin`。
+- 新页面的根容器使用 `.module-page`（或与业务相符的同级命名），保持 `flex: 1`、`gap: 16px` 的纵向布局结构。
+- 卡片默认使用 `n-card` 并设置 `:bordered="false"`，通过统一的 `.filter-card`、`.table-card` 等样式保持间距一致。
+- 若页面需要额外留白（如嵌套组件），优先在内容区内部使用 `n-space`、`n-form-item` 等组件来调节，不要修改外层页面容器的边距。
+
 #### 全局 CSS 变量
 
 项目使用 CSS 变量实现主题切换，定义在 `src/styles/index.css`:
@@ -915,100 +929,165 @@ const themeOverrides = computed(() => themeStore.themeOverrides)
 
 ### 6. 权限控制
 
-#### 权限组合式函数
+#### 6.1 菜单与权限数据
 
-项目使用 `usePermissions` composable 进行权限管理:
+前端从登录接口返回的 `menus: MenuTreeNode[]` 中构建侧边栏，并据此提取按钮级权限。请确保后台提供的菜单树满足以下约定：
+
+- **type**：支持 `catalog`（目录）、`menu`（可跳转页）、`button`（按钮权限）三种类型。
+  - `catalog` 用于分组；没有 `children` 会被自动过滤。
+  - `menu` 必须配置 `path`，并与 `src/router/index.ts` 中的路由路径完全一致，路径需要以 `/` 开头。
+  - `button` 不会出现在侧边栏，仅用于权限判定。
+- **permission**：按钮节点对应的接口路径，需包含 `/api/v1` 等前缀，并与后端 `b_menu.permission` 字段保持一致。带参数的接口请使用统一的占位符（例如 `/api/v1/devices/{id}`）。
+- **method**：按钮节点对应的 HTTP 方法（`GET`、`POST`、`PUT`、`DELETE`、`PATCH` 等），会用于构建 `METHOD PATH` 权限键；缺省时视为 `*`，建议全部显式配置。
+- **isHidden**：为 `true` 时，菜单节点不会渲染在侧边栏，但仍可通过直接访问路由进入。
+- **sortOrder**：用于同级节点排序，数值越小越靠前。
+
+示例菜单结构：
+
+```json
+[
+  {
+    "id": "device",
+    "name": "设备管理",
+    "type": "catalog",
+    "children": [
+      {
+        "id": "device-list",
+        "name": "设备列表",
+        "type": "menu",
+        "path": "/device/list",
+        "children": [
+          {
+            "id": "device-create",
+            "name": "新建设备",
+            "type": "button",
+            "method": "POST",
+            "permission": "/api/v1/devices"
+          },
+          {
+            "id": "device-delete",
+            "name": "删除设备",
+            "type": "button",
+            "method": "DELETE",
+            "permission": "/api/v1/devices/{id}"
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+登录成功后，系统会根据首个可见的 `menu` 节点决定默认落地页；没有授权菜单时会回退至内置菜单。
+
+#### 6.2 权限组合式函数
+
+`usePermissions` 负责从菜单树提取按钮权限并提供常用检查方法：
 
 ```typescript
+import { computed } from 'vue'
 import { usePermissions } from '@/composables/usePermissions'
 
-const { 
-  checkPermission,           // 检查完整权限字符串
-  checkResourcePermission,   // 检查资源:操作权限
-  getResourcePermissions,    // 获取资源的CRUD权限
-  isSuperAdmin,             // 是否超级管理员
-  isDealerAdmin             // 是否租户管理员
+const {
+  userPermissions,       // 当前用户拥有的 'METHOD PATH' 权限键
+  isSuperAdmin,          // 超级管理员拥有全部权限
+  isDealerAdmin,         // 租户管理员标记
+  checkPermission,       // 直接校验完整权限键
+  checkApiPermission,    // 通过 method + path 校验
+  buildPermissionKey,    // 构造标准权限键，便于常量复用
 } = usePermissions()
 
-// 检查权限
-if (checkResourcePermission('users', 'create')) {
-  // 用户有创建权限
-}
+const canCreate = computed(() =>
+  checkApiPermission('POST', '/api/v1/my-module'),
+)
 
-// 获取资源权限
-const permissions = getResourcePermissions('users')
-// {
-//   canCreate: true,
-//   canRead: true,
-//   canUpdate: true,
-//   canDelete: false,
-// }
+const retryKey = buildPermissionKey('POST', '/api/v1/print-jobs/{id}')
+const canRetry = computed(() =>
+  retryKey ? checkPermission(retryKey) : false,
+)
 ```
 
-#### 权限按钮组件
+> 注意：`checkApiPermission` 需要传入与按钮节点一致的路径字符串（包含占位符），否则无法匹配权限。
 
-使用 `PermissionButton` 组件自动根据权限显示/隐藏按钮:
+#### 6.3 权限组件
+
+- `PermissionButton` 根据权限自动渲染或隐藏底层 `n-button`。可以直接传入完整权限键，也可以分别传入 `method` 与 `path`：
 
 ```vue
-<template>
-  <!-- 方式 1: 使用 resource + action -->
-  <PermissionButton
-    resource="users"
-    action="create"
-    type="primary"
-    @click="handleCreate"
-  >
-    新建用户
-  </PermissionButton>
+<PermissionButton
+  :method="printJobPermissions.retry.method"
+  :path="printJobPermissions.retry.path"
+  type="primary"
+  size="small"
+  @click="handleRetry"
+>
+  {{ t('common.actions.retry') }}
+</PermissionButton>
 
-  <!-- 方式 2: 使用完整权限字符串 -->
-  <PermissionButton
-    permission="users:delete"
-    type="error"
-    @click="handleDelete"
-  >
-    删除用户
-  </PermissionButton>
-</template>
+<PermissionButton
+  permission="POST /api/v1/print-jobs/{id}/cancel"
+  quaternary
+  size="small"
+  @click="handleCancel"
+>
+  {{ t('common.actions.cancel') }}
+</PermissionButton>
 ```
 
-#### 在表格列中使用权限
+- `PermissionGuard` 可用于包裹任意内容区域：
+
+```vue
+<PermissionGuard :method="printJobPermissions.delete.method" :path="printJobPermissions.delete.path">
+  <n-popconfirm @positive-click="handleDelete">
+    <template #trigger>
+      <n-button type="error" quaternary size="small">
+        {{ t('common.actions.delete') }}
+      </n-button>
+    </template>
+    {{ t('common.confirm.deleteSingle', { name: t('printJob.entity') }) }}
+  </n-popconfirm>
+</PermissionGuard>
+```
+
+#### 6.4 业务代码中的权限校验
+
+- 在模块内集中定义权限常量，复用 `method/path` 对象或 `buildPermissionKey` 结果，避免拼写错误：
 
 ```typescript
-const columns = computed<DataTableColumns<User>>(() => [
-  // ... 其他列
+const printJobPermissions = {
+  list: { method: 'GET', path: '/api/v1/print-jobs' },
+  retry: { method: 'POST', path: '/api/v1/print-jobs/{id}/retry' },
+  cancel: { method: 'POST', path: '/api/v1/print-jobs/{id}/cancel' },
+}
+
+const showRetry = computed(() =>
+  checkApiPermission(printJobPermissions.retry.method, printJobPermissions.retry.path),
+)
+```
+
+- 在表格或操作列中，根据权限动态渲染按钮：
+
+```typescript
+const columns = computed<DataTableColumns<PrintJob>>(() => [
   {
     title: t('common.table.actions'),
     key: 'actions',
-    render: (row) => {
-      return h(
-        'div',
-        { style: 'display: flex; gap: 8px;' },
-        [
-          // 编辑按钮 - 有权限才显示
-          checkResourcePermission('users', 'update') &&
-            h(
-              'a',
-              { onClick: () => handleEdit(row) },
-              t('common.actions.edit')
-            ),
-          
-          // 删除按钮 - 有权限才显示
-          checkResourcePermission('users', 'delete') &&
-            h(
-              'a',
-              { 
-                onClick: () => handleDelete(row.id),
-                style: 'color: var(--n-color-error);'
-              },
-              t('common.actions.delete')
-            ),
-        ].filter(Boolean) // 过滤掉 false 值
-      )
-    },
+    align: 'center',
+    render: (row) => h(
+      'div',
+      { style: 'display: flex; gap: 8px;' },
+      [
+        checkApiPermission(printJobPermissions.retry.method, printJobPermissions.retry.path) &&
+          h('a', { onClick: () => handleRetry(row) }, t('common.actions.retry')),
+        checkApiPermission(printJobPermissions.cancel.method, printJobPermissions.cancel.path) &&
+          h('a', { onClick: () => handleCancel(row) }, t('common.actions.cancel')),
+      ].filter(Boolean),
+    ),
   },
 ])
 ```
+
+- 若需要一次性判断多个权限，可将 `buildPermissionKey` 的返回值缓存为 `Set`，在渲染阶段快速查找。
 
 ### 7. 路由配置
 
@@ -1386,7 +1465,7 @@ console.warn('[MyModule] Deprecated feature used')
 
 **解决方案**:
 1. 检查用户菜单是否包含该权限
-2. 确认权限字符串格式正确（`resource:action`）
+2. 确认传入的权限信息与菜单配置一致：要么使用 `METHOD /api/v1/resource` 形式的完整字符串，要么同时传入匹配的 `method` 与 `path`
 3. 超级管理员应该能看到所有按钮
 
 ### 3. API 请求 401 错误
@@ -1451,7 +1530,7 @@ const { t, locale } = useI18n()
 
 // 权限
 import { usePermissions } from '@/composables/usePermissions'
-const { checkResourcePermission, isSuperAdmin } = usePermissions()
+const { checkApiPermission, buildPermissionKey, isSuperAdmin } = usePermissions()
 
 // 路由
 import { useRouter, useRoute } from 'vue-router'
