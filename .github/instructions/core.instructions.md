@@ -1,12 +1,12 @@
 ---
 applyTo: "pkgs/core/**"
-description: "ByteOne 后端项目开发指导说明"
+description: "爱印云打印平台 后端项目开发指导说明"
 ---
 
-# ByteOne 后端项目开发提示词
+# 爱印云打印平台 后端项目开发提示词
 
 ## 项目概览
-ByteOne 是基于 GoFrame v2.9 的企业级物联网打印平台，支持多租户隔离。
+爱印云打印平台 是基于 GoFrame v2.9 的企业级物联网打印平台，支持多租户隔离。
 
 ## 🚨 核心编码规则
 
