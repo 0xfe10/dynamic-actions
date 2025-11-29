@@ -158,3 +158,4 @@ jobs:
                 "app.front.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-front:sha-${{ env.SHA }}"
               }
             }
+

@@ -1,1 +1,1 @@
-fix: remove redundant runner name prefix from environment variables in staging workflow
+fix: add missing newline at the end of staging workflow file
