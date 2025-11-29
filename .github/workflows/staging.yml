@@ -7,7 +7,7 @@ on:
 env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
-  DOCKER_REGISTRY_ALI_VPC: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
 
 jobs:
   ensure-main:
