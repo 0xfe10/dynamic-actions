@@ -123,7 +123,6 @@ jobs:
           key_pair_name: ${{ env.ECS_KEYPAIR_NAME }}
           ssh_private_key: ${{ secrets.SSH_KEYPAIR_ALI_GENERIC }}
 
-
   deploy-apps:
     name: Deploy Apps
     runs-on: ubuntu-latest

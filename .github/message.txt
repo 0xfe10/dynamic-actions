@@ -1,1 +1,1 @@
-feat: add ECS configuration and mirror images to ACR in staging workflow
+fix: remove unnecessary blank line in staging workflow
