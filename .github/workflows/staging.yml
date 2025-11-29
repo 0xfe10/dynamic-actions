@@ -72,6 +72,9 @@ jobs:
 
       - uses: benjlevesque/short-sha@v3.0
 
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
       - name: Publish docker image hash
         uses: docker/build-push-action@v6
         with:
@@ -89,8 +92,8 @@ jobs:
           job_id: ${{ matrix.package.name }}
           source_image: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
           target_image: |
-            crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ github.repository }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
-            crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ github.repository }}_byteone-${{ matrix.package.name }}:staging
+            crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
+            crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging
 
           registry_credentials: |
             {
