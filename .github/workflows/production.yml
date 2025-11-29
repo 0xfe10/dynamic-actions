@@ -21,7 +21,7 @@ jobs:
             args: |
               BUILD_MODE=production
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -60,7 +60,7 @@ jobs:
     needs:
       - build-apps
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
