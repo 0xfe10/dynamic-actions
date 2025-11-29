@@ -1,1 +1,1 @@
-fix: update Docker registry configuration and upgrade login action version
+fix: upgrade Docker login action to version 3
