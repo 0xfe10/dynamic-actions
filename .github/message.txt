@@ -1,1 +1,1 @@
-fix: update image tag handling in staging workflow for better clarity and maintainability
+fix: update Docker image paths to use Aliyun VPC registry for staging deployment
