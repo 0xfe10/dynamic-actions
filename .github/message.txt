@@ -1,1 +1,1 @@
-fix: remove unnecessary blank line before registry credentials in staging workflow
+fix: add runner name prefix and update job ID for image mirroring in staging workflow

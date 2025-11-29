@@ -16,6 +16,8 @@ env:
   ECS_SYSTEM_DISK_SIZE: 40
   ECS_SPOT_STRATEGY: SpotAsPriceGo
 
+  RUNNER_NAME_PREFIX: ecs-runner
+
 jobs:
   ensure-main:
     name: Ensure main
@@ -85,7 +87,7 @@ jobs:
       - name: Mirror images to ACR
         uses: repotea-workspace/kangumi/github-actions/mirror-to-acr@main
         with:
-          # config_file: mirror-acr/mirror-config-sz.yaml
+          job_id: ${{ matrix.package.name }}
           source_image: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
           target_image: |
             crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ github.repository }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
