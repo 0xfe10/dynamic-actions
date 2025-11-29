@@ -73,7 +73,15 @@ jobs:
       - name: Set repo name
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
-      - name: Publish docker image hash
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
+
+      - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
@@ -81,10 +89,20 @@ jobs:
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           build-args: ${{ matrix.package.args || '' }}
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:staging
-            ${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_staging }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
+            docker push ${{ steps.tags.outputs.ali_sha }}
+            docker push ${{ steps.tags.outputs.ali_staging }}
 
   deploy-apps:
     name: Deploy Apps
