@@ -1,1 +1,1 @@
-fix: upgrade Docker login action to version 3
+fix: remove unused ECS environment variables and commented-out code from staging workflow
