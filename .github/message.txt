@@ -1,1 +1,1 @@
-refactor: remove unused timeout and buffering settings in default.conf; adjust temp file write size in nginx.conf
+refactor: update actions/checkout version to v6 across workflow files

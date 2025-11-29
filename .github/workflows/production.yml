@@ -22,7 +22,7 @@ jobs:
           - name: orbithubfree
             dockerfile: Dockerfile
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -60,7 +60,7 @@ jobs:
     needs:
       - build-openapps
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
