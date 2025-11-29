@@ -13,8 +13,8 @@ jobs:
     name: Check psdk-rust
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
           repository: fewensa/actions
           path: .github/actions
@@ -39,8 +39,8 @@ jobs:
     name: Build dylib-android
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
           repository: fewensa/actions
           path: .github/actions
@@ -101,8 +101,8 @@ jobs:
     name: Build dylib-ios
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
           repository: fewensa/actions
           path: .github/actions
@@ -155,8 +155,8 @@ jobs:
 #    name: Build swift-framework
 #    runs-on: macos-latest
 #    steps:
-#      - uses: actions/checkout@v4
-#      - uses: actions/checkout@v4
+#      - uses: actions/checkout@v6
+#      - uses: actions/checkout@v6
 #        with:
 #          repository: fewensa/actions
 #          path: .github/actions

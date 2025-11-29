@@ -14,7 +14,7 @@ jobs:
     name: Check psdk-java
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.18.0
         with:
@@ -46,7 +46,7 @@ jobs:
     name: Check psdk-rust
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -81,7 +81,7 @@ jobs:
     name: Check psdk-clang
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -99,7 +99,7 @@ jobs:
     name: Check psdk-dart
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -146,7 +146,7 @@ jobs:
     name: Check psdk-js
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -186,7 +186,7 @@ jobs:
 #          - tspl
 #          - cpcl
 #    steps:
-#      - uses: actions/checkout@v4
+#      - uses: actions/checkout@v6
 #      - name: Checkout
 #        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
 #        with:

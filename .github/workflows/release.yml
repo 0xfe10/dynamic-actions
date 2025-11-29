@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.14.0
         with:
@@ -70,7 +70,7 @@ jobs:
     name: Release psdk-js
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -112,7 +112,7 @@ jobs:
     container:
       image: ghcr.io/fewensa/docker-image/harmonytools:sha-a57fe85
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -155,7 +155,7 @@ jobs:
     name: Release psdk-dart
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -259,7 +259,7 @@ jobs:
           - name: hjinfo
             path: compatible/hjinfo
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -292,7 +292,7 @@ jobs:
     needs:
       - build-clang
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
