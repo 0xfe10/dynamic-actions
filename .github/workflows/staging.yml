@@ -6,6 +6,7 @@ on:
       - '**'
 env:
   DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
 
   ECS_REGION: cn-shenzhen
   ECS_VSWITCH_ID: vsw-wz9uncyx33urqcxpj8c1p
@@ -64,11 +65,18 @@ jobs:
           ls -la
 
       - name: Docker login
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.DOCKER_REGISTRY }}
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
       - uses: benjlevesque/short-sha@v3.0
 
@@ -85,47 +93,49 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging
 
-      - name: Mirror images to ACR
-        uses: repotea-workspace/kangumi/github-actions/mirror-to-acr@main
-        with:
-          job_id: ${{ matrix.package.name }}
-          source_image: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
-          target_image: |
-            crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
-            crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging
+      # - name: Mirror images to ACR
+      #   uses: repotea-workspace/kangumi/github-actions/mirror-to-acr@main
+      #   with:
+      #     job_id: ${{ matrix.package.name }}
+      #     source_image: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
+      #     target_image: |
+      #       ${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
+      #       ${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging
 
-          registry_credentials: |
-            {
-              "ghcr.io": {
-                "username": "0xfe10",
-                "password": "${{ secrets.GT_0XFE10 }}"
-              },
-              "crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com": {
-                "username": "${{ secrets.CR_ALI_USERNAME_JOECHOW }}",
-                "password": "${{ secrets.CR_ALI_PASSWORD_JOECHOW }}"
-              },
-              "crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com": {
-                "username": "${{ secrets.CR_ALI_USERNAME_JOECHOW }}",
-                "password": "${{ secrets.CR_ALI_PASSWORD_JOECHOW }}"
-              }
-            }
+      #     registry_credentials: |
+      #       {
+      #         "ghcr.io": {
+      #           "username": "0xfe10",
+      #           "password": "${{ secrets.GT_0XFE10 }}"
+      #         },
+      #         "crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com": {
+      #           "username": "${{ secrets.CR_ALI_USERNAME_JOECHOW }}",
+      #           "password": "${{ secrets.CR_ALI_PASSWORD_JOECHOW }}"
+      #         },
+      #         "crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com": {
+      #           "username": "${{ secrets.CR_ALI_USERNAME_JOECHOW }}",
+      #           "password": "${{ secrets.CR_ALI_PASSWORD_JOECHOW }}"
+      #         }
+      #       }
 
-          # Aliyun credentials
-          ali_access_key: ${{ secrets.ALI_ACCESS_KEY_AYN_ECS }}
-          ali_secret_key: ${{ secrets.ALI_SECRET_KEY_AYN_ECS }}
-          ali_region: ${{ env.ECS_REGION }}
+      #     # Aliyun credentials
+      #     ali_access_key: ${{ secrets.ALI_ACCESS_KEY_AYN_ECS }}
+      #     ali_secret_key: ${{ secrets.ALI_SECRET_KEY_AYN_ECS }}
+      #     ali_region: ${{ env.ECS_REGION }}
 
-          # ECS configuration
-          vswitch_id: ${{ env.ECS_VSWITCH_ID }}
-          availability_zone: ${{ env.ECS_AVAILABILITY_ZONE }}
-          security_group_id: ${{ env.ECS_SECURITY_GROUP_ID }}
-          image_id: ${{ env.ECS_IMAGE_ID }}
-          instance_type: ${{ env.ECS_INSTANCE_TYPE }}
-          system_disk_size: ${{ env.ECS_SYSTEM_DISK_SIZE }}
-          spot_strategy: ${{ env.ECS_SPOT_STRATEGY }}
-          key_pair_name: ${{ env.ECS_KEYPAIR_NAME }}
-          ssh_private_key: ${{ secrets.SSH_KEYPAIR_ALI_GENERIC }}
+      #     # ECS configuration
+      #     vswitch_id: ${{ env.ECS_VSWITCH_ID }}
+      #     availability_zone: ${{ env.ECS_AVAILABILITY_ZONE }}
+      #     security_group_id: ${{ env.ECS_SECURITY_GROUP_ID }}
+      #     image_id: ${{ env.ECS_IMAGE_ID }}
+      #     instance_type: ${{ env.ECS_INSTANCE_TYPE }}
+      #     system_disk_size: ${{ env.ECS_SYSTEM_DISK_SIZE }}
+      #     spot_strategy: ${{ env.ECS_SPOT_STRATEGY }}
+      #     key_pair_name: ${{ env.ECS_KEYPAIR_NAME }}
+      #     ssh_private_key: ${{ secrets.SSH_KEYPAIR_ALI_GENERIC }}
 
   deploy-apps:
     name: Deploy Apps
