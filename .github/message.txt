@@ -1,1 +1,1 @@
-refactor: update actions/checkout version to v6 across workflow files
+refactor: update docker/login-action version to v3 in production workflow
