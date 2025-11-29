@@ -91,7 +91,6 @@ jobs:
             crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ github.repository }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}
             crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/${{ github.repository }}_byteone-${{ matrix.package.name }}:staging
 
-
           registry_credentials: |
             {
               "ghcr.io": {
