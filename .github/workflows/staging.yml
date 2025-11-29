@@ -94,8 +94,8 @@ jobs:
           registry_credentials: |
             {
               "ghcr.io": {
-                "username": "${{ github.actor }}",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
+                "username": "0xfe10",
+                "password": "${{ secrets.GT_0XFE10 }}"
               },
               "crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com": {
                 "username": "${{ secrets.CR_ALI_USERNAME_JOECHOW }}",

@@ -1,1 +1,1 @@
-fix: remove unnecessary blank line in staging workflow
+fix: update registry credentials in staging workflow
