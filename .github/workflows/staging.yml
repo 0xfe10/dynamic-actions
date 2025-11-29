@@ -15,7 +15,7 @@ jobs:
     outputs:
       ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Ensure main
         id: ensure_main
@@ -37,7 +37,7 @@ jobs:
         package:
           - babosa
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.18.0
         with:
@@ -88,7 +88,7 @@ jobs:
           - LAUNCHER: launchers/webhook
             SLUG: launcher-webhook
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -141,7 +141,7 @@ jobs:
           - cornerstone
           - analysis
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -154,7 +154,7 @@ jobs:
       #   if: ${{ matrix.project == 'boogie' }}
       #   with:
       #     args: >
-      #       -url="jdbc:mysql://${{ secrets.BABOSA_DB_BOOGIE_HOST_STG }}/boogie_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+      #       -url="jdbc:postgresql://${{ secrets.BABOSA_DB_BOOGIE_HOST_STG }}/boogie_stg?sslmode=disable"
       #       -user=${{ secrets.BABOSA_DB_BOOGIE_USER_STG }}
       #       -password=$${{ secrets.BABOSA_DB_BOOGIE_PASSWORD_STG }}
       #       -locations=filesystem:./traice/boogie/records
@@ -166,7 +166,7 @@ jobs:
         if: ${{ matrix.project == 'cornerstone' }}
         with:
           args: >
-            -url="jdbc:mysql://${{ secrets.BABOSA_DB_CORNERSTONE_HOST_STG }}/babosa_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+            -url="jdbc:postgresql://${{ secrets.BABOSA_DB_CORNERSTONE_HOST_STG }}/babosa_stg?sslmode=disable"
             -user=${{ secrets.BABOSA_DB_CORNERSTONE_USER_STG }}
             -password=${{ secrets.BABOSA_DB_CORNERSTONE_PASSWORD_STG }}
             -locations=filesystem:./traice/cornerstone/records
@@ -178,7 +178,7 @@ jobs:
         if: ${{ matrix.project == 'analysis' }}
         with:
           args: >
-            -url="jdbc:mysql://${{ secrets.BABOSA_DB_ANALYSIS_HOST_STG }}/analysis_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+            -url="jdbc:postgresql://${{ secrets.BABOSA_DB_ANALYSIS_HOST_STG }}/analysis_stg?sslmode=disable"
             -user=${{ secrets.BABOSA_DB_ANALYSIS_USER_STG }}
             -password=${{ secrets.BABOSA_DB_ANALYSIS_PASSWORD_STG }}
             -locations=filesystem:./traice/analysis/records
@@ -206,7 +206,7 @@ jobs:
         package:
           - realtime
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -256,7 +256,7 @@ jobs:
             command: build:stg
             dist: dist-stg
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -305,7 +305,7 @@ jobs:
       - build-docker-image-madman
       - build-docker-image-frontend
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
