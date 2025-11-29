@@ -1,1 +1,1 @@
-fix: update registry credentials in staging workflow
+fix: add missing newline before registry credentials in staging workflow
