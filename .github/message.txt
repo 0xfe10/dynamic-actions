@@ -1,1 +1,1 @@
-fix: upgrade actions/checkout from v5 to v6 in workflow files
+feat: add ECS configuration and mirror images to ACR in staging workflow
