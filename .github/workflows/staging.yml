@@ -15,8 +15,7 @@ env:
   ECS_INSTANCE_TYPE: ecs.c7a.large
   ECS_SYSTEM_DISK_SIZE: 40
   ECS_SPOT_STRATEGY: SpotAsPriceGo
-
-  RUNNER_NAME_PREFIX: ecs-runner
+  ECS_KEYPAIR_NAME: keypair-ali-generic
 
 jobs:
   ensure-main:
