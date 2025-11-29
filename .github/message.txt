@@ -1,1 +1,1 @@
-Migrate to aliyun acr vpc
+Update Docker registry configurations and checkout actions in workflows
