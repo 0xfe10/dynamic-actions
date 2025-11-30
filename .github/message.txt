@@ -1,1 +1,1 @@
-升级 GitHub Actions 依赖至 v6 版本
+升级 Maven Action 至 v1.19.0，更新 Maven 版本至 3.9.11

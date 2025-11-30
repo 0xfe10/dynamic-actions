@@ -20,7 +20,7 @@ jobs:
         uses: s4u/setup-maven-action@v1.14.0
         with:
           java-version: 17
-          maven-version: 3.9.8
+          maven-version: 3.9.11
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
