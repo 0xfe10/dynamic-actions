@@ -1,1 +1,1 @@
-Update Maven action version and settings in workflows
+Disable checkout step in Java build jobs for production and staging workflows

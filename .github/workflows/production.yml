@@ -26,6 +26,7 @@ jobs:
         with:
           java-version: 17
           maven-version: 3.9.11
+          checkout-enabled: false
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
