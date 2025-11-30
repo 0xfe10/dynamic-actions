@@ -1,1 +1,1 @@
-Disable checkout in Java and Release workflows
+Refactor bitmap conversion and alignment logic to use is_multiple_of for clarity
