@@ -128,6 +128,6 @@ jobs:
   #         changes: |
   #           {
   #             "argocd/infra/backbone/overlays/staging/asr/deployment-patch.yaml": {
-  #               "[0].value": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
+  #               "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
   #             }
   #           }
