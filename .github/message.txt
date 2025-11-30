@@ -1,1 +1,1 @@
-refactor: update docker/login-action version to v3 in production workflow
+refactor: enhance Docker login and image tagging for Aliyun registry in production workflow
