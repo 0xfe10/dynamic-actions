@@ -1,1 +1,1 @@
-Disable checkout step in Java build jobs for production and staging workflows
+Update database connection URLs from PostgreSQL to MySQL in staging workflow

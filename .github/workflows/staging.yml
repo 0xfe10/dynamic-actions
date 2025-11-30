@@ -144,7 +144,7 @@ jobs:
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 10
-          max_attempts: 3
+          max_attempts: 5
           retry_wait_seconds: 30
           command: |
             docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
@@ -199,7 +199,7 @@ jobs:
         if: ${{ matrix.project == 'cornerstone' }}
         with:
           args: >
-            -url="jdbc:postgresql://${{ secrets.BABOSA_DB_CORNERSTONE_HOST_STG }}/babosa_stg?sslmode=disable"
+            -url="jdbc:mysql://${{ secrets.BABOSA_DB_CORNERSTONE_HOST_STG }}/babosa_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
             -user=${{ secrets.BABOSA_DB_CORNERSTONE_USER_STG }}
             -password=${{ secrets.BABOSA_DB_CORNERSTONE_PASSWORD_STG }}
             -locations=filesystem:./traice/cornerstone/records
@@ -211,7 +211,7 @@ jobs:
         if: ${{ matrix.project == 'analysis' }}
         with:
           args: >
-            -url="jdbc:postgresql://${{ secrets.BABOSA_DB_ANALYSIS_HOST_STG }}/analysis_stg?sslmode=disable"
+            -url="jdbc:mysql://${{ secrets.BABOSA_DB_ANALYSIS_HOST_STG }}/analysis_stg?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
             -user=${{ secrets.BABOSA_DB_ANALYSIS_USER_STG }}
             -password=${{ secrets.BABOSA_DB_ANALYSIS_PASSWORD_STG }}
             -locations=filesystem:./traice/analysis/records
@@ -287,7 +287,7 @@ jobs:
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 10
-          max_attempts: 3
+          max_attempts: 5
           retry_wait_seconds: 30
           command: |
             docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
@@ -382,7 +382,7 @@ jobs:
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 10
-          max_attempts: 3
+          max_attempts: 5
           retry_wait_seconds: 30
           command: |
             docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
