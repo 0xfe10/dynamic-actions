@@ -1,1 +1,1 @@
-Update Docker registry configurations and checkout actions in workflows
+Add artifact deletion step for Java in staging workflow
