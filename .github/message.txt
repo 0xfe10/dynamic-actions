@@ -1,1 +1,1 @@
-升级 Maven Action 至 v1.19.0，更新 Maven 版本至 3.9.11
+Disable checkout in Java and Release workflows
