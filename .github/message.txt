@@ -1,1 +1,7 @@
-A40a恢复出厂设置
+Refactor services to use PostgreSQL client and update SQL syntax
+
+- Updated all service files to replace MySQL2 with PostgreSQL client (pg).
+- Changed SQL query placeholders from '?' to '' format for parameterized queries.
+- Adjusted result handling to accommodate PostgreSQL's query result structure.
+- Ensured consistency in handling of affected rows and result counts across services.
+- Modified aggregate functions in SQL queries to use PostgreSQL syntax (e.g., string_agg instead of group_concat).
