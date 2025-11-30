@@ -1,1 +1,1 @@
-refactor: enhance Docker login and image tagging for Aliyun registry in production workflow
+refactor: update Docker registry configurations and add region-specific settings in production workflow
