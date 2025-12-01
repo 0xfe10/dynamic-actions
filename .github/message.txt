@@ -1,1 +1,1 @@
-Update database connection URLs from PostgreSQL to MySQL in staging workflow
+文生图风格不必填
