@@ -55,8 +55,8 @@ jobs:
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
-          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
       - uses: benjlevesque/short-sha@v3.0
