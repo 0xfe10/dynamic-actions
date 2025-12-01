@@ -6,8 +6,7 @@ on:
       - "v*-asr"
 env:
   DOCKER_REGISTRY: ghcr.io
-  DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
-  DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
 
@@ -37,8 +36,8 @@ jobs:
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
-          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
       - uses: benjlevesque/short-sha@v3.0
@@ -51,8 +50,8 @@ jobs:
         run: |
           echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/asr:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/asr:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:latest" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr:latest" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
@@ -108,7 +107,7 @@ jobs:
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/infra/backbone/overlays/production/asr/deployment-patch.yaml": {
-                "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
+              "argocd/infra/auxhn/overlays/production/asr/deployment-patch.yaml": {
+                "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
               }
             }

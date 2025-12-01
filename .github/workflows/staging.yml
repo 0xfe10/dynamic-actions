@@ -6,8 +6,7 @@ on:
       - '**'
 env:
   DOCKER_REGISTRY: ghcr.io
-  DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
-  DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
   ensure-main:
@@ -70,8 +69,8 @@ jobs:
         run: |
           echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/asr:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/asr:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:staging" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr:staging" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
@@ -127,7 +126,7 @@ jobs:
   #         commit_message: __origin__/.github/message.txt
   #         changes: |
   #           {
-  #             "argocd/infra/backbone/overlays/staging/asr/deployment-patch.yaml": {
-  #               "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
+  #             "argocd/infra/auxhn/overlays/staging/asr/deployment-patch.yaml": {
+  #               "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
   #             }
   #           }

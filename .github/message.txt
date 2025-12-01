@@ -1,1 +1,1 @@
-Add deploy steps to production and staging workflows
+Update Docker registry settings and image paths in production and staging workflows
