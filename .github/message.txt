@@ -1,1 +1,1 @@
-Refactor bitmap conversion and alignment logic to use is_multiple_of for clarity
+Merge remote-tracking branch 'origin/ble_native' into ble_native
