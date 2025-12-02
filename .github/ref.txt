@@ -1,1 +1,1 @@
-main
+ribbon-icon
