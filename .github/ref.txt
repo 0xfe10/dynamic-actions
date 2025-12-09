@@ -1,1 +1,1 @@
-main
+next-release
