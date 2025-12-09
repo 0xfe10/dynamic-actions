@@ -1,7 +1,1 @@
-Some improve (#395)
-
-* Refactor OssService for improved code readability and consistency
-
-* Refactor OssService to enhance code readability in the default object storage service definition
-
-* Enhance TrackingRoute with logging for tracking hook URL and error handling
+Enhance tracking hook logging and condition check
