@@ -1,1 +1,1 @@
-Enhance TrackingRoute to include async forwarding of tracking forms to external service
+Enhance TrackingRoute to handle exceptions during async forwarding of tracking forms
