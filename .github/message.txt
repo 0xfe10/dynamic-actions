@@ -1,1 +1,1 @@
-模版inspect接口增加templateType返回
+模版inspect接口增加templateType返回 (#393)
