@@ -1,1 +1,1 @@
-设置个人商品字段变量
+Refactor OssService to enhance code readability in the default object storage service definition
