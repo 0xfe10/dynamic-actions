@@ -1,1 +1,1 @@
-Enhance tracking hook logging and condition check
+Refactor TrackingRoute: Add missing RestController annotation and comment out debug print statement
