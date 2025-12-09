@@ -1,1 +1,7 @@
-模版inspect接口增加templateType返回 (#393)
+Release v0.0.228 (#392)
+
+* 新增多个变更日志文件以支持数据库结构更新
+
+* Enhance TrackingRoute to include async forwarding of tracking forms to external service
+
+* Enhance TrackingRoute to handle exceptions during async forwarding of tracking forms
