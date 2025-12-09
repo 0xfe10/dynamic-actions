@@ -1,1 +1,1 @@
-阿里云账号切回原账号 (#391)
+模版inspect接口增加templateType返回
