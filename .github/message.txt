@@ -1,1 +1,1 @@
-Enhance TrackingRoute: Add handling for methods without Authorization header and forward as x-labelix-token
+Enhance TrackingRoute: Introduce HOOK_SAMPLE_RATE for request sampling and adjust tracking hook enabling logic
