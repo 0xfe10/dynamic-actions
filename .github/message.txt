@@ -1,1 +1,1 @@
-Add RequestKit utility for IP address resolution; update TrackingRoute and BabosaRequestInterceptor to use new utility
+Enhance TrackingRoute: Add handling for methods without Authorization header and forward as x-labelix-token
