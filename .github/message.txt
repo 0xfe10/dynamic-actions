@@ -1,1 +1,1 @@
-Add changelog for creating index on 'sn' column in 'a_device' table
+Release v0.0.239 (#397)
