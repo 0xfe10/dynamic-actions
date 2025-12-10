@@ -1,1 +1,1 @@
-Refactor TrackingRoute: Reintroduce hookLogCount for logging header information
+Refactor TrackingRoute: Move form processing logic to the end of the submit method for better readability
