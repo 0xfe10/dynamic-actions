@@ -1,1 +1,1 @@
-Refactor TrackingRoute: Remove LABELIX_TOKEN_METHODS and simplify x-labelix-token handling
+Refactor TrackingRoute: Remove unused hookLogCount and related logging code
