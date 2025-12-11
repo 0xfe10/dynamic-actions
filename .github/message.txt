@@ -1,1 +1,27 @@
-fix：修复前端问题
+Eliminate N+1 queries and optimize batch operations (#22)
+
+* Initial plan
+
+* Optimize N+1 queries and batch operations in print_job and device logic
+
+Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
+
+* Add performance documentation and optimize device deletion batch check
+
+Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
+
+* Fix service interface and improve error handling documentation
+
+Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
+
+* Address code review feedback: clarify variable names and add security comments
+
+Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
+
+* fix：修复前端问题
+
+---------
+
+Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
+Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
+Co-authored-by: Fangjc <admin@gcoll.top>
