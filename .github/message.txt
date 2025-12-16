@@ -1,1 +1,1 @@
-fix:修复fastify-socket.io构建编译问题
+fix:修复fastify-socket.io构建依赖问题
