@@ -80,16 +80,16 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v4
         with:
           name: artifact-java
           path: babosa
 
-      # - uses: docker/login-action@v3
-      #   with:
-      #     registry: ${{ env.DOCKER_REGISTRY }}
-      #     username: ${{ github.actor }}
-      #     password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -106,15 +106,15 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          #echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          #echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:latest" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:latest" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ matrix.package.SLUG }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ matrix.package.SLUG }}:latest" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
           tags: |
@@ -235,11 +235,11 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      # - uses: docker/login-action@v3
-      #   with:
-      #     registry: ${{ env.DOCKER_REGISTRY }}
-      #     username: ${{ github.actor }}
-      #     password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -256,15 +256,15 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          #echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          #echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:latest" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:latest" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_madman-${{ matrix.package }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_madman-${{ matrix.package }}:latest" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: madman
           file: madman/docker/${{ matrix.package }}.Dockerfile
           tags: |
@@ -312,11 +312,11 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      # - uses: docker/login-action@v3
-      #   with:
-      #     registry: ${{ env.DOCKER_REGISTRY }}
-      #     username: ${{ github.actor }}
-      #     password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -348,15 +348,15 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          #echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          #echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_frontend-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: ${{ matrix.package.path }}
           file: ${{ matrix.package.path }}/docker/Dockerfile
           tags: |
