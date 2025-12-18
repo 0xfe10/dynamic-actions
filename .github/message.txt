@@ -1,1 +1,1 @@
-test:测试构建
+disable ghcr registry
