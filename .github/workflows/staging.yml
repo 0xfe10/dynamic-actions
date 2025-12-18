@@ -59,7 +59,7 @@ jobs:
           mvn clean package -Dmaven.test.skip=true
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: artifact-java
           path: |
@@ -99,7 +99,7 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v6
         with:
           name: artifact-java
           path: babosa
