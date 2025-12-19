@@ -1,1 +1,1 @@
-disable ghcr registry
+根据code查询单个分类
