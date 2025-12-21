@@ -1,5 +1,1 @@
-Shb (#409)
-
-* 售后宝获取token接口
-
-* 售后宝搜索接口
+add empty line at the end of ATUserLive.java for consistency
