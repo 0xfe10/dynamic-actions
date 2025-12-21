@@ -1,1 +1,4 @@
-add empty line at the end of ATUserLive.java for consistency
+refactor: remove obsolete analysis task classes and geo IP fetcher
+
+- Deleted ATSize, ATTemplate, ATTutorial, ATUser, ATUserLive, and CGeoIPFetcher classes as they are no longer needed.
+- Cleaned up related imports and dependencies to streamline the codebase.
