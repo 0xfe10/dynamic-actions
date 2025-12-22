@@ -1,11 +1,1 @@
-Better config example (#6)
-
-* feat: enhance configuration for proxy and environment variables
-
-* fix: correct proxy handler function signature and config access
-
-* refactor: simplify parsing logic in print_event, tracking, geoip, and context modules
-
-* docs: improve documentation for parse_device_info function
-
-* refactor: rename task addition methods in TaskRunner for clarity
+Update Dockerfile to run spectra-cli without serve argument
