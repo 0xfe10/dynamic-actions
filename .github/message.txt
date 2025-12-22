@@ -1,1 +1,1 @@
-Change CMD to ENTRYPOINT in Dockerfile
+Change CMD to ENTRYPOINT in Dockerfile (#9)
