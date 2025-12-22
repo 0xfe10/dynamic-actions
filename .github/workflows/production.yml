@@ -18,7 +18,7 @@ jobs:
         package:
           - name: lris-spectra
             path: lris/cli/spectra
-            features: "transition_proxy"
+            extra_args: "--features=proxy-legacy"
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -60,7 +60,7 @@ jobs:
         with:
           command: build
           target: x86_64-unknown-linux-musl
-          args: "--release --package spectra-cli --features ${{ matrix.package.features }}"
+          args: "--release --package spectra-cli ${{ matrix.package.extra_args }}"
           working-directory: lris
 
       - name: Move binary

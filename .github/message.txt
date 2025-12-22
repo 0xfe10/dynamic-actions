@@ -1,1 +1,11 @@
-fix: remove unnecessary blank line in proxy_handler function
+Refactor spectra configuration and enhance MySQL integration
+
+- Updated Cargo.toml to rename features and add new dependencies for MySQL and async traits.
+- Translated and expanded the example configuration file to include MySQL and rollup settings.
+- Refactored AppConfig to include MySQL and rollup configurations.
+- Introduced DataSyncService and related tasks to synchronize data from ClickHouse to MySQL.
+- Implemented a new task runner to manage background tasks, including data synchronization and MMDB updates.
+- Enhanced ClickHouse client with new query methods for user activity and mileage aggregation.
+- Updated event buffer to use the new tracker configuration.
+- Removed obsolete tasks management code and streamlined task execution.
+- Added detailed logging for data synchronization processes and error handling.
