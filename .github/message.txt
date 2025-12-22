@@ -1,1 +1,20 @@
-refactor: Clean up proxy handler code for improved readability and maintainability
+Feature lris (#2)
+
+* feat: Implement event buffering and storage for print and Bluetooth connect events
+
+- Added BluetoothConnectEvent and PrintEvent structs for handling respective event types.
+- Enhanced EventBuffer to support multiple event types with independent thresholds for flushing.
+- Updated ClickHouseClient to handle batch inserts for new event types.
+- Created separate tables in ClickHouse for print_events and bluetooth_connect_events with optimized schemas.
+- Implemented graceful shutdown for event buffering to prevent data loss.
+- Refactored existing code to accommodate new event types and improve maintainability.
+
+* feat: Add print mileage calculation and database migration
+
+* feat: Refine print mileage calculation and enhance event buffer flush logic
+
+* feat: Add transition proxy feature and implement proxy handler
+
+* feat: Update Cargo dependencies and enhance proxy handler; add CI workflows for production and staging
+
+* refactor: Clean up proxy handler code for improved readability and maintainability
