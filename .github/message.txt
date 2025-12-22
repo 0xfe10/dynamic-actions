@@ -1,1 +1,1 @@
-refactor: remove obsolete migration files for tracking and user events
+refactor: update Bluetooth and print event structures to use Option types for nullable fields
