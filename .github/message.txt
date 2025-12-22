@@ -1,1 +1,1 @@
-docs: improve documentation for parse_device_info function
+refactor: rename task addition methods in TaskRunner for clarity
