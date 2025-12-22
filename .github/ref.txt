@@ -1,1 +1,1 @@
-better-config-example
+main
