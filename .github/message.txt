@@ -1,1 +1,1 @@
-refactor: simplify parsing logic in print_event, tracking, geoip, and context modules
+docs: improve documentation for parse_device_info function
