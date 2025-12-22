@@ -1,1 +1,1 @@
-Fix route pattern for proxy handler in API routes
+Fix route pattern for proxy handler in API routes (#8)
