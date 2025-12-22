@@ -1,1 +1,1 @@
-refactor: add event_id field to Bluetooth and Print event structures and update database migrations
+refactor: update b_user table schema to improve data types and nullability
