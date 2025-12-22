@@ -1,1 +1,1 @@
-feat: enhance configuration for proxy and environment variables
+refactor: simplify parsing logic in print_event, tracking, geoip, and context modules
