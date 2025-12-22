@@ -1,1 +1,1 @@
-Enable pushing of Docker image in staging workflow
+Enable pushing of Docker image in staging workflow (#4)
