@@ -1,1 +1,1 @@
-feat: Update Cargo dependencies and enhance proxy handler; add CI workflows for production and staging
+refactor: Clean up proxy handler code for improved readability and maintainability
