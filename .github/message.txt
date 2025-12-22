@@ -1,1 +1,1 @@
-refactor: update Bluetooth and print event structures to use Option types for nullable fields
+refactor: enhance graceful shutdown logic and improve connection drain handling
