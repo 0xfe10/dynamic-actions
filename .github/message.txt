@@ -1,1 +1,1 @@
-Update Dockerfile to run spectra-cli without serve argument
+Update Dockerfile to run spectra-cli without serve argument (#7)
