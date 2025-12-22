@@ -1,7 +1,1 @@
-Refactor event buffering and synchronization logic
-
-- Removed the old event_buffer module and replaced it with a new tracker module that handles event buffering for tracking, print, and Bluetooth connect events.
-- Updated MySQL client methods to reflect changes in data structure, renaming user activity updates to profile activity updates.
-- Deleted the sync module and integrated its functionality into the new rollup service, which aggregates data from ClickHouse to MySQL.
-- Introduced a new rollup task and service to manage periodic rollup operations for profile activity, mileage, and device mileage.
-- Enhanced graceful shutdown mechanisms for the new tracker buffer to ensure all events are flushed before application exit.
+Refactor ID generation to use snowflake module and update print_mileage column type
