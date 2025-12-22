@@ -1,1 +1,1 @@
-Uncomment Docker login step in staging workflow
+Enable Docker login and image push in workflow
