@@ -1,1 +1,1 @@
-refactor: enhance graceful shutdown logic and improve connection drain handling
+refactor: add event_id field to Bluetooth and Print event structures and update database migrations
