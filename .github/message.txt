@@ -1,1 +1,1 @@
-Refactor ID generation to use snowflake module and update print_mileage column type
+refactor: remove obsolete migration files for tracking and user events
