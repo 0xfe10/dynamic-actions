@@ -16,8 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package:
-          - name: spectra-cli
+        app:
+          - package_name: spectra-cli
+            image_name: spectra
+            app_key: labelix_spectra
             context: lris
             dockerfile: cli/spectra/Dockerfile
             extra_args: "--features=proxy-legacy"
@@ -52,25 +54,25 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-${{ matrix.app.image_name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-${{ matrix.app.image_name }}:latest" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:latest" >> $GITHUB_OUTPUT
 
       - name: Build binary
         uses: houseabsolute/actions-rust-cross@v0
         with:
           command: build
           target: x86_64-unknown-linux-musl
-          args: "--release --package ${{ matrix.package.name }} ${{ matrix.package.extra_args }}"
-          working-directory: ${{ matrix.package.context }}
+          args: "--release --package ${{ matrix.app.package_name }} ${{ matrix.app.extra_args }}"
+          working-directory: ${{ matrix.app.context }}
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ${{ matrix.package.context }}
-          file: ${{ matrix.package.context }}/${{ matrix.package.dockerfile }}
+          context: ${{ matrix.app.context }}
+          file: ${{ matrix.app.context }}/${{ matrix.app.dockerfile }}
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
@@ -119,6 +121,6 @@ jobs:
           changes: |
             {
               "argocd/labelix/garden/overlays/production/values.yaml": {
-                "app.labelix_spectra_cli.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-spectra-cli:sha-${{ env.SHA }}"
+                "app.${{ matrix.app.app_key }}.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:sha-${{ env.SHA }}"
               }
             }

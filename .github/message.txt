@@ -1,1 +1,1 @@
-Refactor b_user table schema to enhance column comments and indexing for improved clarity and performance
+Refactor workflow configurations to unify app matrix structure and update image tagging for spectra-cli
