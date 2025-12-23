@@ -1,1 +1,1 @@
-Update ProfileActivityRow to use i64 for active_time and adjust logging in rollup service
+Refactor b_user table schema to enhance column comments and indexing for improved clarity and performance
