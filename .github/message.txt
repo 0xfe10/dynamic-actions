@@ -1,1 +1,1 @@
-Update ServeCommand documentation to clarify default values for host and port
+Update ServeCommand documentation to clarify default values for host and port (#14)
