@@ -1,1 +1,1 @@
-Refactor query to simplify IP region extraction in profile activity
+Refactor ProfileActivityRow to use Unix timestamp for active_time and update rollup logging
