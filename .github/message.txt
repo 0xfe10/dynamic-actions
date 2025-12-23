@@ -1,1 +1,1 @@
-Remove MySQL configuration from examples and update rollup data sync settings (#12)
+Refactor server configuration to use structured fields and update mileage handling in MySQL
