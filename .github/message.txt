@@ -1,1 +1,1 @@
-Update query to use toDateTime64 for active_time in profile activity
+Refactor ClickHouse queries to use toUnixTimestamp for active_time and simplify logging in rollup service
