@@ -1,1 +1,1 @@
-Refactor CI workflows to use updated package structure for spectra-cli (#11)
+Remove MySQL configuration from examples and update rollup data sync settings
