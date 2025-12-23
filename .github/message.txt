@@ -1,1 +1,5 @@
-Add deployment steps for GitOps in production and staging workflows
+Fix spectra issue and enable auto deploy (#13)
+
+* Refactor server configuration to use structured fields and update mileage handling in MySQL
+
+* Add deployment steps for GitOps in production and staging workflows
