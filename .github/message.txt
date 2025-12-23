@@ -1,1 +1,1 @@
-Refactor Dockerfile and entrypoint script for spectra migration; add dbmate installation and update database migration logic
+Spectra DB Migration (#10)
