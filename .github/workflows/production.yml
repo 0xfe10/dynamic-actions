@@ -16,8 +16,9 @@ jobs:
     strategy:
       matrix:
         package:
-          - name: lris-spectra
-            path: lris/cli/spectra
+          - name: spectra-cli
+            context: lris
+            dockerfile: cli/spectra/Dockerfile
             extra_args: "--features=proxy-legacy"
     steps:
       - uses: actions/checkout@v6
@@ -60,19 +61,15 @@ jobs:
         with:
           command: build
           target: x86_64-unknown-linux-musl
-          args: "--release --package spectra-cli ${{ matrix.package.extra_args }}"
-          working-directory: lris
-
-      - name: Move binary
-        run: |
-          mv lris/target/x86_64-unknown-linux-musl/release/spectra-cli ${{ matrix.package.path }}/spectra-cli
+          args: "--release --package ${{ matrix.package.name }} ${{ matrix.package.extra_args }}"
+          working-directory: ${{ matrix.package.context }}
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ${{ matrix.package.path }}
-          file: ${{ matrix.package.path }}/Dockerfile
+          context: ${{ matrix.package.context }}
+          file: ${{ matrix.package.context }}/${{ matrix.package.dockerfile }}
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}

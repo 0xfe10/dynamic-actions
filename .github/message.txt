@@ -1,1 +1,1 @@
-Spectra DB Migration (#10)
+Refactor CI workflows to use updated package structure for spectra-cli
