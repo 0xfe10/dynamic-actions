@@ -1,1 +1,1 @@
-Remove MySQL configuration from examples and update rollup data sync settings
+Remove MySQL configuration from examples and update rollup data sync settings (#12)
