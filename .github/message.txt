@@ -1,1 +1,1 @@
-Change CMD to ENTRYPOINT in Dockerfile (#9)
+Refactor Dockerfile and entrypoint script for spectra migration; add dbmate installation and update database migration logic
