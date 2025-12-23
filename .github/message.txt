@@ -1,1 +1,1 @@
-Refactor ProfileActivityRow to use Unix timestamp for active_time and update rollup logging
+Update ProfileActivityRow to use i64 for active_time and adjust logging in rollup service
