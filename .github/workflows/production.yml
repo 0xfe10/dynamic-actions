@@ -99,3 +99,25 @@ jobs:
           repository: prtmax/labelix
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name:  labelix-production-garden
+          project_name: prtmax/labelix
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+          changes: |
+            {
+              "argocd/labelix/garden/overlays/production/values.yaml": {
+                "app.labelix_spectra_cli.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-spectra-cli:sha-${{ env.SHA }}"
+              }
+            }
