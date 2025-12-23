@@ -1,1 +1,1 @@
-Refactor ClickHouse integration to use OffsetDateTime for active_time and update rollup logging
+Update query to use toDateTime64 for active_time in profile activity
