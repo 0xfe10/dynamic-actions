@@ -1,1 +1,5 @@
-Implement proxy support for legacy service with fire-and-forget functionality
+Feature support legacy analysis (#15)
+
+* Add dual write support for legacy analysis service and enhance client IP extraction
+
+* Implement proxy support for legacy service with fire-and-forget functionality
