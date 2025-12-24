@@ -1,1 +1,1 @@
-Refactor ProfileActivityRow and rollup service to handle IP and geographic data as non-optional fields
+Fix query_profile_activity to handle null values for IP and geographic data
