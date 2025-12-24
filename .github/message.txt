@@ -1,1 +1,1 @@
-升级prisma
+回退prisma版本
