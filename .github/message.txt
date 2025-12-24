@@ -1,1 +1,1 @@
-Fix query to retrieve active_time directly from server_time in profile activity
+Update active_time handling in ProfileActivityRow and improve error logging in rollup service
