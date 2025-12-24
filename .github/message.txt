@@ -1,1 +1,1 @@
-Refactor ClickHouse client to use OffsetDateTime for active_time and improve error logging in rollup service
+Fix query to retrieve active_time directly from server_time in profile activity
