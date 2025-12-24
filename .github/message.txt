@@ -1,1 +1,1 @@
-js优化 CTextCanvas 1
+彩喷新增sn接口
