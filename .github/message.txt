@@ -1,1 +1,1 @@
-Fix query_profile_activity to handle null values for IP and geographic data
+Add dotenvy dependency and implement ClickHouse query tests
