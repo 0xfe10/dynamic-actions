@@ -1,1 +1,1 @@
-Change log level for query_profile_activity to debug for improved logging granularity
+Update ServeCommand documentation to clarify default values for host and port (#14)
