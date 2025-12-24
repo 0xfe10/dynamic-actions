@@ -1,1 +1,1 @@
-Update ProfileActivityRow to make ip_region optional and adjust rollup service handling
+Refactor ProfileActivityRow and rollup service to handle IP and geographic data as non-optional fields
