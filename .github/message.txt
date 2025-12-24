@@ -1,1 +1,1 @@
-Update active_time handling in ProfileActivityRow and improve error logging in rollup service
+Refactor ProfileActivityRow and RollupService to improve handling of ip_region
