@@ -1,1 +1,47 @@
-彩喷设置关机时间 修改
+More improvement (#12)
+
+* 新增配网信息重置接口
+
+* 灰阶加抖动处理
+
+* 新增CTextCanvas
+
+* 重构CTextCanvas、EasyArg和CText类，使用@SuperBuilder和@NoArgsConstructor注解，优化构造函数和默认属性设置
+
+* 更新工作流配置，替换为新的动态克隆动作并注释失败通知步骤
+
+* 更新工作流配置，替换动态克隆动作的引用并删除过时的检查工作流
+
+* CTextCanvas优化
+
+* CTextCanvas 增加透明度参数
+
+* 升级 GitHub Actions 依赖至 v6 版本
+
+* 升级 Maven Action 至 v1.19.0，更新 Maven 版本至 3.9.11
+
+* Disable checkout in Java and Release workflows
+
+* Refactor bitmap conversion and alignment logic to use is_multiple_of for clarity
+
+* dart新增CTextCanvas
+
+* export 'src/args/ctextcanvas.dart';
+
+* dart:CTextCanvas 优化
+
+* dart: ver0.1.4
+
+* 1.js新增 CTextCanvas
+
+* js优化 CTextCanvas
+
+* js ver v0.7.9
+
+* js优化 CTextCanvas 1
+
+* 彩喷新增sn接口
+
+---------
+
+Co-authored-by: JCZ <615315510@qq.com>
