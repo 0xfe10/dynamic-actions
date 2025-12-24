@@ -1,1 +1,1 @@
-Refactor query_profile_activity to improve logging and remove debug tests
+Update ProfileActivityRow to make ip_region optional and adjust rollup service handling
