@@ -1,1 +1,1 @@
-Update image reference in workflow files for labelix-spectra
+Implement proxy support for legacy service with fire-and-forget functionality
