@@ -1,1 +1,1 @@
-Add debug tests for profile activity queries with detailed logging
+Add logging for test query to fetch profile activity timestamps
