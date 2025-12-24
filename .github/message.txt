@@ -1,1 +1,1 @@
-Add dotenvy dependency and implement ClickHouse query tests
+Change log level for query_profile_activity to debug for improved logging granularity
