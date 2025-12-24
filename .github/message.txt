@@ -1,1 +1,1 @@
-Add logging for test query to fetch profile activity timestamps
+Refactor query_profile_activity to improve logging and remove debug tests
