@@ -1,1 +1,1 @@
-Add debug logging for profile activity query to inspect data structure
+Add detailed debug tests for profile activity query field types
