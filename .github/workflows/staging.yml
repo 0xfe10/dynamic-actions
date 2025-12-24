@@ -140,6 +140,6 @@ jobs:
           changes: |
             {
               "argocd/labelix/garden/overlays/staging/values.yaml": {
-                "app.${{ matrix.app.app_key }}.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:sha-${{ env.SHA }}"
+                "app.labelix_spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-spectra:sha-${{ env.SHA }}"
               }
             }

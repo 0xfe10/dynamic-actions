@@ -1,1 +1,1 @@
-Refactor workflow configurations to unify app matrix structure and update image tagging for spectra-cli
+Update image reference in workflow files for labelix-spectra
