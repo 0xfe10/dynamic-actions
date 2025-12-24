@@ -1,1 +1,1 @@
-Refactor rollup service and remove device mileage functionality; update related tests
+Clean device print_mileage (#17)
