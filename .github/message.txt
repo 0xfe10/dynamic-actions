@@ -1,1 +1,1 @@
-Add detailed debug tests for profile activity query field types
+Add debug tests for profile activity queries with detailed logging
