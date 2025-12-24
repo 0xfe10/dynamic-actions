@@ -1,5 +1,1 @@
-Feature support legacy analysis (#15)
-
-* Add dual write support for legacy analysis service and enhance client IP extraction
-
-* Implement proxy support for legacy service with fire-and-forget functionality
+Refactor ClickHouse client to use OffsetDateTime for active_time and improve error logging in rollup service
