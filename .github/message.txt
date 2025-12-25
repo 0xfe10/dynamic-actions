@@ -1,1 +1,1 @@
-feat(spectra): add platform_os field and remove duplicate app_version column (#19)
+fix(context): make X-App header required only for /api/v1/tracking/submit
