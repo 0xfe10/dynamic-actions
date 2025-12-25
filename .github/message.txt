@@ -1,1 +1,1 @@
-feat(spectra): add platform_os field and remove duplicate app_version column
+feat(spectra): add platform_os field and remove duplicate app_version column (#19)
