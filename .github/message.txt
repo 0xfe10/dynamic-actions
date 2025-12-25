@@ -1,1 +1,1 @@
-fix(context): make X-App header required only for /api/v1/tracking/submit
+fix(context): make X-App header required only for /api/v1/tracking/submit (#20)
