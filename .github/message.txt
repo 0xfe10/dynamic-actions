@@ -1,1 +1,1 @@
-Clean device print_mileage (#17)
+Refactor database schema to use 'labelix_spectra_prd' and add platform_os column to tracking_events
