@@ -1,1 +1,1 @@
-Refactor database schema to use 'labelix_spectra_prd' and add platform_os column to tracking_events
+Refactor platform information handling in Bluetooth and Print events; add platform_os to TrackingEvent
