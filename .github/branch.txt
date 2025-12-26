@@ -1,1 +1,1 @@
-ai-graffiti
+specification-mask
