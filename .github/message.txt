@@ -1,1 +1,1 @@
-Change log level for query_profile_activity to debug for improved logging granularity
+fix(clickhouse): simplify IP region query by removing unnecessary coalesce and if statements
