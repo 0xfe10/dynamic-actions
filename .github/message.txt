@@ -1,1 +1,1 @@
-fix(clickhouse): simplify IP region query by removing unnecessary coalesce and if statements
+Only use country name for profile table (#21)
