@@ -1,1 +1,1 @@
-fix(context): make X-App header required only for /api/v1/tracking/submit (#20)
+Change log level for query_profile_activity to debug for improved logging granularity
