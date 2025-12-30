@@ -59,7 +59,7 @@ jobs:
           mvn clean package -Dmaven.test.skip=true
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: artifact-java
           path: |
@@ -133,7 +133,7 @@ jobs:
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
           tags: |
@@ -276,7 +276,7 @@ jobs:
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: madman
           file: madman/docker/${{ matrix.package }}.Dockerfile
           tags: |
@@ -371,7 +371,7 @@ jobs:
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: ${{ matrix.package.path }}
           file: ${{ matrix.package.path }}/docker/Dockerfile
           tags: |
@@ -418,13 +418,13 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-staging-babosa
+          app_name: labelix-staging-babosa-hk0
           project_name: prtmax/endfather
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/labelix/babosa/staging/values.yaml": {
+              "argocd/labelix/babosa-hk0/staging/values.yaml": {
                 "app.launcher_universal.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-universal:sha-${{ env.SHA }}",
                 "app.launcher_labelexpert.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-labelexpert:sha-${{ env.SHA }}",
                 "app.launcher_metaprint.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-metaprint:sha-${{ env.SHA }}",
