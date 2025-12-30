@@ -1,1 +1,1 @@
-回退prisma版本
+Update CI
