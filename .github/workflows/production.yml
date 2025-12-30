@@ -66,13 +66,13 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-production-openapps
+          app_name: labelix-production-openapps-hk0
           project_name: prtmax/landing-page
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/labelix/openapps/overlays/production/landing-page/deployment-patch.yaml": {
+              "argocd/labelix/openapps-hk0/overlays/production/landing-page/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/landing-page:sha-${{ env.SHA }}"
               }
             }
