@@ -1,1 +1,1 @@
-featrue: update application names and paths for production and staging workflows
+fix: adjust app_name formatting in staging workflow

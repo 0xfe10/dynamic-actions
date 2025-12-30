@@ -130,7 +130,7 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name:  iot-staging-byteone-hk0
+          app_name: iot-staging-byteone-hk0
           project_name: prtmax/byteone
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
