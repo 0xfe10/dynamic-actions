@@ -27,10 +27,6 @@ jobs:
             dockerfile: docker/Dockerfile
             region: hk
             namespace: xoohub
-          - name: orbithubfree
-            dockerfile: Dockerfile
-            region: sz
-            namespace: coohub
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -134,20 +130,17 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-production-openapps
+          app_name: labelix-production-openapps-hk0
           project_name: prtmax/openapps
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/labelix/openapps/overlays/production/erpfastprint/deployment-patch.yaml": {
+              "argocd/labelix/openapps-hk0/overlays/production/erpfastprint/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-erpfastprint:sha-${{ env.SHA }}"
               },
-              "argocd/labelix/openapps/overlays/production/maprintrace/deployment-patch.yaml": {
+              "argocd/labelix/openapps-hk0/overlays/production/maprintrace/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-maprintrace:sha-${{ env.SHA }}"
-              },
-              "argocd/infra/auxcn/overlays/production/orbithubfree/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY_ALI_SZ_VPC }}/coohub/${{ env.REPO_NAME }}_openapps-orbithubfree:sha-${{ env.SHA }}"
               }
             }
 

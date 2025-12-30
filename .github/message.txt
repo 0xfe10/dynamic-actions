@@ -1,1 +1,1 @@
-refactor: update Docker registry configurations and add region-specific settings in production workflow
+Update CI
