@@ -7,6 +7,7 @@ on:
 env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
+  DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
 
@@ -99,6 +100,9 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
       - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
@@ -107,15 +111,15 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: iot-production-byteone
+          app_name: iot-production-byteone-sz1
           project_name: prtmax/byteone
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/iot/byteone/overlays/production/values.yaml": {
-                "app.core.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-core:sha-${{ env.SHA }}",
-                "app.msgbridge.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-msgbridge:sha-${{ env.SHA }}",
-                "app.front.image": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-front:sha-${{ env.SHA }}"
+              "argocd/iot/byteone-sz1/overlays/production/values.yaml": {
+                "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHA }}",
+                "app.msgbridge.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-msgbridge:sha-${{ env.SHA }}",
+                "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHA }}"
               }
             }

@@ -1,1 +1,1 @@
-featrue:添加清空队列功能
+featrue: update application names and paths for production and staging workflows
