@@ -70,16 +70,16 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-production-suite
+          app_name: labelix-production-suite-hk0
           project_name: prtmax/aynguide
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/labelix/suite/overlays/production/aynguide/api/deployment-patch.yaml": {
+              "argocd/labelix/suite-hk0/overlays/production/aynguide/api/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-api:sha-${{ env.SHA }}"
               },
-              "argocd/labelix/suite/overlays/production/aynguide/frontend/deployment-patch.yaml": {
+              "argocd/labelix/suite-hk0/overlays/production/aynguide/frontend/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/qurator-frontend:sha-${{ env.SHA }}"
               }
             }
