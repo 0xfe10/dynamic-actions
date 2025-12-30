@@ -1,1 +1,1 @@
-feat(docker): pre-download GeoLite2 mmdb files in Dockerfile
+feat(docker): pre-download GeoLite2 mmdb files in Dockerfile (#23)
