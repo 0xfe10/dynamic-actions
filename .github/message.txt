@@ -1,5 +1,1 @@
-Udpate CI (#23)
-
-* featrue: update application names and paths for production and staging workflows
-
-* fix: adjust app_name formatting in staging workflow
+fix:修复初始化数据库问题
