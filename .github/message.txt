@@ -1,1 +1,1 @@
-fix ci
+update CI workflow for Docker image build and deployment
