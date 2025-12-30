@@ -1,1 +1,1 @@
-update CI workflow for Docker image build and deployment (#4)
+refactor: enable setting image tags in CI workflow
