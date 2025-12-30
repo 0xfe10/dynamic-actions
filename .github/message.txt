@@ -1,1 +1,1 @@
-Only use country name for profile table (#21)
+Update ci
