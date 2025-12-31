@@ -1,1 +1,1 @@
-Landing page program
+feat: add landing page build and deployment configuration

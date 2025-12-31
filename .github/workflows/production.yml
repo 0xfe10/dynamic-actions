@@ -27,6 +27,10 @@ jobs:
             dockerfile: docker/Dockerfile
             region: hk
             namespace: xoohub
+          - name: landing-page
+            dockerfile: Dockerfile
+            region: hk
+            namespace: xoohub
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -141,6 +145,9 @@ jobs:
               },
               "argocd/labelix/openapps-hk0/overlays/production/maprintrace/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-maprintrace:sha-${{ env.SHA }}"
+              },
+              "argocd/labelix/openapps-hk0/overlays/production/landing-page/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-landing-page:sha-${{ env.SHA }}"
               }
             }
 
