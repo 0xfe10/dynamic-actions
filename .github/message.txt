@@ -1,1 +1,5 @@
-feat: add landing page build and deployment configuration
+Landing page program (#3)
+
+* Landing page program
+
+* feat: add landing page build and deployment configuration
