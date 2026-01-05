@@ -59,7 +59,7 @@ jobs:
           mvn clean package -Dmaven.test.skip=true
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: artifact-java
           path: |
@@ -133,7 +133,7 @@ jobs:
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
           tags: |
@@ -276,7 +276,7 @@ jobs:
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: madman
           file: madman/docker/${{ matrix.package }}.Dockerfile
           tags: |
@@ -371,7 +371,7 @@ jobs:
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: ${{ matrix.package.path }}
           file: ${{ matrix.package.path }}/docker/Dockerfile
           tags: |

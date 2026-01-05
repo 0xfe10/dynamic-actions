@@ -1,1 +1,14 @@
-Update CI (#430)
+hotfix-v0.0.240 (#415)
+
+* Feature Clean Analysis (#410)
+
+* add empty line at the end of ATUserLive.java for consistency
+
+* refactor: remove obsolete analysis task classes and geo IP fetcher
+
+- Deleted ATSize, ATTemplate, ATTutorial, ATUser, ATUserLive, and CGeoIPFetcher classes as they are no longer needed.
+- Cleaned up related imports and dependencies to streamline the codebase.
+
+* refactor: remove analysis-related configurations and dependencies
+
+* Update CI (#430)
