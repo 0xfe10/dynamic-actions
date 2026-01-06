@@ -1,11 +1,1 @@
-Update website (#2)
-
-* feat: add voice message broadcasting interface with fixed signature verification
-
-* fix: update logo image source to local path across multiple HTML files
-
-* refactor: rename build job and comment out deploy steps in production workflow
-
-* refactor: comment out Aliyun ACR push steps in production workflow
-
-* chore: add newline at the end of production.yml for consistency
+Update README.md for project name and structure clarification
