@@ -104,13 +104,13 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-production-sw-aiot-hk0
+          app_name: labelix-production-openapps-hk0
           project_name: prtmax/sw-aiot
           ac_git_ref: __origin__/.github/ref.txt
           commit_message: __origin__/.github/message.txt
           changes: |
             {
-              "argocd/labelix/sw-aiot-hk0/overlays/production/deployment-patch.yaml": {
+              "argocd/labelix/openapps-hk0/overlays/production/sw-aiot/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sw-aiot:sha-${{ env.SHA }}"
               }
             }

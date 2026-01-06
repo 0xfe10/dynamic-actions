@@ -1,1 +1,1 @@
-Implement deployment steps in production workflow
+Update app name and deployment path for openapps in production workflow
