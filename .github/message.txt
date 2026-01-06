@@ -1,1 +1,1 @@
-Update README.md for project name and structure clarification
+Fix tag format in deployment instructions in README.md
