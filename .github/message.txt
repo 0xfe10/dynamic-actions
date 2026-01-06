@@ -1,1 +1,1 @@
-Add changelog for IoT card table creation
+Release v0.0.245 (#444)
