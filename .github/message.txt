@@ -1,1 +1,1 @@
-修改excel转换 (#443)
+Add changelog for IoT card table creation
