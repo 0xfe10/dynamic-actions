@@ -1,1 +1,1 @@
-Release v0.0.246 (#445)
+Add changelog for modifying 'name' column data type to CLOB and adding NOT NULL constraint
