@@ -1,1 +1,1 @@
-Add changelog for changes to a_seal_group table
+Release v0.0.246 (#445)
