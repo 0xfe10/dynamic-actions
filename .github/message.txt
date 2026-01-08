@@ -1,1 +1,1 @@
-Fix ApitraceAnalysisFilter ConcurrentModify issue (#447)
+Implement asynchronous analysis submission in ApitraceAnalysisFilter
