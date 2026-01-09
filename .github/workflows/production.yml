@@ -1,0 +1,138 @@
+name: '[onestore] Production'
+
+on:
+  push:
+    tags:
+      - "v*-onestore"
+env:
+  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY_ALI_HK: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI_HK_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI_SZ: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
+  DOCKER_REGISTRY_ALI_SZ_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
+
+jobs:
+
+  build-onestore:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - name: histore
+            dockerfile: Dockerfile
+            region: hk
+            namespace: xoohub
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/onestore
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - name: Check
+        working-directory: ${{ matrix.package.name }}
+        run: |
+          ls -la
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - name: Docker login (Aliyun HK)
+        if: matrix.package.region == 'hk'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI_HK }}
+
+      - name: Docker login (Aliyun SZ)
+        if: matrix.package.region == 'sz'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI_SZ }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/onestore-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/onestore-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
+          if [[ "${{ matrix.package.region }}" == "hk" ]]; then
+            echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI_HK }}/${{ matrix.package.namespace }}/${{ env.REPO_NAME }}_onestore-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+            echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI_HK }}/${{ matrix.package.namespace }}/${{ env.REPO_NAME }}_onestore-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
+          else
+            echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI_SZ }}/${{ matrix.package.namespace }}/${{ env.REPO_NAME }}_onestore-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+            echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI_SZ }}/${{ matrix.package.namespace }}/${{ env.REPO_NAME }}_onestore-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ${{ matrix.package.name }}
+          file: ${{ matrix.package.name }}/${{ matrix.package.dockerfile }}
+          tags: |
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_latest }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
+            docker push ${{ steps.tags.outputs.ali_sha }}
+            docker push ${{ steps.tags.outputs.ali_latest }}
+
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-onestore
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/onestore
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      # - name: Deploy
+      #   uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+      #   with:
+      #     repository: repotea-workflow/gitops-ayn
+      #     deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+      #     argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+      #     argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+      #     app_name: labelix-production-onestore-hk0
+      #     project_name: prtmax/onestore
+      #     ac_git_ref: __origin__/.github/ref.txt
+      #     commit_message: __origin__/.github/message.txt
+      #     changes: |
+      #       {
+      #         "argocd/labelix/onestore-hk0/overlays/production/histore/deployment-patch.yaml": {
+      #           "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_onestore-histore:sha-${{ env.SHA }}"
+      #         }
+      #       }
