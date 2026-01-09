@@ -119,20 +119,21 @@ jobs:
       - name: Set repo name
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
-      # - name: Deploy
-      #   uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-      #   with:
-      #     repository: repotea-workflow/gitops-ayn
-      #     deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
-      #     argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-      #     argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-      #     app_name: labelix-production-onestore-hk0
-      #     project_name: prtmax/onestore
-      #     ac_git_ref: __origin__/.github/ref.txt
-      #     commit_message: __origin__/.github/message.txt
-      #     changes: |
-      #       {
-      #         "argocd/labelix/onestore-hk0/overlays/production/histore/deployment-patch.yaml": {
-      #           "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_onestore-histore:sha-${{ env.SHA }}"
-      #         }
-      #       }
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: labelix-production-onestore-hk0
+          project_name: prtmax/onestore
+          ac_git_ref: __origin__/.github/ref.txt
+          commit_message: __origin__/.github/message.txt
+          changes: |
+            {
+              "argocd/labelix/onestore-hk0/overlays/production/values.yaml": {
+                "app.histore.image": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_onestore-histore:sha-${{ env.SHA }}"
+              }
+            }
+
