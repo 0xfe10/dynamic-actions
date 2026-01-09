@@ -1,1 +1,1 @@
-Add entrypoint script for database migrations and application startup
+Refactor code structure for improved readability and maintainability
