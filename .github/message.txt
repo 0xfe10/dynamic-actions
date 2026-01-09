@@ -1,1 +1,9 @@
-Refactor code structure for improved readability and maintainability
+Feature HiStore  (#1)
+
+* update README to reflect repository name change from 'histore' to 'onestore'
+
+* add .editorconfig and .gitignore files; create empty Dockerfile
+
+* Add entrypoint script for database migrations and application startup
+
+* Refactor code structure for improved readability and maintainability
