@@ -1,1 +1,10 @@
-rename idp-compare to oidclab
+feat: add Zitadel identity provider integration
+
+- Implemented ZitadelPage component for OIDC login.
+- Created IdPPage component to handle identity provider interactions.
+- Added UI components for avatar, badge, button, card, separator, and tabs.
+- Integrated NextAuth for authentication with Keycloak, Authentik, and Zitadel providers.
+- Defined identity provider configurations and features in IDP_LIST.
+- Developed migration utilities for user account migration between identity providers.
+- Enhanced Tailwind CSS configuration for custom colors and animations.
+- Updated TypeScript definitions for NextAuth session and JWT.
