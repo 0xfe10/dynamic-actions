@@ -1,1 +1,1 @@
-Improve database connection handling in entrypoint script
+Refactor database connection handling in entrypoint script
