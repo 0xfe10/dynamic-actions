@@ -1,1 +1,10 @@
-chore: Remove unnecessary tip about GBK encoding from JavaScript SDK documentation
+feat: add Zitadel identity provider integration
+
+- Implemented the IdPPage component for Zitadel.
+- Created the IdPPage component to handle authentication and session management for Zitadel.
+- Added UI components for displaying user information, session details, and IdP features.
+- Integrated NextAuth for authentication with Keycloak, Authentik, and Zitadel providers.
+- Defined IDP_LIST with details for Keycloak, Authentik, and Zitadel.
+- Created utility functions for user migration and attribute synchronization.
+- Added Tailwind CSS configuration for styling components.
+- Updated TypeScript definitions for NextAuth to include IdP-specific properties.
