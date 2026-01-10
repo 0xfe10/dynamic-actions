@@ -1,1 +1,8 @@
-Refactor documentation for printing commands: enhance CPCL, ESC, ESC/POS, TSPL sections with detailed syntax, examples, and SDK usage; improve overall structure and clarity; update titles and add comprehensive overviews for better user understanding.
+feat: Add comprehensive documentation for CPCL, ESC, ESC/POS, TSPL commands and SDK integration for Dart, Java, JavaScript, Objective-C, and Swift
+
+- Introduced CPCL command documentation with examples and SDK usage.
+- Added ESC command documentation detailing binary instructions for thermal printers.
+- Included ESC/POS command documentation highlighting industry-standard instructions.
+- Documented TSPL command usage for TSC label printers.
+- Provided SDK integration guides for Dart, Java, JavaScript, Objective-C, and Swift.
+- Enhanced styling for documentation with custom CSS.
