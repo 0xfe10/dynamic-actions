@@ -1,1 +1,1 @@
-fix: update Keycloak issuer URL and enhance authentication prompts for providers
+feat: enhance user registration process and error handling for Authentik and Zitadel providers
