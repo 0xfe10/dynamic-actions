@@ -1,1 +1,1 @@
-fix: update application URL and callback URLs to use the correct development environment
+rename idp-compare to oidclab
