@@ -1,5 +1,1 @@
-Landing page program (#3)
-
-* Landing page program
-
-* feat: add landing page build and deployment configuration
+Refactor documentation for printing commands: enhance CPCL, ESC, ESC/POS, TSPL sections with detailed syntax, examples, and SDK usage; improve overall structure and clarity; update titles and add comprehensive overviews for better user understanding.
