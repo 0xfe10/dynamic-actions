@@ -1,1 +1,1 @@
-fix: change jakarta.servlet to javax.servlet for HttpServletRequest import (#451)
+feat: add access ID and secret key validation to skip desensitization in /inspect endpoint
