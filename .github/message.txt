@@ -1,1 +1,1 @@
-fix: remove project_name parameter from workflow configurations
+chore: Remove unnecessary tip about GBK encoding from JavaScript SDK documentation
