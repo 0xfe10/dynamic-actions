@@ -1,1 +1,1 @@
-删除无用返回
+Add missing line to production.yml for frontend image reference
