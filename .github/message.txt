@@ -1,1 +1,1 @@
-Update app name and deployment path for openapps in production workflow
+Remove project_name from workflow configurations in production and trigger files
