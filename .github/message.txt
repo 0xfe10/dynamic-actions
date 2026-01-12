@@ -1,1 +1,1 @@
-refactor: enable setting image tags in CI workflow
+refactor: remove project_name from workflow configurations
