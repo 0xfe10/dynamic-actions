@@ -1,1 +1,1 @@
-新增 获取所有wifi信息指令
+Remove project_name parameter from dyn-actions in workflow files
