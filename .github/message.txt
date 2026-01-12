@@ -1,1 +1,1 @@
-Remove project_name from workflow configurations in production and trigger files
+Add empty line for better readability in production workflow
