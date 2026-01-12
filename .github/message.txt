@@ -1,1 +1,1 @@
-feat(docker): pre-download GeoLite2 mmdb files in Dockerfile (#23)
+refactor(workflows): remove project_name from deployment configurations
