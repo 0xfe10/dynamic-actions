@@ -1,1 +1,1 @@
-feat: enhance user registration process and error handling for Authentik and Zitadel providers
+fix: remove project_name parameter from workflow configurations
