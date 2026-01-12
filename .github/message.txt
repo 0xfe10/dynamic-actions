@@ -1,1 +1,1 @@
-fix: correct variable names for locale parameters in AppRequestContextFilter
+Remove project_name from workflow configurations in production, staging, and trigger files
