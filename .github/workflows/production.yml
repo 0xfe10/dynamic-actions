@@ -73,9 +73,6 @@ jobs:
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: labelix-production-suite-hk0
-          project_name: prtmax/guestkey
-          ac_git_ref: __origin__/.github/ref.txt
-          commit_message: __origin__/.github/message.txt
           changes: |
             {
               "argocd/labelix/suite-hk0/overlays/production/guestkey/api/deployment-patch.yaml": {
