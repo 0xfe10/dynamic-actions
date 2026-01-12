@@ -1,1 +1,1 @@
-Add empty line for better readability in production workflow
+Add an empty line for better readability in production workflow
