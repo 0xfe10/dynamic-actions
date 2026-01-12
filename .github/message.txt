@@ -1,1 +1,1 @@
-Add missing line to production.yml for frontend image reference
+Fix docker image references in deployment patch for API and frontend
