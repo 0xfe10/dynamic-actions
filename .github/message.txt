@@ -1,1 +1,1 @@
-上传文件oss信息
+Remove project_name from dyn-actions in workflow files
