@@ -1,1 +1,1 @@
-update deployment
+Remove project_name and commit message references from production, staging, and trigger workflows
