@@ -1,1 +1,1 @@
-fix: update Keycloak configuration for staging environment
+fix: update migration paths and rename backend to begonia in justfile
