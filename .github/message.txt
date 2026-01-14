@@ -1,1 +1,1 @@
-feat: implement database migration in entrypoint script and update Dockerfile and justfile for migration handling
+Merge migrate to backend (#5)
