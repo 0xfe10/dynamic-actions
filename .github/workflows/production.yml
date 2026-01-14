@@ -62,20 +62,20 @@ jobs:
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
-      # - name: Deploy
-      #   uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-      #   with:
-      #     repository: repotea-workflow/gitops-ayn
-      #     deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
-      #     argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-      #     argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-      #     app_name: cortex-production-aynhub-hk0
-      #     changes: |
-      #       {
-      #         "argocd/cortex/aynhub-hk0/overlays/production/begonia/deployment-patch.yaml": {
-      #           "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-begonia:sha-${{ env.SHA }}"
-      #         },
-      #         "argocd/cortex/aynhub-hk0/overlays/production/freesia/deployment-patch.yaml": {
-      #           "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-freesia:sha-${{ env.SHA }}"
-      #         }
-      #       }
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: cortex-production-aynhub-hk0
+          changes: |
+            {
+              "argocd/cortex/aynhub-hk0/overlays/production/begonia/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-begonia:sha-${{ env.SHA }}"
+              },
+              "argocd/cortex/aynhub-hk0/overlays/production/freesia/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-freesia:sha-${{ env.SHA }}"
+              }
+            }

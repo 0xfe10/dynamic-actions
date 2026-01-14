@@ -1,1 +1,1 @@
-fix: comment out deployment step in production workflow
+fix: restore deployment step in production workflow
