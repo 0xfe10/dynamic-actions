@@ -1,1 +1,5 @@
-refactor: update action references to repotea-workspace for consistency
+Add GitHub Actions workflows for aynhub production deployment
+
+Introduce dynamic workflow system with branch and tag triggers that
+invoke dyn-actions, plus a production workflow for building and
+deploying backend/frontend Docker images on version tags.

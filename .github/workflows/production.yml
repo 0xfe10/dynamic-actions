@@ -1,0 +1,81 @@
+name: "[aynhub] Production"
+
+on:
+  push:
+    tags:
+      - "v*-aynhub"
+env:
+  DOCKER_REGISTRY: ghcr.io
+
+jobs:
+  build-apps:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - backend
+          - frontend
+    steps:
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/aynhub
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Check
+        working-directory: ${{ matrix.package }}
+        run: |
+          ls -la
+
+      - name: Docker login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Publish docker image hash
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ${{ matrix.package }}
+          file: ${{ matrix.package }}/Dockerfile
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-${{ matrix.package }}:sha-${{ env.SHA }}
+
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-apps
+    steps:
+      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/aynhub
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+      # - name: Deploy
+      #   uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+      #   with:
+      #     repository: repotea-workflow/gitops-ayn
+      #     deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+      #     argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+      #     argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+      #     app_name: cortex-production-aynhub-hk0
+      #     changes: |
+      #       {
+      #         "argocd/cortex/aynhub-hk0/overlays/production/backend/deployment-patch.yaml": {
+      #           "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-backend:sha-${{ env.SHA }}"
+      #         },
+      #         "argocd/cortex/aynhub-hk0/overlays/production/frontend/deployment-patch.yaml": {
+      #           "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-frontend:sha-${{ env.SHA }}"
+      #         }
+      #       }
