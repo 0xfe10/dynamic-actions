@@ -1,12 +1,12 @@
-name: "[aynhub] Production"
+name: "[aynhub] Staging"
 
 on:
   push:
-    tags:
-      - "v*-aynhub"
+    branches:
+      - "develop"
 env:
   DOCKER_REGISTRY: ghcr.io
-  FRONTEND_API_URL: https://hub.iprtapp.com
+  FRONTEND_API_URL: https://hub-stg.iprtapp.com
 
 jobs:
   build-apps:
@@ -18,7 +18,7 @@ jobs:
           - package: begonia
             build-args: ""
           - package: freesia
-            build-args: "NEXT_PUBLIC_API_URL=https://hub.iprtapp.com"
+            build-args: "NEXT_PUBLIC_API_URL=https://hub-staging.iprtapp.com"
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
@@ -48,7 +48,7 @@ jobs:
           push: true
           context: ${{ matrix.package }}
           file: ${{ matrix.package }}/Dockerfile
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-${{ matrix.package }}:sha-${{ env.SHA }}
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-${{ matrix.package }}:sha-${{ env.SHA }}-staging
           build-args: ${{ matrix.build-args }}
 
   deploy-apps:
@@ -73,13 +73,13 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: cortex-production-aynhub-hk0
+          app_name: cortex-staging-aynhub-hk0
           changes: |
             {
-              "argocd/cortex/aynhub-hk0/overlays/production/begonia/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-begonia:sha-${{ env.SHA }}"
+              "argocd/cortex/aynhub-hk0/overlays/staging/begonia/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-begonia:sha-${{ env.SHA }}-staging"
               },
-              "argocd/cortex/aynhub-hk0/overlays/production/freesia/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-freesia:sha-${{ env.SHA }}"
+              "argocd/cortex/aynhub-hk0/overlays/staging/freesia/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-freesia:sha-${{ env.SHA }}-staging"
               }
             }

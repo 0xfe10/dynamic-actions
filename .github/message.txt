@@ -1,1 +1,1 @@
-fix: restore deployment step in production workflow
+feat: add staging workflow for deployment and build processes
