@@ -1,1 +1,1 @@
-fix: update entrypoint.sh permissions to executable
+fix: update email domain in member creation and preview
