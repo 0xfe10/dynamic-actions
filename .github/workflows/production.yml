@@ -14,8 +14,8 @@ jobs:
     strategy:
       matrix:
         package:
-          - backend
-          - frontend
+          - begonia
+          - freesia
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
@@ -72,10 +72,10 @@ jobs:
           app_name: cortex-production-aynhub-hk0
           changes: |
             {
-              "argocd/cortex/aynhub-hk0/overlays/production/backend/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-backend:sha-${{ env.SHA }}"
+              "argocd/cortex/aynhub-hk0/overlays/production/begonia/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-begonia:sha-${{ env.SHA }}"
               },
-              "argocd/cortex/aynhub-hk0/overlays/production/frontend/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-frontend:sha-${{ env.SHA }}"
+              "argocd/cortex/aynhub-hk0/overlays/production/freesia/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-freesia:sha-${{ env.SHA }}"
               }
             }
