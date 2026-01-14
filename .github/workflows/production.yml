@@ -1,4 +1,4 @@
-name: '[aynguide] Production'
+name: "[aynguide] Production"
 
 on:
   push:
@@ -8,7 +8,6 @@ env:
   DOCKER_REGISTRY: ghcr.io
 
 jobs:
-
   build-apps:
     name: Build
     runs-on: ubuntu-latest
@@ -18,12 +17,12 @@ jobs:
           - api
           - frontend
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/aynguide
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Check
@@ -54,12 +53,12 @@ jobs:
     needs:
       - build-apps
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/aynguide
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
@@ -67,7 +66,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: labelix-production-suite-hk0
@@ -80,4 +79,3 @@ jobs:
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-frontend:sha-${{ env.SHA }}"
               }
             }
-
