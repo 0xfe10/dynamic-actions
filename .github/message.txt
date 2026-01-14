@@ -1,5 +1,1 @@
-Clippy (#7)
-
-* refactor: clean up unused imports and improve error handling
-
-* refactor: remove unused parameters from function signatures
+fix: update Keycloak configuration for staging environment
