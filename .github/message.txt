@@ -1,1 +1,1 @@
-Merge migrate to backend (#5)
+fix: update entrypoint.sh permissions to executable
