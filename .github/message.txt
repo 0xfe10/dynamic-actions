@@ -1,8 +1,1 @@
-Rename projects (#6)
-
-- Implemented Separator, Toaster, Textarea, and Toast components for UI.
-- Created use-toast hook for managing toast notifications.
-- Developed API functions for user, organization, member, app, extension, role, and permission management.
-- Added authentication handling with Zustand for state management.
-- Configured Tailwind CSS for styling and utility classes.
-- Established TypeScript configuration for improved type safety.
+fix: comment out deployment step in production workflow
