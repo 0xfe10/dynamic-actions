@@ -1,9 +1,1 @@
-fix: complete test with backticks and special chars
-
-This tests the complete fix including:
-- Variable assignment with `backticks` and `special` chars
-- Multiple `field_names` like `access_id` and `secret_key_hash`
-- File references like `Cargo.toml` and `Cargo.lock`
-- Command-like strings: `generate_credentials`, `keycloak_id`, `auth_id`
-
-All these should now be handled safely by the dyn-actions script.
+chore: remove testing sections from README.md
