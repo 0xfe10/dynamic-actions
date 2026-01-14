@@ -1,1 +1,1 @@
-rename-project
+main

@@ -1,4 +1,4 @@
-feat: add UI components and API integration
+Rename projects (#6)
 
 - Implemented Separator, Toaster, Textarea, and Toast components for UI.
 - Created use-toast hook for managing toast notifications.
