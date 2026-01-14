@@ -1,1 +1,1 @@
-Update checkout action version to v6 in trigger workflows
+新首页功能
