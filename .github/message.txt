@@ -1,1 +1,1 @@
-refactor: clean up unused imports and improve error handling
+refactor: remove unused parameters from function signatures
