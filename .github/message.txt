@@ -1,1 +1,1 @@
-refactor: remove project_name from workflow configurations
+refactor: standardize quotes and update checkout action version in workflow files
