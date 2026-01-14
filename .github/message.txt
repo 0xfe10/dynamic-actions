@@ -1,1 +1,1 @@
-chore: remove testing sections from README.md
+feat: implement database migration in entrypoint script and update Dockerfile and justfile for migration handling
