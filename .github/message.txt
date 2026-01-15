@@ -1,1 +1,1 @@
-Redesign landing page styles and layout for cleaner look
+Make links grid responsive and add two app download cards
