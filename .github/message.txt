@@ -1,1 +1,1 @@
-Rewrite and expand printer command docs for CPCL, ESC/POS, TSPL
+Rewrite and expand printer command docs for CPCL, ESC/POS, TSPL (#6)
