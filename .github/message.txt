@@ -1,1 +1,7 @@
-Fix sidebar config: remove deleted esc-android and esc-ios entries
+Add Go and Rust SDK documentation
+
+- Add comprehensive Go SDK documentation with examples
+- Add comprehensive Rust SDK documentation with examples
+- Update sidebar to include Go and Rust
+- Update programming overview with Go and Rust info
+- Add platform support matrix and connection methods
