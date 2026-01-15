@@ -85,19 +85,20 @@ jobs:
       - name: Configure MinIO Client for OSS
         run: |
           mc alias set ayn-oss \
-            https://ayn-orbithub-cn-shenzhen.oss-cn-shenzhen.aliyuncs.com \
+            https://oss-cn-shenzhen.aliyuncs.com \
             ${{ secrets.OSS_AYN_ORBITHUB_ACCESS_KEY }} \
-            ${{ secrets.OSS_AYN_ORBITHUB_SECRET_KEY }}
+            ${{ secrets.OSS_AYN_ORBITHUB_SECRET_KEY }} \
+            --api S3v4
 
       - name: Upload to OSS
         working-directory: keycloak-theme-ayn
         run: |
           JAR_NAME="ayn-theme-${{ steps.version.outputs.version }}-${{ steps.version.outputs.short_sha }}.jar"
           echo "Uploading $JAR_NAME to OSS..."
-          mc cp "dist_keycloak/$JAR_NAME" "ayn-oss/keycloak/$JAR_NAME"
+          mc cp "dist_keycloak/$JAR_NAME" "ayn-oss/ayn-orbithub-cn-shenzhen/keycloak/$JAR_NAME"
 
           # 同时上传一个 latest 版本
-          mc cp "dist_keycloak/$JAR_NAME" "ayn-oss/keycloak/ayn-theme-latest.jar"
+          mc cp "dist_keycloak/$JAR_NAME" "ayn-oss/ayn-orbithub-cn-shenzhen/keycloak/ayn-theme-latest.jar"
 
           echo "✅ Upload completed"
           echo "JAR URL: https://fs.iprtapp.com/keycloak/$JAR_NAME"
@@ -117,7 +118,7 @@ jobs:
           }
           EOF
           cat version.json
-          mc cp version.json ayn-oss/keycloak/ayn-theme-latest-version.json
+          mc cp version.json ayn-oss/ayn-orbithub-cn-shenzhen/keycloak/ayn-theme-latest-version.json
 
   build-openapps:
     name: Build

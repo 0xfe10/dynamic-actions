@@ -1,1 +1,1 @@
-Fix JAR name to use SHORT_SHA variable in workflow
+Update OSS upload paths and MinIO client configuration
