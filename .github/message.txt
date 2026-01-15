@@ -1,1 +1,1 @@
-Add OpenHarmony SDK documentation and update support matrix
+Add OpenHarmony SDK integration guide doc
