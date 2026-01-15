@@ -1,7 +1,7 @@
-Add Go and Rust SDK documentation
+Redesign landing page as application services hub
 
-- Add comprehensive Go SDK documentation with examples
-- Add comprehensive Rust SDK documentation with examples
-- Update sidebar to include Go and Rust
-- Update programming overview with Go and Rust info
-- Add platform support matrix and connection methods
+- Remove detailed company introduction content
+- Focus on application services and developer resources
+- Add clean, modern card-based navigation
+- Include subtle reference to company website (aiyin.com)
+- Maintain professional appearance without over-emphasis
