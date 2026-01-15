@@ -1,13 +1,1 @@
-Replace GitLab links with GitHub and fix example paths
-
-- Replace all psdk-examples GitLab links with GitHub
-- Replace dev-documents GitLab links with GitHub
-- Replace package-center GitLab links with GitHub
-- Keep Maven repository on GitLab (currently required)
-- Fix incorrect example paths:
-  - go-examples -> go-demo
-  - flutter-demo -> dart-example
-  - uniapp-demo -> miniprogram-uniapp
-  - wechat-miniprogram -> miniprogram-wx
-  - Remove non-existent rust-examples link
-- Add miniprogram-taro link to JavaScript doc
+Add OpenHarmony SDK documentation and update support matrix
