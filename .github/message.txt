@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/main'
+Rewrite and expand printer command docs for CPCL, ESC/POS, TSPL
