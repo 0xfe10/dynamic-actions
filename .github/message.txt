@@ -1,1 +1,1 @@
-Add back ICP filing number to landing page footer
+Add company name (厦门爱印科技有限公司) to footer copyright
