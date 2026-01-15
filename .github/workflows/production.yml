@@ -57,9 +57,10 @@ jobs:
         run: |
           # 从 tag 中提取版本号 (例如: v1.0.0-openapps -> v1.0.0)
           VERSION=${GITHUB_REF_NAME%-openapps}
+          SHORT_SHA="${{ env.SHA }}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "short_sha=${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "jar_name=ayn-theme-${VERSION}-${env.SHA}.jar" >> $GITHUB_OUTPUT
+          echo "short_sha=$SHORT_SHA" >> $GITHUB_OUTPUT
+          echo "jar_name=ayn-theme-${VERSION}-${SHORT_SHA}.jar" >> $GITHUB_OUTPUT
 
       - name: Rename JAR file
         working-directory: keycloak-theme-ayn

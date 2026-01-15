@@ -1,1 +1,1 @@
-Add keycloak ui (#5)
+Fix JAR name to use SHORT_SHA variable in workflow
