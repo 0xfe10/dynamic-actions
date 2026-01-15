@@ -1,7 +1,1 @@
-Redesign landing page as application services hub
-
-- Remove detailed company introduction content
-- Focus on application services and developer resources
-- Add clean, modern card-based navigation
-- Include subtle reference to company website (aiyin.com)
-- Maintain professional appearance without over-emphasis
+Add back ICP filing number to landing page footer
