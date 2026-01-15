@@ -1,1 +1,1 @@
-Make links grid responsive and add two app download cards
+Redesign landing page with modern bento grid and glassmorphism
