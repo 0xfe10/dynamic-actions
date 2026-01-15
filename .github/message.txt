@@ -1,1 +1,1 @@
-Rewrite and expand printer command docs for CPCL, ESC/POS, TSPL (#6)
+Fix sidebar config: remove deleted esc-android and esc-ios entries
