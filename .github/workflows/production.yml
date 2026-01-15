@@ -1,4 +1,4 @@
-name: '[openapps] Production'
+name: "[openapps] Production"
 
 on:
   push:
@@ -12,6 +12,111 @@ env:
   DOCKER_REGISTRY_ALI_SZ_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
+  build-keycloak-theme:
+    name: Build Keycloak Theme
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/openapps
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        working-directory: keycloak-theme-ayn
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Keycloak theme
+        working-directory: keycloak-theme-ayn
+        run: pnpm build-keycloak-theme
+
+      - name: Check build output
+        working-directory: keycloak-theme-ayn
+        run: |
+          echo "=== Build output ==="
+          ls -lh dist_keycloak/
+          echo "=== JAR file details ==="
+          find dist_keycloak/ -name "*.jar" -exec ls -lh {} \;
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set version
+        id: version
+        run: |
+          # 从 tag 中提取版本号 (例如: v1.0.0-openapps -> v1.0.0)
+          VERSION=${GITHUB_REF_NAME%-openapps}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "short_sha=${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "jar_name=ayn-theme-${VERSION}-${env.SHA}.jar" >> $GITHUB_OUTPUT
+
+      - name: Rename JAR file
+        working-directory: keycloak-theme-ayn
+        run: |
+          # 找到构建的 JAR 文件并重命名
+          JAR_FILE=$(find dist_keycloak/ -name "ayn-theme.jar" | head -n 1)
+          if [ -z "$JAR_FILE" ]; then
+            echo "Error: JAR file not found"
+            exit 1
+          fi
+          NEW_NAME="ayn-theme-${{ steps.version.outputs.version }}-${{ steps.version.outputs.short_sha }}.jar"
+          cp "$JAR_FILE" "dist_keycloak/$NEW_NAME"
+          echo "Renamed JAR: $NEW_NAME"
+          ls -lh dist_keycloak/$NEW_NAME
+
+      - name: Setup MinIO Client
+        run: |
+          wget https://dl.min.io/client/mc/release/linux-amd64/mc
+          chmod +x mc
+          sudo mv mc /usr/local/bin/
+
+      - name: Configure MinIO Client for OSS
+        run: |
+          mc alias set ayn-oss \
+            https://ayn-orbithub-cn-shenzhen.oss-cn-shenzhen.aliyuncs.com \
+            ${{ secrets.OSS_AYN_ORBITHUB_ACCESS_KEY }} \
+            ${{ secrets.OSS_AYN_ORBITHUB_SECRET_KEY }}
+
+      - name: Upload to OSS
+        working-directory: keycloak-theme-ayn
+        run: |
+          JAR_NAME="ayn-theme-${{ steps.version.outputs.version }}-${{ steps.version.outputs.short_sha }}.jar"
+          echo "Uploading $JAR_NAME to OSS..."
+          mc cp "dist_keycloak/$JAR_NAME" "ayn-oss/keycloak/$JAR_NAME"
+
+          # 同时上传一个 latest 版本
+          mc cp "dist_keycloak/$JAR_NAME" "ayn-oss/keycloak/ayn-theme-latest.jar"
+
+          echo "✅ Upload completed"
+          echo "JAR URL: https://fs.iprtapp.com/keycloak/$JAR_NAME"
+          echo "Latest URL: https://fs.iprtapp.com/keycloak/ayn-theme-latest.jar"
+
+      - name: Create version file
+        run: |
+          cat > version.json <<EOF
+          {
+            "version": "${{ steps.version.outputs.version }}",
+            "commit_sha": "${{ steps.version.outputs.short_sha }}",
+            "jar_name": "ayn-theme-${{ steps.version.outputs.version }}-${{ steps.version.outputs.short_sha }}.jar",
+            "jar_url": "https://fs.iprtapp.com/keycloak/ayn-theme-${{ steps.version.outputs.version }}-${{ steps.version.outputs.short_sha }}.jar",
+            "built_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "github_ref": "${{ github.ref }}",
+            "github_run_id": "${{ github.run_id }}"
+          }
+          EOF
+          cat version.json
+          mc cp version.json ayn-oss/keycloak/ayn-theme-latest-version.json
 
   build-openapps:
     name: Build
@@ -37,7 +142,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/openapps
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Check
@@ -119,7 +224,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/openapps
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
@@ -131,7 +236,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: labelix-production-openapps-hk0
@@ -147,4 +252,3 @@ jobs:
                 "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-landing-page:sha-${{ env.SHA }}"
               }
             }
-
