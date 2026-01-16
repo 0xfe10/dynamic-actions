@@ -1,1 +1,1 @@
-refactor: standardize quotes and update checkout action version in workflow files
+Rename publish workflow to production and update strings

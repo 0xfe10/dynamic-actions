@@ -1,4 +1,4 @@
-name: '[wiot] Publish'
+name: "[wiot] Production"
 
 on:
   push:
@@ -13,7 +13,6 @@ env:
   # DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
 
 jobs:
-
   build-docker-image:
     name: Build docker image
     runs-on: ubuntu-latest
@@ -23,7 +22,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/wiot
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Docker login
@@ -86,7 +85,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/wiot
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Set repo name
@@ -97,7 +96,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: iot-production-nova-hk0
@@ -107,7 +106,3 @@ jobs:
                 "0.value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:sha-${{ env.SHA }}"
               }
             }
-
-
-
-
