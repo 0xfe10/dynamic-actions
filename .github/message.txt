@@ -1,1 +1,1 @@
-refactor(workflows): remove project_name from deployment configurations
+Remove trailing blank line from .env.example
