@@ -1,1 +1,1 @@
-Remove references to API_USAGE.md from README
+Replace IP query with GeoIP lookup using local MMDB files
