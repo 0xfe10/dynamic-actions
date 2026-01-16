@@ -1,1 +1,1 @@
-Rename SidecarHub to Sidecar throughout project
+Rename project from sidecarhub to sidecar
