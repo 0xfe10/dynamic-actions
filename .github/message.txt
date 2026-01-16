@@ -1,1 +1,1 @@
-Update app_name for ArgoCD deployment in staging workflow
+feat: update Docker login actions and add Aliyun registry support in production and staging workflows
