@@ -1,1 +1,1 @@
-Remove project_name and commit message references from production, staging, and trigger workflows
+Update production workflow with cortex app name and paths

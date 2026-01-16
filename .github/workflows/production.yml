@@ -1,4 +1,4 @@
-name: '[asr] Production'
+name: "[asr] Production"
 
 on:
   push:
@@ -9,7 +9,6 @@ env:
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
-
   build-apps:
     name: Build
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/asr
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Check
@@ -86,7 +85,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/asr
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
@@ -98,13 +97,13 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: backbone-asr-hn0-production
+          app_name: cortex-asr-hn0-production
           changes: |
             {
-              "argocd/backbone/asr-hn0/overlays/production/asr/deployment-patch.yaml": {
+              "argocd/cortex/asr-hn0/overlays/production/asr/deployment-patch.yaml": {
                 "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
               }
             }
