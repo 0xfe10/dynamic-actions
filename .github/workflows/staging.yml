@@ -1,4 +1,4 @@
-name: "[sidecarhub] Staging"
+name: "[sidecar] Staging"
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
-          repository: prtmax/sidecarhub
+          repository: prtmax/sidecar
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
@@ -68,10 +68,10 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sidecarhub:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sidecarhub:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_sidecarhub:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_sidecarhub:staging" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sidecar:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sidecar:staging" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_sidecar:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_sidecar:staging" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
@@ -105,7 +105,7 @@ jobs:
   #     - name: Checkout
   #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
   #       with:
-  #         repository: prtmax/sidecarhub
+  #         repository: prtmax/sidecar
   #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
   #         ref_file: .github/ref.txt
 
