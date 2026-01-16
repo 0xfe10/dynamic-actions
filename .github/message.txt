@@ -1,1 +1,1 @@
-Update ArgoCD app name for sidecar HK0 production
+Update app_name for ArgoCD deployment in staging workflow

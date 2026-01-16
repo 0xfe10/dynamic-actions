@@ -121,7 +121,7 @@ jobs:
   #         deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
   #         argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
   #         argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-  #         app_name: cortex-sidecar-hk0-staging
+  #         app_name: cortex-staging-sidecar-hk0
   #         changes: |
   #           {
   #             "argocd/cortex/sidecar-hk0/overlays/staging/sidecar/deployment-patch.yaml": {
