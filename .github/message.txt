@@ -1,1 +1,5 @@
-Remove trailing blank line from .env.example
+Refactor GeoIP service to use HTTP sidecar lookup
+
+Remove MMDB updater and local MMDB file management.
+Update configuration to specify sidecar endpoint and timeout.
+Adjust tracking handler and tests for new GeoIP lookup flow.
