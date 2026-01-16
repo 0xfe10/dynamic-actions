@@ -1,1 +1,1 @@
-Update app_name for ArgoCD deployment in staging workflow
+Remove references to API_USAGE.md from README
