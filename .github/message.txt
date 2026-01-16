@@ -1,1 +1,1 @@
-Redesign landing page with modern bento grid and glassmorphism
+Update OHPM package browsing link in documentation
