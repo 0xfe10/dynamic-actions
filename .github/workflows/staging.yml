@@ -120,10 +120,10 @@ jobs:
   #         deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
   #         argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
   #         argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-  #         app_name: backbone-asr-hn0-staging
+  #         app_name: cortex-asr-hn0-staging
   #         changes: |
   #           {
-  #             "argocd/backbone/asr-hn0/overlays/staging/asr/deployment-patch.yaml": {
+  #             "argocd/cortex/asr-hn0/overlays/staging/asr/deployment-patch.yaml": {
   #               "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
   #             }
   #           }

@@ -1,1 +1,1 @@
-Update production workflow with cortex app name and paths
+update app name
