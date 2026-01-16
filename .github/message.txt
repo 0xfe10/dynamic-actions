@@ -1,1 +1,1 @@
-Replace IP query with GeoIP lookup using local MMDB files
+Promote geoip2-golang to direct dependency in go.mod
