@@ -1,1 +1,1 @@
-Rename project from sidecarhub to sidecar
+Update ArgoCD app name for sidecar HK0 production
