@@ -1,1 +1,11 @@
-Ignore GeoIP database files and directories
+Feature GeoIP (#2)
+
+* Remove references to API_USAGE.md from README
+
+* Replace IP query with GeoIP lookup using local MMDB files
+
+* Add curl and pre-download GeoLite2 mmdb files in Dockerfile
+
+* Promote geoip2-golang to direct dependency in go.mod
+
+* Ignore GeoIP database files and directories
