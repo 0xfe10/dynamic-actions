@@ -1,1 +1,1 @@
-Promote geoip2-golang to direct dependency in go.mod
+Update app_name for ArgoCD deployment in staging workflow
