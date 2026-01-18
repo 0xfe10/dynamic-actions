@@ -1,1 +1,1 @@
-Update Docker credentials and adjust build configurations for node images
+Remove font installation commands and update timezone environment variable in Dockerfile
