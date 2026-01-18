@@ -1,17 +1,1 @@
-feature migrate to k8s (#3)
-
-* Remove GitLab CI and disable deploy and migrate jobs in GitHub Actions
-
-Migration is now handled by a Kubernetes init-container in the Helm
-chart.
-GitHub Actions deploy and migrate steps are commented out for
-transition.
-
-* Add env-based toggle for FetchWaybillTask execution
-
-* Update GitHub Actions to use latest actions and repo paths
-
-- Rename deploy.yml to production.yml
-- Upgrade actions/checkout and docker/build-push-action to v6
-- Switch custom actions to repotea-workspace/kangumi/github-actions
-  paths
+Add missing newline in .prettierrc
