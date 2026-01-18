@@ -1,11 +1,1 @@
-feature migrate to k8s (#3)
-
-* Remove GitLab CI and disable DB migration and deploy in GitHub Actions
-
-* Add environment variable checks to scheduled tasks
-
-ArchiveTask, SendSMSTask, and WaybillTraceTask now check environment
-variables to determine if they should run. GenerateOrderImageTask is
-commented out as the business requirement is no longer needed.
-
-* Refactor GitHub Actions workflows: update checkout action to v6 and add production deployment workflow
+Update .prettierrc
