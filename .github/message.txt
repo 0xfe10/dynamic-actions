@@ -1,1 +1,1 @@
-Update OHPM package browsing link in documentation
+Update actions/checkout to v6 in CI workflow
