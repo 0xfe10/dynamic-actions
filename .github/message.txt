@@ -1,1 +1,1 @@
-Fix typo in product tax number variable name in OrderValidator
+Refactor GitHub Actions workflows: update checkout action to v6 and add production deployment workflow

@@ -16,7 +16,7 @@ jobs:
     outputs:
       ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Ensure main
         id: ensure_main
@@ -34,7 +34,7 @@ jobs:
       - ensure-main
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.18.0
         with:
@@ -42,7 +42,7 @@ jobs:
           maven-version: 3.9.8
 
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workspace/oms-zkr
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -60,7 +60,7 @@ jobs:
           password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
 
       - name: Publish docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: pompeii
@@ -90,9 +90,9 @@ jobs:
             BUILD: yarn build:h5
             DOCKER_IMAGE: node:16.20.1-alpine
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workspace/oms-zkr
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -116,7 +116,7 @@ jobs:
           password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
 
       - name: Publish docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: ${{ matrix.package.NAME }}
@@ -124,42 +124,43 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:${{ matrix.package.NAME }}-sha-${{ env.SHA }}
 
+  # migrate-db:
+  #   name: Migrate database
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - build-java-pompeii
+  #     - build-node
+  #   steps:
+  #     - uses: actions/checkout@v6
+  #     - name: Checkout
+  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+  #       with:
+  #         repository: repotea-workspace/oms-zkr
+  #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+  #         ref_file: .github/ref.txt
 
-  migrate-db:
-    name: Migrate database
-    runs-on: ubuntu-latest
-    needs:
-      - build-java-pompeii
-      - build-node
-    steps:
-      - uses: actions/checkout@v4
-      - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
-        with:
-          repository: repotea-workspace/oms-zkr
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
-
-      - name: Migrate
-        env:
-          RDS_DB_HOST: ${{ secrets.OMSK_RDS_DB_HOST }}
-          RDS_DB_PORT: ${{ secrets.OMSK_RDS_DB_PORT }}
-          RDS_DB_USER: ${{ secrets.OMSK_RDS_DB_USER }}
-          RDS_DB_PASSWORD: ${{ secrets.OMSK_RDS_DB_PASSWORD }}
-        run: |
-          cd pompeii
-          export RDS_DB_SCHEMA=pompeii_zkr_prod;
-          sh -f cicd/liquibase.sh update
+  #     - name: Migrate
+  #       env:
+  #         RDS_DB_HOST: ${{ secrets.OMSK_RDS_DB_HOST }}
+  #         RDS_DB_PORT: ${{ secrets.OMSK_RDS_DB_PORT }}
+  #         RDS_DB_USER: ${{ secrets.OMSK_RDS_DB_USER }}
+  #         RDS_DB_PASSWORD: ${{ secrets.OMSK_RDS_DB_PASSWORD }}
+  #       run: |
+  #         cd pompeii
+  #         export RDS_DB_SCHEMA=pompeii_zkr_prod;
+  #         sh -f cicd/liquibase.sh update
 
   deploy-app:
     name: Deploy app
     runs-on: ubuntu-latest
     needs:
-      - migrate-db
+      - build-java-pompeii
+      - build-node
+      # - migrate-db  # Migration now handled by Kubernetes init-container
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workspace/oms-zkr
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -188,12 +189,12 @@ jobs:
           jq -crs '.' < dist/change.json > dist/changes.json
           cat dist/changes.json
 
-      - name: Deploy
-        uses: fewensa/actions/ansible-deploy@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-        with:
-          project_name: repotea-workspace/oms-zkr
-          changes: dist/changes.json
-          ac_git_ref: __origin__/.github/ref.txt
-          commit_message: __origin__/.github/message.txt
+      # - name: Deploy
+      #   uses: fewensa/actions/ansible-deploy@main
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+      #   with:
+      #     project_name: repotea-workspace/oms-zkr
+      #     changes: dist/changes.json
+      #     ac_git_ref: __origin__/.github/ref.txt
+      #     commit_message: __origin__/.github/message.txt
