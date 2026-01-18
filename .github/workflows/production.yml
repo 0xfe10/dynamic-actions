@@ -57,8 +57,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
-          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
@@ -87,9 +87,9 @@ jobs:
             BUILD: npm run build:prod
             DOCKER_IMAGE: node:10.16-alpine
           - NAME: babylon
-            INSTALL: yarn install
+            INSTALL: yarn install --ignore-engines
             BUILD: yarn build:h5
-            DOCKER_IMAGE: node:16.20.1-alpine
+            DOCKER_IMAGE: node:20-alpine
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -113,8 +113,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.REGISTRY_ALI_USERNAME }}
-          password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
