@@ -16,7 +16,7 @@ jobs:
     outputs:
       ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Ensure main
         id: ensure_main
@@ -34,7 +34,7 @@ jobs:
       - ensure-main
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.18.0
         with:
@@ -42,7 +42,7 @@ jobs:
           maven-version: 3.9.8
 
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workspace/zoms-jphs
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -60,7 +60,7 @@ jobs:
           password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
 
       - name: Publish docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: zoms-api
@@ -75,9 +75,9 @@ jobs:
       - ensure-main
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workspace/zoms-jphs
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.REGISTRY_ALI_PASSWORD }}
 
       - name: Publish docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: zoms-web
@@ -109,41 +109,44 @@ jobs:
           tags: |
             ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:zomsweb-sha-${{ env.SHA }}
 
-  migrate-db:
-    name: Migrate database
-    runs-on: ubuntu-latest
-    needs:
-      - build-java
-      - build-node
-    steps:
-      - uses: actions/checkout@v4
-      - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
-        with:
-          repository: repotea-workspace/zoms-jphs
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
+  # migrate-db:
+  #   name: Migrate database
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - build-java
+  #     - build-node
+  #   steps:
+  #     - uses: actions/checkout@v6
+  #     - name: Checkout
+  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+  #       with:
+  #         repository: repotea-workspace/zoms-jphs
+  #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+  #         ref_file: .github/ref.txt
 
-      - name: Migrate
-        env:
-          RDS_DB_HOST: ${{ secrets.OMSJ_RDS_DB_HOST }}
-          RDS_DB_PORT: ${{ secrets.OMSJ_RDS_DB_PORT }}
-          RDS_DB_USER: ${{ secrets.OMSJ_RDS_DB_USER }}
-          RDS_DB_PASSWORD: ${{ secrets.OMSJ_RDS_DB_PASSWORD }}
-        run: |
-          cd zoms-api
-          export RDS_DB_SCHEMA=zoms_jphs_prod;
-          sh -f ci/flyway.sh migrate
+  #     - name: Migrate
+  #       env:
+  #         RDS_DB_HOST: ${{ secrets.OMSJ_RDS_DB_HOST }}
+  #         RDS_DB_PORT: ${{ secrets.OMSJ_RDS_DB_PORT }}
+  #         RDS_DB_USER: ${{ secrets.OMSJ_RDS_DB_USER }}
+  #         RDS_DB_PASSWORD: ${{ secrets.OMSJ_RDS_DB_PASSWORD }}
+  #       run: |
+  #         cd zoms-api
+  #         export RDS_DB_SCHEMA=zoms_jphs_prod;
+  #         sh -f ci/flyway.sh migrate
+  #   # Migration now handled by Kubernetes init-container in Helm chart
 
   deploy-app:
     name: Deploy app
     runs-on: ubuntu-latest
     needs:
-      - migrate-db
+      - build-java
+      - build-node
+      # - migrate-db  # Migration now handled by Kubernetes init-container
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Checkout
-        uses: fewensa/actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workspace/zoms-jphs
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -168,12 +171,12 @@ jobs:
           jq -crs '.' < dist/change.json > dist/changes.json
           cat dist/changes.json
 
-      - name: Deploy
-        uses: fewensa/actions/ansible-deploy@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-        with:
-          project_name: repotea-workspace/zoms-jphs
-          changes: dist/changes.json
-          ac_git_ref: __origin__/.github/ref.txt
-          commit_message: __origin__/.github/message.txt
+      # - name: Deploy
+      #   uses: fewensa/actions/ansible-deploy@main
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+      #   with:
+      #     project_name: repotea-workspace/zoms-jphs
+      #     changes: dist/changes.json
+      #     ac_git_ref: __origin__/.github/ref.txt
+      #     commit_message: __origin__/.github/message.txt
