@@ -1,1 +1,1 @@
-Update Maven action to version 1.19.0 and Maven to 3.9.11 in production workflow
+Update Docker login secrets in production workflow and refactor FetchWaybillTask to use System properties
