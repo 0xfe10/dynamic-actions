@@ -34,7 +34,7 @@ jobs:
           ls -la
 
       - name: Docker login
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -70,7 +70,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: cortex-staging-aynhub-hk0
