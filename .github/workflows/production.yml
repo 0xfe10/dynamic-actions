@@ -36,10 +36,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.18.0
+        uses: s4u/setup-maven-action@v1.19.0
         with:
           java-version: 17
-          maven-version: 3.9.8
+          maven-version: 3.9.11
+          checkout-enabled: false
 
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
