@@ -1,1 +1,1 @@
-Add AGENTS.md with database migration best practices
+Add Uid column to HiStore_Member table and update Dockerfile
