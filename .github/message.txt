@@ -1,1 +1,1 @@
-Refactor workflow YAML files to standardize quotes and update checkout action version
+Update Docker login action to v3 in production workflow
