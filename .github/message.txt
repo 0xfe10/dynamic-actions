@@ -1,1 +1,1 @@
-彩喷新增型号 nn号查询
+Ignore .factorypath file
