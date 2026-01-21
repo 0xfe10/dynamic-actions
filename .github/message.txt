@@ -1,1 +1,1 @@
-ai图片审核图片地址使用oss内网 (#463)
+Add changelog for new tables and schema updates
