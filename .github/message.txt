@@ -1,1 +1,13 @@
-Merge branch 'main' into hotfix-v00249
+Hotfix v0.0.249 -> Release v0.0.255 (#452)
+
+* feat: add access ID and secret key validation to skip desensitization in /inspect endpoint
+
+* feat: pass x-access-id and x-secret-key headers through request context chain
+
+- Add xAccessId and xSecretKey fields to BCtx.BabosaAppContext
+- Extract headers in AppRequestContextFilter
+- Add getter methods in BWebAround.RCApp
+- Forward headers in BabosaResquestInterceptor for internal service calls
+- Use RequestContext in UserRoute instead of direct HttpServletRequest
+
+* fix: correct variable names for locale parameters in AppRequestContextFilter
