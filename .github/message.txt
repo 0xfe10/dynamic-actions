@@ -1,1 +1,13 @@
-Support GeoIP API envelope and update tests
+Move GeoIP (#24)
+
+* Remove trailing blank line from .env.example
+
+* Refactor GeoIP service to use HTTP sidecar lookup
+
+Remove MMDB updater and local MMDB file management.
+Update configuration to specify sidecar endpoint and timeout.
+Adjust tracking handler and tests for new GeoIP lookup flow.
+
+* Remove GeoLite2 mmdb pre-download from Dockerfile
+
+* Support GeoIP API envelope and update tests
