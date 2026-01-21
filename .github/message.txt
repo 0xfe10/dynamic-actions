@@ -1,1 +1,1 @@
-Add changelog for new tables and schema updates
+Include 1768958142_changelog.xml in master changelog
