@@ -1,1 +1,1 @@
-Remove font installation commands and update timezone environment variable in Dockerfile
+Refactor router config for consistent formatting and style
