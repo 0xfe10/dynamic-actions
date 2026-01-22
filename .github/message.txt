@@ -1,1 +1,1 @@
-Use GITHUB_TOKEN for Docker login in production workflow
+Add debug step to print secret hashes and lengths
