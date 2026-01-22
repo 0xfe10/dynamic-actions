@@ -1,1 +1,1 @@
-Improve secret debugging and add empty value warnings
+Remove debug secrets step and fix UHub login credentials
