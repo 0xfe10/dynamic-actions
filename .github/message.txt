@@ -1,1 +1,8 @@
-Update Docker login secrets in production workflow and refactor FetchWaybillTask to use System properties
+Refactor production workflow and add tag trigger
+
+- Update production workflow to use tag-based deployment
+- Simplify image tagging and pushing for GHCR and UHub
+- Replace manual deploy steps with gitops-deploy action
+- Remove ensure-main job and related logic
+- Add trigger-tag workflow for tag pushes
+- Remove unused
