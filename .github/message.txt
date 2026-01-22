@@ -1,1 +1,1 @@
-rename ai_print > aiprint
+Fix ci
