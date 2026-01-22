@@ -1,1 +1,1 @@
-Add production and trigger workflows for CI/CD (#1)
+rename ai_print > aiprint

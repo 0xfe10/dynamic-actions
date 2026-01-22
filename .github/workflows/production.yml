@@ -1,4 +1,4 @@
-name: "[ai_print] Production"
+name: "[aiprint] Production"
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
-          repository: prtmax/ai_print
+          repository: prtmax/aiprint
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
@@ -49,10 +49,10 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/ai_print:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/ai_print:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_ai_print:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_ai_print:latest" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aiprint:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aiprint:latest" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_aiprint:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_aiprint:latest" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
@@ -86,7 +86,7 @@ jobs:
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
-          repository: prtmax/ai_print
+          repository: prtmax/aiprint
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
@@ -101,10 +101,10 @@ jobs:
       #     deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
       #     argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
       #     argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-      #     app_name: apps-production-ai_print-sz1
+      #     app_name: apps-staging-aiprint-sz1
       #     changes: |
       #       {
-      #         "argocd/apps/ai_print-sz1/overlays/production/ai_print/deployment-patch.yaml": {
-      #           "crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/prtmax_ai_print_ai_print:sha-placeholder": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_ai_print:sha-${{ env.SHA }}"
+      #         "argocd/apps/aiprint-sz1/overlays/staging/aiprint/deployment-patch.yaml": {
+      #           "crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com/coohub/prtmax_aiprint_aiprint:sha-placeholder": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_aiprint:sha-${{ env.SHA }}"
       #         }
       #       }
