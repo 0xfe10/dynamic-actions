@@ -42,10 +42,12 @@ jobs:
 
       - name: Debug secrets
         run: |
-          echo "Username SHA256: $(echo -n '${{ secrets.CR_UHUB_USERNAME_ZTOKR }}' | sha256sum | cut -d' ' -f1)"
-          echo "Password SHA256: $(echo -n '${{ secrets.CR_UHUB_PASSWORD_ZTOKR }}' | sha256sum | cut -d' ' -f1)"
-          echo "Username length: ${#USERNAME}"
-          echo "Password length: ${#PASSWORD}"
+          echo "Username SHA256: $(echo -n "$USERNAME" | sha256sum | cut -d' ' -f1)"
+          echo "Password SHA256: $(echo -n "$PASSWORD" | sha256sum | cut -d' ' -f1)"
+          echo "Username length: $(echo -n "$USERNAME" | wc -c)"
+          echo "Password length: $(echo -n "$PASSWORD" | wc -c)"
+          if [ -z "$USERNAME" ]; then echo "WARNING: Username is empty!"; fi
+          if [ -z "$PASSWORD" ]; then echo "WARNING: Password is empty!"; fi
         env:
           USERNAME: ${{ secrets.CR_UHUB_USERNAME_ZTOKR }}
           PASSWORD: ${{ secrets.CR_UHUB_PASSWORD_ZTOKR }}

@@ -1,1 +1,1 @@
-Add debug step to print secret hashes and lengths
+Improve secret debugging and add empty value warnings
