@@ -199,9 +199,9 @@ jobs:
           changes: |
             {
               "argocd/work/ztoms-ula/overlays/production/ztoms/values.yaml": {
-                "app.omsk-pompeii.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-pompeii:sha-${{ env.SHA }}",
-                "app.omsk-cusco.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-cusco:sha-${{ env.SHA }}",
-                "app.omsk-roman.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-roman:sha-${{ env.SHA }}",
-                "app.omsk-babylon.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-babylon:sha-${{ env.SHA }}"
+                "app.omsk_pompeii.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-pompeii:sha-${{ env.SHA }}",
+                "app.omsk_cusco.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-cusco:sha-${{ env.SHA }}",
+                "app.omsk_roman.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-roman:sha-${{ env.SHA }}",
+                "app.omsk_babylon.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-babylon:sha-${{ env.SHA }}"
               }
             }

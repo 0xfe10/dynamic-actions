@@ -1,9 +1,1 @@
-Refactor production workflow for tag-based deployment
-
-- Switch production workflow trigger from branch to tag
-- Remove ensure-main job and related conditional logic
-- Update Docker registry to use GHCR and UHub
-- Add dynamic image tagging and multi-registry push with retry
-- Replace Ansible deploy with GitOps deploy via ArgoCD
-- Remove unused project_name from trigger-branch workflow
-- Add new trigger-tag workflow for tag pushes
+Update image keys to use underscores in production workflow
