@@ -1,38 +1,18 @@
-name: '[oms-zkr] Deploy'
+name: '[oms-zkr] Production'
 
 on:
   push:
-    branches:
-      - '**'
+    tags:
+      - 'v*-oms-zkr'
 
 env:
-  #DOCKER_REGISTRY: uhub.service.ucloud.cn
-  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY_UHUB: uhub.service.ucloud.cn
 
 jobs:
-  ensure-main:
-    name: Ensure main
-    runs-on: ubuntu-latest
-    outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Ensure main
-        id: ensure_main
-        run: |
-          if grep -q 'main' .github/branch.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-          else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-          fi
-
   build-java-pompeii:
     name: Build java (pompeii)
     runs-on: ubuntu-latest
-    needs:
-      - ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
       - name: Setup Maven Action
@@ -53,28 +33,58 @@ jobs:
         working-directory: pompeii
         run: mvn clean package -Dmaven.test.skip=true
 
-      - uses: benjlevesque/short-sha@v3.0
-      - uses: docker/login-action@v3
+      - name: Docker login (GHCR)
+        uses: docker/login-action@v3
         with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
-          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
 
-      - name: Publish docker image
+      - name: Docker login (UHub)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_UHUB_USERNAME_ZTOKR }}
+          password: ${{ secrets.CR_UHUB_PASSWORD_ZTOKR }}
+          registry: ${{ env.DOCKER_REGISTRY_UHUB }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/omsk-pompeii:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/omsk-pompeii:latest" >> $GITHUB_OUTPUT
+          echo "uhub_sha=${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-pompeii:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "uhub_latest=${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-pompeii:latest" >> $GITHUB_OUTPUT
+
+      - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: pompeii
           file: pompeii/docker/Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:pompeii-sha-${{ env.SHA }}
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_latest }}
+
+      - name: Push to UHub (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.uhub_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.uhub_latest }}
+            docker push ${{ steps.tags.outputs.uhub_sha }}
+            docker push ${{ steps.tags.outputs.uhub_latest }}
 
   build-node:
     name: Build node
     runs-on: ubuntu-latest
-    needs:
-      - ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     strategy:
       matrix:
         package:
@@ -109,55 +119,61 @@ jobs:
             ${{ matrix.package.DOCKER_IMAGE }} \
             sh -c '${{ matrix.package.INSTALL }} && ${{ matrix.package.BUILD }}'
 
-      - uses: benjlevesque/short-sha@v3.0
-      - uses: docker/login-action@v3
+      - name: Docker login (GHCR)
+        uses: docker/login-action@v3
         with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
-          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
 
-      - name: Publish docker image
+      - name: Docker login (UHub)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_UHUB_USERNAME_ZTOKR }}
+          password: ${{ secrets.CR_UHUB_PASSWORD_ZTOKR }}
+          registry: ${{ env.DOCKER_REGISTRY_UHUB }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/omsk-${{ matrix.package.NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/omsk-${{ matrix.package.NAME }}:latest" >> $GITHUB_OUTPUT
+          echo "uhub_sha=${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-${{ matrix.package.NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "uhub_latest=${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-${{ matrix.package.NAME }}:latest" >> $GITHUB_OUTPUT
+
+      - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: ${{ matrix.package.NAME }}
           file: ${{ matrix.package.NAME }}/docker/Dockerfile
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/coohk/riy-hk:${{ matrix.package.NAME }}-sha-${{ env.SHA }}
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_latest }}
 
-  # migrate-db:
-  #   name: Migrate database
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - build-java-pompeii
-  #     - build-node
-  #   steps:
-  #     - uses: actions/checkout@v6
-  #     - name: Checkout
-  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-  #       with:
-  #         repository: repotea-workspace/oms-zkr
-  #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-  #         ref_file: .github/ref.txt
-
-  #     - name: Migrate
-  #       env:
-  #         RDS_DB_HOST: ${{ secrets.OMSK_RDS_DB_HOST }}
-  #         RDS_DB_PORT: ${{ secrets.OMSK_RDS_DB_PORT }}
-  #         RDS_DB_USER: ${{ secrets.OMSK_RDS_DB_USER }}
-  #         RDS_DB_PASSWORD: ${{ secrets.OMSK_RDS_DB_PASSWORD }}
-  #       run: |
-  #         cd pompeii
-  #         export RDS_DB_SCHEMA=pompeii_zkr_prod;
-  #         sh -f cicd/liquibase.sh update
+      - name: Push to UHub (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.uhub_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.uhub_latest }}
+            docker push ${{ steps.tags.outputs.uhub_sha }}
+            docker push ${{ steps.tags.outputs.uhub_latest }}
 
   deploy-app:
-    name: Deploy app
+    name: Deploy App
     runs-on: ubuntu-latest
     needs:
       - build-java-pompeii
       - build-node
-      # - migrate-db  # Migration now handled by Kubernetes init-container
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -167,35 +183,25 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
       - uses: benjlevesque/short-sha@v3.0
-      - name: Generate variables
-        run: |
-          TEMPLATE_FILE=playbooks.yml
-          > ${TEMPLATE_FILE}
 
-          IMAGE_TAG_POMPEII=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:pompeii-sha-${{ env.SHA }}
-          IMAGE_TAG_CUSCO=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:cusco-sha-${{ env.SHA }}
-          IMAGE_TAG_ROMAN=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:roman-sha-${{ env.SHA }}
-          IMAGE_TAG_BABYLON=registry.cn-hongkong.aliyuncs.com/coohk/riy-hk:babylon-sha-${{ env.SHA }}
-          yq e ".docker_app_runner.container.omsk_pompeii.image = \"${IMAGE_TAG_POMPEII}\"" --inplace ${TEMPLATE_FILE}
-          yq e ".docker_app_runner.container.omsk_cusco.image = \"${IMAGE_TAG_CUSCO}\"" --inplace ${TEMPLATE_FILE}
-          yq e ".docker_app_runner.container.omsk_roman.image = \"${IMAGE_TAG_ROMAN}\"" --inplace ${TEMPLATE_FILE}
-          yq e ".docker_app_runner.container.omsk_babylon.image = \"${IMAGE_TAG_BABYLON}\"" --inplace ${TEMPLATE_FILE}
-          mkdir dist
-
-          jq -n \
-            --arg file playbooks/oms-zkr/host_vars/cn1.ucloud.ztokr.com.yml \
-            --arg content "$(cat ${TEMPLATE_FILE})" \
-            '{file: $file, content: $content}' >> dist/change.json
-          jq -crs '.' < dist/change.json > dist/changes.json
-          cat dist/changes.json
-
-      # - name: Deploy
-      #   uses: fewensa/actions/ansible-deploy@main
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-      #   with:
-      #     project_name: repotea-workspace/oms-zkr
-      #     changes: dist/changes.json
-      #     ac_git_ref: __origin__/.github/ref.txt
-      #     commit_message: __origin__/.github/message.txt
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-fes
+          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_FES }}'
+          argocd_server: ${{ secrets.ARGOCD_FES_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_FES_API_TOKEN }}
+          app_name: work-production-ztoms-ula
+          changes: |
+            {
+              "argocd/work/ztoms-ula/overlays/production/ztoms/values.yaml": {
+                "app.omsk-pompeii.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-pompeii:sha-${{ env.SHA }}",
+                "app.omsk-cusco.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-cusco:sha-${{ env.SHA }}",
+                "app.omsk-roman.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-roman:sha-${{ env.SHA }}",
+                "app.omsk-babylon.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsk-babylon:sha-${{ env.SHA }}"
+              }
+            }
