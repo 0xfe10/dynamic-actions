@@ -184,7 +184,7 @@ jobs:
           changes: |
             {
               "argocd/work/ztoms-ula/overlays/production/ztoms/values.yaml": {
-                "app.omsj-api.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsj-api:sha-${{ env.SHA }}",
-                "app.omsj-web.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsj-web:sha-${{ env.SHA }}"
+                "app.omsj_api.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsj-api:sha-${{ env.SHA }}",
+                "app.omsj_web.image": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/omsj-web:sha-${{ env.SHA }}"
               }
             }

@@ -1,1 +1,1 @@
-Remove debug secrets step and fix UHub login credentials
+Update image key names to use underscores in production workflow
