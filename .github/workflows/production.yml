@@ -43,8 +43,8 @@ jobs:
       - name: Docker login (UHub)
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.UHUB_USERNAME_ZTOKR }}
-          password: ${{ secrets.UHUB_PASSWORD_ZTOKR }}
+          username: ${{ secrets.CR_UHUB_USERNAME_ZTOKR }}
+          password: ${{ secrets.CR_UHUB_PASSWORD_ZTOKR }}
           registry: ${{ env.DOCKER_REGISTRY_UHUB }}
 
       - uses: benjlevesque/short-sha@v3.0

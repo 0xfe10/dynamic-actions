@@ -1,1 +1,1 @@
-Remove trailing blank line from .prettierrc
+Update UHub Docker login to use CR secrets
