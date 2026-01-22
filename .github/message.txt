@@ -1,1 +1,1 @@
-Set Docker build to not push image in production workflow
+Use GITHUB_TOKEN for Docker login in production workflow
