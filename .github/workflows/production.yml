@@ -63,7 +63,7 @@ jobs:
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
-          push: true
+          push: false
           context: zoms-api
           file: zoms-api/docker/Dockerfile
           tags: |
