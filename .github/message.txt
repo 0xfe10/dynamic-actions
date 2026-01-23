@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/onestore
+Update ArgoCD app_name to apps-production-onestore-hk0
