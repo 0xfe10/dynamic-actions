@@ -1,1 +1,1 @@
-Remove unnecessary empty line in production workflow
+Update production workflow to use consistent YAML quoting and paths

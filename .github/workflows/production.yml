@@ -1,4 +1,4 @@
-name: '[sw-aiot] Production'
+name: "[sw-aiot] Production"
 
 on:
   push:
@@ -12,7 +12,6 @@ env:
   DOCKER_REGISTRY_ALI_SZ_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
-
   build-apps:
     name: Build
     runs-on: ubuntu-latest
@@ -22,7 +21,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/sw-aiot
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Check
@@ -89,7 +88,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/sw-aiot
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
@@ -101,15 +100,13 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: labelix-production-openapps-hk0
           changes: |
             {
-              "argocd/labelix/openapps-hk0/overlays/production/sw-aiot/deployment-patch.yaml": {
+              "argocd/apps/openapps-hk0/overlays/production/sw-aiot/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/sw-aiot:sha-${{ env.SHA }}"
               }
             }
-
-
