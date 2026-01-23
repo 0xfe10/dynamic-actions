@@ -421,7 +421,7 @@ jobs:
           app_name: labelix-staging-babosa-hk0
           changes: |
             {
-              "argocd/labelix/babosa-hk0/staging/values.yaml": {
+              "argocd/apps/babosa-hk0/staging/values.yaml": {
                 "app.launcher_universal.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-universal:sha-${{ env.SHA }}",
                 "app.launcher_labelexpert.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-labelexpert:sha-${{ env.SHA }}",
                 "app.launcher_metaprint.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-metaprint:sha-${{ env.SHA }}",
@@ -434,7 +434,6 @@ jobs:
               }
             }
 
-
   clean-artifacts:
     name: Clean artifacts
     runs-on: ubuntu-latest
@@ -445,4 +444,3 @@ jobs:
       - uses: geekyeggo/delete-artifact@v5
         with:
           name: artifact-java
-
