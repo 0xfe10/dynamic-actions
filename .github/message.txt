@@ -1,1 +1,1 @@
-拼多多云 回调域名配置
+Add shx to devDependencies and update build:h5 script (#3)
