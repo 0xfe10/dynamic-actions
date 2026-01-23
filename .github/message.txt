@@ -1,1 +1,1 @@
-Update Docker login action to v3 in production workflow
+Update aynguide deployment paths in production workflow

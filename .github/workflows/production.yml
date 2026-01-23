@@ -72,10 +72,10 @@ jobs:
           app_name: labelix-production-suite-hk0
           changes: |
             {
-              "argocd/labelix/suite-hk0/overlays/production/aynguide/api/deployment-patch.yaml": {
+              "argocd/apps/suite-hk0/overlays/production/aynguide/api/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-api:sha-${{ env.SHA }}"
               },
-              "argocd/labelix/suite-hk0/overlays/production/aynguide/frontend/deployment-patch.yaml": {
+              "argocd/apps/suite-hk0/overlays/production/aynguide/frontend/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-frontend:sha-${{ env.SHA }}"
               }
             }
