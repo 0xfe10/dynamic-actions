@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/endfather
+Update app_name for babosa-hk0 in production and staging workflows
