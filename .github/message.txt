@@ -1,1 +1,1 @@
-Update actions/checkout to v6 in CI workflow
+Update ArgoCD patch paths to use apps directory
