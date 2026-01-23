@@ -1,1 +1,1 @@
-Update CI
+Update paths in production workflow for ArgoCD
