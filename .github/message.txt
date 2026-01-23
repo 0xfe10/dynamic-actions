@@ -1,1 +1,1 @@
-Update paths in production workflow for ArgoCD
+Rename app_name in production workflow
