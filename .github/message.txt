@@ -1,1 +1,1 @@
-Update production workflow to use consistent YAML quoting and paths
+Update ArgoCD app_name to apps-production-openapps-hk0

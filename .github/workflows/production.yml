@@ -103,7 +103,7 @@ jobs:
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-production-openapps-hk0
+          app_name: apps-production-openapps-hk0
           changes: |
             {
               "argocd/apps/openapps-hk0/overlays/production/sw-aiot/deployment-patch.yaml": {
