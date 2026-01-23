@@ -1,1 +1,1 @@
-Update ArgoCD patch paths to use apps directory
+Update ArgoCD app_name to apps-production-openapps-hk0
