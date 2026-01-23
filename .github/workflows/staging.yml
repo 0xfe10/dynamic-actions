@@ -1,9 +1,9 @@
-name: '[byteone] Staging'
+name: "[byteone] Staging"
 
 on:
   push:
     branches:
-      - '**'
+      - "**"
 env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
@@ -47,7 +47,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/byteone
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Check
@@ -116,7 +116,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/byteone
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Set repo name
@@ -127,13 +127,13 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: iot-staging-byteone-hk0
           changes: |
             {
-              "argocd/iot/byteone-hk0/overlays/staging/values.yaml": {
+              "argocd/apps/byteone-hk0/overlays/staging/values.yaml": {
                 "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHA }}",
                 "app.msgbridge.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-msgbridge:sha-${{ env.SHA }}",
                 "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHA }}"
