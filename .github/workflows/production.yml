@@ -75,10 +75,10 @@ jobs:
           app_name: labelix-production-suite-hk0
           changes: |
             {
-              "argocd/labelix/suite-hk0/overlays/production/guestkey/api/deployment-patch.yaml": {
+              "argocd/apps/suite-hk0/overlays/production/guestkey/api/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-api:sha-${{ env.SHA }}"
               },
-              "argocd/labelix/suite-hk0/overlays/production/guestkey/vision/deployment-patch.yaml": {
+              "argocd/apps/suite-hk0/overlays/production/guestkey/vision/deployment-patch.yaml": {
                 "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-vision:sha-${{ env.SHA }}"
               }
             }
