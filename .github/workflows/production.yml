@@ -99,7 +99,7 @@ jobs:
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: iot-production-nova-hk0
+          app_name: apps-production-nova-hk0
           changes: |
             {
               "argocd/apps/nova-hk0/overlays/production/wiot/deployment-patch.yaml": {

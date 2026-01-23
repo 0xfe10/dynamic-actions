@@ -1,1 +1,1 @@
-Fix path to deployment-patch.yaml in production workflow
+Update app_name to apps-production-nova-hk0 in production workflow
