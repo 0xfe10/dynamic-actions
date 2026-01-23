@@ -110,7 +110,7 @@ jobs:
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: iot-production-byteone-sz1
+          app_name: apps-production-byteone-sz1
           changes: |
             {
               "argocd/apps/byteone-sz1/overlays/production/values.yaml": {

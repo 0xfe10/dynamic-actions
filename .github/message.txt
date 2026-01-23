@@ -1,1 +1,1 @@
-Update workflow YAMLs to use consistent quoting and paths
+Update ArgoCD app_name for byteone in production and staging
