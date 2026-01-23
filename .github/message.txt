@@ -1,1 +1,1 @@
-Rename publish workflow to production and update strings
+Fix path to deployment-patch.yaml in production workflow

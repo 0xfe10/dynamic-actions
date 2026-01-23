@@ -102,7 +102,7 @@ jobs:
           app_name: iot-production-nova-hk0
           changes: |
             {
-              "argocd/iot/nova-hk0/overlays/production/wiot/deployment-patch.yaml": {
+              "argocd/apps/nova-hk0/overlays/production/wiot/deployment-patch.yaml": {
                 "0.value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:sha-${{ env.SHA }}"
               }
             }
