@@ -1,1 +1,1 @@
-Update aynguide deployment paths in production workflow
+Update app_name to apps-production-suite-hk0 in workflow
