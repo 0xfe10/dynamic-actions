@@ -1,13 +1,14 @@
-Move GeoIP (#24)
+Add performance test SQLs and consolidate migrations
 
-* Remove trailing blank line from .env.example
-
-* Refactor GeoIP service to use HTTP sidecar lookup
-
-Remove MMDB updater and local MMDB file management.
-Update configuration to specify sidecar endpoint and timeout.
-Adjust tracking handler and tests for new GeoIP lookup flow.
-
-* Remove GeoLite2 mmdb pre-download from Dockerfile
-
-* Support GeoIP API envelope and update tests
+- Add performance-tests directory with SQL benchmarks for ClickHouse
+  optimization, including original vs optimized queries for Superset
+  dashboards.
+- Document performance gains from using materialized views and
+  pre-parsed
+  fields.
+- Consolidate migration changes: merge new fields (locale, geo) into
+  original CREATE TABLE migrations for active user and print detail
+  views.
+- Update schema.sql to reflect consolidated migrations.
+- Add new fields to backfill scripts where needed.
+- Remove obsolete ALTER TABLE migration files.
