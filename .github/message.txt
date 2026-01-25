@@ -1,14 +1,7 @@
-Add performance test SQLs and consolidate migrations
+Switch spectra migrations from dbmate to golang-migrate
 
-- Add performance-tests directory with SQL benchmarks for ClickHouse
-  optimization, including original vs optimized queries for Superset
-  dashboards.
-- Document performance gains from using materialized views and
-  pre-parsed
-  fields.
-- Consolidate migration changes: merge new fields (locale, geo) into
-  original CREATE TABLE migrations for active user and print detail
-  views.
-- Update schema.sql to reflect consolidated migrations.
-- Add new fields to backfill scripts where needed.
-- Remove obsolete ALTER TABLE migration files.
+- Replace dbmate with golang-migrate in Dockerfile and entrypoint
+- Consolidate and baseline spectra migrations as golang-migrate SQL
+  files
+- Remove legacy dbmate migration docs and schema.sql
+- Update Justfile and docs to reference golang-migrate
