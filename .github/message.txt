@@ -1,1 +1,1 @@
-Add GeoIP request counter and periodic stats logging
+Increase GeoIP stats logging interval to 5 minutes
