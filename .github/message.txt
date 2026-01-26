@@ -1,1 +1,1 @@
-chore: Update permission_handler to ^12.0.1 and upgrade dependencies
+彩喷新增型号 nn号查询
