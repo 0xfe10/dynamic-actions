@@ -1,1 +1,8 @@
-Ignore .factorypath file
+Merge branch 'ble_native' into upversion
+
+# Conflicts:
+#	dart/algorithms/dithering/pubspec.yaml
+#	dart/devices/bluetooth_ble/pubspec.yaml
+#	dart/devices/network/pubspec.yaml
+#	dart/fruits/rgb/pubspec.yaml
+#	java/fruits/wifi/src/main/java/com/printer/psdk/wifi/BasicWIFI.java
