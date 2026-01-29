@@ -403,10 +403,10 @@ jobs:
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: labelix-production-babosa-hk0
+          app_name: apps-production-babosa-hk0
           changes: |
             {
-              "argocd/labelix/babosa-hk0/production/values.yaml": {
+              "argocd/apps/babosa-hk0/production/values.yaml": {
                 "app.launcher_universal.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-universal:sha-${{ env.SHA }}",
                 "app.launcher_labelexpert.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-labelexpert:sha-${{ env.SHA }}",
                 "app.launcher_metaprint.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-metaprint:sha-${{ env.SHA }}",
@@ -418,7 +418,6 @@ jobs:
                 "app.frontend_woodii.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_frontend-woodii:sha-${{ env.SHA }}"
               }
             }
-
 
   clean-artifacts:
     name: Clean artifacts
