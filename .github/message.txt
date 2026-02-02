@@ -1,1 +1,1 @@
-Use EnvKit to read fetch-waybill enabled flag
+Update env var to TASK_FETCH_WAYBILL_ENABLED in FetchWaybillTask
