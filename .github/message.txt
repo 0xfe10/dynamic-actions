@@ -1,4 +1,4 @@
-Add optimistic lock and serialization retry logic
+Add optimistic lock and serialization retry logic (#4)
 
 - Introduce OptimisticLockException for balance updates
 - Add retry with backoff for balance out and topup operations
