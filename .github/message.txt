@@ -1,9 +1,1 @@
-Add optimistic lock and serialization retry logic (#4)
-
-- Introduce OptimisticLockException for balance updates
-- Add retry with backoff for balance out and topup operations
-- Add retry with backoff for order creation and waybill fetch on
-  serialization conflicts
-- Refactor FetchWaybillTask to process one page per run and avoid deep
-  recursion
-- Set transaction isolation to READ_COMMITTED for optimistic locking
+Use EnvKit to read fetch-waybill enabled flag
