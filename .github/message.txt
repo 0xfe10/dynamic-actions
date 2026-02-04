@@ -1,1 +1,1 @@
-Add changelog for IoT card tables and schema updates
+Release v0.0.257 (#475)
