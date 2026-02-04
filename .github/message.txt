@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/ai_print
+feat：添加mqtt语音识别支持
