@@ -1,1 +1,3 @@
-fix：修复丢包率和平均延迟数据没保存问题
+docs: 添加压力测试项目指导文档(stress-test-project.md)
+
+Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
