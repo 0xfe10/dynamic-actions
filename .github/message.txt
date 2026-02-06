@@ -1,12 +1,1 @@
-docs: Add stress testing project guide for platform capacity validation (#25)
-
-* Initial plan
-
-* docs: 添加压力测试项目指导文档(stress-test-project.md)
-
-Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
-
----------
-
-Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
-Co-authored-by: mijjjj <37797122+mijjjj@users.noreply.github.com>
+fix：修复客户端连接问题
