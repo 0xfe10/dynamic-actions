@@ -1,1 +1,1 @@
-Remove ClickHouse optimization scripts, docs, and test SQL
+Add tracking statistics collector with periodic logging
