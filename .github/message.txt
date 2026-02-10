@@ -1,5 +1,1 @@
-Feature submodules (#2)
-
-* Update staging.yml
-
-* Move submodules option to clone-dyn step in staging workflow
+Update workflow to use double quotes for branch patterns
