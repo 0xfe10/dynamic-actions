@@ -36,18 +36,13 @@ jobs:
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
-        with:
-          submodules: recursive
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/aiprint
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
-
-      - name: Check
-        run: |
-          ls -la
+          submodules: recursive
 
       - name: Docker login
         uses: docker/login-action@v3
