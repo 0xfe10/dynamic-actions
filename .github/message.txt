@@ -1,1 +1,1 @@
-Update workflow to use double quotes for branch patterns
+Copy sdk directory in Dockerfile for local replace
