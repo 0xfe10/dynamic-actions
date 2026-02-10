@@ -36,6 +36,8 @@ jobs:
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
+        with:
+          submodules: recursive
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
