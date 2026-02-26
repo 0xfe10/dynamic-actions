@@ -1,1 +1,1 @@
-Refactor navbar.js to use double quotes and improve consistency
+Remove commented-out Products nav links from all pages
