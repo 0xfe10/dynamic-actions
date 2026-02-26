@@ -1,1 +1,1 @@
-Comment out 产品中心 links in navigation menus
+Refactor navbar.js to use double quotes and improve consistency
