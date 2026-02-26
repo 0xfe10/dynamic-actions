@@ -1,1 +1,1 @@
-Update ArgoCD app_name to apps-production-openapps-hk0
+Comment out Products Center link in header navigation
