@@ -1,1 +1,1 @@
-Remove commented-out Products nav links from all pages
+Remove products.html and update product pages navigation
