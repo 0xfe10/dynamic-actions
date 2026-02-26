@@ -1,1 +1,1 @@
-Comment out Products Center link in header navigation
+Comment out 产品中心 links in navigation menus
