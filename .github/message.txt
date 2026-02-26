@@ -1,1 +1,1 @@
-Update ArgoCD app_name to apps-production-onestore-hk0
+Bump HiStore version to 2.7.7-5 in Dockerfile
