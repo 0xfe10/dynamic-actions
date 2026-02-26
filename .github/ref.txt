@@ -1,1 +1,1 @@
-points
+model-template
