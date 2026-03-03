@@ -1,1 +1,1 @@
-fix：修改报告生成逻辑
+chore: ignore stress-tool output directory and remove tracked files
