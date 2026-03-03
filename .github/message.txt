@@ -1,1 +1,1 @@
-chore: ignore stress-tool output directory and remove tracked files
+fix：修复前端参数管理显示异常问题
