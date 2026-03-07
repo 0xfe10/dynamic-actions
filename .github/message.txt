@@ -1,1 +1,5 @@
-esc 新增 配网指令
+Merge branch 'upversion' into fix/agp8-namespace-support
+
+# Conflicts:
+#	dart/devices/bluetooth_ble/pubspec.yaml
+#	dart/devices/bluetooth_classic/pubspec.yaml

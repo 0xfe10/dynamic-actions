@@ -1,1 +1,1 @@
-upversion
+fix/agp8-namespace-support
