@@ -1,4 +1,1 @@
-fix(bluetooth_ble): use ble_plugin from git to fix case-sensitive import
-
-Replace pub.dev ble_plugin dependency with git fork that fixes
-import path case issue (Base.dart -> base.dart) for Linux builds.
+esc 新增 配网指令
