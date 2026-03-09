@@ -1,1 +1,1 @@
-一键登录新账号版本改为2.1.0
+Remove GitLab CI and maintenance notification files
