@@ -1,1 +1,5 @@
-Add changelog for square and tag tables and update product schema
+Release v0.0.259 (#481)
+
+* Remove GitLab CI and maintenance notification files
+
+* Add changelog for square and tag tables and update product schema
