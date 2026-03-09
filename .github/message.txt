@@ -1,1 +1,1 @@
-Remove GitLab CI and maintenance notification files
+Add changelog for square and tag tables and update product schema
