@@ -1,5 +1,1 @@
-Release v0.0.259 (#481)
-
-* Remove GitLab CI and maintenance notification files
-
-* Add changelog for square and tag tables and update product schema
+文生图接入豆包平台
