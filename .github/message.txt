@@ -1,1 +1,1 @@
-fix：去除掉设备应用接口restfull风格url包含资源id的问题
+feta：添加协议更改
