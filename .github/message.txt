@@ -1,1 +1,5 @@
-更新驱动链接
+fix(maprintrace): add less loader support for @antv/l7
+
+@antv/l7-component imports .less files which webpack cannot process
+by default. Add next-with-less and less packages to handle .less
+files during the build.
