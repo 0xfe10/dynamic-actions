@@ -1,1 +1,1 @@
-Add changelog for AI models and cloud print devices
+Release v0.0.260 (#490)
