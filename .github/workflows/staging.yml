@@ -1,12 +1,11 @@
-name: '[labelab] Staging'
+name: "[labelab] Staging"
 
 on:
   push:
     branches:
-      - '**'
+      - "**"
 
 jobs:
-
   ensure-main:
     name: Ensure main
     runs-on: ubuntu-latest
@@ -38,24 +37,23 @@ jobs:
             path: mobile/build/app/outputs/flutter-apk/app-release.apk
             upload_name: app-release-apk
     steps:
-
       - uses: actions/checkout@v6
 
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: boxliy/labelab
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: "temurin"
+          java-version: "17"
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
 
       - name: Install dependencies
         working-directory: mobile
@@ -63,14 +61,14 @@ jobs:
 
       - name: Decode keystore
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > $GITHUB_WORKSPACE/labelab-release.jks
+          echo "${{ secrets.LABALAB_STG_JKS }}" | base64 --decode > $GITHUB_WORKSPACE/labelab-release.jks
 
       - name: Write key.properties
         run: |
           cat > mobile/android/key.properties << EOF
-          storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}
-          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
-          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          storePassword=${{ secrets.LABALAB_STG_STORE_PASSWORD }}
+          keyPassword=${{ secrets.LABALAB_STG_KEY_PASSWORD }}
+          keyAlias=${{ secrets.LABALAB_STG_KEY_ALIAS }}
           storeFile=$GITHUB_WORKSPACE/labelab-release.jks
           EOF
 
@@ -88,7 +86,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-android
     steps:
-
       - uses: actions/download-artifact@v4
         with:
           path: dist
