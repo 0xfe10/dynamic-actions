@@ -1,0 +1,5 @@
+Update workflows to use double quotes and add ensure-main job to staging
+
+The ensure-main job checks for 'main' in branch.txt and gates
+build-android.
+This improves workflow control for staging builds.

@@ -1,0 +1,74 @@
+name: "[labelab] Staging"
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Ensure main
+        id: ensure_main
+        run: |
+          if grep -q 'main' .github/branch.txt; then
+            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          fi
+
+  build-android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        working-directory: mobile
+        run: flutter pub get
+
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > $GITHUB_WORKSPACE/labelab-release.jks
+
+      - name: Write key.properties
+        run: |
+          cat > mobile/android/key.properties << EOF
+          storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
+          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          storeFile=$GITHUB_WORKSPACE/labelab-release.jks
+          EOF
+
+      - name: Build APK
+        working-directory: mobile
+        run: flutter build apk --release
+
+      - name: Create canary pre-release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: canary
+          name: Canary (${{ github.ref_name }}@${{ github.sha }})
+          body: |
+            Branch: `${{ github.ref_name }}`
+            Commit: ${{ github.sha }}
+          prerelease: true
+          allowUpdates: true
+          removeArtifacts: true
+          artifacts: mobile/build/app/outputs/flutter-apk/app-release.apk
