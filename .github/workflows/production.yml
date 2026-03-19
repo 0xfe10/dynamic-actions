@@ -1,11 +1,12 @@
-name: "[labelab] Production"
+name: '[labelab] Production'
 
 on:
   push:
     tags:
-      - "v*"
+      - 'v*'
 
 jobs:
+
   build-android:
     name: Build Android ${{ matrix.artifact.name }}
     runs-on: ubuntu-latest
@@ -21,16 +22,24 @@ jobs:
             path: mobile/build/app/outputs/bundle/release/app-release.aab
             upload_name: app-release-aab
     steps:
-      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v6
+
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: boxliy/labelab
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
 
       - uses: actions/setup-java@v4
         with:
-          distribution: "temurin"
-          java-version: "17"
+          distribution: 'temurin'
+          java-version: '17'
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: "stable"
+          channel: 'stable'
 
       - name: Install dependencies
         working-directory: mobile
@@ -38,14 +47,14 @@ jobs:
 
       - name: Decode keystore
         run: |
-          echo "${{ secrets.LABALAB_STG_JKS }}" | base64 --decode > $GITHUB_WORKSPACE/labelab-release.jks
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > $GITHUB_WORKSPACE/labelab-release.jks
 
       - name: Write key.properties
         run: |
           cat > mobile/android/key.properties << EOF
-          storePassword=${{ secrets.LABALAB_STG_STORE_PASSWORD }}
-          keyPassword=${{ secrets.LABALAB_STG_KEY_PASSWORD }}
-          keyAlias=${{ secrets.LABALAB_STG_KEY_ALIAS }}
+          storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
+          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
           storeFile=$GITHUB_WORKSPACE/labelab-release.jks
           EOF
 
@@ -63,12 +72,29 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-android
     steps:
+
+      - uses: actions/checkout@v6
+
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: boxliy/labelab
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+
       - uses: actions/download-artifact@v4
         with:
           path: dist
           merge-multiple: true
 
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(grep '^version:' mobile/pubspec.yaml | sed 's/version: //')
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
       - uses: softprops/action-gh-release@v2
         with:
+          name: ${{ steps.version.outputs.VERSION }}
           generate_release_notes: true
           files: dist/*
