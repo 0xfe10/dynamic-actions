@@ -1,1 +1,39 @@
-Update workflow secrets and YAML quoting for Android builds
+Feat ci (#4)
+
+* ci(labelab): add Android release CI + signing config
+
+- .github/workflows/trigger-branch.yml: on push branches → pre-release (canary)
+- .github/workflows/trigger-tag.yml: on push v* tags → full release
+- .github/workflows/build-android.yml: reusable workflow_call target
+  - setup-java@v4 (temurin 17) + subosito/flutter-action@v2
+  - decode ANDROID_KEYSTORE_BASE64 secret → labelab-release.jks
+  - write key.properties for gradle signing
+  - build APK (always) + AAB (tag only)
+  - pre-release: ncipollo/release-action@v1 with allowUpdates (canary tag)
+  - release: softprops/action-gh-release@v2 with APK + AAB
+- .github/dyn-workflows/build-android.yml: psdk-style reference copy
+- android/app/build.gradle.kts: signing config via key.properties / env vars
+
+Secrets to configure in GitHub:
+  ANDROID_KEYSTORE_BASE64, ANDROID_KEY_ALIAS,
+  ANDROID_KEY_PASSWORD, ANDROID_STORE_PASSWORD
+
+* ci(labelab): restructure to psdk/endfather dyn-workflows pattern
+
+- dyn-workflows/staging.yml: on push branches → build APK → canary pre-release
+- dyn-workflows/production.yml: on push tags v* → build APK + AAB → release
+- workflows/trigger-branch.yml: minimal, delegates to kangumi/dyn-actions
+- workflows/trigger-tag.yml: minimal, delegates to kangumi/dyn-actions
+- removed workflows/build-android.yml (workflow_call approach replaced)
+
+* Update workflows to use double quotes and add ensure-main job to staging
+
+The ensure-main job checks for 'main' in branch.txt and gates
+build-android.
+This improves workflow control for staging builds.
+
+* ci(labelab): parallel APK + AAB build via matrix in production
+
+* ci(labelab): apply matrix pattern to staging for consistency
+
+* Update workflow secrets and YAML quoting for Android builds
