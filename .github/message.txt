@@ -1,8 +1,3 @@
-fix(ci): add clone-dyn step, remove project_name, use checkout@v6
-
-- Add clone-dyn step to all dyn-workflow jobs to checkout actual source
-- Remove project_name from trigger files (inferred from repo context)
-- Upgrade all checkout actions to v6 to match endfather pattern
-- Build steps use working-directory: mobile for subdirectory project
+fix(ci): add ensure-main job to staging workflow
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
