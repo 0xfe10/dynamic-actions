@@ -1,25 +1,19 @@
-feat(docs): finalize labelix stack and architecture
+docs(spec): refine endfather migration plan
 
 Summary:
-- add final Chinese docs for Labelix stack selection, target
-  architecture, and contract-sharing implementation details
-- align existing README, Rust backend spec, and database migration
-  plan with the DAM-8 decisions
-- document the split between sqlx for data access and
-  golang-migrate for schema evolution, plus ts-rs as the single
-  contract source
+- add a Chinese OpenSpec-style `plan.md` for the endfather migration
+- rewrite `tasks.md` into numbered execution workstreams with target paths
+- add upstream delta recording guidance and align related spec/design docs
 
 Rationale:
-- DAM-6 produced analysis and option space, but DAM-8 requires a
-  final implementation baseline the team can execute directly
-- the new docs turn previously open questions into explicit
-  decisions while preserving the original data-shape compatibility
-  constraints
-- updating the existing specs avoids conflicting guidance inside
-  labelix/docs
+- the previous draft was not detailed enough to drive follow-on migration work
+- this rework makes the plan easier to split into future Linear tasks and to
+  keep synchronized with ongoing upstream changes
 
 Tests:
+- find docs/spec/endfather-migration -maxdepth 4 -type f | sort
+- git diff -- docs/README.md docs/spec/endfather-migration
+- openspec --version
 - git diff --check
-- test -d docs && rg -n "labelix-final-stack-selection|labelix-target-architecture|labelix-contract-and-implementation-spec|axum|sqlx|ts-rs|Next.js|PostgreSQL|原始数据结构|golang-migrate" docs
 
 Co-authored-by: Codex <codex@openai.com>
