@@ -1,10 +1,19 @@
-feat(auth): redesign login page with gradient header + proper theming
+fix(theme): adapt all pages to dark mode using shadcn colorScheme
 
-- Extract AppLogoMark/AppLogo to shared/widgets/app_logo.dart
-- Auth page: gradient hero header with logo, theme-aware inputs/text
-- Remove hardcoded AppColors.surface background (fixes invisible text on dark theme)
-- Add password visibility toggle
-- Add welcomeBack/signInSubtitle/tagline i18n keys (en + zh)
-- main_shell.dart: use shared AppLogo widget, remove duplicated _TagMarkPainter
+Replace hardcoded AppColors.surface/textSecondary/textPrimary/divider
+with theme-aware ShadTheme.of(context).colorScheme equivalents:
+- AppColors.surface → scheme.muted
+- AppColors.textSecondary → scheme.mutedForeground
+- AppColors.divider → scheme.border
+- AppColors.textPrimary → scheme.foreground
+- Toolbar/card Colors.white → scheme.card
+
+Affected pages: home, templates, device_search, device_manage,
+device_settings, history, history_detail, profile, about, user_guide,
+graffiti, label_editor, rich_editor, print_preview, ocr,
+and all coming-soon stub pages.
+
+Canvas drawing areas (graffiti, label_editor, print_preview) keep
+Colors.white intentionally — print paper is always white.
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
