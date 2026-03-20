@@ -1,3 +1,10 @@
-fix(ci): run slang + build_runner codegen before flutter build
+feat(auth): redesign login page with gradient header + proper theming
+
+- Extract AppLogoMark/AppLogo to shared/widgets/app_logo.dart
+- Auth page: gradient hero header with logo, theme-aware inputs/text
+- Remove hardcoded AppColors.surface background (fixes invisible text on dark theme)
+- Add password visibility toggle
+- Add welcomeBack/signInSubtitle/tagline i18n keys (en + zh)
+- main_shell.dart: use shared AppLogo widget, remove duplicated _TagMarkPainter
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
