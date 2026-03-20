@@ -1,21 +1,25 @@
-docs(migration): add endfather analysis dossier
+docs(dam-6): rewrite migration dossier in Chinese
 
 Summary:
-- add source-backed analysis docs for endfather APIs, schema, launchers,
-  and traice migration history under labelix/docs
-- add planning and architecture docs covering service merge options,
-  database migration flow, execution roadmap, and Rust backend rules
-- add research comparing golang-migrate and sqlx migrations without
-  forcing the unresolved tool decision
+- rewrite the DAM-6 migration dossier under `docs/` in Chinese while
+  preserving the existing file layout and source-backed findings
+- tighten planning and architecture wording so service split, webhook
+  boundaries, naming, and DB migration tooling remain decision points
+- keep the API inventory and schema analysis detail intact while removing
+  leftover English guidance and mixed-language phrasing
 
 Rationale:
-- DAM-6 requires a detailed migration dossier in the target labelix repo
-  before service-split and database decisions are made
-- the legacy system spans multiple launchers, frontends, and migration
-  tracks, so the target plans need one traceable documentation set
+- the latest DAM-6 feedback explicitly requires all output docs to be in
+  Chinese and asks for a re-review against the original ticket
+- this rework updates the existing PR instead of replacing the analyzed
+  content, keeping the dossier aligned with the original source reading
+- tightening language around recommendations avoids implying that open
+  decisions have already been made
 
 Tests:
-- find /code/symphony/0xfe10/workspaces/DAM-6/labelix/docs -maxdepth 3 -type f | sort
-- rg -n "TODO|TBD|FIXME|<core>|<admin>|<integration>|<service>|<optional-vertical>" /code/symphony/0xfe10/workspaces/DAM-6/labelix/docs || true
+- `find /code/symphony/0xfe10/workspaces/DAM-6/labelix/docs -maxdepth 3 -type f | sort`
+- `rg -n "TODO|TBD|FIXME|<core>|<admin>|<integration>|<service>|<optional-vertical>" /code/symphony/0xfe10/workspaces/DAM-6/labelix/docs || true`
+- `python - <<'PY' ... PY` (verified each doc contains Chinese content and no legacy English headings)
+- `gh pr view 27 --repo prtmax/labelix --json url,state,labels,comments,reviews,latestReviews,reviewDecision,statusCheckRollup,mergeStateStatus,mergeable`
 
 Co-authored-by: Codex <codex@openai.com>
