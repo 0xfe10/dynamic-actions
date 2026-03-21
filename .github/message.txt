@@ -1,1 +1,19 @@
-Merge origin/main into dam-7-endfather-migration-plan
+docs(spec): refine endfather migration plan (#30)
+
+Summary:
+- add a Chinese OpenSpec-style `plan.md` for the endfather migration
+- rewrite `tasks.md` into numbered execution workstreams with target paths
+- add upstream delta recording guidance and align related spec/design docs
+
+Rationale:
+- the previous draft was not detailed enough to drive follow-on migration work
+- this rework makes the plan easier to split into future Linear tasks and to
+  keep synchronized with ongoing upstream changes
+
+Tests:
+- find docs/spec/endfather-migration -maxdepth 4 -type f | sort
+- git diff -- docs/README.md docs/spec/endfather-migration
+- openspec --version
+- git diff --check
+
+Co-authored-by: Codex <codex@openai.com>
