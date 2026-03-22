@@ -1,1 +1,12 @@
-docs: refresh docs readme guide
+DAM-9: refresh docs README guide
+
+## Summary
+- merge DAM-7 and DAM-8 documentation work into main before continuing
+- rewrite docs/README.md as a docs directory guide with structure, reading paths, planning rules, and writing templates
+- define future docs growth paths for spec initiatives and execution runbooks
+
+## Validation
+- find docs -maxdepth 3 -type f | sort
+- git diff -- docs/README.md
+- git diff --check
+- test -f docs/spec/endfather-migration/deltas/README.md && test -f docs/spec/endfather-migration/specs/migration-plan/spec.md
