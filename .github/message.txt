@@ -1,1 +1,1 @@
-fix(ci): repair dart bootstrap and analyzer failures
+fix(dart): annotate network error callback
