@@ -1,19 +1,106 @@
-fix(ci): repair psdk dynamic release workflows
+Ble native (#17)
+
+* 彩喷新增 自检页和清洁打印头指令
+
+* 彩喷 一键退纸
+
+* 新增 获取所有wifi信息指令
+
+* 彩喷新增型号 nn号查询
+
+* js v0.7.10
+
+* js v0.7.11
+
+* js ble新增 广播mac地址
+
+* js taro ble新增 广播mac地址
+
+* js v0.7.12
+
+* chore: Update all subpackages dependencies to latest versions (#13)
+
+* 新增配网信息重置接口
+
+* 灰阶加抖动处理
+
+* 新增CTextCanvas
+
+* 重构CTextCanvas、EasyArg和CText类，使用@SuperBuilder和@NoArgsConstructor注解，优化构造函数和默认属性设置
+
+* 更新工作流配置，替换为新的动态克隆动作并注释失败通知步骤
+
+* 更新工作流配置，替换动态克隆动作的引用并删除过时的检查工作流
+
+* CTextCanvas优化
+
+* 更新最新依赖
+
+* CTextCanvas 增加透明度参数
+
+* chore: Update all subpackages dependencies to latest versions
+
+* chore(bluetooth_classic): switch to vashukarn fork for AGP8 support
+
+- Replace pub.dev flutter_bluetooth_serial with git dependency
+- Use vashukarn/flutter_bluetooth_serial fork (PR #234)
+- Supports AGP 8.6.0, Gradle 8.7, Android SDK 36
+- Adds Android 12+ Bluetooth permissions
+- Updated to Dart SDK >=3.0.0 and Flutter >=3.13.0
+- Version bumped to 1.0.0 in upstream
+
+This fork provides necessary AGP8 and namespace support while
+maintaining full API compatibility with original flutter_bluetooth_serial.
+
+Ref: https://github.com/edufolly/flutter_bluetooth_serial/pull/234
+
+* Ignore .factorypath file
+
+* fix(bluetooth_ble): use ble_plugin from git to fix case-sensitive import
+
+Replace pub.dev ble_plugin dependency with git fork that fixes
+import path case issue (Base.dart -> base.dart) for Linux builds.
+
+* esc 新增 配网指令
+
+* 新增 获取设备秘钥 指令
+
+* UDP 广播搜索当前网络内的打印机
+
+* Add mark imports and section comments to ArgTest files
+
+* test(protocol): add parity checks across dart js and java (#15)
 
 Summary:
-- update the release java workflow to use
-  s4u/setup-maven-action@v1.19.0
-- switch the release js workflow to setup-node registry wiring and
-  disable lerna access preverification during publish
+- add explicit ESC, CPCL, and TSPL parity tests in Dart and JavaScript
+- expand the Java ESC suite to cover the same concrete protocol cases
+- keep the CPCL JavaScript test isolated from optional canvas-native loading
 
 Rationale:
-- the latest dynamic-actions run failed java during action setup because
-  v1.14.0 depends on a deprecated actions/cache release
-- the latest js release failed before tarball upload with lerna E404
-  during access verification, so the workflow now relies on standard
-  NODE_AUTH_TOKEN auth and skips the failing probe
+- verify psdk and nib produce the same protocol output for matched features
+- lock down cross-language behavior with focused command-level assertions
+- preserve unattended validation by avoiding unrelated native module coupling
 
 Tests:
-- git diff --check
-- ruby -e 'require "yaml"; data = YAML.load_file(".github/dyn-workflows/release.yml"); abort("missing jobs") unless data["jobs"].is_a?(Hash); puts data["name"]; puts data["jobs"].keys.join(",")'
-- npx lerna publish --help | rg -n 'verify-access|registry|from-package'
+- cd dart/fruits/esc && dart test
+- cd dart/fruits/tspl && dart test
+- cd dart/fruits/cpcl && PATH=/tmp/flutter/bin:$PATH flutter test
+- cd js && npm test --workspace @psdk/esc -- --runInBand
+- cd js && npm test --workspace @psdk/cpcl -- --runInBand
+- cd js && npm test --workspace @psdk/tspl -- --runInBand
+- cd java && JAVA_HOME=/home/linuxbrew/.linuxbrew/opt/openjdk@17 \
+  PATH=/home/linuxbrew/.linuxbrew/opt/openjdk@17/bin:$PATH \
+  mvn -pl fruits/esc -am test -Dtest=ESCTest -Dversion-java=8 \
+  -DfailIfNoTests=false
+
+Co-authored-by: Codex <codex@openai.com>
+
+---------
+
+Co-authored-by: JCZ <615315510@qq.com>
+Co-authored-by: Codex <codex@openai.com>
+
+---------
+
+Co-authored-by: JCZ <615315510@qq.com>
+Co-authored-by: Codex <codex@openai.com>
