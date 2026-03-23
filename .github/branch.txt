@@ -1,1 +1,1 @@
-dam-36-fix-psdk-release-js-publish
+main
