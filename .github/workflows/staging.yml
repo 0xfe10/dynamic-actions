@@ -36,12 +36,16 @@ jobs:
     strategy:
       matrix:
         app:
-          - package_name: spectra-cli
-            image_name: spectra
-            app_key: labelix_spectra
+          - cargo_package: spectra-cli
+            image_name: lris
             context: lris
-            dockerfile: cli/spectra/Dockerfile
-            extra_args: "--features=proxy-legacy"
+            dockerfile: Dockerfile
+            build_mode: rust
+            cargo_extra_args: "--features=proxy-legacy"
+          - image_name: camellia
+            context: bougainvillea
+            dockerfile: apps/camellia/Dockerfile
+            build_mode: docker
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -79,11 +83,12 @@ jobs:
           echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:staging" >> $GITHUB_OUTPUT
 
       - name: Build binary
+        if: matrix.app.build_mode == 'rust'
         uses: houseabsolute/actions-rust-cross@v0
         with:
           command: build
           target: x86_64-unknown-linux-musl
-          args: "--release --package ${{ matrix.app.package_name }} ${{ matrix.app.extra_args }}"
+          args: "--release --package ${{ matrix.app.cargo_package }} ${{ matrix.app.cargo_extra_args }}"
           working-directory: ${{ matrix.app.context }}
 
       - name: Build and push docker image
@@ -136,7 +141,5 @@ jobs:
           app_name: apps-staging-garden-hk0
           changes: |
             {
-              "argocd/apps/garden-hk0/overlays/staging/values.yaml": {
-                "app.labelix_spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-spectra:sha-${{ env.SHA }}"
-              }
+              "argocd/apps/garden-hk0/overlays/staging/values.yaml": { "app.labelix_spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}" }
             }

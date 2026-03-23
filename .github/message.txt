@@ -1,26 +1,17 @@
-feat: add camellia frontend-only scaffold baseline
+feat(ci): publish lris and camellia images
 
-## Summary
-- add a new `bougainvillea` pnpm workspace inside `labelix`
-- scaffold `apps/camellia` with React Router v7 framework mode and a standalone shell
-- add shared `packages/ui` and `packages/api-client` baselines for future woodii page migration
-- include a dashboard shell, login preview, and playground route covering query filters, table/list, form, dialog, empty state, and error state patterns
-- remove legacy `bougainvillea/core` and `bougainvillea/wiki` so `bougainvillea` stays frontend-only
+Summary:
+- add a dedicated Dockerfile for camellia and trim Docker contexts
+- replace the spectra image with a shared lris image and wrapper entrypoint
+- update staging and production dyn-workflows to publish lris and camellia
 
-## Scope Notes
-- follows `DAM-15` for `React Router v7 framework mode + shadcn/ui`
-- keeps the change focused on reusable frontend scaffolding and shared package boundaries
-- does not attempt auth persistence, backend integration, or unrelated migration work
+Rationale:
+- camellia needs first-class image publishing in the existing CI flow
+- spectra should ship from a shared lris image instead of its own image name
+- database migrations should no longer be embedded in the runtime image path
 
-## Testing
-- `cd bougainvillea && pnpm install`
-- `cd bougainvillea && pnpm run typecheck:camellia`
-- `cd bougainvillea && pnpm run build:camellia`
-- `cd bougainvillea && pnpm run dev:camellia`
-
-## Manual QA
-- run `cd bougainvillea && pnpm run dev:camellia`
-- open `http://localhost:3100/` and verify the shell dashboard loads
-- open `/playground` and verify query controls, table, form section, dialog, empty state, and error state render
-- open `/login` and verify the standalone login scaffold renders
-- confirm `bougainvillea/` only contains frontend workspace directories (`apps`, `packages`) and workspace config files
+Tests:
+- cd lris && cargo check --workspace
+- cd bougainvillea && pnpm install --frozen-lockfile && pnpm run check:camellia
+- docker build -f bougainvillea/apps/camellia/Dockerfile bougainvillea
+- docker build -f lris/Dockerfile lris (validated with a temporary placeholder binary because local musl cross-compilation was unavailable)
