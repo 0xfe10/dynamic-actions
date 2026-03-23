@@ -1,1 +1,1 @@
-fix(dart): relax analyzer rules on current main
+fix(ci): repair dart bootstrap and analyzer failures
