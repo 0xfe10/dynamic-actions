@@ -1,1 +1,1 @@
-main
+dam-34-fix-trusted-publish-and-dart-ci
