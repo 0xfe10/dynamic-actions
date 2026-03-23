@@ -17,7 +17,7 @@ jobs:
 
       - uses: actions/checkout@v6
       - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.19.0
+        uses: s4u/setup-maven-action@v1.14.0
         with:
           java-version: 17
           maven-version: 3.9.11
@@ -70,9 +70,6 @@ jobs:
   release-js:
     name: Release psdk-js
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -84,8 +81,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: '20'
+
+      - name: Setup npm token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Check psdk
         working-directory: js
@@ -96,9 +95,7 @@ jobs:
 
       - name: Publish npm
         working-directory: js
-        env:
-          NPM_CONFIG_ACCESS: public
-        run: npx lerna publish from-package --yes --no-verify-access
+        run: npx lerna publish from-package --yes
 
       # - uses: fewensa/actions/tepusher@main
       #   if: failure()
