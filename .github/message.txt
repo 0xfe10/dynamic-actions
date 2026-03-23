@@ -1,12 +1,14 @@
-DAM-9: refresh docs README guide
+fix(camellia): replace nested gitlink with source files
 
-## Summary
-- merge DAM-7 and DAM-8 documentation work into main before continuing
-- rewrite docs/README.md as a docs directory guide with structure, reading paths, planning rules, and writing templates
-- define future docs growth paths for spec initiatives and execution runbooks
+Summary:
+- remove the accidental nested git metadata copied from the scaffold sample
+- add the actual camellia source tree into the labelix repository index
 
-## Validation
-- find docs -maxdepth 3 -type f | sort
-- git diff -- docs/README.md
-- git diff --check
-- test -f docs/spec/endfather-migration/deltas/README.md && test -f docs/spec/endfather-migration/specs/migration-plan/spec.md
+Rationale:
+- keep the frontend scaffold as regular repository content instead of an
+  embedded git repository that would break clones and PR review
+
+Tests:
+- not rerun after index-only cleanup (source files unchanged)
+
+Co-authored-by: Codex <codex@openai.com>
