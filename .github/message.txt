@@ -1,19 +1,26 @@
-fix(bougainvillea): remove legacy non-frontend dirs
+feat: add camellia frontend-only scaffold baseline
 
-Summary:
-- remove the legacy `bougainvillea/core` and `bougainvillea/wiki`
-  trees so the workspace only contains the frontend monorepo
-- update the camellia dashboard copy to describe the narrowed
-  frontend-only scope
+## Summary
+- add a new `bougainvillea` pnpm workspace inside `labelix`
+- scaffold `apps/camellia` with React Router v7 framework mode and a standalone shell
+- add shared `packages/ui` and `packages/api-client` baselines for future woodii page migration
+- include a dashboard shell, login preview, and playground route covering query filters, table/list, form, dialog, empty state, and error state patterns
+- remove legacy `bougainvillea/core` and `bougainvillea/wiki` so `bougainvillea` stays frontend-only
 
-Rationale:
-- the latest DAM-15 issue comment explicitly requires bougainvillea
-  to stay frontend-only instead of carrying prior non-frontend paths
-- keeping the cleanup in the same branch preserves the existing
-  scaffold baseline while aligning the PR with current ticket intent
+## Scope Notes
+- follows `DAM-15` for `React Router v7 framework mode + shadcn/ui`
+- keeps the change focused on reusable frontend scaffolding and shared package boundaries
+- does not attempt auth persistence, backend integration, or unrelated migration work
 
-Tests:
+## Testing
 - `cd bougainvillea && pnpm install`
 - `cd bougainvillea && pnpm run typecheck:camellia`
 - `cd bougainvillea && pnpm run build:camellia`
 - `cd bougainvillea && pnpm run dev:camellia`
+
+## Manual QA
+- run `cd bougainvillea && pnpm run dev:camellia`
+- open `http://localhost:3100/` and verify the shell dashboard loads
+- open `/playground` and verify query controls, table, form section, dialog, empty state, and error state render
+- open `/login` and verify the standalone login scaffold renders
+- confirm `bougainvillea/` only contains frontend workspace directories (`apps`, `packages`) and workspace config files
