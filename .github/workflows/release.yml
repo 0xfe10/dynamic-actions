@@ -17,7 +17,7 @@ jobs:
 
       - uses: actions/checkout@v6
       - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.14.0
+        uses: s4u/setup-maven-action@v1.19.0
         with:
           java-version: 17
           maven-version: 3.9.11
@@ -82,9 +82,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Setup npm token
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Check psdk
         working-directory: js
@@ -95,7 +93,9 @@ jobs:
 
       - name: Publish npm
         working-directory: js
-        run: npx lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx lerna publish from-package --yes --no-verify-access --registry https://registry.npmjs.org
 
       # - uses: fewensa/actions/tepusher@main
       #   if: failure()

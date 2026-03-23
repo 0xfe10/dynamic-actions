@@ -1,1 +1,1 @@
-ble_native
+dam-34-fix-psdk-dynamic-ci
