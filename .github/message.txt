@@ -1,17 +1,21 @@
 feat(ci): publish lris and camellia images
 
 Summary:
-- add a dedicated Dockerfile for camellia and trim Docker contexts
-- replace the spectra image with a shared lris image and wrapper entrypoint
-- update staging and production dyn-workflows to publish lris and camellia
+- add a new lris wrapper binary and shared lris runtime image
+- add a standalone camellia Dockerfile and frontend image jobs
+- split dyn-workflows into rust artifact, lris image, and camellia image jobs
 
 Rationale:
-- camellia needs first-class image publishing in the existing CI flow
-- spectra should ship from a shared lris image instead of its own image name
-- database migrations should no longer be embedded in the runtime image path
+- DAM-39 rework replaces the spectra-only image with a shared lris image
+  and removes migration startup behavior from the runtime image path
+- camellia needs its own image path instead of being coupled to the Rust
+  build flow, while spectra deploy references stay on the new lris image
 
 Tests:
 - cd lris && cargo check --workspace
-- cd bougainvillea && pnpm install --frozen-lockfile && pnpm run check:camellia
+- cd bougainvillea && pnpm install --frozen-lockfile
+- cd bougainvillea && pnpm run check:camellia
 - docker build -f bougainvillea/apps/camellia/Dockerfile bougainvillea
-- docker build -f lris/Dockerfile lris (validated with a temporary placeholder binary because local musl cross-compilation was unavailable)
+- cd lris && docker build -f Dockerfile . (validated with temporary
+  placeholder binaries because local disk pressure prevented a full local
+  release artifact build; CI still builds real musl binaries)

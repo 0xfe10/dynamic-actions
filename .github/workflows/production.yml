@@ -10,22 +10,125 @@ env:
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
 
 jobs:
-  build-apps:
-    name: Build
+  build-rust-binaries:
+    name: Build Rust binaries
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        app:
-          - cargo_package: spectra-cli
-            image_name: lris
-            context: lris
-            dockerfile: Dockerfile
-            build_mode: rust
-            cargo_extra_args: "--features=proxy-legacy"
-          - image_name: camellia
-            context: bougainvillea
-            dockerfile: apps/camellia/Dockerfile
-            build_mode: docker
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/labelix
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Build lris binary
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: build
+          target: x86_64-unknown-linux-musl
+          args: "--release --package lris"
+          working-directory: lris
+
+      - name: Build spectra binary
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: build
+          target: x86_64-unknown-linux-musl
+          args: "--release --package spectra-cli --features=proxy-legacy"
+          working-directory: lris
+
+      - name: Collect binaries
+        working-directory: lris
+        run: |
+          mkdir -p dist/bin
+          cp target/x86_64-unknown-linux-musl/release/lris dist/bin/lris
+          cp target/x86_64-unknown-linux-musl/release/spectra-cli dist/bin/spectra-cli
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: lris-binaries-x86_64-unknown-linux-musl
+          path: |
+            lris/dist/bin/lris
+            lris/dist/bin/spectra-cli
+          if-no-files-found: error
+
+  build-lris-image:
+    name: Build lris image
+    runs-on: ubuntu-latest
+    needs:
+      - build-rust-binaries
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/labelix
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Download binaries
+        uses: actions/download-artifact@v4
+        with:
+          name: lris-binaries-x86_64-unknown-linux-musl
+          path: lris/dist/bin
+
+      - name: Ensure binary permissions
+        run: chmod +x lris/dist/bin/lris lris/dist/bin/spectra-cli
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - name: Docker login (Aliyun)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-lris:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-lris:latest" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:latest" >> $GITHUB_OUTPUT
+
+      - name: Build and push docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: lris
+          file: lris/Dockerfile
+          tags: |
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_latest }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
+            docker push ${{ steps.tags.outputs.ali_sha }}
+            docker push ${{ steps.tags.outputs.ali_latest }}
+
+  build-camellia-image:
+    name: Build camellia image
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -57,26 +160,17 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-${{ matrix.app.image_name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-${{ matrix.app.image_name }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-${{ matrix.app.image_name }}:latest" >> $GITHUB_OUTPUT
-
-      - name: Build binary
-        if: matrix.app.build_mode == 'rust'
-        uses: houseabsolute/actions-rust-cross@v0
-        with:
-          command: build
-          target: x86_64-unknown-linux-musl
-          args: "--release --package ${{ matrix.app.cargo_package }} ${{ matrix.app.cargo_extra_args }}"
-          working-directory: ${{ matrix.app.context }}
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-camellia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-camellia:latest" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:latest" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ${{ matrix.app.context }}
-          file: ${{ matrix.app.context }}/${{ matrix.app.dockerfile }}
+          context: bougainvillea
+          file: bougainvillea/apps/camellia/Dockerfile
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
@@ -97,7 +191,8 @@ jobs:
     name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
-      - build-apps
+      - build-lris-image
+      - build-camellia-image
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
