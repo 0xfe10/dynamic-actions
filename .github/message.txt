@@ -1,11 +1,18 @@
-fix: repair psdk dynamic npm auth and dart CI
+fix(ci): align psdk release-js with Node 20
 
-## Summary
-- switch the dynamic js release workflow from expired `NPM_TOKEN` auth to npm trusted-publishing compatible GitHub OIDC setup
-- update the dynamic java release workflow to the current Maven setup action and fix dart bootstrap access to private GitHub deps
-- relax the current-main dart analyzer rules that are failing after bootstrap succeeds
+Summary:
+- switch the tagged release-js workflow from Node 24 to Node 20
+- keep the release path aligned with the existing passing check-js runtime
 
-## Validation
-- `git diff --check`
-- `ruby -e 'require "yaml"; files=%w[.github/dyn-workflows/check.yml .github/dyn-workflows/release.yml dart/algorithms/dithering/analysis_options.yaml dart/algorithms/imageb/analysis_options.yaml dart/devices/bluetooth_ble/analysis_options.yaml dart/devices/bluetooth_classic/analysis_options.yaml dart/devices/network/analysis_options.yaml dart/packages/device_adapter/analysis_options.yaml dart/packages/frame_father/analysis_options.yaml]; files.each { |f| YAML.load_file(f) }'`
-- inspected failing dynamic-actions runs `23426262144`, `23427253823`, and `23427899921`
+Rationale:
+- Node 24 pulls a canvas ABI without a prebuilt binary and falls back to a
+  system-library compile that fails in the GitHub runner environment
+- the same psdk JS install succeeds on Node 20 and the branch check workflow
+  already uses that runtime successfully
+
+Tests:
+- gh run view 23442287243 --repo 0xfe10/dynamic-actions --job 68196289355 --log
+- docker run --rm -v /code/symphony/0xfe10/workspaces/DAM-36/psdk:/src -w /tmp node:24-bookworm bash -lc 'cp -a /src /tmp/psdk && cd /tmp/psdk/js && corepack enable && yarn install'
+- docker run --rm -v /code/symphony/0xfe10/workspaces/DAM-36/psdk:/src -w /tmp node:20-bookworm bash -lc 'cp -a /src /tmp/psdk && cd /tmp/psdk/js && corepack enable && yarn install'
+- git -C /code/symphony/0xfe10/workspaces/DAM-36/psdk diff --check
+- ruby -e 'require "yaml"; release = YAML.load_file("/code/symphony/0xfe10/workspaces/DAM-36/psdk/.github/dyn-workflows/release.yml"); check = YAML.load_file("/code/symphony/0xfe10/workspaces/DAM-36/psdk/.github/dyn-workflows/check.yml"); abort unless release["jobs"]["release-js"]["steps"][2]["with"]["node-version"] == check["jobs"]["check-js"]["steps"][2]["with"]["node-version"]'
