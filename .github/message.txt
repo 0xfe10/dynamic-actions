@@ -1,14 +1,19 @@
-fix(camellia): replace nested gitlink with source files
+fix(bougainvillea): remove legacy non-frontend dirs
 
 Summary:
-- remove the accidental nested git metadata copied from the scaffold sample
-- add the actual camellia source tree into the labelix repository index
+- remove the legacy `bougainvillea/core` and `bougainvillea/wiki`
+  trees so the workspace only contains the frontend monorepo
+- update the camellia dashboard copy to describe the narrowed
+  frontend-only scope
 
 Rationale:
-- keep the frontend scaffold as regular repository content instead of an
-  embedded git repository that would break clones and PR review
+- the latest DAM-15 issue comment explicitly requires bougainvillea
+  to stay frontend-only instead of carrying prior non-frontend paths
+- keeping the cleanup in the same branch preserves the existing
+  scaffold baseline while aligning the PR with current ticket intent
 
 Tests:
-- not rerun after index-only cleanup (source files unchanged)
-
-Co-authored-by: Codex <codex@openai.com>
+- `cd bougainvillea && pnpm install`
+- `cd bougainvillea && pnpm run typecheck:camellia`
+- `cd bougainvillea && pnpm run build:camellia`
+- `cd bougainvillea && pnpm run dev:camellia`
