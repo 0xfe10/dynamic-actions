@@ -1,1 +1,1 @@
-Set npm provenance config before lerna publish in release workflow
+Inject repository metadata into package.json before npm publish

@@ -93,15 +93,44 @@ jobs:
           yarn build:all
           yarn package:all
 
+      - name: Inject repository metadata for npm publish
+        working-directory: js
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+          const path = require("path");
+
+          const repo = {
+            type: "git",
+            url: "https://github.com/0xfe10/dynamic-actions",
+          };
+
+          const roots = ["device", "frame", "fruits", "compatible"];
+
+          for (const root of roots) {
+            const rootPath = path.join(process.cwd(), root);
+            if (!fs.existsSync(rootPath)) continue;
+
+            for (const entry of fs.readdirSync(rootPath, { withFileTypes: true })) {
+              if (!entry.isDirectory()) continue;
+
+              const packageJsonPath = path.join(rootPath, entry.name, "package.json");
+              if (!fs.existsSync(packageJsonPath)) continue;
+
+              const data = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+              if (!data.publishConfig || data.private) continue;
+
+              data.repository = repo;
+              fs.writeFileSync(packageJsonPath, `${JSON.stringify(data, null, 2)}\n`);
+            }
+          }
+          EOF
+
       - name: Publish npm
         working-directory: js
         env:
           NPM_CONFIG_ACCESS: public
-          NPM_CONFIG_PROVENANCE: "false"
-        run: |
-          npm config set provenance false --location=project
-          npm config get provenance
-          npx lerna publish from-package --yes --no-verify-access
+        run: npx lerna publish from-package --yes --no-verify-access
 
       # - uses: fewensa/actions/tepusher@main
       #   if: failure()
