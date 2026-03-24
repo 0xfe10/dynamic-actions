@@ -14,12 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.19.0
+      - name: Setup Java
+        uses: actions/setup-java@v5
         with:
+          distribution: zulu
           java-version: 17
+          cache: maven
+          cache-dependency-path: |
+            java/**/pom.xml
+          overwrite-settings: false
+      - name: Setup Maven
+        uses: stCarolas/setup-maven@v5.1
+        with:
           maven-version: 3.9.11
-          checkout-enabled: false
+      - name: Setup Maven settings
+        uses: s4u/maven-settings-action@v4.0.0
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -78,7 +87,7 @@ jobs:
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "20.19.0"
           registry-url: "https://registry.npmjs.org"

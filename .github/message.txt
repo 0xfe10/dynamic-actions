@@ -1,4 +1,19 @@
-Bump version to 0.7.14 and update dependencies
+fix(ci): replace deprecated dynamic workflow actions
 
-Also update publishConfig for device-webusb and refine release workflow
-to skip private packages.
+Summary:
+- upgrade dynamic JS workflows from actions/setup-node@v4 to v5
+- replace actions-rs/toolchain with a maintained Rust toolchain action
+- split the Java Maven setup into Node 24 compatible Java, Maven, and
+  Maven settings actions
+
+Rationale:
+- remove the Node 20 actions runtime warnings seen in downstream
+  dynamic-actions runs
+- eliminate the deprecated set-output warnings emitted by the Rust
+  toolchain action
+- keep the workflow behavior aligned with the existing Java, JS, and
+  release jobs while changing only the deprecated action wiring
+
+Tests:
+- git diff --check
+- ruby -e 'require "yaml"; [".github/dyn-workflows/check.yml", ".github/dyn-workflows/release.yml"].each { |f| YAML.load_file(f) }'
