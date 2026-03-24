@@ -129,7 +129,9 @@ jobs:
       #     node-version: "20"
 
       - name: Install deps
-        run: apt-get install -y expect jq
+        run: |
+          apt-get update -y
+          apt-get install -y expect jq
 
       - name: Setup ohpm
         run: |

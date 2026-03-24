@@ -1,1 +1,1 @@
-Update Node.js version and container image in release workflow
+Update release workflow to run apt-get update before install
