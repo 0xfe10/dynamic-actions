@@ -1,4 +1,4 @@
-name: '[psdk] Release'
+name: "[psdk] Release"
 
 on:
   push:
@@ -9,12 +9,10 @@ on:
   #     - '**'
 
 jobs:
-
   release-java:
     name: Release psdk-java
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v6
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.19.0
@@ -26,9 +24,8 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
-
 
       - name: Setup maven authorization
         run: |
@@ -66,7 +63,6 @@ jobs:
       #       project: psdk
       #       language: java
 
-
   release-js:
     name: Release psdk-js
     runs-on: ubuntu-latest
@@ -79,18 +75,16 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v4
         with:
-          node-version: '25'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
 
-      - name: Install canvas build deps
-        run: |
-          apt-get update
-          apt-get install -y pkg-config libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libpixman-1-dev
+      - name: Upgrade npm for trusted publishing
+        run: npm install --global npm@^11.5.1
 
       - name: Check psdk
         working-directory: js
@@ -126,7 +120,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Install deps
@@ -159,7 +153,6 @@ jobs:
       #       project: psdk
       #       language: ohpm
 
-
   release-dart:
     name: Release psdk-dart
     runs-on: ubuntu-latest
@@ -169,7 +162,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Setup Flutter SDK
@@ -217,7 +210,6 @@ jobs:
       #     vars: |
       #       project: psdk
       #       language: dart
-
 
   build-clang:
     name: Build psdk-clang
@@ -273,7 +265,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - name: Build ${{ matrix.package.path }}
@@ -306,7 +298,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
@@ -337,7 +329,6 @@ jobs:
         with:
           entrypoint: /bin/bash
           args: -f scripts/release-clang.sh
-
 
   clean-artifacts:
     name: Clean artifacts
