@@ -1,17 +1,23 @@
-fix(ci): simplify psdk js release runtime
+fix: repair psdk js trusted publishing (#22)
 
-Summary:
-- switch the JS release workflow to setup-node v6 with Node 25
-- remove the separate npm CLI upgrade step from release-js
+## Summary
+- move `release-js` onto a trusted-publishing-compatible toolchain by using `actions/setup-node@v6` with Node `25` and `lerna@^9.0.1`
+- keep the native `canvas` build dependencies needed by the JS workspace on the release runner
+- bump all JS workspace package versions and internal `@psdk/*` references from `0.7.12` to `0.7.13`
+- remove the separate npm CLI upgrade step because Node 25 already provides npm `11.x`
 
-Rationale:
-- Node 25 already provides npm 11.x, so the extra upgrade is redundant
-- local Node 25 validation passed publish dry-run and package build checks
+## Why
+- DAM-40 requires fixing the real `E404 Not found` cause without adding `LICENSE` metadata or reverting to `NODE_AUTH_TOKEN`
+- the failing run was still using an older JS publish toolchain that did not align with trusted publishing, so the publish step never authenticated correctly through the configured trusted publisher path
+- the latest issue feedback asked for a simpler runtime setup; Node 25 satisfies that request while still passing local publish and build/package validation
+- `canvas` still needs system libraries on the runner, otherwise dependency installation can fail before publish
 
-Tests:
-- node release workflow audit script
-- cd js && npm_config_dry_run=true npx lerna@9.0.1 publish from-package --yes --no-verify-access
-- cd js && npx -y yarn@1 install --ignore-scripts --non-interactive
-- cd js && npx -y yarn@1 build:all
-- cd js && npx -y yarn@1 package:all
-- git diff --check
+## Validation
+- `gh run view 23445488271 --repo 0xfe10/dynamic-actions --job 68207913918 --log | rg -n "ENOLICENSE|Package failed to publish|E404" -C 3`
+- `cd js && node <<'NODE' ... version/internal dependency audit for 0.7.13 ... NODE`
+- `node .github/dyn-workflows/release.yml audit` equivalent via inline script: confirm `setup-node@v6`, `node-version: '25'`, no `Update npm CLI`, no `NODE_AUTH_TOKEN`, registry URL preserved, and canvas deps still present
+- `cd js && npm_config_dry_run=true npx lerna@9.0.1 publish from-package --yes --no-verify-access`
+- `cd js && npx -y yarn@1 install --ignore-scripts --non-interactive`
+- `cd js && npx -y yarn@1 build:all`
+- `cd js && npx -y yarn@1 package:all`
+- `git diff --check`
