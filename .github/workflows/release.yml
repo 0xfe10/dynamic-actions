@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/psdk
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
@@ -29,12 +35,6 @@ jobs:
           maven-version: 3.9.11
       - name: Setup Maven settings
         uses: s4u/maven-settings-action@v4.0.0
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Setup maven authorization
         run: |
