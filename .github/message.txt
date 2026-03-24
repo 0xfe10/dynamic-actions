@@ -1,1 +1,1 @@
-fix(js): restore publish auth and license metadata
+fix(ci): repair psdk js trusted publishing

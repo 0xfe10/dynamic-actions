@@ -84,8 +84,16 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22.14.0'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Update npm CLI
+        run: npm install --global npm@11.5.1
+
+      - name: Install canvas build deps
+        run: |
+          apt-get update
+          apt-get install -y pkg-config libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libpixman-1-dev
 
       - name: Check psdk
         working-directory: js
@@ -97,7 +105,6 @@ jobs:
       - name: Publish npm
         working-directory: js
         env:
-          NODE_AUTH_TOKEN: '${{ secrets.NPM_TOKEN }}'
           NPM_CONFIG_ACCESS: public
         run: npx lerna publish from-package --yes --no-verify-access
 
