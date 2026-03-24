@@ -1,13 +1,1 @@
-fix(ci): align psdk release-js with Node 20 (#20)
-
-## Summary
-- switch `psdk` tagged `release-js` from Node 24 to Node 20
-- keep the release runtime aligned with the already passing `check-js` path
-- fix the `canvas` install failure seen in the linked DAM-36 release run
-
-## Validation
-- `gh run view 23442287243 --repo 0xfe10/dynamic-actions --job 68196289355 --log`
-- `docker run --rm -v /code/symphony/0xfe10/workspaces/DAM-36/psdk:/src -w /tmp node:24-bookworm bash -lc 'cp -a /src /tmp/psdk && cd /tmp/psdk/js && corepack enable && yarn install'`
-- `docker run --rm -v /code/symphony/0xfe10/workspaces/DAM-36/psdk:/src -w /tmp node:20-bookworm bash -lc 'cp -a /src /tmp/psdk && cd /tmp/psdk/js && corepack enable && yarn install'`
-- `git -C /code/symphony/0xfe10/workspaces/DAM-36/psdk diff --check`
-- `ruby -e 'require "yaml"; release = YAML.load_file("/code/symphony/0xfe10/workspaces/DAM-36/psdk/.github/dyn-workflows/release.yml"); check = YAML.load_file("/code/symphony/0xfe10/workspaces/DAM-36/psdk/.github/dyn-workflows/check.yml"); abort unless release["jobs"]["release-js"]["steps"][2]["with"]["node-version"] == check["jobs"]["check-js"]["steps"][2]["with"]["node-version"]'`
+fix(js): restore publish auth and license metadata

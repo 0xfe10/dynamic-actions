@@ -97,6 +97,7 @@ jobs:
       - name: Publish npm
         working-directory: js
         env:
+          NODE_AUTH_TOKEN: '${{ secrets.NPM_TOKEN }}'
           NPM_CONFIG_ACCESS: public
         run: npx lerna publish from-package --yes --no-verify-access
 
