@@ -126,11 +126,18 @@ jobs:
           }
           EOF
 
+      - name: Commit temporary publish metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/device/*/package.json js/frame/*/package.json js/fruits/*/package.json js/compatible/*/package.json
+          git commit -m "ci(psdk): inject npm publish metadata"
+
       - name: Publish npm
         working-directory: js
         env:
           NPM_CONFIG_ACCESS: public
-        run: npx lerna publish from-package --yes --no-verify-access
+        run: npx lerna publish from-package --yes
 
       # - uses: fewensa/actions/tepusher@main
       #   if: failure()
