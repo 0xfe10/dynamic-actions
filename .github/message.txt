@@ -1,7 +1,1 @@
-chore(maprintrace): upgrade deps and fix build
-
-- next 15 -> 16, eslint 9 -> 10, tailwindcss 3 -> 4, @types/node 20 -> 25
-- fix: configure turbopack less-loader rule for @antv/l7 .less imports
-- fix: migrate tailwindcss v4 (postcss plugin, @import directive)
-- fix: remove --no-lint flag removed in next 16
-- add: less, less-loader, @tailwindcss/postcss devDependencies
+Merge remote-tracking branch 'origin/main'
