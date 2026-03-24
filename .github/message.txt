@@ -1,16 +1,17 @@
-fix(ci): checkout psdk before Java cache setup
+fix(ci): force JavaScript actions onto Node 24
 
 Summary:
-- move the dynamic repository checkout ahead of Java setup in check and
-  release workflows
-- preserve the Node 24 compatible Java and Maven action replacements
+- enable FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 in trigger and dynamic
+  workflows
+- keep the updated action replacements intact while forcing remaining
+  nested JavaScript actions onto the supported runtime
 
 Rationale:
-- allow actions/setup-java cache discovery to see the target repository
-  pom files
-- remove the new validation regression found in the first downstream run
-  without expanding the workflow scope further
+- remove the Node 20 deprecation warnings still emitted by the dyn-actions
+  trigger step and any remaining nested JavaScript actions
+- align the psdk workflows with GitHub's recommended migration path
+  while validating compatibility on the current branch
 
 Tests:
 - git diff --check
-- ruby -e 'require "yaml"; [".github/dyn-workflows/check.yml", ".github/dyn-workflows/release.yml"].each { |f| YAML.load_file(f) }'
+- ruby -e 'require "yaml"; %w[.github/workflows/trigger-branch.yml .github/workflows/trigger-tag.yml .github/dyn-workflows/check.yml .github/dyn-workflows/release.yml].each { |f| YAML.load_file(f) }'
