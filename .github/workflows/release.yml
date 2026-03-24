@@ -84,11 +84,8 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '22.14.0'
+          node-version: '25'
           registry-url: 'https://registry.npmjs.org'
-
-      - name: Update npm CLI
-        run: npm install --global npm@11.5.1
 
       - name: Install canvas build deps
         run: |

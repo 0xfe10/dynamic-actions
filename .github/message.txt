@@ -1,1 +1,17 @@
-fix(ci): repair psdk js trusted publishing
+fix(ci): simplify psdk js release runtime
+
+Summary:
+- switch the JS release workflow to setup-node v6 with Node 25
+- remove the separate npm CLI upgrade step from release-js
+
+Rationale:
+- Node 25 already provides npm 11.x, so the extra upgrade is redundant
+- local Node 25 validation passed publish dry-run and package build checks
+
+Tests:
+- node release workflow audit script
+- cd js && npm_config_dry_run=true npx lerna@9.0.1 publish from-package --yes --no-verify-access
+- cd js && npx -y yarn@1 install --ignore-scripts --non-interactive
+- cd js && npx -y yarn@1 build:all
+- cd js && npx -y yarn@1 package:all
+- git diff --check
