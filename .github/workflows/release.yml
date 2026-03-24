@@ -1,4 +1,4 @@
-name: "[psdk] Release"
+name: '[psdk] Release'
 
 on:
   push:
@@ -8,36 +8,27 @@ on:
   #   branches:
   #     - '**'
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
+
   release-java:
     name: Release psdk-java
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v6
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.14.0
+        with:
+          java-version: 17
+          maven-version: 3.9.11
+          checkout-enabled: false
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
-      - name: Setup Java
-        uses: actions/setup-java@v5
-        with:
-          distribution: zulu
-          java-version: 17
-          cache: maven
-          cache-dependency-path: |
-            java/**/pom.xml
-          overwrite-settings: false
-      - name: Setup Maven
-        uses: stCarolas/setup-maven@v5.1
-        with:
-          maven-version: 3.9.11
-      - name: Setup Maven settings
-        uses: s4u/maven-settings-action@v4.0.0
+
 
       - name: Setup maven authorization
         run: |
@@ -75,28 +66,25 @@ jobs:
       #       project: psdk
       #       language: java
 
+
   release-js:
     name: Release psdk-js
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20.19.0"
-          registry-url: "https://registry.npmjs.org"
+          node-version: '20'
 
-      - name: Upgrade npm for trusted publishing
-        run: npm install --global npm@^11.5.1
+      - name: Setup npm token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Check psdk
         working-directory: js
@@ -105,50 +93,8 @@ jobs:
           yarn build:all
           yarn package:all
 
-      - name: Inject repository metadata for npm publish
-        working-directory: js
-        run: |
-          node <<'EOF'
-          const fs = require("fs");
-          const path = require("path");
-
-          const repo = {
-            type: "git",
-            url: "https://github.com/0xfe10/dynamic-actions",
-          };
-
-          const roots = ["device", "frame", "fruits", "compatible"];
-
-          for (const root of roots) {
-            const rootPath = path.join(process.cwd(), root);
-            if (!fs.existsSync(rootPath)) continue;
-
-            for (const entry of fs.readdirSync(rootPath, { withFileTypes: true })) {
-              if (!entry.isDirectory()) continue;
-
-              const packageJsonPath = path.join(rootPath, entry.name, "package.json");
-              if (!fs.existsSync(packageJsonPath)) continue;
-
-              const data = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-              if (data.private) continue;
-
-              data.repository = repo;
-              fs.writeFileSync(packageJsonPath, `${JSON.stringify(data, null, 2)}\n`);
-            }
-          }
-          EOF
-
-      - name: Commit temporary publish metadata
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add js/device/*/package.json js/frame/*/package.json js/fruits/*/package.json js/compatible/*/package.json
-          git commit -m "ci(psdk): inject npm publish metadata"
-
       - name: Publish npm
         working-directory: js
-        env:
-          NPM_CONFIG_ACCESS: public
         run: npx lerna publish from-package --yes
 
       # - uses: fewensa/actions/tepusher@main
@@ -165,24 +111,18 @@ jobs:
     name: Release psdk-ohpm
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/repotea-workspace/kangumi/harmonytools:sha-5e851a7
+      image: ghcr.io/fewensa/docker-image/harmonytools:sha-a57fe85
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: "20"
-
       - name: Install deps
-        run: |
-          apt-get update -y
-          apt-get install -y expect jq
+        run: apt-get install -y expect jq
 
       - name: Setup ohpm
         run: |
@@ -211,6 +151,7 @@ jobs:
       #       project: psdk
       #       language: ohpm
 
+
   release-dart:
     name: Release psdk-dart
     runs-on: ubuntu-latest
@@ -220,7 +161,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - name: Setup Flutter SDK
@@ -268,6 +209,7 @@ jobs:
       #     vars: |
       #       project: psdk
       #       language: dart
+
 
   build-clang:
     name: Build psdk-clang
@@ -323,7 +265,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - name: Build ${{ matrix.package.path }}
@@ -356,7 +298,7 @@ jobs:
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
@@ -387,6 +329,7 @@ jobs:
         with:
           entrypoint: /bin/bash
           args: -f scripts/release-clang.sh
+
 
   clean-artifacts:
     name: Clean artifacts

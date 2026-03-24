@@ -1,17 +1,1 @@
-fix(ci): force JavaScript actions onto Node 24
-
-Summary:
-- enable FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 in trigger and dynamic
-  workflows
-- keep the updated action replacements intact while forcing remaining
-  nested JavaScript actions onto the supported runtime
-
-Rationale:
-- remove the Node 20 deprecation warnings still emitted by the dyn-actions
-  trigger step and any remaining nested JavaScript actions
-- align the psdk workflows with GitHub's recommended migration path
-  while validating compatibility on the current branch
-
-Tests:
-- git diff --check
-- ruby -e 'require "yaml"; %w[.github/workflows/trigger-branch.yml .github/workflows/trigger-tag.yml .github/dyn-workflows/check.yml .github/dyn-workflows/release.yml].each { |f| YAML.load_file(f) }'
+修正mac地址取值
