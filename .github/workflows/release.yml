@@ -118,7 +118,7 @@ jobs:
               if (!fs.existsSync(packageJsonPath)) continue;
 
               const data = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-              if (!data.publishConfig || data.private) continue;
+              if (data.private) continue;
 
               data.repository = repo;
               fs.writeFileSync(packageJsonPath, `${JSON.stringify(data, null, 2)}\n`);

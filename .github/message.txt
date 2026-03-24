@@ -1,4 +1,4 @@
-Commit temporary npm publish metadata before publish
+Bump version to 0.7.14 and update dependencies
 
-Remove --no-verify-access from lerna publish command to enable access
-verification during npm publish.
+Also update publishConfig for device-webusb and refine release workflow
+to skip private packages.
