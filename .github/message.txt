@@ -1,1 +1,1 @@
-Use Node.js 20 in release workflow
+Use Node.js 20 in release workflow (#24)
