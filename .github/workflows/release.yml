@@ -98,7 +98,10 @@ jobs:
         env:
           NPM_CONFIG_ACCESS: public
           NPM_CONFIG_PROVENANCE: "false"
-        run: npx lerna publish from-package --yes --no-verify-access
+        run: |
+          npm config set provenance false --location=project
+          npm config get provenance
+          npx lerna publish from-package --yes --no-verify-access
 
       # - uses: fewensa/actions/tepusher@main
       #   if: failure()

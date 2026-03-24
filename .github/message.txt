@@ -1,1 +1,1 @@
-Update release workflow to run apt-get update before install
+Set npm provenance config before lerna publish in release workflow
