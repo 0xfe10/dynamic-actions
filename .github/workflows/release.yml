@@ -80,7 +80,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "20.19.0"
           registry-url: "https://registry.npmjs.org"
 
       - name: Upgrade npm for trusted publishing
@@ -97,6 +97,7 @@ jobs:
         working-directory: js
         env:
           NPM_CONFIG_ACCESS: public
+          NPM_CONFIG_PROVENANCE: "false"
         run: npx lerna publish from-package --yes --no-verify-access
 
       # - uses: fewensa/actions/tepusher@main
@@ -113,7 +114,7 @@ jobs:
     name: Release psdk-ohpm
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/fewensa/docker-image/harmonytools:sha-a57fe85
+      image: ghcr.io/repotea-workspace/kangumi/harmonytools:sha-5e851a7
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -122,6 +123,10 @@ jobs:
           repository: prtmax/psdk
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
+
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: "20"
 
       - name: Install deps
         run: apt-get install -y expect jq

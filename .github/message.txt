@@ -1,1 +1,1 @@
-Use Node.js 20 in release workflow (#24)
+Update Node.js version and container image in release workflow
