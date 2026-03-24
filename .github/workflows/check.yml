@@ -113,11 +113,6 @@ jobs:
         with:
           channel: stable
 
-      - name: Setup git credential
-        run: |
-          git config --global credential.helper store
-          echo 'https://${{ secrets.GITLAB_TOKEN }}@gitlab.com' > ~/.git-credentials
-
       - name: Setup melos
         run: dart pub global activate melos
 
@@ -210,4 +205,3 @@ jobs:
 #          vars: |
 #            project: psdk
 #            language: swift
-
