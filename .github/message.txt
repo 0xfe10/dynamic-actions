@@ -1,6 +1,4 @@
-Merge remote-tracking branch 'origin/main' into dam-25-camellia-template-spec-pages
+Merge remote-tracking branch 'origin/main' into dam-27-camellia-ota-device-pages
 
 # Conflicts:
-#	bougainvillea/apps/camellia/app/lib/navigation.ts
 #	bougainvillea/apps/camellia/app/routes.ts
-#	bougainvillea/apps/camellia/app/routes/console/layout.tsx
