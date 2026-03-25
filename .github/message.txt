@@ -1,14 +1,21 @@
-chore(camellia): merge origin/main into DAM-22 branch
+feat(camellia): migrate user domain pages
 
 Summary:
-- merge the latest origin/main into the DAM-22 migration branch
-- reconcile session, navigation, login, and route shell changes
-  between the system baseline and content-ops migration
+- wire the camellia API client to the legacy woodii token and endpoint
+  conventions
+- add shared user-domain request helpers and list/form/dialog building blocks
+- migrate user manage, user logoff, and user anomalous routes into the
+  console shell and navigation
 
 Rationale:
-- keep PR #39 mergeable after DAM-21 landed on main
-- preserve both permission-aware console foundation work and
-  DAM-22 content-operation routes in one branch
+- keep the migrated pages compatible with the existing woodii auth and
+  backend contract while auth-guard work is still separate
+- reuse one page pattern for list, detail, edit, and status flows so later
+  admin migrations stay consistent
 
 Tests:
+- pnpm install
 - pnpm run check:camellia
+- curl -I http://127.0.0.1:3000/user/manage
+- curl -I http://127.0.0.1:3000/user/logoff
+- curl -I http://127.0.0.1:3000/user/anomalous
