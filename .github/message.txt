@@ -1,16 +1,24 @@
-Migrate camellia statistics pages (#498)
+feat(labelexpert): migrate camellia scene pages
 
-## Summary
-- migrate `statistics/summary-printer` and `statistics/version-analysis` into the new Woodii admin shell
-- add dashboard-aligned hero/summary cards, app-aware query handling, and loading/empty states for both statistics pages
-- add unified `b_node` data for the new frontend routes and analysis `/api/v1/chart/*` backend permissions
+Summary:
+- add a concrete mscene leaf view so dynamic menu routing resolves the
+  labelexpert module pages instead of the placeholder view
+- remove hard-coded app and route assumptions from labelexpert device,
+  scene, and mscene pages so list/detail/manage flows follow the active
+  module context
+- widen shared tree-view typing and related universal API types to match
+  the data shapes used by the migrated mscene and scene pages
 
-## Testing
-- `cd woodii && npm exec --package=yarn@1.22.22 -- yarn run eslint src/views/statistics/summary-printer.vue src/views/statistics/version-analysis.vue -c .eslintrc.js --ext .vue`
-- `cd woodii && npm exec --package=yarn@1.22.22 -- yarn build:stg`
-- `cd woodii && npm exec --package=yarn@1.22.22 -- yarn typecheck` (fails on pre-existing repo-wide TypeScript issues outside DAM-31; filtering the output no longer shows any `src/views/statistics/*` errors after this change)
+Rationale:
+- the DAM-29 migration target required device, scene, and mscene to be
+  reachable under the new backend with the shared camellia list and form
+  flow
+- mscene was still pinned to metaprint and a fixed route path, which broke
+  module-level reuse and permission-driven navigation
+- the migrated pages surfaced existing type gaps around string node ids and
+  vendor typings that needed to be aligned for local validation
 
-## Manual QA
-- login to the camellia console with a role that can access statistics pages
-- open `统计 / 打印机汇总`, switch app, search by SN/model/name, and verify the table/pagination render in the new shell
-- open `统计 / 版本分析`, switch app/platform/version, and verify the list/pagination render in the new shell
+Tests:
+- cd woodii && (npm run typecheck || true) | rg "src/views/app/labelexpert/(scene|device|mscene)|src/api/universal/(scene|mscene|mscene-item)|src/components/tree-view|src/types/vendor"
+- cd woodii && npm run build:dev
+- cd woodii && npm run build:stg
