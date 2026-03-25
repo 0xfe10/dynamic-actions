@@ -1,14 +1,17 @@
-feat: migrate boogie module admin pages (#497)
+feat(woodii): expose camellia platform config pages (#496)
 
 ## Summary
-- migrate boogie `source`, `template`, and `server` pages to a consistent list-and-editor admin interaction
-- keep existing boogie routes, menu integration, and request-layer usage intact
-- preserve template source binding and element editing inside the new layout
+- add `woodii` frontend menu seed records for the missing camellia platform config pages under `universal`
+- add `limit` and `sms` menu groups so their child pages are reachable in the main frame
+- update the existing `version` node to resolve `version/index.vue` instead of a placeholder route
 
-## Testing
-- [x] `npx -y yarn@1.22.22 build:dev`
-- [ ] `npx -y yarn@1.22.22 typecheck`
-  - fails on pre-existing repo-wide TypeScript issues outside this change; filtered output shows no remaining errors in `src/views/app/boogie/*` or `src/api/boogie/source.ts`
+## Why
+The target Vue pages and API clients already exist in `woodii`, but several pages were not reachable through the dynamic menu tree because `b_node` frontend seed data was incomplete.
 
-## Linear
-- DAM-30
+## Validation
+- `python` inline check for target `woodii/src/views/app/universal/*` files
+- `python` inline check for `V00000198__add_frontend_nodes_for_platform_config.sql` content
+- `python` inline route-map check for expected dynamic view targets
+
+## Risks
+- this change only updates menu seed data; runtime visibility still depends on the deployed database applying the new migration
