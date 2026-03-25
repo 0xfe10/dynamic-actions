@@ -1,18 +1,21 @@
-feat(camellia): migrate system info, node, and role pages (#35)
+feat(camellia): migrate user domain pages
 
-## Summary
-- add `system/info`, `system/node`, and `system/role` routes inside the shared camellia console shell
-- introduce a shared in-memory system store so node and role pages edit the same binding graph
-- wire permission-aware navigation and guarded route rendering into the console layout
+Summary:
+- wire the camellia API client to the legacy woodii token and endpoint
+  conventions
+- add shared user-domain request helpers and list/form/dialog building blocks
+- migrate user manage, user logoff, and user anomalous routes into the
+  console shell and navigation
 
-## Testing
-- `pnpm --dir bougainvillea check:camellia`
+Rationale:
+- keep the migrated pages compatible with the existing woodii auth and
+  backend contract while auth-guard work is still separate
+- reuse one page pattern for list, detail, edit, and status flows so later
+  admin migrations stay consistent
 
-## Manual QA Plan
-- open camellia and confirm the sidebar shows `System Info`, `Node`, and `Role`
-- switch the active role in the header and verify sidebar visibility plus active highlight update together
-- edit a node on `system/node`, toggle role bindings, then confirm the same binding state appears on `system/role`
-- update system info fields and refresh the random mark on `system/info`
-
-## Linear
-- DAM-19
+Tests:
+- pnpm install
+- pnpm run check:camellia
+- curl -I http://127.0.0.1:3000/user/manage
+- curl -I http://127.0.0.1:3000/user/logoff
+- curl -I http://127.0.0.1:3000/user/anomalous
