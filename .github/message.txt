@@ -1,1 +1,14 @@
-feat(woodii): migrate statistics pages
+feat: migrate boogie module admin pages (#497)
+
+## Summary
+- migrate boogie `source`, `template`, and `server` pages to a consistent list-and-editor admin interaction
+- keep existing boogie routes, menu integration, and request-layer usage intact
+- preserve template source binding and element editing inside the new layout
+
+## Testing
+- [x] `npx -y yarn@1.22.22 build:dev`
+- [ ] `npx -y yarn@1.22.22 typecheck`
+  - fails on pre-existing repo-wide TypeScript issues outside this change; filtered output shows no remaining errors in `src/views/app/boogie/*` or `src/api/boogie/source.ts`
+
+## Linear
+- DAM-30
