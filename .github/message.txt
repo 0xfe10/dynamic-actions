@@ -1,21 +1,22 @@
-feat(camellia): migrate user domain pages
+feat(camellia): add universal material library routes
 
 Summary:
-- wire the camellia API client to the legacy woodii token and endpoint
-  conventions
-- add shared user-domain request helpers and list/form/dialog building blocks
-- migrate user manage, user logoff, and user anomalous routes into the
-  console shell and navigation
+- add parameterized universal material routes for font, icon, border,
+  element, and seal pages plus hidden group/item/manage paths
+- introduce a shared material-library UI module for list, form, upload,
+  preview, and delete-confirm experiences
+- wire sidebar entries through permission-aware navigation metadata for
+  the migrated material domains
 
 Rationale:
-- keep the migrated pages compatible with the existing woodii auth and
-  backend contract while auth-guard work is still separate
-- reuse one page pattern for list, detail, edit, and status flows so later
-  admin migrations stay consistent
+- deliver the DAM-23 frontend migration scope without spreading nearly
+  identical page shells across five separate route trees
+- keep hidden operational pages available for direct links while leaving
+  the main menu focused on the primary library entries
 
 Tests:
-- pnpm install
-- pnpm run check:camellia
-- curl -I http://127.0.0.1:3000/user/manage
-- curl -I http://127.0.0.1:3000/user/logoff
-- curl -I http://127.0.0.1:3000/user/anomalous
+- pnpm --dir bougainvillea install --frozen-lockfile
+- pnpm --dir bougainvillea typecheck:camellia
+- pnpm --dir bougainvillea build:camellia
+- local react-router-serve smoke for universal list/detail/group/manage
+  routes
