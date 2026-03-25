@@ -1,17 +1,16 @@
-feat(woodii): expose camellia platform config pages (#496)
+Migrate camellia statistics pages (#498)
 
 ## Summary
-- add `woodii` frontend menu seed records for the missing camellia platform config pages under `universal`
-- add `limit` and `sms` menu groups so their child pages are reachable in the main frame
-- update the existing `version` node to resolve `version/index.vue` instead of a placeholder route
+- migrate `statistics/summary-printer` and `statistics/version-analysis` into the new Woodii admin shell
+- add dashboard-aligned hero/summary cards, app-aware query handling, and loading/empty states for both statistics pages
+- add unified `b_node` data for the new frontend routes and analysis `/api/v1/chart/*` backend permissions
 
-## Why
-The target Vue pages and API clients already exist in `woodii`, but several pages were not reachable through the dynamic menu tree because `b_node` frontend seed data was incomplete.
+## Testing
+- `cd woodii && npm exec --package=yarn@1.22.22 -- yarn run eslint src/views/statistics/summary-printer.vue src/views/statistics/version-analysis.vue -c .eslintrc.js --ext .vue`
+- `cd woodii && npm exec --package=yarn@1.22.22 -- yarn build:stg`
+- `cd woodii && npm exec --package=yarn@1.22.22 -- yarn typecheck` (fails on pre-existing repo-wide TypeScript issues outside DAM-31; filtering the output no longer shows any `src/views/statistics/*` errors after this change)
 
-## Validation
-- `python` inline check for target `woodii/src/views/app/universal/*` files
-- `python` inline check for `V00000198__add_frontend_nodes_for_platform_config.sql` content
-- `python` inline route-map check for expected dynamic view targets
-
-## Risks
-- this change only updates menu seed data; runtime visibility still depends on the deployed database applying the new migration
+## Manual QA
+- login to the camellia console with a role that can access statistics pages
+- open `统计 / 打印机汇总`, switch app, search by SN/model/name, and verify the table/pagination render in the new shell
+- open `统计 / 版本分析`, switch app/platform/version, and verify the list/pagination render in the new shell
