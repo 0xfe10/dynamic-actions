@@ -1,6 +1,21 @@
-Merge remote-tracking branch 'origin/main' into dam-25-camellia-template-spec-pages
+Migrate camellia user domain pages (#36)
 
-# Conflicts:
-#	bougainvillea/apps/camellia/app/lib/navigation.ts
-#	bougainvillea/apps/camellia/app/routes.ts
-#	bougainvillea/apps/camellia/app/routes/console/layout.tsx
+Summary:
+- wire the camellia API client to the legacy woodii token and endpoint
+  conventions
+- add shared user-domain request helpers and list/form/dialog building blocks
+- migrate user manage, user logoff, and user anomalous routes into the
+  console shell and navigation
+
+Rationale:
+- keep the migrated pages compatible with the existing woodii auth and
+  backend contract while auth-guard work is still separate
+- reuse one page pattern for list, detail, edit, and status flows so later
+  admin migrations stay consistent
+
+Tests:
+- pnpm install
+- pnpm run check:camellia
+- curl -I http://127.0.0.1:3000/user/manage
+- curl -I http://127.0.0.1:3000/user/logoff
+- curl -I http://127.0.0.1:3000/user/anomalous
