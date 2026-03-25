@@ -1,17 +1,25 @@
-feat(camellia): migrate system config pages
+feat(camellia): migrate universal content operation pages
 
 Summary:
-- add shared request and local-storage helpers for camellia system config
-- migrate system app, endpoint, oss, and settings routes into React Router
-- wire the new pages into console navigation and restore settings child entry
+- add camellia content-operation routes for feedback, agreement,
+  tutorial, issue, explanation, and notification
+- wire the sidebar, hidden feedback detail route, and a minimal token
+  login flow that matches the legacy woodii bearer-token model
+- add shared camellia request, session, and query-field helpers so the
+  migrated pages reuse consistent table, form, and dialog patterns
 
 Rationale:
-- DAM-20 requires a basic usable migration of the legacy woodii system
-  configuration surface into camellia
-- keeping the routes on the shared api-client and ui scaffolds preserves one
-  request baseline and one form/list baseline for later migrations
+- DAM-22 requires the first migration slice of woodii universal content
+  pages to run from the new camellia stack instead of the legacy Vue app
+- keeping auth/session and x-app request wiring shared avoids six route
+  modules each re-implementing the same legacy integration details
+- the first pass preserves core CRUD and handling flows while tolerating
+  missing local auth context during build-time validation
 
 Tests:
+- pnpm install
 - pnpm run check:camellia
-- curl local build routes for /system/app /system/endpoint /system/oss
-  /system/settings /system/settings/server
+- PORT=3210 pnpm --filter @bougainvillea/camellia start
+- curl route smoke for /, /content/feedback, /content/agreement,
+  /content/tutorial, /content/issue, /content/explanation,
+  /content/notification, /content/feedback/test-id
