@@ -1,17 +1,18 @@
-feat: migrate camellia dictionary locale and i18n pages (#40)
+feat(camellia): add auth session baseline
 
-## Summary
-- migrate `camellia` system dictionary, locale, and i18n pages from the old `woodii` baseline into React Router route modules
-- add a shared authorized request layer that sends `Authorization` and `x-app`, plus login bootstrap storage for the bearer token
-- integrate the new pages into the console navigation, route guards, and the newer system role shell merged from `origin/main`
+Summary:
+- add a real camellia staging login flow with redirect handling
+- persist token, user, and access data in local storage with cleanup helpers
+- inject Authorization and x-app headers through the shared API client
+- protect console routes and clear the session on 401, 403, or KICK_OUT
+- add a staging auth smoke script for login and invalid-session coverage
 
-## Why
-- DAM-21 requires the first real foundation/admin pages in `camellia` with unified query, table, and form interaction patterns
-- the migrated pages need backend-compatible field shapes while moving onto the shared `packages/ui` and `packages/api-client` primitives
+Rationale:
+- DAM-16 needs a reusable auth/session foundation before more admin pages
+  migrate into camellia
+- keeping session, route guards, and API authorization centralized reduces
+  follow-up duplication across later tickets
 
-## Validation
-- `cd bougainvillea && pnpm install --frozen-lockfile`
-- `cd bougainvillea && pnpm run check:camellia`
-
-## Notes
-- the build still emits existing Vite sourcemap warnings for `packages/ui` `select.tsx` and `table.tsx`, but the check completes successfully
+Tests:
+- pnpm run check:camellia
+- node scripts/camellia-auth-smoke.mjs
