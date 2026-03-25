@@ -1,14 +1,21 @@
-feat: add camellia admin shell and dashboard home (#495)
+feat(woodii): expose platform config pages in menu
 
-## Summary
-- normalize `woodii` permission menus into a single nested route tree shared by sidebar rendering and router registration
-- rebuild the protected default layout with breadcrumb/header chrome, loading feedback, and sidebar empty handling
-- add a usable `/dashboard` home plus a generic route placeholder for authorized menu items whose view files are not implemented yet
+Summary:
+- add frontend b_node records for app locale, area, field, limit,
+  and sms platform-config pages under the universal menu
+- add nested menu nodes for limit management and sms management
+  child pages
+- fix the version menu node to load version/index.vue instead of
+  resolving to a placeholder route
 
-## Validation
-- `cd woodii && npx yarn install --frozen-lockfile`
-- `cd woodii && npx yarn build:dev`
-- `cd woodii && npx yarn typecheck` *(fails on existing repo-wide type issues unrelated to this branch; changed files only surfaced the existing missing `is_js` declaration baseline)*
+Rationale:
+- the target woodii views and API clients already exist, but several
+  pages were unreachable because the frontend menu seed data was
+  incomplete
+- wiring the missing node records keeps the migration scoped to the
+  actual access gap and preserves the existing page implementations
 
-## Linear
-- `DAM-17`
+Tests:
+- python inline check for target woodii view files
+- python inline check for the new menu seed migration content
+- python inline route-map check for expected dynamic view targets
