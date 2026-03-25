@@ -1,17 +1,14 @@
-Migrate camellia system config pages (#38)
+chore(camellia): merge origin/main into DAM-22 branch
 
-## Summary
-- migrate `system/app`, `system/endpoint`, `system/oss`, and `system/settings` into `apps/camellia`
-- add shared system-config request/storage helpers on top of `@bougainvillea/api-client`
-- wire the new routes into console navigation and restore the settings child entry page
+Summary:
+- merge the latest origin/main into the DAM-22 migration branch
+- reconcile session, navigation, login, and route shell changes
+  between the system baseline and content-ops migration
 
-## Testing
-- `pnpm run check:camellia`
-- `curl` local build routes for `/system/app`, `/system/endpoint`, `/system/oss`, `/system/settings`, `/system/settings/server`
+Rationale:
+- keep PR #39 mergeable after DAM-21 landed on main
+- preserve both permission-aware console foundation work and
+  DAM-22 content-operation routes in one branch
 
-## Manual QA Plan
-- Open `/system/app` and confirm the page loads, the create/edit dialog opens, and endpoint preference buttons render per app.
-- Open `/system/endpoint`, choose an app scope, and confirm the create/edit dialog renders environment, URL, and metadata fields.
-- Open `/system/oss`, choose a locale, and confirm the create/edit dialog renders provider, bucket, endpoint, and default-toggle fields.
-- Open `/system/settings` and confirm the entry cards navigate to `/system/settings/server`, `/system/app`, `/system/endpoint`, and `/system/oss`.
-- Open `/system/settings/server` and confirm override save/reset controls update the displayed resolved base URL.
+Tests:
+- pnpm run check:camellia
