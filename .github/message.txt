@@ -1,22 +1,17 @@
-feat(camellia): add universal material library routes
+feat(camellia): migrate system config pages
 
 Summary:
-- add parameterized universal material routes for font, icon, border,
-  element, and seal pages plus hidden group/item/manage paths
-- introduce a shared material-library UI module for list, form, upload,
-  preview, and delete-confirm experiences
-- wire sidebar entries through permission-aware navigation metadata for
-  the migrated material domains
+- add shared request and local-storage helpers for camellia system config
+- migrate system app, endpoint, oss, and settings routes into React Router
+- wire the new pages into console navigation and restore settings child entry
 
 Rationale:
-- deliver the DAM-23 frontend migration scope without spreading nearly
-  identical page shells across five separate route trees
-- keep hidden operational pages available for direct links while leaving
-  the main menu focused on the primary library entries
+- DAM-20 requires a basic usable migration of the legacy woodii system
+  configuration surface into camellia
+- keeping the routes on the shared api-client and ui scaffolds preserves one
+  request baseline and one form/list baseline for later migrations
 
 Tests:
-- pnpm --dir bougainvillea install --frozen-lockfile
-- pnpm --dir bougainvillea typecheck:camellia
-- pnpm --dir bougainvillea build:camellia
-- local react-router-serve smoke for universal list/detail/group/manage
-  routes
+- pnpm run check:camellia
+- curl local build routes for /system/app /system/endpoint /system/oss
+  /system/settings /system/settings/server
