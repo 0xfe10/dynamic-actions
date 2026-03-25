@@ -1,1 +1,1 @@
-dam-21-camellia-i18n-locale-dictionary-migration
+dam-25-camellia-template-spec-pages

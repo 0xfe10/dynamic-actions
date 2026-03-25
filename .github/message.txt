@@ -1,1 +1,21 @@
-merge origin/main into dam-21-camellia-i18n-locale-dictionary-migration
+feat(camellia): migrate template and specification routes
+
+Summary:
+- add DAM-25 route definitions, navigation groups, and hidden template
+  manage subpages for detail, preview, and editor flows
+- introduce shared route metadata and fallback-capable request helpers for
+  template, classification, specification, and size-range resources
+- implement first-pass camellia pages for template classification/manage and
+  specification template/size-range/classification views
+
+Rationale:
+- DAM-25 needs a migration-ready information architecture before deeper CRUD
+  and canvas interactions can land safely
+- keeping legacy path, permission, and endpoint metadata in one catalog makes
+  shell integration and later backend hookup easier to review and extend
+- fallback fixtures let the new pages stay usable without blocking on auth or
+  incomplete backend contracts during the first migration pass
+
+Tests:
+- pnpm typecheck:camellia
+- pnpm build:camellia
