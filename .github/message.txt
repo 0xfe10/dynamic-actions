@@ -1,13 +1,6 @@
-chore(camellia): merge latest main into DAM-22 branch
+Merge remote-tracking branch 'origin/main' into dam-25-camellia-template-spec-pages
 
-Summary:
-- merge the latest origin/main after DAM-20 landed
-- keep the new system-config routes and DAM-22 content pages
-  together in the camellia navigation and route tree
-
-Rationale:
-- clear the remaining PR conflict after main advanced during land
-- preserve the full migrated admin surface on a single branch
-
-Tests:
-- pnpm run check:camellia
+# Conflicts:
+#	bougainvillea/apps/camellia/app/lib/navigation.ts
+#	bougainvillea/apps/camellia/app/routes.ts
+#	bougainvillea/apps/camellia/app/routes/console/layout.tsx
