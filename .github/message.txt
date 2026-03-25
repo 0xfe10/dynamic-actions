@@ -1,21 +1,17 @@
-feat(ci): publish lris and camellia images
+Rework lris and camellia image publishing (#34)
 
-Summary:
-- add a new lris wrapper binary and shared lris runtime image
-- add a standalone camellia Dockerfile and frontend image jobs
-- split dyn-workflows into rust artifact, lris image, and camellia image jobs
+## Summary
+- replace the dedicated `spectra` runtime image with a shared `lris` image backed by a tiny Rust wrapper binary
+- split the dyn-workflows into a Rust artifact build, a `lris` image publish job, and a separate `camellia` image publish job
+- add a dedicated `camellia` Dockerfile while keeping `labelix_spectra` deploy references pointed at the new `lris` image tags
 
-Rationale:
-- DAM-39 rework replaces the spectra-only image with a shared lris image
-  and removes migration startup behavior from the runtime image path
-- camellia needs its own image path instead of being coupled to the Rust
-  build flow, while spectra deploy references stay on the new lris image
+## Validation
+- `cd /code/symphony/0xfe10/workspaces/DAM-39/labelix/lris && cargo check --workspace`
+- `cd /code/symphony/0xfe10/workspaces/DAM-39/labelix/bougainvillea && pnpm install --frozen-lockfile`
+- `cd /code/symphony/0xfe10/workspaces/DAM-39/labelix/bougainvillea && pnpm run check:camellia`
+- `cd /code/symphony/0xfe10/workspaces/DAM-39/labelix && docker build -f bougainvillea/apps/camellia/Dockerfile bougainvillea`
+- `cd /code/symphony/0xfe10/workspaces/DAM-39/labelix/lris && docker build -f Dockerfile .`
 
-Tests:
-- cd lris && cargo check --workspace
-- cd bougainvillea && pnpm install --frozen-lockfile
-- cd bougainvillea && pnpm run check:camellia
-- docker build -f bougainvillea/apps/camellia/Dockerfile bougainvillea
-- cd lris && docker build -f Dockerfile . (validated with temporary
-  placeholder binaries because local disk pressure prevented a full local
-  release artifact build; CI still builds real musl binaries)
+## Notes
+- `camellia` is still configured as an SSR React Router app, so the image keeps a Node runtime instead of switching to static hosting.
+- The local `lris` Docker build was verified with temporary placeholder binaries after the workspace volume filled during a full local binary build; the workflow now builds the real musl binaries in a dedicated artifact job before assembling the published image.
