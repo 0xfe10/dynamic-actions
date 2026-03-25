@@ -1,15 +1,9 @@
-DAM-25 migrate camellia template and specification pages (#41)
+Merge remote-tracking branch 'origin/main' into dam-16-auth-session-baseline
 
-## Summary
-- migrate camellia route/navigation structure for template classification/manage and specification template/size-range/classification pages
-- add hidden template manage detail, preview, and multi-step editor subpages backed by shared route metadata
-- introduce fallback-capable request helpers so the new pages integrate with the shared API client while remaining usable without live auth/data
-
-## Validation
-- [x] pnpm typecheck:camellia
-- [x] pnpm build:camellia
-
-## Manual QA
-- [x] Open camellia and verify sidebar entries for Template Classification, Template Manage, Specification Template, Size Range, and Specification Classification.
-- [x] From Template Manage, open the Detail, Preview, and Editor hidden routes and confirm each page renders its dedicated shell.
-- [x] Confirm each page shows legacy path, permission, and endpoint metadata plus live/fixture source status.
+# Conflicts:
+#	bougainvillea/apps/camellia/app/lib/api.ts
+#	bougainvillea/apps/camellia/app/lib/navigation.ts
+#	bougainvillea/apps/camellia/app/lib/session.ts
+#	bougainvillea/apps/camellia/app/routes/console/dashboard.tsx
+#	bougainvillea/apps/camellia/app/routes/console/layout.tsx
+#	bougainvillea/apps/camellia/app/routes/login.tsx
