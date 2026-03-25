@@ -1,4 +1,17 @@
-Merge remote-tracking branch 'origin/main' into dam-25-camellia-template-spec-pages
+feat(camellia): migrate OTA and device console pages (#43)
 
-# Conflicts:
-#	bougainvillea/apps/camellia/app/lib/navigation.ts
+## Summary
+- add a shared camellia workspace framework for DAM-27 that covers OTA, device, IoT card, and material purchase pages
+- wire visible menu routes plus hidden item/manage/setting routes for OTA manage, model classification, device, blacklist, firmware, firmware logs, firmware part numbers, IoT card, IoT package, and material purchase
+- extend seeded permission nodes so hidden child pages are still access-controlled and reachable through the unified shell
+
+## Validation
+- `cd bougainvillea && pnpm run check:camellia`
+- `PORT=3210 pnpm --filter @bougainvillea/camellia start`
+- `curl -sSf http://127.0.0.1:3210/universal/ota/manage`
+- `curl -sSf http://127.0.0.1:3210/universal/ota/device-blacklist`
+- `curl -sSf http://127.0.0.1:3210/universal/iot_card/card/item/iot-card-cn11`
+- `curl -sSf http://127.0.0.1:3210/universal/material-purchase/setting`
+
+## Notes
+- this is a baseline migration: the pages use shared scaffolds and seeded records so complex list/detail/manage/setting flows can land on one consistent shell before backend-specific wiring expands
