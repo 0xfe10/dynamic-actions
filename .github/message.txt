@@ -1,21 +1,17 @@
-feat(camellia): migrate template and specification routes
+feat: migrate camellia dictionary locale and i18n pages (#40)
 
-Summary:
-- add DAM-25 route definitions, navigation groups, and hidden template
-  manage subpages for detail, preview, and editor flows
-- introduce shared route metadata and fallback-capable request helpers for
-  template, classification, specification, and size-range resources
-- implement first-pass camellia pages for template classification/manage and
-  specification template/size-range/classification views
+## Summary
+- migrate `camellia` system dictionary, locale, and i18n pages from the old `woodii` baseline into React Router route modules
+- add a shared authorized request layer that sends `Authorization` and `x-app`, plus login bootstrap storage for the bearer token
+- integrate the new pages into the console navigation, route guards, and the newer system role shell merged from `origin/main`
 
-Rationale:
-- DAM-25 needs a migration-ready information architecture before deeper CRUD
-  and canvas interactions can land safely
-- keeping legacy path, permission, and endpoint metadata in one catalog makes
-  shell integration and later backend hookup easier to review and extend
-- fallback fixtures let the new pages stay usable without blocking on auth or
-  incomplete backend contracts during the first migration pass
+## Why
+- DAM-21 requires the first real foundation/admin pages in `camellia` with unified query, table, and form interaction patterns
+- the migrated pages need backend-compatible field shapes while moving onto the shared `packages/ui` and `packages/api-client` primitives
 
-Tests:
-- pnpm typecheck:camellia
-- pnpm build:camellia
+## Validation
+- `cd bougainvillea && pnpm install --frozen-lockfile`
+- `cd bougainvillea && pnpm run check:camellia`
+
+## Notes
+- the build still emits existing Vite sourcemap warnings for `packages/ui` `select.tsx` and `table.tsx`, but the check completes successfully
