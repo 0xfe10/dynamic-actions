@@ -1,1 +1,14 @@
-Remove lris CLI and related build steps
+feat(camellia): migrate system core pages
+
+Summary:
+- add system info, node, and role routes to the camellia console shell
+- add a shared in-memory system store for node and role binding state
+- wire permission-aware navigation and route guards into the console layout
+
+Rationale:
+- keep DAM-19 focused on the core page migration without expanding scope
+- let node and role pages validate the same binding interactions in one shell
+- make guard and navigation highlighting behavior reviewable in the new app
+
+Tests:
+- pnpm --dir bougainvillea check:camellia
