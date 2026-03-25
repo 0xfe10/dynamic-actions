@@ -1,6 +1,15 @@
-Merge remote-tracking branch 'origin/main' into dam-16-auth-session-baseline
+Add camellia auth session baseline (#42)
 
-# Conflicts:
-#	bougainvillea/apps/camellia/app/lib/api.ts
-#	bougainvillea/apps/camellia/app/routes/console/layout.tsx
-#	bougainvillea/packages/api-client/src/index.ts
+## Summary
+- add the real camellia `/login` flow for woodii staging with redirect support
+- persist token, user, and access payloads in `localStorage` and expose shared auth/session helpers
+- inject `Authorization` and `x-app: woodii` through the shared API client and clear state on `401`/`403`/`KICK_OUT`
+- protect console routes, refresh the current user from `/api/v1/user/inspect`, and add a staging auth smoke script
+
+## Testing
+- `cd bougainvillea && pnpm run check:camellia`
+- `cd bougainvillea && node scripts/camellia-auth-smoke.mjs`
+
+## Notes
+- DAM-16
+- Browser-level walkthrough remains host-blocked in this session because Chromium runtime libraries are unavailable on the machine; staging API and route/build validation passed.
