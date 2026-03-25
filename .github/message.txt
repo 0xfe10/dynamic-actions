@@ -1,14 +1,18 @@
-feat(camellia): migrate system core pages
+feat(camellia): migrate system info, node, and role pages (#35)
 
-Summary:
-- add system info, node, and role routes to the camellia console shell
-- add a shared in-memory system store for node and role binding state
-- wire permission-aware navigation and route guards into the console layout
+## Summary
+- add `system/info`, `system/node`, and `system/role` routes inside the shared camellia console shell
+- introduce a shared in-memory system store so node and role pages edit the same binding graph
+- wire permission-aware navigation and guarded route rendering into the console layout
 
-Rationale:
-- keep DAM-19 focused on the core page migration without expanding scope
-- let node and role pages validate the same binding interactions in one shell
-- make guard and navigation highlighting behavior reviewable in the new app
+## Testing
+- `pnpm --dir bougainvillea check:camellia`
 
-Tests:
-- pnpm --dir bougainvillea check:camellia
+## Manual QA Plan
+- open camellia and confirm the sidebar shows `System Info`, `Node`, and `Role`
+- switch the active role in the header and verify sidebar visibility plus active highlight update together
+- edit a node on `system/node`, toggle role bindings, then confirm the same binding state appears on `system/role`
+- update system info fields and refresh the random mark on `system/info`
+
+## Linear
+- DAM-19
