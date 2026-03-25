@@ -1,18 +1,17 @@
-feat(camellia): add auth session baseline
+feat(camellia): migrate universal material library pages (#37)
 
-Summary:
-- add a real camellia staging login flow with redirect handling
-- persist token, user, and access data in local storage with cleanup helpers
-- inject Authorization and x-app headers through the shared API client
-- protect console routes and clear the session on 401, 403, or KICK_OUT
-- add a staging auth smoke script for login and invalid-session coverage
+## Summary
+- migrate `camellia` universal material library entry pages for `font`, `icon`, `border`, `element`, and `seal`
+- add a shared parameterized `universal/:domain` route family covering list, item detail, group management, and hidden manage pages
+- reuse shared upload, preview, delete-confirm, and form shells while wiring sidebar entries through permission-aware navigation metadata
 
-Rationale:
-- DAM-16 needs a reusable auth/session foundation before more admin pages
-  migrate into camellia
-- keeping session, route guards, and API authorization centralized reduces
-  follow-up duplication across later tickets
+## Validation
+- `pnpm --dir bougainvillea install --frozen-lockfile`
+- `pnpm --dir bougainvillea typecheck:camellia`
+- `pnpm --dir bougainvillea build:camellia`
+- local `react-router-serve` smoke for `/universal/font`, `/universal/icon`, `/universal/border`, `/universal/element`, `/universal/seal`, `/universal/icon/group`, `/universal/icon/item/icon-cart-outline`, `/universal/border/group/border-festival`, `/universal/element/manage`, `/universal/seal/manage`, `/universal/seal/group/seal-opener`
 
-Tests:
-- pnpm run check:camellia
-- node scripts/camellia-auth-smoke.mjs
+## Manual QA
+- open each migrated material page from the camellia sidebar and verify the shared list shell renders
+- confirm hidden `group`, `item`, and `manage` routes load from direct links for grouped material domains
+- exercise upload, preview, delete-confirm, and form-mode UI from the new shells
