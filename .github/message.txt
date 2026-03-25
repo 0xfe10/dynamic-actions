@@ -1,15 +1,25 @@
-Add camellia auth session baseline (#42)
+feat(camellia): migrate scene ai square pages
 
-## Summary
-- add the real camellia `/login` flow for woodii staging with redirect support
-- persist token, user, and access payloads in `localStorage` and expose shared auth/session helpers
-- inject `Authorization` and `x-app: woodii` through the shared API client and clear state on `401`/`403`/`KICK_OUT`
-- protect console routes, refresh the current user from `/api/v1/user/inspect`, and add a staging auth smoke script
+Summary:
+- add grouped scene, ai, and square navigation with matching permission
+  nodes in the shared camellia shell
+- add shared migration state plus ten first-round route modules for
+  portrait, tattoo, wrong-book, ai, and square tag pages
+- keep list filters, tables, and edit dialogs aligned to the existing
+  shared scaffold patterns
 
-## Testing
-- `cd bougainvillea && pnpm run check:camellia`
-- `cd bougainvillea && node scripts/camellia-auth-smoke.mjs`
+Rationale:
+- DAM-28 requires clear landing spots for the scoped legacy universal
+  pages in the new backend
+- centralizing seeded migration state keeps the first-round routes
+  consistent and makes cross-page edits predictable during review
+- wiring the routes through the same shell validates menu access and
+  role-based visibility before any backend integration follow-up
 
-## Notes
-- DAM-16
-- Browser-level walkthrough remains host-blocked in this session because Chromium runtime libraries are unavailable on the machine; staging API and route/build validation passed.
+Tests:
+- pnpm --dir bougainvillea --filter @bougainvillea/camellia typecheck
+- pnpm --dir bougainvillea --filter @bougainvillea/camellia build
+- PORT=3210 pnpm --dir bougainvillea --filter @bougainvillea/camellia
+  start
+- curl 200 checks for /, /scene/portrait, /scene/tattoo/element,
+  /scene/wrong/dict, /ai/template, /square/tag, /system/role
