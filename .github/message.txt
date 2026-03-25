@@ -1,21 +1,20 @@
-feat(woodii): expose platform config pages in menu
+feat(boogie): unify admin flows for source template and server
 
 Summary:
-- add frontend b_node records for app locale, area, field, limit,
-  and sms platform-config pages under the universal menu
-- add nested menu nodes for limit management and sms management
-  child pages
-- fix the version menu node to load version/index.vue instead of
-  resolving to a placeholder route
+- migrate boogie source and server pages to a shared list-and-editor
+  layout instead of modal-only CRUD
+- move boogie template management to the same admin interaction while
+  keeping source binding and element editing available
+- keep existing boogie routes and request integration intact and align
+  the source page API typing with its query shape
 
 Rationale:
-- the target woodii views and API clients already exist, but several
-  pages were unreachable because the frontend menu seed data was
-  incomplete
-- wiring the missing node records keeps the migration scoped to the
-  actual access gap and preserves the existing page implementations
+- make the three boogie menu pages match the new admin's list/edit
+  interaction expectations without changing menu or backend contracts
+- preserve module scope by only touching boogie pages and their local
+  request typing
 
 Tests:
-- python inline check for target woodii view files
-- python inline check for the new menu seed migration content
-- python inline route-map check for expected dynamic view targets
+- npx -y yarn@1.22.22 build:dev
+- npx -y yarn@1.22.22 typecheck (fails on pre-existing repo-wide TS
+  issues; filtered output shows no remaining errors in boogie files)
