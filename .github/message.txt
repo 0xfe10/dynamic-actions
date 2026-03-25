@@ -1,1 +1,16 @@
-多语言翻译增加查询条件和语言显示去重 (#494)
+feat(woodii): add camellia admin shell
+
+Summary:
+- normalize permission menus into one nested route tree shared by navigation and router registration
+- rebuild the default layout with page header, breadcrumbs, progress feedback, and sidebar empty state handling
+- replace the stock dashboard with a menu-aware home screen and add a placeholder view for unfinished routes
+
+Rationale:
+- the existing menu tree and dynamic route tree were assembled separately, which made nested navigation and breadcrumb behavior drift apart
+- route placeholders let future feature issues land incrementally without breaking authorized menu navigation
+- the repo referenced unused vite plugin client typings, so removing those stale entries avoids one avoidable typecheck failure
+
+Tests:
+- npx yarn install --frozen-lockfile
+- npx yarn build:dev
+- npx yarn typecheck (fails on broad pre-existing repo type errors; changed files only surfaced the existing missing is_js declaration baseline)
