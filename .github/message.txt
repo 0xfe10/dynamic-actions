@@ -1,17 +1,23 @@
-feat(camellia): migrate universal material library pages (#37)
+feat(camellia): migrate ota and device console pages
 
-## Summary
-- migrate `camellia` universal material library entry pages for `font`, `icon`, `border`, `element`, and `seal`
-- add a shared parameterized `universal/:domain` route family covering list, item detail, group management, and hidden manage pages
-- reuse shared upload, preview, delete-confirm, and form shells while wiring sidebar entries through permission-aware navigation metadata
+Summary:
+- add shared DAM-27 workspace config and route components for OTA,
+  device, IoT card, and material purchase pages
+- wire list, item, manage, and setting routes into camellia and
+  expose the visible menu entries in the shared navigation shell
+- extend seeded permission nodes to cover hidden subpages and
+  pattern-match dynamic route paths during access checks
 
-## Validation
-- `pnpm --dir bougainvillea install --frozen-lockfile`
-- `pnpm --dir bougainvillea typecheck:camellia`
-- `pnpm --dir bougainvillea build:camellia`
-- local `react-router-serve` smoke for `/universal/font`, `/universal/icon`, `/universal/border`, `/universal/element`, `/universal/seal`, `/universal/icon/group`, `/universal/icon/item/icon-cart-outline`, `/universal/border/group/border-festival`, `/universal/element/manage`, `/universal/seal/manage`, `/universal/seal/group/seal-opener`
+Rationale:
+- DAM-27 requires a baseline migration for the OTA and device menu
+  slice plus hidden operational subpages in the new admin shell
+- a single shared implementation keeps list/detail/manage/setting
+  flows consistent across the migrated domains
 
-## Manual QA
-- open each migrated material page from the camellia sidebar and verify the shared list shell renders
-- confirm hidden `group`, `item`, and `manage` routes load from direct links for grouped material domains
-- exercise upload, preview, delete-confirm, and form-mode UI from the new shells
+Tests:
+- cd bougainvillea && pnpm run check:camellia
+- PORT=3210 pnpm --filter @bougainvillea/camellia start
+- curl -sSf http://127.0.0.1:3210/universal/ota/manage
+- curl -sSf http://127.0.0.1:3210/universal/ota/device-blacklist
+- curl -sSf http://127.0.0.1:3210/universal/iot_card/card/item/iot-card-cn11
+- curl -sSf http://127.0.0.1:3210/universal/material-purchase/setting
