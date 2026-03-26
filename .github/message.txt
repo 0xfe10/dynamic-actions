@@ -1,24 +1,11 @@
-feat(labelexpert): migrate camellia scene pages
+Migrate camellia labelexpert module pages (#499)
 
-Summary:
-- add a concrete mscene leaf view so dynamic menu routing resolves the
-  labelexpert module pages instead of the placeholder view
-- remove hard-coded app and route assumptions from labelexpert device,
-  scene, and mscene pages so list/detail/manage flows follow the active
-  module context
-- widen shared tree-view typing and related universal API types to match
-  the data shapes used by the migrated mscene and scene pages
+## Summary
+- add a concrete `woodii/src/views/app/labelexpert/mscene.vue` leaf entry so permission-driven menu routing opens the migrated `mscene` page instead of the placeholder view
+- remove hard-coded `metaprint` app and fixed `/app/labelexpert/mscene` route assumptions from the `device` / `scene` / `mscene` pages so list, detail, and manage flows follow the active module context
+- align the migrated `scene` and `mscene` pages with the shared camellia list/form/dialog flow and widen shared tree-view typings to support the string ids returned by the existing backend payloads
 
-Rationale:
-- the DAM-29 migration target required device, scene, and mscene to be
-  reachable under the new backend with the shared camellia list and form
-  flow
-- mscene was still pinned to metaprint and a fixed route path, which broke
-  module-level reuse and permission-driven navigation
-- the migrated pages surfaced existing type gaps around string node ids and
-  vendor typings that needed to be aligned for local validation
-
-Tests:
-- cd woodii && (npm run typecheck || true) | rg "src/views/app/labelexpert/(scene|device|mscene)|src/api/universal/(scene|mscene|mscene-item)|src/components/tree-view|src/types/vendor"
-- cd woodii && npm run build:dev
-- cd woodii && npm run build:stg
+## Testing
+- `cd woodii && (npm run typecheck || true) | rg "src/views/app/labelexpert/(scene|device|mscene)|src/api/universal/(scene|mscene|mscene-item)|src/components/tree-view|src/types/vendor"`
+- `cd woodii && npm run build:dev`
+- `cd woodii && npm run build:stg`
