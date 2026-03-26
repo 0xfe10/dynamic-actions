@@ -1,24 +1,30 @@
-refactor(camellia): align system preset surfaces
+refactor(camellia): align template and content surfaces
 
 Summary:
-- move system settings hub and system info cards onto shared preset-driven
+- move template and specification list pages onto shared Card-backed table
   surfaces
-- refactor server override and template detail pages to use shared Card
-  composition instead of route-local shells
-- keep existing page behavior and hidden-route loaders intact
+- refactor content issue, tutorial, and feedback tables to the same shared
+  surface model and button spacing
+- remove the bespoke preview/editor treatment from template hidden flows in
+  favor of preset-driven cards
 
 Rationale:
-- these routes were still carrying obvious page-local card treatments after
-  the preset foundation landed
-- moving them onto shared card semantics reduces the remaining visual drift
-  before the final route-family passes
+- template, specification, and content routes still carried the most obvious
+  route-local shells after the earlier preset checkpoints
+- normalizing these families reduces remaining visual drift before the final
+  system and universal passes
 
 Tests:
 - pnpm --dir bougainvillea run check:camellia
-- PORT=3214 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3214/system/settings
-- curl -I http://127.0.0.1:3214/system/info
-- curl -I http://127.0.0.1:3214/system/settings/server
-- curl -I http://127.0.0.1:3214/template/manage/item/tpl-shelf-202
+- PORT=3216 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3216/template/classification
+- curl -I http://127.0.0.1:3216/template/manage
+- curl -I http://127.0.0.1:3216/template/manage/preview/tpl-shelf-202
+- curl -I http://127.0.0.1:3216/template/manage/editor/tpl-shelf-202
+- curl -I http://127.0.0.1:3216/specification/template
+- curl -I http://127.0.0.1:3216/specification/classification
+- curl -I http://127.0.0.1:3216/content/issue
+- curl -I http://127.0.0.1:3216/content/tutorial
+- curl -I http://127.0.0.1:3216/content/feedback
 
 Co-authored-by: Codex <codex@openai.com>
