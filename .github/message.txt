@@ -1,4 +1,4 @@
-test(camellia): add docker deployment smoke coverage
+test: add camellia Docker smoke coverage (#47)
 
 Summary:
 - split the existing camellia smoke command into deploy and docker
