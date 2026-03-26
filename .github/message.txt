@@ -1,1 +1,21 @@
-Update workflows to set camellia image for labelix-hk0
+fix(camellia): stabilize login and shared session shell
+
+Summary:
+- add light/dark/system theme support and surface it in login and console
+- rebuild the login screen around a primary credential flow with explicit token
+  bootstrap and no hardcoded sample credentials
+- unify session settings with the shared camellia session and keep the console
+  interactive during background session checks
+
+Rationale:
+- the previous login page mixed credentials and token wiring in one noisy screen
+  and encouraged invalid default credentials
+- migrated pages were reading split session stores, which made the shell and
+  user-domain routes drift out of sync
+- replacing the full-shell loading swap during refresh removes the reported
+  post-login flashing behavior
+
+Tests:
+- pnpm run typecheck:camellia
+- pnpm run build:camellia
+- pnpm run smoke:camellia:deploy
