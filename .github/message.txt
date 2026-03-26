@@ -1,30 +1,37 @@
-refactor(camellia): align template and content surfaces
+refactor(camellia): align remaining route families
 
 Summary:
-- move template and specification list pages onto shared Card-backed table
-  surfaces
-- refactor content issue, tutorial, and feedback tables to the same shared
-  surface model and button spacing
-- remove the bespoke preview/editor treatment from template hidden flows in
-  favor of preset-driven cards
+- move the remaining system, locale, i18n, dictionary, user, and
+  content detail routes onto shared Card and Table surfaces
+- replace route-local rounded and shadow shells in app, endpoint,
+  oss, node, role, notification, and feedback detail views
+- normalize the last content editor and size-range pages to the
+  preset-driven layout baseline
 
 Rationale:
-- template, specification, and content routes still carried the most obvious
-  route-local shells after the earlier preset checkpoints
-- normalizing these families reduces remaining visual drift before the final
-  system and universal passes
+- keeps the shadcn-ui preset applied consistently across the full
+  migrated camellia console instead of stopping at high-traffic pages
+- removes the last obvious route-local visual forks before review,
+  which keeps future preset additions route-agnostic
 
 Tests:
 - pnpm --dir bougainvillea run check:camellia
-- PORT=3216 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3216/template/classification
-- curl -I http://127.0.0.1:3216/template/manage
-- curl -I http://127.0.0.1:3216/template/manage/preview/tpl-shelf-202
-- curl -I http://127.0.0.1:3216/template/manage/editor/tpl-shelf-202
-- curl -I http://127.0.0.1:3216/specification/template
-- curl -I http://127.0.0.1:3216/specification/classification
-- curl -I http://127.0.0.1:3216/content/issue
-- curl -I http://127.0.0.1:3216/content/tutorial
-- curl -I http://127.0.0.1:3216/content/feedback
+- PORT=3218 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3218/system/node
+- curl -I http://127.0.0.1:3218/system/role
+- curl -I http://127.0.0.1:3218/system/endpoint
+- curl -I http://127.0.0.1:3218/system/app
+- curl -I http://127.0.0.1:3218/system/oss
+- curl -I http://127.0.0.1:3218/system/locale
+- curl -I http://127.0.0.1:3218/system/i18n
+- curl -I http://127.0.0.1:3218/system/dictionary
+- curl -I http://127.0.0.1:3218/specification/size-range
+- curl -I http://127.0.0.1:3218/content/agreement
+- curl -I http://127.0.0.1:3218/content/explanation
+- curl -I http://127.0.0.1:3218/content/notification
+- curl -I http://127.0.0.1:3218/content/feedback/fbk-1001
+- curl -I http://127.0.0.1:3218/user/manage
+- curl -I http://127.0.0.1:3218/user/logoff
+- curl -I http://127.0.0.1:3218/user/anomalous
 
 Co-authored-by: Codex <codex@openai.com>
