@@ -1,20 +1,3 @@
-feat(lris): scaffold question-bank service layout
+Add example env files and Justfile, remove .specify scripts
 
-Summary:
-- add core-api and admin-api workspace members plus shared lris crates
-  for config, db, http, observability, and question-bank boundaries
-- reserve PostgreSQL migration roots for core-api and admin-api and teach
-  the Justfile to load per-project database drivers
-- update migration plan and design docs to pin question-bank ownership
-  boundaries and keep camellia as the fixed frontend landing point
-
-Rationale:
-- DAM-52 needs stable project targets before question-bank features can be
-  implemented without drifting back into spectra
-- encoding the service boundaries in code and docs keeps later tickets
-  aligned on API, DB, and frontend ownership
-
-Tests:
-- cargo metadata --manifest-path Cargo.toml --format-version 1
-- cargo check --workspace
-- git diff --check
+- Add `.env/camellia.env.example` and `.
