@@ -203,11 +203,8 @@ jobs:
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-production-garden-hk0
+          app_name: apps-production-labelix-hk0
           changes: |
             {
-              "argocd/apps/garden-hk0/overlays/production/values.yaml": {
-                "app.labelix_spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}",
-                "app.labelix_camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
-              }
+              "argocd/apps/labelix-hk0/overlays/production/values.yaml": { "app.spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}" }
             }
