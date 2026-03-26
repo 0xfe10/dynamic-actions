@@ -1,11 +1,18 @@
-Migrate camellia labelexpert module pages (#499)
+fix(woodii): restore hidden match-device route
 
-## Summary
-- add a concrete `woodii/src/views/app/labelexpert/mscene.vue` leaf entry so permission-driven menu routing opens the migrated `mscene` page instead of the placeholder view
-- remove hard-coded `metaprint` app and fixed `/app/labelexpert/mscene` route assumptions from the `device` / `scene` / `mscene` pages so list, detail, and manage flows follow the active module context
-- align the migrated `scene` and `mscene` pages with the shared camellia list/form/dialog flow and widen shared tree-view typings to support the string ids returned by the existing backend payloads
+Summary:
+- add a frontend node migration for the camellia match-device page
+- keep the page hidden from menus while exposing /app/universal/match-device
+- require frontend-node authorization on the hidden route
 
-## Testing
-- `cd woodii && (npm run typecheck || true) | rg "src/views/app/labelexpert/(scene|device|mscene)|src/api/universal/(scene|mscene|mscene-item)|src/components/tree-view|src/types/vendor"`
-- `cd woodii && npm run build:dev`
-- `cd woodii && npm run build:stg`
+Rationale:
+- the page and CRUD API already exist in woodii, but no frontend node seeded
+  the route, so permission-driven menus could not emit it
+- a hidden node preserves the off-menu operating model without expanding scope
+  into unrelated page or menu refactors
+
+Tests:
+- cd woodii && npm exec --package yarn@1.22.22 -- yarn install --frozen-lockfile
+  && npm exec --package yarn@1.22.22 -- yarn build:dev
+- node route-resolution replay confirmed
+  /app/universal/match-device -> @views/app/universal/match-device.vue
