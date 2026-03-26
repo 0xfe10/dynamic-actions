@@ -1,18 +1,21 @@
-fix(woodii): restore hidden match-device route
+fix(cloud-print): add woodii cloud print nodes
 
 Summary:
-- add a frontend node migration for the camellia match-device page
-- keep the page hidden from menus while exposing /app/universal/match-device
-- require frontend-node authorization on the hidden route
+- add the missing woodii cloud_print frontend node seed under app/universal
+- register the cloud-print backend auth nodes for device page, modify,
+  delete, and user list endpoints
+- wire the new liquibase data migration into the master changelog and mirror
+  it in cornerstone records
 
 Rationale:
-- the page and CRUD API already exist in woodii, but no frontend node seeded
-  the route, so permission-driven menus could not emit it
-- a hidden node preserves the off-menu operating model without expanding scope
-  into unrelated page or menu refactors
+- main already contains the cloud_print woodii views and API layer, but the
+  menu and permission nodes were missing so the page could not surface from
+  the main menu or reuse the normal auth path
+- keeping the Vue pages unchanged minimizes scope and matches the issue's real
+  gap on current main
 
 Tests:
-- cd woodii && npm exec --package yarn@1.22.22 -- yarn install --frozen-lockfile
-  && npm exec --package yarn@1.22.22 -- yarn build:dev
-- node route-resolution replay confirmed
-  /app/universal/match-device -> @views/app/universal/match-device.vue
+- cd woodii && npm exec --package=yarn@1.22.22 -- yarn install --frozen-lockfile
+- cd woodii && npm exec --package=yarn@1.22.22 -- yarn build:stg
+- cd woodii && npm exec --package=yarn@1.22.22 -- yarn typecheck (fails on
+  pre-existing repo-wide TypeScript errors outside cloud_print scope)
