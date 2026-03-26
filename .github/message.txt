@@ -1,37 +1,24 @@
-refactor(camellia): align remaining route families
+feat(camellia): refine shadcn style shell
 
 Summary:
-- move the remaining system, locale, i18n, dictionary, user, and
-  content detail routes onto shared Card and Table surfaces
-- replace route-local rounded and shadow shells in app, endpoint,
-  oss, node, role, notification, and feedback detail views
-- normalize the last content editor and size-range pages to the
-  preset-driven layout baseline
+- add an explicit camellia style registry instead of hard-coded style checks
+- refresh shared scaffold surfaces used across page headers, sections,
+  forms, and query toolbars
+- tighten the login and console shell chrome around the shadcn-style
+  presentation baseline
 
 Rationale:
-- keeps the shadcn-ui preset applied consistently across the full
-  migrated camellia console instead of stopping at high-traffic pages
-- removes the last obvious route-local visual forks before review,
-  which keeps future preset additions route-agnostic
+- DAM-48 requires a concrete visual style on top of the DAM-47 shell work
+- keeping style definitions named and centralized leaves room for more
+  presets later without rewriting theme state wiring
 
 Tests:
 - pnpm --dir bougainvillea run check:camellia
-- PORT=3218 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3218/system/node
-- curl -I http://127.0.0.1:3218/system/role
-- curl -I http://127.0.0.1:3218/system/endpoint
-- curl -I http://127.0.0.1:3218/system/app
-- curl -I http://127.0.0.1:3218/system/oss
-- curl -I http://127.0.0.1:3218/system/locale
-- curl -I http://127.0.0.1:3218/system/i18n
-- curl -I http://127.0.0.1:3218/system/dictionary
-- curl -I http://127.0.0.1:3218/specification/size-range
-- curl -I http://127.0.0.1:3218/content/agreement
-- curl -I http://127.0.0.1:3218/content/explanation
-- curl -I http://127.0.0.1:3218/content/notification
-- curl -I http://127.0.0.1:3218/content/feedback/fbk-1001
-- curl -I http://127.0.0.1:3218/user/manage
-- curl -I http://127.0.0.1:3218/user/logoff
-- curl -I http://127.0.0.1:3218/user/anomalous
-
-Co-authored-by: Codex <codex@openai.com>
+- pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3000/login
+- curl -I http://127.0.0.1:3000/
+- curl -I http://127.0.0.1:3000/playground
+- curl -I http://127.0.0.1:3000/ai/template
+- curl -s http://127.0.0.1:3000/login | rg -n
+  "shadcn/ui|Current style|Authentication|Default app|Access hints"
+- git diff --check
