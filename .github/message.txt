@@ -1,18 +1,1 @@
-fix: stabilize camellia login and shared session shell (#48)
-
-## Summary
-- add a shared light/dark/system theme system for camellia and surface it in login and the console shell
-- redesign the login page around a primary credential flow with token bootstrap moved into an explicit advanced section
-- unify `SessionSettings` and user-domain routes onto the same camellia session store and keep the console visible during session refresh
-- replace the dashboard's migration/deferred placeholder copy with runtime-focused session and route entry information
-
-## Testing
-- pnpm run typecheck:camellia
-- pnpm run build:camellia
-- pnpm run smoke:camellia:deploy
-- curl -sS http://localhost:3100/login | rg "Sign in to the admin console|System|Nothing is prefilled"
-
-## Blockers
-- post-login manual QA against staging is still blocked by missing valid admin credentials/token; the hardcoded `master/passwd` sample currently returns `账户或密码错误`
-
-Refs DAM-46
+feat(camellia): refactor shell ui baseline
