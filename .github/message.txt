@@ -1,29 +1,49 @@
-DAM-48: refine camellia shadcn style shell (#50)
+DAM-47: refactor camellia ui with shadcn preset surfaces (#49)
 
 ## Summary
-- add an explicit Camellia style registry so the current `shadcn-ui` preset is named and extensible instead of hard-coded through string literals
-- refresh shared scaffold primitives in `packages/ui` so page headers, section cards, query toolbars, and form sections render with a more deliberate shadcn-style shell
-- tighten the Camellia login and console shell chrome to expose the active style and align the overall presentation with the requested UI direction
-
-## Why
-- DAM-48 clarified that the work needs an actual visual style pass, not only a structural cleanup
-- the issue also requires room for future style presets, so the theme wiring now treats styles as a registry rather than a single special case
-- this PR intentionally targets `dam-47-camellia-ui-refactor-plan` so the style pass layers directly onto the broader UI refactor branch
+- add a persisted `shadcn-ui` style preset to camellia so visual treatment is no longer tied to individual routes
+- refactor the shared shell, dashboard, playground, template/specification/content list pages, and the full remaining system and user route families onto the preset-driven shadcn composition baseline
+- normalize hidden and detail-heavy flows such as notification, feedback detail, agreement, explanation, size-range, and user dialogs to shared `Card`-based surfaces while keeping existing route behavior and loaders intact
 
 ## Validation
-- `pnpm --dir bougainvillea run check:camellia`
-- `pnpm --dir bougainvillea --filter @bougainvillea/camellia start`
-- `curl -I http://127.0.0.1:3000/login`
-- `curl -I http://127.0.0.1:3000/`
-- `curl -I http://127.0.0.1:3000/playground`
-- `curl -I http://127.0.0.1:3000/ai/template`
-- `curl -s http://127.0.0.1:3000/login | rg -n "shadcn/ui|Current style|Authentication|Default app|Access hints"`
-- `git diff --check`
-
-## UI Walkthrough
-- Open `/login` and verify the refreshed two-column shell shows the active `shadcn/ui` style badge, style summary card, access hints, and the tighter authentication card presentation.
-- Open `/` with a valid saved session and verify the console header and sidebar both surface the active style and role information with the updated card-backed chrome.
-- Open representative routes such as `/playground` and `/ai/template` and confirm the shared page header, section card, form, and query toolbar surfaces inherit the updated scaffold styling.
-
-## Notes
-- Browser screenshot automation was attempted, but Playwright Chromium could not start in this environment because `libglib-2.0.so.0` is unavailable. Validation fell back to deterministic route and HTML checks.
+- pnpm --dir bougainvillea install --frozen-lockfile
+- pnpm --dir bougainvillea run check:camellia
+- PORT=3213 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3213/login
+- curl -I http://127.0.0.1:3213/
+- curl -I http://127.0.0.1:3213/playground
+- curl -I http://127.0.0.1:3213/ai/template
+- curl -I http://127.0.0.1:3213/scene/wrong/dict
+- curl -I http://127.0.0.1:3213/square/tag
+- PORT=3214 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3214/system/settings
+- curl -I http://127.0.0.1:3214/system/info
+- curl -I http://127.0.0.1:3214/system/settings/server
+- curl -I http://127.0.0.1:3214/template/manage/item/tpl-shelf-202
+- PORT=3216 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3216/template/classification
+- curl -I http://127.0.0.1:3216/template/manage
+- curl -I http://127.0.0.1:3216/template/manage/preview/tpl-shelf-202
+- curl -I http://127.0.0.1:3216/template/manage/editor/tpl-shelf-202
+- curl -I http://127.0.0.1:3216/specification/template
+- curl -I http://127.0.0.1:3216/specification/classification
+- curl -I http://127.0.0.1:3216/content/issue
+- curl -I http://127.0.0.1:3216/content/tutorial
+- curl -I http://127.0.0.1:3216/content/feedback
+- PORT=3218 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3218/system/node
+- curl -I http://127.0.0.1:3218/system/role
+- curl -I http://127.0.0.1:3218/system/endpoint
+- curl -I http://127.0.0.1:3218/system/app
+- curl -I http://127.0.0.1:3218/system/oss
+- curl -I http://127.0.0.1:3218/system/locale
+- curl -I http://127.0.0.1:3218/system/i18n
+- curl -I http://127.0.0.1:3218/system/dictionary
+- curl -I http://127.0.0.1:3218/specification/size-range
+- curl -I http://127.0.0.1:3218/content/agreement
+- curl -I http://127.0.0.1:3218/content/explanation
+- curl -I http://127.0.0.1:3218/content/notification
+- curl -I http://127.0.0.1:3218/content/feedback/fbk-1001
+- curl -I http://127.0.0.1:3218/user/manage
+- curl -I http://127.0.0.1:3218/user/logoff
+- curl -I http://127.0.0.1:3218/user/anomalous
