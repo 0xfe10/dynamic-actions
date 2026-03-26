@@ -1,24 +1,29 @@
-feat(camellia): refine shadcn style shell
+DAM-48: refine camellia shadcn style shell (#50)
 
-Summary:
-- add an explicit camellia style registry instead of hard-coded style checks
-- refresh shared scaffold surfaces used across page headers, sections,
-  forms, and query toolbars
-- tighten the login and console shell chrome around the shadcn-style
-  presentation baseline
+## Summary
+- add an explicit Camellia style registry so the current `shadcn-ui` preset is named and extensible instead of hard-coded through string literals
+- refresh shared scaffold primitives in `packages/ui` so page headers, section cards, query toolbars, and form sections render with a more deliberate shadcn-style shell
+- tighten the Camellia login and console shell chrome to expose the active style and align the overall presentation with the requested UI direction
 
-Rationale:
-- DAM-48 requires a concrete visual style on top of the DAM-47 shell work
-- keeping style definitions named and centralized leaves room for more
-  presets later without rewriting theme state wiring
+## Why
+- DAM-48 clarified that the work needs an actual visual style pass, not only a structural cleanup
+- the issue also requires room for future style presets, so the theme wiring now treats styles as a registry rather than a single special case
+- this PR intentionally targets `dam-47-camellia-ui-refactor-plan` so the style pass layers directly onto the broader UI refactor branch
 
-Tests:
-- pnpm --dir bougainvillea run check:camellia
-- pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3000/login
-- curl -I http://127.0.0.1:3000/
-- curl -I http://127.0.0.1:3000/playground
-- curl -I http://127.0.0.1:3000/ai/template
-- curl -s http://127.0.0.1:3000/login | rg -n
-  "shadcn/ui|Current style|Authentication|Default app|Access hints"
-- git diff --check
+## Validation
+- `pnpm --dir bougainvillea run check:camellia`
+- `pnpm --dir bougainvillea --filter @bougainvillea/camellia start`
+- `curl -I http://127.0.0.1:3000/login`
+- `curl -I http://127.0.0.1:3000/`
+- `curl -I http://127.0.0.1:3000/playground`
+- `curl -I http://127.0.0.1:3000/ai/template`
+- `curl -s http://127.0.0.1:3000/login | rg -n "shadcn/ui|Current style|Authentication|Default app|Access hints"`
+- `git diff --check`
+
+## UI Walkthrough
+- Open `/login` and verify the refreshed two-column shell shows the active `shadcn/ui` style badge, style summary card, access hints, and the tighter authentication card presentation.
+- Open `/` with a valid saved session and verify the console header and sidebar both surface the active style and role information with the updated card-backed chrome.
+- Open representative routes such as `/playground` and `/ai/template` and confirm the shared page header, section card, form, and query toolbar surfaces inherit the updated scaffold styling.
+
+## Notes
+- Browser screenshot automation was attempted, but Playwright Chromium could not start in this environment because `libglib-2.0.so.0` is unavailable. Validation fell back to deterministic route and HTML checks.
