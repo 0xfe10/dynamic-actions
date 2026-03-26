@@ -1,1 +1,24 @@
-feat(camellia): refactor shell ui baseline
+feat(camellia): add shadcn style preset baseline
+
+Summary:
+- add a persisted `shadcn-ui` style preset alongside theme mode
+- move dashboard and playground onto the new preset-driven shell
+- normalize AI, Scene, and Square list pages to shared Card + Table surfaces
+
+Rationale:
+- the issue scope was corrected to require a concrete visual style rather than
+  only removing custom styling
+- centralizing tokens and shared surfaces keeps future style presets feasible
+  without rewriting every route
+
+Tests:
+- pnpm --dir bougainvillea run check:camellia
+- PORT=3213 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3213/login
+- curl -I http://127.0.0.1:3213/
+- curl -I http://127.0.0.1:3213/playground
+- curl -I http://127.0.0.1:3213/ai/template
+- curl -I http://127.0.0.1:3213/scene/wrong/dict
+- curl -I http://127.0.0.1:3213/square/tag
+
+Co-authored-by: Codex <codex@openai.com>
