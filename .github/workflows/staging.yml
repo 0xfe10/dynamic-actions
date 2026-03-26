@@ -231,5 +231,8 @@ jobs:
           app_name: apps-staging-garden-hk0
           changes: |
             {
-              "argocd/apps/garden-hk0/overlays/staging/values.yaml": { "app.labelix_spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}" }
+              "argocd/apps/garden-hk0/overlays/staging/values.yaml": {
+                "app.labelix_spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}",
+                "app.labelix_camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
+              }
             }
