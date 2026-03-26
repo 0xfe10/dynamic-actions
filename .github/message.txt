@@ -1,15 +1,1 @@
-feat: wire camellia runtime config and release sync (#44)
-
-## Summary
-- switch camellia to a runtime environment contract backed by `CAMELLIA_API_BASE_URL` / `CAMELLIA_APP_CODE`
-- inject the runtime config into the SSR shell, resolve API base URLs dynamically, and add a repeatable `smoke:camellia` route smoke
-- update the staging and production release workflows so camellia image publishing also updates the garden GitOps target
-
-## Testing
-- `pnpm --dir bougainvillea run check:camellia`
-- `pnpm --dir bougainvillea run smoke:camellia`
-- `docker build -f bougainvillea/apps/camellia/Dockerfile bougainvillea`
-
-## Notes
-- Companion GitOps PR deploys the new `camellia-stg.iprtapp.com` / `camellia.iprtapp.com` frontend entries and runtime env values.
-- Live menu and permission acceptance still requires an existing staging bearer token; unauthenticated `GET https://woodii-api-stg.iprtapp.com/api/v1/access/menus` returns `KICK_OUT`.
+fix(camellia): include deploy build artifacts
