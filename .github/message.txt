@@ -1,1 +1,1 @@
-Merge CI
+fix: include camellia deploy build artifacts (#46)
