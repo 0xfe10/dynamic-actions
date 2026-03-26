@@ -1,24 +1,24 @@
-feat(camellia): add shadcn style preset baseline
+refactor(camellia): align system preset surfaces
 
 Summary:
-- add a persisted `shadcn-ui` style preset alongside theme mode
-- move dashboard and playground onto the new preset-driven shell
-- normalize AI, Scene, and Square list pages to shared Card + Table surfaces
+- move system settings hub and system info cards onto shared preset-driven
+  surfaces
+- refactor server override and template detail pages to use shared Card
+  composition instead of route-local shells
+- keep existing page behavior and hidden-route loaders intact
 
 Rationale:
-- the issue scope was corrected to require a concrete visual style rather than
-  only removing custom styling
-- centralizing tokens and shared surfaces keeps future style presets feasible
-  without rewriting every route
+- these routes were still carrying obvious page-local card treatments after
+  the preset foundation landed
+- moving them onto shared card semantics reduces the remaining visual drift
+  before the final route-family passes
 
 Tests:
 - pnpm --dir bougainvillea run check:camellia
-- PORT=3213 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3213/login
-- curl -I http://127.0.0.1:3213/
-- curl -I http://127.0.0.1:3213/playground
-- curl -I http://127.0.0.1:3213/ai/template
-- curl -I http://127.0.0.1:3213/scene/wrong/dict
-- curl -I http://127.0.0.1:3213/square/tag
+- PORT=3214 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
+- curl -I http://127.0.0.1:3214/system/settings
+- curl -I http://127.0.0.1:3214/system/info
+- curl -I http://127.0.0.1:3214/system/settings/server
+- curl -I http://127.0.0.1:3214/template/manage/item/tpl-shelf-202
 
 Co-authored-by: Codex <codex@openai.com>
