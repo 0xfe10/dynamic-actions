@@ -1,49 +1,20 @@
-DAM-47: refactor camellia ui with shadcn preset surfaces (#49)
+feat(lris): scaffold question-bank service layout
 
-## Summary
-- add a persisted `shadcn-ui` style preset to camellia so visual treatment is no longer tied to individual routes
-- refactor the shared shell, dashboard, playground, template/specification/content list pages, and the full remaining system and user route families onto the preset-driven shadcn composition baseline
-- normalize hidden and detail-heavy flows such as notification, feedback detail, agreement, explanation, size-range, and user dialogs to shared `Card`-based surfaces while keeping existing route behavior and loaders intact
+Summary:
+- add core-api and admin-api workspace members plus shared lris crates
+  for config, db, http, observability, and question-bank boundaries
+- reserve PostgreSQL migration roots for core-api and admin-api and teach
+  the Justfile to load per-project database drivers
+- update migration plan and design docs to pin question-bank ownership
+  boundaries and keep camellia as the fixed frontend landing point
 
-## Validation
-- pnpm --dir bougainvillea install --frozen-lockfile
-- pnpm --dir bougainvillea run check:camellia
-- PORT=3213 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3213/login
-- curl -I http://127.0.0.1:3213/
-- curl -I http://127.0.0.1:3213/playground
-- curl -I http://127.0.0.1:3213/ai/template
-- curl -I http://127.0.0.1:3213/scene/wrong/dict
-- curl -I http://127.0.0.1:3213/square/tag
-- PORT=3214 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3214/system/settings
-- curl -I http://127.0.0.1:3214/system/info
-- curl -I http://127.0.0.1:3214/system/settings/server
-- curl -I http://127.0.0.1:3214/template/manage/item/tpl-shelf-202
-- PORT=3216 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3216/template/classification
-- curl -I http://127.0.0.1:3216/template/manage
-- curl -I http://127.0.0.1:3216/template/manage/preview/tpl-shelf-202
-- curl -I http://127.0.0.1:3216/template/manage/editor/tpl-shelf-202
-- curl -I http://127.0.0.1:3216/specification/template
-- curl -I http://127.0.0.1:3216/specification/classification
-- curl -I http://127.0.0.1:3216/content/issue
-- curl -I http://127.0.0.1:3216/content/tutorial
-- curl -I http://127.0.0.1:3216/content/feedback
-- PORT=3218 pnpm --dir bougainvillea --filter @bougainvillea/camellia start
-- curl -I http://127.0.0.1:3218/system/node
-- curl -I http://127.0.0.1:3218/system/role
-- curl -I http://127.0.0.1:3218/system/endpoint
-- curl -I http://127.0.0.1:3218/system/app
-- curl -I http://127.0.0.1:3218/system/oss
-- curl -I http://127.0.0.1:3218/system/locale
-- curl -I http://127.0.0.1:3218/system/i18n
-- curl -I http://127.0.0.1:3218/system/dictionary
-- curl -I http://127.0.0.1:3218/specification/size-range
-- curl -I http://127.0.0.1:3218/content/agreement
-- curl -I http://127.0.0.1:3218/content/explanation
-- curl -I http://127.0.0.1:3218/content/notification
-- curl -I http://127.0.0.1:3218/content/feedback/fbk-1001
-- curl -I http://127.0.0.1:3218/user/manage
-- curl -I http://127.0.0.1:3218/user/logoff
-- curl -I http://127.0.0.1:3218/user/anomalous
+Rationale:
+- DAM-52 needs stable project targets before question-bank features can be
+  implemented without drifting back into spectra
+- encoding the service boundaries in code and docs keeps later tickets
+  aligned on API, DB, and frontend ownership
+
+Tests:
+- cargo metadata --manifest-path Cargo.toml --format-version 1
+- cargo check --workspace
+- git diff --check
