@@ -6,6 +6,7 @@ on:
       - '**'
 
 env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   RUST_TOOLCHAIN: stable
 
 jobs:
@@ -15,18 +16,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.19.0
-        with:
-          java-version: 17
-          maven-version: 3.9.11
-          checkout-enabled: false
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: zulu
+          java-version: 17
+          cache: maven
+          cache-dependency-path: |
+            java/**/pom.xml
+          overwrite-settings: false
+      - name: Setup Maven
+        uses: stCarolas/setup-maven@v5.1
+        with:
+          maven-version: 3.9.11
+      - name: Setup Maven settings
+        uses: s4u/maven-settings-action@v4.0.0
 
 
       - name: Check psdk
@@ -56,9 +66,11 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Install rust toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           toolchain: ${{ env.RUST_TOOLCHAIN }}
+          cache: false
+          rustflags: ""
 
       - name: Rust clippy
         working-directory: rust
@@ -150,7 +162,7 @@ jobs:
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
 

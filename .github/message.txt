@@ -1,1 +1,18 @@
-image: ^4.8.0
+fix(dart): normalize high-bit-depth image processing
+
+Summary:
+- normalize Atkinson inputs into a stable uint8 RGBA buffer before
+  dithering and keep diffusion bounded to valid neighbors
+- rewrite Pbita raw bit packing around uint8 normalization, luminance
+  thresholding, and explicit byte/bit indexing
+- add regression tests that cover uint16 inputs for both algorithm paths
+
+Rationale:
+- iOS image decode paths can surface non-uint8 images, which caused the
+  previous code to misread thresholds and emit blank or all-white output
+- manual Atkinson normalization avoids the palette conversion crash that
+  the image package can trigger on some intermediate images
+
+Tests:
+- cd dart/algorithms/dithering && dart test
+- cd dart/algorithms/imageb && dart test
