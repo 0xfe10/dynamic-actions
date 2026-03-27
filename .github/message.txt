@@ -1,15 +1,50 @@
-fix(cornerstone): rollback wrong cloud print migrations
+DAM-57: rollback wrong cornerstone migrations (#503)
 
-Summary:
-- revert the DAM-43 cloud print cornerstone migrations from PR #501
-- move the statistics chart records migration to V00000201
-- keep the fix scoped to traice/cornerstone migration assets only
+## Summary
+- revert the unintended cornerstone cloud print migrations introduced by PR #501
+- remove the extra liquibase changelog include and records file for those cloud print nodes
+- rename the statistics chart Flyway records migration from `V0000100` to `V00000201`
 
-Rationale:
-- DAM-57 requests rolling back the unintended cornerstone library changes
-- Flyway normalizes leading zeros, so V0000100 collided with version 100
-- V00000201 is the next free records version after the existing history
+## Why
+- `DAM-57` asks to roll back the wrong `endfather` migration changes
+- Flyway normalizes leading zeros, so `V0000100` collided with the existing version `V00000100`
+- `V00000201` is the next free `traice/cornerstone/records` version after the current history
 
-Tests:
-- docker run --rm -v /code/symphony/0xfe10/workspaces/DAM-57/endfather/traice/cornerstone/records:/flyway/sql flyway/flyway:10-alpine -url=jdbc:h2:mem:testdb -user=sa -locations=filesystem:/flyway/sql -encoding=UTF-8 info
-- git diff --check
+## Validation
+- `docker run --rm -v /code/symphony/0xfe10/workspaces/DAM-57/endfather/traice/cornerstone/records:/flyway/sql flyway/flyway:10-alpine -url=jdbc:h2:mem:testdb -user=sa -locations=filesystem:/flyway/sql -encoding=UTF-8 info`
+- `git diff --check`
+
+## Database Repair SQL
+If a database already applied the bad cloud print records migration and/or the old statistics migration name, run the following MySQL statements before the next Flyway run:
+
+```sql
+START TRANSACTION;
+
+DELETE FROM b_node
+WHERE id IN (
+  '1774486500000003072',
+  '1774486500000004096',
+  '1774486500000005120',
+  '1774486500000006144'
+);
+
+DELETE FROM b_node
+WHERE id IN (
+  '1774486500000002048',
+  '1774486500000001024'
+);
+
+DELETE FROM flyway_schema_history
+WHERE version IN ('101', '00000101')
+  AND script = 'V0000101__add_cloud_print_nodes.sql';
+
+UPDATE flyway_schema_history
+SET version = '201',
+    script = 'V00000201__add_statistics_chart_nodes.sql'
+WHERE version IN ('100', '00000100')
+  AND script = 'V0000100__add_statistics_chart_nodes.sql';
+
+COMMIT;
+```
+
+These statements are idempotent no-ops when the bad rows were never applied.
