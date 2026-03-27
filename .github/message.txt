@@ -1,1 +1,21 @@
-大模型审核开关
+DAM-43: add woodii cloud print nodes (#501)
+
+Summary:
+- add the missing woodii cloud_print frontend node seed under app/universal
+- register the cloud-print backend auth nodes for device page, modify,
+  delete, and user list endpoints
+- wire the new liquibase data migration into the master changelog and mirror
+  it in cornerstone records
+
+Rationale:
+- main already contains the cloud_print woodii views and API layer, but the
+  menu and permission nodes were missing so the page could not surface from
+  the main menu or reuse the normal auth path
+- keeping the Vue pages unchanged minimizes scope and matches the issue's real
+  gap on current main
+
+Tests:
+- cd woodii && npm exec --package=yarn@1.22.22 -- yarn install --frozen-lockfile
+- cd woodii && npm exec --package=yarn@1.22.22 -- yarn build:stg
+- cd woodii && npm exec --package=yarn@1.22.22 -- yarn typecheck (fails on
+  pre-existing repo-wide TypeScript errors outside cloud_print scope)
