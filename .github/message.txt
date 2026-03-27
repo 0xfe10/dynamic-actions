@@ -1,1 +1,1 @@
-chore(bluetooth_classic): sync restored files with main
+Merge remote-tracking branch 'origin/main' into feat/migrate-to-flutter-bluetooth-classic-serial
