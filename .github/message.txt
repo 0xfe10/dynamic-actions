@@ -1,1 +1,18 @@
-fix(js): composite pbita transparent edge pixels
+test(dart): add esc image edge regressions
+
+Summary:
+- add a compressed Pbita regression for transparent dark edge pixels at
+  threshold 150
+- add an end-to-end ESC EImage compressed command regression and the
+  image test dependency it needs
+
+Rationale:
+- validate the Dart image path the reviewer asked to focus on instead of
+  the earlier JS-only attempt
+- lock in the current dam-56 Dart behavior after confirming the edge bug
+  is not reproducible from the repo-local Dart path
+
+Tests:
+- cd psdk/dart/algorithms/imageb && dart test test/imageb_process_test.dart
+- cd psdk/dart/fruits/esc && dart test test/esc_test.dart
+- git -C psdk diff --check
