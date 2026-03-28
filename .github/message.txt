@@ -1,1 +1,23 @@
-Add Dockerfile and nginx config for Camellia app (#54)
+feat(camellia): migrate initial woodii batch pages
+
+Summary:
+- add dedicated Camellia routes and page implementations for the
+  first Woodii migration batch: logoff, anomalous, version,
+  feedback, agreement, tutorial, issue, and explanation
+- extend the shared Woodii API client with the deactivation,
+  universal-content, version, and feedback endpoints used by these
+  pages
+- add the navigation and i18n coverage needed for the new scoped
+  admin surfaces
+
+Rationale:
+- DAM-63 starts with the highest-ROI CRUD and content pages, so the
+  new admin shell needs real page surfaces instead of module
+  placeholders for these menu nodes
+- keeping the request logic in the shared client and the route/page
+  behavior in Camellia matches the project migration constraints and
+  preserves the existing shell architecture
+
+Tests:
+- pnpm --dir labelix/bougainvillea run typecheck:camellia
+- pnpm --dir labelix/bougainvillea --filter @bougainvillea/camellia build
