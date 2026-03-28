@@ -1,13 +1,1 @@
-Camellia new (#53)
-
-* Refine Camellia UI scaffolding and add dashboard metrics
-
-- Add DashboardMetricCard and DashboardMetricGrid components
-- Unify card styling for FormSection, SectionCard, PageHeader,
-  QueryToolbar
-- Add TablePanel and PaginationBar components
-- Update Camellia pages to use new dashboard metric components
-- Improve sidebar and form field styling
-- Allow dev server host override via CAMELLIA_DEV_ALLOWED_HOSTS env var
-
-* base for migrate woodii to camellia
+Update login verification note with accurate test results
