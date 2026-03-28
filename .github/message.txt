@@ -1,3 +1,1 @@
-Add example env files and Justfile, remove .specify scripts (#52)
-
-- Add `.env/camellia.env.example` and `.
+base for migrate woodii to camellia
