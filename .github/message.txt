@@ -1,10 +1,16 @@
-Add agreement, explanation, issue, tutorial, logoff, and anomalous user
-pages
+feat(camellia): migrate grouped universal resource pages
 
-- Implement AgreementPage, ExplanationPage, IssuePage, TutorialPage,
-  UserLogoffPage, and UserAnomalousPage with full CRUD and filtering
-- Add mark-options.ts for dynamic mark/option helpers
-- Update navigation and router to include new pages and routes
-- Extend API client types for agreement, explanation, issue, tutorial,
-  logoff, and anomalous user records and queries
-- Update migration plan doc to reflect new page status
+Summary:
+- add camellia pages for icon, border, webpage, and element
+- wire the new routes into navigation, shortcuts, and i18n
+- extend the woodii api-client for grouped resource and element flows
+
+Rationale:
+- these Batch 1 surfaces were still missing dedicated camellia pages
+- grouped list-detail scaffolds fit these woodii resource domains cleanly
+- shipping them together reduces repeated scaffolding work for later domains
+
+Tests:
+- just -f /code/symphony/0xfe10/workspaces/DAM-63/labelix/Justfile camellia-typecheck
+- just -f /code/symphony/0xfe10/workspaces/DAM-63/labelix/Justfile camellia-build
+- curl -I http://127.0.0.1:4175/app/universal/{icon,border,webpage,element}
