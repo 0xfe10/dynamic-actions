@@ -1,10 +1,6 @@
-Refine woodii top navigation header (#505)
+Add legacy migration controls and readonly mode support
 
-## Summary
-- simplify the global woodii top header by replacing the stacked breadcrumb/title/description block with a compact page context and title
-- remove the extra notification icon and tighten the remaining action controls into a cleaner header row
-- add responsive wrapping so the header remains tidy on smaller screens
-
-## Testing
-- cd woodii && npm exec --package=yarn@1.22.22 -- yarn build:dev
-- cd woodii && npm exec --package=yarn@1.22.22 -- yarn run eslint src/layouts/components/DefaultLayoutWithVerticalNav.vue -c .eslintrc.js --ext .vue
+- Add env vars for migration controls and Camellia URL
+- Show migration banner and Camellia link in App.vue
+- Add readonly mode UI mask in VerticalNavLayout
+- Add runtime config for migration and readonly flags
