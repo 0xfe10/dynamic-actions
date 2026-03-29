@@ -1,1 +1,7 @@
-Switch to @lexical/code-shiki and update code block handling (#58)
+Add runtime config injection for Camellia app in Docker
+
+- Inject runtime-config.js at container startup using env vars
+- Add nginx config to serve runtime-config.js with no-store cache
+- Load runtime-config.js in index.html before main app
+- Update api-client to read config from
+  window.__CAMELLIA_RUNTIME_CONFIG__
