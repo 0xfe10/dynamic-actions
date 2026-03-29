@@ -1,16 +1,23 @@
-feat(camellia): migrate grouped universal resource pages
+feat(camellia): migrate batch1 content management pages
 
 Summary:
-- add camellia pages for icon, border, webpage, and element
-- wire the new routes into navigation, shortcuts, and i18n
-- extend the woodii api-client for grouped resource and element flows
+- add dedicated Camellia pages for video_manual, banner, and general_group
+- extend the shared woodii API client with banner, video-manual, and
+  general-group request coverage and exported types
+- wire routes, navigation, shortcuts, uploads, and i18n so the new
+  Batch 1 pages are reachable and use the current shared admin shell
 
 Rationale:
-- these Batch 1 surfaces were still missing dedicated camellia pages
-- grouped list-detail scaffolds fit these woodii resource domains cleanly
-- shipping them together reduces repeated scaffolding work for later domains
+- DAM-63 still had visible Batch 1 content-management gaps after the
+  grouped resource migration pass
+- banner, video_manual, and general_group all fit the existing split
+  list/detail and dialog CRUD scaffolds without waiting for deeper
+  archetypes
 
 Tests:
 - just -f /code/symphony/0xfe10/workspaces/DAM-63/labelix/Justfile camellia-typecheck
 - just -f /code/symphony/0xfe10/workspaces/DAM-63/labelix/Justfile camellia-build
-- curl -I http://127.0.0.1:4175/app/universal/{icon,border,webpage,element}
+- pnpm --dir /code/symphony/0xfe10/workspaces/DAM-63/labelix/bougainvillea --filter @bougainvillea/camellia exec vite preview --host 127.0.0.1 --port 4174
+- curl -I -s http://127.0.0.1:4174/app/universal/video_manual
+- curl -I -s http://127.0.0.1:4174/app/universal/banner
+- curl -I -s http://127.0.0.1:4174/app/universal/general_group
