@@ -1,1 +1,1 @@
-Add staging mode and improve runtime indicator logic
+Auto-reload app on dynamic import chunk load failure
