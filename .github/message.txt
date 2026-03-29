@@ -1,1 +1,1 @@
-Update default app code to woodii and fix runtime config fallback
+Add evaluation of serverless SSR for camellia admin app
