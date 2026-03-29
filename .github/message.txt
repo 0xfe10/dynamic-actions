@@ -1,1 +1,1 @@
-Switch to @lexical/code-shiki and update code block handling
+Switch to @lexical/code-shiki and update code block handling (#58)
