@@ -27,8 +27,8 @@ jobs:
             echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
           fi
 
-  build-rust-binaries:
-    name: Build Rust binaries
+  build-rosaceae-binaries:
+    name: Build rosaceae binaries
     runs-on: ubuntu-latest
     needs:
       - ensure-main
@@ -48,10 +48,10 @@ jobs:
           command: build
           target: x86_64-unknown-linux-musl
           args: "--release --package spectra-cli --features=proxy-legacy"
-          working-directory: lris
+          working-directory: rosaceae
 
       - name: Collect binaries
-        working-directory: lris
+        working-directory: rosaceae
         run: |
           mkdir -p dist/bin
           cp target/x86_64-unknown-linux-musl/release/spectra-cli dist/bin/spectra-cli
@@ -59,17 +59,17 @@ jobs:
       - name: Upload binaries
         uses: actions/upload-artifact@v4
         with:
-          name: lris-binaries-x86_64-unknown-linux-musl
+          name: rosaceae-binaries-x86_64-unknown-linux-musl
           path: |
-            lris/dist/bin/spectra-cli
+            rosaceae/dist/bin/spectra-cli
           if-no-files-found: error
 
-  build-lris-image:
-    name: Build lris image
+  build-rosaceae-image:
+    name: Build rosaceae image
     runs-on: ubuntu-latest
     needs:
       - ensure-main
-      - build-rust-binaries
+      - build-rosaceae-binaries
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
@@ -83,11 +83,11 @@ jobs:
       - name: Download binaries
         uses: actions/download-artifact@v4
         with:
-          name: lris-binaries-x86_64-unknown-linux-musl
-          path: lris/dist/bin
+          name: rosaceae-binaries-x86_64-unknown-linux-musl
+          path: rosaceae/dist/bin
 
       - name: Ensure binary permissions
-        run: chmod +x lris/dist/bin/*
+        run: chmod +x rosaceae/dist/bin/*
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -111,17 +111,17 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-lris:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-lris:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:staging" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rosaceae:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rosaceae:staging" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:staging" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: lris
-          file: lris/Dockerfile
+          context: rosaceae
+          file: rosaceae/Dockerfile
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
@@ -184,8 +184,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: bougainvillea
-          file: bougainvillea/apps/camellia/Dockerfile
+          context: theaceae
+          file: theaceae/apps/camellia/Dockerfile
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
@@ -206,7 +206,7 @@ jobs:
     name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
-      - build-lris-image
+      - build-rosaceae-image
       - build-camellia-image
     steps:
       - uses: actions/checkout@v6
@@ -232,7 +232,7 @@ jobs:
           changes: |
             {
               "argocd/apps/labelix-hk0/overlays/staging/values.yaml": {
-                "app.spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-lris:sha-${{ env.SHA }}",
+                "app.spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
               }
             }
