@@ -1,4 +1,4 @@
-Add legacy migration controls and readonly mode support
+Add legacy migration controls and readonly mode support (#506)
 
 - Add env vars for migration controls and Camellia URL
 - Show migration banner and Camellia link in App.vue
