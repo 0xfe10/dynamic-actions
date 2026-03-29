@@ -1,1 +1,1 @@
-reorg dir (#57)
+Switch to @lexical/code-shiki and update code block handling
