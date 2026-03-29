@@ -1,23 +1,22 @@
-feat(camellia): migrate batch1 content management pages
+feat(camellia): migrate capability admin page
 
 Summary:
-- add dedicated Camellia pages for video_manual, banner, and general_group
-- extend the shared woodii API client with banner, video-manual, and
-  general-group request coverage and exported types
-- wire routes, navigation, shortcuts, uploads, and i18n so the new
-  Batch 1 pages are reachable and use the current shared admin shell
+- add the dedicated Camellia capability management page with list,
+  modal editing, locale gating, and full asset upload coverage
+- extend the shared woodii API client and exports for capability list,
+  modify, and remove operations
+- wire the capability route, navigation, keyboard shortcut help, and
+  localized copy into the current Camellia admin shell
 
 Rationale:
-- DAM-63 still had visible Batch 1 content-management gaps after the
-  grouped resource migration pass
-- banner, video_manual, and general_group all fit the existing split
-  list/detail and dialog CRUD scaffolds without waiting for deeper
-  archetypes
+- capability was the final missing Batch 1 surface in DAM-63 after the
+  content-management pages landed
+- the page fits the current flat CRUD scaffold better than the legacy
+  Woodii Vuetify composition, so the migration can finish without
+  adding new archetypes
 
 Tests:
 - just -f /code/symphony/0xfe10/workspaces/DAM-63/labelix/Justfile camellia-typecheck
 - just -f /code/symphony/0xfe10/workspaces/DAM-63/labelix/Justfile camellia-build
 - pnpm --dir /code/symphony/0xfe10/workspaces/DAM-63/labelix/bougainvillea --filter @bougainvillea/camellia exec vite preview --host 127.0.0.1 --port 4174
-- curl -I -s http://127.0.0.1:4174/app/universal/video_manual
-- curl -I -s http://127.0.0.1:4174/app/universal/banner
-- curl -I -s http://127.0.0.1:4174/app/universal/general_group
+- curl -I -s http://127.0.0.1:4174/app/universal/capability
