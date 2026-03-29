@@ -1,6 +1,1 @@
-Add legacy migration controls and readonly mode support (#506)
-
-- Add env vars for migration controls and Camellia URL
-- Show migration banner and Camellia link in App.vue
-- Add readonly mode UI mask in VerticalNavLayout
-- Add runtime config for migration and readonly flags
+Enable readonly mode and add Camellia migration notice in staging env
