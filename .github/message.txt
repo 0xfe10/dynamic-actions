@@ -1,1 +1,10 @@
-Add Dockerfile and nginx config for Camellia app (#54)
+Add agreement, explanation, issue, tutorial, logoff, and anomalous user
+pages
+
+- Implement AgreementPage, ExplanationPage, IssuePage, TutorialPage,
+  UserLogoffPage, and UserAnomalousPage with full CRUD and filtering
+- Add mark-options.ts for dynamic mark/option helpers
+- Update navigation and router to include new pages and routes
+- Extend API client types for agreement, explanation, issue, tutorial,
+  logoff, and anomalous user records and queries
+- Update migration plan doc to reflect new page status
