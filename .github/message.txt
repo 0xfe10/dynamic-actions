@@ -1,1 +1,1 @@
-Unify pagination logic and audit Camellia pagination usage
+Export runtime config variables before running envsubst
