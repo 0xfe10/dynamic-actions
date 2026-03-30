@@ -1,1 +1,1 @@
-Support LocaleInfo objects in SquareTagPage locales field
+Refactor feedback context column to show device details
