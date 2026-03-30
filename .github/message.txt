@@ -1,12 +1,1 @@
-Add Camellia Woodii parity backlog and enhance specification template
-page
-
-- Add docs/plans/20260330__camellia-woodii-open-parity-backlog.md for
-  tracking open migration gaps
-- Overhaul specification-template-page.tsx with full CRUD, detail, asset
-  upload, and locale support
-- Add new i18n keys for specification fields and common actions
-- Add DevicePropertyNameRecord type to API client
-- Support positional-arguments in Justfile for rosaceae and theaceae
-- Allow custom tableClassName in DataTable and fix min-w-0 in
-  AppShell/SidebarInset for layout robustness
+fix(camellia): normalize pagination state
