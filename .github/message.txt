@@ -1,10 +1,1 @@
-fix(camellia): normalize pagination state (#60)
-
-## Summary
-- add shared URL/localStorage-driven pagination helpers and router search normalization for Camellia
-- make shared table/crud entry points and paginated pages preserve `pn` / `ps` across refresh and list/detail navigation
-- add a system settings control for the default page size and wire representative statistics/list pages to the new behavior
-
-## Validation
-- `pnpm run typecheck:camellia`
-- `pnpm --filter @theaceae/camellia build`
+Unify pagination logic and audit Camellia pagination usage
