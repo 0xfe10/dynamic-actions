@@ -1,1 +1,1 @@
-Disable readonly mode in staging environment
+Add changelog for user_limit and template columns updates
