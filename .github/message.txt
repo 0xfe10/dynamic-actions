@@ -1,1 +1,5 @@
-Update DialogFooter styles for improved spacing and appearance
+Add LibreTranslate support for feedback translation
+
+- Add translation API config to env and runtime
+- Replace 'translate' package with LibreTranslate API
+- Remove 'translate' dependency
