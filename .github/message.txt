@@ -1,1 +1,1 @@
-文生图
+DiffuRay文生图配置路径和apikey
