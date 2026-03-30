@@ -1,1 +1,1 @@
-Refactor feedback context column to show device details
+Remove tooltip from FeedbackTextCell and adjust image cell layout
