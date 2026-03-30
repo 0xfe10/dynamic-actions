@@ -1,1 +1,1 @@
-Remove tooltip from FeedbackTextCell and adjust image cell layout
+Enable keyboard pagination on all table pages
