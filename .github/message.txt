@@ -1,1 +1,1 @@
-Export runtime config variables before running envsubst
+Support LocaleInfo objects in SquareTagPage locales field
