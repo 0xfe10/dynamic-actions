@@ -1,1 +1,5 @@
-Enable keyboard pagination on all table pages
+Add StatusBadge component for consistent status display
+
+Replace Badge with new StatusBadge component for status/state fields
+across pages and tables to provide consistent styling and color coding.
+Remove redundant Badge imports where replaced.
