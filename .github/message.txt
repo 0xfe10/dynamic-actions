@@ -1,14 +1,12 @@
-fix(camellia): persist pagination state in url
+Add Camellia Woodii parity backlog and enhance specification template
+page
 
-Summary:
-- add shared Camellia pagination helpers and a stored default page-size setting
-- update DataTable and SimpleCrudPage to honor URL pn/ps and frontend defaults
-- wire manual pagination pages and list/detail routes to preserve query state
-
-Rationale:
-- DAM-64 requires all paginated pages to reuse a configurable default page size
-- browser back was losing list context because page state lived only in component state
-- URL-driven pagination avoids per-page drift and covers client-side tables too
-
-Tests:
-- cd theaceae && pnpm run typecheck:camellia
+- Add docs/plans/20260330__camellia-woodii-open-parity-backlog.md for
+  tracking open migration gaps
+- Overhaul specification-template-page.tsx with full CRUD, detail, asset
+  upload, and locale support
+- Add new i18n keys for specification fields and common actions
+- Add DevicePropertyNameRecord type to API client
+- Support positional-arguments in Justfile for rosaceae and theaceae
+- Allow custom tableClassName in DataTable and fix min-w-0 in
+  AppShell/SidebarInset for layout robustness
