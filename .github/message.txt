@@ -1,6 +1,1 @@
-Add FormDialogContent and FormDialogBody components
-
-Refactor dialog content in pages to use FormDialogContent and
-FormDialogBody for consistent layout and scrolling behavior. Add target
-language support for feedback translation. Update i18n messages and
-feedback translation logic to support dynamic target languages.
+Add device ID and context display mode to feedback page
