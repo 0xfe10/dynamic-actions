@@ -1,1 +1,1 @@
-Move deviceId entry after deviceName and deviceSystem in context table
+Fix feedback context row hover styles and remove rowClassName prop
