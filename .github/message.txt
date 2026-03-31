@@ -1,1 +1,1 @@
-Show loading spinner on translate buttons during translation
+Add source language selection and translation for replies
