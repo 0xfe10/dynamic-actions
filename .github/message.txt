@@ -1,5 +1,6 @@
-Add LibreTranslate support for feedback translation
+Add FormDialogContent and FormDialogBody components
 
-- Add translation API config to env and runtime
-- Replace 'translate' package with LibreTranslate API
-- Remove 'translate' dependency
+Refactor dialog content in pages to use FormDialogContent and
+FormDialogBody for consistent layout and scrolling behavior. Add target
+language support for feedback translation. Update i18n messages and
+feedback translation logic to support dynamic target languages.
