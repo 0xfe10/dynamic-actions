@@ -1,1 +1,1 @@
-Deduplicate app and locale options in AppLocalePage
+Add i18n translation files and import locale messages
