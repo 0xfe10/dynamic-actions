@@ -1,1 +1,1 @@
-Fix feedback context row hover styles and remove rowClassName prop
+Show loading spinner on translate buttons during translation
