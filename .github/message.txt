@@ -1,1 +1,1 @@
-Add device ID and context display mode to feedback page
+Move deviceId entry after deviceName and deviceSystem in context table
