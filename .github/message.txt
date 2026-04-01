@@ -1,7 +1,8 @@
-Refactor device page UI and logic for improved UX
+Refactor education navigation and add knowledge graph fullscreen
+shortcuts
 
-- Switch device list to card grid layout
-- Simplify device create/edit dialog logic
-- Add edit and clone actions to device cards
-- Refactor state management for dialog and property rows
-- Update API param from `name` to `kw` for device search
+- Simplify education navigation structure and update default routes
+- Add fullscreen toggle and exit shortcuts for knowledge graph
+- Update i18n for new shortcut descriptions
+- Refactor knowledge point page to support tree and graph modes
+- Add UI and logic for knowledge relation management
