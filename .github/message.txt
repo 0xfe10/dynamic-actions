@@ -1,1 +1,5 @@
-Add row selection column to DataTable when enabled
+Add education backend reverse schema plan doc
+
+Add initial reverse schema design plan for education backend,
+including core entity and relation tables, modeling principles,
+and phased migration recommendations.
