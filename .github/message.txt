@@ -1,12 +1,1 @@
-Add education app prototype restoration with mock pages
-
-- Add education module spec doc
-- Implement education navigation group and menu
-- Add education pages: overview, resource library, basic info, CRUD for
-  all dictionary pages, tree page for knowledge points, exam library,
-  and question bank
-- Use local mock data for all education pages
-- Integrate education navigation into sidebar and routing
-- Add i18n keys for education navigation
-- Adjust status badge color and usage in related pages
-- Minor table column width tweak for actions
+Refactor device, wrong dict, and wrong grade pages to use custom CRUD UI
