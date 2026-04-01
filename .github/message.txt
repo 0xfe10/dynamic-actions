@@ -1,8 +1,1 @@
-Refactor education navigation and add knowledge graph fullscreen
-shortcuts
-
-- Simplify education navigation structure and update default routes
-- Add fullscreen toggle and exit shortcuts for knowledge graph
-- Update i18n for new shortcut descriptions
-- Refactor knowledge point page to support tree and graph modes
-- Add UI and logic for knowledge relation management
+Add row selection column to DataTable when enabled
