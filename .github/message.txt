@@ -1,1 +1,7 @@
-Internationalize device and dictionary property labels and toasts
+Refactor device page UI and logic for improved UX
+
+- Switch device list to card grid layout
+- Simplify device create/edit dialog logic
+- Add edit and clone actions to device cards
+- Refactor state management for dialog and property rows
+- Update API param from `name` to `kw` for device search
