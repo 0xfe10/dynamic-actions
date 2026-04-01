@@ -1,1 +1,1 @@
-Refactor device, wrong dict, and wrong grade pages to use custom CRUD UI
+Internationalize device and dictionary property labels and toasts
