@@ -1,10 +1,1 @@
-DAM-68: use a dropdown for capability type (#62)
-
-## Summary
-- replace the capability `type` text input with a fixed dropdown on the theaceae capability page
-- show localized labels for capability types in both the form options and the list column
-- add locale strings for `HOME` and `TEMPLATE_FILTER`
-
-## Validation
-- `cd theaceae && pnpm run typecheck:camellia`
-- `cd theaceae && pnpm --filter @theaceae/camellia build`
+feat(camellia): add capability learning resource grades
