@@ -1,6 +1,14 @@
-Add education ER diagram, update docs and switch to Postgres
+fix(camellia): use select for capability type
 
-- Add entity-relationship diagram for education module
-- Update feat-educatio plan docs and add README
-- Switch Kerria CLI database from MySQL to Postgres
-- Update migration files for initial schema
+Summary:
+- change the capability type form field from free text to a fixed select
+- localize capability type labels for the list column and dropdown options
+
+Rationale:
+- capability type should only allow the supported HOME and TEMPLATE_FILTER values
+- reusing the existing mark translation pattern keeps capability aligned with
+  other camellia CRUD pages
+
+Tests:
+- cd theaceae && pnpm run typecheck:camellia
+- cd theaceae && pnpm --filter @theaceae/camellia build
