@@ -1,14 +1,10 @@
-fix(camellia): use select for capability type
+DAM-68: use a dropdown for capability type (#62)
 
-Summary:
-- change the capability type form field from free text to a fixed select
-- localize capability type labels for the list column and dropdown options
+## Summary
+- replace the capability `type` text input with a fixed dropdown on the theaceae capability page
+- show localized labels for capability types in both the form options and the list column
+- add locale strings for `HOME` and `TEMPLATE_FILTER`
 
-Rationale:
-- capability type should only allow the supported HOME and TEMPLATE_FILTER values
-- reusing the existing mark translation pattern keeps capability aligned with
-  other camellia CRUD pages
-
-Tests:
-- cd theaceae && pnpm run typecheck:camellia
-- cd theaceae && pnpm --filter @theaceae/camellia build
+## Validation
+- `cd theaceae && pnpm run typecheck:camellia`
+- `cd theaceae && pnpm --filter @theaceae/camellia build`
