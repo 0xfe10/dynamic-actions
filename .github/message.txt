@@ -1,17 +1,1 @@
-fix(dart): normalize non-8bit image inputs
-
-Summary:
-- normalize non-uint8 inputs before running Atkinson dithering
-- normalize non-uint8 inputs before Pbita top-bit packing
-- add uint16 regression tests for both image-processing paths
-
-Rationale:
-- main still assumes decoded pixels already use 8-bit channel semantics
-- iOS non-8bit images can therefore be treated as white or blank output
-- DAM-66 only needs the normalization fix, not the later tuning changes
-
-Tests:
-- cd dart/algorithms/dithering && dart test test/non_8bit_regression_test.dart
-- cd dart/algorithms/imageb && dart test test/non_8bit_regression_test.dart
-- cd dart/algorithms/dithering && dart analyze . && dart test
-- cd dart/algorithms/imageb && dart analyze . && dart test
+flutter_bluetooth_serial
