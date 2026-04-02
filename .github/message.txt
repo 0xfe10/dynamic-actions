@@ -1,5 +1,7 @@
-Add education backend reverse schema plan doc
+Scaffold kerria CLI service and workflows integration
 
-Add initial reverse schema design plan for education backend,
-including core entity and relation tables, modeling principles,
-and phased migration recommendations.
+- Add kerria-cli to workspace and build matrix
+- Implement basic Axum API service with health/meta endpoints
+- Add config, state, and TypeScript bindings support
+- Add initial database migration and .env schema
+- Update Docker, Justfile, and ignore rules for kerria

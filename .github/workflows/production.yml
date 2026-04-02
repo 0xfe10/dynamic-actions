@@ -13,6 +13,16 @@ jobs:
   build-rosaceae-binaries:
     name: Build rosaceae binaries
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - package: spectra-cli
+            binary: spectra-cli
+            args: --release --package spectra-cli --features=proxy-legacy
+          - package: kerria-cli
+            binary: kerria-cli
+            args: --release --package kerria-cli
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -22,26 +32,26 @@ jobs:
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
 
-      - name: Build spectra binary
+      - name: Build ${{ matrix.binary }} binary
         uses: houseabsolute/actions-rust-cross@v0
         with:
           command: build
           target: x86_64-unknown-linux-musl
-          args: "--release --package spectra-cli --features=proxy-legacy"
+          args: "${{ matrix.args }}"
           working-directory: rosaceae
 
       - name: Collect binaries
         working-directory: rosaceae
         run: |
           mkdir -p dist/bin
-          cp target/x86_64-unknown-linux-musl/release/spectra-cli dist/bin/spectra-cli
+          cp target/x86_64-unknown-linux-musl/release/${{ matrix.binary }} dist/bin/${{ matrix.binary }}
 
       - name: Upload binaries
         uses: actions/upload-artifact@v4
         with:
-          name: rosaceae-binaries-x86_64-unknown-linux-musl
+          name: rosaceae-binaries-${{ matrix.binary }}-x86_64-unknown-linux-musl
           path: |
-            rosaceae/dist/bin/spectra-cli
+            rosaceae/dist/bin/${{ matrix.binary }}
           if-no-files-found: error
 
   build-rosaceae-image:
@@ -61,8 +71,9 @@ jobs:
       - name: Download binaries
         uses: actions/download-artifact@v4
         with:
-          name: rosaceae-binaries-x86_64-unknown-linux-musl
+          pattern: rosaceae-binaries-*-x86_64-unknown-linux-musl
           path: rosaceae/dist/bin
+          merge-multiple: true
 
       - name: Ensure binary permissions
         run: chmod +x rosaceae/dist/bin/*
