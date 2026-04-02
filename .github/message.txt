@@ -1,1 +1,19 @@
-fix：修复重复头问题
+More fix (#31)
+
+* esc 新增设置当前指令
+
+* 修正mac地址取值
+
+* js v0.7.14
+
+* format
+
+* image: ^4.8.0
+
+* java 网络打印机搜索
+
+* java ble 优化
+
+---------
+
+Co-authored-by: JCZ <615315510@qq.com>
