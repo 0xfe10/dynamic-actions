@@ -1,7 +1,6 @@
-Scaffold kerria CLI service and workflows integration
+Add education ER diagram, update docs and switch to Postgres
 
-- Add kerria-cli to workspace and build matrix
-- Implement basic Axum API service with health/meta endpoints
-- Add config, state, and TypeScript bindings support
-- Add initial database migration and .env schema
-- Update Docker, Justfile, and ignore rules for kerria
+- Add entity-relationship diagram for education module
+- Update feat-educatio plan docs and add README
+- Switch Kerria CLI database from MySQL to Postgres
+- Update migration files for initial schema
