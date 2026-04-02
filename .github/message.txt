@@ -1,1 +1,11 @@
-feat(camellia): add capability learning resource grades
+feat(camellia): add capability learning resource grades (#63)
+
+## Summary
+- add `LEARNING_RESOURCE` as a capability type option
+- load learning-resource grades and show a conditional multi-select in the capability dialog
+- normalize selected grades into the capability `grades` CSV field on save
+
+## Validation
+- pnpm --dir theaceae run check:camellia
+
+Refs: DAM-69
