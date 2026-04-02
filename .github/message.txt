@@ -1,8 +1,1 @@
-Add education backend code conventions and technical decisions docs
-
-- Add architecture/20260402__education-backend-code-conventions.md
-- Add architecture/20260402__education-backend-technical-decisions.md
-- Update README to include new docs
-- Update reverse schema plan to clarify region_id/locale rules
-- Update initial migration: use string Snowflake IDs, remove region_code
-  from c_edu_stage
+Add dev Postgres Docker Compose setup and Justfile commands
