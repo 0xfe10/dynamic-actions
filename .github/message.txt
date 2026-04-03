@@ -1,1 +1,13 @@
-kerria project
+feat: add icon type filter to icon management (#64)
+
+## Summary
+- add an icon type filter to the Camellia icon management page
+- source filter options from `useConsole().marks.icon.type`
+- localize the icon type labels and pass the selected type to `woodiiApi.icon.groupPage`
+
+## Testing
+- `pnpm run typecheck:camellia`
+- `pnpm run build:camellia`
+
+## Issue
+- DAM-70
