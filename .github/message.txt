@@ -1,1 +1,16 @@
-修复 icon 排序
+feat(camellia): add icon type filter to icon page
+
+Summary:
+- read icon type options from console marks via a shared helper
+- add an icon type select filter to the icon management page and pass
+  the selected type to the backend group query
+- add locale entries for the icon type labels used by the filter
+
+Rationale:
+- expose only icon type options available in the active product context
+- reuse backend filtering so the page behavior stays aligned with the
+  existing icon group API
+
+Tests:
+- pnpm run typecheck:camellia
+- pnpm run build:camellia
