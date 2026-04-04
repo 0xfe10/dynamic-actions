@@ -1,8 +1,1 @@
-Remove course dictionary and related code from education backend
-
-- Drop c_edu_course table and references in migrations and docs
-- Remove course fields from DTOs, API types, and UI
-- Update frontend to remove course navigation and pages
-- Add AsyncActionButton and shortcut hold hints to UI
-- Update education question and exam paper types and APIs
-- Add react-markdown, remark-gfm, and remove-markdown dependencies
+Merge branch 'main' into feat-kerria
