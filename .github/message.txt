@@ -1,1 +1,1 @@
-Add rowActionsPlacement prop to control action button order
+Remove codegen platform integration from education backend
