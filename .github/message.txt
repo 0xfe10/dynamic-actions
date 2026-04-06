@@ -1,1 +1,1 @@
-Remove OSS config from serve env example and JWT secret from worker env
+Set document title based on runtime mode and page title
