@@ -22,7 +22,7 @@ jobs:
             args: --release --package spectra-cli --features=proxy-legacy
           - package: kerria-cli
             binary: kerria-cli
-            args: --release --package kerria-cli
+            args: --release --package kerria-cli --features=education-compat-api
     steps:
       - uses: actions/checkout@v6
       - name: Checkout

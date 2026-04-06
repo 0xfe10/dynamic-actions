@@ -1,1 +1,1 @@
-Set document title based on runtime mode and page title
+Enable education-compat-api feature for kerria-cli builds
