@@ -1,14 +1,15 @@
-feat(capability): add image and tag fields to editor
+feat: update capability editor fields (#66)
 
-Summary:
-- switch capability template editing to a textarea control
-- add the requested old/new icon asset fields with preview support
-- add searchable multi-select loading for tag selection and widen the dialog
+## Summary
+- switch capability `template` editing from a single-line input to a textarea
+- add the requested old/new icon asset fields with built-in preview support
+- add searchable multi-select tag loading backed by `/api/v1/app/universal/tag/list`
+- widen the capability editor dialog and allow icon fields to render side by side
 
-Rationale:
-- align the Camellia capability editor with the backend field contract
-- let operators search and submit tag names as the expected comma string
-- reduce form length by widening the dialog and allowing icon fields to sit side by side
+## Why
+- DAM-72 requires the capability add/edit form to match the backend contract and the legacy icon field set
+- operators need live tag lookup while still submitting the backend comma-separated string format
+- the expanded field set needs a wider layout to avoid an unnecessarily long form
 
-Tests:
+## Validation
 - pnpm --dir theaceae run check:camellia
