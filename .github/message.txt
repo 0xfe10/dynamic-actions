@@ -1,10 +1,4 @@
-Add education-compat-api feature and v0 API endpoints
+Merge remote-tracking branch 'origin/main' into feat-kerria
 
-- Add `education-compat-api` feature flag to kerria CLI
-- Implement `/api/v0/education/*` endpoints for legacy compatibility
-- Add DTOs, repository, service, and routes for v0 API
-- Add integration tests for v0 endpoints
-- Update database schema: add `term_type` to `c_edu_term`
-- Add `term_type` to education dictionary DTOs
-- Update Justfile help and frontend dictionary types for new field
-- Add "Disabled" state to locales
+# Conflicts:
+#	theaceae/apps/camellia/src/components/simple-crud-page.tsx
