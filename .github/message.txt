@@ -1,9 +1,14 @@
-DAM-73 camellia version page mode handling (#67)
+fix(camellia): improve version dialog inputs
 
-## Summary
-- hide the version tip frequency field unless the selected update mode is `TIP`
-- omit `tip_frequency` from version saves for `FORCE` and `CHECK`
-- surface a required-field toast before aborting invalid version saves
+Summary:
+- replace version release links textarea with input-based editing
+- add Windows-specific X86 and X64 link serialization in the dialog
+- switch release time editing to a picker-backed datetime-local input
 
-## Testing
-- `cd theaceae && pnpm run check:camellia`
+Rationale:
+- match the requested version dialog UX for single-link and Windows builds
+- preserve legacy Windows link data by mapping fallback entries into X86/X64
+- avoid free-text release timestamps when the browser can provide a chooser
+
+Tests:
+- cd theaceae && pnpm install --frozen-lockfile && pnpm run check:camellia
