@@ -1,1 +1,15 @@
-Add research docs on exam library document processing and API gateway
+fix(capability): add locale type field
+
+Summary:
+- extend the capability record and modify payload with locale_type
+- add a marks-backed locale_type select to the capability dialog
+- add locale type translations for Camellia capability marks
+
+Rationale:
+- the capability create/edit API now expects locale_type in the payload
+- using the shared marks helper keeps the select behavior aligned with other
+  Camellia CRUD pages
+
+Tests:
+- pnpm --dir /code/symphony/0xfe10/workspaces/DAM-71/labelix/theaceae run
+  check:camellia
