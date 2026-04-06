@@ -1,1 +1,14 @@
-fix: add capability locale type field (#65)
+feat(capability): add image and tag fields to editor
+
+Summary:
+- switch capability template editing to a textarea control
+- add the requested old/new icon asset fields with preview support
+- add searchable multi-select loading for tag selection and widen the dialog
+
+Rationale:
+- align the Camellia capability editor with the backend field contract
+- let operators search and submit tag names as the expected comma string
+- reduce form length by widening the dialog and allowing icon fields to sit side by side
+
+Tests:
+- pnpm --dir theaceae run check:camellia
