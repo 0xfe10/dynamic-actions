@@ -1,10 +1,1 @@
-Add JWT authentication and OpenAPI documentation
-
-- Add JWT secret config and decoder to AppState
-- Require Authorization: Bearer <token> for all /api/* routes
-- Implement JWT middleware and session extractor
-- Add OpenAPI documentation using utoipa and ReDoc
-- Annotate API schemas and endpoints for OpenAPI/Swagger
-- Update .env example files for JWT config
-- Add tests for JWT-protected API endpoints
-- Regenerate TypeScript types with schema docs
+Remove OSS config from serve env example and JWT secret from worker env
