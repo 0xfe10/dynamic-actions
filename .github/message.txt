@@ -1,1 +1,1 @@
-Add PbitaPreview for bitmap preview and related tests
+Merge branch 'dam-66-non-8bit-ios-image-normalization' into jcz
