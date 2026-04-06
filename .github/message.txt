@@ -1,1 +1,94 @@
-Enable education-compat-api feature for kerria-cli builds
+Kerria Project (#61)
+
+* Add education backend reverse schema plan doc
+
+Add initial reverse schema design plan for education backend,
+including core entity and relation tables, modeling principles,
+and phased migration recommendations.
+
+* Scaffold kerria CLI service and workflows integration
+
+- Add kerria-cli to workspace and build matrix
+- Implement basic Axum API service with health/meta endpoints
+- Add config, state, and TypeScript bindings support
+- Add initial database migration and .env schema
+- Update Docker, Justfile, and ignore rules for kerria
+
+* Add education ER diagram, update docs and switch to Postgres
+
+- Add entity-relationship diagram for education module
+- Update feat-educatio plan docs and add README
+- Switch Kerria CLI database from MySQL to Postgres
+- Update migration files for initial schema
+
+* Add education backend code conventions and technical decisions docs
+
+- Add architecture/20260402__education-backend-code-conventions.md
+- Add architecture/20260402__education-backend-technical-decisions.md
+- Update README to include new docs
+- Update reverse schema plan to clarify region_id/locale rules
+- Update initial migration: use string Snowflake IDs, remove region_code
+  from c_edu_stage
+
+* Add dev Postgres Docker Compose setup and Justfile commands
+
+* kerria project
+
+* Remove course dictionary and related code from education backend
+
+- Drop c_edu_course table and references in migrations and docs
+- Remove course fields from DTOs, API types, and UI
+- Update frontend to remove course navigation and pages
+- Add AsyncActionButton and shortcut hold hints to UI
+- Update education question and exam paper types and APIs
+- Add react-markdown, remark-gfm, and remove-markdown dependencies
+
+* Add rowActionsPlacement prop to control action button order
+
+* Remove codegen platform integration from education backend
+
+* Add research docs on exam library document processing and API gateway
+
+* Add education document worker, processor registry, and monitoring
+
+- Implement education document worker with processor registry and
+  trait-based architecture
+- Add support for gotenberg and any2pdf document processors (stubbed for
+  now)
+- Add markdown, HTML, image, and PDF processors with template support
+- Add Aliyun OSS upload for normalized PDFs with metadata
+- Add document worker and task run monitoring tables and APIs
+- Add Camellia pages for document center, worker/task monitoring, and
+  processor selection
+- Update configs, env examples, and migrations for new document
+  processing features
+- Add tests for processor registry, PDF key generation, and monitoring
+  flows
+
+* Add education-compat-api feature and v0 API endpoints
+
+- Add `education-compat-api` feature flag to kerria CLI
+- Implement `/api/v0/education/*` endpoints for legacy compatibility
+- Add DTOs, repository, service, and routes for v0 API
+- Add integration tests for v0 endpoints
+- Update database schema: add `term_type` to `c_edu_term`
+- Add `term_type` to education dictionary DTOs
+- Update Justfile help and frontend dictionary types for new field
+- Add "Disabled" state to locales
+
+* Add JWT authentication and OpenAPI documentation
+
+- Add JWT secret config and decoder to AppState
+- Require Authorization: Bearer <token> for all /api/* routes
+- Implement JWT middleware and session extractor
+- Add OpenAPI documentation using utoipa and ReDoc
+- Annotate API schemas and endpoints for OpenAPI/Swagger
+- Update .env example files for JWT config
+- Add tests for JWT-protected API endpoints
+- Regenerate TypeScript types with schema docs
+
+* Remove OSS config from serve env example and JWT secret from worker env
+
+* Set document title based on runtime mode and page title
+
+* Enable education-compat-api feature for kerria-cli builds
