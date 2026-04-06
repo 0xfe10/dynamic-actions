@@ -1,15 +1,10 @@
-Add education document worker, processor registry, and monitoring
+Add education-compat-api feature and v0 API endpoints
 
-- Implement education document worker with processor registry and
-  trait-based architecture
-- Add support for gotenberg and any2pdf document processors (stubbed for
-  now)
-- Add markdown, HTML, image, and PDF processors with template support
-- Add Aliyun OSS upload for normalized PDFs with metadata
-- Add document worker and task run monitoring tables and APIs
-- Add Camellia pages for document center, worker/task monitoring, and
-  processor selection
-- Update configs, env examples, and migrations for new document
-  processing features
-- Add tests for processor registry, PDF key generation, and monitoring
-  flows
+- Add `education-compat-api` feature flag to kerria CLI
+- Implement `/api/v0/education/*` endpoints for legacy compatibility
+- Add DTOs, repository, service, and routes for v0 API
+- Add integration tests for v0 endpoints
+- Update database schema: add `term_type` to `c_edu_term`
+- Add `term_type` to education dictionary DTOs
+- Update Justfile help and frontend dictionary types for new field
+- Add "Disabled" state to locales
