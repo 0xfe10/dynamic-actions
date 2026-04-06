@@ -1,1 +1,1 @@
-Add explicitKerriaBaseUrl to runtime config and API client
+Update .dockerignore to include db/kerria migrations
