@@ -1,15 +1,14 @@
-feat: update capability editor fields (#66)
+fix(camellia): tighten version update mode handling
 
-## Summary
-- switch capability `template` editing from a single-line input to a textarea
-- add the requested old/new icon asset fields with built-in preview support
-- add searchable multi-select tag loading backed by `/api/v1/app/universal/tag/list`
-- widen the capability editor dialog and allow icon fields to render side by side
+Summary:
+- hide the version tip frequency selector unless the update mode is TIP
+- omit tip_frequency from version saves for FORCE and CHECK modes
+- show a concrete required-field toast before aborting invalid saves
 
-## Why
-- DAM-72 requires the capability add/edit form to match the backend contract and the legacy icon field set
-- operators need live tag lookup while still submitting the backend comma-separated string format
-- the expanded field set needs a wider layout to avoid an unnecessarily long form
+Rationale:
+- keep the version form aligned with the update mode semantics
+- avoid sending irrelevant frequency data for non-TIP releases
+- make save failures actionable instead of silently returning
 
-## Validation
-- pnpm --dir theaceae run check:camellia
+Tests:
+- cd theaceae && pnpm run check:camellia
