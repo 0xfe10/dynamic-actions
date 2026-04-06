@@ -1,14 +1,9 @@
-fix(camellia): tighten version update mode handling
+DAM-73 camellia version page mode handling (#67)
 
-Summary:
-- hide the version tip frequency selector unless the update mode is TIP
-- omit tip_frequency from version saves for FORCE and CHECK modes
-- show a concrete required-field toast before aborting invalid saves
+## Summary
+- hide the version tip frequency field unless the selected update mode is `TIP`
+- omit `tip_frequency` from version saves for `FORCE` and `CHECK`
+- surface a required-field toast before aborting invalid version saves
 
-Rationale:
-- keep the version form aligned with the update mode semantics
-- avoid sending irrelevant frequency data for non-TIP releases
-- make save failures actionable instead of silently returning
-
-Tests:
-- cd theaceae && pnpm run check:camellia
+## Testing
+- `cd theaceae && pnpm run check:camellia`
