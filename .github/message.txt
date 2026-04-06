@@ -1,1 +1,1 @@
-Update .dockerignore to include db/kerria migrations
+Add types-kerria package to Docker build and annotate map types
