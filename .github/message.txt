@@ -1,1 +1,3 @@
-Add kerria-serve and kerria-worker image updates to workflows
+Update Kerria image keys and unify YAML quoting
+
+Add note on Spectra deployment migration gap

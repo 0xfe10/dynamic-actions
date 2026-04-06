@@ -244,8 +244,8 @@ jobs:
             {
               "argocd/apps/labelix-hk0/overlays/staging/values.yaml": {
                 "app.spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.kerria-serve.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.kerria-worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
+                "app.kerria_serve.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
+                "app.kerria_worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
               }
             }
