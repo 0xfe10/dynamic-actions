@@ -1,1 +1,1 @@
-Add types-kerria package to Docker build and annotate map types
+Add kerria-serve and kerria-worker image updates to workflows
