@@ -1,14 +1,15 @@
-fix(camellia): improve version dialog inputs
+Add education document worker, processor registry, and monitoring
 
-Summary:
-- replace version release links textarea with input-based editing
-- add Windows-specific X86 and X64 link serialization in the dialog
-- switch release time editing to a picker-backed datetime-local input
-
-Rationale:
-- match the requested version dialog UX for single-link and Windows builds
-- preserve legacy Windows link data by mapping fallback entries into X86/X64
-- avoid free-text release timestamps when the browser can provide a chooser
-
-Tests:
-- cd theaceae && pnpm install --frozen-lockfile && pnpm run check:camellia
+- Implement education document worker with processor registry and
+  trait-based architecture
+- Add support for gotenberg and any2pdf document processors (stubbed for
+  now)
+- Add markdown, HTML, image, and PDF processors with template support
+- Add Aliyun OSS upload for normalized PDFs with metadata
+- Add document worker and task run monitoring tables and APIs
+- Add Camellia pages for document center, worker/task monitoring, and
+  processor selection
+- Update configs, env examples, and migrations for new document
+  processing features
+- Add tests for processor registry, PDF key generation, and monitoring
+  flows
