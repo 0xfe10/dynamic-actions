@@ -1,1 +1,13 @@
-Merge remote-tracking branch 'origin/main'
+fix(camellia): default image template metadata size
+
+Summary:
+- set new IMAGE template metadata width to 210
+- set new IMAGE template metadata height to 297
+
+Rationale:
+- keep the create flow aligned with the ticketed Camellia default paper size
+- avoid touching edit or non-IMAGE paths for this focused fix
+
+Tests:
+- just camellia typecheck
+- just camellia build
