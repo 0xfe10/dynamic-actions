@@ -1,7 +1,1 @@
-Add proxy for /api/v*/education to remote kerria service
-
-- Add kerria remote config to application YAMLs
-- Update RemoteProperties to include kerria
-- Proxy /api/v*/education requests in EducationRoute
-- Allow education endpoints in AuthorizationFilter
-- Add lombok annotation processor to Maven configs
+学习资源相关接口
