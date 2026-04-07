@@ -1,1 +1,4 @@
-Merge branch 'jcz' of https://github.com/prtmax/psdk into jcz
+Add selective dithering algorithm implementation
+
+Add SelectiveDithering class and related mask logic. Update pubspec
+with dependency override for local psdk_imageb.
