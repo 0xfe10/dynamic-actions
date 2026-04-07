@@ -1,1 +1,8 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+Add support for creating and selecting new school tags
+
+- Implement UI for adding new tags directly in the education dictionary
+  page
+- Automatically reuse existing tags by name
+- Update i18n files with new tag creation hints and placeholders
+- Add backend support for paginated question queries in education-compat
+  API
