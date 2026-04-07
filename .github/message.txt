@@ -1,8 +1,4 @@
-Add support for creating and selecting new school tags
+Update region form to filter parent options by level
 
-- Implement UI for adding new tags directly in the education dictionary
-  page
-- Automatically reuse existing tags by name
-- Update i18n files with new tag creation hints and placeholders
-- Add backend support for paginated question queries in education-compat
-  API
+Parent region options are now filtered based on the selected region
+level, preventing invalid selections and improving data integrity.
