@@ -1,3 +1,9 @@
-Update Kerria image keys and unify YAML quoting
+fix: improve camellia version dialog editing (#68)
 
-Add note on Spectra deployment migration gap
+## Summary
+- replace the version dialog `links` textarea with input-based editing
+- show separate `Win32` and `Win64` link inputs for `WINDOWS` and save them as `X86` / `X64`
+- switch `time_release` to a browser date-time picker and serialize it back to ISO
+
+## Testing
+- cd theaceae && pnpm install --frozen-lockfile && pnpm run check:camellia
