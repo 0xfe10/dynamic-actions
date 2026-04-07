@@ -1,1 +1,6 @@
-Make textbook select fields dependent on subject, grade, and term
+Add GENERAL term type support to education modules and UI
+
+- Add "GENERAL" to allowed term_type values in DB and backend
+- Update API and UI to handle "GENERAL" as a valid term type
+- Add i18n strings for "GENERAL" term type in English and Chinese
+- Refactor upload asset field to use i18n for labels
