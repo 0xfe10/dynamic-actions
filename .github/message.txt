@@ -1,1 +1,1 @@
-Add subject_id to OptionItem and filter textbook versions by subject
+Make textbook select fields dependent on subject, grade, and term
