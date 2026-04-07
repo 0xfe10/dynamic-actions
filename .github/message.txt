@@ -1,13 +1,1 @@
-fix: align camellia template modify tags payload (#70)
-
-## Summary
-- align `template-manage-page` template edit form state and modify payload around the new optional `tags` field
-- stop sending legacy `labels` and `tag_list` fields from the template modify request
-- preserve tag display/edit behavior for records that still expose legacy `labels`
-
-## Testing
-- `just camellia typecheck`
-- `just camellia build`
-
-## Linear
-- `DAM-76`
+Merge branch 'main' of https://github.com/prtmax/labelix
