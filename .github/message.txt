@@ -1,1 +1,7 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+Refactor school tag field with improved tag input UX
+
+- Replace manual tag input and add button with a searchable dropdown
+  supporting tag creation and selection
+- Add localized strings for tag creation and empty search results
+- Remove unused code and simplify tag normalization logic
+- Update exam paper filters to remove grade/stage selection
