@@ -1,10 +1,1 @@
-fix: allow camellia template main classification selection (#69)
-
-## Summary
-- allow the image classification dialog to confirm a selected main classification
-- keep vice classification selection overriding the main classification when chosen
-- apply dialog changes on confirm instead of mutating the saved selection during draft edits
-
-## Testing
-- cd /code/symphony/0xfe10/workspaces/DAM-75/labelix/theaceae && just camellia typecheck
-- cd /code/symphony/0xfe10/workspaces/DAM-75/labelix/theaceae && just camellia build
+Merge branch 'main' of https://github.com/prtmax/labelix
