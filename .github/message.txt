@@ -1,4 +1,1 @@
-Refactor dithering masks to use precomputed luma and RGB planes
-
-Improve performance by computing luma and RGB planes once and passing
-them to mask-building functions, reducing redundant calculations.
+Format test file by collapsing multi-line function calls
