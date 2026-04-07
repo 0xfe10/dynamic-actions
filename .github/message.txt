@@ -1,2 +1,14 @@
-Add descriptions to exam paper query params and region_name to region
-dictionary
+fix(camellia): align template modify tags payload
+
+Summary:
+- switch template-manage-page form state and modify payload to use `tags`
+- stop sending legacy `labels` and `tag_list` fields on template modify
+- allow template saves to proceed without any selected tags
+
+Rationale:
+- the backend contract for template modify now expects optional `tags`
+- keeping the page on the legacy payload shape would break edit saves
+
+Tests:
+- just camellia typecheck
+- just camellia build
