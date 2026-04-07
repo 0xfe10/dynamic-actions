@@ -1,1 +1,31 @@
-学习资源相关接口
+Learning resource (#508)
+
+* 学习资源
+
+* 学习资源
+
+* 学习资源后台管理获取所有年级
+
+* 修改学习资源接口路径
+
+* 修改试卷类型参数
+
+* 学习资源
+
+* 学习资源相关接口
+
+* 学习资源相关接口对接
+
+* Add proxy for /api/v*/education to remote kerria service
+
+- Add kerria remote config to application YAMLs
+- Update RemoteProperties to include kerria
+- Proxy /api/v*/education requests in EducationRoute
+- Allow education endpoints in AuthorizationFilter
+- Add lombok annotation processor to Maven configs
+
+* 学习资源相关接口
+
+---------
+
+Co-authored-by: caiwei12 <caiw@aiyin.com>
