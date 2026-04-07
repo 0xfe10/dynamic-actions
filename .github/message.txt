@@ -1,14 +1,13 @@
-fix(camellia): align template modify tags payload
+fix: align camellia template modify tags payload (#70)
 
-Summary:
-- switch template-manage-page form state and modify payload to use `tags`
-- stop sending legacy `labels` and `tag_list` fields on template modify
-- allow template saves to proceed without any selected tags
+## Summary
+- align `template-manage-page` template edit form state and modify payload around the new optional `tags` field
+- stop sending legacy `labels` and `tag_list` fields from the template modify request
+- preserve tag display/edit behavior for records that still expose legacy `labels`
 
-Rationale:
-- the backend contract for template modify now expects optional `tags`
-- keeping the page on the legacy payload shape would break edit saves
+## Testing
+- `just camellia typecheck`
+- `just camellia build`
 
-Tests:
-- just camellia typecheck
-- just camellia build
+## Linear
+- `DAM-76`
