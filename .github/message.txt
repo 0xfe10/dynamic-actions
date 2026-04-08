@@ -1,3 +1,5 @@
-Add edge dithering and smoothing to Pbita process
+Fix Pbita to use threshold when provided
 
-Also add test for Pbita with smoothing and edge dithering.
+Add test to verify Pbita threshold matches threshold output
+
+Ignore bin directory in .gitignore
