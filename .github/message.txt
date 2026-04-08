@@ -1,7 +1,10 @@
-Refactor school tag field with improved tag input UX
+fix: default Camellia IMAGE template metadata size (#71)
 
-- Replace manual tag input and add button with a searchable dropdown
-  supporting tag creation and selection
-- Add localized strings for tag creation and empty search results
-- Remove unused code and simplify tag normalization logic
-- Update exam paper filters to remove grade/stage selection
+## Summary
+- default new Camellia IMAGE templates to `metadata.width = 210`
+- default new Camellia IMAGE templates to `metadata.height = 297`
+- keep edit behavior and non-IMAGE template handling unchanged
+
+## Validation
+- `just camellia typecheck`
+- `just camellia build`
