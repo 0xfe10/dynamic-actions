@@ -1,15 +1,10 @@
-fix(camellia): clarify classification toggle action
+Clarify template classification toggle action (#74)
 
-Summary:
-- replace the classification tree state icon with a labeled button
-- style disable as destructive and enable as a green outline action
-- add explicit locale strings for enable and disable action labels
+## Summary
+- replace the `TemplateClassificationPage` state action with a labeled toggle button
+- use destructive styling for disable and a green outline style for enable
+- add explicit locale strings for the enable and disable action labels
 
-Rationale:
-- the previous ghost icon button made the state toggle hard to notice
-- the requested behavior was closer to the legacy text action with
-  state-dependent emphasis
-
-Tests:
-- just camellia typecheck
-- just camellia build
+## Testing
+- `just camellia typecheck`
+- `just camellia build`
