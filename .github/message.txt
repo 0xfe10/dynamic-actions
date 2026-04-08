@@ -1,15 +1,1 @@
-fix(kerria): reshape compat exam filter payload
-
-Summary:
-- add subject code to the v0 compat subjects response
-- flatten compat exam paper filters into subjects/types/regions/terms
-- align term labels and regression tests with the DAM-79 contract
-
-Rationale:
-- the compat filters endpoint still returned the older grouped selects
-  shape instead of the payload requested in DAM-79
-- the compat subjects endpoint omitted code even though downstream callers
-  now require it
-
-Tests:
-- just kerria test --features education-compat-api --test education_compat_api
+more fix
