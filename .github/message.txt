@@ -1,6 +1,1 @@
-Rename LAST_SEMESTER to SECOND_SEMESTER in term_type fields
-
-Update all database constraints, migrations, API docs, and frontend
-references to use SECOND_SEMESTER instead of LAST_SEMESTER for
-term_type.
-Includes migration scripts for renaming existing data.
+Add fallback for stage options in DictionaryStageMultiSelectField
