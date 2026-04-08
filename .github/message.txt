@@ -1,7 +1,1 @@
-Normalize pagination to start from 1 and ignore empty query params
-
-- Change page_number to start from 1 instead of 0 in API, docs, and
-  tests
-- Ignore empty string query parameters for all filters
-- Fix offset calculation to match new pagination logic
-- Add test
+Update kerria images to use labelix-rosaceae in production workflow
