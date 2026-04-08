@@ -1,16 +1,1 @@
-fix(kerria): return compat exam filter codes
-
-Summary:
-- return V0CodeOption entries for compat exam paper subjects
-- include a stable code field in region filter options without widening schema
-- extend the compat API regression test to assert the filter code contract
-
-Rationale:
-- the v0 exam paper filter payload dropped code for subjects and regions
-- callers need a consistent option shape across subjects, types, regions,
-  and terms
-- the shared compat fixture also needed the current region level enum to
-  validate against the live schema
-
-Tests:
-- just kerria test --features education-compat-api --test education_compat_api
+fix(kerria): narrow compat filter codes
