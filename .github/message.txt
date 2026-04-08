@@ -1,1 +1,3 @@
-Remove dependency_overrides for psdk_imageb
+Add edge dithering and smoothing to Pbita process
+
+Also add test for Pbita with smoothing and edge dithering.
