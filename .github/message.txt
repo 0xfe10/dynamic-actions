@@ -1,10 +1,6 @@
-Clarify template classification toggle action (#74)
+Rename LAST_SEMESTER to SECOND_SEMESTER in term_type fields
 
-## Summary
-- replace the `TemplateClassificationPage` state action with a labeled toggle button
-- use destructive styling for disable and a green outline style for enable
-- add explicit locale strings for the enable and disable action labels
-
-## Testing
-- `just camellia typecheck`
-- `just camellia build`
+Update all database constraints, migrations, API docs, and frontend
+references to use SECOND_SEMESTER instead of LAST_SEMESTER for
+term_type.
+Includes migration scripts for renaming existing data.
