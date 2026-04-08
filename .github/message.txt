@@ -1,5 +1,1 @@
-Fix Pbita to use threshold when provided
-
-Add test to verify Pbita threshold matches threshold output
-
-Ignore bin directory in .gitignore
+Add large cod image to resources folder
