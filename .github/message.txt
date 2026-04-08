@@ -1,9 +1,15 @@
-Add subject-stage relation table and update subject management
+fix(camellia): clarify classification toggle action
 
-- Introduce c_edu_subject_stage_rel table and migration
-- Update subject CRUD to require and manage stage_ids
-- Adjust subject query/filter logic to use new relation
-- Update OpenAPI and DTOs to remove textbook_version_id from subject
-  query
-- Update frontend to support stage selection for subjects
-- Add and update tests for subject-stage relations
+Summary:
+- replace the classification tree state icon with a labeled button
+- style disable as destructive and enable as a green outline action
+- add explicit locale strings for enable and disable action labels
+
+Rationale:
+- the previous ghost icon button made the state toggle hard to notice
+- the requested behavior was closer to the legacy text action with
+  state-dependent emphasis
+
+Tests:
+- just camellia typecheck
+- just camellia build
