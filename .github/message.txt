@@ -1,1 +1,9 @@
-Update kerria images to use labelix-rosaceae in production workflow
+Add subject-stage relation table and update subject management
+
+- Introduce c_edu_subject_stage_rel table and migration
+- Update subject CRUD to require and manage stage_ids
+- Adjust subject query/filter logic to use new relation
+- Update OpenAPI and DTOs to remove textbook_version_id from subject
+  query
+- Update frontend to support stage selection for subjects
+- Add and update tests for subject-stage relations
