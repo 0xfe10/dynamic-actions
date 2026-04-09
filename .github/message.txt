@@ -1,1 +1,2 @@
-Support multiple concurrent BLE write operations
+Add waitEnd option to write operations and improve BLE write end
+handling
