@@ -1,1 +1,11 @@
-fix(camellia): rename template keyword filter
+Align template manage search layout (#76)
+
+## Summary
+- move the template manage search controls into the shared header filter layout used by the users page
+- switch the customized filter to the shared Select pattern with an all/clear state
+- add the leading id column and render customized as raw 0/1 values
+
+## Validation
+- cd /code/symphony/0xfe10/workspaces/DAM-83/labelix/theaceae && just camellia check
+
+Refs DAM-83
