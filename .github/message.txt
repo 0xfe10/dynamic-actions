@@ -1,4 +1,5 @@
-Add EdgeBandAtkinson dithering algorithm and improve BLE write
+Add EdgeBandAtkinson dithering algorithm and improve BLE write (#33)
+
 diagnostics
 
 - Implement EdgeBandAtkinson algorithm and tests
