@@ -1,11 +1,13 @@
-Align template manage search layout (#76)
+feat(camellia): split device page layout
 
-## Summary
-- move the template manage search controls into the shared header filter layout used by the users page
-- switch the customized filter to the shared Select pattern with an all/clear state
-- add the leading id column and render customized as raw 0/1 values
+Summary:
+- replace the device card grid and edit dialog with a split list/detail layout
+- keep device copy, clone, delete, and property editing flows in the new panel
+- auto-load the selected device and seed create or clone drafts in the detail pane
 
-## Validation
-- cd /code/symphony/0xfe10/workspaces/DAM-83/labelix/theaceae && just camellia check
+Rationale:
+- match the requested woodii-style device management workflow
+- keep the device list visible while editing to reduce context switching
 
-Refs DAM-83
+Tests:
+- cd /code/symphony/0xfe10/workspaces/DAM-84/labelix/theaceae && just camellia check
