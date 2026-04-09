@@ -1,1 +1,16 @@
-Add print count increment API and print record table for exam papers
+fix(camellia): align template manage filters and columns
+
+Summary:
+- add the template ID as the leading list column
+- render customized values as raw 0/1 in the list view
+- switch the customized filter to the shared Select pattern with a
+  clearable all state
+
+Rationale:
+- match the ticketed table output without changing unrelated template
+  detail behavior
+- keep the existing search request wiring intact while aligning the
+  customized filter with current Camellia form controls
+
+Tests:
+- cd /code/symphony/0xfe10/workspaces/DAM-83/labelix/theaceae && just camellia check
