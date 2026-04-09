@@ -1,13 +1,17 @@
-feat(camellia): split device page layout
+feat(camellia): split device page into two-pane layout
 
 Summary:
-- replace the device card grid and edit dialog with a split list/detail layout
-- keep device copy, clone, delete, and property editing flows in the new panel
-- auto-load the selected device and seed create or clone drafts in the detail pane
+- replace the device card grid and modal editor with a persistent split
+  list/detail layout
+- make the left device list denser and remove the duplicate create action
+  from the list pane header
+- keep device create, clone, delete, and property editing flows working in
+  the right-side editor
 
 Rationale:
-- match the requested woodii-style device management workflow
-- keep the device list visible while editing to reduce context switching
+- match the requested woodii-style interaction where the device list stays
+  visible while editing details
+- reduce left-pane visual noise so more devices remain visible at once
 
 Tests:
 - cd /code/symphony/0xfe10/workspaces/DAM-84/labelix/theaceae && just camellia check
