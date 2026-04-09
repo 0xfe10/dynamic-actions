@@ -1,14 +1,1 @@
-Confirm device deletion on device page (#79)
-
-## Summary
-- add a delete confirmation dialog before device removal on the Camellia device page
-- reuse the shared confirm dialog pattern and existing delete copy
-
-## Testing
-- just camellia check
-
-## Manual QA
-- open `device-page`
-- click a device delete action and confirm a dialog appears before deletion
-- cancel the dialog and verify the device remains
-- confirm deletion and verify the device is removed
+Merge branch 'main' of https://github.com/prtmax/labelix
