@@ -1,2 +1,6 @@
-Add waitEnd option to write operations and improve BLE write end
-handling
+Add EdgeBandAtkinson dithering algorithm and improve BLE write
+diagnostics
+
+- Implement EdgeBandAtkinson algorithm and tests
+- Add BLE write diagnostics tracking and timing
+- Refactor BLE write logic for better concurrency
