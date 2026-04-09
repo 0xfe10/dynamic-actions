@@ -1,1 +1,17 @@
-Refactor exam paper print count API to use request body id
+Adjust device page to compact split list/detail layout (#78)
+
+Summary:
+- replace the device card grid and modal editor with a persistent split
+  list/detail layout
+- make the left device list denser and remove the duplicate create action
+  from the list pane header
+- keep device create, clone, delete, and property editing flows working in
+  the right-side editor
+
+Rationale:
+- match the requested woodii-style interaction where the device list stays
+  visible while editing details
+- reduce left-pane visual noise so more devices remain visible at once
+
+Tests:
+- cd /code/symphony/0xfe10/workspaces/DAM-84/labelix/theaceae && just camellia check
