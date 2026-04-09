@@ -1,13 +1,14 @@
-fix(camellia): confirm device deletion on device page
+Confirm device deletion on device page (#79)
 
-Summary:
-- add a delete confirmation dialog to the Camellia device page list actions
-- route the device trash action through the shared confirm dialog before
-  calling the delete API
+## Summary
+- add a delete confirmation dialog before device removal on the Camellia device page
+- reuse the shared confirm dialog pattern and existing delete copy
 
-Rationale:
-- prevent accidental device deletion from the list action bar
-- keep the interaction consistent with existing Camellia delete flows
-
-Tests:
+## Testing
 - just camellia check
+
+## Manual QA
+- open `device-page`
+- click a device delete action and confirm a dialog appears before deletion
+- cancel the dialog and verify the device remains
+- confirm deletion and verify the device is removed
