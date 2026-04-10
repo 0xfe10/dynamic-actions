@@ -1,8 +1,1 @@
-fix: wrap long exam and artifact titles (#80)
-
-## Summary
-- wrap long exam paper names in the exam-library table instead of truncating them to a single line
-- widen and wrap the artifact association document-name column so long titles remain readable beside the document id
-
-## Testing
-- just camellia check
+Merge branch 'main' of https://github.com/prtmax/labelix
