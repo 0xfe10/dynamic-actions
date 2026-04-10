@@ -1,16 +1,8 @@
-fix(camellia): wrap long exam and artifact titles
+fix: wrap long exam and artifact titles (#80)
 
-Summary:
-- render exam-library paper names with a wrapped table cell instead of the
-  default truncated renderer
-- widen and wrap the artifact association name column so long document titles
-  remain readable next to their ids
+## Summary
+- wrap long exam paper names in the exam-library table instead of truncating them to a single line
+- widen and wrap the artifact association document-name column so long titles remain readable beside the document id
 
-Rationale:
-- the shared DataTable defaults force nowrap ellipsis, which clipped both
-  issue-reported title columns too aggressively
-- scoping the override to these two columns fixes the display regression
-  without changing other Camellia tables
-
-Tests:
+## Testing
 - just camellia check
