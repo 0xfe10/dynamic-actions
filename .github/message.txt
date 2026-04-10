@@ -1,1 +1,16 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+fix(camellia): wrap long exam and artifact titles
+
+Summary:
+- render exam-library paper names with a wrapped table cell instead of the
+  default truncated renderer
+- widen and wrap the artifact association name column so long document titles
+  remain readable next to their ids
+
+Rationale:
+- the shared DataTable defaults force nowrap ellipsis, which clipped both
+  issue-reported title columns too aggressively
+- scoping the override to these two columns fixes the display regression
+  without changing other Camellia tables
+
+Tests:
+- just camellia check
