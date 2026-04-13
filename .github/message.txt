@@ -1,1 +1,6 @@
-fix：修复docker文件
+Split Docker images into core and front for build and deploy
+
+- Add separate Dockerfiles and .dockerignore for core and front
+- Update workflow to build, tag, and push both images
+- Adjust health checks and use Aliyun mirrors in Dockerfiles
+- Update deployment step to use new image tags for core and front
