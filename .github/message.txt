@@ -1,1 +1,1 @@
-Remove max height and overflow from JSON preview block
+Add normalization for question content before submit
