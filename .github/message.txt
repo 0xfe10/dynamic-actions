@@ -1,1 +1,5 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+Add .dockerignore and update Docker build context and paths
+
+- Add .dockerignore to exclude unnecessary files from Docker build
+- Change Docker build context to project root in workflows
+- Update Dockerfile paths to match new context and directory structure
