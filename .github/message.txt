@@ -1,1 +1,5 @@
-Update soybean-question-content to latest commit
+Add GitHub token secret for Docker builds and workflows
+
+- Pass github_token secret to Docker build for private repo access
+- Update production and staging workflows to include github_token secret
+- Enable Dockerfile syntax v1.7 and install git in builder stage

@@ -175,6 +175,8 @@ jobs:
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
+          secrets: |
+            github_token=${{ secrets.GH_TOKEN_0XFE10 }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
