@@ -1,10 +1,6 @@
-Add string-based JSON input support for question content APIs
+Add Soybean question content SDK usage guide and improve image node
+editor
 
-- Add `FromString` variants for normalization, rendering, and plain text
-  functions in both Dart and TypeScript
-- Update test suites to cover JSON string input for question content
-- Update Rust DTOs to clarify that `stem`, `answer`, and `analysis`
-  fields
-  are structured content JSON strings
-- Add utility functions to parse JSON strings to structured content
-- Update Camellia editor command lists and placeholders for clarity
+- Add detailed SDK usage documentation in docs/spec
+- Export all SVG render functions in TypeScript SDK
+- Add image node remove button to question content editor in Camellia
