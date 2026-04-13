@@ -1,6 +1,7 @@
-Add Soybean question content SDK usage guide and improve image node
-editor
+Add buffered editing for question option and match groups
 
-- Add detailed SDK usage documentation in docs/spec
-- Export all SVG render functions in TypeScript SDK
-- Add image node remove button to question content editor in Camellia
+Introduce useBufferedQuestionNode to buffer edits in OptionGroupEditor,
+MatchGroupEditor, and EditableAnswerBlankBlock. Changes are committed on
+blur or when certain fields are changed, reducing unnecessary updates
+and
+improving editing UX.
