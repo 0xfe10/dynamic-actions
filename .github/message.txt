@@ -1,1 +1,1 @@
-Add normalization for question content before submit
+Relax minimum Dart and Flutter SDK constraints
