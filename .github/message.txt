@@ -1,7 +1,1 @@
-Add buffered editing for question option and match groups
-
-Introduce useBufferedQuestionNode to buffer edits in OptionGroupEditor,
-MatchGroupEditor, and EditableAnswerBlankBlock. Changes are committed on
-blur or when certain fields are changed, reducing unnecessary updates
-and
-improving editing UX.
+Remove max height and overflow from JSON preview block
