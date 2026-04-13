@@ -9,6 +9,11 @@ env:
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
 
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
 jobs:
   ensure-main:
     name: Ensure main
@@ -251,3 +256,19 @@ jobs:
                 "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
               }
             }
+
+  cleanup-rosaceae-binary-artifacts:
+    name: Cleanup rosaceae binary artifacts
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+      - build-rosaceae-binaries
+      - build-rosaceae-image
+      - deploy-apps
+    if: ${{ always() && needs.ensure-main.outputs.ENSURE_MAIN == 'true' }}
+    steps:
+      - name: Delete rosaceae binary artifacts
+        uses: geekyeggo/delete-artifact@v6
+        with:
+          name: rosaceae-binaries-*-x86_64-unknown-linux-musl
+          failOnError: false

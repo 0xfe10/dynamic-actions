@@ -1,5 +1,1 @@
-Buffer figure block edits and commit on popover close
-
-Use a buffered draft node for EditableFigureBlock so changes
-are only committed when the popover closes. Update editor
-callbacks to always use the latest content via ref.
+Add question preview page and JSON export for question content
