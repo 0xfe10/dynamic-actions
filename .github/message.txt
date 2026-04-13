@@ -1,5 +1,5 @@
-Add GitHub token secret for Docker builds and workflows
+Buffer figure block edits and commit on popover close
 
-- Pass github_token secret to Docker build for private repo access
-- Update production and staging workflows to include github_token secret
-- Enable Dockerfile syntax v1.7 and install git in builder stage
+Use a buffered draft node for EditableFigureBlock so changes
+are only committed when the popover closes. Update editor
+callbacks to always use the latest content via ref.
