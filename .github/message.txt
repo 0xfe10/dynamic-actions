@@ -1,1 +1,1 @@
-clean sdk
+Switch to @edubox/soybean-question-content package
