@@ -1,1 +1,1 @@
-Switch to @edubox/soybean-question-content package
+Remove question content SDK plans and Soybean SDK docs
