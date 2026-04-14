@@ -1,4 +1,1 @@
-Add NumberSettingInput component and refactor number inputs
-
-Replace direct number <Input> usage with NumberSettingInput for improved
-number input handling, validation, and consistency across editors.
+Update soybean-question-content to latest commit
