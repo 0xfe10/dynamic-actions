@@ -1,14 +1,1 @@
-DAM-88 AI business adjustments (#82)
-
-## Summary
-- Hide the legacy AI template backend-menu placeholder entry.
-- Widen and regroup the AI business create/edit dialog fields.
-- Add a version management row action and a dedicated AI business history page backed by /api/v1/app/universal/ai/business/histories.
-
-## Validation
-- just camellia typecheck
-- pnpm run typecheck:api-client
-- just camellia build
-- git diff --check
-
-Linear: DAM-88
+ai业务编辑排版调整
