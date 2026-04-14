@@ -1,7 +1,1 @@
-Add raw-image processing path and benchmarking tools
-
-- Introduce RawImageProcesser interface for direct image processing
-- Update Atkinson and Yliluoma2 to implement RawImageProcesser
-- Refactor SelectiveDithering to support raw-image path and profiling
-- Add selective_benchmark.dart and selective_compare.dart tools
-- Document optimization results in new report
+Merge remote-tracking branch 'origin/jcz' into jcz
