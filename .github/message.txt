@@ -1,5 +1,4 @@
-Refactor answer blank node height and row handling
+Add NumberSettingInput component and refactor number inputs
 
-Add helper functions for row and height calculations, update
-normalization logic, and improve editor UI to support per-row
-height editing for grid/lines modes.
+Replace direct number <Input> usage with NumberSettingInput for improved
+number input handling, validation, and consistency across editors.
