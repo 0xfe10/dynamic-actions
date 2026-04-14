@@ -1,1 +1,12 @@
-ai业务编辑排版调整
+feat(camellia): update AI business search history recovery
+
+Summary:
+- add an AI model dropdown filter to the AI business page while keeping name search on the page endpoint
+- add the AI business recover API helper and reduce history columns to the business page display set
+- add a single recover action with localized success feedback
+
+Rationale:
+- DAM-89 asks for the AI business search fields and a smaller history table with only recover as the row operation.
+
+Tests:
+- cd theaceae && just camellia check
