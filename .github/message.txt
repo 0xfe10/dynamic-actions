@@ -1,13 +1,19 @@
-Update AI business editor (#81)
+feat(camellia): add AI business histories
 
-## Summary
-- Hide the AI template page from active Camellia route and navigation registration.
-- Update AI business create/edit to use a single llm_id dropdown loaded from the LLM list endpoint.
-- Add the DAM-87 prompt, workflow, params, review, and optimization fields to the modify payload and keep the editor in a two-column layout.
+Summary:
+- Add an AI business history API client method and history page.
+- Add the version management row action from AI business records.
+- Widen and regroup the AI business create/edit dialog fields.
+- Hide the legacy AI template backend-menu placeholder entry.
 
-## Validation
+Rationale:
+- DAM-88 removes the AI template entry point and adds a separate
+  history workflow for AI business records.
+- The dialog uses page-level field spans to avoid changing shared CRUD
+  layout behavior for unrelated pages.
+
+Tests:
 - just camellia typecheck
+- pnpm run typecheck:api-client
 - just camellia build
-- just camellia check
-
-Linear: DAM-87
+- git diff --check
