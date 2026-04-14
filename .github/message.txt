@@ -1,2 +1,5 @@
-Rename 填空 to 间距 in question editor and improve return navigation in
-question bank editor
+Refactor answer blank node height and row handling
+
+Add helper functions for row and height calculations, update
+normalization logic, and improve editor UI to support per-row
+height editing for grid/lines modes.
