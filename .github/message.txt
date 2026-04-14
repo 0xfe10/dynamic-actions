@@ -1,1 +1,15 @@
-Pass content width to soybean question content renderer
+feat(camellia): update ai business editor
+
+Summary:
+- Hide the AI template page from active router and navigation entries.
+- Change AI business editing to use a single llm_id select and include prompt, workflow, params, review, and optimization request fields.
+- Allow CRUD switch fields to opt out of full-width layout so this form can stay two-column.
+
+Rationale:
+- DAM-87 changes the modify payload shape and temporarily removes the AI template page from use.
+- The business editor had a long single-column feel because textarea and switch fields were forced wide by default.
+
+Tests:
+- just camellia typecheck
+- just camellia build
+- just camellia check
