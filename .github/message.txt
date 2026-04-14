@@ -1,19 +1,7 @@
-fix(theme): adapt all pages to dark mode using shadcn colorScheme
+Add DESIGN.md and update navigation to use Templates tab
 
-Replace hardcoded AppColors.surface/textSecondary/textPrimary/divider
-with theme-aware ShadTheme.of(context).colorScheme equivalents:
-- AppColors.surface → scheme.muted
-- AppColors.textSecondary → scheme.mutedForeground
-- AppColors.divider → scheme.border
-- AppColors.textPrimary → scheme.foreground
-- Toolbar/card Colors.white → scheme.card
-
-Affected pages: home, templates, device_search, device_manage,
-device_settings, history, history_detail, profile, about, user_guide,
-graffiti, label_editor, rich_editor, print_preview, ocr,
-and all coming-soon stub pages.
-
-Canvas drawing areas (graffiti, label_editor, print_preview) keep
-Colors.white intentionally — print paper is always white.
-
-Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+- Add project-level DESIGN.md and collaboration plan
+- Replace History tab with Templates in bottom navigation
+- Move Print History to Profile section and update related routes
+- Update templates page to show system, preloaded, and user templates
+- Add .zip, .local.*, and .DS_Store to .gitignore
