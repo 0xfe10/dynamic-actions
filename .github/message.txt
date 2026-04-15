@@ -1,6 +1,1 @@
-Add OpenAPI doc structs for question and knowledge node
-
-- Introduce `QuestionRecordDoc`, `QuestionUpsertRequestDoc`, and
-  `V0KnowledgeNodeRecordDoc`
-- Update OpenAPI doc endpoints and response types to use new structs
-- Add test to ensure OpenAPI document can be serialized
+Add matched knowledge fields to question detail API and test
