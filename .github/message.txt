@@ -1,7 +1,1 @@
-Add DESIGN.md and update navigation to use Templates tab
-
-- Add project-level DESIGN.md and collaboration plan
-- Replace History tab with Templates in bottom navigation
-- Move Print History to Profile section and update related routes
-- Update templates page to show system, preloaded, and user templates
-- Add .zip, .local.*, and .DS_Store to .gitignore
+Improve display name and avatar initial handling on profile page
