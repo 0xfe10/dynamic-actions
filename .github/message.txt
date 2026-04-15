@@ -1,4 +1,8 @@
-Use grade_id directly in textbook dictionary filter
+Unify education sort_order strategy and update sorting logic
 
-Add test to ensure grade_id filter uses exact match instead of subquery
-for stage_id.
+- Add detailed plan for education sort_order unification
+- Change default sort direction to DESC for sort_order
+- Auto-generate sort_order based on seconds since 2026-01-01
+- Update SQL queries and move logic to match new rules
+- Adjust tests and frontend to align with new sorting behavior
+- Relax ESLint rules for react-refresh and react-hooks in Camellia
