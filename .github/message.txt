@@ -1,11 +1,1 @@
-Add AI business search and history recover (#83)
-
-## Summary
-- add the AI model dropdown filter to the AI business page while keeping the business name search on /api/v1/app/universal/ai/business/page
-- simplify AI business history columns to match the AI business page table display
-- add the AI business recover API helper and a single localized recover row action
-
-## Validation
-- cd theaceae && just camellia check
-
-Linear: DAM-89
+Merge branch 'main' of https://github.com/prtmax/labelix
