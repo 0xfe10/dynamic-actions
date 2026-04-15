@@ -1,3 +1,1 @@
-Remove select checkbox column from feedback table
-
-Update EducationPaperTypePage to use education dictionaries data
+Add loading spinner to login button
