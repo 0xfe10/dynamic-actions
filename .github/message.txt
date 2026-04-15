@@ -1,1 +1,4 @@
-Add loading spinner to login button
+Use grade_id directly in textbook dictionary filter
+
+Add test to ensure grade_id filter uses exact match instead of subquery
+for stage_id.
