@@ -1,1 +1,3 @@
-Add Zhuyin annotation support to question editor
+Remove select checkbox column from feedback table
+
+Update EducationPaperTypePage to use education dictionaries data
