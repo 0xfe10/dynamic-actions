@@ -1,18 +1,1 @@
-Fix device page scroll containment (#89)
-
-## Summary
-- make the device list card own the viewport-bounded height
-- keep vertical scrolling limited to the left device list body
-- remove the right property table vertical cap so property rows render inline
-
-## Validation
-- just camellia typecheck
-- just camellia build
-- just camellia check
-- git diff --check
-- rg -n "max-h-\\[28rem\\]|sticky top-0|overflow-y-auto|overflow-y-scroll|h-\\[calc" apps/camellia/src/pages/device-page.tsx
-
-## Manual QA
-- Not run locally: this workspace has no Playwright/Puppeteer package, no browser binary, and no authenticated Camellia backend session for /app/labelexpert/device.
-
-Linear: DAM-90
+Merge branch 'main' of https://github.com/prtmax/labelix
