@@ -1,2 +1,1 @@
-Replace SearchableSelectField with Select for filters on
-KnowledgePointPage
+app功能增加AI业务属性
