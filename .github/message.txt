@@ -1,12 +1,13 @@
-fix(camellia): show device properties inline
+fix(camellia): balance device page scroll layout
 
 Summary:
-- Move the device list height budget to the whole left card so the header no longer adds extra page height.
-- Remove the vertical scroll wrapper from the right property table so every property row renders inline.
+- Keep the device list card as the fixed-height local scroller.
+- Let the device detail property table render all rows inline.
+- Remove the sticky list wrapper so page height follows the taller pane.
 
 Rationale:
-- DAM-90 requires the left pane to be the fixed-height scroller while the right pane follows its content.
-- The prior property-table scroller conflicted with the explicit requirement to show all right-side properties.
+- DAM-90 rework reported continued blank page scrolling after the right-side scroller was removed.
+- Keeping the left pane in normal grid flow avoids a sticky viewport range where no new right-side content exists below the fold.
 
 Tests:
 - just camellia check
