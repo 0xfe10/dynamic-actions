@@ -1,17 +1,18 @@
-fix(camellia): contain device page scrolling
+Fix device page scroll containment (#89)
 
-Summary:
+## Summary
 - make the device list card own the viewport-bounded height
 - keep vertical scrolling limited to the left device list body
-- remove the right property table vertical cap so rows render inline
+- remove the right property table vertical cap so property rows render inline
 
-Rationale:
-- the device page should follow the users page pattern where page scroll stops at real content height
-- right-side properties need natural height while the left list remains independently scrollable
-
-Tests:
+## Validation
 - just camellia typecheck
 - just camellia build
 - just camellia check
 - git diff --check
-- rg -n "max-h-\[28rem\]|sticky top-0|overflow-y-auto|overflow-y-scroll|h-\[calc" apps/camellia/src/pages/device-page.tsx
+- rg -n "max-h-\\[28rem\\]|sticky top-0|overflow-y-auto|overflow-y-scroll|h-\\[calc" apps/camellia/src/pages/device-page.tsx
+
+## Manual QA
+- Not run locally: this workspace has no Playwright/Puppeteer package, no browser binary, and no authenticated Camellia backend session for /app/labelexpert/device.
+
+Linear: DAM-90
