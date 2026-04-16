@@ -1,13 +1,17 @@
-fix(camellia): adjust device page scroll height
+fix(camellia): contain device page scrolling
 
 Summary:
-- Make the device list card own the fixed viewport height and keep only the left list vertically scrollable.
-- Let device property rows render at their natural height with horizontal overflow only for narrow detail widths.
+- make the device list card own the viewport-bounded height
+- keep vertical scrolling limited to the left device list body
+- remove the right property table vertical cap so rows render inline
 
 Rationale:
-- The device page should not add a nested right-side property scroller or artificial blank page height; the page height should be driven by the taller visible side.
+- the device page should follow the users page pattern where page scroll stops at real content height
+- right-side properties need natural height while the left list remains independently scrollable
 
 Tests:
 - just camellia typecheck
 - just camellia build
 - just camellia check
+- git diff --check
+- rg -n "max-h-\[28rem\]|sticky top-0|overflow-y-auto|overflow-y-scroll|h-\[calc" apps/camellia/src/pages/device-page.tsx
