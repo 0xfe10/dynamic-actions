@@ -1,1 +1,1 @@
-dam-90-device-page-scroll-layout
+dam-90-device-page-property-scroll

@@ -1,17 +1,14 @@
-fix(camellia): adjust device page scroll layout
+fix(camellia): show device properties inline
 
 Summary:
-- Move the desktop list height cap onto the whole device list card.
-- Keep the detail panel content-driven while constraining the property list
-  scroller to the available desktop viewport space.
+- Move the device list height budget to the whole left card so the header no longer adds extra page height.
+- Remove the vertical scroll wrapper from the right property table so every property row renders inline.
 
 Rationale:
-- The previous layout capped only the list card body, so the card header and
-  detail property list could still make the page taller than the shell and
-  expose blank page-level scrolling.
-- This keeps the left side stable and lets the right side follow the property
-  list content without forcing both panes to the same height.
+- DAM-90 requires the left pane to be the fixed-height scroller while the right pane follows its content.
+- The prior property-table scroller conflicted with the explicit requirement to show all right-side properties.
 
 Tests:
 - just camellia check
-- just camellia smoke (reports no smoke scripts are provided)
+- pnpm --filter @theaceae/camellia build
+- git diff --check
