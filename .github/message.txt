@@ -1,1 +1,18 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+fix(camellia): send specification device list
+
+Summary:
+- Add the specification device_list type to the API client exports.
+- Initialize the specification editor device checkboxes from device_list when
+  page or inspect data provides it.
+- Keep match_model in sync while sending selected device records to
+  specification.modify.
+
+Rationale:
+- The modify endpoint needs the selected applicable device records, not only
+  the legacy comma-separated names.
+- Preserving the existing device records avoids losing server fields such as
+  id, state, seq, and timestamps when saving edits.
+
+Tests:
+- just camellia typecheck
+- just camellia check
