@@ -1,15 +1,13 @@
-fix(camellia): balance device page scroll layout
+fix(camellia): adjust device page scroll height
 
 Summary:
-- Keep the device list card as the fixed-height local scroller.
-- Let the device detail property table render all rows inline.
-- Remove the sticky list wrapper so page height follows the taller pane.
+- Make the device list card own the fixed viewport height and keep only the left list vertically scrollable.
+- Let device property rows render at their natural height with horizontal overflow only for narrow detail widths.
 
 Rationale:
-- DAM-90 rework reported continued blank page scrolling after the right-side scroller was removed.
-- Keeping the left pane in normal grid flow avoids a sticky viewport range where no new right-side content exists below the fold.
+- The device page should not add a nested right-side property scroller or artificial blank page height; the page height should be driven by the taller visible side.
 
 Tests:
+- just camellia typecheck
+- just camellia build
 - just camellia check
-- pnpm --filter @theaceae/camellia build
-- git diff --check
