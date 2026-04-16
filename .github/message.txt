@@ -1,12 +1,1 @@
-Fix specification template device list editing (#90)
-
-## Summary
-- Add `device_list` typing to the Theaceae API client for specification records.
-- Initialize specification template edit checkbox state from `device_list`, falling back to existing `match_model` behavior when no `device_list` is present.
-- Send selected device records in the `/api/v1/app/universal/specification/modify` payload while keeping `match_model` synchronized.
-
-## Validation
-- `just camellia typecheck`
-- `just camellia check`
-
-Linear: DAM-91
+Merge branch 'main' of https://github.com/prtmax/labelix
