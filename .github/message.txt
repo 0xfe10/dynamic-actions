@@ -1,1 +1,2 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+Replace SearchableSelectField with Select for filters on
+KnowledgePointPage
