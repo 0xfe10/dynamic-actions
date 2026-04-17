@@ -1,1 +1,1 @@
-dart 再用均值处理二值化测试
+flutter_bluetooth_serial
