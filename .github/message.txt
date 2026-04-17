@@ -1,1 +1,1 @@
-Reverse knowledge node sort order and unify sorting logic
+Fix sort_order calculation when adding new knowledge node
