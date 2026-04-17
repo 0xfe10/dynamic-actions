@@ -1,1 +1,1 @@
-flutter_bluetooth_serial
+wifiIp 缺少
