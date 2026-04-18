@@ -1,1 +1,7 @@
-Improve display name and avatar initial handling on profile page
+Add Labelab template editor research docs, schema, and redesign spec
+
+- Add editor architecture and implementation decision reports
+- Add Labelab storage schema v0.2, example, and Rust core output
+  contract
+- Add page-by-page redesign spec for Labelab mobile app
+- Add initial .pen UX file for mobile editor frame
