@@ -1,1 +1,1 @@
-Remove template editor research docs and schema files
+more docs
