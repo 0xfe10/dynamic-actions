@@ -1,1 +1,1 @@
-app功能配置AI业务 (#515)
+Add changelog for new columns and drops in AI tables
