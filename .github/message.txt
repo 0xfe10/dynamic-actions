@@ -1,14 +1,1 @@
-refactor(camellia): migrate question content editor to edubox
-
-The question-content.tsx component (~7400 lines) has been extracted into
-the @edubox/question-content-editor package in the edubox repository.
-
-Changes:
-- Add @edubox/question-content-editor dependency in camellia/package.json
-  (pointing to feat/editor-package branch until merged to main)
-- Update education-pages.tsx to import from @edubox/question-content-editor
-  instead of the local @/components/question-content
-
-The original question-content.tsx can be removed once this branch is
-confirmed working. It is kept here for now to avoid breaking the build
-until the edubox PR is merged and the dependency resolves correctly.
+feat(camellia): migrate editor to @edubox/question-content-editor, remove local copy
