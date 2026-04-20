@@ -1,1 +1,1 @@
-Add changelog for new columns and drops in AI tables (#516)
+调用大模型错误提示
