@@ -1,1 +1,1 @@
-Add changelog for new columns and drops in AI tables
+Add changelog for new columns and drops in AI tables (#516)
