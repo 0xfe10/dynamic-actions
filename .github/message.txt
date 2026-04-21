@@ -1,1 +1,1 @@
-feat(camellia): migrate editor to @edubox/question-content-editor, remove local copy
+feat(camellia): use @edubox/question-content-editor from main branch
