@@ -1,1 +1,1 @@
-wifiIp 缺少
+fix(pbita): align threshold boundary with legacy ble_native (< threshold → black)
