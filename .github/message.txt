@@ -1,3 +1,1 @@
-fix：修复前端问题
-
-Co-authored-by: Copilot <copilot@github.com>
+fix：修复设备获取打印问题
