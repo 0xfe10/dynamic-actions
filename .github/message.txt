@@ -1,1 +1,1 @@
-feat(rubus): add websocket and provider replay bridges
+feat(rubus): expand provider bridge replay coverage
