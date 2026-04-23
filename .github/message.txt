@@ -1,1 +1,3 @@
-feat(rubus): declare legacy babosa route coverage
+修改视频&说明书bug
+
+Co-authored-by: Copilot <copilot@github.com>
