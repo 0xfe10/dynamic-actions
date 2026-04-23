@@ -1,1 +1,15 @@
-feat(rubus): expand provider bridge replay coverage
+Implement Rubus provider bridges for webhook and facade OCR routes
+
+- Add Rubus-only provider bridge implementations for webhook IoT card
+  create-transaction-order and sync-transaction, with local stub replay
+  fixtures and DB seed data.
+- Implement facade OCR provider bridges for labelexpert (Baidu OCR
+  recog-character) and metaprint (TextIn intelli-scan,
+  handwritten-erase)
+  with Rubus-only stub replay fixtures.
+- Update contract fixtures, docs, and status boards to reflect bridge
+  implementation and stub-replay coverage.
+- Add tasks-infra endpoint for webhook worker boundary fixture
+  validation.
+- Update .env example with provider envs for WeChat, Mobile, and
+  PinDuoDuo.
