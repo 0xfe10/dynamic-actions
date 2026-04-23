@@ -1,1 +1,1 @@
-feat(rubus): scaffold babosa migration foundation
+docs(rubus): define full babosa migration checklist
