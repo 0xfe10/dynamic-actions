@@ -1,1 +1,1 @@
-test(rubus): tighten babosa parity and fixture gates
+test(rubus): add live replay readiness gates
