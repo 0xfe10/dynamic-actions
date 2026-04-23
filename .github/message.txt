@@ -1,14 +1,1 @@
-Migrate universal resource admin pages (#12)
-
-## Summary
-- migrate `webpage`, `home-image`, and `general-group` admin resources into `aynguide`
-- add hidden child routes for banner detail, webpage group values, and general-group value management
-- add backend models, migrations, services, and admin routes required by the migrated pages
-
-## Testing
-- [x] `cd /code/symphony/0xfe10/workspaces/DAM-24/aynguide/api && npm run build`
-- [x] `cd /code/symphony/0xfe10/workspaces/DAM-24/aynguide/frontend && pnpm build`
-- [x] `cd /code/symphony/0xfe10/workspaces/DAM-24/aynguide/frontend && pnpm exec eslint src/api/types.ts src/i18n/chinese.ts src/router/modules/apps.ts src/views/banner/item.vue src/views/banner/manage.vue src/api/webpage.ts src/api/home-image.ts src/api/general-group.ts src/views/webpage/index.vue src/views/webpage/group.vue src/views/webpage/webpage.vue src/views/home-image/index.vue src/views/general-group/constants.ts src/views/general-group/index.vue src/views/general-group/group.vue src/views/general-group/filter.vue src/views/general-group/text.vue src/views/general-group/copywriting.vue src/views/general-group/border.vue`
-
-## Linear
-- DAM-24
+Merge remote-tracking branch 'origin/main'
