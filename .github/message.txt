@@ -1,1 +1,1 @@
-test(rubus): add live replay readiness gates
+test(rubus): add wave4 live replay and realtime gates
