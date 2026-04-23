@@ -1,1 +1,1 @@
-docs(rubus): define full babosa migration checklist
+feat(rubus): declare legacy babosa route coverage
