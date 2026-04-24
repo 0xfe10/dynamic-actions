@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+chore(camellia): depend on edubox main
