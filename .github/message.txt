@@ -1,1 +1,1 @@
-feat(rubus): complete wave8 provider bridge gate
+test(rubus): classify health endpoints as rubus-only
