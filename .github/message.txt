@@ -1,1 +1,1 @@
-test(rubus): add recognition provider stub replay
+test(rubus): add oss provider stub parity
