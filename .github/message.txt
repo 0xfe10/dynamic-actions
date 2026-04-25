@@ -1,1 +1,1 @@
-test(rubus): classify health endpoints as rubus-only
+test(rubus): activate additional staging parity fixtures
