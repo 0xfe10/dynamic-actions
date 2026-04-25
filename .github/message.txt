@@ -1,1 +1,1 @@
-test(rubus): add firmware local seeded parity fixtures
+fix(rubus): handle universal firmware relation lookup
