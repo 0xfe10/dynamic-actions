@@ -1,1 +1,1 @@
-test(rubus): expand local seeded parity fixtures
+test(rubus): add recognition provider stub replay
