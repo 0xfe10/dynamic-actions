@@ -1,1 +1,1 @@
-test(rubus): add oss provider stub parity
+test(rubus): add firmware local seeded parity fixtures
