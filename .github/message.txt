@@ -1,1 +1,1 @@
-perf(education): speed up question bank queries
+fix(education): allow anonymous v0 queries
