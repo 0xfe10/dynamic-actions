@@ -29,6 +29,7 @@ jobs:
           repository: prtmax/byteone
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           ref_file: .github/ref.txt
+          submodules: recursive
 
       - name: Check
         working-directory: pkgs/${{ matrix.package.name }}

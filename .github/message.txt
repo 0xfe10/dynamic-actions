@@ -1,1 +1,1 @@
-修复问题
+fix(ci): include psdk in core docker build
