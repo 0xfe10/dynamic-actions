@@ -1,1 +1,1 @@
-fix(education): include all-region exam papers
+fix(education): include general term exam papers
