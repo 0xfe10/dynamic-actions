@@ -1,1 +1,1 @@
-轮播图修改及调整
+perf(education): lighten question bank dictionaries
