@@ -1,1 +1,1 @@
-perf(education): lighten question bank dictionaries
+fix(camellia): pass model page app option
