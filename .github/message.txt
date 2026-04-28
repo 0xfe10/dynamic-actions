@@ -1,1 +1,1 @@
-feat(mobile): integrate plate editor and nib a4 thermal flow
+chore(mobile): update ble plugin to 1.3.5
