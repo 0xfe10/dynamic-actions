@@ -1,1 +1,1 @@
-chore(camellia): refresh edubox main dependency
+fix(education): hide empty textbook versions
