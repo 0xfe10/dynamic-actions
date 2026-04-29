@@ -1,1 +1,1 @@
-chore(mobile): update ble plugin to 1.3.5
+Add template editor SVG renderer and preview image support
