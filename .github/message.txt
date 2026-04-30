@@ -1,3 +1,1 @@
-字典表值改为文本框
-
-Co-authored-by: Copilot <copilot@github.com>
+chore(camellia): refresh edubox main dependency
