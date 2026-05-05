@@ -1,11 +1,3 @@
-Add image support and improve debug device handling
+Add frame border color and width debug settings
 
-- Add INTERNET and CAMERA permissions to AndroidManifest
-- Update template editor i18n for image and drawing features
-- Add image_picker dependency
-- Switch plate/nib/pxlab dependencies to git sources
-- Integrate plate_editor_support for rendering and SVG fixes
-- Improve debug Bluetooth device connection logic and tests
-- Update PlateBridgeService frame parsing for new API
-- Adjust line rendering defaults and dash pattern logic
-- Add tests for manual debug device connection and error handling
+Also update Plate package refs and add shape breakout tests
