@@ -1,1 +1,8 @@
-Add consumer hero cards and product illustrations to UI
+Add localized strings and new logo assets for branding
+
+- Add SVG and PNG logo assets (full, mark, wordmark)
+- Update i18n files with new and revised strings
+- Replace hardcoded UI text with localized strings throughout app
+- Update app icon images for iOS
+- Refactor logo widget to use SVG asset
+- Update pubspec.yaml to include logo assets
