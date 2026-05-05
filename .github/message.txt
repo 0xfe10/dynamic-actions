@@ -1,1 +1,9 @@
-Add boolean operations to shape editor and update toolbar actions
+Add PRODUCT.md and improve line dash rendering
+
+- Add PRODUCT.md to define product purpose, users, and principles
+- Support explicit dot/dash/dash-dot line patterns in SVG renderer
+- Add "dashDots" to i18n
+- Update home page UI copy and metrics
+- Adjust template editor toolbar sizing
+- Update plate package refs
+- Add tests for rotated dashed/dotted lines
