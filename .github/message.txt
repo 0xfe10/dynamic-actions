@@ -1,8 +1,1 @@
-Revamp device search UI and sync template editor units with profile
-
-- Redesign DeviceSearchPage with improved layout, padding, and scan
-  button
-- Replace SectionCard with custom device panel and scan strip
-- Update i18n for "Find printer" and scan actions
-- Make template editor inspector follow profile display unit (mm/inch)
-- Add tests for unit sync and geometry field updates in template editor
+Add boolean operations to shape editor and update toolbar actions
