@@ -1,1 +1,1 @@
-Add changelog for AI size table and sizes column in business
+Add changelog for AI size table and sizes column in business (#521)
