@@ -1,1 +1,1 @@
-示例文档接口 (#520)
+Add changelog for AI size table and sizes column in business
