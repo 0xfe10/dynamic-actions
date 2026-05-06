@@ -1,1 +1,1 @@
-Add changelog for AI size table and sizes column in business (#521)
+Fix typo in height column remarks in changelog
