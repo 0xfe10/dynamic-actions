@@ -1,1 +1,7 @@
-fix：修复是被版本号问题
+Feat/websocker (#29)
+
+* feat：添加协议
+
+* fix：修复问题
+
+* fix：修复是被版本号问题
