@@ -1,1 +1,1 @@
-docs(malus): add license service e2e runbook
+feat(malus): add go sdk and authorization cli
