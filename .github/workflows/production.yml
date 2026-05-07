@@ -28,6 +28,9 @@ jobs:
           - package: kerria-cli
             binary: kerria-cli
             args: --release --package kerria-cli --features=education-compat-api
+          - package: malus-cli
+            binary: malus-cli
+            args: --release --package malus-cli
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
