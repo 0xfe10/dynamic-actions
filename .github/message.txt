@@ -1,1 +1,1 @@
-feat(emapi): add ack-gated protocol SDKs
+新增 设置设备秘钥 设置服务器域名/地址列表
