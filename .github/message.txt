@@ -1,1 +1,1 @@
-fix(camellia): rename malus business id labels
+fix(camellia): polish malus admin pages
