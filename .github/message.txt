@@ -1,1 +1,1 @@
-feat(camellia): add yaml editor for malus features
+fix(camellia): load malus license form options
