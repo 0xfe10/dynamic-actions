@@ -1,1 +1,1 @@
-fix(malus): rename signing secret config
+feat(malus): support signing key rotation
