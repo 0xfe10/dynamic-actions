@@ -1,1 +1,1 @@
-fix(camellia): improve malus field help
+feat(malus): structure license features
