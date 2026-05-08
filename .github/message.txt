@@ -1,1 +1,1 @@
-fix(camellia): keep malus audit pagination state
+feat(camellia): add yaml editor for malus features
