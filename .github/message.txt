@@ -1,1 +1,1 @@
-fix(camellia): load malus license form options
+fix(camellia): inline malus revoke actions
