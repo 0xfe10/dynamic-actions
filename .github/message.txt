@@ -1,1 +1,1 @@
-feat(malus): add go sdk and authorization cli
+feat(malus): add admin console integration
