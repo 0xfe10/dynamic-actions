@@ -1,1 +1,1 @@
-feat：添加百度生图引擎
+feat(byteone): add Go binary protection builds
