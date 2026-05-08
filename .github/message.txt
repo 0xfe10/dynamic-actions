@@ -1,1 +1,1 @@
-feat(malus): support signing key rotation
+feat(malus): require admin role JWT

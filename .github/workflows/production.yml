@@ -231,6 +231,7 @@ jobs:
                 "app.spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.kerria_serve.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.kerria_worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
+                "app.malus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
               }
             }
