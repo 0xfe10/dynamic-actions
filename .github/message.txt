@@ -1,1 +1,1 @@
-feat(malus): require admin role JWT
+fix(camellia): rename malus business id labels
