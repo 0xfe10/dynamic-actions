@@ -1,1 +1,1 @@
-malus-license-certificate-service
+main
