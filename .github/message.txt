@@ -1,5 +1,1 @@
-fix(camellia): polish malus license controls (#96)
-
-* fix(malus): replace device limits with instance limits
-
-* fix(camellia): polish malus license policy controls
+fix(camellia): preserve malus runtime entries on edit
