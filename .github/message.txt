@@ -1,1 +1,5 @@
-fix(camellia): polish malus license policy controls
+Merge remote-tracking branch 'origin/main' into fix-malus-instance-license-limits
+
+# Conflicts:
+#	theaceae/apps/camellia/src/locales/en.json
+#	theaceae/apps/camellia/src/locales/zh-CN.json
