@@ -1,1 +1,1 @@
-Update feature examples from export_pdf to core in help texts
+Move existing bindings list below access input rows
