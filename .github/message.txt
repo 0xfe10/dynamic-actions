@@ -1,1 +1,3 @@
-fix(malus): replace device limits with instance limits
+fix(malus): replace device limits with instance limits (#95)
+
+Merged per request.
