@@ -1,1 +1,1 @@
-feat(byteone): integrate Malus license checks
+docs(byteone): clarify Malus runtime authorization
