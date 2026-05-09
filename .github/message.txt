@@ -1,1 +1,5 @@
-refactor(malus): rename deployment access model
+Support access runtime licensing in Malus (#94)
+
+* feat(malus): support deployment runtime licensing
+
+* refactor(malus): rename deployment access model
