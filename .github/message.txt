@@ -1,1 +1,1 @@
-feat(malus): support license feature policy updates
+fix(camellia): show malus license feature edit action
