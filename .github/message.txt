@@ -1,1 +1,1 @@
-feat(byteone): simplify Malus license URL config
+添加缩放算法
