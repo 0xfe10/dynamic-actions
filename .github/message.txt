@@ -1,1 +1,1 @@
-feat(byteone): add Go binary protection builds
+feat(byteone): integrate Malus license checks

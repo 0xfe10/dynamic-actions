@@ -1,1 +1,1 @@
-features/byteone-go-binary-protection
+features/byteone-malus-license-certificate

@@ -85,6 +85,8 @@ jobs:
           build-args: |
             ${{ matrix.package.args || '' }}
             ${{ matrix.package.binary_protection && format('BYTEONE_BINARY_PROTECTION={0}', env.BYTEONE_BINARY_PROTECTION) || '' }}
+          secrets: |
+            ${{ matrix.package.name == 'core' && format('github_token={0}', secrets.GH_TOKEN_0XFE10) || '' }}
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
