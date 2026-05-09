@@ -1,1 +1,1 @@
-feat(license): use malus deployment runtime authorization
+fix(license): rename license config key
