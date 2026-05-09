@@ -1,5 +1,1 @@
-Support access runtime licensing in Malus (#94)
-
-* feat(malus): support deployment runtime licensing
-
-* refactor(malus): rename deployment access model
+fix(camellia): show disabled malus policy edit action
