@@ -1,1 +1,1 @@
-codex/byteone-go-binary-protection
+features/byteone-go-binary-protection
