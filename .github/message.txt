@@ -1,1 +1,1 @@
-添加缩放算法
+feat(license): use malus deployment runtime authorization
