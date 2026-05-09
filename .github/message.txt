@@ -1,1 +1,1 @@
-fix(madman): pin pnpm for realtime image build
+编辑个人商品返回商品属性信息
