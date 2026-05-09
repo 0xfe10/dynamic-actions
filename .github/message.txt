@@ -1,1 +1,1 @@
-fix(license): rename license config key
+refactor(license): rename runtime credentials to access and secret
