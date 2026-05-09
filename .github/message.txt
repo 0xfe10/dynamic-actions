@@ -1,1 +1,1 @@
-fix(camellia): show disabled malus policy edit action
+fix(malus): replace device limits with instance limits
