@@ -8,7 +8,6 @@ env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
-  BYTEONE_BINARY_PROTECTION: garble
 
 jobs:
   ensure-main:
@@ -38,13 +37,8 @@ jobs:
       matrix:
         package:
           - name: core
-            context: .
-            binary_protection: true
           - name: msgbridge
-            context: .
-            binary_protection: true
           - name: front
-            context: pkgs/front
             args: |
               BUILD_MODE=staging
     steps:
@@ -89,27 +83,28 @@ jobs:
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ${{ matrix.package.context }}
+          context: pkgs/${{ matrix.package.name }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
-          platforms: linux/amd64,linux/arm64
-          build-args: |
-            ${{ matrix.package.args || '' }}
-            ${{ matrix.package.binary_protection && format('BYTEONE_BINARY_PROTECTION={0}', env.BYTEONE_BINARY_PROTECTION) || '' }}
+          build-args: ${{ matrix.package.args || '' }}
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
-            ${{ steps.tags.outputs.ali_sha }}
-            ${{ steps.tags.outputs.ali_staging }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
+            docker push ${{ steps.tags.outputs.ali_sha }}
+            docker push ${{ steps.tags.outputs.ali_staging }}
 
   deploy-apps:
     name: Deploy Apps
