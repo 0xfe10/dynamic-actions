@@ -1,17 +1,1 @@
-Use Malus access runtime authorization in Byteone core (#32)
-
-* feat(byteone): integrate Malus license checks
-
-* docs(byteone): clarify Malus runtime authorization
-
-* feat(byteone): simplify Malus license URL config
-
-* feat(license): use malus deployment runtime authorization
-
-* fix(license): rename license config key
-
-* refactor(license): rename runtime credentials to access and secret
-
-* fix(license): remove enabled bypass surface
-
-* fix(license): use malusx submodule for docker builds
+Merge branch 'main' into features/byteone-go-binary-protection
