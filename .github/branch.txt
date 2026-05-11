@@ -1,1 +1,1 @@
-features/byteone-malus-license-certificate
+main
