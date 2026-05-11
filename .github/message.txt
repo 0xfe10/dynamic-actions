@@ -1,1 +1,17 @@
-fix：修复上报问题
+Feature/label print support (#33)
+
+* feat: add label print support baseline
+
+* feat：添加画布
+
+* feat：添加文本生便签支持
+
+* fix：修复协议内容
+
+* fix：修复功能清单问题
+
+* fix：修复上报问题
+
+---------
+
+Co-authored-by: Fangjc <admin@gcoll.top>
