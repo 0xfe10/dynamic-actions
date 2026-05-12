@@ -1,1 +1,1 @@
-Enforce MTU limits for file transfer chunks and fix encoding
+ble连接重试
