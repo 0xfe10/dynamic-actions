@@ -1,1 +1,1 @@
-Add full protocol support and tests for EMAPI facade
+安卓平台才请求mtu
