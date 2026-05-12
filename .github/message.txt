@@ -1,1 +1,1 @@
-修改最终广播地址 获取方法
+Add full protocol support and tests for EMAPI facade
