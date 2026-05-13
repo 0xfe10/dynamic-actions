@@ -8,7 +8,6 @@ env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
-  BYTEONE_BINARY_PROTECTION: garble
 
 jobs:
   ensure-main:
@@ -39,10 +38,8 @@ jobs:
         package:
           - name: core
             context: .
-            binary_protection: true
           - name: msgbridge
             context: .
-            binary_protection: true
           - name: front
             context: pkgs/front
             args: |
@@ -104,7 +101,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: |
             ${{ matrix.package.args || '' }}
-            ${{ matrix.package.binary_protection && format('BYTEONE_BINARY_PROTECTION={0}', env.BYTEONE_BINARY_PROTECTION) || '' }}
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}

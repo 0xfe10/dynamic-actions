@@ -8,7 +8,7 @@ env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
-  BYTEONE_BINARY_PROTECTION: garble
+  BYTEONE_PROTECTED_BINARY_PROTECTION: garble
 
 jobs:
   build-apps:
@@ -19,10 +19,8 @@ jobs:
         package:
           - name: core
             context: .
-            binary_protection: true
           - name: msgbridge
             context: .
-            binary_protection: true
           - name: front
             context: pkgs/front
             args: |
@@ -84,12 +82,64 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: |
             ${{ matrix.package.args || '' }}
-            ${{ matrix.package.binary_protection && format('BYTEONE_BINARY_PROTECTION={0}', env.BYTEONE_BINARY_PROTECTION) || '' }}
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
             ${{ steps.tags.outputs.ali_sha }}
             ${{ steps.tags.outputs.ali_latest }}
+
+  build-protected-apps:
+    name: Build Protected
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        package:
+          - name: core
+            context: .
+          - name: msgbridge
+            context: .
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/byteone
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+          submodules: recursive
+
+      - name: Check
+        working-directory: pkgs/${{ matrix.package.name }}
+        run: |
+          ls -la
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "protected_sha=byteone-${{ matrix.package.name }}-protected:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "protected_latest=byteone-${{ matrix.package.name }}-protected:latest" >> $GITHUB_OUTPUT
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build protected docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          context: ${{ matrix.package.context }}
+          file: pkgs/${{ matrix.package.name }}/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            BYTEONE_BINARY_PROTECTION=${{ env.BYTEONE_PROTECTED_BINARY_PROTECTION }}
+          tags: |
+            ${{ steps.tags.outputs.protected_sha }}
+            ${{ steps.tags.outputs.protected_latest }}
 
   deploy-apps:
     name: Deploy Apps
