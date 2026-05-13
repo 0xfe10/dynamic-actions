@@ -1,1 +1,1 @@
-fix(core): preserve enum reflection in garble builds (#34)
+fix(core): remove AI image feature gate (#35)
