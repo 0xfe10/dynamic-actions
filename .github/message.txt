@@ -1,1 +1,6 @@
-fix：修复模拟客户端问题
+Merge remote-tracking branch 'origin/features/byteone-go-binary-protection'
+
+# Conflicts:
+#	.gitmodules
+#	pkgs/core/internal/logic/logic.go
+#	pkgs/core/internal/router/router.go
