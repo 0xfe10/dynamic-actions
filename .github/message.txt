@@ -1,1 +1,1 @@
-ci(byteone): split protected image builds
+ci(byteone): split protected image builds (#36)
