@@ -1,1 +1,1 @@
-codex/fix-garble-enum-validation
+fix/remove-ai-image-generation-gate
