@@ -1,6 +1,1 @@
-Merge remote-tracking branch 'origin/features/byteone-go-binary-protection'
-
-# Conflicts:
-#	.gitmodules
-#	pkgs/core/internal/logic/logic.go
-#	pkgs/core/internal/router/router.go
+fix：修复枚举类型问题
