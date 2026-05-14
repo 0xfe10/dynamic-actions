@@ -111,5 +111,5 @@ jobs:
   #         deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
   #         argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
   #         argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-  #         app_name: cortex-asr-hn0-staging
+  #         app_name: cortex-staging-asr-hn0
   #         changes: ${{ steps.deploy_changes.outputs.changes }}

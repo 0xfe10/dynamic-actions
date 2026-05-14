@@ -1,1 +1,1 @@
-ci(asr): update staging deploy template
+fix(asr): use generated argocd app name
