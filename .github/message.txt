@@ -1,1 +1,1 @@
-fix：修复没有默认语言问题
+ci(asr): build split service images
