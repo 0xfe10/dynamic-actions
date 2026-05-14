@@ -90,6 +90,19 @@ jobs:
 
   #     - name: Set repo name
   #       run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+  #
+  #     - name: Set deploy changes
+  #       id: deploy_changes
+  #       run: |
+  #         cat >> "$GITHUB_OUTPUT" <<EOF
+  #         changes<<JSON
+  #         {
+  #           "argocd/cortex/asr-hn0/overlays/staging/asr/values.yaml": {
+  #             "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}"
+  #           }
+  #         }
+  #         JSON
+  #         EOF
 
   #     - name: Deploy
   #       uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
@@ -99,9 +112,4 @@ jobs:
   #         argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
   #         argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
   #         app_name: cortex-asr-hn0-staging
-  #         changes: |
-  #           {
-  #             "argocd/cortex/asr-hn0/overlays/staging/asr/deployment-patch.yaml": {
-  #               "[0].value.image": "${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_asr:sha-${{ env.SHA }}"
-  #             }
-  #           }
+  #         changes: ${{ steps.deploy_changes.outputs.changes }}
