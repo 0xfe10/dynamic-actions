@@ -6,7 +6,6 @@ on:
       - "v*-asr"
 env:
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
-  DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
   build-apps:
@@ -92,8 +91,8 @@ jobs:
           changes: |
             {
               "argocd/cortex/asr-hn0/overlays/production/asr/values.yaml": {
-                "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}",
-                "app.funasrOnline.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_funasr-online:sha-${{ env.SHA }}",
-                "app.funasrSensevoice.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_funasr-sensevoice:sha-${{ env.SHA }}"
+                "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}",
+                "app.funasrOnline.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-online:sha-${{ env.SHA }}",
+                "app.funasrSensevoice.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-sensevoice:sha-${{ env.SHA }}"
               }
             }

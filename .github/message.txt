@@ -1,1 +1,1 @@
-添加国外下载
+fix(asr): deploy public acr images
