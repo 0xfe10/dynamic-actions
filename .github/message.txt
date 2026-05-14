@@ -1,1 +1,1 @@
-Merge branches 'main' and 'main' of https://github.com/prtmax/byteone
+feat：添加新的错误码
