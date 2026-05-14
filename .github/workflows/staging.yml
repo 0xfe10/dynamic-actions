@@ -31,15 +31,6 @@ jobs:
     needs:
       - ensure-main
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
-    strategy:
-      matrix:
-        package:
-          - name: asr-go
-            dockerfile: Dockerfile
-          - name: funasr-online
-            dockerfile: Dockerfile.funasr
-          - name: funasr-sensevoice
-            dockerfile: Dockerfile.funasr-sensevoice
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -68,15 +59,15 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:staging" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
           push: true
           context: .
-          file: ${{ matrix.package.dockerfile }}
+          file: Dockerfile
           tags: |
             ${{ steps.tags.outputs.ali_sha }}
             ${{ steps.tags.outputs.ali_staging }}

@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/asr
+ci(asr): gate funasr image builds

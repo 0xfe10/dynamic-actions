@@ -6,20 +6,12 @@ on:
       - "v*-asr"
 env:
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
+  FUNASR_IMAGES_ENABLE: "false"
 
 jobs:
-  build-apps:
-    name: Build
+  build-asr-go:
+    name: Build asr-go
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package:
-          - name: asr-go
-            dockerfile: Dockerfile
-          - name: funasr-online
-            dockerfile: Dockerfile.funasr
-          - name: funasr-sensevoice
-            dockerfile: Dockerfile.funasr-sensevoice
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -48,10 +40,73 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:latest" >> $GITHUB_OUTPUT
+
+      - name: Publish docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: .
+          file: Dockerfile
+          tags: |
+            ${{ steps.tags.outputs.ali_sha }}
+            ${{ steps.tags.outputs.ali_latest }}
+
+  build-funasr:
+    name: Build FunASR
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - name: funasr-online
+            dockerfile: Dockerfile.funasr
+          - name: funasr-sensevoice
+            dockerfile: Dockerfile.funasr-sensevoice
+    steps:
+      - name: Skip FunASR image build
+        if: env.FUNASR_IMAGES_ENABLE != 'true'
+        run: echo "FUNASR_IMAGES_ENABLE is false; skip ${{ matrix.package.name }}"
+
+      - uses: actions/checkout@v6
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+      - name: Checkout
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/asr
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Check
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+        run: |
+          ls -la
+
+      - name: Docker login (Aliyun)
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
+      - uses: benjlevesque/short-sha@v3.0
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+
+      - name: Set repo name
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+
+      - name: Set image tags
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
+        id: tags
+        run: |
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
         uses: docker/build-push-action@v6
         with:
           push: true
@@ -65,7 +120,9 @@ jobs:
     name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
-      - build-apps
+      - build-asr-go
+      - build-funasr
+    if: always() && needs.build-asr-go.result == 'success' && (needs.build-funasr.result == 'success' || needs.build-funasr.result == 'skipped')
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -80,6 +137,33 @@ jobs:
       - name: Set repo name
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
+      - name: Set deploy changes
+        id: deploy_changes
+        run: |
+          if [ "${{ env.FUNASR_IMAGES_ENABLE }}" = "true" ]; then
+            cat >> "$GITHUB_OUTPUT" <<EOF
+          changes<<JSON
+          {
+            "argocd/cortex/asr-hn0/overlays/production/asr/values.yaml": {
+              "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}",
+              "app.funasrOnline.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-online:sha-${{ env.SHA }}",
+              "app.funasrSensevoice.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-sensevoice:sha-${{ env.SHA }}"
+            }
+          }
+          JSON
+          EOF
+          else
+            cat >> "$GITHUB_OUTPUT" <<EOF
+          changes<<JSON
+          {
+            "argocd/cortex/asr-hn0/overlays/production/asr/values.yaml": {
+              "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}"
+            }
+          }
+          JSON
+          EOF
+          fi
+
       - name: Deploy
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
@@ -88,11 +172,4 @@ jobs:
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
           app_name: cortex-asr-hn0-production
-          changes: |
-            {
-              "argocd/cortex/asr-hn0/overlays/production/asr/values.yaml": {
-                "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}",
-                "app.funasrOnline.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-online:sha-${{ env.SHA }}",
-                "app.funasrSensevoice.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-sensevoice:sha-${{ env.SHA }}"
-              }
-            }
+          changes: ${{ steps.deploy_changes.outputs.changes }}
