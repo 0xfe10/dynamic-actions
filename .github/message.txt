@@ -1,1 +1,13 @@
-feat(pyrus): add provision service
+fix(camellia): omit empty classification paper type
+
+Summary:
+- stop sending `paper_type: ""` in classification modify requests
+- keep sending `paper_type` when the form has a selected value
+
+Rationale:
+- the backend expects the field to be omitted when no paper type is chosen
+- this keeps the existing selected-value behavior unchanged with a minimal edit
+
+Tests:
+- pnpm --dir labelix/theaceae run typecheck:camellia
+- pnpm --dir labelix/theaceae run build:camellia
