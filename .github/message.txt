@@ -1,1 +1,1 @@
-fix(asr): use generated argocd app name
+fix：修复默认连接问题
