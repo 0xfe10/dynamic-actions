@@ -1,13 +1,11 @@
-fix(camellia): omit empty classification paper type
+fix: omit empty classification paper type (#98)
 
-Summary:
-- stop sending `paper_type: ""` in classification modify requests
-- keep sending `paper_type` when the form has a selected value
+## Summary
+- omit `paper_type` from classification modify requests when the select is unset
+- preserve the existing payload when a paper type is selected
 
-Rationale:
-- the backend expects the field to be omitted when no paper type is chosen
-- this keeps the existing selected-value behavior unchanged with a minimal edit
-
-Tests:
+## Validation
 - pnpm --dir labelix/theaceae run typecheck:camellia
 - pnpm --dir labelix/theaceae run build:camellia
+
+Refs DAM-92
