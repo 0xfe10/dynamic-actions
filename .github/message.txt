@@ -1,11 +1,1 @@
-fix: omit empty classification paper type (#98)
-
-## Summary
-- omit `paper_type` from classification modify requests when the select is unset
-- preserve the existing payload when a paper type is selected
-
-## Validation
-- pnpm --dir labelix/theaceae run typecheck:camellia
-- pnpm --dir labelix/theaceae run build:camellia
-
-Refs DAM-92
+机型分类和机型配置模版分类后台管理
