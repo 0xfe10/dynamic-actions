@@ -1,1 +1,3 @@
-ci(byteone): publish protected release images (#37)
+Disable GitOps deployment in production workflow
+
+Comment out deployment steps for GitOps.
