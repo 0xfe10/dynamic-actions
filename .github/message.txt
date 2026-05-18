@@ -1,1 +1,1 @@
-fix：修复oss问题
+ci(byteone): publish protected release images

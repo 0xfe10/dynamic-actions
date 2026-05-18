@@ -114,13 +114,23 @@ jobs:
         run: |
           ls -la
 
+      - name: Docker login (Aliyun)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
       - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - name: Set image tags
         id: tags
         run: |
-          echo "protected_sha=byteone-${{ matrix.package.name }}-protected:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "protected_latest=byteone-${{ matrix.package.name }}-protected:latest" >> $GITHUB_OUTPUT
+          echo "protected_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}-release:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "protected_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}-release:latest" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -131,7 +141,7 @@ jobs:
       - name: Build protected docker image
         uses: docker/build-push-action@v6
         with:
-          push: false
+          push: true
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           platforms: linux/amd64,linux/arm64
