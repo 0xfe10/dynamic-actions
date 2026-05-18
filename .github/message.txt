@@ -1,1 +1,1 @@
-ci(byteone): publish protected release images
+ci(byteone): publish protected release images (#37)
