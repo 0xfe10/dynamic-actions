@@ -98,7 +98,7 @@ jobs:
           push: true
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           build-args: |
             ${{ matrix.package.args || '' }}
           tags: |

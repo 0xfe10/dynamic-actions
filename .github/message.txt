@@ -1,1 +1,3 @@
-Uncomment deployment steps in production workflow
+Limit Docker build platforms to linux/amd64
+
+Removed support for linux/arm64 platform in Docker build.
