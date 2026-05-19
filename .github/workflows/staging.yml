@@ -51,6 +51,9 @@ jobs:
           - package: malus-cli
             binary: malus-cli
             args: --release --package malus-cli
+          - package: pyrus-cli
+            binary: pyrus-cli
+            args: --release --package pyrus-cli
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -257,6 +260,7 @@ jobs:
                 "app.kerria_serve.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.kerria_worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.malus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
+                "app.pyrus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}"
               }
             }
