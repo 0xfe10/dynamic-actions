@@ -1,1 +1,1 @@
-docs: add product context
+docs: simplify project constraints
