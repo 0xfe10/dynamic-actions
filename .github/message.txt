@@ -1,3 +1,1 @@
-Remove migration-constraints.md from workflow
-
-Removed migration constraints document from the workflow.
+docs: clarify generated contract types
