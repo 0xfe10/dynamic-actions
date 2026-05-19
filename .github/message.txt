@@ -1,1 +1,1 @@
-ci(image-review): add docker image workflows
+ci(image-review): publish only aliyun images

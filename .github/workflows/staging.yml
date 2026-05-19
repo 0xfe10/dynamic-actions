@@ -6,7 +6,6 @@ on:
       - "**"
 
 env:
-  DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
   IMAGE_NAME: image-review
@@ -35,9 +34,6 @@ jobs:
     needs:
       - ensure-main
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v6
 
@@ -51,13 +47,6 @@ jobs:
       - name: Check
         run: |
           ls -la
-
-      - name: Docker login
-        uses: docker/login-action@v3
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -77,8 +66,6 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.REPO_SLUG }}/${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ env.REPO_SLUG }}/${{ env.IMAGE_NAME }}:staging" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:staging" >> $GITHUB_OUTPUT
 
@@ -96,18 +83,5 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
             ${{ steps.tags.outputs.ali_sha }}
             ${{ steps.tags.outputs.ali_staging }}
-
-      - name: Set GHCR package private
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
-        run: |
-          PACKAGE_NAME="${REPO_SLUG#*/}/${{ env.IMAGE_NAME }}"
-          ENCODED_PACKAGE_NAME="${PACKAGE_NAME//\//%2F}"
-          gh api \
-            --method PATCH \
-            "/user/packages/container/${ENCODED_PACKAGE_NAME}/visibility" \
-            -f visibility=private
