@@ -1,1 +1,1 @@
-chore: consolidate workflow policy
+docs: add product context
