@@ -1,4 +1,4 @@
-fix(camellia): preserve banner models during locale edits
+fix(camellia): preserve banner models during locale edits (#99)
 
 Summary:
 - limit the banner dialog model-sync effect to source model changes
