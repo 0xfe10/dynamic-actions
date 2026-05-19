@@ -1,13 +1,1 @@
-fix(camellia): preserve banner models during locale edits (#99)
-
-Summary:
-- limit the banner dialog model-sync effect to source model changes
-- keep locale checkbox updates from resetting in-progress model selections
-
-Rationale:
-- the dialog stored selected models separately from groupForm state
-- syncing on every groupForm change replayed stale model CSV data
-
-Tests:
-- cd /code/symphony/0xfe10/workspaces/DAM-93/labelix/theaceae && just camellia typecheck
-- cd /code/symphony/0xfe10/workspaces/DAM-93/labelix/theaceae && just camellia build
+调用限制增加错题解析
