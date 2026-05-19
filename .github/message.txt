@@ -1,5 +1,1 @@
-feat(pyrus): add network-config service (#97)
-
-* feat(pyrus): add provision service
-
-* feat(pyrus): add network config management
+feat(pyrus): localize network config categories
