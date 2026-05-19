@@ -1,1 +1,1 @@
-feat(pyrus): localize network config categories
+chore: remove openspec directory
