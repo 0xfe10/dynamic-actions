@@ -1,1 +1,1 @@
-chore: remove openspec directory
+chore: consolidate workflow policy
