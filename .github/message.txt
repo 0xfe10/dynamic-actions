@@ -1,1 +1,1 @@
-添加指向
+docs(landing): add cloud print deployment guide
