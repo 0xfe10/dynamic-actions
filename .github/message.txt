@@ -1,1 +1,1 @@
-ci(byteone): disable production deploy step
+ci(byteone): restore release image protection
