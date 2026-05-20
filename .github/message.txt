@@ -1,1 +1,3 @@
-ci(byteone): build release front image
+Disable deployment step in production.yml
+
+Comment out the deploy step in the production workflow.
