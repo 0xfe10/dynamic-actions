@@ -1,1 +1,1 @@
-fix：修复问题
+chore(config): stop tracking config and add sanitized example
