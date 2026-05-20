@@ -8,7 +8,7 @@ env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
-  BYTEONE_PROTECTED_BINARY_PROTECTION: garble
+  BYTEONE_PROTECTED_BINARY_PROTECTION: baseline
 
 jobs:
   build-apps:
