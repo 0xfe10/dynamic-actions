@@ -57,8 +57,8 @@ jobs:
         run: |
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_hk_sha=${{ env.DOCKER_REGISTRY_ALI_HK }}/coohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_hk_latest=${{ env.DOCKER_REGISTRY_ALI_HK }}/coohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:latest" >> $GITHUB_OUTPUT
+          echo "ali_hk_sha=${{ env.DOCKER_REGISTRY_ALI_HK }}/xoohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_hk_latest=${{ env.DOCKER_REGISTRY_ALI_HK }}/xoohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:latest" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
