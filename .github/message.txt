@@ -1,1 +1,1 @@
-ci(image-review): use region-specific aliyun namespaces
+Convert start.bat to Unix line endings
