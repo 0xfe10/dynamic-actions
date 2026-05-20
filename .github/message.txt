@@ -1,1 +1,1 @@
-docs(landing): add cloud print deployment guide
+fix(maprintrace): pin pnpm for docker build
