@@ -1,1 +1,1 @@
-fix：添加nn号查询
+ci(byteone): build release front image
