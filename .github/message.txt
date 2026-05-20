@@ -1,1 +1,1 @@
-docs(landing): separate cloud print guide
+docs(landing): add cloud print all-in-one example
