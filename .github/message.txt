@@ -1,1 +1,1 @@
-ci(byteone): build release images without garble
+ci(byteone): disable production deploy step
