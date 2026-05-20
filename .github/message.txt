@@ -1,3 +1,1 @@
-Disable deployment step in production.yml
-
-Comment out the deploy step in the production workflow.
+Enable deployment step in production workflow
