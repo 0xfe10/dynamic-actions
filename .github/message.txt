@@ -1,1 +1,1 @@
-docs(landing): add cloud print all-in-one example
+docs(landing): remove gfcli from cloud print example
