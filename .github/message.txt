@@ -1,1 +1,1 @@
-ci(byteone): restore release image protection
+Enable deployment of apps in production workflow

@@ -156,37 +156,37 @@ jobs:
             ${{ steps.tags.outputs.release_sha }}
             ${{ steps.tags.outputs.release_latest }}
 
-  # deploy-apps:
-  #   name: Deploy Apps
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - build-apps
-  #   steps:
-  #     - uses: actions/checkout@v6
-  #     - name: Checkout
-  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-  #       with:
-  #         repository: prtmax/byteone
-  #         token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-  #         ref_file: .github/ref.txt
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-apps
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/byteone
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
 
-  #     - name: Set repo name
-  #       run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
-  #     - uses: benjlevesque/short-sha@v3.0
-  #     - name: Deploy
-  #       uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-  #       with:
-  #         repository: repotea-workflow/gitops-ayn
-  #         deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-  #         argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-  #         argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-  #         app_name: apps-production-byteone-sz1
-  #         changes: |
-  #           {
-  #             "argocd/apps/byteone-sz1/overlays/production/values.yaml": {
-  #               "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHA }}",
-  #               "app.msgbridge.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-msgbridge:sha-${{ env.SHA }}",
-  #               "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHA }}"
-  #             }
-  #           }
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: apps-production-byteone-sz1
+          changes: |
+            {
+              "argocd/apps/byteone-sz1/overlays/production/values.yaml": {
+                "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHA }}",
+                "app.msgbridge.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-msgbridge:sha-${{ env.SHA }}",
+                "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHA }}"
+              }
+            }
