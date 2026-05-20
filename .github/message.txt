@@ -1,1 +1,1 @@
-ci(image-review): publish only aliyun images
+ci(image-review): sync aliyun registries across regions
