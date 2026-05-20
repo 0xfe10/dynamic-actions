@@ -1,1 +1,1 @@
-fix(maprintrace): pin pnpm for docker build
+docs(landing): separate cloud print guide
