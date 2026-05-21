@@ -1,1 +1,1 @@
-Add capability call stats table and related constraints
+Add capability call stats table and related constraints (#526)
