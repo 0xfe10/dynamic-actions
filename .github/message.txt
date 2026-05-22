@@ -1,1 +1,1 @@
-fix: 增强WebSocket断链诊断日志
+fix: 1005断链日志降级为INFO
