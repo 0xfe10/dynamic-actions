@@ -1,1 +1,1 @@
-ci: use sampleyard dynamic workflow names
+ci: validate dynamic workflow activation
