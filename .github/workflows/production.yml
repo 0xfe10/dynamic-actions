@@ -1,0 +1,23 @@
+name: "[sampleyard] Production"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  test-demo:
+    name: Test Demo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: boxliy/sampleyard
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Test swallow
+        run: npm test --prefix aviary/swallow
