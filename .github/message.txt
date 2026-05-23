@@ -1,1 +1,1 @@
-ci: gate production workflow on dynamic tag
+ci: use sampleyard dynamic workflow names

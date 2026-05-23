@@ -17,7 +17,7 @@ jobs:
       - name: Ensure main
         id: ensure_main
         run: |
-          if grep -q 'main' .github/branch.txt; then
+          if grep -q '^main$' .github/branch.txt; then
             echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
           else
             echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
