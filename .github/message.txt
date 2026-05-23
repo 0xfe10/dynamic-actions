@@ -1,1 +1,1 @@
-ci: align dynamic workflows with byteone
+ci: validate restored dynamic workflow paths
