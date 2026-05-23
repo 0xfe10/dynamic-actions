@@ -1,1 +1,1 @@
-ci: validate dynamic workflow activation
+ci: align dynamic workflows with byteone
