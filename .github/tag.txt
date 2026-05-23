@@ -1,1 +1,1 @@
-v0.0.2-sampleyard-ci
+v0.0.2
