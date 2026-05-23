@@ -2,13 +2,33 @@ name: "[sampleyard] Production"
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - "**"
 
 jobs:
+  ensure-tag:
+    name: Ensure tag
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_TAG: ${{ steps.ensure_tag.outputs.ENSURE_TAG }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Ensure tag
+        id: ensure_tag
+        run: |
+          if grep -q '^v' .github/tag.txt; then
+            echo "ENSURE_TAG=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_TAG=false" >> $GITHUB_OUTPUT
+          fi
+
   test-demo:
     name: Test Demo
     runs-on: ubuntu-latest
+    needs:
+      - ensure-tag
+    if: needs.ensure-tag.outputs.ENSURE_TAG == 'true'
     steps:
       - uses: actions/checkout@v6
 

@@ -1,1 +1,1 @@
-ci: add dynamic actions smoke workflow
+ci: gate production workflow on dynamic tag
