@@ -1,1 +1,1 @@
-ci: validate restored dynamic workflow paths
+docs(swallow): note stable smoke output
