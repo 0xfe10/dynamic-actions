@@ -1,1 +1,1 @@
-docs(swallow): note stable smoke output
+docs(falcon): add product design context
