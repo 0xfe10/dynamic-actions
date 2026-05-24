@@ -151,3 +151,33 @@ jobs:
       - name: Build Falcon iOS Objective-C
         run: xcodebuild -project FalconObjC.xcodeproj -scheme FalconObjC -sdk iphonesimulator -configuration Debug -derivedDataPath "${RUNNER_TEMP}/falcon-objc-derived" build CODE_SIGNING_ALLOWED=NO
         working-directory: aviary/falcon/ios-objectivec
+
+  falcon-ios-swift:
+    name: Falcon iOS Swift
+    runs-on: macos-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Checkout sampleyard
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: boxliy/sampleyard
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Checkout nib
+        uses: actions/checkout@v6
+        with:
+          repository: boxliy/nib
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          path: .falcon-nib
+
+      - name: Link sibling nib checkout
+        run: ln -sfn "${GITHUB_WORKSPACE}/.falcon-nib" "${GITHUB_WORKSPACE}/../nib"
+
+      - name: Build Falcon iOS Swift
+        run: xcodebuild -project FalconSwift.xcodeproj -scheme FalconSwift -sdk iphonesimulator -configuration Debug -derivedDataPath "${RUNNER_TEMP}/falcon-swift-derived" build CODE_SIGNING_ALLOWED=NO
+        working-directory: aviary/falcon/ios-swift
