@@ -1,1 +1,1 @@
-feat(falcon): add mock query flow
+feat(falcon): add android kotlin mock demo

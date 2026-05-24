@@ -81,3 +81,43 @@ jobs:
           NIB_ROOT: ${{ github.workspace }}/.falcon-nib
         run: ./gradlew :falcon-core:mockTest :app:assembleDebug
         working-directory: aviary/falcon/android-java
+
+  falcon-android-kotlin:
+    name: Falcon Android Kotlin
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Checkout sampleyard
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: boxliy/sampleyard
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Checkout nib
+        uses: actions/checkout@v6
+        with:
+          repository: boxliy/nib
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          path: .falcon-nib
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.14"
+
+      - name: Build Falcon Android Kotlin
+        env:
+          NIB_ROOT: ${{ github.workspace }}/.falcon-nib
+        run: ./gradlew :falcon-core:mockTest :app:assembleDebug
+        working-directory: aviary/falcon/android-kotlin
