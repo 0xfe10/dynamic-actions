@@ -1,1 +1,1 @@
-ci(falcon): verify android java demo
+feat(falcon): add mock query flow
