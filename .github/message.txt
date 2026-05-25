@@ -1,1 +1,1 @@
-feat(education): add classical literature and arithmetic management
+feat(education): use standalone editors for classical resources
