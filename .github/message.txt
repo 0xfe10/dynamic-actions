@@ -1,1 +1,1 @@
-feat(education): use standalone editors for classical resources
+refactor(education): share resource editor route components
