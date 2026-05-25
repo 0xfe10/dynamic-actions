@@ -1,1 +1,1 @@
-refactor(education): share resource editor route components
+style(education): refine standalone resource editors
