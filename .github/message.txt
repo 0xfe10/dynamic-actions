@@ -1,1 +1,1 @@
-style(education): remove duplicate editor cards
+style(education): refine classical literature form layout
