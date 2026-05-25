@@ -1,1 +1,1 @@
-style(education): refine standalone resource editors
+fix(education): align resource editors with question editor layout
