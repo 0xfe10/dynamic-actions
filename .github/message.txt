@@ -1,1 +1,1 @@
-新增指令 恢复出产设置 硬件版本
+安卓蓝牙库 flutter_spp_bluetooth_serial
