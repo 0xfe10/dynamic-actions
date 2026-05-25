@@ -1,1 +1,1 @@
-fix(js-ble): wait for flow control notify setup
+fix(js-ble): align flow control packet sizing
