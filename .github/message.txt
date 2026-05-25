@@ -1,1 +1,1 @@
-机型分类增加描述信息及流量套餐、流量订单页面
+fix(camellia): sync classical annotation markers
