@@ -1,1 +1,1 @@
-云打印管理页面调整
+feat(education): add classical literature and arithmetic management
