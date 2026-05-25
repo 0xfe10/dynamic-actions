@@ -1,1 +1,1 @@
-feat(js-ble): add flow control support
+fix(js-ble): wait for flow control notify setup
