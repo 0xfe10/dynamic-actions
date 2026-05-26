@@ -1,1 +1,45 @@
-docs(kerria): clarify education dictionary resources
+feat(education): add classical literature and arithmetic management (#101)
+
+* docs(education): add classical literature and arithmetic spec
+
+* feat(education): add classical literature and arithmetic management
+
+* feat(education): use standalone editors for classical resources
+
+* refactor(education): share resource editor route components
+
+* style(education): refine standalone resource editors
+
+* fix(education): align resource editors with question editor layout
+
+* style(education): remove duplicate editor cards
+
+* style(education): refine classical literature form layout
+
+* feat(kerria): use rich content for classical literature
+
+* fix(kerria): align annotation refs with editor content
+
+* feat(camellia): support classical rich content editing
+
+* fix(camellia): sync classical annotation markers
+
+* feat(education): add arithmetic practice generator config
+
+* fix(camellia): localize arithmetic editor
+
+* chore(camellia): update arithmetic editor design
+
+* style(camellia): align arithmetic editor styling
+
+* chore(camellia): update arithmetic editor dependency
+
+* feat(camellia): make arithmetic preview output configurable
+
+* fix(camellia): localize arithmetic question types
+
+* chore(camellia): update edubox dependency
+
+* chore: ignore local debug directories
+
+* docs(kerria): clarify education dictionary resources
