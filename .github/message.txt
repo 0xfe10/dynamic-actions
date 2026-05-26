@@ -1,1 +1,1 @@
-chore: ignore local debug directories
+docs(kerria): clarify education dictionary resources
