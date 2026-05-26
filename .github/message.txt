@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+chore: ignore local debug directories
