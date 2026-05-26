@@ -1,1 +1,1 @@
-docs(kerria): list education dictionary endpoints in openapi
+docs(kerria): list education basic endpoints in openapi
