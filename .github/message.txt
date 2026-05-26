@@ -1,1 +1,22 @@
-fix(kerria): silence ts-rs alias warnings
+Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
+
+Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
+
+Details:
+- Changed ActivationIssueResult::Issued to carry Box<Activation> so the enum no longer stores the full Activation beside empty variants.
+- Updated PostgreSQL and in-memory activation issue paths to return Box::new(actual_activation).
+- Unboxed the activation at the service boundary before continuing the existing signing and response flow.
+- Collapsed the nested spectra tracking stats user-id guard that blocked the required repository gate after attempt 1.
+
+Validation:
+- just rosa malus lint
+- just rosa spectra ci
+
+metadata.yaml >
+schema: conductor/commit/1
+repository: labelix
+repository_url: https://github.com/prtmax/labelix
+issue: https://plane.kahub.in/endless/browse/AYN-93/
+attempt: run-ayn-93-1779791498166538380-attempt-2
+authority: https://plane.kahub.in/endless/browse/AYN-93/
+summary: Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
