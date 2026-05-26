@@ -1,1 +1,1 @@
-docs/education-basic-openapi
+main
