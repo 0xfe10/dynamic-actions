@@ -42,8 +42,6 @@ jobs:
             context: .
           - name: front
             context: pkgs/front
-            args: |
-              BUILD_MODE=staging
     steps:
       - uses: actions/checkout@v6
       - name: Checkout

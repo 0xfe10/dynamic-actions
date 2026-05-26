@@ -23,8 +23,6 @@ jobs:
             context: .
           - name: front
             context: pkgs/front
-            args: |
-              BUILD_MODE=production
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -101,8 +99,6 @@ jobs:
             context: .
           - name: front
             context: pkgs/front
-            args: |
-              BUILD_MODE=production
     steps:
       - uses: actions/checkout@v6
       - name: Checkout

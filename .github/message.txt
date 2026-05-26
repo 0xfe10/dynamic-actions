@@ -1,1 +1,1 @@
-fix：修复图片尺寸问题
+feat(front): support runtime API base URL
