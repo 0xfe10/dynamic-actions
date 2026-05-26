@@ -1,1 +1,1 @@
-chore(camellia): update arithmetic editor design
+style(camellia): align arithmetic editor styling
