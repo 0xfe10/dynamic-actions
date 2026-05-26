@@ -1,1 +1,1 @@
-chore(camellia): update arithmetic editor dependency
+feat(camellia): make arithmetic preview output configurable
