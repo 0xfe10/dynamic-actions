@@ -1,14 +1,15 @@
+Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker. (#104)
+
+## Summary
 Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
 
-Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
-
-Details:
+## Changes
 - Changed ActivationIssueResult::Issued to carry Box<Activation> so the enum no longer stores the full Activation beside empty variants.
 - Updated PostgreSQL and in-memory activation issue paths to return Box::new(actual_activation).
 - Unboxed the activation at the service boundary before continuing the existing signing and response flow.
 - Collapsed the nested spectra tracking stats user-id guard that blocked the required repository gate after attempt 1.
 
-Validation:
+## Verification
 - just rosa malus lint
 - just rosa spectra ci
 
