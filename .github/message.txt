@@ -1,1 +1,1 @@
-fix(js-ble): align flow control packet sizing
+安卓ble 连接优化
