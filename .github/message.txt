@@ -1,1 +1,1 @@
-docs(kerria): list education basic endpoints in openapi
+fix(kerria): silence ts-rs alias warnings
