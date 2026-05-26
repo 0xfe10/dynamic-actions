@@ -1,1 +1,1 @@
-fix(camellia): localize arithmetic editor
+chore(camellia): update arithmetic editor design
