@@ -1,1 +1,1 @@
-feat(camellia): make arithmetic preview output configurable
+fix(camellia): localize arithmetic question types
