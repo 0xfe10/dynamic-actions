@@ -1,1 +1,9 @@
-Add Justfile and WORKFLOW.md for repo validation and policy
+feat(js-ble): add flow control support (#36)
+
+* feat(js-ble): add flow control support
+
+* fix(js-ble): wait for flow control notify setup
+
+* fix(js-ble): align flow control packet sizing
+
+* Add Justfile and WORKFLOW.md for repo validation and policy
