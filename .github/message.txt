@@ -1,24 +1,24 @@
-Sync Java EMAPI SDK with Dart EMAPI semantics
+Sync Java EMAPI SDK with Dart EMAPI semantics.
 
-Sync Java EMAPI SDK with Dart EMAPI semantics
+Sync Java EMAPI SDK with Dart EMAPI semantics.
 
 Details:
 - Implement the Java EMAPI public facade, command payload helpers, session behavior, report models, WiFi/RFID/printer/file/OTA operations, and MTU-aware chunking aligned with the Dart implementation.
 - Extend frame, TLV, endian, and chunking support to cover protocol validation, ACK-gated transfer, active reports, passthrough/error handling, pending frame retention, timeout, and retry behavior.
-- Update Java parent Maven metadata to use Java 8 compiler defaults and current Lombok annotation processing so the reactor builds on the current JDK.
+- Update Java parent Maven metadata to use Java 8 compiler defaults and current Lombok annotation processing so the full reactor builds on the current JDK.
 
 Validation:
-- mvn -pl fruits/emapi test -DskipTests=false passed: 36 tests, 0 failures/errors.
+- mvn -pl fruits/emapi test -DskipTests=false passed with 36 tests, 0 failures/errors.
+- just java passed with a 73-module Java reactor build success.
 - git diff --check passed.
-- just java passed: 73-module Java reactor build success.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: psdk
 repository_url: https://github.com/prtmax/psdk
 issue: https://plane.kahub.in/endless/browse/AYN-95/
-attempt: run-ayn-95-1779852991949292153-attempt-4
+attempt: run-ayn-95-1779854890422864602-attempt-5
 authority: https://plane.kahub.in/endless/browse/AYN-95/
-summary: Sync Java EMAPI SDK with Dart EMAPI semantics
+summary: Sync Java EMAPI SDK with Dart EMAPI semantics.
 related:
-- checkpoint:ayn-95-java-emapi-sync
+- checkpoint:ayn-95-attempt-5-java-emapi-sync
