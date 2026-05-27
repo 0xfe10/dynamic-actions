@@ -1,14 +1,15 @@
+Add pyrus agreement inspect public proxy (#113)
+
+## Summary
 Add pyrus agreement inspect public proxy
 
-Add pyrus agreement inspect public proxy
-
-Details:
+## Changes
 - Add agreement upstream configuration and reqwest client support for pyrus.
 - Add public GET /api/v1/agreement/inspect route that forwards type plus x-app, x-locale, and x-platform to the configured upstream.
 - Pass through upstream HTTP status, content-type, and JSON body, with transport failures mapped to 502.
 - Document the public route in OpenAPI and keep it out of bearer-auth security metadata.
 
-Validation:
+## Verification
 - just rosa pyrus ci
 - kustomize build cluster-hk0/kustomize/00-essentials -o /tmp/labelix-gitops-kustomize --load-restrictor LoadRestrictionsNone --enable-alpha-plugins
 
