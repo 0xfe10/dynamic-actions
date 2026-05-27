@@ -1,25 +1,23 @@
-Filter knowledge textbook versions by subject
+fix(camellia): filter textbook versions by subject
 
-Filter knowledge textbook versions by subject
+fix(camellia): filter textbook versions by subject
 
 Details:
 - Add a subject-only textbook version option helper for education pages.
-- Use the helper in the knowledge point page and disable the version selector until a subject is selected.
-- Clear an incompatible textbook version when the selected subject changes.
-- Add localized copy for the subject-first disabled state.
+- Use subject-scoped textbook version options on the knowledge point page.
+- Disable the textbook version filter until a subject is selected and clear stale selections when subject changes.
+- Add localized prompt text for selecting a subject first.
 
 Validation:
 - just camellia typecheck
 - just camellia check
-- Playwright smoke on /app/education/basic/knowledge-point with mocked API data verified subject-specific version options and invalid selection clearing.
+- Playwright smoke check on /app/education/basic/knowledge-point with mocked education dictionaries
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
 issue: https://plane.kahub.in/endless/browse/AYN-99/
-attempt: run-ayn-99-1779852494845669535-attempt-1
+attempt: run-ayn-99-1779854268457393420-attempt-2
 authority: https://plane.kahub.in/endless/browse/AYN-99/
-summary: Filter knowledge textbook versions by subject
-related:
-- checkpoint:ayn-99-subject-version-filter
+summary: 'fix(camellia): filter textbook versions by subject'
