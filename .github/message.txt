@@ -1,21 +1,21 @@
+Add Objective-C EMAPI SDK implementation (#41)
+
+## Summary
 Add Objective-C EMAPI SDK implementation
 
-Add Objective-C EMAPI SDK implementation
-
-Details:
+## Changes
 - Add EMAPI constants, command model, CRC32, frame codec/parser, TLV, payload, chunk helpers, models, session, connection adapter, and printer facade.
 - Implement ACK-gated request/response handling, retries, pending batched frame retention, protocol/passthrough errors, report ACK handling, and flow-control busy gating.
 - Expose system, RFID, WiFi passthrough/file, printer, ESC transfer, OTA/file transfer, and upgrade APIs matching the Dart EMAPI facade semantics.
 - Add an EMAPI Xcode framework project, shared scheme, workspace entry, and XCTest coverage for golden frames, TLV/chunk helpers, session retention, reports, ACK-gated printing, WiFi, and OTA/file transfer payloads.
 
-Validation:
+## Verification
 - git diff --check passed.
-- xmllint --noout objectivec/psdk.xcworkspace/contents.xcworkspacedata objectivec/fruits/emapi/emapi.xcodeproj/xcshareddata/xcschemes/emapi.xcscheme passed.
+- xmllint workspace/scheme passed.
 - ruby pbxproj structural check passed.
 - ruby emapi public facade coverage check passed.
-- xcodebuild -list -workspace objectivec/psdk.xcworkspace failed because xcodebuild is not installed in this Linux environment.
-- clang -fsyntax-only objectivec/fruits/emapi/emapi/emapi.m failed before source checking because Foundation/Foundation.h is unavailable in this Linux environment.
-- clang -fsyntax-only objectivec/fruits/emapi/emapiTests/emapiTests.m failed before source checking because XCTest/XCTest.h is unavailable in this Linux environment.
+- xcodebuild could not run because this Linux environment does not include Xcode.
+- clang could not pass Foundation/XCTest imports because this Linux environment does not include Apple SDK headers.
 
 metadata.yaml >
 schema: conductor/commit/1
