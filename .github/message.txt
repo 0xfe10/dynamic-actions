@@ -1,9 +1,9 @@
-feat(js-ble): add flow control support (#36)
+feat(emapi): add ack-gated protocol SDKs (#35)
 
-* feat(js-ble): add flow control support
+* feat(emapi): add ack-gated protocol SDKs
 
-* fix(js-ble): wait for flow control notify setup
+* Add full protocol support and tests for EMAPI facade
 
-* fix(js-ble): align flow control packet sizing
+* Enforce MTU limits for file transfer chunks and fix encoding
 
-* Add Justfile and WORKFLOW.md for repo validation and policy
+* fix(emapi): handle live reports and align file chunks
