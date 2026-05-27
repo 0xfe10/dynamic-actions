@@ -1,1 +1,3 @@
-Merge branch 'main' of https://github.com/prtmax/byteone
+Comment out deploy step in production.yml
+
+Comment out the deploy step in production workflow.
