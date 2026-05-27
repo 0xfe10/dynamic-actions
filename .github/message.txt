@@ -1,14 +1,15 @@
+fix(camellia): filter textbook versions by subject (#110)
+
+## Summary
 fix(camellia): filter textbook versions by subject
 
-fix(camellia): filter textbook versions by subject
-
-Details:
+## Changes
 - Add a subject-only textbook version option helper for education pages.
 - Use subject-scoped textbook version options on the knowledge point page.
 - Disable the textbook version filter until a subject is selected and clear stale selections when subject changes.
 - Add localized prompt text for selecting a subject first.
 
-Validation:
+## Verification
 - just camellia typecheck
 - just camellia check
 - Playwright smoke check on /app/education/basic/knowledge-point with mocked education dictionaries
