@@ -1,16 +1,17 @@
+Update classical category form asset handling (#111)
+
+## Summary
 Update classical category form asset handling
 
-Update classical category form asset handling
-
-Details:
+## Changes
 - Remove the plain label field from the classical category create/edit form.
-- Use the existing asset upload field for the button image URL with image/* acceptance.
+- Configure the button field as the existing SimpleCrudPage asset field with image/* accepted.
 - Allow education dictionary field configs to pass through asset fields and accept filters.
 - Update the education classical literature spec to describe button as an image link.
 
-Validation:
+## Verification
 - just camellia check passed.
-- Browser route smoke check reached the local app but was redirected to /auth/sign-in because no authenticated session was available.
+- Local browser smoke reached Camellia but redirected to /auth/sign-in because no authenticated session was available.
 
 metadata.yaml >
 schema: conductor/commit/1
