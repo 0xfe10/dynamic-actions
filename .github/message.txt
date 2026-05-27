@@ -1,25 +1,21 @@
-Update classical category form asset handling (#111)
+Render classical category button values as image previews.
 
-## Summary
-Update classical category form asset handling
+Render classical category button values as image previews.
 
-## Changes
-- Remove the plain label field from the classical category create/edit form.
-- Configure the button field as the existing SimpleCrudPage asset field with image/* accepted.
-- Allow education dictionary field configs to pass through asset fields and accept filters.
-- Update the education classical literature spec to describe button as an image link.
+Details:
+- Import the shared TableImageCell into the education dictionary page.
+- Use TableImageCell for the classical category button column with square preview mode and category-name alt text.
+- Leave the asset upload field and payload mapping unchanged.
 
-## Verification
+Validation:
+- just camellia typecheck passed.
 - just camellia check passed.
-- Local browser smoke reached Camellia but redirected to /auth/sign-in because no authenticated session was available.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-104/
-attempt: run-ayn-104-1779867738816833941-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-104/
-summary: Update classical category form asset handling
-related:
-- checkpoint:ayn-104-classical-category-assets
+issue: https://plane.kahub.in/endless/browse/AYN-105/
+attempt: run-ayn-105-1779869408876183265-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-105/
+summary: Render classical category button values as image previews.
