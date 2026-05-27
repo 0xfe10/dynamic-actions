@@ -1,13 +1,14 @@
+Render classical category button values as image previews. (#112)
+
+## Summary
 Render classical category button values as image previews.
 
-Render classical category button values as image previews.
-
-Details:
+## Changes
 - Import the shared TableImageCell into the education dictionary page.
 - Use TableImageCell for the classical category button column with square preview mode and category-name alt text.
 - Leave the asset upload field and payload mapping unchanged.
 
-Validation:
+## Verification
 - just camellia typecheck passed.
 - just camellia check passed.
 
