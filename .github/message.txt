@@ -1,1 +1,1 @@
-feat(falcon): add log controls
+feat(falcon): wire shared query scenarios
