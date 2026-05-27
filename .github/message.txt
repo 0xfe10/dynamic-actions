@@ -1,1 +1,1 @@
-imageSNPrint
+flutter_spp_bluetooth_serial: ^0.1.2
