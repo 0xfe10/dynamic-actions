@@ -1,26 +1,26 @@
-Fix Java and Objective-C EMAPI Dart parity gaps. (#42)
+Align Java and Objective-C EMAPI remaining parity boundaries.
 
-## Summary
-Fix Java and Objective-C EMAPI Dart parity gaps.
+Align Java and Objective-C EMAPI remaining parity boundaries.
 
-## Changes
-- Add Java readNextReport handling that ACKs and emits reports without requiring a pending command response.
-- Preserve Java pending command responses while consuming later active reports and update flow-control state before subsequent sends.
-- Expose absent Java device MTU as null while retaining internal fallback MTU for transfers.
-- Reject out-of-range unsigned integer and TLV helper inputs instead of truncating.
-- Route Objective-C readNextReportWithError through emitReport and reject overflowing fileType values before TLV construction.
+Details:
+- Add a Java ConnectedDevice EMAPI connection adapter and public builder/static convenience entrypoints.
+- Reject invalid fallbackMtu, mtu, and maxRetries instead of silently clamping in Java and Objective-C.
+- Preserve a device-returned MTU tag value of 0 in Java and reject later transfer use while keeping fallback behavior for absent MTU tags.
+- Compare Java matcher helper arguments directly so out-of-range values no longer match by byte masking.
+- Add Java and Objective-C regression coverage for the parity gaps.
 
-## Verification
-- mvn -pl fruits/emapi test -DskipTests=false passed with 48 tests.
+Validation:
+- mvn -pl fruits/emapi test -DskipTests=false passed after installing local frame/adapter prerequisites into the lane Maven cache.
+- mvn -pl fruits/emapi -am test -DskipTests=false passed: 53 tests, 0 failures, 0 errors.
 - just java passed across the Java reactor.
 - git diff --check passed.
-- Objective-C XCTest requires macOS/Xcode; xcodebuild is unavailable in this Linux lane.
+- xcodebuild is unavailable on this Linux lane; Objective-C XCTest remains to run on macOS with xcodebuild -project objectivec/fruits/emapi/emapi.xcodeproj -scheme emapi test.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: psdk
 repository_url: https://github.com/prtmax/psdk
-issue: https://plane.kahub.in/endless/browse/AYN-100/
-attempt: run-ayn-100-1779861481066370192-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-100/
-summary: Fix Java and Objective-C EMAPI Dart parity gaps.
+issue: https://plane.kahub.in/endless/browse/AYN-101/
+attempt: run-ayn-101-1779863258652391324-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-101/
+summary: Align Java and Objective-C EMAPI remaining parity boundaries.
