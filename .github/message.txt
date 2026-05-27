@@ -1,15 +1,16 @@
+Align Java and Objective-C EMAPI remaining parity boundaries. (#43)
+
+## Summary
 Align Java and Objective-C EMAPI remaining parity boundaries.
 
-Align Java and Objective-C EMAPI remaining parity boundaries.
-
-Details:
+## Changes
 - Add a Java ConnectedDevice EMAPI connection adapter and public builder/static convenience entrypoints.
 - Reject invalid fallbackMtu, mtu, and maxRetries instead of silently clamping in Java and Objective-C.
 - Preserve a device-returned MTU tag value of 0 in Java and reject later transfer use while keeping fallback behavior for absent MTU tags.
 - Compare Java matcher helper arguments directly so out-of-range values no longer match by byte masking.
 - Add Java and Objective-C regression coverage for the parity gaps.
 
-Validation:
+## Verification
 - mvn -pl fruits/emapi test -DskipTests=false passed after installing local frame/adapter prerequisites into the lane Maven cache.
 - mvn -pl fruits/emapi -am test -DskipTests=false passed: 53 tests, 0 failures, 0 errors.
 - just java passed across the Java reactor.
