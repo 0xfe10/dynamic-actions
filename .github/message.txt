@@ -1,9 +1,1 @@
-Add disconnect and failure simulation actions to all platforms
-
-- Add "Disconnect", "Simulate connect failure", and "Simulate write
-  failure"
-  actions to Android, iOS (Swift/ObjC), Kotlin, and Flutter apps
-- Implement simulateConnectFailure and simulateWriteFailure in all
-  session
-  classes
-- Update tests and documentation to cover new actions
+feat(falcon): show unsupported query actions
