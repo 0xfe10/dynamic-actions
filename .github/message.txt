@@ -1,1 +1,1 @@
-Document platform-limited validation and update gates
+Merge remote-tracking branch 'origin/main'
