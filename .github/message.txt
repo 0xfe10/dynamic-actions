@@ -1,13 +1,14 @@
+Sync Java EMAPI SDK with Dart EMAPI semantics. (#40)
+
+## Summary
 Sync Java EMAPI SDK with Dart EMAPI semantics.
 
-Sync Java EMAPI SDK with Dart EMAPI semantics.
-
-Details:
+## Changes
 - Implement the Java EMAPI public facade, command payload helpers, session behavior, report models, WiFi/RFID/printer/file/OTA operations, and MTU-aware chunking aligned with the Dart implementation.
 - Extend frame, TLV, endian, and chunking support to cover protocol validation, ACK-gated transfer, active reports, passthrough/error handling, pending frame retention, timeout, and retry behavior.
 - Update Java parent Maven metadata to use Java 8 compiler defaults and current Lombok annotation processing so the full reactor builds on the current JDK.
 
-Validation:
+## Verification
 - mvn -pl fruits/emapi test -DskipTests=false passed with 36 tests, 0 failures/errors.
 - just java passed with a 73-module Java reactor build success.
 - git diff --check passed.
