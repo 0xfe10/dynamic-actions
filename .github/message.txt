@@ -1,23 +1,24 @@
-Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker. (#104)
+Show feedback diagnostic log links when returned by the inspect endpoint. (#107)
 
 ## Summary
-Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
+Show feedback diagnostic log links when returned by the inspect endpoint.
 
 ## Changes
-- Changed ActivationIssueResult::Issued to carry Box<Activation> so the enum no longer stores the full Activation beside empty variants.
-- Updated PostgreSQL and in-memory activation issue paths to return Box::new(actual_activation).
-- Unboxed the activation at the service boundary before continuing the existing signing and response flow.
-- Collapsed the nested spectra tracking stats user-id guard that blocked the required repository gate after attempt 1.
+- Add the optional diagnostic_log field to the FeedbackRecord API client type.
+- Render diagnostic_log as a clickable external link in the feedback summary panel when present.
+- Add localized labels for the diagnostic error log field.
 
 ## Verification
-- just rosa malus lint
-- just rosa spectra ci
+- just camellia check passed.
+- git diff --check passed.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-93/
-attempt: run-ayn-93-1779791498166538380-attempt-2
-authority: https://plane.kahub.in/endless/browse/AYN-93/
-summary: Box the large Activation payload in ActivationIssueResult and clear the spectra clippy gate blocker.
+issue: https://plane.kahub.in/endless/browse/AYN-92/
+attempt: run-ayn-92-1779793936473718126-attempt-4
+authority: https://plane.kahub.in/endless/browse/AYN-92/
+summary: Show feedback diagnostic log links when returned by the inspect endpoint.
+related:
+- checkpoint:ayn-92-diagnostic-log-link
