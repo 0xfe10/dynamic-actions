@@ -1,25 +1,29 @@
-Sync Java EMAPI SDK with Dart EMAPI semantics. (#40)
+Add Objective-C EMAPI SDK implementation
 
-## Summary
-Sync Java EMAPI SDK with Dart EMAPI semantics.
+Add Objective-C EMAPI SDK implementation
 
-## Changes
-- Implement the Java EMAPI public facade, command payload helpers, session behavior, report models, WiFi/RFID/printer/file/OTA operations, and MTU-aware chunking aligned with the Dart implementation.
-- Extend frame, TLV, endian, and chunking support to cover protocol validation, ACK-gated transfer, active reports, passthrough/error handling, pending frame retention, timeout, and retry behavior.
-- Update Java parent Maven metadata to use Java 8 compiler defaults and current Lombok annotation processing so the full reactor builds on the current JDK.
+Details:
+- Add EMAPI constants, command model, CRC32, frame codec/parser, TLV, payload, chunk helpers, models, session, connection adapter, and printer facade.
+- Implement ACK-gated request/response handling, retries, pending batched frame retention, protocol/passthrough errors, report ACK handling, and flow-control busy gating.
+- Expose system, RFID, WiFi passthrough/file, printer, ESC transfer, OTA/file transfer, and upgrade APIs matching the Dart EMAPI facade semantics.
+- Add an EMAPI Xcode framework project, shared scheme, workspace entry, and XCTest coverage for golden frames, TLV/chunk helpers, session retention, reports, ACK-gated printing, WiFi, and OTA/file transfer payloads.
 
-## Verification
-- mvn -pl fruits/emapi test -DskipTests=false passed with 36 tests, 0 failures/errors.
-- just java passed with a 73-module Java reactor build success.
+Validation:
 - git diff --check passed.
+- xmllint --noout objectivec/psdk.xcworkspace/contents.xcworkspacedata objectivec/fruits/emapi/emapi.xcodeproj/xcshareddata/xcschemes/emapi.xcscheme passed.
+- ruby pbxproj structural check passed.
+- ruby emapi public facade coverage check passed.
+- xcodebuild -list -workspace objectivec/psdk.xcworkspace failed because xcodebuild is not installed in this Linux environment.
+- clang -fsyntax-only objectivec/fruits/emapi/emapi/emapi.m failed before source checking because Foundation/Foundation.h is unavailable in this Linux environment.
+- clang -fsyntax-only objectivec/fruits/emapi/emapiTests/emapiTests.m failed before source checking because XCTest/XCTest.h is unavailable in this Linux environment.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: psdk
 repository_url: https://github.com/prtmax/psdk
-issue: https://plane.kahub.in/endless/browse/AYN-95/
-attempt: run-ayn-95-1779854890422864602-attempt-5
-authority: https://plane.kahub.in/endless/browse/AYN-95/
-summary: Sync Java EMAPI SDK with Dart EMAPI semantics.
+issue: https://plane.kahub.in/endless/browse/AYN-96/
+attempt: run-ayn-96-1779854949122750022-attempt-3
+authority: https://plane.kahub.in/endless/browse/AYN-96/
+summary: Add Objective-C EMAPI SDK implementation
 related:
-- checkpoint:ayn-95-attempt-5-java-emapi-sync
+- checkpoint:ayn-96-emapi-oc-checkpoint-3
