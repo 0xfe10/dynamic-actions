@@ -1,22 +1,24 @@
-Render classical category button values as image previews. (#112)
+Add pyrus agreement inspect public proxy
 
-## Summary
-Render classical category button values as image previews.
+Add pyrus agreement inspect public proxy
 
-## Changes
-- Import the shared TableImageCell into the education dictionary page.
-- Use TableImageCell for the classical category button column with square preview mode and category-name alt text.
-- Leave the asset upload field and payload mapping unchanged.
+Details:
+- Add agreement upstream configuration and reqwest client support for pyrus.
+- Add public GET /api/v1/agreement/inspect route that forwards type plus x-app, x-locale, and x-platform to the configured upstream.
+- Pass through upstream HTTP status, content-type, and JSON body, with transport failures mapped to 502.
+- Document the public route in OpenAPI and keep it out of bearer-auth security metadata.
 
-## Verification
-- just camellia typecheck passed.
-- just camellia check passed.
+Validation:
+- just rosa pyrus ci
+- kustomize build cluster-hk0/kustomize/00-essentials -o /tmp/labelix-gitops-kustomize --load-restrictor LoadRestrictionsNone --enable-alpha-plugins
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-105/
-attempt: run-ayn-105-1779869408876183265-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-105/
-summary: Render classical category button values as image previews.
+issue: https://plane.kahub.in/endless/browse/AYN-106/
+attempt: run-ayn-106-1779884424474550445-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-106/
+summary: Add pyrus agreement inspect public proxy
+related:
+- checkpoint:run-ayn-106-attempt-1-pyrus-agreement-proxy
