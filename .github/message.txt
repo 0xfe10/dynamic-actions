@@ -1,25 +1,25 @@
-Update Camellia field management page behavior. (#108)
+Filter knowledge textbook versions by subject
 
-## Summary
-Update Camellia field management page behavior.
+Filter knowledge textbook versions by subject
 
-## Changes
-- Use mark-provided field form options for the form filter and edit form.
-- Expand the field table to show form, code, name, type, show level, required flag, default value, variables, sequence, and state.
-- Route delete and state-change actions through confirmation dialogs before invoking mutations.
+Details:
+- Add a subject-only textbook version option helper for education pages.
+- Use the helper in the knowledge point page and disable the version selector until a subject is selected.
+- Clear an incompatible textbook version when the selected subject changes.
+- Add localized copy for the subject-first disabled state.
 
-## Verification
+Validation:
 - just camellia typecheck
 - just camellia check
-- just rosa spectra ci
+- Playwright smoke on /app/education/basic/knowledge-point with mocked API data verified subject-specific version options and invalid selection clearing.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-98/
-attempt: run-ayn-98-1779850940691801856-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-98/
-summary: Update Camellia field management page behavior.
+issue: https://plane.kahub.in/endless/browse/AYN-99/
+attempt: run-ayn-99-1779852494845669535-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-99/
+summary: Filter knowledge textbook versions by subject
 related:
-- checkpoint:ayn-98-field-page-update
+- checkpoint:ayn-99-subject-version-filter
