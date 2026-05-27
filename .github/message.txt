@@ -1,13 +1,14 @@
+Update Camellia field management page behavior. (#108)
+
+## Summary
 Update Camellia field management page behavior.
 
-Update Camellia field management page behavior.
-
-Details:
+## Changes
 - Use mark-provided field form options for the form filter and edit form.
 - Expand the field table to show form, code, name, type, show level, required flag, default value, variables, sequence, and state.
 - Route delete and state-change actions through confirmation dialogs before invoking mutations.
 
-Validation:
+## Verification
 - just camellia typecheck
 - just camellia check
 - just rosa spectra ci
