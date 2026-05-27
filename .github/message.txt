@@ -1,1 +1,1 @@
-feat(falcon): show unsupported query actions
+feat(falcon): add log controls
