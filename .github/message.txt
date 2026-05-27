@@ -1,24 +1,24 @@
-fix(camellia): filter textbook versions by subject (#110)
+Update classical category form asset handling
 
-## Summary
-fix(camellia): filter textbook versions by subject
+Update classical category form asset handling
 
-## Changes
-- Add a subject-only textbook version option helper for education pages.
-- Use subject-scoped textbook version options on the knowledge point page.
-- Disable the textbook version filter until a subject is selected and clear stale selections when subject changes.
-- Add localized prompt text for selecting a subject first.
+Details:
+- Remove the plain label field from the classical category create/edit form.
+- Use the existing asset upload field for the button image URL with image/* acceptance.
+- Allow education dictionary field configs to pass through asset fields and accept filters.
+- Update the education classical literature spec to describe button as an image link.
 
-## Verification
-- just camellia typecheck
-- just camellia check
-- Playwright smoke check on /app/education/basic/knowledge-point with mocked education dictionaries
+Validation:
+- just camellia check passed.
+- Browser route smoke check reached the local app but was redirected to /auth/sign-in because no authenticated session was available.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-99/
-attempt: run-ayn-99-1779854268457393420-attempt-2
-authority: https://plane.kahub.in/endless/browse/AYN-99/
-summary: 'fix(camellia): filter textbook versions by subject'
+issue: https://plane.kahub.in/endless/browse/AYN-104/
+attempt: run-ayn-104-1779867738816833941-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-104/
+summary: Update classical category form asset handling
+related:
+- checkpoint:ayn-104-classical-category-assets
