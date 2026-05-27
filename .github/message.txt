@@ -1,15 +1,16 @@
+Fix Java and Objective-C EMAPI Dart parity gaps. (#42)
+
+## Summary
 Fix Java and Objective-C EMAPI Dart parity gaps.
 
-Fix Java and Objective-C EMAPI Dart parity gaps.
-
-Details:
+## Changes
 - Add Java readNextReport handling that ACKs and emits reports without requiring a pending command response.
 - Preserve Java pending command responses while consuming later active reports and update flow-control state before subsequent sends.
 - Expose absent Java device MTU as null while retaining internal fallback MTU for transfers.
 - Reject out-of-range unsigned integer and TLV helper inputs instead of truncating.
 - Route Objective-C readNextReportWithError through emitReport and reject overflowing fileType values before TLV construction.
 
-Validation:
+## Verification
 - mvn -pl fruits/emapi test -DskipTests=false passed with 48 tests.
 - just java passed across the Java reactor.
 - git diff --check passed.
