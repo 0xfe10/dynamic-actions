@@ -1,13 +1,14 @@
+fix(js-ble): avoid no-response writes on uniapp mini programs (#38)
+
+## Summary
 fix(js-ble): avoid no-response writes on uniapp mini programs
 
-fix(js-ble): avoid no-response writes on uniapp mini programs
-
-Details:
+## Changes
 - Default the UniApp BLE adapter to acknowledged writes outside Android app-plus.
-- Keep writeNoResponse only for the existing Android app-plus path that needed delayed writes.
+- Keep writeNoResponse only for the existing Android app-plus path that already uses delayed writes.
 - Update the UniApp BLE regression assertion so hardcoded writeNoResponse does not return.
 
-Validation:
+## Verification
 - npm --workspace @psdk/device-ble-uniapp test -- --runInBand
 - npm --workspace @psdk/device-bluetooth-traits test -- --runInBand
 - npm --workspace @psdk/frame-father run build
