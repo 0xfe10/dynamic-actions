@@ -1,9 +1,1 @@
-feat(emapi): add ack-gated protocol SDKs (#35)
-
-* feat(emapi): add ack-gated protocol SDKs
-
-* Add full protocol support and tests for EMAPI facade
-
-* Enforce MTU limits for file transfer chunks and fix encoding
-
-* fix(emapi): handle live reports and align file chunks
+Merge branch 'main' into jcz
