@@ -1,1 +1,1 @@
-flutter_spp_bluetooth_serial: ^0.1.2
+Add Justfile and WORKFLOW.md for repo validation and policy
