@@ -1,1 +1,1 @@
-feat(falcon): expose write cancellation
+feat(falcon): expose write timeout
