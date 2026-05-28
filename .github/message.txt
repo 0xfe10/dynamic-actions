@@ -1,14 +1,15 @@
+Default Pyrus agreement upstream app to network-config. (#117)
+
+## Summary
 Default Pyrus agreement upstream app to network-config.
 
-Default Pyrus agreement upstream app to network-config.
+## Changes
+- Add DEFAULT_AGREEMENT_UPSTREAM_APP and apply it to AgreementConfig defaults.
+- Fall back to the server default when agreement upstream_app is absent or blank.
+- Assert preview forwards network-config and ignores client x-app overrides.
+- Clarify the OpenAPI preview operation description.
 
-Details:
-- Add a shared default agreement upstream app constant and apply it to config deserialization/defaults.
-- Fall back to the server default when the runtime agreement upstream app is absent or blank.
-- Update agreement preview tests to assert network-config and reject client x-app override.
-- Clarify the OpenAPI description for the server-controlled upstream x-app.
-
-Validation:
+## Verification
 - just rosa pyrus test agreement_preview_uses_default_network_config_app_and_ignores_client_app
 - just rosa pyrus ci
 
