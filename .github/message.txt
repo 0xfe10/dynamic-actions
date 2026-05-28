@@ -1,1 +1,1 @@
-feat(falcon): use nib ble flow planning
+feat(falcon): expose write cancellation
