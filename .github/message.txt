@@ -1,24 +1,25 @@
-Add the public pyrus agreement preview proxy endpoint. (#115)
+Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
 
-## Summary
-Add the public pyrus agreement preview proxy endpoint.
+Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
 
-## Changes
-- Route GET /api/v1/agreement/preview through the existing public agreement router.
-- Proxy preview requests to the universal /api/v1/agreement/preview upstream path while forwarding type, x-app, x-locale, and x-platform.
-- Preserve upstream HTML status/body/content-type, defaulting preview responses to text/html when upstream omits content-type.
-- Document inspect as JSON and preview as text/html in pyrus OpenAPI without adding an inspect format parameter.
+Details:
+- Removed the `/api/v1/agreement/inspect` route registration and upstream inspect proxy path.
+- Renamed the agreement query DTO around preview usage and retained preview HTML proxy behavior.
+- Removed the inspect OpenAPI operation and response schema while keeping preview documented as public.
+- Updated route and OpenAPI tests to assert inspect is absent, including the ignored `format=html` variant.
 
-## Verification
-- just rosa pyrus test
-- just rosa pyrus ci
-- git diff --check
+Validation:
+- `just rosa pyrus test` passed: 11 unit tests, 0 failures.
+- `just rosa pyrus fmt` completed successfully.
+- `just rosa pyrus ci` passed after formatting: check and test completed with 11 unit tests, 0 failures.
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-108/
-attempt: run-ayn-108-1779933986428064253-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-108/
-summary: Add the public pyrus agreement preview proxy endpoint.
+issue: https://plane.kahub.in/endless/browse/AYN-109/
+attempt: run-ayn-109-1779935519547452952-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-109/
+summary: Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
+related:
+- checkpoint:ayn-109-remove-agreement-inspect
