@@ -1,1 +1,1 @@
-feat(falcon): request android bluetooth permissions
+feat(falcon): add kotlin classic transport path
