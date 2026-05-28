@@ -1,25 +1,24 @@
-Add pyrus agreement inspect public proxy (#113)
+Expose classical category option button URLs.
 
-## Summary
-Add pyrus agreement inspect public proxy
+Expose classical category option button URLs.
 
-## Changes
-- Add agreement upstream configuration and reqwest client support for pyrus.
-- Add public GET /api/v1/agreement/inspect route that forwards type plus x-app, x-locale, and x-platform to the configured upstream.
-- Pass through upstream HTTP status, content-type, and JSON body, with transport failures mapped to 502.
-- Document the public route in OpenAPI and keep it out of bearer-auth security metadata.
+Details:
+- Add button to Kerria OptionItem and map it from options query rows.
+- Select t.button for classical category options and NULL placeholders for other dictionary option queries.
+- Regenerate the Kerria OptionItem TypeScript binding and add regression coverage.
 
-## Verification
-- just rosa pyrus ci
-- kustomize build cluster-hk0/kustomize/00-essentials -o /tmp/labelix-gitops-kustomize --load-restrictor LoadRestrictionsNone --enable-alpha-plugins
+Validation:
+- just rosa kerria test
+- just export-ts kerria
+- just camellia check
+- just rosa spectra ci
+- git diff --check
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-106/
-attempt: run-ayn-106-1779884424474550445-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-106/
-summary: Add pyrus agreement inspect public proxy
-related:
-- checkpoint:run-ayn-106-attempt-1-pyrus-agreement-proxy
+issue: https://plane.kahub.in/endless/browse/AYN-107/
+attempt: run-ayn-107-1779928951288403035-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-107/
+summary: Expose classical category option button URLs.
