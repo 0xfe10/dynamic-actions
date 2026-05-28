@@ -1,1 +1,24 @@
-修改流量订单页面
+fix(pyrus): fallback empty agreement previews to en_US
+
+fix(pyrus): fallback empty agreement previews to en_US
+
+Details:
+- Detect empty successful HTML agreement preview responses from upstream.
+- Retry preview once with en_US when the requested locale has no agreement body.
+- Cover unknown-locale fallback and en_US single-request behavior in pyrus route tests.
+- Update OpenAPI description to document the fallback behavior.
+
+Validation:
+- just rosa pyrus test
+- just rosa pyrus ci
+
+metadata.yaml >
+schema: conductor/commit/1
+repository: labelix
+repository_url: https://github.com/prtmax/labelix
+issue: https://plane.kahub.in/endless/browse/AYN-111/
+attempt: run-ayn-111-1779981521572670248-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-111/
+summary: 'fix(pyrus): fallback empty agreement previews to en_US'
+related:
+- checkpoint:ayn-111-pyrus-agreement-fallback
