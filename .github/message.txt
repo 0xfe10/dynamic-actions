@@ -1,16 +1,17 @@
+fix(pyrus): fallback empty agreement previews to en_US (#119)
+
+## Summary
 fix(pyrus): fallback empty agreement previews to en_US
 
-fix(pyrus): fallback empty agreement previews to en_US
-
-Details:
+## Changes
 - Detect empty successful HTML agreement preview responses from upstream.
 - Retry preview once with en_US when the requested locale has no agreement body.
 - Cover unknown-locale fallback and en_US single-request behavior in pyrus route tests.
 - Update OpenAPI description to document the fallback behavior.
 
-Validation:
-- just rosa pyrus test
-- just rosa pyrus ci
+## Verification
+- just rosa pyrus test passed with 14 tests.
+- just rosa pyrus ci passed fmt-check, clippy, and tests.
 
 metadata.yaml >
 schema: conductor/commit/1
