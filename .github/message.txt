@@ -1,13 +1,14 @@
+Expose classical category option button URLs. (#114)
+
+## Summary
 Expose classical category option button URLs.
 
-Expose classical category option button URLs.
-
-Details:
+## Changes
 - Add button to Kerria OptionItem and map it from options query rows.
 - Select t.button for classical category options and NULL placeholders for other dictionary option queries.
 - Regenerate the Kerria OptionItem TypeScript binding and add regression coverage.
 
-Validation:
+## Verification
 - just rosa kerria test
 - just export-ts kerria
 - just camellia check
