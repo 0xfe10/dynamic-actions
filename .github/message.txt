@@ -1,1 +1,1 @@
-docs(falcon): document connection states
+docs(falcon): document read loop timeouts
