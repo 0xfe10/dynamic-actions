@@ -1,1 +1,1 @@
-docs(falcon): document bluetooth core adapter
+feat(falcon): add android classic transport path
