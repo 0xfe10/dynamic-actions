@@ -1,1 +1,1 @@
-feat(falcon): expose write flow metadata
+feat(falcon): pass nib connection options
