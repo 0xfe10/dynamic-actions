@@ -1,1 +1,1 @@
-feat(falcon): route mock reads through nib loop
+docs(falcon): document read loop routing
