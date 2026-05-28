@@ -1,1 +1,1 @@
-chore(workflow): remove repository policy file
+chore(workflow): remove repository policy file (#118)
