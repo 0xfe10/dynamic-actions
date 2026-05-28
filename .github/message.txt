@@ -1,26 +1,24 @@
-Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API. (#116)
+Default Pyrus agreement upstream app to network-config.
 
-## Summary
-Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
+Default Pyrus agreement upstream app to network-config.
 
-## Changes
-- Removed the `/api/v1/agreement/inspect` route registration and upstream inspect proxy path.
-- Renamed the agreement query DTO around preview usage and retained preview HTML proxy behavior.
-- Removed the inspect OpenAPI operation and response schema while keeping preview documented as public.
-- Updated route and OpenAPI tests to assert inspect is absent, including the ignored `format=html` variant.
+Details:
+- Add a shared default agreement upstream app constant and apply it to config deserialization/defaults.
+- Fall back to the server default when the runtime agreement upstream app is absent or blank.
+- Update agreement preview tests to assert network-config and reject client x-app override.
+- Clarify the OpenAPI description for the server-controlled upstream x-app.
 
-## Verification
-- `just rosa pyrus test` passed: 11 unit tests, 0 failures.
-- `just rosa pyrus fmt` completed successfully.
-- `just rosa pyrus ci` passed after formatting: check and test completed with 11 unit tests, 0 failures.
+Validation:
+- just rosa pyrus test agreement_preview_uses_default_network_config_app_and_ignores_client_app
+- just rosa pyrus ci
 
 metadata.yaml >
 schema: conductor/commit/1
 repository: labelix
 repository_url: https://github.com/prtmax/labelix
-issue: https://plane.kahub.in/endless/browse/AYN-109/
-attempt: run-ayn-109-1779935519547452952-attempt-1
-authority: https://plane.kahub.in/endless/browse/AYN-109/
-summary: Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
+issue: https://plane.kahub.in/endless/browse/AYN-110/
+attempt: run-ayn-110-1779936722232339115-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-110/
+summary: Default Pyrus agreement upstream app to network-config.
 related:
-- checkpoint:ayn-109-remove-agreement-inspect
+- checkpoint:ayn-110-pyrus-agreement-network-config
