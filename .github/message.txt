@@ -1,1 +1,1 @@
-docs(falcon): document read loop timeouts
+feat(falcon): surface query read timeouts
