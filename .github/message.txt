@@ -1,1 +1,1 @@
-feat(falcon): expose write timeout
+feat(falcon): expose write backpressure
