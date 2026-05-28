@@ -1,1 +1,1 @@
-feat(falcon): route query responses through nib
+feat(falcon): bind query responses through nib router
