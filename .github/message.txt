@@ -1,1 +1,1 @@
-docs(falcon): document read loop routing
+docs(falcon): document connection states
