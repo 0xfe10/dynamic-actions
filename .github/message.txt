@@ -1,1 +1,1 @@
-feat(falcon): use nib mock discovery
+feat(falcon): dispatch query responses through nib
