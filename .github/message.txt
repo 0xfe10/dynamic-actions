@@ -1,1 +1,1 @@
-feat(falcon): pass nib connection options
+docs(falcon): document bluetooth core adapter
