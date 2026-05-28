@@ -1,1 +1,1 @@
-feat(falcon): use nib failed connection state
+feat(falcon): expose write flow metadata
