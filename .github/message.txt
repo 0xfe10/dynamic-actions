@@ -1,1 +1,1 @@
-feat(falcon): enable shared image printing
+feat(falcon): route query responses through nib
