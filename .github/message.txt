@@ -1,14 +1,15 @@
+Add the public pyrus agreement preview proxy endpoint. (#115)
+
+## Summary
 Add the public pyrus agreement preview proxy endpoint.
 
-Add the public pyrus agreement preview proxy endpoint.
-
-Details:
+## Changes
 - Route GET /api/v1/agreement/preview through the existing public agreement router.
 - Proxy preview requests to the universal /api/v1/agreement/preview upstream path while forwarding type, x-app, x-locale, and x-platform.
 - Preserve upstream HTML status/body/content-type, defaulting preview responses to text/html when upstream omits content-type.
 - Document inspect as JSON and preview as text/html in pyrus OpenAPI without adding an inspect format parameter.
 
-Validation:
+## Verification
 - just rosa pyrus test
 - just rosa pyrus ci
 - git diff --check
