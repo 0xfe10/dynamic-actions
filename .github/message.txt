@@ -1,14 +1,15 @@
+Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API. (#116)
+
+## Summary
 Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
 
-Remove the Pyrus agreement inspect endpoint and keep preview as the only public agreement API.
-
-Details:
+## Changes
 - Removed the `/api/v1/agreement/inspect` route registration and upstream inspect proxy path.
 - Renamed the agreement query DTO around preview usage and retained preview HTML proxy behavior.
 - Removed the inspect OpenAPI operation and response schema while keeping preview documented as public.
 - Updated route and OpenAPI tests to assert inspect is absent, including the ignored `format=html` variant.
 
-Validation:
+## Verification
 - `just rosa pyrus test` passed: 11 unit tests, 0 failures.
 - `just rosa pyrus fmt` completed successfully.
 - `just rosa pyrus ci` passed after formatting: check and test completed with 11 unit tests, 0 failures.
