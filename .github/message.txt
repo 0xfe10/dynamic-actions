@@ -1,1 +1,1 @@
-feat(falcon): surface query read timeouts
+feat(falcon): use nib failed connection state
