@@ -1,1 +1,1 @@
-feat(falcon): bind query responses through nib router
+feat(falcon): use nib write pipeline
