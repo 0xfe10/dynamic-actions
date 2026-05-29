@@ -1,1 +1,1 @@
-feat(falcon): add image compression controls
+Ignore Xcode user data and state files
