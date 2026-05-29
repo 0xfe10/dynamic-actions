@@ -1,1 +1,1 @@
-fix(camellia): update classical editor toolbar
+fix(camellia): update edubox editor paste stability
