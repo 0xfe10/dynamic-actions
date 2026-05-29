@@ -1,1 +1,1 @@
-feat(education): store classical literature as edubox documents
+fix(camellia): use content-only classical editor
