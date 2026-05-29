@@ -1,1 +1,1 @@
-feat(falcon): add android classic discovery
+feat(falcon): add image compression controls
