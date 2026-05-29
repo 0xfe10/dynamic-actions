@@ -1,1 +1,1 @@
-fix(camellia): use content-only classical editor
+fix(kerria): use unique classical literature migration
