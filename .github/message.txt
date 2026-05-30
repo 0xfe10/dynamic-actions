@@ -1,1 +1,1 @@
-feat(falcon): update objc nib ble credit handling
+docs(kestrel): add user guide
