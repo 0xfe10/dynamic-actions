@@ -1,1 +1,1 @@
-docs(kestrel): add user guide
+chore(kestrel): add packaging command
