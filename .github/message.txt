@@ -1,1 +1,1 @@
-发送重发头部 延时4s
+sendDone true; 移除日志
