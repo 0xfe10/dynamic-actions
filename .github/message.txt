@@ -1,1 +1,1 @@
-feat：支持插件
+fix(landing): align light and dark doc themes
