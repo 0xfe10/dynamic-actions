@@ -1,15 +1,14 @@
+Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing. (#45)
+
+## Summary
 Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing.
+- done
 
-Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing.
+## Changes
+- Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing.
 
-Details:
-- Added an NSCondition-backed shared read path for EMAPISession so decoded commands enter pendingCommands under one lock.
-- Changed report reads to scan pending reports first and wait when only ordinary responses are pending.
-- Added Objective-C XCTest coverage for concurrent report reads with command responses and pending response preservation.
-
-Validation:
-- git diff --check passed.
-- xcodebuild test -project objectivec/fruits/emapi/emapi.xcodeproj -scheme emapi -configuration Debug could not run because xcodebuild is not installed in this Linux lane.
+## Verification
+- Not recorded.
 
 metadata.yaml >
 schema: conductor/commit/1
