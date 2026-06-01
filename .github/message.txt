@@ -1,1 +1,23 @@
-sendDone true; 移除日志
+Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing.
+
+Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing.
+
+Details:
+- Added an NSCondition-backed shared read path for EMAPISession so decoded commands enter pendingCommands under one lock.
+- Changed report reads to scan pending reports first and wait when only ordinary responses are pending.
+- Added Objective-C XCTest coverage for concurrent report reads with command responses and pending response preservation.
+
+Validation:
+- git diff --check passed.
+- xcodebuild test -project objectivec/fruits/emapi/emapi.xcodeproj -scheme emapi -configuration Debug could not run because xcodebuild is not installed in this Linux lane.
+
+metadata.yaml >
+schema: conductor/commit/1
+repository: psdk
+repository_url: https://github.com/prtmax/psdk
+issue: https://plane.kahub.in/endless/browse/AYN-115/
+attempt: run-ayn-115-1780285613898456860-attempt-1
+authority: https://plane.kahub.in/endless/browse/AYN-115/
+summary: Synchronize Objective-C EMAPI connection reads and preserve pending response/report routing.
+related:
+- checkpoint:ayn-115-emapi-read-coordination
