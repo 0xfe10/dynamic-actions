@@ -1,1 +1,1 @@
-配网app修改根据区域查询机型数据
+feat(education): persist arithmetic practice examples
