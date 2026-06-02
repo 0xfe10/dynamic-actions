@@ -1,1 +1,1 @@
-fix(mini): stabilize pdf print rendering
+fix(mini): stream pdf reads in wechat
