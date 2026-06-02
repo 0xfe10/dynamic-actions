@@ -1,1 +1,1 @@
-fix：添加支持断流恢复
+feat: persist final asr result text
