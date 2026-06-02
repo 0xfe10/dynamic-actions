@@ -1,1 +1,13 @@
-perf(babosa): split user existence lookup
+fix(babosa): stop size metrics hot path (#533)
+
+* fix(babosa): stop size metrics hot path
+
+* fix(babosa): reduce metrics and document scans
+
+* fix(babosa): avoid document state type inference
+
+* fix(babosa): avoid non-sha document fallback scans
+
+* perf(babosa): reduce user and invoke limit scans
+
+* perf(babosa): split user existence lookup
