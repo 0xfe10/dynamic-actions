@@ -1,1 +1,1 @@
-fix(babosa): avoid document state type inference
+fix(babosa): avoid non-sha document fallback scans
