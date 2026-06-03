@@ -1,1 +1,1 @@
-fix(mini): unblock pdf range stream reads
+fix(mini): reject empty pdf range chunks
