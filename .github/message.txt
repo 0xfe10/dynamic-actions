@@ -1,1 +1,1 @@
-fix(mini): reject empty pdf range chunks
+fix(mini): clone pdf worker typed arrays correctly
