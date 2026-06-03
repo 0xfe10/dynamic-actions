@@ -1,1 +1,1 @@
-fix(mini): stream pdf reads in wechat
+fix(mini): keep pdfjs state non-reactive
