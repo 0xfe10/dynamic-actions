@@ -1,1 +1,1 @@
-fix(mini): avoid dom canvas for pdf rendering
+fix(mini): provide bundled pdf cmaps
