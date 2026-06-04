@@ -1,1 +1,1 @@
-feat(education): persist arithmetic practice examples (#120)
+fix(education): update classical editor controls
