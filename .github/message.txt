@@ -1,1 +1,1 @@
-feat(education): add classical literature description
+fix(education): filter compat exam paper types by stage
