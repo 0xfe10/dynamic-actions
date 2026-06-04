@@ -1,1 +1,1 @@
-fix(mini): bundle full pdf cmaps
+fix(mini): load pdf cmaps from bundled files
