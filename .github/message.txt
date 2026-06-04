@@ -1,1 +1,1 @@
-fix(mini): load pdf cmaps from bundled files
+fix(mini): move pdf assets into print subpackage
