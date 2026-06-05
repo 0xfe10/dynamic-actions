@@ -1,1 +1,1 @@
-feat(education): add classical category text color
+fix(education): filter exam subjects by grade
