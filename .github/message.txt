@@ -1,1 +1,1 @@
-feat(education): sync classical header into original content
+fix(camellia): update edubox editor dependency
