@@ -38,8 +38,6 @@ jobs:
         package:
           - name: core
             context: .
-          - name: msgbridge
-            context: .
           - name: front
             context: pkgs/front
     steps:
@@ -135,7 +133,6 @@ jobs:
             {
               "argocd/apps/byteone-hk0/overlays/staging/values.yaml": {
                 "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHA }}",
-                "app.msgbridge.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-msgbridge:sha-${{ env.SHA }}",
                 "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHA }}"
               }
             }
