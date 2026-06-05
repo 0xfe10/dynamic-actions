@@ -1,1 +1,1 @@
-docs(cloud-print): separate cloud print navigation
+fix(cloud-print): improve docs layout and locale switch
