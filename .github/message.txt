@@ -1,1 +1,1 @@
-docs(cloud-print): update ByteOne deployment guide
+docs(cloud-print): separate cloud print navigation
