@@ -1,1 +1,1 @@
-chore(kestrel): add packaging command
+fix(kestrel): make bluetooth device lists scrollable
