@@ -1,1 +1,1 @@
-refactor(education): remove arithmetic legacy config fields
+fix(education): generate arithmetic examples per question type
