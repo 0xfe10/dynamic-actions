@@ -1,1 +1,1 @@
-chore(camellia): update edubox editor dependency
+fix(education): filter classical literature by category tags
