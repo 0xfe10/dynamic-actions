@@ -1,1 +1,1 @@
-fix(education): filter classical literature by in-class flag
+chore(camellia): update edubox editor dependency
