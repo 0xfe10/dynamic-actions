@@ -1,1 +1,1 @@
-机型分类和机型配置模版分类时，进入配置页面区域默认为中国
+chore(camellia): update edubox editor dependency
