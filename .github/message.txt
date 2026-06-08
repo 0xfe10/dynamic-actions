@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/byteone
+fix：修复默认算法
