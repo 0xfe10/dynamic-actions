@@ -1,1 +1,1 @@
-fix(education): filter classical literature by category tags
+fix(education): filter classical literature by in-class flag
