@@ -1,1 +1,1 @@
-fix(camellia): space classical dynasty author template
+fix(camellia): trim punctuation from classical descriptions
