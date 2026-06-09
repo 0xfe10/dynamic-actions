@@ -1,1 +1,1 @@
-feat(camellia): sync classical description from original
+fix(camellia): space classical dynasty author template
