@@ -1,1 +1,1 @@
-fix(kestrel): make bluetooth device lists scrollable
+fix(kestrel): stabilize bluetooth printer demo
