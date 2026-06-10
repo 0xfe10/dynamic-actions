@@ -1,1 +1,1 @@
-fix(camellia): trim punctuation from classical descriptions
+fix(camellia): resolve selected classical tag labels
