@@ -1,1 +1,1 @@
-fix(camellia): resolve selected classical tag labels
+fix(camellia): allow scrolling selected tag options
