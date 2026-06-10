@@ -1,1 +1,1 @@
-fix(camellia): allow scrolling selected tag options
+fix(kerria): sort classical literature by category tags
