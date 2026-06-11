@@ -1,1 +1,1 @@
-fix(camellia): use dynasty in classical header template
+Merge branch 'main' of https://github.com/prtmax/labelix
