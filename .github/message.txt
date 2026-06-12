@@ -1,5 +1,1 @@
-feat(arithmetic-practice): consume v2 edubox rules (#121)
-
-* feat(arithmetic-practice): consume v2 edubox rules
-
-* chore(kerria): refresh generated types
+fix(camellia): update edubox dependency for image build
