@@ -1,1 +1,1 @@
-fix(camellia): update edubox dependency for image build (#122)
+fix(camellia): follow edubox main dependency
