@@ -1,1 +1,1 @@
-chore(camellia): update edubox editor dependency
+feat(kerria): filter tag options by type
