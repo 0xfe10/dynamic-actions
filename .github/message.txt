@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+feat(arithmetic-practice): consume v2 edubox rules
