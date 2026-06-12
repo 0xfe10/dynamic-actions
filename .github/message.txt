@@ -1,1 +1,1 @@
-chore(camellia): update edubox lock
+fix(camellia): update edubox mixed type handling
