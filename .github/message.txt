@@ -1,1 +1,1 @@
-fix(camellia): update edubox mixed type handling
+fix(camellia): update edubox mixed type handling (#127)
