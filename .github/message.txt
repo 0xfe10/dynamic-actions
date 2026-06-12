@@ -1,1 +1,1 @@
-fix(camellia): follow edubox main dependency (#123)
+chore(camellia): update edubox dependencies
