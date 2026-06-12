@@ -1,1 +1,1 @@
-chore(camellia): update edubox lock (#125)
+chore(camellia): update edubox lock
