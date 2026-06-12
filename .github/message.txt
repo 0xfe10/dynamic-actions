@@ -1,1 +1,5 @@
-chore(kerria): refresh generated types
+feat(arithmetic-practice): consume v2 edubox rules (#121)
+
+* feat(arithmetic-practice): consume v2 edubox rules
+
+* chore(kerria): refresh generated types
