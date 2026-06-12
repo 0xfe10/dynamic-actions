@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+fix(camellia): derive classical categories from tags
