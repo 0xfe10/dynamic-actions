@@ -1,1 +1,1 @@
-fix(camellia): update edubox mixed type handling (#127)
+chore(theaceae): update edubox main lock
