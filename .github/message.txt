@@ -1,3 +1,3 @@
-Add amount and reason columns to a_traffic_order
+Add amount and reason columns to a_traffic_order (#545)
 
 Add Liquibase changelog file and include it in master.xml
