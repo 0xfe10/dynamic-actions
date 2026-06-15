@@ -1,1 +1,1 @@
-口算练习排序
+chore(camellia): update edubox arithmetic editor dependency
