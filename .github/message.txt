@@ -1,1 +1,1 @@
-chore(camellia): update edubox arithmetic editor dependency (#129)
+feat(kerria): add sortable education page queries
