@@ -1,1 +1,1 @@
-chore(camellia): update edubox arithmetic rules
+chore(camellia): update edubox sdk parity
