@@ -1,1 +1,1 @@
-chore(camellia): update edubox arithmetic preview fix (#133)
+chore(camellia): update edubox lockfile
