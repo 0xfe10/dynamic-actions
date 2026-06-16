@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency (#130)
+fix(camellia): update edubox ci fix
