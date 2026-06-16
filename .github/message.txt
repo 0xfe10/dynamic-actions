@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency lock
+chore(camellia): update edubox dependency
