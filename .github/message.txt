@@ -1,1 +1,1 @@
-chore(camellia): update edubox arithmetic layout sdk
+chore(camellia): update edubox arithmetic sdk
