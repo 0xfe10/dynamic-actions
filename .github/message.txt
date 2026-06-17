@@ -1,1 +1,1 @@
-ci: add dynamic actions workflows
+fix(docker): include simulator static assets
