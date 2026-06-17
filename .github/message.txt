@@ -1,1 +1,1 @@
-fix(camellia): improve arithmetic practice editor layout
+fix(camellia): add resizable arithmetic workspace
