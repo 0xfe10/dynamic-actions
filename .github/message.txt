@@ -1,1 +1,1 @@
-fix(camellia): add resizable arithmetic workspace
+fix(camellia): update arithmetic editor dependency
