@@ -1,1 +1,1 @@
-fix(camellia): update arithmetic editor dependency
+chore(camellia): update edubox dependency
