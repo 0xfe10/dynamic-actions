@@ -1,1 +1,1 @@
-图片后台管理
+chore(camellia): update edubox dependency
