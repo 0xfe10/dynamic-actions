@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+机型管理页面去除新增功能，编辑时类型不可更改
