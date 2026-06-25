@@ -1,1 +1,3 @@
 ci(deploy): enable ztoms staging deployment
+
+Enable branch-triggered staging deployment and restore production tag deployment for ztoms.

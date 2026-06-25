@@ -1,1 +1,1 @@
-codex/enable-ztoms-deploy-trigger
+main
