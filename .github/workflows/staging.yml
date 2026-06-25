@@ -3,7 +3,7 @@ name: "[ztoms] Staging"
 on:
   push:
     branches:
-      - main
+      - repotea-workspace/ztoms
 
 env:
   DOCKER_REGISTRY: ghcr.io
