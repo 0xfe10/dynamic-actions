@@ -1,9 +1,9 @@
-name: "[ztoms] Production"
+name: "[ztoms] Staging"
 
 on:
   push:
-    tags:
-      - "v*-ztoms"
+    branches:
+      - main
 
 env:
   DOCKER_REGISTRY: ghcr.io
@@ -133,10 +133,10 @@ jobs:
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_FES }}"
           argocd_server: ${{ secrets.ARGOCD_FES_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_FES_API_TOKEN }}
-          app_name: work-production-ztoms-zshc
+          app_name: work-staging-ztoms-zshc
           changes: |
             {
-              "argocd/work/ztoms-zshc/overlays/production/ztoms/values.yaml": {
+              "argocd/work/ztoms-zshc/overlays/staging/ztoms/values.yaml": {
                 "ztomsV2.images.backend": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/ztoms-backend:sha-${{ env.SHA }}",
                 "ztomsV2.images.web": "${{ env.DOCKER_REGISTRY_UHUB }}/toohub/ztoms-web:sha-${{ env.SHA }}"
               }

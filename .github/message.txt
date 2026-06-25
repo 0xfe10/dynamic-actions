@@ -1,1 +1,1 @@
-chore(storage): unify upyun oss configuration (#140)
+ci(deploy): enable ztoms staging deployment
