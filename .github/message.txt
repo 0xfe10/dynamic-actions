@@ -1,3 +1,3 @@
-ci(deploy): fix ztoms staging workflow trigger
+fix(control): handle worker response envelopes
 
-Align source and dynamic-actions branch triggers so main pushes deploy ztoms staging.
+Prevent control worker pages from crashing when worker APIs return unified data envelopes.
