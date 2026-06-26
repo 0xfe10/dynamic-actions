@@ -1,5 +1,1 @@
-fix(omsj): seed order permissions for outlet users (#150)
-
-* fix(omsj): repair wallet transaction count query
-
-* fix(omsj): seed order permissions for outlet users
+fix(omsk): allow outlet users to read order basics (#151)
