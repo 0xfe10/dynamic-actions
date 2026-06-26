@@ -1,1 +1,1 @@
-fix(worker): show deployed workers in control panel
+fix(control): use control api for worker pages
