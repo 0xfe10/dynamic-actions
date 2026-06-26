@@ -1,1 +1,1 @@
-fix(auth): unwrap nested control login redirects (#147)
+fix(web): use configured api base url by default (#148)
