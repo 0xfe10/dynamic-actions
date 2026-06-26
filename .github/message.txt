@@ -1,1 +1,1 @@
-feat(education): add copybook management (#135)
+feat(camellia): integrate edubox copybook editor
