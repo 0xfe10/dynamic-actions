@@ -1,1 +1,1 @@
-fix(omsk): allow order create to read quote data (#154)
+fix(db): add finance ledger detail column (#155)
