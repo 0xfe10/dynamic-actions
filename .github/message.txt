@@ -1,1 +1,5 @@
-fix(db): make omsk order permission migration idempotent (#152)
+fix(db): keep omsk permission grants in app scope (#153)
+
+* fix(db): make omsk order permission migration idempotent
+
+* fix(db): keep omsk permission grants in app scope
