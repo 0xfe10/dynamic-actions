@@ -1,1 +1,1 @@
-fix(web): use configured api base url by default (#148)
+fix(omsj): repair wallet transaction count query (#149)
