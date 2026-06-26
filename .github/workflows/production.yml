@@ -6,7 +6,7 @@ on:
       - "v*-asr"
 env:
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
-  FUNASR_IMAGES_ENABLE: "false"
+  FUNASR_IMAGES_ENABLE: "true"
 
 jobs:
   build-asr-go:
@@ -48,21 +48,23 @@ jobs:
         with:
           push: true
           context: .
-          file: Dockerfile
+          file: services/asr-go/Dockerfile
           tags: |
             ${{ steps.tags.outputs.ali_sha }}
             ${{ steps.tags.outputs.ali_latest }}
 
   build-funasr:
-    name: Build FunASR
+    name: Build ASR upstream services
     runs-on: ubuntu-latest
     strategy:
       matrix:
         package:
-          - name: funasr-online
-            dockerfile: Dockerfile.funasr
+          - name: funasr-mlt-gguf
+            dockerfile: services/funasr-mlt-gguf/Dockerfile
+            image_key: funasr-mlt-gguf
           - name: funasr-sensevoice
-            dockerfile: Dockerfile.funasr-sensevoice
+            dockerfile: services/funasr-sensevoice/Dockerfile
+            image_key: funasr-sensevoice
     steps:
       - name: Skip FunASR image build
         if: env.FUNASR_IMAGES_ENABLE != 'true'
@@ -102,8 +104,8 @@ jobs:
         if: env.FUNASR_IMAGES_ENABLE == 'true'
         id: tags
         run: |
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.image_key }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.image_key }}:latest" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
         if: env.FUNASR_IMAGES_ENABLE == 'true'
@@ -146,7 +148,7 @@ jobs:
           {
             "argocd/cortex/asr-hn0/overlays/production/asr/values.yaml": {
               "app.asrGo.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_asr-go:sha-${{ env.SHA }}",
-              "app.funasrOnline.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-online:sha-${{ env.SHA }}",
+              "app.funasrMltGguf.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-mlt-gguf:sha-${{ env.SHA }}",
               "app.funasrSensevoice.image": "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_funasr-sensevoice:sha-${{ env.SHA }}"
             }
           }
