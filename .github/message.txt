@@ -1,1 +1,1 @@
-feat(camellia): integrate edubox copybook editor
+fix(camellia): add scene banner item actions
