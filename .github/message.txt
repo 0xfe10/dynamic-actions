@@ -1,1 +1,1 @@
-fix(db): add finance ledger detail column (#155)
+fix(omsk): avoid outlet parent alias conflict (#156)
