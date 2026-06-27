@@ -1,1 +1,1 @@
-feat(omsk-import): apply basic data migration (#163)
+fix(web): add missing pagination controls (#164)
