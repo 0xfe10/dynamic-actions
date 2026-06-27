@@ -1,1 +1,3 @@
-chore(backend): include omsk import tool
+feat(ui): add shortcut foundation (#165)
+
+Co-authored-by: fewensa <osuni@protonmail.com>
