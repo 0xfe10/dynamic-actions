@@ -1,1 +1,1 @@
-docs(omsk): add basic data import runbook (#160)
+feat(omsk): add basic import preflight tool (#161)
