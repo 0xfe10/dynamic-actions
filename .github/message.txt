@@ -1,9 +1,3 @@
-fix(omsk): deduct weighing fare on first weigh (#175)
-
-* fix(omsk): deduct weighing fare on first weigh
-
-* fix(omsk): read weighing quote amounts as decimals
-
----------
+fix(omsk): cascade tax import deductions (#176)
 
 Co-authored-by: fewensa <osuni@protonmail.com>
