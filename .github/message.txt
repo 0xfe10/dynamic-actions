@@ -1,3 +1,13 @@
-feat(shared): add finance deduction helper (#172)
+fix(omsk): deduct waybill finance on order create (#173)
+
+* fix(omsk): deduct waybill finance on order create
+
+* fix(omsk): charge current outlet waybill fee
+
+* fix(omsk): preflight waybill finance before pull
+
+* fix(omsk): allow waybill finance replay preflight
+
+---------
 
 Co-authored-by: fewensa <osuni@protonmail.com>
