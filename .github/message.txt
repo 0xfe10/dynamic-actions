@@ -1,1 +1,1 @@
-fix(omsk): support query big mark datoubi strategy
+fix(omsk): allow forcing order auth mode
