@@ -1,12 +1,8 @@
-fix(omsk): deduct waybill finance on order create (#173)
+fix(omsk): align order-create identity quota cache (#174)
 
-* fix(omsk): deduct waybill finance on order create
+* fix(omsk): align order-create identity quota cache
 
-* fix(omsk): charge current outlet waybill fee
-
-* fix(omsk): preflight waybill finance before pull
-
-* fix(omsk): allow waybill finance replay preflight
+* fix(omsk): avoid charging identity system failures
 
 ---------
 
