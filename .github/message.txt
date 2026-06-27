@@ -1,1 +1,1 @@
-fix(omsk): avoid outlet parent alias conflict (#156)
+fix(omsk): correct outlet parent validation sql (#157)
