@@ -1,1 +1,1 @@
-ci(ztoms): serialize gitops deployments
+fix(omsk): normalize imported outlet memberships
