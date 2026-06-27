@@ -1,1 +1,1 @@
-feat(omsk): add basic import preflight tool (#161)
+feat(omsk): refine basic import dry-run rules
