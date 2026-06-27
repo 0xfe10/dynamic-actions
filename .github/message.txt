@@ -1,8 +1,8 @@
-fix(omsk): align order-create identity quota cache (#174)
+fix(omsk): deduct weighing fare on first weigh (#175)
 
-* fix(omsk): align order-create identity quota cache
+* fix(omsk): deduct weighing fare on first weigh
 
-* fix(omsk): avoid charging identity system failures
+* fix(omsk): read weighing quote amounts as decimals
 
 ---------
 
