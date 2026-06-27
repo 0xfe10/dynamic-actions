@@ -1,1 +1,1 @@
-feat(omsk): refine basic import dry-run rules
+feat(omsk-import): apply basic data migration (#163)
