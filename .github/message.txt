@@ -1,1 +1,1 @@
-fix(web): add missing pagination controls (#164)
+ci(ztoms): serialize gitops deployments

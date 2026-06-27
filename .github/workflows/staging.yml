@@ -5,6 +5,10 @@ on:
     branches:
       - repotea-workspace/ztoms
 
+concurrency:
+  group: ztoms-staging
+  cancel-in-progress: true
+
 env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_UHUB: uhub.service.ucloud.cn
@@ -134,6 +138,7 @@ jobs:
           argocd_server: ${{ secrets.ARGOCD_FES_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_FES_API_TOKEN }}
           app_name: work-staging-ztoms-zshc
+          wait_health: "true"
           changes: |
             {
               "argocd/work/ztoms-zshc/overlays/staging/ztoms/values.yaml": {
