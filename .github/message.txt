@@ -1,8 +1,8 @@
-[codex] fix(omsj): align order-create waybill fee deduction (#178)
+[codex] fix(omsj): show ledger deductions in wallet transactions (#179)
 
-* fix(omsj): align order-create waybill fee deduction
+* fix(omsj): show ledger deductions in wallet transactions
 
-* fix(omsj): repair waybill fee DB tests
+* test(omsj): guard wallet ledger transaction query
 
 ---------
 
