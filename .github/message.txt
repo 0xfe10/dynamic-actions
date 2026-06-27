@@ -1,1 +1,1 @@
-fix(omsk): correct outlet parent validation sql (#157)
+fix(omsk): support query big mark datoubi strategy
