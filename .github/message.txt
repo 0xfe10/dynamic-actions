@@ -1,3 +1,9 @@
-fix(omsk): repair db test fixtures (#177)
+[codex] fix(omsj): align order-create waybill fee deduction (#178)
+
+* fix(omsj): align order-create waybill fee deduction
+
+* fix(omsj): repair waybill fee DB tests
+
+---------
 
 Co-authored-by: fewensa <osuni@protonmail.com>
