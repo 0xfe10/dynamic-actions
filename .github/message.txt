@@ -1,9 +1,1 @@
-[codex] fix(omsj): show ledger deductions in wallet transactions (#179)
-
-* fix(omsj): show ledger deductions in wallet transactions
-
-* test(omsj): guard wallet ledger transaction query
-
----------
-
-Co-authored-by: fewensa <osuni@protonmail.com>
+fix(omsk): deduct air crate weighing fare
