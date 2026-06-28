@@ -1,1 +1,1 @@
-feat(control): add admin password reset
+fix(auth): invalidate sessions after password changes
