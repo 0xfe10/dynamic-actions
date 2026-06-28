@@ -1,1 +1,1 @@
-chore(camellia): update edubox font presets
+fix(camellia): wire copybook annotations and stroke data
