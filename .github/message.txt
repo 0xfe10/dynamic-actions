@@ -1,1 +1,1 @@
-fix(camellia): align copybook editor defaults
+chore(camellia): update edubox copybook dependency
