@@ -1,1 +1,1 @@
-feat(camellia): add split copybook workspace
+fix(camellia): align copybook editor defaults
