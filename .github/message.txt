@@ -1,1 +1,1 @@
-feat(camellia): use edubox copybook editor
+chore(camellia): update edubox dependency
