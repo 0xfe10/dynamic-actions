@@ -1,1 +1,1 @@
-fix(omsk): deduct air crate weighing fare
+feat(control): add admin password reset
