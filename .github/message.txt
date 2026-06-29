@@ -1,1 +1,1 @@
-fix(camellia): align copybook editor defaults
+fix(camellia): update copybook paragraph flow dependency
