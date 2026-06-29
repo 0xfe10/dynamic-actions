@@ -1,1 +1,1 @@
-fix：修复加载模型列表问题
+feat(front): cache domain ICP locally
