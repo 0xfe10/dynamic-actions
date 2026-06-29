@@ -1,1 +1,1 @@
-chore(camellia): update edubox copybook dependency (#139)
+chore(camellia): update edubox copybook editor layout
