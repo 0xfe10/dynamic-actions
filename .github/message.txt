@@ -1,1 +1,1 @@
-chore(camellia): retrigger staging ci
+fix(camellia): align copybook editor defaults
