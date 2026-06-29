@@ -1,1 +1,1 @@
-修改设备下载链接
+chore(camellia): update edubox copybook dependency
