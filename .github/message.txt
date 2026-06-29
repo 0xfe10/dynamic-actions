@@ -1,1 +1,1 @@
-chore(camellia): update edubox copybook dependency
+fix(camellia): add copybook stroke data fallbacks
