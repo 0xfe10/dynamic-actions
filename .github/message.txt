@@ -1,1 +1,1 @@
-feat(copybook): expose category options and volume list filters
+chore(camellia): update edubox copybook dependency
