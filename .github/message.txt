@@ -1,1 +1,1 @@
-fix(camellia): hide stroke order for word copybooks
+fix(camellia): preserve copybook paragraph blank lines
