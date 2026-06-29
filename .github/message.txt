@@ -1,8 +1,1 @@
-Merge branch 'pr-136-copybook-volume-category'
-
-# Conflicts:
-#	rosaceae/cli/kerria/src/handlers/openapi.rs
-#	rosaceae/cli/kerria/src/modules/education/repository.rs
-#	rosaceae/cli/kerria/src/modules/education/routes.rs
-#	rosaceae/cli/kerria/src/modules/education/service.rs
-#	theaceae/apps/camellia/src/pages/education/copybook-pages.tsx
+fix(kerria): accept edubox copybook categories
