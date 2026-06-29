@@ -1,1 +1,1 @@
-fix(kerria): accept edubox copybook categories
+fix(camellia): hide stroke order for word copybooks
