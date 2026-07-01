@@ -1,1 +1,1 @@
-feat(rubus): add go service scaffold
+fix(camellia): restore video manual model selections
