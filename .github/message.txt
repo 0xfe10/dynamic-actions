@@ -1,1 +1,1 @@
-feat(front): cache domain ICP locally
+feat(label-font): support font downloads
