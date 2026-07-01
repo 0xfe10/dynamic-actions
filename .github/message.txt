@@ -1,1 +1,1 @@
-chore(rubus): define go package scaffold
+chore(rubus): keep go scaffold minimal
