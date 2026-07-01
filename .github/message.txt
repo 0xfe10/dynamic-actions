@@ -1,1 +1,1 @@
-fix(camellia): restore video manual model selections
+chore(rubus): define go package scaffold
