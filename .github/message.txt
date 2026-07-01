@@ -1,1 +1,1 @@
-设备增加是否批量打印属性
+feat(rubus): add go service scaffold
