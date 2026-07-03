@@ -1,1 +1,1 @@
-feat(kestrel): update BLE flow control examples
+feat(falcon): add BLE flow control options
