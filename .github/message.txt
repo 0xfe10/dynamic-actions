@@ -1,1 +1,1 @@
-fix(kestrel): clarify ble flow control logs (#1)
+feat(kestrel): update BLE flow control examples
