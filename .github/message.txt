@@ -1,1 +1,1 @@
-feat(rust): add RGB image Dart parity
+feat(rust): add EMAPI protocol core
