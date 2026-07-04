@@ -1,1 +1,1 @@
-dart ble 收到重发请求时释放 BLE 写锁
+chore(go): move SDK to submodule
