@@ -1,1 +1,1 @@
-chore(go): move SDK to submodule
+chore(go): update SDK submodule root
