@@ -1,1 +1,1 @@
-feat(rust): align CPCL commands with Dart
+feat(rust): align TSPL commands with Dart
