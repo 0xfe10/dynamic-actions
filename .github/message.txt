@@ -1,1 +1,1 @@
-feat(rust): align ESC commands with Dart
+feat(rust): add WiFi fruit Dart parity
