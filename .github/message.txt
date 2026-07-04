@@ -1,1 +1,1 @@
-feat(rust): add WiFi fruit Dart parity
+feat(rust): add RGB basic Dart parity
