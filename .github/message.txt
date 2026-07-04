@@ -1,1 +1,1 @@
-chore(go): update SDK submodule root
+feat(rust): align device write abstraction with Dart
