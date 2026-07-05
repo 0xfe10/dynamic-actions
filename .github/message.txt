@@ -1,1 +1,1 @@
-ci(rust): prepare crates.io workspace release
+ci(rust): use prtmax crates token secret
