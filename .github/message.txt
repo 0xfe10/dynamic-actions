@@ -1,1 +1,1 @@
-ci(rust): prepare crates.io workspace release
+fix(rust): add crate license metadata
