@@ -1,1 +1,1 @@
-模版文件夹查询参数改为kw
+feat(auth): add huawei account verification
