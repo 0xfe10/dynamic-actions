@@ -1,1 +1,1 @@
-docs(psdk): update rust and go sdk guides
+docs(psdk): update rust crates install guide
