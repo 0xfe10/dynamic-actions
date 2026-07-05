@@ -1,1 +1,1 @@
-ci(psdk): fix dart and ts checks
+fix(psdk): repair uniapp ble checks
