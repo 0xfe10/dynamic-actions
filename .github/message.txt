@@ -1,1 +1,1 @@
-chore(rust): centralize workspace dependencies
+ci(rust): fold crates release into dyn workflow

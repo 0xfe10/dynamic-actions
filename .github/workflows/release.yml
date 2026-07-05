@@ -269,6 +269,58 @@ jobs:
       #       project: psdk
       #       language: dart
 
+  release-rust:
+    name: Release psdk-rust
+    runs-on: ubuntu-latest
+    env:
+      RUST_TOOLCHAIN: stable
+      CARGO_PUBLISH_ARGS: >-
+        --workspace
+        --exclude psdk-compatible-hjinfo
+        --exclude psdk-extension-export-c
+        --exclude psdk-extension-export-jni
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/psdk
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Install rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+          cache: false
+          rustflags: ""
+
+      - name: Test rust workspace
+        working-directory: rust
+        run: cargo test --workspace --all-features
+
+      - name: Check crates.io packages
+        working-directory: rust
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_PRTMAX }}
+        run: cargo publish ${{ env.CARGO_PUBLISH_ARGS }} --dry-run
+
+      - name: Publish crates.io packages
+        working-directory: rust
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_PRTMAX }}
+        run: cargo publish ${{ env.CARGO_PUBLISH_ARGS }}
+
+      # - uses: fewensa/actions/tepusher@main
+      #   if: failure()
+      #   with:
+      #     template: .maintain/notify/release-failed.md
+      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+      #     vars: |
+      #       project: psdk
+      #       language: rust
+
   build-clang:
     name: Build psdk-clang
     runs-on: ubuntu-latest
