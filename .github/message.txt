@@ -1,1 +1,1 @@
-fix(psdk): repair uniapp ble checks
+ci(psdk): limit release workflow to rust

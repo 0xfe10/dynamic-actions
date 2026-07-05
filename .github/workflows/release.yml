@@ -12,262 +12,262 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  release-java:
-    name: Release psdk-java
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
-      - name: Setup Java
-        uses: actions/setup-java@v5
-        with:
-          distribution: zulu
-          java-version: 17
-          cache: maven
-          cache-dependency-path: |
-            java/**/pom.xml
-          overwrite-settings: false
-      - name: Setup Maven
-        uses: stCarolas/setup-maven@v5.1
-        with:
-          maven-version: 3.9.11
-      - name: Setup Maven settings
-        uses: s4u/maven-settings-action@v4.0.0
+#   release-java:
+#     name: Release psdk-java
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v6
+#       - name: Checkout
+#         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+#         with:
+#           repository: prtmax/psdk
+#           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+#           ref_file: .github/ref.txt
+#       - name: Setup Java
+#         uses: actions/setup-java@v5
+#         with:
+#           distribution: zulu
+#           java-version: 17
+#           cache: maven
+#           cache-dependency-path: |
+#             java/**/pom.xml
+#           overwrite-settings: false
+#       - name: Setup Maven
+#         uses: stCarolas/setup-maven@v5.1
+#         with:
+#           maven-version: 3.9.11
+#       - name: Setup Maven settings
+#         uses: s4u/maven-settings-action@v4.0.0
 
-      - name: Setup maven authorization
-        run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>
-          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-            <servers>
-              <server>
-                <id>gitlab-maven</id>
-                <configuration>
-                  <httpHeaders>
-                    <property>
-                      <name>Private-Token</name>
-                      <value>${{ secrets.GITLAB_PAT_DEV }}</value>
-                    </property>
-                  </httpHeaders>
-                </configuration>
-              </server>
-            </servers>
-          </settings>
-          ' > ~/ci_settings.xml
+#       - name: Setup maven authorization
+#         run: |
+#           echo '<?xml version="1.0" encoding="UTF-8"?>
+#           <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+#             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+#             xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+#             <servers>
+#               <server>
+#                 <id>gitlab-maven</id>
+#                 <configuration>
+#                   <httpHeaders>
+#                     <property>
+#                       <name>Private-Token</name>
+#                       <value>${{ secrets.GITLAB_PAT_DEV }}</value>
+#                     </property>
+#                   </httpHeaders>
+#                 </configuration>
+#               </server>
+#             </servers>
+#           </settings>
+#           ' > ~/ci_settings.xml
 
-      - name: Deploy maven
-        working-directory: java
-        run: mvn clean deploy -P release -D maven.test.skip=true -s ~/ci_settings.xml
+#       - name: Deploy maven
+#         working-directory: java
+#         run: mvn clean deploy -P release -D maven.test.skip=true -s ~/ci_settings.xml
 
-      # - uses: fewensa/actions/tepusher@main
-      #   if: failure()
-      #   with:
-      #     template: .maintain/notify/release-failed.md
-      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
-      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-      #     vars: |
-      #       project: psdk
-      #       language: java
+#       # - uses: fewensa/actions/tepusher@main
+#       #   if: failure()
+#       #   with:
+#       #     template: .maintain/notify/release-failed.md
+#       #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+#       #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+#       #     vars: |
+#       #       project: psdk
+#       #       language: java
 
-  release-js:
-    name: Release psdk-js
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
+#   release-js:
+#     name: Release psdk-js
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       id-token: write
+#     steps:
+#       - uses: actions/checkout@v6
+#       - name: Checkout
+#         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+#         with:
+#           repository: prtmax/psdk
+#           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+#           ref_file: .github/ref.txt
 
-      - uses: actions/setup-node@v5
-        with:
-          node-version: "20.19.0"
-          registry-url: "https://registry.npmjs.org"
+#       - uses: actions/setup-node@v5
+#         with:
+#           node-version: "20.19.0"
+#           registry-url: "https://registry.npmjs.org"
 
-      - name: Upgrade npm for trusted publishing
-        run: npm install --global npm@^11.5.1
+#       - name: Upgrade npm for trusted publishing
+#         run: npm install --global npm@^11.5.1
 
-      - name: Check psdk
-        working-directory: js
-        run: |
-          yarn install
-          yarn build:all
-          yarn package:all
+#       - name: Check psdk
+#         working-directory: js
+#         run: |
+#           yarn install
+#           yarn build:all
+#           yarn package:all
 
-      - name: Inject repository metadata for npm publish
-        working-directory: js
-        run: |
-          node <<'EOF'
-          const fs = require("fs");
-          const path = require("path");
+#       - name: Inject repository metadata for npm publish
+#         working-directory: js
+#         run: |
+#           node <<'EOF'
+#           const fs = require("fs");
+#           const path = require("path");
 
-          const repo = {
-            type: "git",
-            url: "https://github.com/0xfe10/dynamic-actions",
-          };
+#           const repo = {
+#             type: "git",
+#             url: "https://github.com/0xfe10/dynamic-actions",
+#           };
 
-          const roots = ["device", "frame", "fruits", "compatible"];
+#           const roots = ["device", "frame", "fruits", "compatible"];
 
-          for (const root of roots) {
-            const rootPath = path.join(process.cwd(), root);
-            if (!fs.existsSync(rootPath)) continue;
+#           for (const root of roots) {
+#             const rootPath = path.join(process.cwd(), root);
+#             if (!fs.existsSync(rootPath)) continue;
 
-            for (const entry of fs.readdirSync(rootPath, { withFileTypes: true })) {
-              if (!entry.isDirectory()) continue;
+#             for (const entry of fs.readdirSync(rootPath, { withFileTypes: true })) {
+#               if (!entry.isDirectory()) continue;
 
-              const packageJsonPath = path.join(rootPath, entry.name, "package.json");
-              if (!fs.existsSync(packageJsonPath)) continue;
+#               const packageJsonPath = path.join(rootPath, entry.name, "package.json");
+#               if (!fs.existsSync(packageJsonPath)) continue;
 
-              const data = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-              if (data.private) continue;
+#               const data = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+#               if (data.private) continue;
 
-              data.repository = repo;
-              fs.writeFileSync(packageJsonPath, `${JSON.stringify(data, null, 2)}\n`);
-            }
-          }
-          EOF
+#               data.repository = repo;
+#               fs.writeFileSync(packageJsonPath, `${JSON.stringify(data, null, 2)}\n`);
+#             }
+#           }
+#           EOF
 
-      - name: Commit temporary publish metadata
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add js/device/*/package.json js/frame/*/package.json js/fruits/*/package.json js/compatible/*/package.json
-          git commit -m "ci(psdk): inject npm publish metadata"
+#       - name: Commit temporary publish metadata
+#         run: |
+#           git config user.name "github-actions[bot]"
+#           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+#           git add js/device/*/package.json js/frame/*/package.json js/fruits/*/package.json js/compatible/*/package.json
+#           git commit -m "ci(psdk): inject npm publish metadata"
 
-      - name: Publish npm
-        working-directory: js
-        env:
-          NPM_CONFIG_ACCESS: public
-        run: npx lerna publish from-package --yes
+#       - name: Publish npm
+#         working-directory: js
+#         env:
+#           NPM_CONFIG_ACCESS: public
+#         run: npx lerna publish from-package --yes
 
-      # - uses: fewensa/actions/tepusher@main
-      #   if: failure()
-      #   with:
-      #     template: .maintain/notify/release-failed.md
-      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
-      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-      #     vars: |
-      #       project: psdk
-      #       language: js
+#       # - uses: fewensa/actions/tepusher@main
+#       #   if: failure()
+#       #   with:
+#       #     template: .maintain/notify/release-failed.md
+#       #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+#       #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+#       #     vars: |
+#       #       project: psdk
+#       #       language: js
 
-  release-ohpm:
-    name: Release psdk-ohpm
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/repotea-workspace/kangumi/harmonytools:sha-5e851a7
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
+#   release-ohpm:
+#     name: Release psdk-ohpm
+#     runs-on: ubuntu-latest
+#     container:
+#       image: ghcr.io/repotea-workspace/kangumi/harmonytools:sha-5e851a7
+#     steps:
+#       - uses: actions/checkout@v6
+#       - name: Checkout
+#         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+#         with:
+#           repository: prtmax/psdk
+#           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+#           ref_file: .github/ref.txt
 
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: "20"
+#       # - uses: actions/setup-node@v4
+#       #   with:
+#       #     node-version: "20"
 
-      - name: Install deps
-        run: |
-          apt-get update -y
-          apt-get install -y expect jq
+#       - name: Install deps
+#         run: |
+#           apt-get update -y
+#           apt-get install -y expect jq
 
-      - name: Setup ohpm
-        run: |
-          mkdir -p ${{ github.workspace }}
-          echo "${{ secrets.OHPM_SSH_PRIVATE }}" > ${{ github.workspace }}/your-keypath
-          ohpm config set key_path ${{ github.workspace }}/your-keypath
-          ohpm config set publish_id ${{ secrets.OHPM_PUBLISH_ID }}
-          ohpm --version
+#       - name: Setup ohpm
+#         run: |
+#           mkdir -p ${{ github.workspace }}
+#           echo "${{ secrets.OHPM_SSH_PRIVATE }}" > ${{ github.workspace }}/your-keypath
+#           ohpm config set key_path ${{ github.workspace }}/your-keypath
+#           ohpm config set publish_id ${{ secrets.OHPM_PUBLISH_ID }}
+#           ohpm --version
 
-      - name: Publish ohpm
-        working-directory: js
-        env:
-          OHPM_PUBLISH_ID: ${{ secrets.OHPM_PUBLISH_ID }}
-          OHPM_SSH_PASSPHRASE: ${{ secrets.OHPM_SSH_PASSPHRASE }}
-        run: |
-          yarn install
-          yarn ohpm:package --verbose --force --clean --publish
+#       - name: Publish ohpm
+#         working-directory: js
+#         env:
+#           OHPM_PUBLISH_ID: ${{ secrets.OHPM_PUBLISH_ID }}
+#           OHPM_SSH_PASSPHRASE: ${{ secrets.OHPM_SSH_PASSPHRASE }}
+#         run: |
+#           yarn install
+#           yarn ohpm:package --verbose --force --clean --publish
 
-      # - uses: fewensa/actions/tepusher@main
-      #   if: failure()
-      #   with:
-      #     template: .maintain/notify/release-failed.md
-      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
-      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-      #     vars: |
-      #       project: psdk
-      #       language: ohpm
+#       # - uses: fewensa/actions/tepusher@main
+#       #   if: failure()
+#       #   with:
+#       #     template: .maintain/notify/release-failed.md
+#       #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+#       #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+#       #     vars: |
+#       #       project: psdk
+#       #       language: ohpm
 
-  release-dart:
-    name: Release psdk-dart
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
+#   release-dart:
+#     name: Release psdk-dart
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v6
+#       - name: Checkout
+#         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+#         with:
+#           repository: prtmax/psdk
+#           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+#           ref_file: .github/ref.txt
 
-      - name: Setup Flutter SDK
-        uses: flutter-actions/setup-flutter@v3
-        with:
-          channel: stable
+#       - name: Setup Flutter SDK
+#         uses: flutter-actions/setup-flutter@v3
+#         with:
+#           channel: stable
 
-      # - name: 'Set up Cloud SDK'
-      #   uses: 'google-github-actions/setup-gcloud@v2'
-      #   with:
-      #     version: '>= 363.0.0'
+#       # - name: 'Set up Cloud SDK'
+#       #   uses: 'google-github-actions/setup-gcloud@v2'
+#       #   with:
+#       #     version: '>= 363.0.0'
 
-      - name: Write secret to file
-        run: |
-          mkdir -p ~/.config/dart
+#       - name: Write secret to file
+#         run: |
+#           mkdir -p ~/.config/dart
 
-          cat << EOF > ~/.config/dart/pub-credentials.json
-          ${{ secrets.PUB_DEV_TOKEN }}
-          EOF
+#           cat << EOF > ~/.config/dart/pub-credentials.json
+#           ${{ secrets.PUB_DEV_TOKEN }}
+#           EOF
 
-      # - name: Setup authorization
-      #   run: |
-      #     # echo "{{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
+#       # - name: Setup authorization
+#       #   run: |
+#       #     # echo "{{ secrets.PUB_DEV_TOKEN }}" >> ~/.config/dart/pub-credentials.json
 
-      #     # AUTH_FILE=~/.config/gcp-service-account-autoci.json
-      #     # gcloud auth activate-service-account --key-file=$AUTH_FILE
-      #     # gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
+#       #     # AUTH_FILE=~/.config/gcp-service-account-autoci.json
+#       #     # gcloud auth activate-service-account --key-file=$AUTH_FILE
+#       #     # gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
 
-      - name: Setup melos
-        run: dart pub global activate melos
+#       - name: Setup melos
+#         run: dart pub global activate melos
 
-      - name: Publish dart
-        working-directory: dart
-        run: |
-          melos bootstrap
-          melos run lint:all --no-select
-          melos publish --no-private --yes --no-dry-run
+#       - name: Publish dart
+#         working-directory: dart
+#         run: |
+#           melos bootstrap
+#           melos run lint:all --no-select
+#           melos publish --no-private --yes --no-dry-run
 
-      # - uses: fewensa/actions/tepusher@main
-      #   if: failure()
-      #   with:
-      #     template: .maintain/notify/release-failed.md
-      #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
-      #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
-      #     vars: |
-      #       project: psdk
-      #       language: dart
+#       # - uses: fewensa/actions/tepusher@main
+#       #   if: failure()
+#       #   with:
+#       #     template: .maintain/notify/release-failed.md
+#       #     token: ${{ secrets.WEPLUSBOT_TOKEN }}
+#       #     receiver: "#d8bb7fbacf0849f1bb7fcc89a878a1a0"
+#       #     vars: |
+#       #       project: psdk
+#       #       language: dart
 
   release-rust:
     name: Release psdk-rust
@@ -321,132 +321,132 @@ jobs:
       #       project: psdk
       #       language: rust
 
-  build-clang:
-    name: Build psdk-clang
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        linktype:
-          - shared
-          - static
-        os:
-          - image: dockcross/windows-shared-x64
-            architecture: windows-shared-x64
-            linktype: shared
-          - image: dockcross/windows-shared-x86
-            architecture: windows-shared-x86
-            linktype: shared
-          - image: dockcross/windows-static-x64
-            architecture: windows-static-x64
-            linktype: static
-          - image: dockcross/windows-static-x86
-            architecture: windows-static-x86
-            linktype: static
-          - image: dockcross/windows-arm64
-            architecture: windows-arm64
-            linktype: static
-          - image: dockcross/windows-armv7
-            architecture: windows-armv7
-            linktype: static
-          - image: dockcross/linux-arm64
-            architecture: linux-arm64
-          - image: dockcross/linux-arm64-musl
-            architecture: linux-arm64-musl
-          - image: dockcross/linux-armv7
-            architecture: linux-armv7
-          - image: dockcross/linux-armv7l-musl
-            architecture: linux-armv7l-musl
-          - image: dockcross/linux-x64
-            architecture: linux-x64
-          - image: dockcross/linux-x86
-            architecture: linux-x86
-          - image: dockcross/linux-riscv64
-            architecture: linux-riscv64
-          - image: dockcross/linux-riscv32
-            architecture: linux-riscv32
-          - image: ghcr.io/repotea-workflow/devlife/dockcross-openwrt-armv32-sunxi
-            architecture: arm-openwrt-linux-gnueabi
-        package:
-          - name: hjinfo
-            path: compatible/hjinfo
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
+#   build-clang:
+#     name: Build psdk-clang
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         linktype:
+#           - shared
+#           - static
+#         os:
+#           - image: dockcross/windows-shared-x64
+#             architecture: windows-shared-x64
+#             linktype: shared
+#           - image: dockcross/windows-shared-x86
+#             architecture: windows-shared-x86
+#             linktype: shared
+#           - image: dockcross/windows-static-x64
+#             architecture: windows-static-x64
+#             linktype: static
+#           - image: dockcross/windows-static-x86
+#             architecture: windows-static-x86
+#             linktype: static
+#           - image: dockcross/windows-arm64
+#             architecture: windows-arm64
+#             linktype: static
+#           - image: dockcross/windows-armv7
+#             architecture: windows-armv7
+#             linktype: static
+#           - image: dockcross/linux-arm64
+#             architecture: linux-arm64
+#           - image: dockcross/linux-arm64-musl
+#             architecture: linux-arm64-musl
+#           - image: dockcross/linux-armv7
+#             architecture: linux-armv7
+#           - image: dockcross/linux-armv7l-musl
+#             architecture: linux-armv7l-musl
+#           - image: dockcross/linux-x64
+#             architecture: linux-x64
+#           - image: dockcross/linux-x86
+#             architecture: linux-x86
+#           - image: dockcross/linux-riscv64
+#             architecture: linux-riscv64
+#           - image: dockcross/linux-riscv32
+#             architecture: linux-riscv32
+#           - image: ghcr.io/repotea-workflow/devlife/dockcross-openwrt-armv32-sunxi
+#             architecture: arm-openwrt-linux-gnueabi
+#         package:
+#           - name: hjinfo
+#             path: compatible/hjinfo
+#     steps:
+#       - uses: actions/checkout@v6
+#       - name: Checkout
+#         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+#         with:
+#           repository: prtmax/psdk
+#           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+#           ref_file: .github/ref.txt
 
-      - name: Build ${{ matrix.package.path }}
-        working-directory: clang
-        if: ${{ matrix.os.linktype == '' || matrix.os.linktype == matrix.linktype }}
-        run: |
-          docker run --rm ${{ matrix.os.image }} > ./dockcross
-          chmod +x ./dockcross
-          ./dockcross scripts/dockcross-build-${{ matrix.linktype }}.sh \
-            ${{ matrix.package.name }} \
-            ${{ matrix.package.path }} \
-            ${{ matrix.os.architecture }}
-          mv clang-dist ../
+#       - name: Build ${{ matrix.package.path }}
+#         working-directory: clang
+#         if: ${{ matrix.os.linktype == '' || matrix.os.linktype == matrix.linktype }}
+#         run: |
+#           docker run --rm ${{ matrix.os.image }} > ./dockcross
+#           chmod +x ./dockcross
+#           ./dockcross scripts/dockcross-build-${{ matrix.linktype }}.sh \
+#             ${{ matrix.package.name }} \
+#             ${{ matrix.package.path }} \
+#             ${{ matrix.os.architecture }}
+#           mv clang-dist ../
 
-      - uses: actions/upload-artifact@v4
-        if: ${{ matrix.os.linktype == '' || matrix.os.linktype == matrix.linktype }}
-        with:
-          name: artifact-clang-${{ matrix.package.name }}-${{ matrix.os.architecture }}-${{ matrix.linktype }}
-          path: clang-dist
-          overwrite: true
+#       - uses: actions/upload-artifact@v4
+#         if: ${{ matrix.os.linktype == '' || matrix.os.linktype == matrix.linktype }}
+#         with:
+#           name: artifact-clang-${{ matrix.package.name }}-${{ matrix.os.architecture }}-${{ matrix.linktype }}
+#           path: clang-dist
+#           overwrite: true
 
-  release-clang:
-    name: Release psdk-clang
-    runs-on: ubuntu-latest
-    needs:
-      - build-clang
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/psdk
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
+#   release-clang:
+#     name: Release psdk-clang
+#     runs-on: ubuntu-latest
+#     needs:
+#       - build-clang
+#     steps:
+#       - uses: actions/checkout@v6
+#       - name: Checkout
+#         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+#         with:
+#           repository: prtmax/psdk
+#           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+#           ref_file: .github/ref.txt
 
-      - uses: benjlevesque/short-sha@v3.0
-      - uses: olegtarasov/get-tag@v2.1
+#       - uses: benjlevesque/short-sha@v3.0
+#       - uses: olegtarasov/get-tag@v2.1
 
-      - uses: actions/download-artifact@v4
-        with:
-          path: clang-dist
-          merge-multiple: true
+#       - uses: actions/download-artifact@v4
+#         with:
+#           path: clang-dist
+#           merge-multiple: true
 
-      - name: tar dist
-        run: |
-          DIRECTORY="clang-dist"
-          cd ${DIRECTORY}
-          for DIR in $(ls); do
-            DIRNAME=$(basename "$DIR")
-            tar -czvf "${DIRNAME}.tar.gz" "$DIR"
-            rm -rf "$DIR"
-          done
+#       - name: tar dist
+#         run: |
+#           DIRECTORY="clang-dist"
+#           cd ${DIRECTORY}
+#           for DIR in $(ls); do
+#             DIRNAME=$(basename "$DIR")
+#             tar -czvf "${DIRNAME}.tar.gz" "$DIR"
+#             rm -rf "$DIR"
+#           done
 
-      - name: Publish release
-        uses: docker://minio/minio:RELEASE.2024-08-03T04-33-23Z
-        env:
-          MIO_IPRT_ENDPOINT_VIEW: ${{ secrets.MIO_IPRT_ENDPOINT_VIEW }}
-          MIO_IPRT_ENDPOINT: ${{ secrets.MIO_IPRT_ENDPOINT }}
-          MIO_IPRT_AK: ${{ secrets.MIO_IPRT_AK }}
-          MIO_IPRT_SK: ${{ secrets.MIO_IPRT_SK }}
-        with:
-          entrypoint: /bin/bash
-          args: -f scripts/release-clang.sh
+#       - name: Publish release
+#         uses: docker://minio/minio:RELEASE.2024-08-03T04-33-23Z
+#         env:
+#           MIO_IPRT_ENDPOINT_VIEW: ${{ secrets.MIO_IPRT_ENDPOINT_VIEW }}
+#           MIO_IPRT_ENDPOINT: ${{ secrets.MIO_IPRT_ENDPOINT }}
+#           MIO_IPRT_AK: ${{ secrets.MIO_IPRT_AK }}
+#           MIO_IPRT_SK: ${{ secrets.MIO_IPRT_SK }}
+#         with:
+#           entrypoint: /bin/bash
+#           args: -f scripts/release-clang.sh
 
-  clean-artifacts:
-    name: Clean artifacts
-    runs-on: ubuntu-latest
-    needs:
-      - release-clang
-    if: always()
-    steps:
-      - uses: geekyeggo/delete-artifact@v5
-        with:
-          name: artifact-*
+#   clean-artifacts:
+#     name: Clean artifacts
+#     runs-on: ubuntu-latest
+#     needs:
+#       - release-clang
+#     if: always()
+#     steps:
+#       - uses: geekyeggo/delete-artifact@v5
+#         with:
+#           name: artifact-*
