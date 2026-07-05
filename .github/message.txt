@@ -1,1 +1,1 @@
-ci(psdk): limit release workflow to rust
+ci(rust): prepare crates.io workspace release
