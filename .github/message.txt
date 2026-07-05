@@ -1,1 +1,1 @@
-ci(rust): use prtmax crates token secret
+chore(rust): centralize workspace dependencies
