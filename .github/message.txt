@@ -1,1 +1,1 @@
-ci(rust): fold crates release into dyn workflow
+ci(psdk): fix dart and ts checks

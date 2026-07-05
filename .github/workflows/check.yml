@@ -22,6 +22,7 @@ jobs:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+          submodules: recursive
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
@@ -64,6 +65,7 @@ jobs:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+          submodules: recursive
 
       - name: Install rust toolchain
         uses: actions-rust-lang/setup-rust-toolchain@v1
@@ -101,12 +103,35 @@ jobs:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+          submodules: recursive
 
       - name: Make
         working-directory: clang
         run: |
           cd compatible/hjinfo
           ./scripts/build.sh
+
+  check-go:
+    name: Check psdk-go
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/psdk
+          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          ref_file: .github/ref.txt
+          submodules: recursive
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go/go.mod
+          cache-dependency-path: go/go.sum
+
+      - name: Check psdk
+        working-directory: go
+        run: go test ./frame/father/... ./frame/toolkit/... ./fruits/...
 
   check-dart:
     name: Check psdk-dart
@@ -119,6 +144,7 @@ jobs:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+          submodules: recursive
 
       - name: Setup Flutter SDK
         uses: flutter-actions/setup-flutter@v3
@@ -161,6 +187,7 @@ jobs:
           repository: prtmax/psdk
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
           ref_file: .github/ref.txt
+          submodules: recursive
 
       - uses: actions/setup-node@v5
         with:
