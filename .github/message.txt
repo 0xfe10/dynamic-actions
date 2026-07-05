@@ -1,1 +1,1 @@
-feat(auth): add huawei account verification
+fix(auth): require fresh Huawei code for binding
