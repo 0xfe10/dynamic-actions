@@ -1,1 +1,1 @@
-feat(rust): add EMAPI session Dart parity
+feat(rust): enable image byte commands by default
