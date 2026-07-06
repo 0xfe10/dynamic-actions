@@ -1,7 +1,1 @@
-feat(rubus): add Go scaffold (#141)
-
-* feat(rubus): add go service scaffold
-
-* chore(rubus): define go package scaffold
-
-* chore(rubus): keep go scaffold minimal
+短信限制类型增加境外
