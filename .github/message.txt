@@ -1,1 +1,1 @@
-docs(reference): add device support catalog
+docs(reference): store support catalog as yaml
