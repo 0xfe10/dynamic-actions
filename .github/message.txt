@@ -1,1 +1,1 @@
-短信限制类型增加境外
+chore(camellia): update edubox dependencies
