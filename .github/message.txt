@@ -1,1 +1,1 @@
-chore(project): prepare v1 implementation workflow
+docs(reference): add device support catalog
