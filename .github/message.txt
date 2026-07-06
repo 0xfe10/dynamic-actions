@@ -1,1 +1,1 @@
-ci(rust): resume crates publish by package
+ci(psdk): restore multi-language release jobs
