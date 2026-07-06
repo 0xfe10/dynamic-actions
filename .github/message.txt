@@ -1,1 +1,7 @@
-短信限制类型增加境外 (#560)
+Add Liquibase changelog for folders and media
+
+Define a_folder, a_image and a_device_download tables. Add
+folder_id to a_template and a_document, add utime to a_document,
+add a_folder_unique constraint, and create indexes
+idx_document_folder and idx_template_folder. Include the new
+changelog in master.xml.
