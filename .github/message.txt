@@ -1,1 +1,1 @@
-docs(reference): compact sparse catalog cells
+docs(reference): plan catalog-driven extensions
