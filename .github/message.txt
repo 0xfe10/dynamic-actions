@@ -1,0 +1,1 @@
+chore(project): prepare v1 implementation workflow
