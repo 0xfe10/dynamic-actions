@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependencies
+fix(kerria): keep disabled arithmetic practices visible in admin
