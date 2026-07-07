@@ -1,7 +1,1 @@
-Add Liquibase changelog for folders and media (#561)
-
-Define a_folder, a_image and a_device_download tables. Add
-folder_id to a_template and a_document, add utime to a_document,
-add a_folder_unique constraint, and create indexes
-idx_document_folder and idx_template_folder. Include the new
-changelog in master.xml.
+文件夹复制
