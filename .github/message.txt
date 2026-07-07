@@ -1,1 +1,1 @@
-fix(workspace): correct repository metadata
+chore(workspace): initialize v1 core crates
