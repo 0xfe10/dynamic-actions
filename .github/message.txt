@@ -1,1 +1,1 @@
-docs(spec): add rust engineering standards
+chore(workspace): align rust project standards
