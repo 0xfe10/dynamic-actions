@@ -1,1 +1,1 @@
-chore(workspace): rename command crates
+docs(document): make v1 raster-first
