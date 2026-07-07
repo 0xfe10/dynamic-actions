@@ -1,1 +1,1 @@
-chore(workspace): align rust project standards
+chore(workspace): use rust 2024 edition
