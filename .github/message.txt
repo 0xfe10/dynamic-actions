@@ -1,1 +1,1 @@
-docs(spec): define catalog projection contracts
+docs(spec): add rust engineering standards
