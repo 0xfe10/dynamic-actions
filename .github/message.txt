@@ -1,1 +1,1 @@
-fix(kerria): keep disabled arithmetic practices visible in admin
+fix(camellia): align pinyin copybook config with roman text
