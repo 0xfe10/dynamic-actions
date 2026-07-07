@@ -1,1 +1,1 @@
-merge: feat-rubus-go-scaffold
+chore(camellia): update edubox dependency
