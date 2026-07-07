@@ -1,1 +1,1 @@
-fix(camellia): consolidate editor debug actions
+fix(camellia): preserve pinyin trace words
