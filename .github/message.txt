@@ -1,1 +1,1 @@
-fix(camellia): align pinyin copybook config with roman text
+chore(camellia): trigger rebuild
