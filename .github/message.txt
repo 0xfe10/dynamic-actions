@@ -1,1 +1,1 @@
-fix(camellia): preserve pinyin trace words
+chore(camellia): update edubox dependency
