@@ -1,1 +1,3 @@
-fix(document): align object element serde kinds
+feat(document): add v1 document input model
+
+Add validated DocumentId and ExtensionId serde handling, raster-first DocumentInput models, and fixture-facing serde/validation coverage.
