@@ -1,1 +1,1 @@
-chore(workspace): use rust 2024 edition
+style(workspace): enforce two-space indentation
