@@ -1,1 +1,1 @@
-style(workspace): enforce two-space indentation
+fix(workspace): correct repository metadata
