@@ -1,1 +1,1 @@
-chore(workspace): initialize v1 core crates
+chore(workspace): move cli under apps
