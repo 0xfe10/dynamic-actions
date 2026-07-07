@@ -1,1 +1,1 @@
-chore(workspace): move cli under apps
+chore(workspace): rename command crates
