@@ -1,1 +1,1 @@
-emapi 公开sendAcked sendCommand
+新增 ai打印机相关指令 dart ver0.1.6
