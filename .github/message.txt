@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+图片类型增加滑动-背景图
