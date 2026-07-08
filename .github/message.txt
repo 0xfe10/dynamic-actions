@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependency
+fix(camellia): persist copybook stroke data source
