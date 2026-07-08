@@ -1,1 +1,1 @@
-docs(psdk): update go module install guide
+hidden button
