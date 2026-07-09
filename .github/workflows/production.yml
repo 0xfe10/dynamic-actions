@@ -6,7 +6,7 @@ on:
       - "v*-asr"
 env:
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
-  FUNASR_IMAGES_ENABLE: "true"
+  FUNASR_IMAGES_ENABLE: "false"
 
 jobs:
   build-asr-go:
