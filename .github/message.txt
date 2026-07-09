@@ -1,1 +1,1 @@
-feat(camellia): allow editing arithmetic examples
+chore(camellia): update edubox editor dependency
