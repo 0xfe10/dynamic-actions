@@ -1,1 +1,1 @@
-fix(camellia): allow roman trace words toggle
+chore(camellia): update edubox dependency
