@@ -1,1 +1,1 @@
-chore(camellia): update edubox font source selector
+chore(camellia): update edubox font presets
