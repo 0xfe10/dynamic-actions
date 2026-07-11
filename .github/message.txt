@@ -1,1 +1,1 @@
-chore(camellia): update edubox dependencies
+chore(camellia): update edubox font presets
