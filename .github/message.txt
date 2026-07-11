@@ -1,1 +1,1 @@
-chore(camellia): update edubox fixed guide borders
+chore(camellia): update edubox flow guide fix
