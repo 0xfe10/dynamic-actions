@@ -1,1 +1,1 @@
-feat(camellia): collapse copybook editor sections
+chore(camellia): update edubox dependencies
