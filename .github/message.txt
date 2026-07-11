@@ -1,1 +1,1 @@
-chore(camellia): update edubox copybook renderer
+chore(camellia): update edubox fixed guide borders
