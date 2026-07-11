@@ -1,1 +1,1 @@
-feat(camellia): organize copybook advanced fields
+chore(camellia): update edubox dependency
