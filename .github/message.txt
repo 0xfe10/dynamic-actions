@@ -1,1 +1,1 @@
-chore(camellia): update edubox editor grouping
+refactor(camellia): use grouped copybook advanced settings
