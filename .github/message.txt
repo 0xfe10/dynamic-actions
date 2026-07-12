@@ -1,1 +1,1 @@
-refactor(camellia): use grouped copybook advanced settings
+refactor(camellia): place copybook stroke source with resources
