@@ -1,1 +1,1 @@
-chore(camellia): update edubox advanced settings
+chore(camellia): update edubox dependency
