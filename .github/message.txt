@@ -1,1 +1,1 @@
-chore(camellia): update edubox flow guide fix
+chore(camellia): update edubox editor grouping
