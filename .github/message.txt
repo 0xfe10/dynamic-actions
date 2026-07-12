@@ -1,1 +1,1 @@
-refactor(camellia): place copybook stroke source with resources
+chore(camellia): update edubox advanced settings
