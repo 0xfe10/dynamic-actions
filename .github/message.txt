@@ -1,1 +1,1 @@
-feat(camellia): configure copybook field defaults
+fix(camellia): expand copybook content settings by default
