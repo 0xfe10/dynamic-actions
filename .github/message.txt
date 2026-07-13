@@ -1,1 +1,1 @@
-fix(camellia): expand copybook content settings by default
+chore(camellia): update edubox dependency
