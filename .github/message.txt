@@ -1,1 +1,11 @@
-Remove redundant generated Liquibase changeSets
+Release v0.0.274 (#563)
+
+* Add Liquibase changelog for schema updates
+
+Create a_captcha table
+Drop obsolete indexes on b_user and a_invoke_limit
+Convert many columns to clob/boolean and add remarks, defaults,
+and constraints
+Include new changelog in master.xml
+
+* Remove redundant generated Liquibase changeSets
