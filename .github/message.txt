@@ -1,1 +1,1 @@
-fix(camellia): sync stroke svg kai font source
+chore(camellia): update edubox dependency
