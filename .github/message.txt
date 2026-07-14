@@ -1,1 +1,1 @@
-feat(copybook): show stroke data preload progress
+chore(camellia): update edubox dependency
