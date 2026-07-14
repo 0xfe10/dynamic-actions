@@ -1,1 +1,1 @@
-fix(copybook): update camellia defaults
+feat(copybook): show stroke data preload progress
