@@ -1,1 +1,1 @@
-fix(camellia): update copybook defaults
+Merge branch 'main' of https://github.com/prtmax/labelix
