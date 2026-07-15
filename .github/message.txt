@@ -1,1 +1,1 @@
-ci(rubus): publish rubus image
+fix(rubus): bind server to pod interface
