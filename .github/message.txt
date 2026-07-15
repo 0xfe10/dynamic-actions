@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+fix：更新文档内容
