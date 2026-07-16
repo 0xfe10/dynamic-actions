@@ -1,1 +1,1 @@
-feat(camellia): refine floating tools hub
+fix(camellia): tighten floating tools hub
