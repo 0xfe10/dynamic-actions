@@ -1,1 +1,1 @@
-feat(camellia): add api endpoint switcher
+fix(camellia): make endpoint switcher selectable
