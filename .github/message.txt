@@ -1,1 +1,1 @@
-fix(camellia): make endpoint switcher selectable
+feat(camellia): add floating tools hub
