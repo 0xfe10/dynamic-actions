@@ -1,1 +1,1 @@
-feat(camellia): add floating tools hub
+feat(camellia): refine floating tools hub
