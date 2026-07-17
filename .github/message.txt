@@ -1,1 +1,1 @@
-图生图接口
+Add Liquibase changelog for a_customer_rfid table
