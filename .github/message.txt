@@ -1,1 +1,1 @@
-fix：修复优先读取配置文件问题
+feat(camellia): preserve editable copybook readings
