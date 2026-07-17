@@ -1,1 +1,1 @@
-fix(kerria): hide empty copybook categories
+fix：修复优先读取配置文件问题
