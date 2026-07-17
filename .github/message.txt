@@ -1,1 +1,1 @@
-Add Liquibase changelog for a_customer_rfid table (#565)
+优化代码
