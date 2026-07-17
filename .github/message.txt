@@ -1,1 +1,1 @@
-fix(kerria): filter copybook categories by grade and volume
+feat(camellia): show copybook reading editor in preview pane
