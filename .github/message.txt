@@ -1,1 +1,1 @@
-feat(camellia): show copybook reading editor in preview pane
+chore(camellia): update edubox copybook editor
