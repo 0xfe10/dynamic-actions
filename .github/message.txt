@@ -1,1 +1,1 @@
-fix(camellia): guard nullable mscene arrays
+fix：修复配置问题
