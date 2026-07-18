@@ -1,1 +1,1 @@
-fix：修复token问题
+fix(camellia): guard nullable mscene arrays
