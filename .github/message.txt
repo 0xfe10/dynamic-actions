@@ -1,1 +1,1 @@
-客户rfid增加uid字段
+增加属性：DEFAULT_PAPER_TYPE
