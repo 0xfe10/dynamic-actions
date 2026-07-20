@@ -1,1 +1,1 @@
-folder-template
+main
