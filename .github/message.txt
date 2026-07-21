@@ -1,1 +1,1 @@
-ai_llm_model表增加remark字段
+docs(openwiki): migrate repository knowledge graph
