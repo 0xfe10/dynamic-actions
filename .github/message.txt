@@ -1,4 +1,4 @@
-Add uid column to a_customer_rfid
+Add uid column to a_customer_rfid (#568)
 
 Add new Liquibase changelog to create uid (VARCHAR(100)) column on
 a_customer_rfid and include the changelog in master.xml
