@@ -1,1 +1,1 @@
-docs(openwiki): migrate repository knowledge graph
+fix(camellia): include api host in error details
