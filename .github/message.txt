@@ -1,1 +1,1 @@
-大模型增加remark字段 (#569)
+人像数据迁移到tattoo_element
