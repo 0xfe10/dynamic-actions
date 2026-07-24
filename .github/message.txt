@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/aiyinIAM
+fix：修复微信同步不新增人员问题
