@@ -1,1 +1,1 @@
-fix：修复微信同步不新增人员问题
+ci(aiyinid): use source repo image namespace

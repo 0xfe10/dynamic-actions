@@ -65,7 +65,7 @@ jobs:
       - uses: benjlevesque/short-sha@v3.0
 
       - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+        run: echo "REPO_NAME=prtmax_aiyinid" >> "$GITHUB_ENV"
 
       - name: Set image tags
         id: tags
@@ -129,7 +129,7 @@ jobs:
       - uses: benjlevesque/short-sha@v3.0
 
       - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+        run: echo "REPO_NAME=prtmax_aiyinid" >> "$GITHUB_ENV"
 
       - name: Set image tags
         id: tags
@@ -177,7 +177,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+        run: echo "REPO_NAME=prtmax_aiyinid" >> "$GITHUB_ENV"
 
       - uses: benjlevesque/short-sha@v3.0
 
