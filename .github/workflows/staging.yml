@@ -1,0 +1,198 @@
+name: "[aiyinid] Staging"
+
+on:
+  push:
+    branches:
+      - "**"
+
+env:
+  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
+jobs:
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Ensure main
+        id: ensure_main
+        run: |
+          if grep -q 'main' .github/branch.txt; then
+            echo "ENSURE_MAIN=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ENSURE_MAIN=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  build-core-image:
+    name: Build core image
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/aiyinid
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - name: Docker login (Aliyun)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aiyinid-core:sha-${{ env.SHA }}" >> "$GITHUB_OUTPUT"
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aiyinid-core:staging" >> "$GITHUB_OUTPUT"
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_aiyinid-core:sha-${{ env.SHA }}" >> "$GITHUB_OUTPUT"
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_aiyinid-core:staging" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: pkgs/core
+          file: pkgs/core/manifest/docker/Dockerfile
+          tags: |
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_staging }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
+            docker push ${{ steps.tags.outputs.ali_sha }}
+            docker push ${{ steps.tags.outputs.ali_staging }}
+
+  build-web-image:
+    name: Build web image
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/aiyinid
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - name: Docker login (Aliyun)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+
+      - name: Set image tags
+        id: tags
+        run: |
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aiyinid-web:sha-${{ env.SHA }}" >> "$GITHUB_OUTPUT"
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aiyinid-web:staging" >> "$GITHUB_OUTPUT"
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_aiyinid-web:sha-${{ env.SHA }}" >> "$GITHUB_OUTPUT"
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_aiyinid-web:staging" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: .
+          file: pkgs/web/Dockerfile
+          tags: |
+            ${{ steps.tags.outputs.ghcr_sha }}
+            ${{ steps.tags.outputs.ghcr_staging }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
+            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
+            docker push ${{ steps.tags.outputs.ali_sha }}
+            docker push ${{ steps.tags.outputs.ali_staging }}
+
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-core-image
+      - build-web-image
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/aiyinid
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - name: Set repo name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: apps-staging-aiyinid-hk0
+          changes: |
+            {
+              "argocd/apps/aiyinid-hk0/overlays/staging/values.yaml": {
+                "images.core": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_aiyinid-core:sha-${{ env.SHA }}",
+                "images.web": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_aiyinid-web:sha-${{ env.SHA }}"
+              }
+            }

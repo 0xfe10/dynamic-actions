@@ -1,0 +1,1 @@
+ci(aiyinid): retrigger after terraform secrets
