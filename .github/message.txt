@@ -1,1 +1,1 @@
-ai人像后台管理调整
+feat(rubus): 完成四 launcher 迁移与统一验收
