@@ -1,1 +1,1 @@
-fix：修复阿里云oss上传路径undefined问题
+feat：增加java更新部分
