@@ -1,1 +1,1 @@
-ci(aiyinid): use source repo image namespace
+fix：修复云端认证问题
