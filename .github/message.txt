@@ -1,1 +1,1 @@
-Add delete confirmations in camellia
+fix：发送短信和验证码登录校验账户是否有效
