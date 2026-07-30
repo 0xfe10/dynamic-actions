@@ -290,70 +290,6 @@ jobs:
             docker push ${{ steps.tags.outputs.ali_sha }}
             docker push ${{ steps.tags.outputs.ali_staging }}
 
-  build-rubus-image-feature-image:
-    name: Build rubus image feature image
-    runs-on: ubuntu-latest
-    needs:
-      - ensure-main
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/labelix
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
-
-      - name: Docker login
-        uses: docker/login-action@v3
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ${{ env.DOCKER_REGISTRY }}
-
-      - name: Docker login (Aliyun)
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
-          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
-          registry: ${{ env.DOCKER_REGISTRY_ALI }}
-
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rubus-image-feature:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rubus-image-feature:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rubus-image-feature:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rubus-image-feature:staging" >> $GITHUB_OUTPUT
-
-      - name: Build and push docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          context: .
-          file: rosaceae/cli/rubus-image-feature/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
-
-      - name: Push to Aliyun ACR (with retry)
-        uses: nick-fields/retry@v3
-        with:
-          timeout_minutes: 10
-          max_attempts: 5
-          retry_wait_seconds: 30
-          command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_staging }}
-
   deploy-apps:
     name: Deploy Apps
     runs-on: ubuntu-latest
@@ -361,7 +297,6 @@ jobs:
       - build-rosaceae-image
       - build-camellia-image
       - build-rubus-image
-      - build-rubus-image-feature-image
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
