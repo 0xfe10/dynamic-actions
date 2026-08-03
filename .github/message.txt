@@ -1,1 +1,1 @@
-fix：修改后台管理广场标签
+fix(kerria): harden copybook content text migration
