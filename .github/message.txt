@@ -1,1 +1,1 @@
-fix：边框分组查询参数groupId改为group
+fix：视频合集接口路径改为v3
