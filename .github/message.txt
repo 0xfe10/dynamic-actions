@@ -1,1 +1,1 @@
-fix：修复nn号关联问题并且新增设备以及型号联基删除
+fix: allow bootstrap without ASR config
