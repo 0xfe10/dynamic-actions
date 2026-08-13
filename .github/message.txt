@@ -1,1 +1,1 @@
-test(schema): enforce Snowflake table IDs
+docs(openwiki): align authorization state
