@@ -1,0 +1,69 @@
+name: "[cosmos] Staging"
+
+on:
+  push:
+    branches:
+      - "**"
+
+env:
+  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
+  DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  ensure-main:
+    runs-on: ubuntu-latest
+    outputs:
+      main: ${{ steps.branch.outputs.main }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: branch
+        run: test "$(cat .github/branch.txt)" = main && echo "main=true" >> "$GITHUB_OUTPUT" || echo "main=false" >> "$GITHUB_OUTPUT"
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: ensure-main
+    if: needs.ensure-main.outputs.main == 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/cosmos
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref_file: .github/ref.txt
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:staging
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: apps-staging-cosmos-hk0
+          valueFile: argocd/apps/cosmos-hk0/overlays/staging/values.yaml
+          propertyPath: image
+          value: ${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
