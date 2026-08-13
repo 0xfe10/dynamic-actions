@@ -1,1 +1,1 @@
-ci: let ArgoCD auto-sync Cosmos
+refactor(mercury): use one database URL
