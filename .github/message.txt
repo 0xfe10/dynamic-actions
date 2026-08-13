@@ -1,3 +1,3 @@
-fix(iam): allow ordinary role inheritance
+fix(iam): allow ordinary role inheritance (#4)
 
 Ignore unrelated system owners when validating a normal role graph while still rejecting owner inheritance edges.
