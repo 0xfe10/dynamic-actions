@@ -40,9 +40,16 @@ jobs:
         with:
           context: .
           push: true
-          target: mercury
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:latest
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:latest
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
+          valueFile: argocd/apps/cosmos-hk0/overlays/production/values.yaml
+          propertyPath: image
+          value: ${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}

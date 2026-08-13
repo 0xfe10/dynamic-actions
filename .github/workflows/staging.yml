@@ -15,23 +15,19 @@ permissions:
   packages: write
 
 jobs:
-  ensure-deploy-branch:
+  ensure-main:
     runs-on: ubuntu-latest
     outputs:
-      eligible: ${{ steps.branch.outputs.eligible }}
+      main: ${{ steps.branch.outputs.main }}
     steps:
       - uses: actions/checkout@v6
       - id: branch
-        run: |
-          case "$(cat .github/branch.txt)" in
-            main|agt/vega-staging-deploy) echo "eligible=true" >> "$GITHUB_OUTPUT" ;;
-            *) echo "eligible=false" >> "$GITHUB_OUTPUT" ;;
-          esac
+        run: test "$(cat .github/branch.txt)" = main && echo "main=true" >> "$GITHUB_OUTPUT" || echo "main=false" >> "$GITHUB_OUTPUT"
 
   build-and-deploy:
     runs-on: ubuntu-latest
-    needs: ensure-deploy-branch
-    if: needs.ensure-deploy-branch.outputs.eligible == 'true'
+    needs: ensure-main
+    if: needs.ensure-main.outputs.main == 'true'
     steps:
       - uses: actions/checkout@v6
       - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
@@ -50,37 +46,21 @@ jobs:
           username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
       - uses: benjlevesque/short-sha@v3.0
-      - name: Build and push Mercury image
+      - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          target: mercury
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:staging
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:staging
-      - name: Build and push Vega image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          target: vega
-          tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:staging
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:staging
-      - name: Deploy staging images
+      - name: Deploy
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
-          changes: |
-            {
-              "argocd/apps/cosmos-hk0/overlays/staging/values.yaml": {
-                "image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}",
-                "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}"
-              }
-            }
+          valueFile: argocd/apps/cosmos-hk0/overlays/staging/values.yaml
+          propertyPath: image
+          value: ${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
