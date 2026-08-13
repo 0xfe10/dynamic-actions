@@ -1,1 +1,1 @@
-feat(vega): complete authorization editors
+merge: integrate Vega delivery baseline
