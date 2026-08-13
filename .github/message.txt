@@ -1,1 +1,1 @@
-test(rigel): link feature vector proof
+feat(vega): add tenancy authorization flow
