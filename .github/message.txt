@@ -1,1 +1,1 @@
-feat(vega): add authorization control plane
+fix(runtime): publish client parameters
