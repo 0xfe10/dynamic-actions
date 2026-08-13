@@ -1,3 +1,5 @@
-fix(mercury): enforce runtime DB role
+feat: add identity authorization and rollout platform (#2)
 
-Self-bootstrap the authorization schema and use a NOLOGIN runtime role\nfor application connections after migration and runtime URLs were unified.\n\nAlso fix PostgreSQL 18 parameter inference and serialize app-owner\nmutations under the existing authorization-version lock.
+Add unified Platform/App IAM, feature rollout, A/B experiments, generated clients, Rigel integration, and Vega management workflows.
+
+Preserve decimal-string Snowflake contracts, no-FK integrity checks, audited mutations, owner safety, and a no-DDL runtime database role.
