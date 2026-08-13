@@ -50,9 +50,6 @@ jobs:
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-production-cosmos-hk0
           valueFile: argocd/apps/cosmos-hk0/overlays/production/values.yaml
           propertyPath: image
           value: ${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
