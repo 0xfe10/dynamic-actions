@@ -1,1 +1,1 @@
-fix(iam): isolate permission projections
+test(rigel): link feature vector proof
