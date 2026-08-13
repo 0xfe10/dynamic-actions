@@ -1,1 +1,1 @@
-docs(openwiki): align authorization state
+fix(vega): load current role policies
