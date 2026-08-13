@@ -1,3 +1,3 @@
-feat(iam): audit app context entry
+feat(iam): audit app context entry (#3)
 
 Keep platform delegation explicit and non-reusable while deriving access from Mercury authorization state.
