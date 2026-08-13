@@ -1,1 +1,1 @@
-refactor(mercury): use one database URL
+feat(vega): add staging dashboard deployment
