@@ -1,1 +1,3 @@
-merge: integrate Vega delivery baseline
+fix(mercury): enforce runtime DB role
+
+Self-bootstrap the authorization schema and use a NOLOGIN runtime role\nfor application connections after migration and runtime URLs were unified.\n\nAlso fix PostgreSQL 18 parameter inference and serialize app-owner\nmutations under the existing authorization-version lock.
