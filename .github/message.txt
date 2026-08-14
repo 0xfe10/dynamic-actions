@@ -1,9 +1,1 @@
-Square report (#147)
-
-* feat：举报接口和后台管理
-
-* fix：举报删除
-
----------
-
-Co-authored-by: caiwei12 <1776236406@qq.com>
+fix：测试部署
