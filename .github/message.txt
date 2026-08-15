@@ -1,1 +1,1 @@
-build(api): remove committed openapi specs
+docs(api): align contract workflow
