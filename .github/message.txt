@@ -1,1 +1,1 @@
-chore(lyra): fix formatting drift
+docs(openwiki): define dynamic app platform

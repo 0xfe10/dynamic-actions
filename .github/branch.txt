@@ -1,1 +1,1 @@
-agt/cosmos-platform-plan
+main
