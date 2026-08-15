@@ -1,1 +1,1 @@
-agt/cosmos-batch-6-compiler-preview
+agt/cosmos-batch-7-signed-release

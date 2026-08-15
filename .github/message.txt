@@ -1,1 +1,1 @@
-feat(preview): connect compiler validation
+feat(release): add Mercury release lifecycle
