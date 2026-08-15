@@ -1,1 +1,1 @@
-feat(release): add Mercury release lifecycle
+feat(mercury): add runtime data API
