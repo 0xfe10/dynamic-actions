@@ -1,1 +1,1 @@
-feat(contract): add Ceres contract pipeline
+chore(orion): update runtime capability bundle
