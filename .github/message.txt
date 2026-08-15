@@ -1,1 +1,1 @@
-docs(openwiki): define dynamic app platform
+feat(contract): add Ceres contract pipeline
