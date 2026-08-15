@@ -1,1 +1,1 @@
-chore(orion): update runtime client bundle (#7)
+chore(orion): update runtime client bundle
