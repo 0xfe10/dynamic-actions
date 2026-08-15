@@ -1,1 +1,3 @@
-chore(orion): update runtime capability bundle
+feat(catalog): add component capability catalog
+
+Add goose/sqlc persistence, Ceres validation, scoped APIs, and generated Platform contract. Keep catalog rows immutable for the runtime role with SELECT/INSERT-only grants.
