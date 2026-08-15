@@ -1,5 +1,1 @@
-feat(vega): unify workspace and identity IAM
-
-- Preserve published workspace migration history.
-- Move role assignment to identity management.
-- Refresh authorization after self-access changes.
+fix(rigel): update Mercury runtime path
