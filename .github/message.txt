@@ -1,1 +1,29 @@
-docs(api): align contract workflow
+feat(vega): unify workspace and identity IAM (#5)
+
+* chore: checkpoint current Vega work
+
+* feat(mercury): add workspace projection
+
+Add platform.access through a forward migration and backfill existing platform-bound roles. Keep authorization in the existing evaluator and app context.
+
+* feat(vega): resolve initial workspace
+
+Use the generated workspace projection and declare cookie parameters required by the regenerated client.
+
+* feat(vega): add workspace routing
+
+* feat(vega): unify workspace and identity IAM
+
+- Preserve published workspace migration history.
+- Move role assignment to identity management.
+- Refresh authorization after self-access changes.
+
+* fix(rigel): update Mercury runtime path
+
+* feat(mercury): expose openapi endpoints
+
+* build(api): generate clients from Mercury
+
+* build(api): remove committed openapi specs
+
+* docs(api): align contract workflow
