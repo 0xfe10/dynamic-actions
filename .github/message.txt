@@ -1,3 +1,5 @@
-fix(iam): allow ordinary role inheritance (#4)
+feat(vega): unify workspace and identity IAM
 
-Ignore unrelated system owners when validating a normal role graph while still rejecting owner inheritance edges.
+- Preserve published workspace migration history.
+- Move role assignment to identity management.
+- Refresh authorization after self-access changes.
