@@ -1,1 +1,1 @@
-build(api): generate clients from Mercury
+build(api): remove committed openapi specs
