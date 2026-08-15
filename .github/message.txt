@@ -1,3 +1,1 @@
-feat(catalog): add component capability catalog
-
-Add goose/sqlc persistence, Ceres validation, scoped APIs, and generated Platform contract. Keep catalog rows immutable for the runtime role with SELECT/INSERT-only grants.
+feat(composition): add drafts and immutable versions
