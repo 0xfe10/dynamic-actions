@@ -1,3 +1,3 @@
-chore(stack): sync Binary parent
+chore(stack): sync Solar parent
 
-Record the resolved data-source parent in the binary-build stack.
+Record the resolved binary-build parent in the final Solar stack.
