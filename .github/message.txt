@@ -1,1 +1,3 @@
-fix(ceres): resolve schema fragments
+fix(release): harden key and locale validation
+
+Authorize app-scoped verification keys with a pinned root and parse Fluent resources before signing.
