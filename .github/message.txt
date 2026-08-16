@@ -1,3 +1,1 @@
-chore(orion): sync preview branch
-
-Track the current Orion #6 head so the stacked Cosmos preview PR includes its profile-origin and developer-tool gating fixes.
+fix(ceres): resolve schema fragments
