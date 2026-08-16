@@ -1,1 +1,3 @@
-fix(vega): address studio review
+fix(preview): harden readiness and validation
+
+Require configured cross-origin preview messaging and validate capability manifests before rendering.
