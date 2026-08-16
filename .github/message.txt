@@ -1,3 +1,3 @@
-chore(orion): resolve stacked gitlink
+chore(stack): sync Rigel parent
 
-Carry the merged Orion #5 head after Cosmos #9 advanced the stack base.
+Carry the resolved Orion gitlink into the Mercury stack.
