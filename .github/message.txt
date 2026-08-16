@@ -1,1 +1,1 @@
-refactor(ceres): render contracts from templates
+chore(release): update Orion signed release
