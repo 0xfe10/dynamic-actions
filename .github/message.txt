@@ -1,3 +1,1 @@
-chore(stack): align Solar with main
-
-Carry the current platform documentation into the cumulative Solar PR before retargeting it to main.
+chore(stack): point Cosmos at Orion main
