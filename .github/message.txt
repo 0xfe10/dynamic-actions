@@ -1,3 +1,1 @@
-chore(orion): update binary build client
-
-Point Cosmos at the Orion binary-build head, including the authenticated runtime client and packaged build metadata.
+Merge remote-tracking branch 'origin/agt/cosmos-batch-1-ceres' into agt/cosmos-batch-2-rigel
