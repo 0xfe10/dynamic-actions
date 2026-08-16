@@ -1,1 +1,1 @@
-agt/cosmos-final-aggregate
+main

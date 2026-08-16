@@ -1,1 +1,3 @@
-chore(stack): point Cosmos at Orion main
+chore(stack): merge Cosmos aggregate
+
+Merge the complete Cosmos stack and the synchronized Orion main gitlink.
