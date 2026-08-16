@@ -1,1 +1,1 @@
-refactor(cosmos): propagate template generator
+refactor(solar): propagate review fixes
