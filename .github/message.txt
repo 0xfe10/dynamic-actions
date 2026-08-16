@@ -1,1 +1,3 @@
-Merge remote-tracking branch 'origin/agt/cosmos-batch-9-binary-build' into agt/cosmos-batch-10-project-boundaries
+chore(orion): resolve stacked gitlink
+
+Carry the merged Orion #5 head after Cosmos #9 advanced the stack base.
