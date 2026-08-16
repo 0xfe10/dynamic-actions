@@ -1,1 +1,1 @@
-agt/cosmos-batch-3-mercury
+agt/cosmos-batch-4-composition
