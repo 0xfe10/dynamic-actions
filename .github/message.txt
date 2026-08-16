@@ -1,3 +1,3 @@
-fix(runtime): secure data source actions
+fix(mercury): secure binary build workers
 
-Authenticate app users, enforce source policy, and reject unowned data source release references.
+Enqueue builds transactionally and add leased worker claims so queued jobs have a controlled execution path.\n\nMove result reporting behind worker bearer authentication and reject reports without an active claim.
