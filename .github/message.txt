@@ -1,5 +1,1 @@
-Merge remote-tracking branch 'origin/agt/cosmos-batch-9-binary-build' into agt/cosmos-batch-10-project-boundaries
-
-# Conflicts:
-#	solar/mercury/internal/release/localization.go
-#	solar/mercury/internal/release/signer.go
+fix(ceres): sync fragment runtime
