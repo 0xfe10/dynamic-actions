@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/agt/cosmos-batch-6-compiler-preview' into agt/cosmos-batch-7-signed-release
+Merge remote-tracking branch 'origin/agt/cosmos-batch-7-signed-release' into agt/cosmos-batch-8-datasource-actions
