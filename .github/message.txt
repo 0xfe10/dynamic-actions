@@ -1,3 +1,1 @@
-refactor(solar): split named Go projects
-
-Make Ceres and Mercury independent modules under a Solar workspace.\nMove Mercury out of services and keep its dependency on Ceres generated contracts explicit.
+refactor(ceres): render contracts from templates
