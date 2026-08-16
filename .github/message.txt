@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/agt/cosmos-batch-1-ceres' into agt/cosmos-batch-2-rigel
+Merge remote-tracking branch 'origin/agt/cosmos-batch-2-rigel' into agt/cosmos-batch-3-mercury
