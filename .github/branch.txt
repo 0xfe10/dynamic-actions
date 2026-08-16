@@ -1,1 +1,1 @@
-agt/cosmos-batch-5-vega-studio
+agt/cosmos-batch-6-compiler-preview

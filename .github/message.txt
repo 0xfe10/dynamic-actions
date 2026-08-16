@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/agt/cosmos-batch-4-composition' into agt/cosmos-batch-5-vega-studio
+fix(ceres): finish template merge
