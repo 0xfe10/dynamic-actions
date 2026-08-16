@@ -1,3 +1,1 @@
-fix(vega): reject non-object properties
-
-Keep Studio validation aligned with JSON Schema for object values.
+Merge remote-tracking branch 'origin/agt/cosmos-batch-5-vega-studio' into agt/cosmos-batch-6-compiler-preview
