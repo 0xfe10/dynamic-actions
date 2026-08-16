@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/agt/cosmos-batch-5-vega-studio' into agt/cosmos-batch-6-compiler-preview
+Merge remote-tracking branch 'origin/agt/cosmos-batch-6-compiler-preview' into agt/cosmos-batch-7-signed-release
