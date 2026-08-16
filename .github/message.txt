@@ -1,3 +1,3 @@
-fix(release): harden key and locale validation
+fix(vega): reject non-object properties
 
-Authorize app-scoped verification keys with a pinned root and parse Fluent resources before signing.
+Keep Studio validation aligned with JSON Schema for object values.
