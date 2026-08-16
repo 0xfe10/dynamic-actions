@@ -1,1 +1,1 @@
-agt/cosmos-batch-7-signed-release
+agt/cosmos-batch-3-mercury

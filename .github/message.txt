@@ -1,1 +1,1 @@
-chore(release): update Orion signed release
+fix(catalog): enforce capability contracts
