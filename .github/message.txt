@@ -1,3 +1,3 @@
-chore(orion): update runtime client
+chore(orion): update binary build client
 
-Point the runtime API integration at Orion #8's authenticated generated client.
+Point Cosmos at the Orion binary-build head, including the authenticated runtime client and packaged build metadata.
