@@ -1,3 +1,3 @@
-chore(stack): sync Composition parent
+chore(stack): sync Vega parent
 
-Carry the resolved Orion gitlink through the Composition stack.
+Carry the resolved Orion gitlink through the Vega stack.
