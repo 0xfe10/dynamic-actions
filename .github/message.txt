@@ -1,1 +1,1 @@
-fix(catalog): enforce capability contracts
+fix(composition): validate themes and actions
