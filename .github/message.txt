@@ -1,1 +1,1 @@
-chore(vega): colocate nginx config
+chore(vega): colocate nginx config (#30)
