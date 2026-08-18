@@ -1,1 +1,1 @@
-ci: authenticate quality submodules (#22)
+ci: update Orion FVM bootstrap
