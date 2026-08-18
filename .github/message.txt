@@ -1,1 +1,3 @@
 ci: default Bellatrix trust root
+
+Use the existing public trust root when the Actions variable is unset so Bellatrix deployment images remain buildable.
