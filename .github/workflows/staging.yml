@@ -15,6 +15,98 @@ permissions:
   packages: write
 
 jobs:
+  quality:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://postgres:ci-postgres-only@127.0.0.1:5432/mercury?sslmode=disable
+    services:
+      postgres:
+        image: postgres:18.1-bookworm
+        env:
+          POSTGRES_DB: mercury
+          POSTGRES_PASSWORD: ci-postgres-only
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d mercury"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/cosmos
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref_file: .github/ref.txt
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: .go-version
+          cache-dependency-path: solar/**/go.sum
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: lyra/package.json
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+          cache-dependency-path: lyra/pnpm-lock.yaml
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.44.9
+          cache: true
+      - uses: extractions/setup-just@v3
+      - name: Install FVM
+        run: dart pub global activate fvm 4.1.2
+      - name: Bootstrap
+        run: just bootstrap
+      - name: Check
+        run: just check
+      - name: Mercury race tests
+        run: just test-go
+      - name: PostgreSQL integration tests
+        run: just migrate && just test-db
+      - name: Install Playwright Chromium
+        run: pnpm --dir lyra exec playwright install --with-deps chromium
+      - name: Mercury, Vega, and Bellatrix browser E2E
+        env:
+          APP_ENVIRONMENT: Test
+          CORS_ALLOWED_ORIGINS: http://127.0.0.1:4180
+          MERCURY_BOOTSTRAP_PASSWORD: browser-e2e-password
+          MERCURY_E2E_EMAIL: browser-e2e@example.com
+          MERCURY_E2E_PASSWORD: browser-e2e-password
+          MERCURY_E2E_REAL: "1"
+          MERCURY_PROXY_URL: http://127.0.0.1:3000
+        run: |
+          just --justfile solar/mercury/Justfile bootstrap-admin --email "$MERCURY_E2E_EMAIL" --display-name Browser-E2E --reason browser-e2e-setup --request-id "50000000-0000-4000-8000-000000000001"
+          just run-api >mercury-e2e.log 2>&1 &
+          api_pid=$!
+          trap 'if [ -n "${bellatrix_pid:-}" ]; then kill "$bellatrix_pid" 2>/dev/null || true; wait "$bellatrix_pid" 2>/dev/null || true; fi; kill "$api_pid" 2>/dev/null || true; wait "$api_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 100); do
+            curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null && break
+            kill -0 "$api_pid" 2>/dev/null || { cat mercury-e2e.log; exit 1; }
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null || { cat mercury-e2e.log; exit 1; }
+          pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury"
+          (cd solar/mercury && go run ./cmd/seed-bellatrix-e2e) >bellatrix-fixture.json
+          just --justfile orion/Justfile bellatrix-web --dart-define=RUNTIME_BASE_URL=http://127.0.0.1:3000 --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:3000
+          python3 -m http.server 4180 --bind 127.0.0.1 --directory orion/apps/bellatrix/build/web >bellatrix-e2e.log 2>&1 &
+          bellatrix_pid=$!
+          for attempt in $(seq 1 100); do
+            curl --fail --silent http://127.0.0.1:4180 >/dev/null && break
+            kill -0 "$bellatrix_pid" 2>/dev/null || { cat bellatrix-e2e.log; exit 1; }
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4180 >/dev/null || { cat bellatrix-e2e.log; exit 1; }
+          BELLATRIX_E2E_REAL=1 BELLATRIX_SMOKE_E2E_REAL=1 BELLATRIX_SESSION_E2E_REAL=1 BELLATRIX_PREVIEW_E2E_REAL=1 BELLATRIX_E2E_URL=http://127.0.0.1:4180 BELLATRIX_PREVIEW_PARENT_URL=http://127.0.0.1:3000/health/live BELLATRIX_E2E_EMAIL="$(jq -r .email bellatrix-fixture.json)" BELLATRIX_SESSION_E2E_EMAIL=bellatrix-session-e2e@example.com BELLATRIX_E2E_PASSWORD="$(jq -r .password bellatrix-fixture.json)" pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Bellatrix"
+          just --justfile orion/Justfile bellatrix-web --dart-define=APP_ENV=production --dart-define=MERCURY_BASE_URL=https://mercury.invalid --dart-define=RUNTIME_BASE_URL=https://runtime.invalid --dart-define=RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo= --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:3000
+          BELLATRIX_PREVIEW_E2E_REAL=1 BELLATRIX_E2E_URL=http://127.0.0.1:4180 BELLATRIX_PREVIEW_PARENT_URL=http://127.0.0.1:3000/health/live pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Bellatrix preview"
+      - name: Lyra production build
+        run: pnpm --dir lyra build
+
   ensure-main:
     runs-on: ubuntu-latest
     outputs:
@@ -24,9 +116,69 @@ jobs:
       - id: branch
         run: test "$(cat .github/branch.txt)" = main && echo "main=true" >> "$GITHUB_OUTPUT" || echo "main=false" >> "$GITHUB_OUTPUT"
 
+  delivery-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/cosmos
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref_file: .github/ref.txt
+          submodules: recursive
+      - uses: docker/setup-buildx-action@v3
+      - name: Build Vega image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: vega
+          push: false
+          build-args: |
+            VITE_BELLATRIX_PREVIEW_URL=https://bellatrix.invalid
+          cache-from: type=gha,scope=vega
+          cache-to: type=gha,mode=max,scope=vega
+      - name: Build Bellatrix image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: bellatrix
+          push: false
+          cache-from: type=gha,scope=bellatrix
+          cache-to: type=gha,mode=max,scope=bellatrix
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: worker
+          push: false
+          cache-from: type=gha,scope=mercury-worker
+          cache-to: type=gha,mode=max,scope=mercury-worker
+
+  ios-quality:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/cosmos
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref_file: .github/ref.txt
+          submodules: recursive
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.44.9
+          cache: true
+      - uses: extractions/setup-just@v3
+      - name: Install FVM
+        run: dart pub global activate fvm 4.1.2
+      - name: Bootstrap Orion
+        run: just --justfile orion/Justfile bootstrap
+      - name: Rigel iOS simulator build
+        run: cd orion/apps/rigel && fvm flutter build ios --simulator --no-codesign
+
   build-and-deploy:
     runs-on: ubuntu-latest
-    needs: ensure-main
+    needs: [ensure-main, quality, delivery-images, ios-quality]
     if: needs.ensure-main.outputs.main == 'true'
     steps:
       - uses: actions/checkout@v6
@@ -35,6 +187,7 @@ jobs:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
           ref_file: .github/ref.txt
+          submodules: recursive
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
@@ -47,6 +200,7 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
       - uses: benjlevesque/short-sha@v3.0
       - name: Build and push image
+        id: mercury_image
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -56,11 +210,58 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:staging
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:staging
-      - name: Deploy
+      - name: Build and push worker image
+        id: worker_image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: worker
+          push: true
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury-worker:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury-worker:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker:staging
+      - name: Build and push Vega image
+        id: vega_image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: vega
+          push: true
+          build-args: |
+            VITE_BELLATRIX_PREVIEW_URL=https://bellatrix-stg.iprtapp.com
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:staging
+      - name: Build and push Bellatrix image
+        id: bellatrix_image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: bellatrix
+          push: true
+          build-args: |
+            BELLATRIX_RUNTIME_BASE_URL=https://mercury-stg.iprtapp.com
+            BELLATRIX_PREVIEW_PARENT_ORIGINS=https://vega-stg.iprtapp.com
+            BELLATRIX_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=${{ vars.COSMOS_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64 }}
+          tags: |
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix:sha-${{ env.SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix:staging
+      - name: Deploy Cosmos images
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
           valueFile: argocd/apps/cosmos-hk0/overlays/staging/values.yaml
-          propertyPath: image
-          value: ${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
+          changes: |
+            {
+              "image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury@${{ steps.mercury_image.outputs.digest }}",
+              "worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker@${{ steps.worker_image.outputs.digest }}",
+              "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega@${{ steps.vega_image.outputs.digest }}",
+              "bellatrix.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix@${{ steps.bellatrix_image.outputs.digest }}"
+            }
