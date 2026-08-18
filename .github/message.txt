@@ -1,1 +1,1 @@
-docs: align app platform implementation
+chore: align Orion gitlink
