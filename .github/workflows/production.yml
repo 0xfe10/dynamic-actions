@@ -204,7 +204,7 @@ jobs:
           build-args: |
             BELLATRIX_RUNTIME_BASE_URL=https://mercury.iprtapp.com
             BELLATRIX_PREVIEW_PARENT_ORIGINS=https://vega.iprtapp.com
-            BELLATRIX_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=${{ vars.COSMOS_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64 }}
+            BELLATRIX_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=${{ vars.COSMOS_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64 || '11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo=' }}
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:latest
