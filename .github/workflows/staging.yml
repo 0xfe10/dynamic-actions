@@ -70,7 +70,7 @@ jobs:
       - name: PostgreSQL integration tests
         run: just migrate && just test-db
       - name: Install Playwright Chromium
-        run: pnpm --dir lyra exec playwright install --with-deps chromium
+        run: pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium
       - name: Mercury, Vega, and Bellatrix browser E2E
         env:
           APP_ENVIRONMENT: Test

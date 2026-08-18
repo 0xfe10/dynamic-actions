@@ -1,1 +1,1 @@
-ci(api): stabilize Dart client generation (#24)
+ci: install Playwright from Vega workspace
