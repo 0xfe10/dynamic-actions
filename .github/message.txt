@@ -1,1 +1,1 @@
-ci: update Orion FVM bootstrap (#23)
+ci(api): stabilize Dart client generation
