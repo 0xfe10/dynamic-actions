@@ -188,28 +188,12 @@ jobs:
           target: vega
           push: true
           build-args: |
-            VITE_BELLATRIX_PREVIEW_URL=https://bellatrix.iprtapp.com
+            VITE_MERCURY_BASE_URL=https://mercury.iprtapp.com
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:latest
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:latest
-      - name: Build and push Bellatrix image
-        id: bellatrix_image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: bellatrix
-          push: true
-          build-args: |
-            BELLATRIX_RUNTIME_BASE_URL=https://mercury.iprtapp.com
-            BELLATRIX_PREVIEW_PARENT_ORIGINS=https://vega.iprtapp.com
-            BELLATRIX_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=${{ vars.COSMOS_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64 || '11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo=' }}
-          tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:latest
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix:latest
       - name: Deploy Cosmos images
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
@@ -220,6 +204,5 @@ jobs:
             {
               "image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury@${{ steps.mercury_image.outputs.digest }}",
               "worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker@${{ steps.worker_image.outputs.digest }}",
-              "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega@${{ steps.vega_image.outputs.digest }}",
-              "bellatrix.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix@${{ steps.bellatrix_image.outputs.digest }}"
+              "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega@${{ steps.vega_image.outputs.digest }}"
             }

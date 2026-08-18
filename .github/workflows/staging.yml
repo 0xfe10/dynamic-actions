@@ -139,17 +139,9 @@ jobs:
           target: vega
           push: false
           build-args: |
-            VITE_BELLATRIX_PREVIEW_URL=https://bellatrix.invalid
+            VITE_MERCURY_BASE_URL=https://mercury.invalid
           cache-from: type=gha,scope=vega
           cache-to: type=gha,mode=max,scope=vega
-      - name: Build Bellatrix image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: bellatrix
-          push: false
-          cache-from: type=gha,scope=bellatrix
-          cache-to: type=gha,mode=max,scope=bellatrix
       - uses: docker/build-push-action@v6
         with:
           context: .
@@ -235,28 +227,12 @@ jobs:
           target: vega
           push: true
           build-args: |
-            VITE_BELLATRIX_PREVIEW_URL=https://bellatrix-stg.iprtapp.com
+            VITE_MERCURY_BASE_URL=https://mercury-stg.iprtapp.com
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:staging
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:staging
-      - name: Build and push Bellatrix image
-        id: bellatrix_image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: bellatrix
-          push: true
-          build-args: |
-            BELLATRIX_RUNTIME_BASE_URL=https://mercury-stg.iprtapp.com
-            BELLATRIX_PREVIEW_PARENT_ORIGINS=https://vega-stg.iprtapp.com
-            BELLATRIX_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=${{ vars.COSMOS_RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64 || '11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo=' }}
-          tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-bellatrix:staging
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix:staging
       - name: Deploy Cosmos images
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
@@ -267,6 +243,5 @@ jobs:
             {
               "image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury@${{ steps.mercury_image.outputs.digest }}",
               "worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker@${{ steps.worker_image.outputs.digest }}",
-              "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega@${{ steps.vega_image.outputs.digest }}",
-              "bellatrix.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-bellatrix@${{ steps.bellatrix_image.outputs.digest }}"
+              "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega@${{ steps.vega_image.outputs.digest }}"
             }

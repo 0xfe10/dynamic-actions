@@ -1,3 +1,5 @@
-ci: default Bellatrix trust root
+fix(platform): restore intended boundaries
 
-Use the existing public trust root when the Actions variable is unset so Bellatrix deployment images remain buildable.
+- keep Ceres YAML as the sole schema source
+- connect Vega directly to Mercury's separate origin
+- keep Bellatrix local and CI only
