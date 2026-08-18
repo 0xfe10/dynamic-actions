@@ -1,5 +1,3 @@
 fix(platform): restore intended boundaries
 
-- keep Ceres YAML as the sole schema source
-- connect Vega directly to Mercury's separate origin
-- keep Bellatrix local and CI only
+Keep Ceres YAML as the sole schema source, connect Vega directly to Mercury's separate origin, and keep Bellatrix local and CI only.
