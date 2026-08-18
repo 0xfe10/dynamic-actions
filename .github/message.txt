@@ -1,3 +1,1 @@
-fix(platform): restore intended boundaries
-
-Keep Ceres YAML as the sole schema source, connect Vega directly to Mercury's separate origin, and keep Bellatrix local and CI only.
+chore(vega): colocate nginx config
