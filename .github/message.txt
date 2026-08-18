@@ -1,1 +1,5 @@
-chore: align Orion gitlink
+Complete Cosmos dynamic app platform (#21)
+
+- complete Mercury, Vega, Ceres, and Orion integration
+- add delivery gates and browser verification
+- align OpenWiki with the implemented platform
