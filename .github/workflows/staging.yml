@@ -40,6 +40,7 @@ jobs:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
           ref_file: .github/ref.txt
+          submodules: recursive
       - uses: actions/setup-go@v6
         with:
           go-version-file: .go-version
