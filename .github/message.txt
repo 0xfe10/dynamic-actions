@@ -1,1 +1,1 @@
-ci: install Playwright from Vega workspace (#25)
+ci: isolate browser E2E database
