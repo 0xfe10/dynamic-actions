@@ -1,1 +1,1 @@
-ci: isolate browser E2E database
+ci: isolate browser E2E database (#26)
