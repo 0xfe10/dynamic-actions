@@ -1,1 +1,1 @@
-ci: isolate browser E2E database (#26)
+test(e2e): type Bellatrix registration email
