@@ -1,1 +1,1 @@
-chore(orion): update preview phase tests (#33)
+chore(orion): fix Bellatrix CEL assets
