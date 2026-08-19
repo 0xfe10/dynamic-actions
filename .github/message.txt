@@ -1,1 +1,3 @@
-docs(vega): remove authorization check route
+fix(mercury): remove runtime database role
+
+Single DATABASE_URL deployments must migrate and run without CREATEROLE. FORCE RLS remains the tenant and app isolation boundary.
