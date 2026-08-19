@@ -1,7 +1,1 @@
-feat(platform): standardize management UX
-
-- make platform login identifiers immutable after creation
-- update browser titles and unify table action controls
-- refresh API clients and baselines
-
-BREAKING CHANGE: platform identity updates no longer accept email.
+style(vega): format English translations
