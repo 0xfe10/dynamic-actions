@@ -1,1 +1,1 @@
-fix：修复app功能副标题未返回问题
+feat(sorbus): add Go worker template
