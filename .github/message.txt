@@ -1,1 +1,3 @@
-style(vega): format English translations
+feat(platform)!: remove authorization check
+
+BREAKING CHANGE: remove POST /authorization/check and the Vega manual authorization-check page.
