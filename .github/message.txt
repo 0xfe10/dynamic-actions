@@ -1,1 +1,1 @@
-docs: align foreign key guidance
+fix(vega): handle insecure HTTP sessions
