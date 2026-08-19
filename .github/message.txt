@@ -1,3 +1,1 @@
-fix(mercury): remove runtime database role (#32)
-
-Single DATABASE_URL deployments must migrate and run without CREATEROLE. FORCE RLS remains the tenant and app isolation boundary.
+chore(orion): update preview phase tests
