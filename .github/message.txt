@@ -1,3 +1,1 @@
-feat(vega): add shared pagination settings
-
-Keep legacy permission catalog requests unpaginated while allowing Vega to use cursor and limit parameters.
+style(vega): format authorization API
