@@ -1,3 +1,4 @@
-feat(tenancy): add optional tenant business profiles (#42)
+feat(iam): split role ownership from binding scope
 
-Give Platform tenants a formal entity type and a separate 1:1 profile so operators can store legal name, contact, address, and internal notes without mixing that data into authorization or runtime context.
+ManagementRole is platform-owned and no longer carries instance scope.
+Bindings select Platform, Tenant, or App coverage so Tenant is not a third role domain.
