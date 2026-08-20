@@ -1,3 +1,4 @@
-fix(vega): centralize client ID fallback (#40)
+feat(iam): split role ownership from binding scope
 
-Centralize request, preview, error, and idempotency ID generation with browser-compatible fallbacks.
+ManagementRole is platform-owned and no longer carries instance scope.
+Bindings select Platform, Tenant, or App coverage so Tenant is not a third role domain.
