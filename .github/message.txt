@@ -1,1 +1,3 @@
-fix(vega): centralize client ID fallback
+fix(vega): centralize client ID fallback (#40)
+
+Centralize request, preview, error, and idempotency ID generation with browser-compatible fallbacks.
