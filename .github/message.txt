@@ -1,1 +1,1 @@
-chore(orion): fix Bellatrix CEL assets (#34)
+feat(vega): improve permission catalog
