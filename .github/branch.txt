@@ -1,1 +1,1 @@
-main
+agt/platform-pagination-settings
