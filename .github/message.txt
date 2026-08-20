@@ -1,1 +1,1 @@
-feat(vega): complete admin i18n
+feat(vega): complete admin i18n (#38)
