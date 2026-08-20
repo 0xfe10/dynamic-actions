@@ -1,1 +1,1 @@
-feat(vega): refine platform workflows
+feat(vega): refine platform workflows (#36)
