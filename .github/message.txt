@@ -1,4 +1,4 @@
-feat(iam): split role ownership from binding scope
+feat(iam): split role ownership from binding scope (#41)
 
 ManagementRole is platform-owned and no longer carries instance scope.
 Bindings select Platform, Tenant, or App coverage so Tenant is not a third role domain.
