@@ -1,2 +1,1 @@
-## v0.7.16
-- 新增CTextCanvas
+feat(hjinfo): add direct PBM image support
