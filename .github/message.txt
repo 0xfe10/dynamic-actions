@@ -1,1 +1,1 @@
-feat(hjinfo): add direct PBM image support
+ci: publish clang assets to GitHub releases
