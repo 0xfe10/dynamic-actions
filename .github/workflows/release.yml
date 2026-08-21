@@ -14,7 +14,6 @@ env:
 jobs:
   release-java:
     name: Release psdk-java
-    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -78,7 +77,6 @@ jobs:
 
   release-js:
     name: Release psdk-js
-    if: false
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -165,7 +163,6 @@ jobs:
 
   release-ohpm:
     name: Release psdk-ohpm
-    if: false
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/repotea-workspace/kangumi/harmonytools:sha-5e851a7
@@ -216,7 +213,6 @@ jobs:
 
   release-dart:
     name: Release psdk-dart
-    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -275,7 +271,6 @@ jobs:
 
   release-rust:
     name: Release psdk-rust
-    if: false
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: stable

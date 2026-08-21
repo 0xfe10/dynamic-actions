@@ -1,1 +1,1 @@
-ci: publish clang assets to GitHub releases
+ci: restore language release jobs
