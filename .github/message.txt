@@ -1,1 +1,13 @@
-fix：修改首页功能接口根据app获取
+Model (#148)
+
+* fix：机型和机型分类增加app
+
+* fix：机型和机型分类增加app字段
+
+* fix：修改执行脚本允许UPDATE语句
+
+* fix：修改首页功能接口根据app获取
+
+---------
+
+Co-authored-by: caiwei12 <1776236406@qq.com>
