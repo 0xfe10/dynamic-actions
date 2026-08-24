@@ -1,1 +1,1 @@
-fix(iam): allow platform tenant access
+fix(iam): allow platform tenant access (#46)
