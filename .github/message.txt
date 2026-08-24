@@ -1,1 +1,1 @@
-fix：机型和机型分类增加app字段
+fix：修改接口/api/v1/wrong/count报错
