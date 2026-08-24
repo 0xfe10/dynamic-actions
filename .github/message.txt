@@ -1,1 +1,1 @@
-feat(iam): add app access management (#45)
+fix(iam): allow platform tenant access
