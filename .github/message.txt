@@ -1,1 +1,1 @@
-fix(iam): allow platform tenant access (#46)
+fix(vega): fix member phone submission
