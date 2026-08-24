@@ -1,1 +1,1 @@
-fix(vega): fix member phone submission
+fix(vega): fix member phone submission (#47)
