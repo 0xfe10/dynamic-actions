@@ -1,1 +1,37 @@
-chore(api): accept account contract changes
+feat: complete management account phase 1 (#44)
+
+* feat(auth): add identifier schema
+
+Add the expand-only identifier authority and nullable credential/session metadata while preserving legacy account and session reads. Backfill existing identities idempotently without foreign keys or sequences.
+
+* feat(auth): add login identifiers
+
+Route account creation and login through the identifier authority. Generate tenant aliases with crypto/rand and enforce normalization, tenant suffix, uniqueness, and last-identifier guards.
+
+* feat(auth): scope platform sessions
+
+Persist the authenticated identifier, access scope, and password-change state. Keep legacy sessions global, accept the legacy email login field, and force temporary credentials through password replacement before business access.
+
+* feat(authz): enforce session scope
+
+Load platform session scope from PostgreSQL for every authorization decision. Tenant alias sessions fail closed outside their tenant and workspace projection omits platform and sibling tenant access.
+
+* feat(iam): add tenant administrator
+
+Create one immutable global tenant-administrator role with a fixed tenant-safe permission allowlist. Protect its scope, inheritance, expiry, and last effective administrator across binding and identity changes.
+
+* feat(tenancy): manage tenant accounts
+
+Add server-side member search, filtering, cursor pagination, role assignment, removal, and one-time temporary credentials. Create each tenant and its initial administrator atomically while reusing existing identities and protecting the final administrator.
+
+* feat(api): generate account contracts
+
+* fix(iam): correct account integration queries
+
+* feat(vega): manage tenant accounts
+
+* docs: document management accounts
+
+* fix(snowflake): renew expired ID windows
+
+* chore(api): accept account contract changes
