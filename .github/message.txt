@@ -1,8 +1,1 @@
-Merge remote-tracking branch 'origin/main' into agt/app-access-management
-
-# Conflicts:
-#	lyra/apps/vega/src/router.tsx
-#	lyra/apps/vega/src/tenant-management-pages.tsx
-#	lyra/apps/vega/src/test/vega-test.tsx
-#	lyra/apps/vega/src/workspace-routing.test.tsx
-#	solar/mercury/internal/authorization/validation.go
+feat(iam): add app access management (#45)
