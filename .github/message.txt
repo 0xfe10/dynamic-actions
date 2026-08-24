@@ -1,3 +1,1 @@
-fix(iam): complete role policy follow-ups (#43)
-
-Permit Platform Owner as a management parent while keeping owner roles immutable. Serialize App policy updates and preserve unsaved tenant profile input.
+chore(api): accept account contract changes
