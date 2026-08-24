@@ -1,1 +1,1 @@
-fix(vega): add member creation feedback
+fix(vega): improve member creation feedback (#51)
