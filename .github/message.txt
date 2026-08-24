@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/main' into model
+fix：修改执行脚本允许UPDATE语句
