@@ -1,1 +1,1 @@
-fix(vega): fix member phone submission (#47)
+fix(vega): add searchable phone codes
