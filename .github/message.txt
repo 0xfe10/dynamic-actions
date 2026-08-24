@@ -1,3 +1,1 @@
-fix(mercury): report request timeouts (#49)
-
-Allow API requests up to two minutes so slow member creation can complete without being mislabeled as an authorization outage.
+fix(mercury): allow five-minute requests
