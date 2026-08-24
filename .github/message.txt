@@ -1,1 +1,1 @@
-fix(mercury): allow five-minute requests (#50)
+fix(vega): add member creation feedback
