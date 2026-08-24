@@ -1,1 +1,3 @@
-fix(vega): add searchable phone codes (#48)
+fix(mercury): report request timeouts
+
+Allow API requests up to two minutes so slow member creation can complete without being mislabeled as an authorization outage.
