@@ -1,1 +1,1 @@
-fix(hjinfo): link speed test with zlib
+ci: restore language release jobs
