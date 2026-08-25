@@ -245,12 +245,12 @@ jobs:
           changes: |
             {
               "argocd/apps/openapps-hk0/overlays/production/erpfastprint/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-erpfastprint:sha-${{ env.SHA }}"
+                "[1].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-erpfastprint:sha-${{ env.SHA }}"
               },
               "argocd/apps/openapps-hk0/overlays/production/maprintrace/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-maprintrace:sha-${{ env.SHA }}"
+                "[1].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-maprintrace:sha-${{ env.SHA }}"
               },
               "argocd/apps/openapps-hk0/overlays/production/landing-page/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-landing-page:sha-${{ env.SHA }}"
+                "[1].value": "${{ env.DOCKER_REGISTRY_ALI_HK_VPC }}/xoohub/${{ env.REPO_NAME }}_openapps-landing-page:sha-${{ env.SHA }}"
               }
             }

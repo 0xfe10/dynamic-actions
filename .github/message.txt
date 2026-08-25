@@ -1,1 +1,1 @@
-Merge remote-tracking branch 'origin/main'
+fix(ci): target image patch values
