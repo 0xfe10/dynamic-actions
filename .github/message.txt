@@ -1,1 +1,1 @@
-ci: restore language release jobs
+feat(hjinfo): add print speed command
