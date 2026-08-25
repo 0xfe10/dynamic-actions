@@ -1,1 +1,1 @@
-ci: release clang only
+fix(hjinfo): link speed test with zlib
