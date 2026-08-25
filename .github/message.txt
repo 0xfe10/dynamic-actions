@@ -1,1 +1,1 @@
-feat(hjinfo): add print speed command
+ci: release clang only
