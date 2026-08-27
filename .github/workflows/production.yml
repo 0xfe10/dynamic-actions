@@ -68,6 +68,8 @@ jobs:
       - name: Mercury race tests
         run: just test-go
       - name: PostgreSQL integration tests
+        env:
+          MERCURY_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
         run: just migrate && just test-db
       - name: Install Playwright Chromium
         run: pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium

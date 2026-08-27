@@ -1,1 +1,1 @@
-test(mercury): harden restore and tamper proof
+fix(mercury): bind protected value restore proof
