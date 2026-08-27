@@ -1,1 +1,1 @@
-ci: prepare rubus-only production release
+Merge branch 'main' of https://github.com/prtmax/labelix
