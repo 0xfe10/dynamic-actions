@@ -1,3 +1,1 @@
-feat(mercury): add protected value envelope encryption
-
-Implements the Protected Value M1-M6 foundation, including AES-256-GCM envelopes, strict key rings, additive PostgreSQL schema, internal service and rotation worker, key lifecycle/readiness controls, retention purge, and exact backup manifest binding.
+feat(mercury): automate protected value lifecycle
