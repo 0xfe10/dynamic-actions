@@ -1,1 +1,1 @@
-agt/cosmos-secret-envelope
+main
