@@ -1,1 +1,1 @@
-feat(mercury): automate protected value lifecycle
+fix(mercury): enforce keyring generation monotonicity
