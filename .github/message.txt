@@ -1,1 +1,1 @@
-fix(rubus): create mysql migration history table
+fix(rubus): keep migrations out of server startup
