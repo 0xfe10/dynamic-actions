@@ -1,7 +1,1 @@
-feat(mercury): automate protected value lifecycle (#54)
-
-Mercury now loads Protected Value keyrings only at startup and the worker automatically reconciles bootstrap, stable cohort coverage, activation, rewrap enqueue, and startup-only paused rotation resume.
-
-The four Protected Value administrative CLI entrypoints and SIGHUP reload wiring are removed. Underlying cryptography, readiness, integrity, backup, and rewrap capabilities remain.
-
-Independent review found and verified fixes for generation monotonicity and pre-staged anti-rollback handling.
+test(mercury): prove protected value lifecycle e2e
