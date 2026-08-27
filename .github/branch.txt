@@ -1,1 +1,1 @@
-square-audit
+agt/labelix-prod-rubus-only

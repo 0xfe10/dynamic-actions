@@ -1,1 +1,1 @@
-fix：删除图片失败不影响流程
+ci: prepare rubus-only production release
