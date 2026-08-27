@@ -1,1 +1,1 @@
-chore: persist local postgres data under .data/pg
+feat(mercury): add protected value foundation
