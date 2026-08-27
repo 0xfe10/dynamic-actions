@@ -1,1 +1,1 @@
-test(mercury): prove protected value lifecycle e2e
+test(mercury): harden restore and tamper proof
