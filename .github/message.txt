@@ -1,1 +1,9 @@
-fix(mercury): close protected value restore gates
+test(mercury): prove protected value lifecycle e2e (#55)
+
+* test(mercury): prove protected value lifecycle e2e
+
+* test(mercury): harden restore and tamper proof
+
+* fix(mercury): bind protected value restore proof
+
+* fix(mercury): close protected value restore gates
