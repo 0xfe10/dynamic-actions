@@ -1,1 +1,1 @@
-Simplify storage governance (#60)
+chore(dev): run local services with compose
