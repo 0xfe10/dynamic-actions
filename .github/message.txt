@@ -1,1 +1,1 @@
-fix：修改sorbus未配置广场模型时不影响启动
+fix(rubus): run migrations on startup
