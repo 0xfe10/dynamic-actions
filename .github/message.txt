@@ -1,11 +1,1 @@
-feat(apps): add basic profile management (#59)
-
-* feat(apps): add basic profile management
-
-* fix(apps): align profile workspace access
-
-* docs(apps): document basic profile management
-
-* fix(apps): enforce profile and logo lifecycle invariants
-
-* fix(app-profile): harden logo cleanup lifecycle
+Simplify storage governance
