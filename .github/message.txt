@@ -1,1 +1,1 @@
-fix(storage): bind OSS uploads to declared size
+feat(tenancy): enforce explicit workspace membership
