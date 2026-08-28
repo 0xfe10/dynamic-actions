@@ -1,1 +1,11 @@
-fix(auth): keep platform owner within control plane
+feat(tenancy): enforce explicit workspace membership (#57)
+
+* feat(tenancy): enforce explicit workspace membership
+
+* fix(tenancy): harden membership mutation retries
+
+* fix(migration): sequence workspace scope after avatars
+
+* test(tenancy): cover concurrent initial administrator replay
+
+* fix(auth): keep platform owner within control plane
