@@ -1,1 +1,1 @@
-fix(storage): reconcile profile verification schema
+refactor(storage): remove filesystem provider
