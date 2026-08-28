@@ -1,1 +1,1 @@
-fix(tenancy): harden membership mutation retries
+test(tenancy): cover concurrent initial administrator replay
