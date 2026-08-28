@@ -1,1 +1,1 @@
-feat(vega): manage storage regions and account avatars
+fix(storage): bind OSS uploads to declared size
