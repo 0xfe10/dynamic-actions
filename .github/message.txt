@@ -1,6 +1,1 @@
-Merge remote-tracking branch 'origin/main' into agt/app-basic-profile
-
-# Conflicts:
-#	solar/mercury/db/migration-checksums.txt
-#	solar/mercury/internal/app/app.go
-#	solar/mercury/internal/migration/migration_test.go
+fix(app-profile): harden logo cleanup lifecycle
