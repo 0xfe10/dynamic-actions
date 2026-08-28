@@ -1,1 +1,1 @@
-docs(apps): document basic profile management
+chore(orion): track merged filesystem cleanup
