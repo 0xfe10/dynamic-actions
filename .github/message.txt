@@ -1,1 +1,1 @@
-chore(dev): run local services with compose
+fix(vega): separate application management forms
