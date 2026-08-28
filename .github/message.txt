@@ -1,1 +1,1 @@
-refactor(storage): remove filesystem provider
+docs(apps): document basic profile management
