@@ -1,1 +1,1 @@
-feat(tenancy): enforce explicit workspace membership
+fix(storage): address avatar and profile review findings

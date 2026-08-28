@@ -1,1 +1,1 @@
-agt/tenant-membership-access
+agt/storage-regions-avatar
