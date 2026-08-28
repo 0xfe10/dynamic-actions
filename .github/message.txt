@@ -1,1 +1,1 @@
-test(tenancy): cover concurrent initial administrator replay
+fix(auth): keep platform owner within control plane
