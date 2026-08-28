@@ -1,1 +1,1 @@
-Address storage governance review
+Guard unresolved storage copies
