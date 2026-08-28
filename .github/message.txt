@@ -1,1 +1,1 @@
-fix(vega): separate application management forms
+feat(settings): restore appearance and scoped storage
