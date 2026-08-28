@@ -1,1 +1,1 @@
-Guard unresolved storage copies
+Simplify storage governance (#60)
