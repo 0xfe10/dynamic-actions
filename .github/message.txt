@@ -1,1 +1,7 @@
-chore(orion): track merged filesystem cleanup
+refactor(storage): remove filesystem provider (#58)
+
+* fix(storage): reconcile profile verification schema
+
+* refactor(storage): remove filesystem provider
+
+* chore(orion): track merged filesystem cleanup
