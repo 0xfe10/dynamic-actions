@@ -1,1 +1,1 @@
-售后查询优化
+fix(ci): update image patch indexes

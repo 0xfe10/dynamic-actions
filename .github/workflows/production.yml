@@ -76,9 +76,9 @@ jobs:
           changes: |
             {
               "argocd/apps/suite-hk0/overlays/production/guestkey/api/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-api:sha-${{ env.SHA }}"
+                "[1].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-api:sha-${{ env.SHA }}"
               },
               "argocd/apps/suite-hk0/overlays/production/guestkey/vision/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-vision:sha-${{ env.SHA }}"
+                "[1].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/guestkey-vision:sha-${{ env.SHA }}"
               }
             }
