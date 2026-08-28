@@ -1,1 +1,9 @@
-fix(storage): address avatar and profile review findings
+Add logical storage regions and platform identity avatars (#56)
+
+* feat(mercury): add logical storage regions and avatars
+
+* feat(vega): manage storage regions and account avatars
+
+* fix(storage): bind OSS uploads to declared size
+
+* fix(storage): address avatar and profile review findings
