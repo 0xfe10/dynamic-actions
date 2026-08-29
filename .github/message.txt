@@ -1,5 +1,1 @@
-feat: add platform and app icon management (#69)
-
-* feat: add platform and app icon management
-
-* feat: add icon management pages
+fix: validate platform font metadata
