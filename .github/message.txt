@@ -1,1 +1,7 @@
-test(vega): cover dashboard layout preferences
+feat(vega): adopt unified shadcn dashboard UI (#78)
+
+* feat(vega): adopt unified shadcn dashboard UI
+
+* fix(vega): make workspace search independent of sidebar DOM
+
+* test(vega): cover dashboard layout preferences
