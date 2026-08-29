@@ -1,3 +1,1 @@
-feat(localization): manage reference and target columns
-
-Independent review passed; active reference CAS/audit and fixed-column ordering verified.
+fix(localization): pin reference columns first
