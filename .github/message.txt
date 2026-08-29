@@ -1,1 +1,1 @@
-fix(migration): block unsafe default region retirement
+fix(migration): lock default region preflight transaction
