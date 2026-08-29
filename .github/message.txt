@@ -1,1 +1,1 @@
-fix: validate platform font metadata
+chore(localization): regenerate workspace client
