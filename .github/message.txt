@@ -1,1 +1,9 @@
-fix(regions): accept BCP47 storage keys and rename app region input
+feat(regions): unify region catalog and language packs (#65)
+
+* refactor(vega): enforce full-width management layouts
+
+* feat(regions): restore the unified region catalog
+
+* feat(regions): complete unified region language pack migration
+
+* fix(regions): accept BCP47 storage keys and rename app region input
