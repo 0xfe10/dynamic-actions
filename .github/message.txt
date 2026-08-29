@@ -1,4 +1,12 @@
-fix(regions): broaden catalog read auth and repair region UI CAS
+feat(regions): public Region Catalog and App region multi-select (#62)
+
+* feat(regions): introduce public Region Catalog and App region multi-select
+
+Replace storage-owned regions with a single platform catalog, wire App
+multi-select independently from storage routing, and update Vega plus the
+OpenAPI baseline for the coordinated breaking switch.
+
+* fix(regions): broaden catalog read auth and repair region UI CAS
 
 Allow GET /regions via regions/storage/apps read at the request scope,
 grant tenant administrators catalog read, and fix app-region conflict
