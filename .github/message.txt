@@ -1,1 +1,3 @@
-fix(localization): record previous reference roles
+feat(localization): manage reference and target columns
+
+Independent review passed; active reference CAS/audit and fixed-column ordering verified.
