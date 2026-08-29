@@ -1,1 +1,1 @@
-merge origin/main into localization editor
+fix(localization): complete creation and reference validation
