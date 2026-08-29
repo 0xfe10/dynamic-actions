@@ -1,11 +1,1 @@
-fix: harden platform font uploads (#68)
-
-* fix: harden platform font uploads
-
-* fix: validate platform font metadata
-
-* fix: close platform font review gaps
-
-* fix: preserve platform font family integrity
-
-* fix: safely expire platform font uploads
+feat: polish icon and font asset workflows
