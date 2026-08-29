@@ -1,1 +1,15 @@
-test(migration): normalize bootstrap regression imports
+fix(migration): block unsafe default Region retirement (#66)
+
+* refactor(vega): enforce full-width management layouts
+
+* feat(regions): restore the unified region catalog
+
+* feat(regions): complete unified region language pack migration
+
+* fix(regions): accept BCP47 storage keys and rename app region input
+
+* fix(migration): block unsafe default region retirement
+
+* fix(migration): lock default region preflight transaction
+
+* test(migration): normalize bootstrap regression imports
