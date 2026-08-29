@@ -1,3 +1,1 @@
-fix(localization): pin reference columns first
-
-Independent review passed; reference column ordering and target boundary controls verified.
+feat(localization): expose translation diagnostics
