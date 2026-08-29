@@ -1,3 +1,1 @@
-fix(localization): honor workbench deep-link permissions
-
-Follow-up review fix.
+Merge origin/main into agt/platform-fonts-hardening
