@@ -1,3 +1,1 @@
-feat(localization): expose translation diagnostics
-
-Independent review passed; diagnostics schema and warning/error statuses verified.
+feat(localization): integrate import and export actions
