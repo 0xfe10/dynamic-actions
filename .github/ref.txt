@@ -1,1 +1,1 @@
-agt/control-plane-locale-studio
+main
