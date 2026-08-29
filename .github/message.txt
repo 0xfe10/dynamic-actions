@@ -1,1 +1,1 @@
-fix: preserve platform font family integrity
+fix(localization): align reference CAS with active packs
