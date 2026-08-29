@@ -1,1 +1,3 @@
-fix(localization): avoid duplicate primary reference
+feat(localization): complete workspace initialization and filters
+
+Independent review completed; filter, initialization, CAS locking, deep-link, and error feedback fixes verified.
