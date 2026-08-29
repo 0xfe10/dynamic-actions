@@ -1,1 +1,1 @@
-feat: polish icon and font asset workflows
+feat(vega): adopt unified shadcn dashboard UI
