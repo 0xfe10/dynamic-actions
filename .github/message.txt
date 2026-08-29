@@ -1,1 +1,1 @@
-fix(migration): lock default region preflight transaction
+test(migration): normalize bootstrap regression imports
