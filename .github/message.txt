@@ -1,1 +1,1 @@
-fix(localization): enforce workspace reference invariants
+fix(localization): keep region workbench deep links read-only
