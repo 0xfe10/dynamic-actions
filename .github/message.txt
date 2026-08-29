@@ -1,1 +1,1 @@
-fix(localization): keep region workbench deep links read-only
+fix: restore platform icon permissions
