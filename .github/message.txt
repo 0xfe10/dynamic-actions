@@ -1,7 +1,1 @@
-feat(vega): adopt unified shadcn dashboard UI (#78)
-
-* feat(vega): adopt unified shadcn dashboard UI
-
-* fix(vega): make workspace search independent of sidebar DOM
-
-* test(vega): cover dashboard layout preferences
+refactor(vega): align pages with admin dashboard patterns
