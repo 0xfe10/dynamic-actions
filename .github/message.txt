@@ -1,1 +1,1 @@
-feat(settings): restore appearance and scoped storage (#61)
+feat: finalize platform session and management updates
