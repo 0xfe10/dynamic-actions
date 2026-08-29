@@ -1,3 +1,11 @@
-feat(localization): integrate import and export actions
+fix: harden platform font uploads (#68)
 
-Independent review passed; explicit target selection and read-only export behavior verified.
+* fix: harden platform font uploads
+
+* fix: validate platform font metadata
+
+* fix: close platform font review gaps
+
+* fix: preserve platform font family integrity
+
+* fix: safely expire platform font uploads
