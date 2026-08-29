@@ -1,5 +1,5 @@
-feat(localization): manage public Fluent packs under Region Catalog
+fix(vega): harden region language pack workbench UX
 
-Add additive region language-pack drafts, immutable publishes, span-preserving
-key edits, manifest ZIP import/export, platform APIs, integrity gates, and a
-Vega Localization Hub without changing App translations or releases.
+Prevent null diagnostics crashes, clear conflict/dirty on reload and key
+switch, gate mutations when the region is disabled, and require a
+replacement locale when archiving the reference pack.
