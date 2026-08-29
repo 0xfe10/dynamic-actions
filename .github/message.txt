@@ -1,1 +1,1 @@
-feat(localization): add workspace filters and initialization
+fix(localization): harden workspace filters and role updates
