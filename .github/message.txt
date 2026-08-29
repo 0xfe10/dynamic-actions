@@ -1,1 +1,1 @@
-feat(localization): add Fluent editor diagnostics
+fix(localization): defer creation and enforce editor variables
