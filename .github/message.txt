@@ -1,1 +1,1 @@
-fix: safely expire platform font uploads
+fix(localization): preserve read-only exports
