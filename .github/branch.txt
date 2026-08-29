@@ -1,1 +1,1 @@
-agt/localization-workbench-complete
+agt/platform-fonts-hardening
