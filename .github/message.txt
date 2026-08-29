@@ -1,1 +1,3 @@
-fix(localization): preserve read-only exports
+feat(localization): integrate import and export actions
+
+Independent review passed; explicit target selection and read-only export behavior verified.
