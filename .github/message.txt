@@ -1,1 +1,5 @@
-feat: finalize platform session and management updates
+feat(regions): introduce public Region Catalog and App region multi-select
+
+Replace storage-owned regions with a single platform catalog, wire App
+multi-select independently from storage routing, and update Vega plus the
+OpenAPI baseline for the coordinated breaking switch.
