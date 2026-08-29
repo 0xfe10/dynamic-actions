@@ -1,1 +1,1 @@
-merge origin/main into localization columns
+fix(localization): audit reference updates and pin columns
