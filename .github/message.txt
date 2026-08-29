@@ -1,1 +1,3 @@
-fix(localization): validate language packs on creation
+feat(localization): add Fluent editor diagnostics
+
+Independent review passed; creation and entry saves enforce reference shape and selector structure.
