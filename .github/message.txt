@@ -1,15 +1,1 @@
-feat: control-plane locale catalog and App Studio boundary (#64)
-
-* feat(mercury): storage regions rename and application locale catalog
-
-Split storage regions from app locales: restore csm_storage_regions, add
-locale catalog APIs/permissions, and allow Studio enter via
-platform.app_workspaces.enter without tenant membership.
-
-* feat(vega): control-plane locales nav and full-width app management
-
-Split Applications vs Settings routes, wire locale catalog/app locales UI to Mercury, and allow Studio enter via platform.app_workspaces.enter without membership.
-
-* fix(studio): project enterable apps without membership
-
-Include active tenants/apps in workspace projection when the actor has platform-scoped platform.app_workspaces.enter, and gate the app locales subnav on platform.app_locales.read.
+feat: separate locale management workflows
