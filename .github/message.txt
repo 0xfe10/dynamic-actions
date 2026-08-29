@@ -1,1 +1,1 @@
-fix(localization): complete creation and reference validation
+fix(localization): validate Fluent selector shapes
