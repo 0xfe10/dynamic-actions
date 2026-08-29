@@ -1,1 +1,1 @@
-chore(localization): regenerate workspace client
+fix(localization): enforce workspace reference invariants
