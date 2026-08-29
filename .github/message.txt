@@ -1,1 +1,1 @@
-feat(regions): complete unified region language pack migration
+fix(regions): accept BCP47 storage keys and rename app region input
