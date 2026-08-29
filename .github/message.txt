@@ -1,1 +1,1 @@
-refactor(vega): align pages with admin dashboard patterns
+refactor(vega): align pages with admin dashboard patterns (#79)
