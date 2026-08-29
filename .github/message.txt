@@ -1,1 +1,1 @@
-feat: add platform fonts
+fix: tighten platform font lifecycle
