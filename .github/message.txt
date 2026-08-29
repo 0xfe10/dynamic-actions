@@ -1,1 +1,1 @@
-fix(localization): validate Fluent selector shapes
+fix(localization): fingerprint Fluent selector operands
