@@ -1,1 +1,1 @@
-agt/platform-fonts-hardening
+agt/icon-management
