@@ -1,1 +1,1 @@
-fix(localization): fingerprint Fluent selector operands
+fix(localization): validate language packs on creation
