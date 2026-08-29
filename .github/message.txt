@@ -1,1 +1,1 @@
-feat(localization): integrate import and export actions
+fix(localization): require explicit import target
