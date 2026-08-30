@@ -1,3 +1,1 @@
-fix(storage): retain quota for finalized device materials
-
-Fresh PostgreSQL upload/finalize and quota integration test passes.
+Merge origin/main into agt/device-catalog-complete
