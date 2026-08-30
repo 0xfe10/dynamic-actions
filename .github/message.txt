@@ -1,1 +1,3 @@
 fix(devicecatalog): reject versions for archived products
+
+Fresh PostgreSQL service lifecycle test passes.
