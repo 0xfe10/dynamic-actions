@@ -1,3 +1,1 @@
-docs: document Device Catalog architecture
-
-Branch check passed; OpenWiki CLI unavailable and explicit checked-in curation was used.
+feat(devicecatalog): add version attribute value APIs
