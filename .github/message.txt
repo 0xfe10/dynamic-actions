@@ -1,1 +1,3 @@
-fix(device-catalog): harden version publish validation
+fix: harden Device Catalog version publishing
+
+Branch check and focused Mercury tests passed.
