@@ -1,3 +1,1 @@
-test: cover Device Catalog image and paper invariants
-
-Branch check passed after syncing origin/main.
+feat(device-catalog): list product versions
