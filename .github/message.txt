@@ -1,3 +1,1 @@
-feat: list Device Catalog version paper associations
-
-Branch check passed after syncing origin/main.
+docs: document Device Catalog architecture
