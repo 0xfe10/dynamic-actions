@@ -1,1 +1,3 @@
-fix: include assigned device products in App views
+feat: add Device Catalog foundation
+
+Squash merge after self-review and passing trigger CI. The PR retains documented local-environment and pre-existing Vega test limitations.
