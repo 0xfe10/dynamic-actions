@@ -1,1 +1,3 @@
-feat(vega): enhance shared device catalog workspace
+feat: enhance shared Device Catalog workspace
+
+Branch check passed; Vega typecheck passed. Full test suite retains the known unrelated region-language-packs failure.
