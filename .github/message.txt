@@ -1,3 +1,1 @@
-feat(vega): show device product gallery metadata
-
-Adds shared active-version gallery metadata with complete data states.
+feat(devicecatalog): account image uploads against storage quota
