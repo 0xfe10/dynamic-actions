@@ -1,3 +1,1 @@
-fix: harden Device Catalog version publishing
-
-Branch check and focused Mercury tests passed.
+feat(device-catalog): add material product associations
