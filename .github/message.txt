@@ -1,3 +1,1 @@
-feat: complete Device Catalog APIs and storage integration
-
-Merged after passing branch checks and local Mercury verification. OpenAPI compatibility remains blocked by pre-existing localization baseline drift.
+feat(device-catalog): support App product cloning
