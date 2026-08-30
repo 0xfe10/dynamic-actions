@@ -1,1 +1,3 @@
-fix(device-catalog): scope assignment revocation
+fix: scope Device Catalog assignment revocation
+
+Branch check and focused Mercury tests passed.
