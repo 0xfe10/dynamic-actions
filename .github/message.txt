@@ -1,1 +1,1 @@
-feat(vega): polish application asset workflows
+feat: unify app studio resource catalogs
