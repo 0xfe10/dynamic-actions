@@ -1,3 +1,1 @@
-fix(devicecatalog): expire missing upload objects
-
-Expires missing objects cleanly and propagates unexpected storage errors.
+feat(vega): show device product gallery metadata
