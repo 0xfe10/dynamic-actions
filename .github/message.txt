@@ -1,3 +1,1 @@
-feat: expose App Studio product materials
-
-Branch check and focused Mercury tests passed.
+feat(device-catalog): list version paper associations
