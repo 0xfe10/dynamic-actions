@@ -1,1 +1,3 @@
 test(vega): cover Device Catalog workspace filtering
+
+Branch check passed; Vega typecheck and focused Vitest passed.
