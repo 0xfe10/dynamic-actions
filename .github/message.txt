@@ -1,1 +1,3 @@
-chore: sync origin/main
+feat(devicecatalog): expose version image previews
+
+Adds presigned version image previews and renders them in shared Vega details.
