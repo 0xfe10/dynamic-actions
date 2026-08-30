@@ -1,3 +1,1 @@
-fix(devicecatalog): harden tutorial video validation
-
-Hardens tutorial video source and MIME validation.
+feat(devicecatalog): expose version image previews
