@@ -1,1 +1,1 @@
-fix: prevent banner asset leaks and expired publishes
+feat(vega): enhance shared device catalog workspace
