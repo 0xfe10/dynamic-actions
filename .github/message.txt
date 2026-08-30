@@ -1,3 +1,1 @@
-test(vega): cover Device Catalog workspace filtering
-
-Branch check passed; Vega typecheck and focused Vitest passed.
+fix(device-catalog): copy version materials during clone
