@@ -1,3 +1,1 @@
-feat(vega): add device product details panel
-
-Adds shared typed read-only product details panel and corrects list columns.
+fix(devicecatalog): clone version attribute values
