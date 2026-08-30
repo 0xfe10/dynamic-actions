@@ -1,1 +1,1 @@
-refactor(vega): align pages with admin dashboard patterns (#79)
+feat(vega): polish application asset workflows
