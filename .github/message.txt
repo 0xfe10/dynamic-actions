@@ -1,3 +1,1 @@
-feat(devicecatalog): add version attribute value APIs
-
-Adds CAS-protected version attribute value APIs for platform and App Studio, with typed validation and generated client routes.
+feat(devicecatalog): add product version update API
