@@ -1,4 +1,1 @@
-Merge remote-tracking branch 'origin/main' into agt/banner-management-final
-
-# Conflicts:
-#	lyra/packages/platform-api/src/generated/platform.ts
+feat(device-catalog): add paper type lifecycle APIs
