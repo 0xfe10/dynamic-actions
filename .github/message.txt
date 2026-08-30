@@ -1,1 +1,3 @@
 test(devicecatalog): verify fresh migration contract
+
+Fresh PostgreSQL Device Catalog migration contract test passes.
