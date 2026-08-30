@@ -1,1 +1,1 @@
-feat(devicecatalog): add product version update API
+chore: sync origin/main
