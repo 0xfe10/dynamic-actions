@@ -1,1 +1,1 @@
-agt/device-catalog-complete
+agt/banner-management

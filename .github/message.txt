@@ -1,1 +1,1 @@
-feat(mercury): add device schema and paper catalog APIs
+fix: harden banner publishing and uploads
