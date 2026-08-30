@@ -1,1 +1,4 @@
-fix(vega): enforce gallery ordering and primary image
+Merge remote-tracking branch 'origin/main' into agt/device-catalog-complete
+
+# Conflicts:
+#	lyra/apps/vega/src/device-catalog-pages.tsx
