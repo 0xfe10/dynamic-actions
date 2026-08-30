@@ -1,1 +1,3 @@
 chore(api): refresh generated upload intent client
+
+Generated client matches current OpenAPI contract.
