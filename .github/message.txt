@@ -1,3 +1,1 @@
-feat: list Device Catalog version images
-
-Branch check and focused Mercury tests passed.
+feat(device-catalog): add material update APIs
