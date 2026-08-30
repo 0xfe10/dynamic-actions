@@ -1,3 +1,1 @@
-fix(devicecatalog): preserve clone and conflict semantics
-
-Fresh PostgreSQL clone, assignment, and conflict integration test passes.
+fix(storage): reserve quota for material upload intents
