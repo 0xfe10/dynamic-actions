@@ -1,1 +1,3 @@
 fix(devicecatalog): expose upload intent IDs as snowflakes
+
+OpenAPI and full Go spec tests pass.
