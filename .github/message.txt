@@ -1,1 +1,1 @@
-feat(devicecatalog): expose version image previews
+chore: sync origin/main
