@@ -1,3 +1,4 @@
-feat: enhance shared Device Catalog workspace
+Merge remote-tracking branch 'origin/main' into agt/banner-management-final
 
-Branch check passed; Vega typecheck passed. Full test suite retains the known unrelated region-language-packs failure.
+# Conflicts:
+#	lyra/packages/platform-api/src/generated/platform.ts
