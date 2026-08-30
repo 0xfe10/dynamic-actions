@@ -1,1 +1,97 @@
-feat(devicecatalog): add manual upload intents
+feat(devicecatalog): add manual upload intents (#128)
+
+* feat(mercury): add device schema and paper catalog APIs
+
+* feat(device-catalog): complete image and app APIs
+
+* feat(device-catalog): support App product cloning
+
+* feat(device-catalog): add material lifecycle APIs
+
+* feat(vega): enhance shared device catalog workspace
+
+* feat(device-catalog): add paper type lifecycle APIs
+
+* feat(device-catalog): add version paper type associations
+
+* feat(device-catalog): materialize expired image orphans
+
+* test(device-catalog): cover paper and image invariants
+
+* feat(device-catalog): list product versions
+
+* fix(device-catalog): normalize empty version data
+
+* feat(device-catalog): add product detail APIs
+
+* feat(device-catalog): add schema attribute options APIs
+
+* fix(device-catalog): harden version publish validation
+
+* feat(device-catalog): add material product associations
+
+* fix(device-catalog): validate material storage assets
+
+* test(vega): cover Device Catalog workspace filtering
+
+* fix(device-catalog): copy version materials during clone
+
+* fix(device-catalog): scope assignment revocation
+
+* feat(device-catalog): list version image relations
+
+* feat(device-catalog): add material update APIs
+
+* feat(device-catalog): expose App product materials
+
+* feat(device-catalog): list version paper associations
+
+* docs: document Device Catalog architecture
+
+* feat(devicecatalog): add version attribute value APIs
+
+* feat(devicecatalog): add product version update API
+
+* fix(devicecatalog): enforce schema value constraints
+
+* test(devicecatalog): guard migration integrity structure
+
+* feat(vega): add device product details panel
+
+* fix(devicecatalog): clone version attribute values
+
+* fix(devicecatalog): validate tutorial cover on publish
+
+* feat(devicecatalog): run image orphan cleanup worker
+
+* fix(devicecatalog): expire missing upload objects
+
+* feat(vega): show device product gallery metadata
+
+* feat(devicecatalog): account image uploads against storage quota
+
+* fix(devicecatalog): harden tutorial video validation
+
+* feat(devicecatalog): expose version image previews
+
+* feat(vega): edit device product galleries
+
+* fix(vega): enforce gallery ordering and primary image
+
+* feat(devicecatalog): publish app products
+
+* feat(vega): show version attributes and paper types
+
+* feat(vega): manage device product assignments
+
+* feat(vega): edit version paper type relations
+
+* feat(vega): edit draft device attributes
+
+* feat(vega): publish device product versions
+
+* feat(vega): show app device product materials
+
+* feat(devicecatalog): archive app products
+
+* feat(devicecatalog): add manual upload intents
