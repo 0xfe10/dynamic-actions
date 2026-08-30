@@ -1,3 +1,1 @@
-feat: add Device Catalog material associations
-
-Branch check and focused Mercury tests passed.
+fix(device-catalog): validate material storage assets
