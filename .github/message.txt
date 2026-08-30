@@ -1,1 +1,1 @@
-feat: unify app studio resource catalogs
+feat: add device catalog foundation
