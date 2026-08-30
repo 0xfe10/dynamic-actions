@@ -1,3 +1,1 @@
-feat: add Device Catalog material lifecycle APIs
-
-Branch check passed; focused Mercury tests and OpenAPI generation passed.
+fix: prevent banner asset leaks and expired publishes
