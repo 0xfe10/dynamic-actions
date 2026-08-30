@@ -1,1 +1,1 @@
-fix(device-catalog): normalize empty version data
+merge origin/main into device catalog branch
