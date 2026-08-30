@@ -1,1 +1,1 @@
-feat(vega): show device product gallery metadata
+chore: sync origin/main
