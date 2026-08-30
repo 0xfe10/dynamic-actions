@@ -1,3 +1,1 @@
-feat: add Device Catalog schema options APIs
-
-Branch check and focused Mercury tests passed.
+fix(device-catalog): harden version publish validation
