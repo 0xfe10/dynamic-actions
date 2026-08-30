@@ -1,1 +1,5 @@
-feat(vega): publish device product versions
+Merge remote-tracking branch 'origin/main' into agt/device-catalog-complete
+
+# Conflicts:
+#	lyra/apps/vega/src/device-catalog-pages.tsx
+#	lyra/apps/vega/src/device-catalog.ts
