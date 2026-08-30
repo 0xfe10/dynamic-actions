@@ -1,1 +1,3 @@
-chore: sync origin/main
+feat(vega): show device product gallery metadata
+
+Adds shared active-version gallery metadata with complete data states.
