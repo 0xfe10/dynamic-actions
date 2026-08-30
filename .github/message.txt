@@ -1,1 +1,3 @@
 test(devicecatalog): cover tutorial publish and archive assignment rules
+
+Verify active tutorial covers and archived product assignment rejection.
