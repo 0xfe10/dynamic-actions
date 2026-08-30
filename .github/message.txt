@@ -1,1 +1,3 @@
-Merge origin/main into agt/device-catalog-complete
+fix(devicecatalog): persist schema value types
+
+Fresh PostgreSQL schema and lifecycle integration test pass after rebasing on main.
