@@ -1,3 +1,1 @@
-fix: validate Device Catalog material assets
-
-Branch check and focused Mercury tests passed.
+test(vega): cover Device Catalog workspace filtering
