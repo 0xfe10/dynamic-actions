@@ -1,1 +1,1 @@
-feat: add device catalog foundation
+fix: include assigned device products in App views
