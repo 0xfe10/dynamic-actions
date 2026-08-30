@@ -1,3 +1,1 @@
-fix(devicecatalog): enforce schema value constraints
-
-Enforces schema value bounds and structure with regression tests.
+test(devicecatalog): guard migration integrity structure
