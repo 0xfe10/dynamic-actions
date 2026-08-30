@@ -1,3 +1,1 @@
-feat(devicecatalog): add product version update API
-
-Adds CAS-protected draft version updates for platform and App Studio with regenerated typed client.
+fix(devicecatalog): enforce schema value constraints
