@@ -1,3 +1,1 @@
-fix(storage): reserve quota for material upload intents
-
-Fresh PostgreSQL material upload intent and quota integration test passes.
+fix(storage): retain quota for finalized device materials
