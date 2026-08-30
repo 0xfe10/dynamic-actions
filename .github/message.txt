@@ -1,1 +1,3 @@
 test(migration): make fresh database setup deterministic
+
+Fresh PostgreSQL migration and integration startup validation pass.
