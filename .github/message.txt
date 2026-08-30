@@ -1,3 +1,1 @@
-fix: normalize empty Device Catalog version data
-
-Branch check passed after syncing origin/main.
+feat(device-catalog): add product detail APIs
