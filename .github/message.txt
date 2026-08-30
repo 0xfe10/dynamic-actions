@@ -1,1 +1,3 @@
 test(devicecatalog): guard migration integrity structure
+
+Adds structural regression coverage for Device Catalog migration 00066.
