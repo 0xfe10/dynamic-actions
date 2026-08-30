@@ -1,3 +1,1 @@
-feat(devicecatalog): account image uploads against storage quota
-
-Adds atomic Device Catalog image quota checks, usage accounting, and orphan constraint migration.
+fix(devicecatalog): harden tutorial video validation
