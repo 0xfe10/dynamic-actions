@@ -1,1 +1,1 @@
-test(device-catalog): cover paper and image invariants
+merge origin/main into device catalog branch
