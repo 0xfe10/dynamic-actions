@@ -1,4 +1,3 @@
-test(consumables): cover catalog workflows
+fix(ci): prune stale runtime client models after generate-check
 
-Lock shared workspace behavior, capability derivation, reserved regions,
-and selection revision handling with unit tests.
+Point Orion at the generated Dart client that matches the live runtime spec.
