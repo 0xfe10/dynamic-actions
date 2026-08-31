@@ -1,5 +1,5 @@
-refactor(vega): restyle product details and split oversized pages
+feat(devices): unify business resource lifecycle to active/disabled/archived
 
-Align device product details with the shared page shell, and extract
-oversized management screens so form validation and catalog editors stay
-in focused modules.
+Remove draft/published as visibility states for device products, versions,
+materials, fonts, and icon groups so create is immediately active and
+admin enable/disable/archive replaces publish.
