@@ -1,5 +1,4 @@
-fix(ci): pause SQL migrations until platform owner bootstrap
+chore(orion): bump runtime client without stale banner models
 
-00059 grants icon permissions to platform_owner, which migrate cannot
-create. Apply through 58 first, then resume after bootstrap in CI
-test-db and E2E.
+Point the Orion submodule at the prune that removes obsolete
+BannerRuntimeContext generated Dart files so generate-check passes.
