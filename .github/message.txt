@@ -1,1 +1,5 @@
-refactor(vega): polish admin UI and accessibility
+refactor(vega): restyle product details and split oversized pages
+
+Align device product details with the shared page shell, and extract
+oversized management screens so form validation and catalog editors stay
+in focused modules.
