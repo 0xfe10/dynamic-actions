@@ -1,3 +1,4 @@
-chore(mercury): refresh OpenAPI baselines for staging compat
+fix(ci): put bootstrap password inside the test-db subshell
 
-Absorb consumable catalog paths and removed locale/language-pack routes so openapi-compat stops blocking staging quality.
+The previous assignment before `(cd ...)` is invalid bash and aborted
+PostgreSQL integration tests before they started.
