@@ -1,4 +1,5 @@
-fix(mercury): set zh-CN logical region on Bellatrix E2E seed storage
+fix(mercury): make Bellatrix seed admin setup idempotent
 
-CreateProfile/PutBinding require a BCP-47 logical region; empty keys fail
-validation and blocked seed-bellatrix-e2e once integration tests went green.
+Skip CreateInitialAdministrator when tenant 1 already has an admin so
+re-seeding does not hit authorization replay/actor failures, and allow
+tenant_administrator permission supersets from later migrations.
