@@ -1,4 +1,4 @@
-fix(ci): put bootstrap password inside the test-db subshell
+fix(ci): bootstrap platform owner before protected-value E2E migrate
 
-The previous assignment before `(cd ...)` is invalid bash and aborted
-PostgreSQL integration tests before they started.
+00059 grants icon permissions to platform_owner; isolated E2E databases
+must pause at 00058, bootstrap, then finish migrations like startupDatabase.
