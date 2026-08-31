@@ -1,1 +1,1 @@
-feat(devices): add schema option management
+fix(devices): scope shared product detail queries
