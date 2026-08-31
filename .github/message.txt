@@ -1,5 +1,5 @@
-feat(vega): simplify consumable catalog under /platform/consumables
+fix(consumables): keep inactive dictionary values visible on edit
 
-Move list, categories, and paper types into a dedicated Consumables area,
-strip retired print/compat fields from the shared editor, and keep legacy
-device-catalog routes as redirects.
+Include the currently assigned category or paper type in selectors even
+when it is disabled, and point comments at migration 00076 after rebasing
+onto main's 00075 lifecycle change.
