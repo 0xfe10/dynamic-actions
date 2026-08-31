@@ -1,1 +1,1 @@
-feat(fonts): show face file sizes
+feat(devices): split platform catalog navigation
