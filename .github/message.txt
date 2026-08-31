@@ -1,3 +1,4 @@
-fix(ci): run SQL migrations against the Actions Postgres service
+fix(mercury): clear staticcheck blockers for staging CI (#148)
 
-Docker Compose migrate needs a local .env and image that CI does not provide.
+Remove unused banner asset attach handlers and schemaOptionPath, and
+replace deprecated zip SetModTime so quality can pass and staging deploy.
