@@ -1,4 +1,4 @@
-fix(vega): keep required markers out of accessible field names
+fix(vega): wait for resource upload form before oversized-file checks
 
-Required asterisks were part of label text, so tests and getByLabelText
-could not match the visible field name.
+The oversized-file case was racing an empty page and asserting a unique
+alert plus a disabled submit button that the form does not set.
