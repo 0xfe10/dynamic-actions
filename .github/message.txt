@@ -1,1 +1,1 @@
-feat(devices): add schema and paper type edit pages
+feat(devices): add resource disable action
