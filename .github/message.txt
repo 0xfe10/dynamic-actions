@@ -1,4 +1,5 @@
-fix(ci): put bootstrap password inside the test-db subshell
+fix(ci): pause SQL migrations until platform owner bootstrap
 
-The previous assignment before `(cd ...)` is invalid bash and aborted
-PostgreSQL integration tests before they started.
+00059 grants icon permissions to platform_owner, which migrate cannot
+create. Apply through 58 first, then resume after bootstrap in CI
+test-db and E2E.
