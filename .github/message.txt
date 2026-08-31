@@ -1,4 +1,1 @@
 merge origin/main into feat/remove-business-draft-status
-
-Keep main's consumable catalog as 00074 and renumber the draft-status
-migration to 00075.
