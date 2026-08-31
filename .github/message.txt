@@ -1,4 +1,4 @@
-fix(ci): clear staticcheck failures that block quality
+fix(ci): format generated platform API client with Prettier
 
-Remove unused device-catalog and banner API leftovers and replace
-deprecated zip header SetModTime so Mercury check can pass.
+Lyra format-check rejects the OpenAPI TypeScript output until Prettier
+rewrites it.
