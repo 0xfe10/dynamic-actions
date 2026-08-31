@@ -1,1 +1,4 @@
-style(vega): prettier consumable catalog sources
+fix(mercury): resolve 00076 seed actor without role.created_by
+
+Bootstrap leaves platform_owner.created_by null, so paper-type seeding
+now prefers the bound platform identity (then any identity) for CI fresh DBs.
