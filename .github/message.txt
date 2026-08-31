@@ -1,5 +1,4 @@
-fix(mercury): make Bellatrix seed admin setup idempotent
+fix(vega): resolve assignment app names by row tenant
 
-Skip CreateInitialAdministrator when tenant 1 already has an admin so
-re-seeding does not hit authorization replay/actor failures, and allow
-tenant_administrator permission supersets from later migrations.
+Assignment rows looked up app labels from the assign-form tenant's app
+list, so cross-tenant rows could show the wrong name or only the id.
