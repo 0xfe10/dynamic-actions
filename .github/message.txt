@@ -1,1 +1,1 @@
-fix(device-catalog): align schema materials and assignments
+fix(device-catalog): align schema materials and assignments (#146)
