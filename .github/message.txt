@@ -1,4 +1,4 @@
-fix(mercury): use zh-CN for live app-logo orphan fixture
+fix(mercury): set zh-CN logical region on Bellatrix E2E seed storage
 
-Match the region check constraint and profile used by the rest of the
-replacement-failure integration test.
+CreateProfile/PutBinding require a BCP-47 logical region; empty keys fail
+validation and blocked seed-bellatrix-e2e once integration tests went green.
