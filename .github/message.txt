@@ -1,1 +1,1 @@
-feat(devices): add standalone product creation
+fix(devices): honor catalog resource permissions
