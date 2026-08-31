@@ -1,1 +1,1 @@
-feat(devices): add manual and tutorial upload pages
+feat(devices): add material edit pages
