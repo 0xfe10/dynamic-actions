@@ -1,4 +1,5 @@
-fix(mercury): resolve 00076 seed actor without role.created_by
+fix(mercury): adapt integration tests to paper-type identifiers
 
-Bootstrap leaves platform_owner.created_by null, so paper-type seeding
-now prefers the bound platform identity (then any identity) for CI fresh DBs.
+Require identifier on CreatePaperType, tolerate 00076 seeds in list
+assertions, use a BCP-47 region for orphan fixtures, and recreate the
+retired storage_migrations stub so 00042 can replay on modern schemas.
