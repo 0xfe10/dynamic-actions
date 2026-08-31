@@ -1,1 +1,1 @@
-feat(devices): add material edit pages
+feat(devices): add material publish archive actions
