@@ -1,4 +1,4 @@
-fix(mercury): drop only existing storage profile constraints in replay
+fix(mercury): query app-logo orphans by zh-CN region
 
-The post-00042 schema uses provider_configuration_check, not the older
-csm_storage_profiles_check name the replay fixture should not drop.
+After retiring the invalid default region key, List/insert fixtures must
+use the same BCP-47 region as the test storage profile.
