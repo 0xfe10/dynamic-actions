@@ -1,1 +1,1 @@
-fix(fonts): accept CJK metadata payloads
+feat(fonts): show face file sizes
