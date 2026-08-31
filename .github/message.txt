@@ -1,4 +1,5 @@
-fix(vega): restore exact label matching for required fields (#149)
+fix(ci): pause SQL migrations until platform owner bootstrap
 
-Keep RequiredIndicator out of label textContent so getByLabelText exact
-matches work again, and align a few form tests with submit-time validation.
+00059 grants icon permissions to platform_owner, which migrate cannot
+create. Apply through 58 first, then resume after bootstrap in CI
+test-db and E2E.
