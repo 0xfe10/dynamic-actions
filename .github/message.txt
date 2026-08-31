@@ -1,4 +1,4 @@
-chore(orion): bump runtime client without stale banner models
+chore(orion): bump runtime client without stale banner models (#150)
 
 Point the Orion submodule at the prune that removes obsolete
 BannerRuntimeContext generated Dart files so generate-check passes.
