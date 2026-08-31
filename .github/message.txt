@@ -1,4 +1,3 @@
-fix(vega): wait for resource upload form before oversized-file checks
+fix(devices): serialize material product IDs as snowflake strings
 
-The oversized-file case was racing an empty page and asserting a unique
-alert plus a disabled submit button that the form does not set.
+Restore TransformSchema so OpenAPI exposes productId as a string, matching the rest of the catalog.
