@@ -1,3 +1,3 @@
-fix(devices): serialize material product IDs as snowflake strings
+merge origin/main into feat/remove-business-draft-status
 
-Restore TransformSchema so OpenAPI exposes productId as a string, matching the rest of the catalog.
+Keep both material-region and lifecycle migrations by numbering the latter 00074, and retain active/disabled/archived semantics on the incoming region work.
