@@ -1,5 +1,1 @@
-fix(consumables): keep inactive dictionary values visible on edit
-
-Include the currently assigned category or paper type in selectors even
-when it is disabled, and point comments at migration 00076 after rebasing
-onto main's 00075 lifecycle change.
+style(vega): prettier consumable catalog sources
