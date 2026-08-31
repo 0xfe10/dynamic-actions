@@ -1,4 +1,5 @@
-fix(ci): bootstrap platform owner before isolated E2E migrations
+fix(devices): preserve version CAS revision when forking
 
-Protected-value Postgres tests create empty databases and called
-migration.Run, which cannot apply 00059 until platform_owner exists.
+Forked versions started at revision 1, so a stale UpdateVersion with
+revision 1 succeeded. Carry the previous revision forward, and align
+integration fixtures with BCP47 regions and active font status.
