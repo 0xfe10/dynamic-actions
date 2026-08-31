@@ -1,41 +1,4 @@
-feat: add Consumable Catalog (platform + App Studio) (#147)
+fix(mercury): clear staticcheck blockers for staging CI
 
-* feat(mercury): add consumable catalog schema
-
-Introduce platform/App consumable tables, soft selections, purchase entries,
-permissions, and storage orphan allowlist without seeding material types.
-
-* feat(mercury): add consumable catalog service
-
-Implement ownership, categories, translations, device bindings, purchase
-matching, CAS revision, and soft select/deselect with App isolation.
-
-* feat(mercury): add consumable asset lifecycle
-
-Add upload intents, finalize validation, detach-on-replace, and orphan
-cleanup for consumable cover/background/mask/gallery assets.
-
-* feat(mercury): expose consumable catalog APIs
-
-Register platform and App Studio Huma routes for consumables, categories,
-selections, and upload intents with permission metadata.
-
-* feat(vega): add shared consumable workspace
-
-Add the single ConsumableWorkspacePage with editor sections and thin
-Platform/App adapters so both surfaces share one business UI.
-
-* feat(vega): integrate consumable navigation and access
-
-Wire Platform and App Studio routes, sidebar entries, permission gates,
-and localized consumable catalog copy.
-
-* test(consumables): cover catalog workflows
-
-Lock shared workspace behavior, capability derivation, reserved regions,
-and selection revision handling with unit tests.
-
-* fix(consumables): reclaim unconsumed finalized uploads
-
-Expire finalized-but-unconsumed upload intents in cleanup and reuse
-finalized intent IDs on save retry so failed creates do not leak objects.
+Remove unused banner asset attach handlers and schemaOptionPath, and
+replace deprecated zip SetModTime so quality can pass and staging deploy.
