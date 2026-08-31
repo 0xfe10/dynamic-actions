@@ -1,5 +1,4 @@
-fix(mercury): adapt integration tests to paper-type identifiers
+fix(mercury): drop only existing storage profile constraints in replay
 
-Require identifier on CreatePaperType, tolerate 00076 seeds in list
-assertions, use a BCP-47 region for orphan fixtures, and recreate the
-retired storage_migrations stub so 00042 can replay on modern schemas.
+The post-00042 schema uses provider_configuration_check, not the older
+csm_storage_profiles_check name the replay fixture should not drop.
