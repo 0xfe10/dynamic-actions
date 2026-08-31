@@ -1,1 +1,4 @@
-fix(device-catalog): align schema materials and assignments (#146)
+fix(ci): clear staticcheck failures that block quality
+
+Remove unused device-catalog and banner API leftovers and replace
+deprecated zip header SetModTime so Mercury check can pass.
