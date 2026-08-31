@@ -92,6 +92,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          # Alibaba Cloud ACR (personal edition) rejects Buildx's OCI
+          # provenance attestation manifest (application/vnd.oci.empty.v1+json).
+          provenance: false
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           platforms: linux/amd64
