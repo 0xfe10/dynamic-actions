@@ -1,1 +1,1 @@
-feat(devices): add schema and paper type create pages
+feat(devices): add schema and paper type edit pages
