@@ -1,5 +1,1 @@
-feat(devices): unify business resource lifecycle to active/disabled/archived
-
-Remove draft/published as visibility states for device products, versions,
-materials, fonts, and icon groups so create is immediately active and
-admin enable/disable/archive replaces publish.
+fix(device-catalog): align schema materials and assignments
