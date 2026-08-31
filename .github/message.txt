@@ -1,4 +1,4 @@
-fix(vega): resolve assignment app names by row tenant
+fix(mercury): seed Bellatrix E2E fixtures with in-memory OSS by default
 
-Assignment rows looked up app labels from the assign-form tenant's app
-list, so cross-tenant rows could show the wrong name or only the id.
+Browser E2E runs seed without live OSS credentials; fall back to the same
+in-memory object store the integration test already uses.
