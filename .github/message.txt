@@ -1,1 +1,1 @@
-feat(devices): add resource disable action
+feat(devices): add manual and tutorial upload pages
