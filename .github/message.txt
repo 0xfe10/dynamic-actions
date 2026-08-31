@@ -1,1 +1,1 @@
-feat(devices): manage material product links
+feat(devices): add standalone assignment management
