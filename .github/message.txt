@@ -1,4 +1,4 @@
-fix(mercury): seed Bellatrix E2E fixtures with in-memory OSS by default
+fix(mercury): ensure zh-CN region before Bellatrix E2E seed storage
 
-Browser E2E runs seed without live OSS credentials; fall back to the same
-in-memory object store the integration test already uses.
+Fresh browser-E2E databases have no logical regions after migrate, so
+CreateProfile failed with invalid authorization change on requireActiveRegions.
