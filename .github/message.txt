@@ -1,4 +1,4 @@
-fix(mercury): clear staticcheck blockers for staging CI (#148)
+fix(vega): restore exact label matching for required fields
 
-Remove unused banner asset attach handlers and schemaOptionPath, and
-replace deprecated zip SetModTime so quality can pass and staging deploy.
+Keep RequiredIndicator out of label textContent so getByLabelText exact
+matches work again, and align a few form tests with submit-time validation.
