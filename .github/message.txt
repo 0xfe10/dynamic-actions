@@ -1,4 +1,4 @@
-fix(mercury): query app-logo orphans by zh-CN region
+fix(mercury): use zh-CN for live app-logo orphan fixture
 
-After retiring the invalid default region key, List/insert fixtures must
-use the same BCP-47 region as the test storage profile.
+Match the region check constraint and profile used by the rest of the
+replacement-failure integration test.
