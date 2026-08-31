@@ -1,1 +1,1 @@
-fix(devices): scope shared product detail queries
+refactor(vega): polish admin UI and accessibility
