@@ -1,4 +1,4 @@
-fix(ci): bootstrap platform owner before protected-value E2E migrate
+fix(ci): bootstrap platform owner before isolated E2E migrations
 
-00059 grants icon permissions to platform_owner; isolated E2E databases
-must pause at 00058, bootstrap, then finish migrations like startupDatabase.
+Protected-value Postgres tests create empty databases and called
+migration.Run, which cannot apply 00059 until platform_owner exists.
