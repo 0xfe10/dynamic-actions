@@ -1,4 +1,4 @@
-fix(ci): format generated platform API client with Prettier
+fix(vega): keep required markers out of accessible field names
 
-Lyra format-check rejects the OpenAPI TypeScript output until Prettier
-rewrites it.
+Required asterisks were part of label text, so tests and getByLabelText
+could not match the visible field name.
