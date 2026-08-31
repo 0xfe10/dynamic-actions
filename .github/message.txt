@@ -1,3 +1,4 @@
-merge origin/main into feat/remove-business-draft-status
+test(consumables): cover catalog workflows
 
-Keep both material-region and lifecycle migrations by numbering the latter 00074, and retain active/disabled/archived semantics on the incoming region work.
+Lock shared workspace behavior, capability derivation, reserved regions,
+and selection revision handling with unit tests.
