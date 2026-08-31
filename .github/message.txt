@@ -1,4 +1,66 @@
-fix(devices): cast disabled_by and finish schema-75 fixtures
+feat(devices): unify business resource lifecycle to active/disabled/archived (#145)
+
+* feat(devices): unify business resource lifecycle to active/disabled/archived
+
+Remove draft/published as visibility states for device products, versions,
+materials, fonts, and icon groups so create is immediately active and
+admin enable/disable/archive replaces publish.
+
+* fix(ci): clear staticcheck failures that block quality
+
+Remove unused device-catalog and banner API leftovers and replace
+deprecated zip header SetModTime so Mercury check can pass.
+
+* fix(ci): format generated platform API client with Prettier
+
+Lyra format-check rejects the OpenAPI TypeScript output until Prettier
+rewrites it.
+
+* fix(vega): keep required markers out of accessible field names
+
+Required asterisks were part of label text, so tests and getByLabelText
+could not match the visible field name.
+
+* fix(vega): wait for resource upload form before oversized-file checks
+
+The oversized-file case was racing an empty page and asserting a unique
+alert plus a disabled submit button that the form does not set.
+
+* fix(devices): serialize material product IDs as snowflake strings
+
+Restore TransformSchema so OpenAPI exposes productId as a string, matching the rest of the catalog.
+
+* fix(ci): prune stale runtime client models after generate-check
+
+Point Orion at the generated Dart client that matches the live runtime spec.
+
+* fix(ci): run SQL migrations against the Actions Postgres service
+
+Docker Compose migrate needs a local .env and image that CI does not provide.
+
+* fix(ci): pause SQL migrations until platform owner bootstrap
+
+00059 grants icon permissions to platform_owner, which migrate cannot
+create. Apply through 58 first, then resume after bootstrap in CI
+test-db and E2E.
+
+* fix(ci): put bootstrap password inside the test-db subshell
+
+The previous assignment before `(cd ...)` is invalid bash and aborted
+PostgreSQL integration tests before they started.
+
+* fix(ci): bootstrap platform owner before isolated E2E migrations
+
+Protected-value Postgres tests create empty databases and called
+migration.Run, which cannot apply 00059 until platform_owner exists.
+
+* fix(devices): preserve version CAS revision when forking
+
+Forked versions started at revision 1, so a stale UpdateVersion with
+revision 1 succeeded. Carry the previous revision forward, and align
+integration fixtures with BCP47 regions and active font status.
+
+* fix(devices): cast disabled_by and finish schema-75 fixtures
 
 PostgreSQL inferred CASE disabled_by as text, so Disable failed.
 Integration tests now rewind goose without version gaps, seed BCP47
