@@ -1,3 +1,4 @@
-fix(ci): prune stale runtime client models after generate-check
+fix(consumables): reclaim unconsumed finalized uploads
 
-Point Orion at the generated Dart client that matches the live runtime spec.
+Expire finalized-but-unconsumed upload intents in cleanup and reuse
+finalized intent IDs on save retry so failed creates do not leak objects.
