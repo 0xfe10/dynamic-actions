@@ -1,1 +1,1 @@
-refactor(devices): keep materials out of product detail
+feat(devices): manage material product links
