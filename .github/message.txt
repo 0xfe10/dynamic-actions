@@ -1,5 +1,5 @@
-fix(devices): preserve version CAS revision when forking
+fix(devices): cast disabled_by and finish schema-75 fixtures
 
-Forked versions started at revision 1, so a stale UpdateVersion with
-revision 1 succeeded. Carry the previous revision forward, and align
-integration fixtures with BCP47 regions and active font status.
+PostgreSQL inferred CASE disabled_by as text, so Disable failed.
+Integration tests now rewind goose without version gaps, seed BCP47
+regions, and keep font/storage mutations valid after draft removal.
