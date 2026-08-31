@@ -1,1 +1,1 @@
-feat(devices): split platform catalog navigation
+feat(devices): split platform product detail route
