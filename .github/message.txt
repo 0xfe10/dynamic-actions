@@ -1,1 +1,1 @@
-feat(devices): add standalone assignment management
+feat(devices): add schema option management
