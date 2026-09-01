@@ -1,1 +1,1 @@
-Improve platform catalog workflows and UI
+feat: deliver first-wave app feature runtime contract
