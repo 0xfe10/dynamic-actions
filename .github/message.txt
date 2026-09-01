@@ -1,3 +1,92 @@
-Serve directory-store E2E objects with sniffed image/png Content-Type.
+Simplify Consumable Catalog (00076 phase-1 + UI shrink) (#152)
+
+* feat(mercury): add 00075 consumable catalog simplification
+
+Forward-compat migration: paper-type identifiers and seeds, category
+slugs, App-only category refs, and relaxed obsolete print-spec constraints
+without editing 00074 or dropping columns yet.
+
+* feat(mercury): shrink consumable and paper-type APIs
+
+Drop device-compatibility and material-type surfaces, flatten categories,
+require paper-type identifiers, and let App Studio read enabled paper
+types with consumables or device-product permissions.
+
+* chore(api): refresh OpenAPI baseline for consumable shrink
+
+Capture the simplified consumable/paper-type contract and regenerate the
+platform TypeScript client so generate-check matches the live schemas.
+
+* feat(vega): simplify consumable catalog under /platform/consumables
+
+Move list, categories, and paper types into a dedicated Consumables area,
+strip retired print/compat fields from the shared editor, and keep legacy
+device-catalog routes as redirects.
+
+* fix(consumables): keep inactive dictionary values visible on edit
+
+Include the currently assigned category or paper type in selectors even
+when it is disabled, and point comments at migration 00076 after rebasing
+onto main's 00075 lifecycle change.
+
+* style(vega): prettier consumable catalog sources
+
+* fix(mercury): resolve 00076 seed actor without role.created_by
+
+Bootstrap leaves platform_owner.created_by null, so paper-type seeding
+now prefers the bound platform identity (then any identity) for CI fresh DBs.
+
+* fix(mercury): adapt integration tests to paper-type identifiers
+
+Require identifier on CreatePaperType, tolerate 00076 seeds in list
+assertions, use a BCP-47 region for orphan fixtures, and recreate the
+retired storage_migrations stub so 00042 can replay on modern schemas.
+
+* fix(mercury): drop only existing storage profile constraints in replay
+
+The post-00042 schema uses provider_configuration_check, not the older
+csm_storage_profiles_check name the replay fixture should not drop.
+
+* fix(mercury): query app-logo orphans by zh-CN region
+
+After retiring the invalid default region key, List/insert fixtures must
+use the same BCP-47 region as the test storage profile.
+
+* fix(mercury): use zh-CN for live app-logo orphan fixture
+
+Match the region check constraint and profile used by the rest of the
+replacement-failure integration test.
+
+* fix(mercury): set zh-CN logical region on Bellatrix E2E seed storage
+
+CreateProfile/PutBinding require a BCP-47 logical region; empty keys fail
+validation and blocked seed-bellatrix-e2e once integration tests went green.
+
+* fix(mercury): make Bellatrix seed admin setup idempotent
+
+Skip CreateInitialAdministrator when tenant 1 already has an admin so
+re-seeding does not hit authorization replay/actor failures, and allow
+tenant_administrator permission supersets from later migrations.
+
+* fix(vega): resolve assignment app names by row tenant
+
+Assignment rows looked up app labels from the assign-form tenant's app
+list, so cross-tenant rows could show the wrong name or only the id.
+
+* fix(mercury): seed Bellatrix E2E fixtures with in-memory OSS by default
+
+Browser E2E runs seed without live OSS credentials; fall back to the same
+in-memory object store the integration test already uses.
+
+* fix(mercury): ensure zh-CN region before Bellatrix E2E seed storage
+
+Fresh browser-E2E databases have no logical regions after migrate, so
+CreateProfile failed with invalid authorization change on requireActiveRegions.
+
+* Share Bellatrix E2E objects via directory store across seed and API.
+
+Process-local in-memory OSS left Mercury unable to load release payloads for Playwright; use a filesystem store plus a tiny HTTP server in CI.
+
+* Serve directory-store E2E objects with sniffed image/png Content-Type.
 
 Python's default http.server returned application/octet-stream for extensionless keys, breaking the Bellatrix file download assertion.
