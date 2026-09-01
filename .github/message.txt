@@ -1,1 +1,1 @@
-feat: align app settings with aviary
+fix: model device model creation permission
