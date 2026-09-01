@@ -1,4 +1,3 @@
-fix(mercury): ensure zh-CN region before Bellatrix E2E seed storage
+Share Bellatrix E2E objects via directory store across seed and API.
 
-Fresh browser-E2E databases have no logical regions after migrate, so
-CreateProfile failed with invalid authorization change on requireActiveRegions.
+Process-local in-memory OSS left Mercury unable to load release payloads for Playwright; use a filesystem store plus a tiny HTTP server in CI.

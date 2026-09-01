@@ -84,13 +84,18 @@ jobs:
           MERCURY_E2E_EMAIL: browser-e2e@example.com
           MERCURY_E2E_PASSWORD: browser-e2e-password
           MERCURY_E2E_REAL: "1"
+          MERCURY_OBJECT_STORE_DIR: /tmp/mercury-e2e-objects
+          MERCURY_OBJECT_STORE_PUBLIC_BASE: http://127.0.0.1:4190
           MERCURY_PROXY_URL: http://127.0.0.1:3000
         run: |
           just migrate
           just --justfile solar/mercury/Justfile bootstrap-admin --email "$MERCURY_E2E_EMAIL" --display-name Browser-E2E --reason browser-e2e-setup --request-id "50000000-0000-4000-8000-000000000001"
+          mkdir -p "$MERCURY_OBJECT_STORE_DIR"
+          python3 -m http.server 4190 --bind 127.0.0.1 --directory "$MERCURY_OBJECT_STORE_DIR" >mercury-objects-e2e.log 2>&1 &
+          object_pid=$!
           just run-api >mercury-e2e.log 2>&1 &
           api_pid=$!
-          trap 'if [ -n "${bellatrix_pid:-}" ]; then kill "$bellatrix_pid" 2>/dev/null || true; wait "$bellatrix_pid" 2>/dev/null || true; fi; kill "$api_pid" 2>/dev/null || true; wait "$api_pid" 2>/dev/null || true' EXIT
+          trap 'if [ -n "${bellatrix_pid:-}" ]; then kill "$bellatrix_pid" 2>/dev/null || true; wait "$bellatrix_pid" 2>/dev/null || true; fi; kill "$api_pid" 2>/dev/null || true; wait "$api_pid" 2>/dev/null || true; kill "$object_pid" 2>/dev/null || true; wait "$object_pid" 2>/dev/null || true' EXIT
           for attempt in $(seq 1 100); do
             curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null && break
             kill -0 "$api_pid" 2>/dev/null || { cat mercury-e2e.log; exit 1; }
