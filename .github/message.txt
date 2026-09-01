@@ -1,1 +1,1 @@
-fix: handle empty device schema units
+fix: bind device schema option versions
