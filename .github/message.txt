@@ -1,3 +1,1 @@
-chore: update Orion for Rigel first wave
-
-Point Cosmos at the reviewed and merged Orion Rigel first-wave integration.
+Merge remote-tracking branch 'origin/main'
