@@ -1,1 +1,1 @@
-Sync platform workflows and feature distribution
+chore: update Orion for Rigel first wave
