@@ -1,3 +1,3 @@
-Share Bellatrix E2E objects via directory store across seed and API.
+Serve directory-store E2E objects with sniffed image/png Content-Type.
 
-Process-local in-memory OSS left Mercury unable to load release payloads for Playwright; use a filesystem store plus a tiny HTTP server in CI.
+Python's default http.server returned application/octet-stream for extensionless keys, breaking the Bellatrix file download assertion.

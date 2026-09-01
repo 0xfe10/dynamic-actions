@@ -91,7 +91,7 @@ jobs:
           just migrate
           just --justfile solar/mercury/Justfile bootstrap-admin --email "$MERCURY_E2E_EMAIL" --display-name Browser-E2E --reason browser-e2e-setup --request-id "50000000-0000-4000-8000-000000000001"
           mkdir -p "$MERCURY_OBJECT_STORE_DIR"
-          python3 -m http.server 4190 --bind 127.0.0.1 --directory "$MERCURY_OBJECT_STORE_DIR" >mercury-objects-e2e.log 2>&1 &
+          python3 solar/mercury/scripts/serve_directory_objects.py "$MERCURY_OBJECT_STORE_DIR" 4190 >mercury-objects-e2e.log 2>&1 &
           object_pid=$!
           just run-api >mercury-e2e.log 2>&1 &
           api_pid=$!
