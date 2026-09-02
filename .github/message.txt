@@ -1,1 +1,1 @@
-fix:修改边框增加app查询
+fix：修改hithere发送邮箱模版
