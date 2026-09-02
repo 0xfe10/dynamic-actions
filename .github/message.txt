@@ -1,1 +1,1 @@
-fix: verify runtime feature style payload digests
+fix: keep feature dependency assignments consistent
