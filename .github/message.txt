@@ -1,1 +1,1 @@
-generate role-aware NGC 1316 bridge codecs
+generate Go contracts from Dalim TypeScript
