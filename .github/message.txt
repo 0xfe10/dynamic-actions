@@ -1,1 +1,1 @@
-refactor: move ceres contracts to fornax dalim
+feat: add Dalim TypeScript migration entrypoint
