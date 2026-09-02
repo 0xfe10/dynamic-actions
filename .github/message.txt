@@ -1,1 +1,1 @@
-fix: serialize empty style requirement arrays
+feat: deliver feature styles wave one
