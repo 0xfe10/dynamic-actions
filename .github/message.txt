@@ -1,1 +1,1 @@
-fix: authenticate App Studio preview bridge
+fix: authenticate App Studio preview bridge (#165)
