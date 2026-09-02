@@ -1,1 +1,23 @@
-chore: update Orion feature renderer integration
+feat: add feature dependencies and renderer-aware styles (#159)
+
+* feat: model feature dependency closure
+
+* feat: support feature style renderer contracts
+
+* test: isolate feature dependency integration assertions
+
+* fix: verify runtime feature style payload digests
+
+* fix: keep feature dependency assignments consistent
+
+* test: complete stage two seed validation
+
+* fix: close feature dependency and navigation gaps
+
+* fix: preserve renderer contract compatibility
+
+* fix: insert feature navigation actions on buttons
+
+* fix: keep feature navigation actions singular
+
+* chore: update Orion feature renderer integration
