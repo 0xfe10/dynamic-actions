@@ -1,1 +1,1 @@
-advance Fornax TypeScript and bridge schema migration
+enforce generated bridge payload and direction rules
