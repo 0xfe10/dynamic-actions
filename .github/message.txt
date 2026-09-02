@@ -1,1 +1,1 @@
-route Dalim root tasks through TypeScript
+generate Dart and support contracts from TypeScript
