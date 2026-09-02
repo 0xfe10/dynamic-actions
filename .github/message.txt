@@ -1,1 +1,1 @@
-chore: sync Orion component contracts
+fix: align full STAC capability manifest
