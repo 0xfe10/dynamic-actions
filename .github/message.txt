@@ -1,1 +1,1 @@
-declare Fornax workspace as ESM
+generate role-aware NGC 1316 bridge codecs
