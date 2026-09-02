@@ -1,1 +1,1 @@
-add editor bridge typecheck gate
+add Orion role-aware bridge contract
