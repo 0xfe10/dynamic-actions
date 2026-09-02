@@ -1,1 +1,1 @@
-introduce Dalim TypeScript IR and artifact planning
+materialize Dalim TypeScript IR and artifact plan
