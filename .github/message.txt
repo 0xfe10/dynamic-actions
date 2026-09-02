@@ -1,1 +1,1 @@
-add bridge error schema and protocol fixtures
+generate per-message bridge payload schemas
