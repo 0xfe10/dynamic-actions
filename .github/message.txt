@@ -1,1 +1,1 @@
-feat: expose shared renderer boundary
+feat: wire Rigel renderer adapter
