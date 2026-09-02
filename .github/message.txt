@@ -1,1 +1,1 @@
-feat: register all Rigel STAC components
+chore: sync Orion component contracts
