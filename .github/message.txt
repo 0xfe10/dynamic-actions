@@ -1,1 +1,1 @@
-feat: support feature style renderer contracts
+test: isolate feature dependency integration assertions
