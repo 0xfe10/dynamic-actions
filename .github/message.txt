@@ -1,1 +1,1 @@
-chore: pin Orion package layout fix
+docs: align workspace architecture paths
