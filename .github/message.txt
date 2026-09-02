@@ -1,1 +1,1 @@
-enforce generated bridge payload and direction rules
+route Dalim checks through TypeScript schema pipeline
