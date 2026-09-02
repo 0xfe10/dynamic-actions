@@ -1,1 +1,1 @@
-connect Orion bridge payload validation
+expose strict role-aware bridge helpers
