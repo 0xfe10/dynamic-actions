@@ -1,1 +1,1 @@
-feat: add NGC 1316 bridge to Vega preview
+fix: align generated bridge message contract
