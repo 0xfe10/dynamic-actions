@@ -1,1 +1,1 @@
-test: complete stage two seed validation
+fix: close feature dependency and navigation gaps
