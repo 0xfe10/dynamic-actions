@@ -1,1 +1,1 @@
-generate and consume bridge payload validator
+add editor bridge typecheck gate
