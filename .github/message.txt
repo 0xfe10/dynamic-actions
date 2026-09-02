@@ -1,1 +1,1 @@
-chore: sync orion runtime client
+feat: register all Rigel STAC components
