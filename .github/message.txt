@@ -1,1 +1,1 @@
-feat: add Dalim TypeScript migration entrypoint
+fix: update Dalim workspace build paths
