@@ -1,1 +1,1 @@
-test: cover STAC adapter delegation (#164)
+fix: authenticate App Studio preview bridge
