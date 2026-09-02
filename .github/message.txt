@@ -1,1 +1,1 @@
-chore: pin Orion NGC 1316 bridge contract
+feat: add NGC 1316 bridge to Vega preview
