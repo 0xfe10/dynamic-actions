@@ -1,1 +1,1 @@
-fix: sanitize change reason headers globally
+feat: support feature style renderer contracts
