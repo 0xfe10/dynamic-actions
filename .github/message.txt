@@ -1,1 +1,1 @@
-compare Dalim TypeScript output with legacy oracle
+complete TypeScript NGC 1316 bridge generation
