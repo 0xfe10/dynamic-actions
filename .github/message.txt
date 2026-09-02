@@ -1,1 +1,1 @@
-harden Orion bridge encode validation
+generate and consume bridge payload validator
