@@ -1,1 +1,1 @@
-fix: keep feature dependency assignments consistent
+test: complete stage two seed validation
