@@ -1,1 +1,1 @@
-format Dalim oracle generator
+cover bridge fixtures in generated codec tests
