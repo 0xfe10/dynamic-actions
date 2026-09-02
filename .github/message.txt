@@ -1,1 +1,1 @@
-wire generated Orion bridge payload validator
+connect Orion bridge payload validation
