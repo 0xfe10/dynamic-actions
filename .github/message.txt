@@ -1,3 +1,1 @@
-feat: deliver feature styles wave one
-
-Reviewed exact head ec06702 with approved Orion merge 08e8abb. Mercury PostgreSQL lifecycle/migration, Ceres generation, Vega tests/typecheck/build, and Orion full check passed.
+fix: close feature style selection CAS and integrity gaps
