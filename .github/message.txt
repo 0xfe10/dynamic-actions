@@ -1,1 +1,1 @@
-generate Dart and support contracts from TypeScript
+compare Dalim TypeScript output with legacy oracle
