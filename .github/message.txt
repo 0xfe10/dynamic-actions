@@ -1,1 +1,17 @@
-chore: pin merged Orion bridge contract
+feat: add NGC 1316 editor bridge to feature style editor (#160)
+
+* chore: pin Orion NGC 1316 bridge contract
+
+* feat: add NGC 1316 bridge to Vega preview
+
+* fix: align generated bridge message contract
+
+* fix: tighten legacy bridge validation
+
+* refactor: move ceres contracts to fornax dalim
+
+* feat: add Dalim TypeScript migration entrypoint
+
+* fix: update Dalim workspace build paths
+
+* chore: pin merged Orion bridge contract
