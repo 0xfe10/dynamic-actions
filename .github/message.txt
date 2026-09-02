@@ -1,1 +1,1 @@
-add Orion role-aware bridge contract
+add bridge error schema and protocol fixtures
