@@ -1,1 +1,1 @@
-migrate NGC 1316 generator from MJS to TypeScript
+refresh generated bridge outputs for TypeScript generator
