@@ -1,1 +1,1 @@
-test: cover STAC adapter delegation
+test: cover STAC adapter delegation (#164)
