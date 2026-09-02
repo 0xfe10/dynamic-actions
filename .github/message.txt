@@ -1,1 +1,1 @@
-validate invalid bridge fixtures in generator
+introduce Dalim TypeScript IR and artifact planning
