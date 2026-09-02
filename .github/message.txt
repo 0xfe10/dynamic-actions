@@ -1,1 +1,1 @@
-fix: tighten legacy bridge validation
+refactor: move ceres contracts to fornax dalim
