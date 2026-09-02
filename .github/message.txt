@@ -1,1 +1,1 @@
-generate Go contracts from Dalim TypeScript
+route Dalim root tasks through TypeScript
