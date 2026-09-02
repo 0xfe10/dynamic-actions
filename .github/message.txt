@@ -1,1 +1,11 @@
-chore: pin merged Orion workspace layout
+refactor: align Orion workspace package layout (#161)
+
+* refactor: align Orion workspace package layout
+
+* fix: align generators with Orion package layout
+
+* chore: pin Orion package layout fix
+
+* docs: align workspace architecture paths
+
+* chore: pin merged Orion workspace layout
