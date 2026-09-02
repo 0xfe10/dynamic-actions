@@ -1,1 +1,1 @@
-refactor: align Orion workspace package layout
+chore: pin Orion package layout fix
