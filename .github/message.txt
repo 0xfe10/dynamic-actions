@@ -1,1 +1,1 @@
-feat: deliver feature style first wave
+fix: serialize empty style requirement arrays
