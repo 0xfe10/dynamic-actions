@@ -1,1 +1,1 @@
-route Dalim checks through TypeScript schema pipeline
+gate root checks on Fornax TypeScript validation
