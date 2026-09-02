@@ -1,1 +1,1 @@
-generate per-message bridge payload schemas
+generate bridge error model
