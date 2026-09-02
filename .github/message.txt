@@ -1,1 +1,1 @@
-fix: align full STAC capability manifest
+fix: mirror Rigel navigation capabilities in seed
