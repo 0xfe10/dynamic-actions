@@ -1,1 +1,1 @@
-feat: wire Rigel renderer adapter
+chore: pin Orion renderer merge
