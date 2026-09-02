@@ -1,5 +1,1 @@
-feat: add shared feature package boundaries (#162)
-
-* feat: add shared feature package boundaries
-
-* chore: pin merged feature packages
+feat: expose shared renderer boundary
