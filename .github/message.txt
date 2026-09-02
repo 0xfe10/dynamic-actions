@@ -1,1 +1,1 @@
-add TypeScript NGC generator workspace commands
+declare Fornax workspace as ESM
