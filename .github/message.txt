@@ -1,1 +1,1 @@
-expose strict role-aware bridge helpers
+validate invalid bridge fixtures in generator
