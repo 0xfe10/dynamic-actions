@@ -1,7 +1,1 @@
-feat: expose shared renderer boundary (#163)
-
-* feat: expose shared renderer boundary
-
-* feat: wire Rigel renderer adapter
-
-* chore: pin Orion renderer merge
+test: cover STAC adapter delegation
