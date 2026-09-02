@@ -1,1 +1,1 @@
-materialize Dalim TypeScript IR and artifact plan
+migrate NGC 1316 generator from MJS to TypeScript
