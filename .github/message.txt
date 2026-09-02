@@ -1,9 +1,1 @@
-feat: register all Rigel STAC components
-
-* feat: register all Rigel STAC components
-
-* chore: sync Orion component contracts
-
-* fix: align full STAC capability manifest
-
-* fix: mirror Rigel navigation capabilities in seed
+feat: add app studio font management
