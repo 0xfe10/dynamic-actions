@@ -1,1 +1,7 @@
-Merge origin/main into feature style follow-up
+fix: map serializable style selection conflicts
+
+* fix: close feature style selection CAS and integrity gaps
+
+* fix: map serializable selection conflicts
+
+* fix: map audit serialization conflicts
