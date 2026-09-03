@@ -1,1 +1,1 @@
-fix: map localization serialization conflicts
+fix: stabilize Mercury regional localization integration
