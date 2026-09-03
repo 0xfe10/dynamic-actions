@@ -1,1 +1,1 @@
-cover bridge fixtures in generated codec tests
+finish Dalim TypeScript-only migration
