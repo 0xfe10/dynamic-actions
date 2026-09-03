@@ -1,1 +1,1 @@
-main
+agt/bellatrix-smoke-test
