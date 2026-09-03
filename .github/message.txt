@@ -1,1 +1,1 @@
-docs: align remaining ceres references with dalim
+chore(lyra): satisfy prettier format gate
