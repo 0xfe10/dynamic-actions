@@ -1,1 +1,1 @@
-feat(vega): add visual layer actions (#189)
+feat(vega): handle preview bridge events
