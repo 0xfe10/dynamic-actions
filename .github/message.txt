@@ -1,3 +1,1 @@
-chore(orion): consume Dalim validation test fix
-
-Reviewed submodule pin and verification evidence.
+chore(orion): consume preview bridge controls
