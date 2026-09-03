@@ -1,3 +1,1 @@
-refactor(orion): share runtime action dispatcher
-
-Updates Orion to the merged shared runtime action dispatcher; focused tests and analysis passed.
+refactor(orion): share release model
