@@ -1,3 +1,1 @@
-feat(ngc1316): generate Dart bridge message
-
-Reviewed generated output ownership and verified focused checks plus CI.
+feat(ngc1316): generate TypeScript bridge codec

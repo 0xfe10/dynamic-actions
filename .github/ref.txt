@@ -1,1 +1,1 @@
-main
+agt/ngc1316-generated-ts-codec
