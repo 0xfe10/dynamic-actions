@@ -1,1 +1,3 @@
-fix: require bridge codec direction
+fix: enforce NGC 1316 bridge direction
+
+Require explicit bridge direction for generic TypeScript codec APIs.
