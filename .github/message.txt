@@ -1,1 +1,3 @@
 refactor(orion): share release coordinator
+
+Update Orion gitlink to merged shared ReleaseCoordinator implementation (Orion PR #55).
