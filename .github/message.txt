@@ -1,1 +1,3 @@
 refactor(orion): share runtime component bundle
+
+Updates Orion to the merged shared runtime bundle. Focused tests and analysis passed.
