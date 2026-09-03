@@ -1,1 +1,1 @@
-feat(vega): add preview viewport controls (#192)
+chore(orion): update document print feature
