@@ -1,1 +1,1 @@
-feat(vega): embed Bellatrix style preview
+fix(vega): preflight preview capabilities
