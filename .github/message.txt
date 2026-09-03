@@ -1,3 +1,1 @@
-test(bellatrix): add workspace smoke coverage
-
-Updates the Orion submodule to the merged Bellatrix smoke test. Orion workspace analysis and tests passed.
+refactor(orion): share localization runtime package
