@@ -1,1 +1,3 @@
 refactor(orion): share session boundary
+
+Update Orion gitlink to merged shared session boundary (Orion PR #56).
