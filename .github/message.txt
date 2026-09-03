@@ -1,3 +1,1 @@
-fix(orion): remove runtime theme Rigel dependency
-
-Update Orion gitlink to merged shared runtime_theme import fix (Orion PR #59).
+feat(vega): align feature style editor layout
