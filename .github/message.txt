@@ -1,1 +1,1 @@
-feat(vega): close preview event loop (#191)
+feat(vega): add preview viewport controls
