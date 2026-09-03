@@ -1,1 +1,3 @@
 chore: update Orion preview bridge formatting
+
+Reviewed submodule pointer update; Orion PR #35 is merged.
