@@ -1,1 +1,3 @@
 style(vega): format visual editor sources
+
+Reviewed; behavior-preserving formatting with focused checks passing.
