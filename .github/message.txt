@@ -1,3 +1,1 @@
-refactor(orion): share release signature verifier
-
-Updates Orion to the merged shared release signature verifier. Focused tests passed.
+refactor(orion): share trusted release key ring
