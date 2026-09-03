@@ -1,3 +1,1 @@
-feat(dalim): consume Dalim-named Dart contracts
-
-Adopt Dalim-named generated Dart contracts and support artifacts.
+feat(dalim): compare against frozen Ceres baseline
