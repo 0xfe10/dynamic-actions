@@ -1,1 +1,3 @@
 test(ngc1316): run Dart fixture parity
+
+Executes Orion Dart codec parity against all shared NGC 1316 fixtures and wires it into generate-check.
