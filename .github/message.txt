@@ -1,1 +1,1 @@
-feat(vega): handle preview bridge events (#190)
+feat(vega): close preview event loop
