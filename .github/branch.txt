@@ -1,1 +1,1 @@
-agt/staticcheck-go127
+main

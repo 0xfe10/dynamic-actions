@@ -1,1 +1,3 @@
 fix(mercury): update staticcheck for current Go toolchain
+
+Reviewed locally: go vet, staticcheck, and go test all pass.
