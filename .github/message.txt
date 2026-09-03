@@ -1,3 +1,1 @@
-feat(vega): generate feature style component catalog
-
-Uses the Dalim canonical catalog to populate the Vega visual editor.
+feat(vega): drive inspector fields from component schemas
