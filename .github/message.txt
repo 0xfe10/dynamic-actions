@@ -1,1 +1,61 @@
-finish Dalim TypeScript-only migration
+Advance Fornax TypeScript and NGC 1316 bridge migration (#166)
+
+* advance Fornax TypeScript and bridge schema migration
+
+* enforce generated bridge payload and direction rules
+
+* route Dalim checks through TypeScript schema pipeline
+
+* gate root checks on Fornax TypeScript validation
+
+* harden Orion bridge encode validation
+
+* generate and consume bridge payload validator
+
+* add editor bridge typecheck gate
+
+* add Orion role-aware bridge contract
+
+* add bridge error schema and protocol fixtures
+
+* generate per-message bridge payload schemas
+
+* generate bridge error model
+
+* wire generated Orion bridge payload validator
+
+* connect Orion bridge payload validation
+
+* expose strict role-aware bridge helpers
+
+* validate invalid bridge fixtures in generator
+
+* introduce Dalim TypeScript IR and artifact planning
+
+* materialize Dalim TypeScript IR and artifact plan
+
+* migrate NGC 1316 generator from MJS to TypeScript
+
+* refresh generated bridge outputs for TypeScript generator
+
+* add TypeScript NGC generator workspace commands
+
+* declare Fornax workspace as ESM
+
+* generate role-aware NGC 1316 bridge codecs
+
+* generate Go contracts from Dalim TypeScript
+
+* route Dalim root tasks through TypeScript
+
+* generate Dart and support contracts from TypeScript
+
+* compare Dalim TypeScript output with legacy oracle
+
+* complete TypeScript NGC 1316 bridge generation
+
+* format Dalim oracle generator
+
+* cover bridge fixtures in generated codec tests
+
+* finish Dalim TypeScript-only migration
