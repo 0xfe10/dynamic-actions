@@ -1,1 +1,1 @@
-chore(orion): update feature pages (#195)
+docs: align current architecture with dalim
