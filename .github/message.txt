@@ -1,3 +1,1 @@
-feat(vega): render Feature Style editor in three columns
-
-Reviewed locally and CI passed; Feature Style now has a left component/layer column, center Bellatrix iframe preview, and right Inspector.
+fix(mercury): update staticcheck for current Go toolchain
