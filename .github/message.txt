@@ -1,1 +1,1 @@
-docs: align current architecture with dalim (#196)
+docs: migrate dynamic architecture wording to dalim
