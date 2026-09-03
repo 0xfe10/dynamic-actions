@@ -1,3 +1,1 @@
-chore(orion): consume preview bridge controls
-
-Reviewed submodule pin and verification evidence.
+feat(vega): sync selected node with preview
