@@ -1,1 +1,1 @@
-feat(vega): align feature style editor layout (#226)
+feat(vega): embed Bellatrix style preview

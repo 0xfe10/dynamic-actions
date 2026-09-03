@@ -147,6 +147,7 @@ jobs:
           push: false
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury.invalid
+            BELLATRIX_RUNTIME_BASE_URL=https://mercury.invalid
           cache-from: type=gha,scope=vega
           cache-to: type=gha,mode=max,scope=vega
       - uses: docker/build-push-action@v6
@@ -235,6 +236,7 @@ jobs:
           push: true
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury-stg.iprtapp.com
+            BELLATRIX_RUNTIME_BASE_URL=https://mercury-stg.iprtapp.com
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:staging

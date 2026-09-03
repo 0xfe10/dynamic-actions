@@ -196,6 +196,7 @@ jobs:
           push: true
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury.iprtapp.com
+            BELLATRIX_RUNTIME_BASE_URL=https://mercury.iprtapp.com
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:latest
