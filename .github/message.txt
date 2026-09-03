@@ -1,1 +1,1 @@
-feat(vega): add visual layer actions
+feat(vega): add visual layer actions (#189)
