@@ -1,1 +1,3 @@
 refactor(orion): share trusted release key ring
+
+Updates Orion to shared trusted key-ring and ReleaseStore package. Focused tests passed.
