@@ -1,1 +1,3 @@
 fix(dalim): follow shared component bundle
+
+Catalog drift now reads shared preview_runtime bundle after the Rigel migration.
