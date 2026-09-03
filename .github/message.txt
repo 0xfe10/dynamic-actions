@@ -1,3 +1,1 @@
-feat(vega): drive inspector fields from component schemas
-
-Renders Vega Inspector fields from the Dalim canonical component schemas.
+feat(ngc1316): generate typed Dart payloads
