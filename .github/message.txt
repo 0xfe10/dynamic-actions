@@ -1,1 +1,3 @@
 refactor(orion): share localization runtime package
+
+Updates the Orion submodule to the merged shared localization package; focused analysis and Bellatrix test passed.
