@@ -1,1 +1,1 @@
-chore(orion): update document print feature (#193)
+chore(orion): wire document print route

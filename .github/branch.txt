@@ -1,1 +1,1 @@
-agt/orion-document-route
+agt/document-print-route
