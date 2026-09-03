@@ -1,1 +1,3 @@
 chore(orion): update editor bridge direction contract
+
+Advance Orion to the merged explicit-direction bridge contract.
