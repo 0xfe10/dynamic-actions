@@ -1,1 +1,3 @@
 test(dalim): enforce generated contract boundary
+
+Adds generated contract dependency boundary checks to the root generation gate.
