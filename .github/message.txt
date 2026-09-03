@@ -1,1 +1,1 @@
-fix(lyra): clear eslint gate errors
+fix(vega): register platform build and deferred routes
