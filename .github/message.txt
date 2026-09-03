@@ -1,1 +1,1 @@
-feat(vega): align feature style editor layout
+feat(vega): align feature style editor layout (#226)
