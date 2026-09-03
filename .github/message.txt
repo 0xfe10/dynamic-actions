@@ -1,1 +1,1 @@
-migrate NGC 1316 schemas to YAML (#167)
+feat(vega): add visual feature style composition editor
