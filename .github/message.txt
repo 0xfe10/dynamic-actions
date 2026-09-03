@@ -1,3 +1,1 @@
-feat: wire Feature Style preview to Bellatrix bridge
-
-Reviewed locally and via CI; Feature Style now uses Bellatrix PreviewPanel when an app distribution target is available, and Orion points to the merged shared preview_bridge package.
+feat(vega): render Feature Style editor in three columns
