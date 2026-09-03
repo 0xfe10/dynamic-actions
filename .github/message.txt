@@ -1,3 +1,1 @@
-feat(ngc1316): generate typed Dart payloads
-
-Reviewed generator output, Orion gitlink, compatibility alias, and focused Flutter/Dart checks. CI trigger passed with no blocking findings.
+feat(vega): guard unsaved feature style edits
