@@ -1,3 +1,1 @@
-feat(vega): sync selected node with preview
-
-Reviewed bridge message direction/token/revision and verified focused tests.
+feat(vega): add structured feature action editor
