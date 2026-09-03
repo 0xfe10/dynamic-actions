@@ -1,1 +1,1 @@
-chore(lyra): satisfy prettier format gate
+fix(lyra): clear eslint gate errors
