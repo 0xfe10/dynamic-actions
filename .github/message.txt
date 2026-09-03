@@ -1,1 +1,1 @@
-fix: stabilize Mercury regional localization integration
+fix: require bridge codec direction
