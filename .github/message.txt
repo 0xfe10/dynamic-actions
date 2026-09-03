@@ -1,1 +1,1 @@
-docs: migrate dynamic architecture wording to dalim (#197)
+chore(orion): update rigel route fixes
