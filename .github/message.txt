@@ -1,3 +1,1 @@
-test(ngc1316): cover invalid envelope fixtures
-
-Expand invalid bridge fixture coverage.
+feat(dalim): consume Dalim-named Dart contracts
