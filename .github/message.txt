@@ -1,1 +1,3 @@
 refactor(dalim): rename contract templates
+
+Remove remaining Ceres identifiers from Dalim templates.

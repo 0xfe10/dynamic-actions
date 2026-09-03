@@ -1,1 +1,1 @@
-agt/dalim-template-naming
+main
