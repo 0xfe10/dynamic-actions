@@ -1,3 +1,1 @@
-chore(dalim): identify generated Go output
-
-Use Dalim provenance in TypeScript-generated Go contract artifacts.
+feat(dalim): describe concrete artifact outputs
