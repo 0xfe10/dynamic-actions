@@ -1,1 +1,3 @@
 refactor(orion): share release model
+
+Updates Orion to the merged shared release model. Focused Orion tests and analysis passed.
