@@ -1,1 +1,1 @@
-agt/vega-schema-inspector
+main

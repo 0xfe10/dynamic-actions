@@ -1,1 +1,3 @@
 feat(vega): drive inspector fields from component schemas
+
+Renders Vega Inspector fields from the Dalim canonical component schemas.
