@@ -1,3 +1,1 @@
-feat(vega): guard unsaved feature style edits
-
-Reviewed dirty snapshot lifecycle, save reset, Back interception, beforeunload behavior, localized copy, and regression test. No blocking findings.
+refactor(orion): share app profile package
