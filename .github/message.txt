@@ -1,1 +1,3 @@
-test(ngc1316): add generated TypeScript parity gate
+test(ngc1316): add TypeScript fixture parity gate
+
+Adds the direction-aware TypeScript fixture parity gate and wires it into generate-check.
