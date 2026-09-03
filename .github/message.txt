@@ -1,3 +1,1 @@
-feat(dalim): describe concrete artifact outputs
-
-Make Dalim artifact planning concrete and testable.
+test(ngc1316): cover invalid envelope fixtures
