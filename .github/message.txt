@@ -1,1 +1,1 @@
-feat: support initial password on person creation
+feat: support department leaders
