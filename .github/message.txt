@@ -1,1 +1,1 @@
-feat: support department leaders
+fix: make external catalog bindings optional
