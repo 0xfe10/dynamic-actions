@@ -1,1 +1,1 @@
-test(provider-native): close release verification gaps
+fix(provider-native): address audit review
