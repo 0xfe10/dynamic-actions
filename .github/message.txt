@@ -1,1 +1,1 @@
-chore: 更新 Docker Compose 配置
+feat: add password reset and self-service password change
