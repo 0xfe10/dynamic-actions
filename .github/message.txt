@@ -1,1 +1,15 @@
-fix(ci): pin nested fornax pnpm commands
+fix(provider-native): complete end-to-end plan audit (#236)
+
+* fix(vega): stabilize provider preview browser gates
+
+* test(dalim): lock provider composition boundaries
+
+* fix(vega): complete provider preview workflow
+
+* test(provider-native): close release verification gaps
+
+* fix(provider-native): address audit review
+
+* fix(ci): pin workspace pnpm invocations
+
+* fix(ci): pin nested fornax pnpm commands
