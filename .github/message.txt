@@ -1,1 +1,1 @@
-fix(vega): preflight preview capabilities
+feat: complete feature style contract boundaries
