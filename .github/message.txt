@@ -1,1 +1,1 @@
-fix(platform-release): complete release management workflow
+feat(platform-release): snapshot feature style revisions
