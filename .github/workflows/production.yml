@@ -104,7 +104,7 @@ jobs:
           curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null || { cat mercury-e2e.log; exit 1; }
           pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury"
           (cd solar/mercury && go run ./cmd/seed-bellatrix-e2e) >bellatrix-fixture.json
-          just --justfile orion/Justfile bellatrix-web --dart-define=RUNTIME_BASE_URL=http://127.0.0.1:3000 --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:3000
+          just --justfile orion/Justfile bellatrix-web --dart-define=RUNTIME_BASE_URL=http://127.0.0.1:3000 --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:4180
           python3 -m http.server 4180 --bind 127.0.0.1 --directory orion/apps/bellatrix/build/web >bellatrix-e2e.log 2>&1 &
           bellatrix_pid=$!
           for attempt in $(seq 1 100); do
@@ -113,9 +113,24 @@ jobs:
             sleep 0.1
           done
           curl --fail --silent http://127.0.0.1:4180 >/dev/null || { cat bellatrix-e2e.log; exit 1; }
-          BELLATRIX_E2E_REAL=1 BELLATRIX_SMOKE_E2E_REAL=1 BELLATRIX_SESSION_E2E_REAL=1 BELLATRIX_PREVIEW_E2E_REAL=1 BELLATRIX_E2E_URL=http://127.0.0.1:4180 BELLATRIX_PREVIEW_PARENT_URL=http://127.0.0.1:3000/health/live BELLATRIX_E2E_EMAIL="$(jq -r .email bellatrix-fixture.json)" BELLATRIX_SESSION_E2E_EMAIL=bellatrix-session-e2e@example.com BELLATRIX_E2E_PASSWORD="$(jq -r .password bellatrix-fixture.json)" pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Bellatrix"
-          just --justfile orion/Justfile bellatrix-web --dart-define=APP_ENV=production --dart-define=MERCURY_BASE_URL=https://mercury.invalid --dart-define=RUNTIME_BASE_URL=https://runtime.invalid --dart-define=RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo= --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:3000
-          BELLATRIX_PREVIEW_E2E_REAL=1 BELLATRIX_E2E_URL=http://127.0.0.1:4180 BELLATRIX_PREVIEW_PARENT_URL=http://127.0.0.1:3000/health/live pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Bellatrix preview"
+          BELLATRIX_E2E_REAL=1 BELLATRIX_SMOKE_E2E_REAL=1 BELLATRIX_SESSION_E2E_REAL=1 BELLATRIX_PREVIEW_E2E_REAL=1 BELLATRIX_E2E_URL=http://127.0.0.1:4180 BELLATRIX_PREVIEW_PARENT_URL=http://127.0.0.1:4180/parent BELLATRIX_E2E_EMAIL="$(jq -r .email bellatrix-fixture.json)" BELLATRIX_SESSION_E2E_EMAIL=bellatrix-session-e2e@example.com BELLATRIX_E2E_PASSWORD="$(jq -r .password bellatrix-fixture.json)" pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Bellatrix"
+          just --justfile orion/Justfile bellatrix-web --dart-define=APP_ENV=production --dart-define=MERCURY_BASE_URL=https://mercury.invalid --dart-define=RUNTIME_BASE_URL=https://runtime.invalid --dart-define=RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo= --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:4180
+          BELLATRIX_PREVIEW_E2E_REAL=1 BELLATRIX_E2E_URL=http://127.0.0.1:4180 BELLATRIX_PREVIEW_PARENT_URL=http://127.0.0.1:4180/parent pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Bellatrix preview"
+          (
+            just --justfile orion/Justfile bellatrix-web --base-href=/bellatrix-preview/ --dart-define=APP_ENV=production --dart-define=MERCURY_BASE_URL=https://mercury.invalid --dart-define=RUNTIME_BASE_URL=https://runtime.invalid --dart-define=RELEASE_TRUST_ROOT_PUBLIC_KEY_BASE64=11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo= --dart-define=PREVIEW_PARENT_ORIGINS=http://127.0.0.1:4181
+            pnpm --dir lyra --filter @cosmos/vega build
+            mkdir -p lyra/apps/vega/dist/bellatrix-preview
+            cp -a orion/apps/bellatrix/build/web/. lyra/apps/vega/dist/bellatrix-preview/
+            pnpm --dir lyra --filter @cosmos/vega exec vite preview --host 127.0.0.1 --port 4181 --strictPort >feature-style-e2e.log 2>&1 &
+            vega_pid=$!
+            trap 'kill "$vega_pid" 2>/dev/null || true; wait "$vega_pid" 2>/dev/null || true' EXIT
+            for attempt in $(seq 1 100); do
+              curl --fail --silent http://127.0.0.1:4181 >/dev/null && break
+              kill -0 "$vega_pid" 2>/dev/null || { cat feature-style-e2e.log; exit 1; }
+              sleep 0.1
+            done
+            FEATURE_STYLE_E2E_REAL=1 FEATURE_STYLE_E2E_URL=http://127.0.0.1:4181 pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "Feature Style uses"
+          )
       - name: Lyra production build
         run: pnpm --dir lyra build
 

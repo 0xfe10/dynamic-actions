@@ -1,1 +1,1 @@
-fix(platform-release): validate staged style snapshots
+feat: complete provider-native page plan
