@@ -1,1 +1,1 @@
-feat(vega): complete provider inspector control rendering
+feat(vega): complete provider inspector control rendering (#235)
