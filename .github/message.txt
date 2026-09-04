@@ -1,1 +1,5 @@
-feat: complete feature style contract boundaries
+Complete feature style contract boundaries (#227)
+
+* decouple feature style preview from app contracts
+
+* feat: complete feature style contract boundaries
