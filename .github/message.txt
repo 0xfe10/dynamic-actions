@@ -1,1 +1,1 @@
-feat(mercury): add platform release control plane
+feat(mercury): add platform release control plane (#229)
