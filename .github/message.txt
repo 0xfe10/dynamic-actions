@@ -1,1 +1,1 @@
-feat: adopt provider-native feature styles (#228)
+feat(mercury): add platform release control plane
