@@ -1,1 +1,1 @@
-feat(vega): complete provider inspector control rendering (#235)
+fix(platform-release): integrate provider-native v2
