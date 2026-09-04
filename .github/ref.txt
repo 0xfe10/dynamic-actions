@@ -1,1 +1,1 @@
-agt/release-style-snapshots
+main
