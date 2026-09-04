@@ -1,1 +1,1 @@
-fix：修复阿里云部署问题
+fix(front): cache domain ICP for 30 days
