@@ -1,1 +1,1 @@
-feat: add password reset and self-service password change
+fix: make external person bindings optional
