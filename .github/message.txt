@@ -1,1 +1,1 @@
-docs: align Orion workspace documentation
+feat(vega): complete provider inspector control rendering
