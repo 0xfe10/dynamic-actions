@@ -1,1 +1,1 @@
-fix(ci): pin workspace pnpm invocations
+fix(ci): pin nested fornax pnpm commands
