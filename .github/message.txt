@@ -1,1 +1,1 @@
-feat(vega): manage platform releases
+feat(vega): manage platform releases (#230)
