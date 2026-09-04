@@ -1,1 +1,1 @@
-docs: align Orion workspace documentation (#234)
+docs: align Orion workspace documentation
