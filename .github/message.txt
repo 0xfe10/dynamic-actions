@@ -1,1 +1,1 @@
-feat: complete provider-native page plan (#233)
+docs: align Orion workspace documentation (#234)
