@@ -1,1 +1,1 @@
-feat(vega): manage platform releases (#230)
+fix(platform-release): complete release management workflow
