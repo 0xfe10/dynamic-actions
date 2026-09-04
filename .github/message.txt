@@ -1,1 +1,1 @@
-feat(mercury): add platform release control plane (#229)
+feat(vega): manage platform releases
