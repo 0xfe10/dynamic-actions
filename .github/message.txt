@@ -1,1 +1,1 @@
-fix(vega): keep JSON editor in sync
+feat(vega): improve feature style editor interactions
