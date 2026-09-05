@@ -1,1 +1,1 @@
-feat(vega): edit complete feature style documents
+fix(stac): normalize localization keys
