@@ -1,1 +1,1 @@
-feat(vega): streamline feature style editor
+fix(vega): remove empty screen palette item
