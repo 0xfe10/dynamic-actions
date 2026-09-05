@@ -1,1 +1,1 @@
-fix(vega): infer capabilities for feature previews
+feat(vega): edit complete feature style documents
