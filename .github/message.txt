@@ -1,1 +1,1 @@
-fix(platform-release): normalize release target scopes
+fix(platform-release): normalize release target scopes (#237)
