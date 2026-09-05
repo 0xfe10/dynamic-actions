@@ -1,1 +1,1 @@
-fix(stac): normalize localization keys
+fix(vega): keep JSON editor in sync
