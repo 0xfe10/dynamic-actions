@@ -1,1 +1,1 @@
-ci: add production deployment for knowledge
+fix(ci): disable ACR provenance manifest
