@@ -1,1 +1,1 @@
-test(stac-editor): cover native STAC documents
+feat(stac): align editor with native STAC compositions
