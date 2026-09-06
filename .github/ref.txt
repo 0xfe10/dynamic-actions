@@ -1,1 +1,1 @@
-agt/stac-component-catalog
+main
