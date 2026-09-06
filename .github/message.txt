@@ -1,0 +1,1 @@
+ci: add production deployment for knowledge
