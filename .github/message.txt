@@ -1,1 +1,1 @@
-feat(vega): create native STAC default pages
+test(stac-editor): cover native STAC documents
