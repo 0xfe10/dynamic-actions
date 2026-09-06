@@ -10,6 +10,32 @@ env:
   DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
+  mirror-dependencies:
+    name: Mirror dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - source: openfga/openfga:v1.18.3
+            target: prtmax_knowledge_openfga:v1.18.3
+          - source: redis:8.10.0
+            target: prtmax_knowledge_redis:8.10.0
+          - source: python:3.13-alpine
+            target: prtmax_knowledge_python:3.13-alpine
+    steps:
+      - name: Docker login (Aliyun)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
+      - name: Mirror image
+        run: |
+          docker pull --platform linux/amd64 "${{ matrix.source }}"
+          docker tag "${{ matrix.source }}" "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ matrix.target }}"
+          docker push "${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ matrix.target }}"
+
   build-apps:
     name: Build
     runs-on: ubuntu-latest
@@ -61,6 +87,7 @@ jobs:
     name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
+      - mirror-dependencies
       - build-apps
     steps:
       - uses: actions/checkout@v6

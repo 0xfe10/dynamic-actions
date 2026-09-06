@@ -1,1 +1,1 @@
-fix(ci): disable ACR provenance manifest
+fix(ci): mirror runtime images to ACR
