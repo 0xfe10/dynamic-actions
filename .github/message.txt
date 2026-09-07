@@ -1,1 +1,1 @@
-test(styles): register bundle migration and preview security
+fix(styles): align bundle validation across runtimes
