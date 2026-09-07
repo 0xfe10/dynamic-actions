@@ -1,1 +1,1 @@
-feat(styles): add bundle import management flow
+fix(styles): harden bundle import convergence
