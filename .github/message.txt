@@ -1,1 +1,1 @@
-test：测试配置
+fix(config): support default Redis password env
