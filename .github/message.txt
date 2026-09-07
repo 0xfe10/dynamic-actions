@@ -1,1 +1,1 @@
-feat: support iOS app build specs
+feat: add release package build workflow
