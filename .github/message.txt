@@ -1,1 +1,1 @@
-fix(stac-editor): normalize generated localization keys
+fix(vega): refine stac editor palette icons
