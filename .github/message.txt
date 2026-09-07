@@ -1,1 +1,1 @@
-fix(vega): refine stac editor palette icons
+fix(vega): validate stac inspector values
