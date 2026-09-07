@@ -1,1 +1,7 @@
-fix: harden release build inputs and callbacks
+feat: add immutable release build specs and runall dispatch (#240)
+
+* feat: add immutable release build specs and runall dispatch
+
+* feat: expose authenticated runall callback endpoint
+
+* fix: harden release build inputs and callbacks
