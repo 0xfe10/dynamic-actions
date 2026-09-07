@@ -1,1 +1,1 @@
-fix(config): support default Redis password env
+Merge branch 'main' of https://github.com/prtmax/knowledge
