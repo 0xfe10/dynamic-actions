@@ -1,1 +1,1 @@
-feat(stac): drive editor from pinned component catalog (#238)
+fix(stac-editor): normalize generated localization keys
