@@ -1,1 +1,1 @@
-feat: add release package build workflow
+fix: include selected package artifacts in build spec
