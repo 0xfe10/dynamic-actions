@@ -1,1 +1,1 @@
-fix(stac): keep component previews valid across catalog widgets
+feat(styles): add Orion bundle import pipeline
