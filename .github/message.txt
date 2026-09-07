@@ -1,1 +1,1 @@
-feat: add immutable release build specs and runall dispatch
+feat: expose authenticated runall callback endpoint
