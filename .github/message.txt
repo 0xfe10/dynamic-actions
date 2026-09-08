@@ -1,1 +1,1 @@
-chore(orion): update device management style bundle
+feat(vega): move style bundle import to page
