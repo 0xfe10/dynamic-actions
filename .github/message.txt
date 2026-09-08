@@ -1,1 +1,1 @@
-fix(styles): align imported compositions with STAC catalog
+fix(styles): align imported compositions with STAC catalog (#245)
