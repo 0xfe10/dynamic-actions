@@ -1,1 +1,1 @@
-feat(vega): move style bundle import to page
+feat(vega): use CodeMirror for bundle JSON
