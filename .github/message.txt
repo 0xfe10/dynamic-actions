@@ -1,3 +1,3 @@
-fix(education): restore arithmetic examples
+fix(kerria): validate arithmetic examples
 
-Persist editable v3 examples through the existing example_questions field while keeping historical configs compatible. No schema migration or stored-data rewrite is required.\n\nRefs AXY-2314
+Reject unselected, duplicate, empty, and oversized example question data at the API trust boundary for every supported config schema.
