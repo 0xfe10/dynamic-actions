@@ -1,1 +1,1 @@
-fix: constrain feature import editor height
+fix: normalize imported feature style capabilities
