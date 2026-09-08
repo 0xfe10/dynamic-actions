@@ -1,1 +1,1 @@
-fix: bind release build path parameters
+feat(feature-styles): default detail view to preview
