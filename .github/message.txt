@@ -1,1 +1,1 @@
-feat(feature-styles): default detail view to preview
+chore: update Orion preview runtime
