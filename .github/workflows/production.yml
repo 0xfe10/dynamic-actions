@@ -75,8 +75,6 @@ jobs:
         run: just migrate && just test-db
       - name: Install Playwright Chromium
         run: pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium
-      - name: Standalone STAC preview browser E2E
-        run: just test-preview-stac-browser
       - name: Prepare browser E2E database
         run: docker exec "${{ job.services.postgres.id }}" createdb -U postgres mercury_browser_e2e
       - name: Mercury, Vega, and Bellatrix browser E2E

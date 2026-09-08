@@ -1,1 +1,1 @@
-agt/update-feature-style-e2e
+agt/remove-standalone-preview

@@ -1,1 +1,1 @@
-test: cover native preview actions
+chore: remove standalone STAC preview integration
