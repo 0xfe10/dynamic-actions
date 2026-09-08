@@ -1,1 +1,1 @@
-chore: update standalone preview runtime
+feat: complete standalone STAC browser preview
