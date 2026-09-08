@@ -1,1 +1,7 @@
-fix(camellia): update arithmetic editor
+fix(camellia): align arithmetic practice v3 (#152)
+
+* fix(camellia): collapse semantic role ranges
+
+* fix(camellia): label semantic ranges as advanced
+
+* fix(camellia): update arithmetic editor
