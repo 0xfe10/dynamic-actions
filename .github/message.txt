@@ -1,7 +1,4 @@
-feat: add minimal Aviary-style STAC preview (#253)
+Merge remote-tracking branch 'origin/main' into agt/stac-runtime-source-of-truth
 
-* feat: add minimal Aviary-style STAC preview
-
-* chore: update Orion preview integration
-
-* chore: use tested Orion preview builder
+# Conflicts:
+#	solar/mercury/openapi-baseline/platform.json

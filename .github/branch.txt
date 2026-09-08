@@ -1,1 +1,1 @@
-main
+agt/stac-runtime-source-of-truth
