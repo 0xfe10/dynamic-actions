@@ -1,1 +1,1 @@
-feat(styles): update document print pages
+feat(styles): update document print pages (#244)
