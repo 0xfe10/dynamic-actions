@@ -1,1 +1,1 @@
-feat(vega): use CodeMirror for bundle JSON
+chore(vega): clean CodeMirror test imports
