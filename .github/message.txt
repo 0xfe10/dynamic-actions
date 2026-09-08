@@ -1,1 +1,1 @@
-fix：个人中心点赞列表增加封面宽高信息返回
+fix(camellia): update arithmetic editor fixes
