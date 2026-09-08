@@ -1,1 +1,1 @@
-fix: align feature style editor e2e
+test: cover native preview actions
