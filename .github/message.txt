@@ -1,5 +1,1 @@
-feat(styles): import multi-feature bundles from feature management (#246)
-
-* feat(styles): import bundles from feature management
-
-* refactor(vega): keep style panel focused
+fix(vega): place bundle import on feature list
