@@ -1,5 +1,1 @@
-Require tenant and app when creating platform releases (#252)
-
-* feat: require app scope when creating releases
-
-* refactor: separate release input contracts
+chore: update Orion preview integration
