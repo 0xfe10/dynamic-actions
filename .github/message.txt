@@ -1,1 +1,1 @@
-docs: remove standalone preview workflow
+style: format workflow documentation
