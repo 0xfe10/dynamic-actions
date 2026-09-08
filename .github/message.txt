@@ -1,1 +1,1 @@
-fix(vega): place bundle import on feature list
+chore(orion): update device management style bundle
