@@ -1,1 +1,1 @@
-feat(styles): import bundles from feature management
+refactor(vega): keep style panel focused
