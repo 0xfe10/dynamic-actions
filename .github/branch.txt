@@ -1,1 +1,1 @@
-agt/release-create-app-scope
+agt/minimal-stac-preview

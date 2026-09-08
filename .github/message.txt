@@ -1,1 +1,1 @@
-feat: require app scope when creating releases
+feat: add minimal Aviary-style STAC preview
