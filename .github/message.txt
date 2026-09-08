@@ -1,1 +1,3 @@
-fix：修改广场标签区分区域
+fix(education): restore arithmetic examples
+
+Persist editable v3 examples through the existing example_questions field while keeping historical configs compatible. No schema migration or stored-data rewrite is required.\n\nRefs AXY-2314
