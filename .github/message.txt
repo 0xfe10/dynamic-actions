@@ -1,1 +1,1 @@
-chore: satisfy lyra quality checks
+test: verify cleared bundle import form
