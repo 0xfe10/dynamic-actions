@@ -1,3 +1,1 @@
-fix(camellia): consume arithmetic parity fix
-
-Pin both editor packages to the Edubox commit that aligns Dart v3 output with TypeScript.
+fix(camellia): consume exact metadata fix
