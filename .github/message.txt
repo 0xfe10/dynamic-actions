@@ -1,1 +1,1 @@
-chore(vega): clean CodeMirror test imports
+fix: bind release build path parameters
