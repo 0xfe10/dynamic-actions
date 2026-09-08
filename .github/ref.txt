@@ -1,1 +1,1 @@
-main
+agt/sync-platform-api-generated

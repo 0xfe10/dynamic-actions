@@ -1,3 +1,1 @@
-feat: standalone STAC browser preview
-
-Independent review completed; Orion preview scenarios/actions merged in Orion PR #76. Local validation and browser E2E passed.
+chore: synchronize generated API clients
