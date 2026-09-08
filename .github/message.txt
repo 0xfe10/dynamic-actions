@@ -1,1 +1,1 @@
-chore: mark legacy STAC compatibility tables
+chore: silence legacy STAC reference checks
