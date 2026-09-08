@@ -1,1 +1,1 @@
-fix(chat): 修复发送后中止按钮状态与配色
+feat: cache IAM role permissions
