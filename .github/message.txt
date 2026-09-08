@@ -1,1 +1,1 @@
-feat: expose application runtime configuration
+fix: extend provisioning retry window
