@@ -1,1 +1,1 @@
-fix: include selected package artifacts in build spec
+feat(styles): update document print pages
