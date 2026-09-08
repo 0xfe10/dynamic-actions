@@ -1,13 +1,1 @@
-fix(education): restore arithmetic examples (#154)
-
-* fix(education): restore arithmetic examples
-
-Persist editable v3 examples through the existing example_questions field while keeping historical configs compatible. No schema migration or stored-data rewrite is required.\n\nRefs AXY-2314
-
-* fix(kerria): validate arithmetic examples
-
-Reject unselected, duplicate, empty, and oversized example question data at the API trust boundary for every supported config schema.
-
-* fix(camellia): honor arithmetic example coverage
-
-Use the generator's minimum coverage requirements for examples and discard deselected question types.
+fix：修改人工审核去除状态判断
