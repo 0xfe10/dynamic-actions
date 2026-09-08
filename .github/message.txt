@@ -1,1 +1,1 @@
-chore: silence legacy STAC reference checks
+chore: satisfy lyra quality checks
