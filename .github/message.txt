@@ -1,1 +1,1 @@
-fix(styles): align imported compositions with STAC catalog (#245)
+feat(styles): import bundles from feature management
