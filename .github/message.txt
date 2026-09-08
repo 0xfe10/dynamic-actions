@@ -1,1 +1,1 @@
-fix(camellia): update arithmetic editor fixes
+fix(camellia): update arithmetic editor fixes (#156)
