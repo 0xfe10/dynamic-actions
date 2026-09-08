@@ -1,1 +1,1 @@
-fix：修复ip编译错误
+fix(camellia): update arithmetic editor
