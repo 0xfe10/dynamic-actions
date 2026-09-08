@@ -1,1 +1,1 @@
-chore: synchronize generated API clients
+chore: synchronize generated API clients (#248)
