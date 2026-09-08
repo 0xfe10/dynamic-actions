@@ -1,1 +1,1 @@
-chore: synchronize generated API clients (#248)
+fix: make release target migration replayable
