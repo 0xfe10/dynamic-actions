@@ -1,3 +1,1 @@
-chore: remove standalone STAC preview integration
-
-Reviewed independently; removes only standalone Preview integration and preserves STAC compiler, Release, runtime, and migrations.
+feat: add minimal Aviary-style STAC preview
