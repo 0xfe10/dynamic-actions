@@ -1,1 +1,1 @@
-fix：修复初始化
+feat: expose application runtime configuration
