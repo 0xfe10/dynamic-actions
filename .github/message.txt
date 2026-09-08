@@ -1,1 +1,1 @@
-feat(styles): update document print pages (#244)
+fix(styles): align imported compositions with STAC catalog
