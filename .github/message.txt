@@ -1,1 +1,3 @@
-fix：调整收藏、点赞、屏蔽等接口参数
+fix(camellia): consume arithmetic parity fix
+
+Pin both editor packages to the Edubox commit that aligns Dart v3 output with TypeScript.
