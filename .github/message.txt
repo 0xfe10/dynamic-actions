@@ -1,1 +1,7 @@
-chore: use tested Orion preview builder
+feat: add minimal Aviary-style STAC preview (#253)
+
+* feat: add minimal Aviary-style STAC preview
+
+* chore: update Orion preview integration
+
+* chore: use tested Orion preview builder

@@ -1,1 +1,1 @@
-agt/minimal-stac-preview
+main
