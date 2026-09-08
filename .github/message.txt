@@ -1,4 +1,1 @@
-Merge remote-tracking branch 'origin/main' into agt/stac-runtime-source-of-truth
-
-# Conflicts:
-#	solar/mercury/openapi-baseline/platform.json
+feat: make STAC runtime validation authoritative (#254)
