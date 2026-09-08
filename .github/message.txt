@@ -1,1 +1,13 @@
 fix(camellia): consume clean arithmetic SDK
+
+* fix(camellia): consume arithmetic parity fix
+
+Pin both editor packages to the Edubox commit that aligns Dart v3 output with TypeScript.
+
+* fix(camellia): consume exact metadata fix
+
+* fix(camellia): correct Edubox commit pin
+
+* fix(camellia): consume build-safe SDK
+
+* fix(camellia): consume clean arithmetic SDK
