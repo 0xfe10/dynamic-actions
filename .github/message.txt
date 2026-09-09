@@ -1,1 +1,1 @@
-fix(vega): polish feature actions and preview alignment (#256)
+feat(runtime): integrate manifest loading in Rigel
