@@ -1,1 +1,1 @@
-fix(vega): constrain style detail preview surfaces
+fix(vega): constrain style detail preview surfaces (#255)
