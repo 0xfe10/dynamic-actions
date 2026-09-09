@@ -1,1 +1,1 @@
-feat(mercury): require distributed trust bundle before activation
+feat(mercury): require distributed trust bundle before activation (#262)
