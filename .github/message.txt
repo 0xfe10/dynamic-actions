@@ -1,1 +1,1 @@
-feat(mercury): require distributed trust bundle before activation (#262)
+fix: point Orion to trust bundle integration fix
