@@ -1,1 +1,1 @@
-feat: make STAC runtime validation authoritative (#254)
+fix(vega): constrain style detail preview surfaces
