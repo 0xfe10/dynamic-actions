@@ -1,1 +1,1 @@
-chore(orion): complete app scope isolation (#261)
+feat(mercury): require distributed trust bundle before activation
