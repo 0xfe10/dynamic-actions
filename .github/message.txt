@@ -1,1 +1,1 @@
-feat: unify distribution scope selection (#259)
+fix: explain duplicate release versions
