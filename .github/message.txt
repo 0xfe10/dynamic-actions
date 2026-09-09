@@ -1,1 +1,1 @@
-fix(camellia): use min for English minutes
+fix(camellia): use min for English minutes (#159)
