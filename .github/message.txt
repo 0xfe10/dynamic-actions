@@ -1,1 +1,1 @@
-fix(camellia): update optimized arithmetic dependency (#162)
+fix(camellia): keep arithmetic examples consistent
