@@ -1,9 +1,1 @@
-fix(camellia): update edubox arithmetic dependency (#160)
-
-* fix(camellia): collapse semantic role ranges
-
-* fix(camellia): label semantic ranges as advanced
-
-* fix(camellia): update arithmetic editor
-
-* fix(camellia): update edubox arithmetic dependency
+fix：粉丝和关注列表增加nickname返回
