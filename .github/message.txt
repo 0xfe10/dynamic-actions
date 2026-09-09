@@ -1,1 +1,1 @@
-chore: update feature style API baseline
+fix: compact app feature style selection
