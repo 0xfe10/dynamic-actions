@@ -1,1 +1,7 @@
-fix(camellia): use latest arithmetic generator
+fix(camellia): keep arithmetic examples consistent (#163)
+
+* fix(camellia): update optimized arithmetic dependency
+
+* fix(camellia): keep arithmetic examples consistent
+
+* fix(camellia): use latest arithmetic generator
