@@ -1,1 +1,1 @@
-fix: avoid duplicate release conflict alerts
+fix: decouple app style selection from releases
