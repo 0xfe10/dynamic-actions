@@ -1,1 +1,7 @@
-chore(runtime): update Orion manifest client
+feat(runtime): resolve immutable platform release manifests (#257)
+
+* feat(runtime): resolve platform manifests by renderer capability
+
+* feat(runtime): integrate manifest loading in Rigel
+
+* chore(runtime): update Orion manifest client
