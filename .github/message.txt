@@ -1,1 +1,1 @@
-chore(orion): complete app scope isolation
+chore(orion): complete app scope isolation (#261)
