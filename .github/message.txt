@@ -1,1 +1,1 @@
-chore: sync Orion app scope fix
+test(runtime): verify app locator identity equivalence
