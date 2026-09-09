@@ -1,1 +1,1 @@
-fix(runtime): expose App manifest before login
+fix(runtime): expose App manifest before login (#258)
