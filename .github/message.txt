@@ -1,1 +1,1 @@
-fix：修改ar照片绑定限制逻辑
+fix(camellia): update arithmetic time generation
