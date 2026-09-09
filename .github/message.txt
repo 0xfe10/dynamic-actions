@@ -1,1 +1,1 @@
-fix(vega): constrain style detail preview surfaces (#255)
+fix(vega): polish feature actions and preview alignment
