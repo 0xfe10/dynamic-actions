@@ -1,1 +1,1 @@
-feat(runtime): integrate canonical Rigel authorization scope
+chore: update Orion canonical app scope
