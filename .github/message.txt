@@ -1,1 +1,1 @@
-chore: update Orion runtime authorization client
+chore: sync Orion app scope fix
