@@ -1,15 +1,1 @@
-feat(runtime): derive app authorization scope server-side (#260)
-
-* feat(runtime): derive app authorization scope server-side
-
-* feat(runtime): require canonical app identity
-
-* chore: update Orion runtime authorization client
-
-* chore: sync Orion app scope fix
-
-* test(runtime): verify app locator identity equivalence
-
-* feat(runtime): integrate canonical Rigel authorization scope
-
-* chore: update Orion canonical app scope
+chore(orion): complete app scope isolation
