@@ -1,1 +1,5 @@
-Merge remote-tracking branch 'origin/main' into agt/release-trust-bundle
+fix: update Orion trust bundle integration (#263)
+
+* feat(mercury): require distributed trust bundle before activation
+
+* fix: point Orion to trust bundle integration fix
