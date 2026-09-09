@@ -1,1 +1,1 @@
-test(runtime): verify app locator identity equivalence
+refactor: use single current feature style document
