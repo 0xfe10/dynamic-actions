@@ -1,1 +1,1 @@
-fix：优化AR照片识别逻辑
+fix(camellia): update optimized arithmetic dependency
