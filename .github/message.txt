@@ -1,1 +1,1 @@
-chore: merge latest main
+fix(camellia): use latest arithmetic generator
