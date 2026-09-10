@@ -1,1 +1,1 @@
-fix(camellia): update mixed operator scheduling (#169)
+ci: restore all Labelix production deploys
