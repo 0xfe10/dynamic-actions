@@ -1,3 +1,1 @@
-feat: replace platform publication with immutable revisions and channels
-
-Release is now a long-lived container. Dev import creates immutable revisions, Canary and Stable move by Promote, and Rigel reads Stable by default.
+chore: point Orion at merged release-channel branch
