@@ -1,1 +1,1 @@
-fix: allow confirmed feature style overwrites
+fix: default release distribution to all tenants
