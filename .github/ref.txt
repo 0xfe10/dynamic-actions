@@ -1,1 +1,1 @@
-main
+aviary-release-revision-channels
