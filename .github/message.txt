@@ -1,3 +1,9 @@
-fix(mercury): fill runtime manifest feature keys (#266)
+fix(vega): move release Promote onto timeline rows (#265)
 
-Resolve was returning ready features with empty key and name when snapshot identity missed the style rows. Home then could not match DOCUMENT_PRINT.
+* fix(vega): drop the features list import-bundle CTA
+
+Operators no longer start catalog style-pack import from the capabilities list.
+
+* fix(vega): promote release revisions from the timeline
+
+Channel cards stay as snapshots. Promote follows the current channel head, Dev to Canary then Canary to Stable.
