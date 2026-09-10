@@ -1,1 +1,1 @@
-fix(identity): repair person selectors and fuzzy account search
+fix(web): preserve page size selection and allow long tables to scroll
