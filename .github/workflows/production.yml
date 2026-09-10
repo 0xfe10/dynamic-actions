@@ -16,12 +16,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - source: openfga/openfga:v1.18.3
-            target: prtmax_knowledge_openfga:v1.18.3
           - source: redis:8.10.0
             target: prtmax_knowledge_redis:8.10.0
-          - source: python:3.13-alpine
-            target: prtmax_knowledge_python:3.13-alpine
     steps:
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3

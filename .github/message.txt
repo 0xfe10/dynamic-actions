@@ -1,1 +1,1 @@
-feat: cache IAM role permissions
+feat(auth): replace OpenFGA with IAM-backed content access policies
