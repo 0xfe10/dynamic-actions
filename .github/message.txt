@@ -1,1 +1,1 @@
-fix(camellia): update mixed operator weighting
+fix(camellia): update mixed operator weighting (#167)
