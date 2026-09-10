@@ -1,1 +1,1 @@
-fix：修复一定要手机或者邮箱问题
+feat(identity): expose minimal application personnel search
