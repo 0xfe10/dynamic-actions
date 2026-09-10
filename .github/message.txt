@@ -1,1 +1,1 @@
-test: make selected release feature available
+fix: allow confirmed feature style overwrites
