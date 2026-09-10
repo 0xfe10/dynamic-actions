@@ -1,1 +1,1 @@
-feat(auth): replace OpenFGA with IAM-backed content access policies
+fix：修复部门问题
