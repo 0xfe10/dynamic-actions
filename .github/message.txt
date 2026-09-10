@@ -1,1 +1,3 @@
-fix: register release revision migrations
+fix(vega): promote release revisions from the timeline
+
+Channel cards stay as snapshots. Promote follows the current channel head, Dev to Canary then Canary to Stable.
