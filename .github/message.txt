@@ -1,3 +1,3 @@
-fix(vega): promote release revisions from the timeline
+fix(mercury): fill runtime manifest feature keys
 
-Channel cards stay as snapshots. Promote follows the current channel head, Dev to Canary then Canary to Stable.
+Resolve was returning ready features with empty key and name when snapshot identity missed the style rows. Home then could not match DOCUMENT_PRINT.
