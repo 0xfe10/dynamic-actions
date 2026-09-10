@@ -1,3 +1,3 @@
-feat: import whole style bundles onto a release
+fix: keep style-bundle import passing Mercury check
 
-Release Dev now opens a dedicated pack page instead of picking one feature and style. Missing catalog features are created by default so an empty release can take the whole bundle in one write.
+The wrapped import body needs a generated client and baseline refresh. Existing signing-key errors already failed ST1005 and blocked Check on main.
