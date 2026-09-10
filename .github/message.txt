@@ -1,1 +1,1 @@
-chore: point Orion at merged release-channel branch
+fix: format Mercury models and drop unused runtime materializer
