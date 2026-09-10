@@ -1,3 +1,3 @@
-fix: keep style-bundle import passing Mercury check
+fix: format the style-bundle import page test
 
-The wrapped import body needs a generated client and baseline refresh. Existing signing-key errors already failed ST1005 and blocked Check on main.
+Prettier check in CI rejected the new Vega test file.
