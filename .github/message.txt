@@ -1,1 +1,1 @@
-feat(identity): expose minimal application personnel search
+fix(identity): repair person selectors and fuzzy account search
