@@ -1,1 +1,3 @@
-Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
+chore(orion): point submodule at pattern-based activation Dart
+
+Dalim check compares generated composition v2 Dart in the Orion checkout to the relaxed actionType pattern.
