@@ -1,1 +1,1 @@
-chore(shell): drop sermon from the feature-only migration
+feat(vega): search features when adding a shell item
