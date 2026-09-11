@@ -1,3 +1,3 @@
-style(vega): format the style-bundle import action test
+fix(vega): restore typecheck for shell and release style views
 
-Keep format-check green on the activation branch after the missing-action import coverage landed.
+Studio routes need the same session service cast as other feature pages. Empty action cells and optional style names must match their prop types.
