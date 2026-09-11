@@ -1,1 +1,1 @@
-chore(orion): point submodule at fully formatted shell Dart
+Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
