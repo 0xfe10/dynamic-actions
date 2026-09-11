@@ -1,3 +1,3 @@
-feat(vega): split platform release detail into URL tabs
+feat(vega): split platform release detail into URL tabs (#270)
 
 Keep version locked after create and move distribution and feature styles off the overview so each section has its own addressable tab.
