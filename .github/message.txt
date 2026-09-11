@@ -1,1 +1,1 @@
-chore(orion): point submodule at dispatcher test import fix
+Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
