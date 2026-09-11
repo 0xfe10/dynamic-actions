@@ -1,1 +1,1 @@
-fix
+feat: make device export reusable for import
