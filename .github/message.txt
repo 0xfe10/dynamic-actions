@@ -1,1 +1,3 @@
-Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
+chore(orion): point submodule at empty-shell test fixtures
+
+Manifest fixtures now include the required shell object so Quality Check can decode RuntimeManifestResponse.
