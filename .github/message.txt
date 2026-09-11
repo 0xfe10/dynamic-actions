@@ -1,5 +1,3 @@
-feat: configure app bar and personal center per app (#268)
+fix(stac): accept app-defined cosmos actions
 
-Let Studio choose which features and built-ins hang on the bottom bar
-and personal center. Home stays native because those entries can depend
-on device model.
+Stop maintaining a hardcoded action allowlist so Breeze runtime actions can import, and show missing-feature bundle errors once.
