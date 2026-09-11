@@ -1,3 +1,1 @@
-feat(shell): drop builtin shell actions
-
-Shell items are feature slots only. Operators add HOME, locale, and logout as real features when they need them.
+chore(shell): drop sermon from the feature-only migration
