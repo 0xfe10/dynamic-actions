@@ -1,3 +1,1 @@
-fix(mercury): drop foreign keys from app shell surfaces
-
-Mercury forbids REFERENCES in migrations. Parent and child rows stay linked by application writes and the integrity scanner.
+Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
