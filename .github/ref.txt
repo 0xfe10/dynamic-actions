@@ -1,1 +1,1 @@
-fix/stac-app-defined-actions
+feat/release-detail-sections

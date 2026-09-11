@@ -1,3 +1,3 @@
-fix(stac): accept app-defined cosmos actions
+feat(vega): split platform release detail into URL tabs
 
-Stop maintaining a hardcoded action allowlist so Breeze runtime actions can import, and show missing-feature bundle errors once.
+Keep version locked after create and move distribution and feature styles off the overview so each section has its own addressable tab.
