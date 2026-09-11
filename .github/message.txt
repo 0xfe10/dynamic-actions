@@ -1,1 +1,3 @@
-chore(mercury): register checksum for feature-only shell migration
+feat(vega): import missing style actions into the catalog
+
+Preview still fails when a bundle calls an unknown action, but the page now names those actions and can register them after a risk confirmation. Built-in host actions stay in code.
