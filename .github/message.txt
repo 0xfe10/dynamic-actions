@@ -1,3 +1,3 @@
-feat(vega): import missing style actions into the catalog
+chore(orion): point submodule at activation Dart contracts
 
-Preview still fails when a bundle calls an unknown action, but the page now names those actions and can register them after a risk confirmation. Built-in host actions stay in code.
+Dalim check compares generated composition v2 Dart in the Orion checkout, so this branch needs the matching activation types.
