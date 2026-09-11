@@ -1,1 +1,3 @@
-Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
+chore(orion): point submodule at runtime shell and activation client
+
+generate-check diffs the Tonik runtime client against the live contract.
