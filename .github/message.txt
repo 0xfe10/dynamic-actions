@@ -1,3 +1,3 @@
-fix(stac): accept app-defined cosmos actions (#269)
+feat(shell): drop builtin shell actions
 
-Stop maintaining a hardcoded action allowlist so Breeze runtime actions can import, and show missing-feature bundle errors once.
+Shell items are feature slots only. Operators add HOME, locale, and logout as real features when they need them.
