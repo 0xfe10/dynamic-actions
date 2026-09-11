@@ -1,1 +1,1 @@
-ci: restore all Labelix production deploys (#170)
+fix：修改视频合集去除编码
