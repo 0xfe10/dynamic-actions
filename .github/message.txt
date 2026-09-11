@@ -1,1 +1,3 @@
-Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
+chore(orion): point submodule at formatted shell Dart
+
+Cosmos Check runs Orion format-check, so this branch needs the matching formatter commit.
