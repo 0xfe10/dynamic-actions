@@ -1,1 +1,3 @@
-chore(orion): point submodule at missing-payload page open
+chore(vega): regenerate platform OpenAPI client for shell and import-actions
+
+generate-check diffs this file against the live Mercury contract. Shell and import-actions routes were missing.
