@@ -1,4 +1,4 @@
-feat: configure app bar and personal center per app
+feat: configure app bar and personal center per app (#268)
 
 Let Studio choose which features and built-ins hang on the bottom bar
 and personal center. Home stays native because those entries can depend
