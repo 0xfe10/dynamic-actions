@@ -1,3 +1,1 @@
-fix(vega): restore typecheck for shell and release style views
-
-Studio routes need the same session service cast as other feature pages. Empty action cells and optional style names must match their prop types.
+Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
