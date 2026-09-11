@@ -1,1 +1,1 @@
-feat(vega): search features when adding a shell item
+chore(mercury): register checksum for feature-only shell migration
