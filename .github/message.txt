@@ -1,3 +1,1 @@
-chore(vega): regenerate platform OpenAPI client for app shell routes
-
-generate-check diffs this file against the live Mercury contract. The shell GET and PUT routes were missing.
+Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
