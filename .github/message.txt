@@ -1,3 +1,5 @@
-feat: import whole style bundles onto a release (#267)
+feat: configure app bar and personal center per app
 
-Release Dev now opens a dedicated pack page instead of picking one feature and style. Missing catalog features are created by default so an empty release can take the whole bundle in one write.
+Let Studio choose which features and built-ins hang on the bottom bar
+and personal center. Home stays native because those entries can depend
+on device model.
