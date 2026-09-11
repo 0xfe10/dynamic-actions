@@ -1,1 +1,1 @@
-Merge branch 'feat/shell-feature-only' into feat/host-feature-activation
+chore(orion): point submodule at style-bundle test timeout
