@@ -1,3 +1,1 @@
-chore(orion): point submodule at empty-shell test fixtures
-
-Manifest fixtures now include the required shell object so Quality Check can decode RuntimeManifestResponse.
+chore(orion): point submodule at unselected-feature STAC gating
