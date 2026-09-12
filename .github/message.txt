@@ -1,1 +1,1 @@
-Merge branch 'main' into feat/host-feature-activation
+chore(orion): pin submodule to the merged activation squash
