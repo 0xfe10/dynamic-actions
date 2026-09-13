@@ -1,3 +1,9 @@
-feat(stac): catalog shell menuList and pin Orion
+feat(stac): catalog dataRepeat and pin Orion shell styles (#273)
+
+* feat(stac): add cosmos.layout.dataRepeat to the style catalog
+
+Rigel styles can repeat Studio shell items without registering APP_BAR or PERSONAL_CENTER actions as builtins.
+
+* feat(stac): catalog shell menuList and pin Orion
 
 Keep Dalim in lockstep with the merged dataRepeat renderer and the menuList component already on Orion main.
