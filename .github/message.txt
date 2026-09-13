@@ -1,3 +1,3 @@
-fix(feature-styles): preview bundles with activation and named data sources
+fix(feature-styles): preview bundles with activation and named data sources (#275)
 
 Huma hid request-schema failures and omitted composition activation, so Orion style bundles failed preview as empty INVALID_REQUEST. Keep STAC dataRepeat data sources on the provider boundary and show copyable problem details in Vega.
