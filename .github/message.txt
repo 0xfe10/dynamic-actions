@@ -1,3 +1,4 @@
-feat(datasource): recognize cosmos.app DataSource ids
+feat(runtime): serve selected region language packs
 
-Pin Orion to the cosmos.app DataSource prefix and accept those ids in STAC validation without routing them through remote invoke.
+Production i18n now comes from selected published region packs on manifest
+resolve, not Release localizationResources or App /translations.
