@@ -1,8 +1,1 @@
-fix(feature-styles): copy import preview errors and pin help center (#280)
-
-* fix(feature-styles): show and copy every bundle preview error
-
-Invalid styles previously kept only the first STAC issue. Preview now
-lists every code, path, and reason, and one button copies all of them.
-
-* chore(orion): pin submodule to help center navigation capability
+chore(orion): pin submodule to help center navigation capability
