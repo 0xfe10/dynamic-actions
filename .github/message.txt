@@ -1,3 +1,4 @@
-chore(orion): pin submodule to unused analyzer helper fix (#278)
+fix(stac): allow host action argument URLs on style import
 
-Pick up Orion #115 so Cosmos staging Check no longer fails dart analyze.
+LINK styles pass https URLs to cosmos.external.openLink. Those are opened
+by the host, not fetched by STAC, so they should not block bundle import.
