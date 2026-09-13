@@ -1,3 +1,4 @@
-refactor(datasource): drop stored DataSources for remote invoke (#281)
+feat(datasource): recognize cosmos.app DataSource ids
 
-Pin Orion to reserved-prefix resolve, drop Mercury tables and CRUD APIs, and echo cosmos.remote.* through POST invoke.
+Pin Orion to the App registry prefix and accept cosmos.app.* in STAC
+validation without routing those ids through remote invoke.
