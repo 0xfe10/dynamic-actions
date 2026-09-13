@@ -1,4 +1,8 @@
-fix(stac): allow host action argument URLs on style import (#279)
+fix(feature-styles): copy import preview errors and pin help center (#280)
 
-LINK styles pass https URLs to cosmos.external.openLink. Those are opened
-by the host, not fetched by STAC, so they should not block bundle import.
+* fix(feature-styles): show and copy every bundle preview error
+
+Invalid styles previously kept only the first STAC issue. Preview now
+lists every code, path, and reason, and one button copies all of them.
+
+* chore(orion): pin submodule to help center navigation capability
