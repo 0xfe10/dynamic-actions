@@ -1,3 +1,3 @@
-chore(orion): pin submodule to canonical feature-style digest (#277)
+chore(orion): pin submodule to unused analyzer helper fix
 
-Pick up Orion #113 shell data sources and #114 Dalim bundle hashing.
+Pick up Orion #115 so Cosmos staging Check no longer fails dart analyze.
