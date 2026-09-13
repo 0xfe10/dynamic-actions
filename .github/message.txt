@@ -1,3 +1,3 @@
-refactor(datasource): drop stored DataSources for remote invoke
+refactor(datasource): drop stored DataSources for remote invoke (#281)
 
 Pin Orion to reserved-prefix resolve, drop Mercury tables and CRUD APIs, and echo cosmos.remote.* through POST invoke.
