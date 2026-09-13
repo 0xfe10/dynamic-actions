@@ -1,1 +1,3 @@
-chore(orion): pin submodule to help center navigation capability
+fix(shell): validate studio app bar items against published channels
+
+Studio was judging APP_BAR targets only against stable, so configured tabs looked unavailable even when they were on another channel.
