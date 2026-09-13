@@ -1,3 +1,3 @@
-fix(stac): drop the unused dataRepeat filterGroup field
+refactor(datasource): drop stored DataSources for remote invoke
 
-Grouping is a style CEL concern. Keep the catalog and import fixtures from advertising a host group filter.
+Pin Orion to reserved-prefix resolve, drop Mercury tables and CRUD APIs, and echo cosmos.remote.* through POST invoke.
