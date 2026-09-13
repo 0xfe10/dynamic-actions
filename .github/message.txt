@@ -1,3 +1,3 @@
-fix(feature-styles): accept unescaped feature-style bundle digests (#276)
+chore(orion): pin submodule to canonical feature-style digest
 
-Orion bundles with CEL && hashed without HTML escaping, so preview rejected a valid official bundle.
+Pick up Orion #113 shell data sources and #114 Dalim bundle hashing.
