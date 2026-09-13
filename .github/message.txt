@@ -1,4 +1,3 @@
 feat(runtime): serve selected region language packs
 
-Production i18n now comes from selected published region packs on manifest
-resolve, not Release localizationResources or App /translations.
+Production i18n now comes from selected published region packs on manifest resolve, not Release localizationResources or App /translations.
