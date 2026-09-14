@@ -1,3 +1,3 @@
-feat(runtime): serve selected region language packs
+Allow hyphen-only localization keys in Composition v2 schema.
 
-Production i18n now comes from selected published region packs on manifest resolve, not Release localizationResources or App /translations.
+Co-authored-by: Cursor <cursoragent@cursor.com>
