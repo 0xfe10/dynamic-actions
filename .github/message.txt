@@ -1,4 +1,11 @@
-fix(localization): write plain FTL fallbacks and show values in the matrix.
+Sync hyphen-only localization keys and matrix display (#284)
+
+* chore(schema): regenerate contracts after hyphen-only localization keys.
+
+The Composition v2 schema change was applied by hand; this syncs Dalim
+outputs, fixtures, and the Orion pin so style imports validate.
+
+* fix(localization): write plain FTL fallbacks and show values in the matrix.
 
 Style import was quoting every fallback as {"text"}; store unquoted
 text and stop repeating the message id in each language-pack cell.
