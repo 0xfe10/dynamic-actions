@@ -1,1 +1,1 @@
-fix：修改发送短信pc版低于1.0.3版本不进行图形校验，模版类型增加TEMPLATE_COLOR
+fix：修改hithere发送邮箱模版
