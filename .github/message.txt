@@ -1,1 +1,1 @@
-fix: preserve partial locale translations
+fix: close style baseline review gaps
