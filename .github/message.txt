@@ -1,1 +1,1 @@
-chore: remove legacy translation workflow copy
+fix: preserve partial locale translations
