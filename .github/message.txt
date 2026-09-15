@@ -1,1 +1,1 @@
-fix: streamline language pack lifecycle
+fix: restore app language pack selection
