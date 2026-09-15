@@ -1,7 +1,1 @@
-feat: protect feature style imports with baselines (#285)
-
-* feat: protect feature style imports with baselines
-
-* fix: close style baseline review gaps
-
-* chore: advance Orion style bundle schema
+build(web): download cel-bridge release artifacts
