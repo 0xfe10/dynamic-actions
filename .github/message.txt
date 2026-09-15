@@ -1,1 +1,1 @@
-feat: unify app localization workspace
+chore: remove legacy translation workflow copy
