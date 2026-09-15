@@ -1,1 +1,1 @@
-fix：恢复ar识别
+chore: 更新 Spectra PostgreSQL 配置示例
