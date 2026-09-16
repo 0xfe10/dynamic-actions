@@ -1,4 +1,4 @@
-feat(resources): drive file lookup tests and real previews
+feat(resources): drive file lookup tests and real previews (#287)
 
 Studio previews load the resource download URL. Storage tests now call
 Service.SetAlias and Service.Lookup, including duplicate-alias rejection
