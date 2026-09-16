@@ -1,4 +1,4 @@
-feat(resources): give App files aliases and drop shell icons
+feat(resources): give App files aliases and drop shell icons (#286)
 
 App Resources can store an optional unique alias. Runtime fetch by id or
 alias honors digest/etag and rejects archived files. Studio shell items
