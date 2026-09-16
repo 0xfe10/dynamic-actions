@@ -1,5 +1,5 @@
-feat(resources): give App files aliases and drop shell icons (#286)
+feat(resources): drive file lookup tests and real previews
 
-App Resources can store an optional unique alias. Runtime fetch by id or
-alias honors digest/etag and rejects archived files. Studio shell items
-no longer accept or return an icon field; the DB column is written empty.
+Studio previews load the resource download URL. Storage tests now call
+Service.SetAlias and Service.Lookup, including duplicate-alias rejection
+and GET /files/{ref} 304. OpenAPI baseline matches the live Huma spec.
