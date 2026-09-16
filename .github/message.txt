@@ -1,1 +1,5 @@
-chore(orion): track rewritten main history
+feat(resources): give App files aliases and drop shell icons
+
+App Resources can store an optional unique alias. Runtime fetch by id or
+alias honors digest/etag and rejects archived files. Studio shell items
+no longer accept or return an icon field; the DB column is written empty.
