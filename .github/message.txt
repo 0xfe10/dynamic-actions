@@ -1,3 +1,3 @@
-chore(orion): bump submodule for style localization catalog
+chore(orion): bump submodule for style localization catalog (#302)
 
 Point orion at #138 so feature style fallbacks use zh-CN defaults and the four-locale translation catalog is available in bundle builds.
