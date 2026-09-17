@@ -162,6 +162,8 @@ jobs:
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury.invalid
             BELLATRIX_RUNTIME_BASE_URL=https://mercury.invalid
+          secrets: |
+            gh_token=${{ secrets.GH_TOKEN_0XFE10 }}
           cache-from: type=gha,scope=vega
           cache-to: type=gha,mode=max,scope=vega
       - uses: docker/build-push-action@v6
@@ -251,6 +253,8 @@ jobs:
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury-stg.iprtapp.com
             BELLATRIX_RUNTIME_BASE_URL=https://mercury-stg.iprtapp.com
+          secrets: |
+            gh_token=${{ secrets.GH_TOKEN_0XFE10 }}
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:staging
