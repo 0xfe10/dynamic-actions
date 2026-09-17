@@ -1,1 +1,1 @@
-feat(rubus): 优化 AR 照片识别与 PostgreSQL 迁移
+fix：文档转换去除打印日志
