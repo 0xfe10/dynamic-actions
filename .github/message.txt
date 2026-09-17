@@ -1,3 +1,3 @@
-feat(resources): move app files into tenant application settings
+feat(resources): platform app files page with tenant/app picker
 
-Place upload, alias, and preview on the management application page instead of Studio, and include the missing 00123 checksum so migrations can run.
+Move app resource management to /platform/applications/resources with search-param scope selection, and extract platform application child routes from router.tsx to satisfy Codeline.
