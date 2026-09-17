@@ -1,3 +1,5 @@
-chore(orion): bump submodule after removing sync script (#304)
+fix(platform-resources): finalize OSS uploads and load shell icons
 
-Point orion at #139 so the temporary style localization sync script is no longer in the pinned submodule.
+Relax platform resource upload finalize when OSS omits optional metadata,
+read sha256 user meta case-insensitively, and bump orion for platform file
+fallback used by Breeze shell glyph aliases.
