@@ -1,3 +1,3 @@
-fix(mercury): import feature-style bundles with catalog remote content (#300)
+Unify STAC runtime limits and semantic component depth validation.
 
-Pass catalog validation options through STAC normalize/extract, fix register-catalog request binding, and bump orion for MINE/THEME1 extendedImageNetwork import.
+Add stac-runtime-limits.yaml manifest with generated Go constants; Mercury now enforces component nesting (100) separately from JSON depth backstop (128).
