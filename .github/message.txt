@@ -1,3 +1,3 @@
-fix(vega): proxy /api to Mercury and default API base to Vega origin
+fix(platform): bind session cookie on platform resource browse API
 
-Prevent session probes from hitting the SPA index when VITE_MERCURY_BASE_URL is missing at build time.
+Export AuthInput so Huma reads the embedded mercury_session field; browse was returning 401 and Vega redirected to login.
