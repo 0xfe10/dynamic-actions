@@ -1,3 +1,3 @@
-Bump orion submodule for shared.localizations merge.
+Bump orion submodule for shared.localizations merge. (#299)
 
 Pulls Orion #137 so feature_styles.yaml shared i18n fallbacks merge into each style at compile time.
