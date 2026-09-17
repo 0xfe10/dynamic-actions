@@ -1,3 +1,3 @@
-Unify STAC runtime limits and semantic component depth validation. (#301)
+chore(orion): bump submodule for style localization catalog
 
-Add stac-runtime-limits.yaml manifest with generated Go constants; Mercury now enforces component nesting (100) separately from JSON depth backstop (128).
+Point orion at #138 so feature style fallbacks use zh-CN defaults and the four-locale translation catalog is available in bundle builds.
