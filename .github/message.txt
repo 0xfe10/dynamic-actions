@@ -1,3 +1,3 @@
-chore(orion): enable dotenv for feature-styles-publish from orion root
+fix(vega): proxy /api to Mercury and default API base to Vega origin
 
-Bump orion so app developers can copy .env.example and publish without the cosmos monorepo wrapper.
+Prevent session probes from hitting the SPA index when VITE_MERCURY_BASE_URL is missing at build time.
