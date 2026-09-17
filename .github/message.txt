@@ -1,4 +1,4 @@
-feat(mercury): replace missingActions with missingCatalog registration
+feat(mercury): replace missingActions with missingCatalog registration (#298)
 
 Add register-catalog API, component catalog import with remote content
 policy, STAC validation for registered remote URLs, Vega UI updates, and
