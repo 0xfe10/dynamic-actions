@@ -1,1 +1,1 @@
-fix：文档转换去除打印日志
+Merge branch 'main' of https://github.com/prtmax/labelix
