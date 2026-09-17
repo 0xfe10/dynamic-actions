@@ -1,3 +1,3 @@
-Tighten resource browser height to avoid page scroll.
+Tighten resource browser height to avoid page scroll. (#297)
 
 Account for the workspace header, page title, and filters when sizing the three-column grid.
