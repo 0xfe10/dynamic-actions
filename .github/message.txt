@@ -1,3 +1,3 @@
-feat(platform): presigned resource uploads and folder context menus. (#290)
+chore: sync Orion submodule and platform OpenAPI types.
 
-Route platform resource uploads through presigned object storage instead of base64 API bodies, add folder archive API, and expose create/delete actions via right-click menus in Vega.
+Point Orion at runtime client regen on main and refresh generated platform API types for folder status endpoints.
