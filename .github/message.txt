@@ -1,3 +1,3 @@
-fix(regions): allow BCP47 region keys and expose en-US in Vega
+chore(orion): bump submodule after removing sync script
 
-Stop rejecting locale tags like en-US at the createRegion API boundary, and add the missing CLDR default-content alias so the region picker can offer English (United States).
+Point orion at #139 so the temporary style localization sync script is no longer in the pinned submodule.
