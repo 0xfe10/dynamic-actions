@@ -1,7 +1,4 @@
-feat(platform): add platform resource catalog with folder tree UI
+fix(platform): avoid duplicate runtime file OpenAPI schema name
 
-Replace tenant-scoped file management with a platform-owned directory
-catalog (migration 125, Mercury browse/tree/upload APIs, runtime file
-lookup). Vega gets a three-column catalog UI with optional scope tags
-for filtering only. Also fixes feature-style import CLI and relaxes API
-key create reason validation.
+Rename platform resource runtime metadata types so Huma does not collide
+with the existing app-scoped storage runtime schema on the same API.
