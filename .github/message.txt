@@ -1,3 +1,3 @@
-chore(orion): bump submodule after removing sync script
+chore(orion): bump submodule after removing sync script (#304)
 
 Point orion at #139 so the temporary style localization sync script is no longer in the pinned submodule.
