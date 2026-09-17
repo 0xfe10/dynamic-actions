@@ -1,3 +1,7 @@
-feat(platform): personal API keys with bearer auth for all OpenAPI (#289)
+feat(platform): add platform resource catalog with folder tree UI
 
-Add account-bound API keys backed by platform sessions, bearer bridge for programmatic Platform API access, Vega Settings → API management page, and Orion feature-styles-import CLI.
+Replace tenant-scoped file management with a platform-owned directory
+catalog (migration 125, Mercury browse/tree/upload APIs, runtime file
+lookup). Vega gets a three-column catalog UI with optional scope tags
+for filtering only. Also fixes feature-style import CLI and relaxes API
+key create reason validation.
