@@ -1,3 +1,5 @@
-Tighten resource browser height to avoid page scroll. (#297)
+feat(mercury): replace missingActions with missingCatalog registration
 
-Account for the workspace header, page title, and filters when sizing the three-column grid.
+Add register-catalog API, component catalog import with remote content
+policy, STAC validation for registered remote URLs, Vega UI updates, and
+refresh the platform OpenAPI baseline.

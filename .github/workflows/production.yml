@@ -211,8 +211,6 @@ jobs:
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury.iprtapp.com
             BELLATRIX_RUNTIME_BASE_URL=https://mercury.iprtapp.com
-          secrets: |
-            gh_token=${{ secrets.GH_TOKEN_0XFE10 }}
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:latest
