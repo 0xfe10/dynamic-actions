@@ -1,3 +1,3 @@
-fix(platform): keep scroll position when selecting resource files. (#293)
+Fix resources page refresh signing users out.
 
-Pin the details panel on wide layouts and disable router scroll reset on in-page search updates so file selection no longer jumps back to the top.
+Normalize snowflake search params, defer preview fetches until browse succeeds, and only clear the session on session-invalidating 401 responses.
