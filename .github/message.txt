@@ -1,3 +1,3 @@
-chore(orion): bump submodule for style localization catalog (#302)
+fix(regions): allow BCP47 region keys and expose en-US in Vega (#303)
 
-Point orion at #138 so feature style fallbacks use zh-CN defaults and the four-locale translation catalog is available in bundle builds.
+Stop rejecting locale tags like en-US at the createRegion API boundary, and add the missing CLDR default-content alias so the region picker can offer English (United States).
