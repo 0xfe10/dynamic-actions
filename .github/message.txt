@@ -1,5 +1,4 @@
-fix(platform-resources): finalize OSS uploads and load shell icons
+fix(platform-resources): verify uploaded bytes before finalize
 
-Relax platform resource upload finalize when OSS omits optional metadata,
-read sha256 user meta case-insensitively, and bump orion for platform file
-fallback used by Breeze shell glyph aliases.
+Read the pending OSS object and recompute sha256 during finalize instead
+of trusting optional object metadata alone.
