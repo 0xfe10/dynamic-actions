@@ -1,3 +1,3 @@
-feat(orion): add feature-styles-publish one-step build and import
+feat(orion): support --release on feature-styles-publish
 
-Expose the combined Orion upload command from the cosmos Justfile.
+Bump orion for release version lookup during style publish.
