@@ -1,1 +1,1 @@
-Merge branch 'main' of https://github.com/prtmax/labelix
+fix：回滚ar到9月16号版本
