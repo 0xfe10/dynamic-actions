@@ -1,3 +1,3 @@
-fix(platform): bind resource file and folder path parameters for Huma.
+fix(platform): bind resource file and folder path parameters for Huma. (#292)
 
 Unexported embedded path structs left fileId empty, so download-url and other file routes returned INVALID_REQUEST even when records were valid.
