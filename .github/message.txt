@@ -1,3 +1,3 @@
-feat(platform): personal API keys with bearer auth for all OpenAPI
+feat(platform): personal API keys with bearer auth for all OpenAPI (#289)
 
 Add account-bound API keys backed by platform sessions, bearer bridge for programmatic Platform API access, Vega Settings → API management page, and Orion feature-styles-import CLI.
