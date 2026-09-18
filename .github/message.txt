@@ -1,4 +1,4 @@
-Allow anonymous runtime reads of platform resource files.
+Allow anonymous runtime reads of platform resource files. (#306)
 
 Shell icons and other platform assets must load before app login, matching
 the public i18n runtime endpoints.
