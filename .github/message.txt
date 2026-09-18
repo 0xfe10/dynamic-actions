@@ -1,4 +1,3 @@
-Allow anonymous runtime reads of platform resource files. (#306)
+Unify Dalim contracts under YAML registry with generated STAC limits.
 
-Shell icons and other platform assets must load before app login, matching
-the public i18n runtime endpoints.
+Move all contract manifests into fornax/dalim/contracts, convert JSON sources to YAML, and add registry.yaml as the single include entry. Wire catalog drift, compare, and support generators through the shared loader and generate STAC runtime limit constants from the canonical YAML.
