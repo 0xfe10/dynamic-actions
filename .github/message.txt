@@ -1,4 +1,4 @@
-Add platform resource SVG uploads and bump Orion icon migration.
+Allow anonymous runtime reads of platform resource files.
 
-Allow image/svg+xml in upload intents and Vega file picker; bump Orion
-so STAC styles load all glyphs from platform resource aliases at runtime.
+Shell icons and other platform assets must load before app login, matching
+the public i18n runtime endpoints.
