@@ -1,1 +1,13 @@
-chore(orion): bump submodule to merged feedback changes on main.
+Add app feedback tickets across Mercury, Orion, and App Studio (#308)
+
+* Add app feedback tickets across Mercury, Orion, and App Studio.
+
+Introduce ticket/message storage and platform/runtime APIs, wire FEEDBACK runtime actions and DataSources, and expose an App Studio page for listing and replying to user feedback.
+
+* Fix App Studio feedback API wiring and ID serialization.
+
+Align Vega mutations with platform CSRF headers, correct form/mutation hooks, paginate ticket lists, and serialize snowflake IDs as strings in Mercury responses.
+
+* chore(orion): bump submodule after feedback merge resolution.
+
+* chore(orion): bump submodule to merged feedback changes on main.
