@@ -1,3 +1,3 @@
-Remove preview-feature-style CLI wiring and bump Orion. (#309)
+Add runtime app user avatar API and bump Orion.
 
-Drop the Cosmos Justfile wrapper and README entry now that Orion retired the local loopback preview tool.
+Introduce app-scoped avatar upload intents for Rigel users, expose avatar metadata in runtime-context session.user, and point the Orion submodule at the ACCOUNT avatar client/UI work.
