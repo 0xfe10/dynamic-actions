@@ -1,1 +1,1 @@
-chore(orion): bump submodule after feedback merge resolution.
+chore(orion): bump submodule to merged feedback changes on main.
