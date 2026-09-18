@@ -1,3 +1,3 @@
-Add app feedback tickets across Mercury, Orion, and App Studio.
+Fix App Studio feedback API wiring and ID serialization.
 
-Introduce ticket/message storage and platform/runtime APIs, wire FEEDBACK runtime actions and DataSources, and expose an App Studio page for listing and replying to user feedback.
+Align Vega mutations with platform CSRF headers, correct form/mutation hooks, paginate ticket lists, and serialize snowflake IDs as strings in Mercury responses.
