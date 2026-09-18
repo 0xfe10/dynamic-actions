@@ -1,3 +1,3 @@
-Register feedback host actions and complete migration checksums.
+Add same-name replace option for platform resource uploads.
 
-Treat feedback runtime actions as built-ins for style import, map their STAC capabilities, and record the app feedback migration checksum while bumping Orion.
+Allow operators to update file content while preserving alias, description, and scope tags when uploading a duplicate filename.
