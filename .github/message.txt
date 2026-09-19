@@ -1,4 +1,4 @@
-fix(mercury): use portable SQL in style theme backfill migration
+fix(mercury): use portable SQL in style theme backfill migration (#326)
 
 Replace jsonb_object_length with key-presence checks so migration 00135
 runs on PostgreSQL versions without that helper.
