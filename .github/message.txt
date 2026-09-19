@@ -1,1 +1,1 @@
-fix：修改后台管理机型可筛选
+feat(ar): extract recognition service and wire internal deployment
