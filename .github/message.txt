@@ -1,3 +1,3 @@
-Route style theme pages by family key instead of snowflake id. (#317)
+Fix app user avatar API binding and member permissions.
 
-URLs like /style-families/BREEZE/themes resolve the canonical family id from the API so browser number precision cannot corrupt theme mutations.
+Inline the runtime appId path parameter so Huma binds it correctly, grant profile.manage to app_member, and backfill existing member roles via migration.
