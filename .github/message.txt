@@ -1,3 +1,3 @@
-Fix style theme mutations missing CSRF headers and required body fields.
+Fix style theme mutations missing CSRF headers and required body fields. (#314)
 
 Place mutation headers under params and send empty description and assetOverrides so theme create/update requests pass OpenAPI validation.
