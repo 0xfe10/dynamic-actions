@@ -1,3 +1,4 @@
-Fix app user avatar upload for BCP47 region keys like zh-CN. (#322)
+Fix feedback runtime API path binding for appId.
 
-Migration 00129 reused a lowercase-only logical_region_key check that rejected the platform default region, causing upload-intent creation to fail with AVATAR_UNAVAILABLE (503).
+Huma does not bind path params on unexported embedded structs, which caused
+runtime feedback requests to authenticate with appId=0 and return 401.
