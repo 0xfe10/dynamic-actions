@@ -1,4 +1,4 @@
-Fix feedback runtime API path binding for appId.
+Fix feedback runtime API path binding for appId. (#323)
 
 Huma does not bind path params on unexported embedded structs, which caused
 runtime feedback requests to authenticate with appId=0 and return 401.
