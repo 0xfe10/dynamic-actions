@@ -1,3 +1,3 @@
-Add style theme distribution UI and complete color-only theme workflow. (#312)
+Bump Orion for platform style file fetch compile fix.
 
-Platform operators can create color themes, assign them to tenants or apps, and App Studio can pick themes for style families already in use so runtime colors apply end-to-end.
+Keeps Bellatrix/web preview builds working after the runtime client regen.
