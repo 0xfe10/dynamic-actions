@@ -1,3 +1,3 @@
-Add runtime app user avatar API and bump Orion. (#310)
+Add Style Family catalog with import upsert and admin list (T0).
 
-Introduce app-scoped avatar upload intents for Rigel users, expose avatar metadata in runtime-context session.user, and point the Orion submodule at the ACCOUNT avatar client/UI work.
+Introduce csm_style_families so style keys become first-class families, auto-created on bundle import, filterable in App Studio selection, and manageable from a new Vega list page.
