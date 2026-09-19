@@ -1,3 +1,3 @@
-Fix app user avatar API binding and member permissions. (#318)
+Fix style theme studio flow and dev API routing.
 
-Inline the runtime appId path parameter so Huma binds it correctly, grant profile.manage to app_member, and backfill existing member roles via migration.
+Add the missing migration 00133 checksum, repair app style theme path binding and feature style list SQL joins, and align Vega with direct Mercury API calls plus tabbed theme detail UI.
