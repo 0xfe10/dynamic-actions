@@ -1,3 +1,9 @@
-Complete Style Family and Style Theme plan (T0-T8).
+Style Family + Style Theme (T0-T8)
+
+* Add Style Family catalog with import upsert and admin list (T0).
+
+Introduce csm_style_families so style keys become first-class families, auto-created on bundle import, filterable in App Studio selection, and manageable from a new Vega list page.
+
+* Complete Style Family and Style Theme plan (T0-T8).
 
 Add style theme tables, CRUD, app grants/selections, release styleThemes delivery, CEL theme.*, Vega admin and Studio UI, and bump Orion for runtime theming.
