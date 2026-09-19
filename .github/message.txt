@@ -1,3 +1,3 @@
-Bump Orion for platform style file fetch compile fix. (#313)
+Fix style theme mutations missing CSRF headers and required body fields.
 
-Keeps Bellatrix/web preview builds working after the runtime client regen.
+Place mutation headers under params and send empty description and assetOverrides so theme create/update requests pass OpenAPI validation.
