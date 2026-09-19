@@ -1,3 +1,3 @@
-Extend platform browser session lifetime to 10 days.
+Extend platform browser session lifetime to 10 days. (#320)
 
 Reduces login friction for Vega console users without changing API key or runtime token TTLs.
