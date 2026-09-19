@@ -1,4 +1,4 @@
-feat(style-theme): validate full tokens and expand platform editor
+chore(orion): bump submodule for style theme runtime support
 
-Require all nine theme tokens on style theme save, backfill partial rows,
-and give Platform Style Theme pages the same editing surface as app themes.
+Track merged Orion PR #162 with nested theme snapshots and theme-aware plate
+components.
