@@ -1,4 +1,4 @@
-Replace style theme asset overrides with path convention.
+Replace style theme asset overrides with path convention. (#331)
 
 Themes now only configure colors; icons resolve from
 assets/themes/{themeKey}/{alias} in platform resources. Mercury adds
