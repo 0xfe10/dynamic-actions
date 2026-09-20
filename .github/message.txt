@@ -1,1 +1,6 @@
-test(style-themes): allow unrelated theme candidates (#330)
+Replace style theme asset overrides with path convention.
+
+Themes now only configure colors; icons resolve from
+assets/themes/{themeKey}/{alias} in platform resources. Mercury adds
+path-based runtime file lookup, release snapshots omit assetOverrides,
+and Vega drops the per-theme Resources tab.
