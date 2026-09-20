@@ -1,1 +1,1 @@
-fix(style-themes): preserve release integrity
+fix(style-themes): preserve release integrity (#329)
