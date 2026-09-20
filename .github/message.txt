@@ -1,1 +1,1 @@
-test(style-themes): allow unrelated theme candidates
+test(style-themes): allow unrelated theme candidates (#330)
