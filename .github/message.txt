@@ -1,4 +1,11 @@
-chore(orion): bump submodule for Aviary style theme colors
+feat(style-theme): Aviary color palette for platform themes (#327)
+
+* feat(style-theme): Aviary color palette for platform style themes
+
+Replace the nine-token editor with grouped semantic colors, fix preview so
+primary tints actions not body text, and migrate stored themes to the palette.
+
+* chore(orion): bump submodule for Aviary style theme colors
 
 Pick up runtime_theme color palette, preview-safe ColorScheme mapping,
 and page icon assetOverrides resolution.
