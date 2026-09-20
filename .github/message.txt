@@ -1,1 +1,1 @@
-fix(style-themes): preserve release integrity (#329)
+test(style-themes): allow unrelated theme candidates
