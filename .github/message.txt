@@ -1,1 +1,1 @@
-feat(ar): extract recognition service and wire internal deployment
+fix：修复数量问题
