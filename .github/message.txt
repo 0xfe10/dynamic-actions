@@ -1,6 +1,3 @@
-Replace style theme asset overrides with path convention. (#331)
+Fix runtime platform file path refs and sync Orion submodule.
 
-Themes now only configure colors; icons resolve from
-assets/themes/{themeKey}/{alias} in platform resources. Mercury adds
-path-based runtime file lookup, release snapshots omit assetOverrides,
-and Vega drops the per-theme Resources tab.
+Allow slash-separated theme icon paths in runtime lookups and bump Orion to the merged theme asset convention release.
