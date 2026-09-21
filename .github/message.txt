@@ -1,1 +1,1 @@
-js ver 0.7.19 修改wechat打包方式1
+js ver 0.7.20 uniapp重连
