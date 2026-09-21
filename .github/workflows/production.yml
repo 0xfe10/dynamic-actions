@@ -8,6 +8,7 @@ env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+  ENABLE_AR_RECOGNITION_RELEASE: ${{ vars.ENABLE_AR_RECOGNITION_RELEASE || 'false' }}
 
 permissions:
   actions: write
@@ -263,8 +264,11 @@ jobs:
             docker push ${{ steps.tags.outputs.ali_latest }}
 
   build-ar-recognition-image:
-    name: Build AR recognition image
+    name: Build and deploy AR recognition image
     runs-on: ubuntu-latest
+    needs:
+      - deploy-apps
+    if: vars.ENABLE_AR_RECOGNITION_RELEASE == 'true'
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
@@ -322,6 +326,21 @@ jobs:
             docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
             docker push ${{ steps.tags.outputs.ali_sha }}
             docker push ${{ steps.tags.outputs.ali_latest }}
+
+      - name: Deploy AR recognition
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: apps-production-labelix-hk0
+          changes: |
+            {
+              "argocd/apps/labelix-hk0/overlays/production/values.yaml": {
+                "app.ar_recognition.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-ar-recognition:sha-${{ env.SHA }}"
+              }
+            }
 
   build-sorbus-image:
     name: Build sorbus image
@@ -391,7 +410,6 @@ jobs:
       - build-rosaceae-image
       - build-camellia-image
       - build-rubus-image
-      - build-ar-recognition-image
       - build-sorbus-image
     steps:
       - uses: actions/checkout@v6
@@ -424,7 +442,6 @@ jobs:
                 "app.pyrus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
                 "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}",
                 "app.rubus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rubus:sha-${{ env.SHA }}",
-                "app.ar_recognition.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-ar-recognition:sha-${{ env.SHA }}",
                 "app.sorbus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-sorbus:sha-${{ env.SHA }}"
               }
             }
