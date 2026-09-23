@@ -1,3 +1,1 @@
-Fix runtime platform file path refs and sync Orion submodule.
-
-Allow slash-separated theme icon paths in runtime lookups and bump Orion to the merged theme asset convention release.
+chore: update Orion styles
