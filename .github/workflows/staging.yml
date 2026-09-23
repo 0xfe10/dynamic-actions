@@ -6,6 +6,7 @@ on:
       - '**'
 env:
   DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
+  FUNASR_IMAGES_ENABLE: "false"
 
 jobs:
   ensure-main:
@@ -86,8 +87,14 @@ jobs:
           - name: funasr-sensevoice
             dockerfile: services/funasr-sensevoice/Dockerfile
     steps:
+      - name: Skip FunASR image build
+        if: env.FUNASR_IMAGES_ENABLE != 'true'
+        run: echo "FUNASR_IMAGES_ENABLE is false; skip ${{ matrix.package.name }}"
+
       - uses: actions/checkout@v6
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
       - name: Checkout
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/asr
@@ -95,6 +102,7 @@ jobs:
           ref_file: .github/ref.txt
 
       - name: Docker login (Aliyun)
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
@@ -102,17 +110,21 @@ jobs:
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
       - uses: benjlevesque/short-sha@v3.0
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
 
       - name: Set repo name
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - name: Set image tags
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
         id: tags
         run: |
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
 
       - name: Publish docker image
+        if: env.FUNASR_IMAGES_ENABLE == 'true'
         uses: docker/build-push-action@v6
         with:
           push: true
