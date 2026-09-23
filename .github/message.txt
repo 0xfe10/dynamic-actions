@@ -1,1 +1,1 @@
-chore: update Orion styles
+chore: update complete Lanhu styles
