@@ -1,1 +1,1 @@
-chore: update complete Lanhu styles
+chore(orion): sync vendored editor stack
