@@ -1,1 +1,1 @@
-chore(orion): sync vendored editor stack
+chore(orion): sync vendored editor stack (#332)
