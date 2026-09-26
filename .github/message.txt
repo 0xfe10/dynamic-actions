@@ -1,1 +1,1 @@
-chore(orion): sync vendored editor stack (#332)
+fix(mercury): support Orion style runtime contracts
