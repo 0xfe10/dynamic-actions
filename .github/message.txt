@@ -1,1 +1,1 @@
-fix(mercury): support Orion style runtime contracts
+fix(mercury): support Orion style runtime contracts (#333)
