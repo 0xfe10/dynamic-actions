@@ -1,1 +1,1 @@
-main
+agt/mercury-release-payload-digest

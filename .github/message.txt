@@ -1,1 +1,1 @@
-fix(mercury): expose frozen style themes at runtime (#334)
+fix(mercury): hash signed release payload
