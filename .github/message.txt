@@ -1,1 +1,1 @@
-fix(mercury): hash signed release payload
+refactor(mercury): drop obsolete snapshot hash input
