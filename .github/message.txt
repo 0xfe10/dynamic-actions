@@ -1,1 +1,5 @@
-refactor(mercury): drop obsolete snapshot hash input
+fix(mercury): hash signed release payload (#335)
+
+* fix(mercury): hash signed release payload
+
+* refactor(mercury): drop obsolete snapshot hash input
