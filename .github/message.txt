@@ -1,1 +1,3 @@
-fix: handle disabled resource previews
+fix: make resource image previews visible (#337)
+
+Add visible thumbnail states, online full-size previews, retry handling, and localized resource preview controls.
