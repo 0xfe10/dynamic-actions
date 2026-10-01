@@ -1,1 +1,1 @@
-fix: make resource image previews visible
+fix: handle disabled resource previews
