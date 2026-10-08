@@ -1,7 +1,1 @@
-fix: build-time language packs and reliable Style translation sync (#338)
-
-* fix: make resource image previews visible
-
-* fix: handle disabled resource previews
-
-* fix: snapshot App language packs and report Style sync failures
+fix: support backend-owned combined language packs safely
