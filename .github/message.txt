@@ -1,1 +1,1 @@
-fix(ci): authenticate private dependencies and set preview origins
+style(mercury): apply Go 1.26.5 formatting
