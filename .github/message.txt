@@ -1,1 +1,1 @@
-docs: document COSMOS status-driven agent workflow
+docs: document COSMOS status-driven agent workflow (#340)

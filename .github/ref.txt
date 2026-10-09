@@ -1,1 +1,1 @@
-0xfe10/cosmos-70
+main
