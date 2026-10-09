@@ -1,7 +1,1 @@
-Integrate shared icon reference resolution and restore CI bootstrap (#341)
-
-Integrate Orion PR #199's shared icon resolver for Flutter and STAC by advancing the Orion gitlink to 301b76c11d5d20b9fb9b3ebe870ed6aac62bba23. Preserve COSMOS-20 workflow documentation.
-
-Restore existing private dependency authentication in scoped CI bootstrap steps, supply the existing Vega preview parent origins, and apply Go formatting to 13 Mercury files.
-
-Silas independently reviewed current head e7a3b7587685bc4c76ff5aeef777562f34ed4cf6 with no blocking findings. Focused Flutter verification is recorded on the identical reviewed Orion tree; the existing Breeze Home test and native CEL limitations remain. Downstream Mercury maxPlatformAssetBytes and iOS AYPrinter/BleHelper failures are advisory under the approved acceptance policy. Device validation remains unverified.
+fix: integrate shared runtime identifiers and preserve Dalim drift checks
