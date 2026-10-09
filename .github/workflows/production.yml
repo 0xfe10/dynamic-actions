@@ -62,7 +62,15 @@ jobs:
       - name: Install FVM
         run: dart pub global activate fvm 4.1.2
       - name: Bootstrap
-        run: just bootstrap
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          GIT_CONFIG_COUNT: "1"
+          GIT_CONFIG_KEY_0: credential.https://github.com.helper
+          GIT_CONFIG_VALUE_0: "!gh auth git-credential"
+          GIT_TERMINAL_PROMPT: "0"
+        run: |
+          git ls-remote --exit-code https://github.com/prtmax/psdk.git HEAD >/dev/null
+          just bootstrap
       - name: Check
         run: just check
       - name: Rigel Android build
@@ -152,7 +160,15 @@ jobs:
       - name: Install FVM
         run: dart pub global activate fvm 4.1.2
       - name: Bootstrap Orion
-        run: just --justfile orion/Justfile bootstrap
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          GIT_CONFIG_COUNT: "1"
+          GIT_CONFIG_KEY_0: credential.https://github.com.helper
+          GIT_CONFIG_VALUE_0: "!gh auth git-credential"
+          GIT_TERMINAL_PROMPT: "0"
+        run: |
+          git ls-remote --exit-code https://github.com/prtmax/psdk.git HEAD >/dev/null
+          just --justfile orion/Justfile bootstrap
       - name: Rigel iOS simulator build
         run: cd orion/apps/rigel && fvm flutter build ios --simulator --no-codesign
 
@@ -211,6 +227,7 @@ jobs:
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury.iprtapp.com
             BELLATRIX_RUNTIME_BASE_URL=https://mercury.iprtapp.com
+            BELLATRIX_PREVIEW_PARENT_ORIGINS=https://vega.iprtapp.com
           secrets: |
             gh_token=${{ secrets.GH_TOKEN_0XFE10 }}
           tags: |
