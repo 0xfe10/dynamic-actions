@@ -1,4 +1,3 @@
-docs: clarify local test prerequisites and verification scope in README
+Add consumable catalog validation length boundary tests (#343)
 
-Document toolchain versions, bootstrap-before-check requirement, and
-distinction between database-free just check and integration commands.
+Cover ValidateLink trimmed 2048-byte ceiling and ValidObjectKey 1024-byte max, which were not exercised by existing scheme/traversal cases.
