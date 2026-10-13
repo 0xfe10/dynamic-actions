@@ -1,4 +1,4 @@
-docs: add Rubus migration policy local verification section
+docs: add Rubus migration policy local verification section (#182)
 
 Document offline rubus-migration-check usage with prerequisites,
 troubleshooting, and explicit scope limits versus database apply flows.
