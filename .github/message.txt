@@ -1,4 +1,4 @@
-test(consumablecatalog): add link and object key length boundary cases
+Merge origin/main into 0xfe10/cosmos-2949
 
-Cover ValidateLink 2048-byte acceptance/rejection for https and app routes,
-and ValidObjectKey 1024-byte bounds alongside existing traversal checks.
+Resolve validation_test.go overlap with #343; keep app route length
+boundary test and main's https max-length-after-trim coverage.
