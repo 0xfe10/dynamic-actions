@@ -1,5 +1,4 @@
-Document minimal local Rust CLI verification prerequisites
+test(rubus): cover PageReq normalization and TotalPages edge cases
 
-Add a section to the local development guide with just malus check/test
-commands, toolchain prerequisites, and explicit boundaries for integration
-checks that require Docker or PostgreSQL.
+Add table-driven tests for invalid page numbers, non-positive page sizes,
+and sizes above MaxPageSize. Cover TotalPages when size is zero or negative.
