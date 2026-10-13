@@ -1,4 +1,4 @@
-test(rubus): cover pagination PageReq and TotalPages edge cases (#177)
+docs: minimal local malus test prerequisites (LABELIX-13)
 
-Add table-driven tests for invalid page numbers, non-positive page sizes,
-and sizes above MaxPageSize. Cover TotalPages when size is zero or negative.
+Document `just malus test` as a no-external-deps verification path and
+separate database/integration checks for new contributors.
