@@ -1,3 +1,4 @@
-Add boundary tests for consumable link and object key length limits
+docs: clarify local test prerequisites and verification scope in README
 
-Cover ValidateLink trimmed 2048-byte ceiling and ValidObjectKey 1024-byte max, which were not exercised by existing scheme/traversal cases.
+Document toolchain versions, bootstrap-before-check requirement, and
+distinction between database-free just check and integration commands.
