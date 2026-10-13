@@ -1,3 +1,4 @@
-docs: correct local Postgres data path for db-down
+test(devicecatalog): cover ValidateImages asset size and dimension bounds (#346)
 
-just db-down only stops the Compose postgres service. The mounted directory is ./.data/pg, not .data/postgres.
+Exercise MaxImageBytes ceiling, zero-byte rejection, and 256–8192px
+width/height limits that existing duplicate/digest cases did not cover.
