@@ -1,4 +1,4 @@
-test(rubus): cover CSVContains partial-token and empty-segment edges (#181)
+docs: add Rubus migration policy local verification section
 
-Add regression tests for exact token matching (no substring hits),
-empty comma-separated segments, and TrimSpace on lookup and items.
+Document offline rubus-migration-check usage with prerequisites,
+troubleshooting, and explicit scope limits versus database apply flows.
