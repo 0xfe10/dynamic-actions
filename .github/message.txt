@@ -1,4 +1,4 @@
-test(rubus): cover CSVContains partial-token and empty-segment edges
+test(rubus): cover CSVContains partial-token and empty-segment edges (#181)
 
 Add regression tests for exact token matching (no substring hits),
 empty comma-separated segments, and TrimSpace on lookup and items.
