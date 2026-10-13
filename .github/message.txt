@@ -1,3 +1,3 @@
-Merge main into 0xfe10/cosmos-3015
+docs: correct local Postgres data path for db-down
 
-Include the merged COSMOS-35 device-catalog tests so the docs PR is based on current main.
+just db-down only stops the Compose postgres service. The mounted directory is ./.data/pg, not .data/postgres.
