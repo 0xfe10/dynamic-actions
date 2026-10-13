@@ -1,4 +1,4 @@
-docs: clarify local test prerequisites and verification scope in README (#344)
+test(devicecatalog): cover ValidateImages asset size and dimension bounds
 
-Document toolchain versions, bootstrap-before-check requirement, and
-distinction between database-free just check and integration commands.
+Exercise MaxImageBytes ceiling, zero-byte rejection, and 256–8192px
+width/height limits that existing duplicate/digest cases did not cover.
