@@ -1,4 +1,4 @@
-Merge origin/main into 0xfe10/cosmos-2949
+docs: clarify local test prerequisites and verification scope in README (#344)
 
-Resolve validation_test.go overlap with #343; keep app route length
-boundary test and main's https max-length-after-trim coverage.
+Document toolchain versions, bootstrap-before-check requirement, and
+distinction between database-free just check and integration commands.
