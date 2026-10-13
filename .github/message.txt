@@ -1,3 +1,4 @@
-Add consumable catalog validation length boundary tests (#343)
+test(consumablecatalog): add link and object key length boundary cases
 
-Cover ValidateLink trimmed 2048-byte ceiling and ValidObjectKey 1024-byte max, which were not exercised by existing scheme/traversal cases.
+Cover ValidateLink 2048-byte acceptance/rejection for https and app routes,
+and ValidObjectKey 1024-byte bounds alongside existing traversal checks.
