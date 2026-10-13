@@ -1,4 +1,5 @@
-docs: add Sorbus minimal local verification section
+test(rubus): cover withoutExtraParameter DSN extra edge cases (#179)
 
-Document package-scoped go test prerequisites and troubleshooting for
-contributors changing the Sorbus worker without live MySQL/Redis.
+Add regression tests for case-insensitive key removal, duplicate keys,
+empty/malformed extra strings, and preserving unrelated parameters when
+stripping timezone loc from driver extras.
