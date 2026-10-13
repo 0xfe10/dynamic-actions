@@ -1,1 +1,3 @@
-fix: integrate shared runtime identifiers and preserve Dalim drift checks (#342)
+Add boundary tests for consumable link and object key length limits
+
+Cover ValidateLink trimmed 2048-byte ceiling and ValidObjectKey 1024-byte max, which were not exercised by existing scheme/traversal cases.
