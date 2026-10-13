@@ -1,4 +1,4 @@
-docs: add Sorbus minimal local verification section (#180)
+test(rubus): cover CSVContains partial-token and empty-segment edges
 
-Document package-scoped go test prerequisites and troubleshooting for
-contributors changing the Sorbus worker without live MySQL/Redis.
+Add regression tests for exact token matching (no substring hits),
+empty comma-separated segments, and TrimSpace on lookup and items.
