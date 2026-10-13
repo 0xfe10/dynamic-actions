@@ -1,7 +1,4 @@
-feat(education): add GENERAL grade option with stage cascade for textbooks
+fix(education): disable textbook list grade filter until stage is selected
 
-Allow stage-scoped textbook grade_id=GENERAL without inventing c_edu_grade
-rows, align list filters with term GENERAL inclusion, and cascade grade
-options in Camellia textbook form and filters.
-
-Co-authored-by: Cursor <cursoragent@cursor.com>
+Add optional disabled support to CRUD list filters and wire the textbook
+grade filter to match the form dialog cascade behavior.
