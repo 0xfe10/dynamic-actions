@@ -1,4 +1,4 @@
-docs: document offline Orion submodule boundary checks in README
+test(jsonschema): enforce minLength and maxLength bounds on ValidateProperties
 
-Add a local verification subsection with git status/submodule commands
-contributors can run without Docker, PostgreSQL, or bootstrap.
+Cover boundary acceptance and rejection for string length validation used by
+platform property schemas. Complements existing maxLength-only happy-path test.
