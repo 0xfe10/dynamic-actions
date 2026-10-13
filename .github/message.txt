@@ -1,4 +1,3 @@
-test(devicecatalog): cover ValidateImages asset size and dimension bounds (#346)
+Merge main into 0xfe10/cosmos-3015
 
-Exercise MaxImageBytes ceiling, zero-byte rejection, and 256–8192px
-width/height limits that existing duplicate/digest cases did not cover.
+Include the merged COSMOS-35 device-catalog tests so the docs PR is based on current main.
