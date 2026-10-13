@@ -1,3 +1,4 @@
-docs: correct local Postgres data path for db-down
+docs: document offline Orion submodule boundary checks in README
 
-just db-down only stops the Compose postgres service. The mounted directory is ./.data/pg, not .data/postgres.
+Add a local verification subsection with git status/submodule commands
+contributors can run without Docker, PostgreSQL, or bootstrap.
