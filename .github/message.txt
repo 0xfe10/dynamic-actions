@@ -1,4 +1,4 @@
-docs: fix git submodule status prefix legend in README
+test(jsonschema): enforce minLength and maxLength bounds on ValidateProperties (#349)
 
-Align the offline boundary-check subsection with actual git behavior:
-space vs index gitlink, +, uninitialized (-), and merge conflicts (U).
+Cover boundary acceptance and rejection for string length validation used by
+platform property schemas. Complements existing maxLength-only happy-path test.
