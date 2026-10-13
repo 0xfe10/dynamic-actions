@@ -1,5 +1,3 @@
-feat(education): add GENERAL grade option with stage cascade for textbooks
+merge: reconcile branch with main for PR #173
 
-Allow stage-scoped textbook grade_id=GENERAL without inventing c_edu_grade
-rows, align list filters with term GENERAL inclusion, and cascade grade
-options in Camellia textbook form and filters using stage_id and stage_ids.
+Keep textbook filter resets alongside main CrudFilter loadOptions.
