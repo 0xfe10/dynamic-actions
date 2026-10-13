@@ -1,4 +1,3 @@
-test(devicecatalog): cover ValidateImages asset size and dimension bounds
+docs: correct local Postgres data path for db-down
 
-Exercise MaxImageBytes ceiling, zero-byte rejection, and 256–8192px
-width/height limits that existing duplicate/digest cases did not cover.
+just db-down only stops the Compose postgres service. The mounted directory is ./.data/pg, not .data/postgres.
