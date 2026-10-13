@@ -1,4 +1,5 @@
-docs: minimal local malus test prerequisites (LABELIX-13)
+test(rubus): cover withoutExtraParameter DSN extra edge cases
 
-Document `just malus test` as a no-external-deps verification path and
-separate database/integration checks for new contributors.
+Add regression tests for case-insensitive key removal, duplicate keys,
+empty/malformed extra strings, and preserving unrelated parameters when
+stripping timezone loc from driver extras.
