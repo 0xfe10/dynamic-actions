@@ -1,1 +1,9 @@
-fix(ci): pull rosaceae image before Aliyun publication
+fix(ci): retry rosaceae GHCR push and defer binary artifact cleanup (#175)
+
+* fix(ci): retry rosaceae GHCR image push and defer artifact cleanup
+
+Wrap rosaceae docker buildx push in nick-fields/retry to absorb transient
+GHCR unknown blob errors. Run cleanup-rosaceae-binary-artifacts only after
+successful deploy so failed image jobs can be retried without missing binaries.
+
+* fix(ci): pull rosaceae image before Aliyun publication
