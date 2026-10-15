@@ -1,1 +1,1 @@
-fix(spectra): show isolated trend points and record rollout
+fix(spectra): bound daily compaction by projection and output key
