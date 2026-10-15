@@ -1,1 +1,1 @@
-docs(spectra): record recent reconciliation and v125 production validation
+fix(spectra): preserve hourly trends and optimize selected apps
