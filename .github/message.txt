@@ -1,1 +1,1 @@
-fix(spectra): bound entity snapshots and deduplicate backfill requests
+fix(spectra): bound snapshot merges and qualify Superset sources
