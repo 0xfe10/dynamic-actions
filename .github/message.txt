@@ -1,1 +1,1 @@
-docs(spectra): record bounded concurrent production checks
+fix(spectra): rank paginated reporting tables deterministically
