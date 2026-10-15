@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "execution_repository": "0xfe10/dynamic-actions",
+  "sources": {},
+  "credential_groups": {
+    "default": {
+      "owners": [
+        "0xfe10",
+        "prtmax",
+        "repotea-workspace",
+        "boxliy"
+      ]
+    }
+  }
+}
