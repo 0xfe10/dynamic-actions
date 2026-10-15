@@ -1,3 +1,11 @@
-Freeze batch build specs through packaging identity.
+Add App packaging config and signing material versions (#356)
+
+* Add App packaging config and signing material versions.
+
+Store certificate fingerprints, validity, and opaque material routes
+without private keys. Reuse a monotonic version for the same packaging
+digest and reject a different certificate for the same install identity.
+
+* Freeze batch build specs through packaging identity.
 
 Batch creation overlays the server package identity before a spec is stored or dispatched, and pinned sign checks reject a material row from another tenant.
