@@ -1,1 +1,4 @@
-Merge main into 0xfe10/cosmos-2949
+test(consumablecatalog): add link and object key length boundary cases (#345)
+
+Cover ValidateLink 2048-byte acceptance/rejection for https and app routes,
+and ValidObjectKey 1024-byte bounds alongside existing traversal checks.
