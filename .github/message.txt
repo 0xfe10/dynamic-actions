@@ -1,1 +1,5 @@
-Support bounded gzip feature style bundle requests (#353)
+Dispatch release builds by run id and exchange GitHub OIDC
+
+Claim a prepared attempt before calling GitHub and send only build_run_id.
+A 204 does not store an Actions URL. OIDC exchange binds one GitHub run to
+that attempt and issues a short-lived stage credential.
