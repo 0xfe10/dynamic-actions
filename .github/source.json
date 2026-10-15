@@ -3,10 +3,10 @@
   "source": {
     "repository": "prtmax/cosmos",
     "repository_id": 1329498630,
-    "sha": "100167ebb50a85242212a0802e756e238c6ab3cb",
+    "sha": "2703259e09ae47e6450bbde73e9154d74b8e23b3",
     "ref_type": "branch",
-    "ref_name": "0xfe10/cosmos-4938",
-    "run_id": 38804189567,
+    "ref_name": "main",
+    "run_id": 38808838658,
     "run_attempt": 1,
     "workflow": ".github/workflows/trigger-branch.yml"
   },
