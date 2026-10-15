@@ -1,1 +1,1 @@
-feat: prepare immutable release build batches and run callbacks
+fix: pin Orion client generation compatibility fix
