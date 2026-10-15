@@ -1,3 +1,1 @@
-Improve Vega app default feature style bulk apply UX. (#350)
-
-Top-level style choice applies to all features that expose the selected key, with partial-save toasts and advanced per-feature overrides; bump orion for MELLOW on legacy DOC/MINE/USER_INFO/USER_SET.
+Bump orion for headless legacy MELLOW bundle patch helpers.
