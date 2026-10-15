@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/cosmos",
+    "repository_id": 1329498630,
+    "sha": "437a0b1c8f3559064c11dabbd59aafca4b1db375",
+    "ref_type": "branch",
+    "ref_name": "main",
+    "run_id": 38735506462,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}
