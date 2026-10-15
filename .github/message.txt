@@ -1,1 +1,1 @@
-docs(spectra): record v126 release and month-scale reconciliation
+docs(spectra): record production daily reconciliation and storage
