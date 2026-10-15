@@ -1,1 +1,1 @@
-fix(releasebuild): give callback events a stable API schema
+Support bounded gzip feature style bundle requests
