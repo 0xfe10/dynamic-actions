@@ -1,1 +1,1 @@
-docs(spectra): record production daily reconciliation and storage
+perf(spectra): omit daily branches from hourly chart queries
