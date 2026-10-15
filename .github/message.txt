@@ -1,3 +1,3 @@
-Cancel dispatched builds through GitHub and expose pinned signing material.
+Cancel dispatched builds through GitHub and expose pinned signing material. (#357)
 
 Queued and running attempts now call the Actions cancel API, and the worker reconciles timeouts and lost callbacks without treating a green run as a trusted artifact. Sign-stage credentials can refresh until the attempt is terminal, then sensitive routes are revoked. The sign job can read the pinned app-signing version, and the release page shows the Actions link, phase, and digests.
