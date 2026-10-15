@@ -1,1 +1,1 @@
-perf(spectra): omit daily branches from hourly chart queries
+docs(spectra): record bounded concurrent production checks
