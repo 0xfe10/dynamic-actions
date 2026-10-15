@@ -1,5 +1,3 @@
-docs: document offline Orion submodule boundary checks in README (#348)
+Improve Vega app default feature style bulk apply UX.
 
-Document three offline Git commands for checking the Orion submodule boundary before a gitlink update, and record the git submodule status prefixes (space, +, -, U).
-
-Reviewed at 1e1ce83affaa693d953bd341a46a0d6689bd4db5. Device, database, Docker, and bootstrap checks were not run.
+Top-level style choice applies to all features that expose the selected key, with partial-save toasts and advanced per-feature overrides; bump orion for MELLOW on legacy DOC/MINE/USER_INFO/USER_SET.
