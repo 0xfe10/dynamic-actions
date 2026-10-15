@@ -1,3 +1,5 @@
-Add exact release artifact upload authorization and verification. (#355)
+Add App packaging config and signing material versions.
 
-Finalize credentials receive a short-lived PUT for a server-chosen object key only after the sign stage records the same size and digest. Object bytes are hashed by a resumable worker before an artifact can be downloaded.
+Store certificate fingerprints, validity, and opaque material routes
+without private keys. Reuse a monotonic version for the same packaging
+digest and reject a different certificate for the same install identity.
