@@ -1,1 +1,1 @@
-fix: pin Orion client generation compatibility fix
+fix(releasebuild): give callback events a stable API schema
