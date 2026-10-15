@@ -1,1 +1,1 @@
-perf(spectra): prioritize nonempty recent day compaction
+docs(spectra): record v126 release and month-scale reconciliation
