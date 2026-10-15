@@ -1,1 +1,1 @@
-Merge main and pin Orion gzip delivery
+Support bounded gzip feature style bundle requests (#353)
