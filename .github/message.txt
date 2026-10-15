@@ -1,1 +1,1 @@
-fix(spectra): preserve hourly trends and optimize selected apps
+perf(spectra): prioritize nonempty recent day compaction
