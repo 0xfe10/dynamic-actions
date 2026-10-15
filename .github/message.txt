@@ -1,5 +1,5 @@
-Dispatch release builds by run id and exchange GitHub OIDC
+fix: do not finish a build from unverified executor metadata
 
-Claim a prepared attempt before calling GitHub and send only build_run_id.
-A 204 does not store an Actions URL. OIDC exchange binds one GitHub run to
-that attempt and issues a short-lived stage credential.
+An executor succeeded callback that listed every target was stored as a
+terminal success with verified_at left null. Keep that callback running
+and do not persist the caller-supplied artifact rows.
