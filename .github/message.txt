@@ -1,11 +1,3 @@
-Add App packaging config and signing material versions (#356)
+Cancel dispatched builds through GitHub and expose pinned signing material.
 
-* Add App packaging config and signing material versions.
-
-Store certificate fingerprints, validity, and opaque material routes
-without private keys. Reuse a monotonic version for the same packaging
-digest and reject a different certificate for the same install identity.
-
-* Freeze batch build specs through packaging identity.
-
-Batch creation overlays the server package identity before a spec is stored or dispatched, and pinned sign checks reject a material row from another tenant.
+Queued and running attempts now call the Actions cancel API, and the worker reconciles timeouts and lost callbacks without treating a green run as a trusted artifact. Sign-stage credentials can refresh until the attempt is terminal, then sensitive routes are revoked. The sign job can read the pinned app-signing version, and the release page shows the Actions link, phase, and digests.
