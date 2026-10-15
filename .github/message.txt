@@ -1,1 +1,7 @@
-Support bounded gzip feature style bundle requests
+feat: prepare Release build batches and attempt-bound callbacks (#352)
+
+* feat: prepare immutable release build batches and run callbacks
+
+* fix: pin Orion client generation compatibility fix
+
+* fix(releasebuild): give callback events a stable API schema
