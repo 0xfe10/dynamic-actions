@@ -1,5 +1,3 @@
-fix: do not finish a build from unverified executor metadata
+docs: state executor success callbacks do not verify artifacts
 
-An executor succeeded callback that listed every target was stored as a
-terminal success with verified_at left null. Keep that callback running
-and do not persist the caller-supplied artifact rows.
+The callback never treats caller metadata as platform verification.
