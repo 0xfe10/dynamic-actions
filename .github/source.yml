@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "61be37a3b479f94772baaccaac9377e0f1d85240"
+  sha: "993b830bd9466685bab0d5a69a3a096ca1314443"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38863241179
+  run_id: 38864609603
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs"
+  message: "ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:48:01Z"
+  created_at: "2026-10-16T07:01:43Z"
