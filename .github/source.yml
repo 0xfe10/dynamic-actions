@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "42b7e948d68ddb658d8265bed6bd4468f0c79fd8"
+  sha: "c3f93c64b49b4d81ed2c3f570985128e3a133c16"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38866527088
+  ref_name: "0xfe10/cosmos-5915"
+  run_id: 38867023584
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main (#360)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
+  message: "docs: clarify Actions packaging prerequisites and failure triage"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:20:05Z"
+  created_at: "2026-10-16T07:24:42Z"
