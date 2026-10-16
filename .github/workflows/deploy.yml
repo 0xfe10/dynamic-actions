@@ -22,7 +22,7 @@ jobs:
 
       - name: Ensure main
         id: ensure_main
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
         with:
           repository: repotea-workflow/ansible-mine
           branches: main
@@ -36,7 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workflow/ansible-mine
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -90,7 +90,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workflow/ansible-mine
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -137,7 +137,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: repotea-workflow/ansible-mine
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -152,7 +152,7 @@ jobs:
 
       # ###############################
 
-      - uses: repotea-workspace/kangumi/github-actions/tepusher@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: ${{ failure() && contains('babosa-stg,babosa-prd,babosa-pre', matrix.playbook) }}
         with:
           template: .maintain/notify/deploy-failed.md
@@ -163,7 +163,7 @@ jobs:
             environment: ${{ matrix.playbook == 'babosa-stg' && '测试环境' || matrix.playbook == 'babosa-prd' && '正式环境' || matrix.playbook == 'babosa-pre' && '预览环境' }}
             app: ${{ matrix.playbook }}
 
-      - uses: repotea-workspace/kangumi/github-actions/tepusher@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: ${{ success() && contains('babosa-stg,babosa-pre', matrix.playbook) }}
         with:
           template: .maintain/notify/deploy-success.md
@@ -174,7 +174,7 @@ jobs:
             environment: ${{ matrix.playbook == 'babosa-stg' && '测试环境' || matrix.playbook == 'babosa-prd' && '正式环境' || matrix.playbook == 'babosa-pre' && '预览环境' }}
             app: ${{ matrix.playbook }}
 
-      - uses: repotea-workspace/kangumi/github-actions/tepusher@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: ${{ success() && contains('babosa-prd', matrix.playbook) }}
         with:
           template: .maintain/notify/deploy-success.md
