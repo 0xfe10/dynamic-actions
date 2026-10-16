@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "736b285406234a86f1c526aaed8d7da2a94d22ec"
+  sha: "4e3bb9ee98f29be6d2956dde15fa9db78e80cfbb"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38866306498
+  ref_name: "main"
+  run_id: 38866477690
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main"
+  message: "ci: track Kangumi actions on main (#184)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:17:57Z"
+  created_at: "2026-10-16T07:19:36Z"
