@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/wiot"
   repository_id: 925925323
-  sha: "534951b323d5802d2889e93ffb6538922c70b33c"
+  sha: "59a950f97f0c683e33d086775349faf7f6ea57f6"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38863241077
+  run_id: 38864610298
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs"
+  message: "ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:47:57Z"
+  created_at: "2026-10-16T07:01:47Z"
