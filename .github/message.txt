@@ -1,1 +1,1 @@
-perf(spectra): add exact analysis serving periods and narrow ranking queries
+perf(spectra): retain one-pass API ranking before weekly coverage
