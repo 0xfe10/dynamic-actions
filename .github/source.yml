@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labeldesktop"
   repository_id: 925943040
-  sha: "190e8cfb12927e723699951a50bdcbc711a69f7c"
+  sha: "433c2ae998d6e3d9fbe506303e9774cfece90890"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38866217577
+  ref_name: "main"
+  run_id: 38866402043
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main"
+  message: "ci: migrate dynamic workflows to source metadata outputs (#12)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:17:06Z"
+  created_at: "2026-10-16T07:18:52Z"
