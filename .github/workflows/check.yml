@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/xprint
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -71,12 +71,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/xprint
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
 
-      - uses: repotea-workspace/kangumi/github-actions/tepusher@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         with:
           template: .maintain/notify/check-failed.md
           token: ${{ secrets.WEPLUSBOT_TOKEN }}

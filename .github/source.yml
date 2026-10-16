@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/xprint"
   repository_id: 925960458
-  sha: "b4afb088f21d62023208e6b6433e5295ab5e8514"
+  sha: "53c59086914aa28921c0e6c0ae9b776908c8dd61"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38864617213
+  run_id: 38866224826
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: include Windows source metadata compatibility fix"
+  message: "ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:01:47Z"
+  created_at: "2026-10-16T07:17:09Z"
