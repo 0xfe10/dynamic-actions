@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/Image-review"
   repository_id: 1216688393
-  sha: "1a1ba4d2ada43f1cce63d581bd490048fbd23bc7"
+  sha: "5801eff04b1987aedd1c535af6cb7ca2c67cc56f"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38866503236
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38892161507
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main (#2)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
+  message: "Enable source pending status and failed dispatch recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:19:53Z"
+  created_at: "2026-10-16T11:11:56Z"
