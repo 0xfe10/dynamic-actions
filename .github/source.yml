@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "boxliy/labelab"
   repository_id: 1306519545
-  sha: "2a2dfc4d1e2fadd18bfe42dfceb70cfb9b81762f"
+  sha: "5a930164e9952dd8f33637cc8477fc5a3d11bda4"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38866618854
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38892214961
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main (#2)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n---------\n\nCo-authored-by: 0x128bit <306828631+0x128bit@users.noreply.github.com>"
+  message: "Enable source pending status and failed dispatch recovery"
   authors: ["0x128bit"]
 dispatch:
-  created_at: "2026-10-16T07:20:56Z"
+  created_at: "2026-10-16T11:12:23Z"
