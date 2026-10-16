@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "62d081f81f1af54e4029692818b5cf9b47c9a172"
+  sha: "60c79fa6402830f926b9731acce7b278801bdda2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38867773183
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38892197994
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: clarify Actions packaging prerequisites and failure triage (#361)"
+  message: "Enable source pending status and failed dispatch recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:31:49Z"
+  created_at: "2026-10-16T11:12:13Z"
