@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "86d017a9f153f770721848950227519e6313548b"
+  sha: "75a4147fc5ea521081824b9fc849bb876ea82b79"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 38868961386
+  run_id: 38873114406
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u6587\u6863\u8f6c\u6362"
+  message: "fix\uff1a\u4fee\u6539oss\u9884\u7b7e\u540d\u63a5\u53e3"
   authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-10-16T07:42:57Z"
+  created_at: "2026-10-16T08:21:22Z"
