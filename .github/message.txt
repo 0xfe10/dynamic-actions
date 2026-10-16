@@ -1,1 +1,1 @@
-docs(spectra): record production status message rollout
+fix(spectra): refresh immutable snapshots and localize reporting charts
