@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "40a22b5e25cc674bd1ad1d2fa21afb015bce8850"
+  sha: "8d20522f41859ecefa0527349e48c352521ba21a"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38863296301
+  run_id: 38864662221
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs"
+  message: "ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:48:33Z"
+  created_at: "2026-10-16T07:02:15Z"
