@@ -19,7 +19,7 @@ jobs:
 
       - name: Ensure main
         id: ensure_main
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
         with:
           repository: prtmax/asr
           branches: main
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/asr
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -92,7 +92,7 @@ jobs:
         if: env.FUNASR_IMAGES_ENABLE == 'true'
       - name: Checkout
         if: env.FUNASR_IMAGES_ENABLE == 'true'
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/asr
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -138,7 +138,7 @@ jobs:
   #   steps:
   #     - uses: actions/checkout@v6
   #     - name: Checkout
-  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
   #       with:
   #         repository: prtmax/asr
   #         token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -162,7 +162,7 @@ jobs:
   #         EOF
 
   #     - name: Deploy
-  #       uses: repotea-workspace/kangumi/github-actions/gitops-deploy@6342e5b00d730c134699b734cdb100988af58ee0
+  #       uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
   #       with:
   #         repository: repotea-workflow/gitops-ayn
   #         deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
