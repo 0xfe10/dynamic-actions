@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "boxliy/sampleyard"
   repository_id: 1306519816
-  sha: "584184b53190dab7614c84dbe86610523d3b4c3b"
+  sha: "2ff4de6ba2790063497e818ccb4de8e7eb074250"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38865631214
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38866417884
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs (#1)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n---------\n\nCo-authored-by: 0x128bit <306828631+0x128bit@users.noreply.github.com>"
+  message: "ci: track Kangumi actions on main"
   authors: ["0x128bit"]
 dispatch:
-  created_at: "2026-10-16T07:11:36Z"
+  created_at: "2026-10-16T07:18:59Z"
