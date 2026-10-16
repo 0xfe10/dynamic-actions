@@ -1,1 +1,1 @@
-ci(spectra): match forwarded reporting release tags
+docs(spectra): record verified printer worker rollout
