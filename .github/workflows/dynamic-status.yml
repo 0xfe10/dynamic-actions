@@ -35,7 +35,7 @@ jobs:
         with:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
-      - uses: repotea-workspace/kangumi/github-actions/dyn-status@5f475b17868960dc5727a778d50d5875d8380a5f
+      - uses: repotea-workspace/kangumi/github-actions/dyn-status@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           config: .github/dynamic-status.json
           credential-group: ${{ matrix.group }}
