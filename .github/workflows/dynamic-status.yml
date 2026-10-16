@@ -1,4 +1,15 @@
 name: Reconcile dynamic CI status
+run-name: >-
+  ${{ github.event_name == 'workflow_dispatch'
+      && format('状态回报 · 手动 · {0}', inputs.execution_sha)
+      || format('状态回报 · {0} · {1} · {2}',
+          github.event.workflow_run.head_branch,
+          github.event.workflow_run.name,
+          github.event.action == 'completed'
+            && format('完成（{0}）', github.event.workflow_run.conclusion)
+            || (github.event.workflow_run.run_attempt > 1
+                && format('重跑 #{0}', github.event.workflow_run.run_attempt)
+                || '首次启动（跳过）')) }}
 on:
   workflow_run:
     workflows: ['**']
