@@ -1,1 +1,1 @@
-docs(spectra): record reporting fixes and production validation
+fix(spectra): show all regions and clarify chart tooltips
