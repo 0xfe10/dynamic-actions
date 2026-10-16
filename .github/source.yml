@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/wiot"
   repository_id: 925925323
-  sha: "83bc6ad49d772e2d659d346b19609ef12f814ba2"
+  sha: "4307169b6d7331c162674793f58a4da14027fda8"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38891995971
+  ref_name: "main"
+  run_id: 38892439830
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Enable source pending status and failed dispatch recovery"
+  message: "Enable source pending status and failed dispatch recovery (#7)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T11:10:21Z"
+  created_at: "2026-10-16T11:14:24Z"
