@@ -1,1 +1,1 @@
-fix(spectra): show all regions and clarify chart tooltips
+fix(spectra): localize filter names and chart dates
