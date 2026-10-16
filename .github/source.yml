@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/qurator"
   repository_id: 1035701413
-  sha: "c8ae04127e8409f43d74e7460bda96caaddd688c"
+  sha: "11ec33addfa4f905c84c670e2fa3566eb93ad771"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38892092764
+  ref_name: "main"
+  run_id: 38892560768
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Enable source pending status and failed dispatch recovery"
+  message: "Enable source pending status and failed dispatch recovery (#4)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T11:11:16Z"
+  created_at: "2026-10-16T11:15:31Z"
