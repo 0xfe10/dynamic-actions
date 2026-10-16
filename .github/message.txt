@@ -1,0 +1,1 @@
+perf(spectra): publish resumable cumulative printer snapshots
