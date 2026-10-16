@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "993b830bd9466685bab0d5a69a3a096ca1314443"
+  sha: "52c137834ae76e061813ecf214787cce61d0516a"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38864609603
+  run_id: 38866203030
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: include Windows source metadata compatibility fix"
+  message: "ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:01:43Z"
+  created_at: "2026-10-16T07:16:55Z"
