@@ -35,7 +35,7 @@ jobs:
           --health-retries 20
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
@@ -147,7 +147,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: branch
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
         with:
           repository: prtmax/cosmos
           branches: main
@@ -156,7 +156,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
@@ -188,7 +188,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
@@ -220,7 +220,7 @@ jobs:
     if: needs.ensure-main.outputs.main == 'true'
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
@@ -278,7 +278,7 @@ jobs:
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:staging
       - name: Deploy Cosmos images
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
