@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "boxliy/sampleyard"
   repository_id: 1306519816
-  sha: "bcfe8ece467418665c7741fcbdf27bd23dac2539"
+  sha: "831c3dec721d304c4f3e539c0de98ebfdbc1a908"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38892257842
+  ref_name: "main"
+  run_id: 38892781344
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Enable source pending status and failed dispatch recovery"
+  message: "Enable source pending status and failed dispatch recovery (#3)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery\n\n---------\n\nCo-authored-by: 0x128bit <306828631+0x128bit@users.noreply.github.com>"
   authors: ["0x128bit"]
 dispatch:
-  created_at: "2026-10-16T11:12:46Z"
+  created_at: "2026-10-16T11:17:31Z"
