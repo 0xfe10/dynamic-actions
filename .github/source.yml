@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/aynhub"
   repository_id: 947932229
-  sha: "3f8c9842143c4e8b10083018dc56a1056b15bcfc"
+  sha: "6d7b9f62ac7c563ee297ecd9485064f21586e328"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38863249793
+  run_id: 38864617180
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs"
+  message: "ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:48:05Z"
+  created_at: "2026-10-16T07:01:46Z"
