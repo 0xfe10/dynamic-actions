@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/xprint"
+  repository_id: 925960458
+  sha: "e32e8937fcdc8f408c97e7799b411e18d4040273"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863250584
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-10-16T06:48:11Z"
