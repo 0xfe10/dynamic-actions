@@ -1,1 +1,0 @@
-Update app_name to apps-production-nova-hk0 in production workflow
