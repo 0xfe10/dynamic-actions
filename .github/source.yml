@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "repotea-workspace/kangumi"
   repository_id: 1041090826
-  sha: "bd03662daf08b16ba6382a951d04614e0754219d"
+  sha: "90692a632276653759e3a1f80878c720bee9bbc7"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 38863006754
+  run_id: 38891998432
   run_attempt: 1
   workflow: ".github/workflows/dyn-protocol-integration.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "Dynamic workflow dispatch"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:45:31Z"
+  created_at: "2026-10-16T11:10:23Z"
