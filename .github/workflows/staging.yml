@@ -20,18 +20,16 @@ jobs:
     name: Ensure main
     runs-on: ubuntu-latest
     outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.matches }}
     steps:
       - uses: actions/checkout@v6
 
       - name: Ensure main
         id: ensure_main
-        run: |
-          if grep -q 'main' .github/branch.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-          else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-          fi
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@bd03662daf08b16ba6382a951d04614e0754219d
+        with:
+          repository: prtmax/labelix
+          branches: main
 
   build-rosaceae-binaries:
     name: Build rosaceae binaries
@@ -58,11 +56,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Build ${{ matrix.binary }} binary
         uses: houseabsolute/actions-rust-cross@v0
@@ -96,11 +93,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Download binaries
         uses: actions/download-artifact@v4
@@ -186,11 +182,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -252,11 +247,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -317,11 +311,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -373,7 +366,7 @@ jobs:
             docker push ${{ steps.tags.outputs.ali_staging }}
 
       - name: Deploy AR recognition
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
@@ -396,11 +389,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -462,18 +454,17 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          ref_file: .github/ref.txt
 
       - name: Set repo name
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"

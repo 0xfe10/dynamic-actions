@@ -1,1 +1,0 @@
-fix(spectra): localize filter names and chart dates
