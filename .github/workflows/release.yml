@@ -23,11 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/xusql
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: actions/setup-go@v5
         with:
@@ -134,11 +133,10 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/xusql
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         with:
