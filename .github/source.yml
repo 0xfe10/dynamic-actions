@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/wiot"
   repository_id: 925925323
-  sha: "ba8759991de568512c9b23ceaf13f7ed52196b56"
+  sha: "a1f6b2f712703c9e179a69a5a52f1a96adcf445c"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38866182654
+  ref_name: "main"
+  run_id: 38866383213
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main"
+  message: "ci: track Kangumi actions on main (#6)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:16:42Z"
+  created_at: "2026-10-16T07:18:40Z"
