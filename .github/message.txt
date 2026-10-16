@@ -1,4 +1,0 @@
-Accept pinned iOS sign and finalize workflows and expose signing material. (#358)
-
-OIDC still rejects unpinned workflow SHAs. The iOS endpoint returns a certificate
-only for a bound sign credential and fails closed when the file has no profile.

@@ -35,11 +35,10 @@ jobs:
           --health-retries 20
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
-          ref_file: .github/ref.txt
           submodules: recursive
       - uses: actions/setup-go@v6
         with:
@@ -145,11 +144,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
-          ref_file: .github/ref.txt
           submodules: recursive
       - uses: subosito/flutter-action@v2
         with:
@@ -177,11 +175,10 @@ jobs:
     needs: [quality, ios-quality]
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
-          ref_file: .github/ref.txt
           submodules: recursive
       - uses: docker/login-action@v3
         with:
@@ -236,7 +233,7 @@ jobs:
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:latest
       - name: Deploy Cosmos images
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
