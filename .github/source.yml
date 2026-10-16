@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/qurator"
+  repository_id: 1035701413
+  sha: "e7d39773dd2fb68cc95bc80baf9602bb327aec48"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863265459
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-10-16T06:48:18Z"
