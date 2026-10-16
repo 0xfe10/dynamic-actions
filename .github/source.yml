@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/openapps"
+  repository_id: 1026076912
+  sha: "c400aa4050b99ef5b68026445f586deaf10f816d"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863265290
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-10-16T06:48:11Z"
