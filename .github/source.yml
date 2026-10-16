@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/494ServiceSimulator"
   repository_id: 1271940592
-  sha: "001b8213d886108003e1179d4c7dd9b633bd8c7b"
+  sha: "1e4e9bb9d977de4153a8fbd26d3976dac3bf8205"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38865589206
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38866346487
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs (#1)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix"
+  message: "ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:11:17Z"
+  created_at: "2026-10-16T07:18:20Z"
