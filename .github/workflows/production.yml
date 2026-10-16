@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*-labelix"
+      - "!v*-spectra-reporting-labelix"
 env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
