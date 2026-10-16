@@ -21,7 +21,7 @@ jobs:
 
       - name: Ensure main
         id: ensure_main
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           branches: main
@@ -45,7 +45,7 @@ jobs:
           maven-version: 3.9.11
           checkout-enabled: false
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -90,7 +90,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -172,7 +172,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -236,7 +236,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -315,7 +315,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -393,7 +393,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
@@ -404,7 +404,7 @@ jobs:
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@6342e5b00d730c134699b734cdb100988af58ee0
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
