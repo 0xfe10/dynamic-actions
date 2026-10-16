@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "0409fd55748e6f81f36e4a198dc6d62569c02fd3"
+  sha: "f7509bde6faefdc47dfb2d364bc5958a3bd9c1d2"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38866377827
+  ref_name: "main"
+  run_id: 38866613238
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main"
+  message: "ci: track Kangumi actions on main (#3)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:18:33Z"
+  created_at: "2026-10-16T07:20:51Z"
