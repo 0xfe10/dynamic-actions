@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/byteone"
+  repository_id: 1036077198
+  sha: "5034d1d87d060f33e8532d551a4556b85964e7f5"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863265603
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-10-16T06:48:15Z"
