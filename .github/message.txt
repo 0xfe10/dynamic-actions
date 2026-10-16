@@ -1,1 +1,0 @@
-Increase GeoIP stats logging interval to 5 minutes
