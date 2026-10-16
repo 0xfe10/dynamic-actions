@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/494ServiceSimulator"
   repository_id: 1271940592
-  sha: "d78bf1f507942f7e3fc4882b225f11a43559f7a6"
+  sha: "7c9216b7e0cf7c5cc44032a2699d44c77467424d"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38863289238
+  run_id: 38864653850
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs"
+  message: "ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:48:28Z"
+  created_at: "2026-10-16T07:02:14Z"
