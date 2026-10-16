@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labeldesktop"
   repository_id: 925943040
-  sha: "d793b8cc41d2bb4f546aa2ad014317e1c9adf712"
+  sha: "47aae3765d2d0c95304ad2c3f0387af725942987"
   ref_type: "branch"
   ref_name: "agt/dyn-source-v2"
-  run_id: 38863248008
+  run_id: 38864616660
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs"
+  message: "ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T06:48:04Z"
+  created_at: "2026-10-16T07:01:47Z"
