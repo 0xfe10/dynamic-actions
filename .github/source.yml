@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "be94061b41ee435aa3bdce9d146e18ed2f5ee5c7"
+  sha: "e1dfe30599f1c325049e4512777f9bcd73dcac56"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38866389720
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38892004114
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: migrate dynamic workflows to source metadata outputs (#59)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
+  message: "Enable source pending status and failed dispatch recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:18:41Z"
+  created_at: "2026-10-16T11:10:27Z"
