@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "boxliy/labelab"
+  repository_id: 1306519545
+  sha: "b905b6b9352f5a1f81d43b1b4994b7b1b90ae844"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863303212
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0x128bit"]
+dispatch:
+  created_at: "2026-10-16T06:48:40Z"
