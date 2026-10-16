@@ -1,1 +1,1 @@
-docs(spectra): record verified printer worker rollout
+perf(spectra): add exact analysis serving periods and narrow ranking queries
