@@ -1,1 +1,0 @@
-Remove products.html and update product pages navigation

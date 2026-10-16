@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/sw-aiot"
+  repository_id: 1094647129
+  sha: "59c93740cfb4eaf9cc7c589a1fd0bad5621188ee"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863274031
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-10-16T06:48:19Z"
