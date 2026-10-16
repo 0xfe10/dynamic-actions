@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/xprint"
   repository_id: 925960458
-  sha: "53c59086914aa28921c0e6c0ae9b776908c8dd61"
+  sha: "001bde74256f540044b8411dca5416eafa574302"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38866224826
+  ref_name: "main"
+  run_id: 38866408152
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main"
+  message: "ci: migrate dynamic workflows to source metadata outputs (#5)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:17:09Z"
+  created_at: "2026-10-16T07:18:55Z"
