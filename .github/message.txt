@@ -1,1 +1,1 @@
-ci: align deploy-apps target with coreprint-hk0
+ci: add ensure-main rule to automatically deploy staging on main push
