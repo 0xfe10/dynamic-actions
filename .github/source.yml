@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "58980ed30043777e7c62678e5622c1a7d4aa696b"
+  sha: "6fbd35bbe1f23287a7fb6e3ef6a10df1d162820e"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38864629087
+  ref_name: "main"
+  run_id: 38865532727
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: include Windows source metadata compatibility fix"
+  message: "ci: migrate dynamic workflows to source metadata outputs (#7)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:01:58Z"
+  created_at: "2026-10-16T07:10:35Z"
