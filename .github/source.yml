@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c3f93c64b49b4d81ed2c3f570985128e3a133c16"
+  sha: "62d081f81f1af54e4029692818b5cf9b47c9a172"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-5915"
-  run_id: 38867023584
+  ref_name: "main"
+  run_id: 38867773183
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: clarify Actions packaging prerequisites and failure triage"
+  message: "docs: clarify Actions packaging prerequisites and failure triage (#361)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:24:42Z"
+  created_at: "2026-10-16T07:31:49Z"
