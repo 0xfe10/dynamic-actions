@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "boxliy/sampleyard"
+  repository_id: 1306519816
+  sha: "db7693a8d399858956e98fb02cf7eb4a2db3adb2"
+  ref_type: "branch"
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38863317463
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "ci: migrate dynamic workflows to source metadata outputs"
+  authors: ["0x128bit"]
+dispatch:
+  created_at: "2026-10-16T06:48:50Z"
