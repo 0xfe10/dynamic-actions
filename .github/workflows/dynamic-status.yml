@@ -2,42 +2,53 @@ name: Reconcile dynamic CI status
 on:
   workflow_run:
     workflows: ['**']
-    # Source branches and forwarded tags are discovered from source-owned run
-    # artifacts. Never react to this receiver's own default-branch runs.
     branches-ignore: ['main']
-    types: [requested, in_progress, completed]
-  schedule:
-    - cron: '*/10 * * * *'
+    types: [in_progress, completed]
   workflow_dispatch:
     inputs:
       execution_sha:
-        description: Optional full execution SHA; empty scans the last 48 hours
-        required: false
+        description: Full execution SHA to reconcile
+        required: true
         type: string
 permissions:
   contents: read
   actions: read
 jobs:
   reconcile:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - group: default
-            token: GH_TOKEN_0XFE10
+    # First starts already have source dispatch pending; reruns must reset
+    # the previous result. Receipt completion also closes upload/event races.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.action == 'completed' ||
+      (github.event.action == 'in_progress' &&
+       github.event.workflow_run.run_attempt > 1)
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Missing required workflows retain their configured grace (up to 1 hour).
+    # Ordinary results return immediately; no periodic scan is installed.
+    timeout-minutes: 75
     concurrency:
-      group: dynamic-status-${{ matrix.group }}
+      # A newer event for the same immutable batch can replace a pending one;
+      # every invocation reconciles the whole batch. Other batches cannot.
+      group: dynamic-status-${{ github.event.workflow_run.head_sha || inputs.execution_sha }}
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
-      - uses: repotea-workspace/kangumi/github-actions/dyn-status@main
+      - name: Resolve source credential group
+        id: route
+        uses: repotea-workspace/kangumi/github-actions/dyn-status@main
         with:
-          config: .github/dynamic-status.json
-          credential-group: ${{ matrix.group }}
+          mode: route
+          config: .github/dynamic-status.yml
           execution-token: ${{ github.token }}
-          source-token: ${{ secrets[matrix.token] }}
+      - name: Report workflow status
+        if: steps.route.outputs.matched == 'true'
+        uses: repotea-workspace/kangumi/github-actions/dyn-status@main
+        with:
+          mode: report
+          config: .github/dynamic-status.yml
+          credential-group: ${{ steps.route.outputs.group }}
+          execution-token: ${{ github.token }}
+          source-token: ${{ secrets[steps.route.outputs.secret_name] }}
