@@ -1,1 +1,1 @@
-fix(spectra): bound immutable snapshot copy memory
+docs(spectra): record reporting fixes and production validation
