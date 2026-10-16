@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "75a4147fc5ea521081824b9fc849bb876ea82b79"
+  sha: "6e31ca47c16b3d2378dec6699d13007508253dca"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38873114406
+  ref_name: "agt/dyn-source-v2"
+  run_id: 38892207502
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u4fee\u6539oss\u9884\u7b7e\u540d\u63a5\u53e3"
-  authors: ["caiwei1"]
+  message: "Enable source pending status and failed dispatch recovery"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T08:21:22Z"
+  created_at: "2026-10-16T11:12:21Z"
