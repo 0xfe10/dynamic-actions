@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/coreprint-server",
+    "repository_id": 1411090934,
+    "sha": "677610aa020b7914bd51ed92862ea1ce9799c321",
+    "ref_type": "branch",
+    "ref_name": "main",
+    "run_id": 38864052130,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}

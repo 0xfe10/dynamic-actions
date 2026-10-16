@@ -19,16 +19,18 @@ jobs:
     name: Ensure main
     runs-on: ubuntu-latest
     outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.matches }}
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
     steps:
       - uses: actions/checkout@v6
 
       - name: Ensure main
         id: ensure_main
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@bd03662daf08b16ba6382a951d04614e0754219d
-        with:
-          repository: prtmax/coreprint-server
-          branches: main
+        run: |
+          if grep -q 'main' .github/branch.txt; then
+            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
+          else
+            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
+          fi
 
   build-metasequoia-image:
     name: Build metasequoia image
@@ -39,10 +41,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -104,10 +107,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -169,17 +173,18 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
 
       - name: Set repo name
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@bd03662daf08b16ba6382a951d04614e0754219d
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
