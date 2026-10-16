@@ -15,18 +15,16 @@ jobs:
     name: Ensure main
     runs-on: ubuntu-latest
     outputs:
-      ENSURE_MAIN: ${{ steps.ensure_main.outputs.ENSURE_MAIN }}
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.matches }}
     steps:
       - uses: actions/checkout@v6
 
       - name: Ensure main
         id: ensure_main
-        run: |
-          if grep -q 'main' .github/branch.txt; then
-            echo "ENSURE_MAIN=true" >> $GITHUB_OUTPUT
-          else
-            echo "ENSURE_MAIN=false" >> $GITHUB_OUTPUT
-          fi
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@bd03662daf08b16ba6382a951d04614e0754219d
+        with:
+          repository: prtmax/endfather
+          branches: main
 
   build-app-java:
     name: Build app java
@@ -47,11 +45,10 @@ jobs:
           maven-version: 3.9.11
           checkout-enabled: false
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - name: Build ${{ matrix.package }}
         run: |
@@ -93,11 +90,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: actions/download-artifact@v4
         with:
@@ -176,11 +172,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       # - name: Migrate boogie
       #   uses: docker://flyway/flyway:10-alpine
@@ -241,11 +236,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: docker/login-action@v3
         with:
@@ -321,11 +315,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: docker/login-action@v3
         with:
@@ -400,11 +393,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
 
@@ -412,7 +404,7 @@ jobs:
         run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@bd03662daf08b16ba6382a951d04614e0754219d
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
