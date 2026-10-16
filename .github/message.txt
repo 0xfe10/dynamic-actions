@@ -1,5 +1,1 @@
-Rename the Coreprint admin frontend to Metasequoia (#1)
-
-* Rename the Coreprint admin application to metasequoia
-
-* docs: align admin guidance with Metasequoia naming
+ci: align deploy-apps target with coreprint-hk0

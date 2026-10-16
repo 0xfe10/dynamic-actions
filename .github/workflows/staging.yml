@@ -165,11 +165,11 @@ jobs:
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
           argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
           argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-staging-labelix-hk0
+          app_name: apps-staging-coreprint-hk0
           changes: |
             {
-              "argocd/apps/labelix-hk0/overlays/staging/values.yaml": {
-                "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHA }}",
+              "argocd/apps/coreprint-hk0/overlays/staging/values.yaml": {
+                "app.metasequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHA }}",
                 "app.sequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-sequoia:sha-${{ env.SHA }}"
               }
             }

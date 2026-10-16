@@ -3,11 +3,11 @@
   "source": {
     "repository": "prtmax/coreprint-server",
     "repository_id": 1411090934,
-    "sha": "93890551fe51542ef380408d1365c1c1c5564637",
+    "sha": "332bd65ee833329246e1710964a0e60f69fc38d2",
     "ref_type": "branch",
     "ref_name": "main",
-    "run_id": 38731036461,
-    "run_attempt": 2,
+    "run_id": 38845729803,
+    "run_attempt": 1,
     "workflow": ".github/workflows/trigger-branch.yml"
   },
   "execution_repository": "0xfe10/dynamic-actions",
