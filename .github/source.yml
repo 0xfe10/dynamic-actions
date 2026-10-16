@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "16bf7b7700f40e2c6ee0b2ae1a67c2d372eaf9da"
+  sha: "72babec4aeacfe67c3510e0d77d0580139b07edf"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38864666923
+  ref_name: "main"
+  run_id: 38865619031
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: include Windows source metadata compatibility fix"
+  message: "ci: migrate dynamic workflows to source metadata outputs (#2)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:02:19Z"
+  created_at: "2026-10-16T07:11:27Z"
