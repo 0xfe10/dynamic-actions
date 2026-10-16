@@ -1,1 +1,0 @@
-ci: add ensure-main rule to automatically deploy staging on main push
