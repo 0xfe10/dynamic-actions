@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "boxliy/labelab"
   repository_id: 1306519545
-  sha: "add7940903b60e169df09f7ba9b3349ff710e186"
+  sha: "1ba8cc8bdab08548a1ed81a02a59862f8702ca3a"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38864669377
+  ref_name: "main"
+  run_id: 38865625554
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: include Windows source metadata compatibility fix"
+  message: "ci: migrate dynamic workflows to source metadata outputs (#1)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n---------\n\nCo-authored-by: 0x128bit <306828631+0x128bit@users.noreply.github.com>"
   authors: ["0x128bit"]
 dispatch:
-  created_at: "2026-10-16T07:02:20Z"
+  created_at: "2026-10-16T07:11:36Z"
