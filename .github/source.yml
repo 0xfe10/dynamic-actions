@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "repotea-workflow/ansible-mine"
   repository_id: 925941631
-  sha: "2e64140626f015bc92da2b4e6671c0375108a770"
+  sha: "81f296964cfe13df4cf05a7fc8f50684c4676fee"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 38867083776
+  run_id: 38892822457
   run_attempt: 1
   workflow: ".github/workflows/deploy.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: track Kangumi actions on main (#4)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main"
+  message: "Enable source pending status and failed dispatch recovery (#5)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:25:34Z"
+  created_at: "2026-10-16T11:18:36Z"
