@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "70c09df9cfda8360306d86da5d8849e56eae8c0c"
+  sha: "fe8549a40c21a095ac119f557d7023eb9f669761"
   ref_type: "branch"
-  ref_name: "0xfe10/labelix-5917"
-  run_id: 38866663123
+  ref_name: "main"
+  run_id: 38867796149
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(education): reject blank stages for GENERAL textbook grades"
+  message: "test(education): reject blank stages for GENERAL textbook grades (#185)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:21:20Z"
+  created_at: "2026-10-16T07:31:58Z"

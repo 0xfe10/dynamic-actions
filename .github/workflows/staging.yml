@@ -26,7 +26,7 @@ jobs:
 
       - name: Ensure main
         id: ensure_main
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
         with:
           repository: prtmax/labelix
           branches: main
@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -93,7 +93,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -182,7 +182,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -247,7 +247,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -311,7 +311,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -366,7 +366,7 @@ jobs:
             docker push ${{ steps.tags.outputs.ali_staging }}
 
       - name: Deploy AR recognition
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
@@ -389,7 +389,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -454,7 +454,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
@@ -464,7 +464,7 @@ jobs:
 
       - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@6342e5b00d730c134699b734cdb100988af58ee0
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
           repository: repotea-workflow/gitops-ayn
           deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
