@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/Image-review"
   repository_id: 1216688393
-  sha: "d9f3b8fd9844a436a42e246e7b884e5147caead4"
+  sha: "d983ebe7e98625f7e84d5be8bfc2fe58e6bd0d67"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 38864654387
+  ref_name: "main"
+  run_id: 38865583138
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: include Windows source metadata compatibility fix"
+  message: "ci: migrate dynamic workflows to source metadata outputs (#1)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T07:02:10Z"
+  created_at: "2026-10-16T07:11:09Z"
