@@ -10,3 +10,5 @@ credential_groups:
     - repotea-workflow
     - boxliy
     secret_name: GH_TOKEN_0XFE10
+source_reporting:
+  - repotea-workspace/kangumi
