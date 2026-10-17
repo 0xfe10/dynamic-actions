@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/knowledge"
   repository_id: 1332749369
-  sha: "e1589a1fe5dae65ea3f978076eb9986ca150e3fb"
+  sha: "d51ba3f1bb3a56f11e7aaed24eaf84486ab53a33"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 39000453987
+  ref_name: "main"
+  run_id: 39000762106
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Report dynamic CI results with source GitHub Actions identity"
+  message: "Keep dynamic CI status icons under GitHub Actions (#4)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery\n\n* Report dynamic CI results with source GitHub Actions identity"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-17T03:52:52Z"
+  created_at: "2026-10-17T03:57:54Z"
