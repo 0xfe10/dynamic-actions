@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "239ab07ce7d13f8aad8b26495849180a6747a5cf"
+  sha: "0b4789aed28a26bb00779a0eee44c66bea0b3266"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 39000392220
+  ref_name: "main"
+  run_id: 39000690559
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Report dynamic CI results with source GitHub Actions identity"
+  message: "Merge pull request #10 from prtmax/agt/dyn-source-v2\n\nKeep dynamic CI status icons under GitHub Actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-17T03:51:54Z"
+  created_at: "2026-10-17T03:56:38Z"
