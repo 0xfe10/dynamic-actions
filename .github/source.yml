@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/xprint"
   repository_id: 925960458
-  sha: "f006b074d9cb037a82380fbfa7b7c09abba21a25"
+  sha: "d1dc99c3c0ae85332505a0c7da19a12551be97f5"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 39000369691
+  ref_name: "main"
+  run_id: 39000660241
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Report dynamic CI results with source GitHub Actions identity"
+  message: "Merge pull request #7 from prtmax/agt/dyn-source-v2\n\nKeep dynamic CI status icons under GitHub Actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-17T03:51:34Z"
+  created_at: "2026-10-17T03:56:07Z"
