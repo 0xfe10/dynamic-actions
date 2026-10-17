@@ -11,4 +11,32 @@ credential_groups:
     - boxliy
     secret_name: GH_TOKEN_0XFE10
 source_reporting:
+  - boxliy/labelab
+  - boxliy/sampleyard
+  - prtmax/494ServiceSimulator
+  - prtmax/Image-review
+  - prtmax/aiprint
+  - prtmax/aiyinid
+  - prtmax/asr
+  - prtmax/aynguide
+  - prtmax/aynhub
+  - prtmax/byteone
+  - prtmax/coreprint-server
+  - prtmax/cosmos
+  - prtmax/endfather
+  - prtmax/guestkey
+  - prtmax/knowledge
+  - prtmax/labeldesktop
+  - prtmax/labelix
+  - prtmax/onestore
+  - prtmax/openapps
+  - prtmax/psdk
+  - prtmax/qurator
+  - prtmax/sidecar
+  - prtmax/sw-aiot
+  - prtmax/wiot
+  - prtmax/xprint
+  - prtmax/xusql
+  - prtmax/yinmai
+  - repotea-workflow/ansible-mine
   - repotea-workspace/kangumi
