@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/494ServiceSimulator"
   repository_id: 1271940592
-  sha: "83ce82d6b62221021c0e603da790a612a8c54215"
+  sha: "3c369735b9af8fb68caa7494742d5a7f5b7a66cd"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 39000440844
+  ref_name: "main"
+  run_id: 39000749090
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Report dynamic CI results with source GitHub Actions identity"
+  message: "Merge pull request #4 from prtmax/agt/dyn-source-v2\n\nKeep dynamic CI status icons under GitHub Actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-17T03:52:39Z"
+  created_at: "2026-10-17T03:57:41Z"
