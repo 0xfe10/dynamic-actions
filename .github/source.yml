@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/sw-aiot"
   repository_id: 1094647129
-  sha: "a65f8a2a532a62801a958f8732c38bde7982a82c"
+  sha: "45e9fb2ae8590751a990be6916aa35e1376630f1"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38892587084
+  ref_name: "agt/dyn-source-v2"
+  run_id: 39000415611
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Enable source pending status and failed dispatch recovery (#5)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery"
+  message: "Report dynamic CI results with source GitHub Actions identity"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T11:15:41Z"
+  created_at: "2026-10-17T03:52:13Z"
