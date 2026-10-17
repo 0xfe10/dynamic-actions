@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/sidecar"
   repository_id: 1093661799
-  sha: "c2b9cb67a2e0ac3ea52f0376b028697df40d09c9"
+  sha: "ee167459a6508cd93eb98582ddf6bc1f9f15ec97"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 38892572165
+  ref_name: "agt/dyn-source-v2"
+  run_id: 39000406097
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Enable source pending status and failed dispatch recovery (#5)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery"
+  message: "Report dynamic CI results with source GitHub Actions identity"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-16T11:15:39Z"
+  created_at: "2026-10-17T03:52:10Z"
