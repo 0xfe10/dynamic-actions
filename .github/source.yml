@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "boxliy/labelab"
   repository_id: 1306519545
-  sha: "8b08d9be9892ae9d6fca9d37c34fe109b120d9d2"
+  sha: "62f40535c6bd97d7f37156b99d5c52d784a6d748"
   ref_type: "branch"
-  ref_name: "agt/dyn-source-v2"
-  run_id: 39000462839
+  ref_name: "main"
+  run_id: 39000771768
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Report dynamic CI results with source GitHub Actions identity"
+  message: "Keep dynamic CI status icons under GitHub Actions (#4)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery\n\n* Report dynamic CI results with source GitHub Actions identity\n\n---------\n\nCo-authored-by: 0x128bit <306828631+0x128bit@users.noreply.github.com>"
   authors: ["0x128bit"]
 dispatch:
-  created_at: "2026-10-17T03:53:04Z"
+  created_at: "2026-10-17T03:58:05Z"
