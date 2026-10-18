@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1ada921bcf4e5a26a27aacb1897da118bb89b6b6"
+  sha: "9de06ca68f1171fcf33823b826613096e5115344"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39140064726
+  ref_name: "fix/app-build-profile-tabs"
+  run_id: 39141860820
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "merge: integrate feedback attachments with latest main"
+  message: "fix(vega): organize app packaging settings into functional tabs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T15:20:59Z"
+  created_at: "2026-10-18T15:44:59Z"
