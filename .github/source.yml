@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c25bab384e45aaa2e61a49d1661b0920319cf77e"
+  sha: "b49559447ded256eb9f947bb74e1b21816396507"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39090178820
+  ref_name: "0xfe10/cosmos-9856"
+  run_id: 39103347679
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Pin the prepare OIDC stage to the frozen-resource workflow. (#365)\n\nThe new reusable prepare workflow uploads authorized brand and language bytes. Sign and finalize pins stay unchanged."
+  message: "Add tenant-managed Android and iOS signing assets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T02:28:07Z"
+  created_at: "2026-10-18T06:14:51Z"
