@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8d07b19cb27b2ca9d06fcbfc7a88cab6b0196506"
+  sha: "c25bab384e45aaa2e61a49d1661b0920319cf77e"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-9539"
-  run_id: 39089611564
+  ref_name: "main"
+  run_id: 39090178820
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Pin the prepare OIDC stage to the frozen-resource workflow.\n\nThe new reusable prepare workflow uploads authorized brand and language bytes. Sign and finalize pins stay unchanged."
+  message: "Pin the prepare OIDC stage to the frozen-resource workflow. (#365)\n\nThe new reusable prepare workflow uploads authorized brand and language bytes. Sign and finalize pins stay unchanged."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T02:18:39Z"
+  created_at: "2026-10-18T02:28:07Z"
