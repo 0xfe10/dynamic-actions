@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "da335e89852ee2b17100b2f4063c8b5c618c4636"
+  sha: "218b75c9b3839a8b74fbd0541d4dcd7734206559"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39103995125
+  ref_name: "fix/composition-v2-module-activation"
+  run_id: 39105316143
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Add tenant-managed Android and iOS signing assets (#366)"
+  message: "Add ModuleActivationV2 to composition-v2 schema for feature style import.\n\nMercury composition validation now accepts activation.form module with HostActionCallV2 (e.g. IMAGE_PRINT MELLOW cosmos.image.launchEditor). Bump orion to the matching module activation release."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T06:25:49Z"
+  created_at: "2026-10-18T06:48:05Z"
