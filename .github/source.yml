@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1353507cab732703cb2afdcf85989447570fb904"
+  sha: "baa9936596dffed75d300e64c9ede5ca307885a4"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-10124"
-  run_id: 39113339953
+  ref_name: "main"
+  run_id: 39113852347
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Resolve App Studio packaging inputs and discover Android signing aliases"
+  message: "Resolve App Studio packaging inputs and discover Android signing aliases (#369)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T08:55:58Z"
+  created_at: "2026-10-18T09:03:50Z"
