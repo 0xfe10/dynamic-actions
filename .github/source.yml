@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b74b9dddfc3ff289a235b9d51d347fe4d75a2590"
+  sha: "8d07b19cb27b2ca9d06fcbfc7a88cab6b0196506"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39071330186
+  ref_name: "0xfe10/cosmos-9539"
+  run_id: 39089611564
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Align release build readiness with App Studio packaging overlay\n\nShare one read-only packaging preview across release target list, batch, and single spec so App Studio channel, trust, and signing readiness match the build that is actually created. GET does not allocate package versions.\n\nPin reusable-prepare and reusable-sign-ios OIDC subjects to 03ca65293300edc9c488c17e9cd01e3463673f87. Android sign/finalize and iOS finalize pins stay unchanged."
+  message: "Pin the prepare OIDC stage to the frozen-resource workflow.\n\nThe new reusable prepare workflow uploads authorized brand and language bytes. Sign and finalize pins stay unchanged."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-17T21:32:00Z"
+  created_at: "2026-10-18T02:18:39Z"
