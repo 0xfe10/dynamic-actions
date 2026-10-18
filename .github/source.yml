@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "996c8e7c9d378aa1f31b6da496371c7ef6c5dd43"
+  sha: "1ada921bcf4e5a26a27aacb1897da118bb89b6b6"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 39123977937
+  run_id: 39140064726
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Fix App-scoped packaging read authorization (#370)"
+  message: "merge: integrate feedback attachments with latest main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T11:37:30Z"
+  created_at: "2026-10-18T15:20:59Z"
