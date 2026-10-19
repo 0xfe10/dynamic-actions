@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4a6f4a8810f25d89cdca9d6f94687d16e73b63d9"
+  sha: "b477128922eef626148b355cb8c12c8a4d976222"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39325189244
+  run_id: 39326806811
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): restore personal center and settings navigation"
+  message: "feat(presentations): restore native about pages for both families"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T21:09:07Z"
+  created_at: "2026-10-19T21:21:26Z"
