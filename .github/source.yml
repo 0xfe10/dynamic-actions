@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4ed17e0442041b48042a6953f4811514d9b47ab1"
+  sha: "2ae2b74ff9c4905992c7d9e35c41362ca8cef5fd"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39343425232
+  run_id: 39344923001
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: restore native Breeze home and runtime banners"
+  message: "feat: restore native manual and tutorial presentations"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T23:44:37Z"
+  created_at: "2026-10-19T23:59:39Z"
