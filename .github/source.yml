@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "80c5438d8ec40b92329cf1cf42d61b4ef811747e"
+  sha: "c26e21b312ba22ed0e327843abacf82f525c741b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39266103158
+  ref_name: "docs/native-flutter-transition"
+  run_id: 39277413722
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Fix nullable App Studio profile request validation (#378)\n\n* fix(vega): restore baseline type and lint validation\n\n* feat(studio): simplify profiles and freeze mobile identifiers\n\n* Restore the 16 MiB App logo limit and synchronize integrated contracts\n\n* feat(app-studio): freeze editable native permissions into release builds\n\n* chore: pin merged Orion native permission generator\n\n* fix(appprofile): validate nullable profile fields correctly"
+  message: "docs: plan native Flutter transition across Cosmos"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T14:07:36Z"
+  created_at: "2026-10-19T15:23:04Z"
