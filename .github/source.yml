@@ -3,15 +3,15 @@ source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
   sha: "8e29b379061e1b749fa0c41aa6995fe0d66a9b1c"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 39211973404
+  ref_type: "tag"
+  ref_name: "v0.7.65"
+  run_id: 39212065351
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "coreprint"
   authors: ["fang-weiqiang"]
 dispatch:
-  created_at: "2026-10-19T06:47:45Z"
+  created_at: "2026-10-19T06:48:43Z"
