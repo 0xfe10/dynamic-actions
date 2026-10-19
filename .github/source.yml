@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "16d46f674d59dd76bf3d81570fe42720dd89a86d"
+  sha: "064ba46c69fa9de203e9346f1a419a35d8f9ac14"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 39000767045
+  run_id: 39195151444
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Keep dynamic CI status icons under GitHub Actions (#5)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery\n\n* Report dynamic CI results with source GitHub Actions identity"
-  authors: ["0xfe10"]
+  message: "fix\uff1a\u4fee\u6539\u4e0a\u4f20\u9884\u7b7e\u540d\u63a5\u53e3"
+  authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-10-17T03:58:02Z"
+  created_at: "2026-10-19T03:32:27Z"
