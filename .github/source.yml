@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c26e21b312ba22ed0e327843abacf82f525c741b"
+  sha: "4967b4c8128dd1af2b1f2640b7662cf30828ef7c"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39277413722
+  run_id: 39292452537
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: plan native Flutter transition across Cosmos"
+  message: "refactor!: retire dynamic delivery for native Flutter builds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T15:23:04Z"
+  created_at: "2026-10-19T17:14:54Z"
