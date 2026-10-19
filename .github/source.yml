@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b465022e3212cc882340dd2729c52e32aa74b89c"
+  sha: "2b38b135930d55e831f76b220bf266cdeb7c3e16"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39224820362
+  ref_name: "fix/release-build-profile-gates"
+  run_id: 39228295172
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): separate app builds and batch history into tabs (#373)"
+  message: "fix(releasebuild): exclude apps without build profiles"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T08:43:50Z"
+  created_at: "2026-10-19T09:12:36Z"
