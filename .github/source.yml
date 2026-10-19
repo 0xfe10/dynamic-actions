@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ff31123270f21fa253d45ba3316654d5628840cf"
+  sha: "53d5a36fd887115bda5087b0443d15304c466ce7"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39257801897
+  ref_name: "0xfe10/cosmos-12676"
+  run_id: 39259705365
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(contracts): support versioned native image editor presentation (#377)\n\n* feat(contracts): support versioned native image editor presentation\n\n* chore(orion): pin merged style-driven image editor"
+  message: "fix: integrate native permissions and repair storage validation checks"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T13:09:57Z"
+  created_at: "2026-10-19T13:23:28Z"
