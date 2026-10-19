@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "619ddda2cc4d316fdea40eddd05bdc3373bac4c0"
+  sha: "e22e69e55abc3cba5841f0d9bb93560a340e93a8"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39333089291
+  run_id: 39337592656
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: assemble frozen presentation icon resources"
+  message: "feat: restore typed Breeze feedback and preserve authentication return stacks"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T22:11:00Z"
+  created_at: "2026-10-19T22:49:32Z"
