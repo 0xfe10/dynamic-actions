@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5475ac152ee0b8cbe5007132fbbd537c2d5d1054"
+  sha: "1b1f948e051fd5b5790fb149d5babfb006390bfd"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39307560301
+  run_id: 39309376523
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: restore native authentication and separate navigation entries"
+  message: "feat: restore native family navigation and original Mellow assets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T19:02:19Z"
+  created_at: "2026-10-19T19:15:08Z"
