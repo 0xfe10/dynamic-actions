@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f45a1c14884939ebf38bf4b6e1b4c78f363720f9"
+  sha: "cce6945ff784945815adf8d599e7bbb13508bef4"
   ref_type: "branch"
-  ref_name: "agt/image-editor-activation-v2"
-  run_id: 39256350910
+  ref_name: "0xfe10/cosmos-12676"
+  run_id: 39257204994
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): pin merged style-driven image editor"
+  message: "feat(app-studio): freeze editable native permissions into release builds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T12:59:23Z"
+  created_at: "2026-10-19T13:05:36Z"
