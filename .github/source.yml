@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "decfab26bd422d34d1d8e7e58ce9c7bfe4c61fe6"
+  sha: "4a6f4a8810f25d89cdca9d6f94687d16e73b63d9"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39321628371
+  run_id: 39325189244
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(account): restore native profiles and scoped avatar uploads"
+  message: "feat(mellow): restore personal center and settings navigation"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T20:43:13Z"
+  created_at: "2026-10-19T21:09:07Z"
