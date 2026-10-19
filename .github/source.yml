@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3167fdbe5f1ef3d63af9ad4944b4b0769d2f3e82"
+  sha: "b465022e3212cc882340dd2729c52e32aa74b89c"
   ref_type: "branch"
-  ref_name: "fix/release-build-history-tabs"
-  run_id: 39224603059
+  ref_name: "main"
+  run_id: 39224820362
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): separate app builds and batch history into tabs"
+  message: "fix(vega): separate app builds and batch history into tabs (#373)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T08:42:00Z"
+  created_at: "2026-10-19T08:43:50Z"
