@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1e0d686b4fb81ea2a74e048e475d41f2091d7c41"
+  sha: "4ed17e0442041b48042a6953f4811514d9b47ab1"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39340992634
+  run_id: 39343425232
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(feedback): restore Mellow compose and private gallery attachments"
+  message: "feat: restore native Breeze home and runtime banners"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T23:20:57Z"
+  created_at: "2026-10-19T23:44:37Z"
