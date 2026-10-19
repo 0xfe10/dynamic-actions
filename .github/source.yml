@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e36f273fc0db8593d6615ace5e2e1b40a802a561"
+  sha: "01a93f1ea8c7b3863865fbb4a942dcc2777be32a"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39314171724
+  run_id: 39322255733
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: freeze complete language archives for native builds"
+  message: "fix(native): require complete selected feature dependencies"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T19:49:39Z"
+  created_at: "2026-10-19T20:47:44Z"
