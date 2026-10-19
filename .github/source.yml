@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "3fd9dc4ee76cdef95479fd15c4877cf17da9acac"
+  sha: "2b5f4e35060fe5ae6846a812b513c8fd94304137"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39276789769
+  run_id: 39290838152
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: use Cosmos dynamic workflows and scope Orion docs"
+  message: "feat: initialize native app runtime and frozen build assembly"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T15:18:24Z"
+  created_at: "2026-10-19T17:03:31Z"
