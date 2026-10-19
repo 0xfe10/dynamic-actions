@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "98d46c507caeab55927b1c066cf09efff64d95db"
+  sha: "5475ac152ee0b8cbe5007132fbbd537c2d5d1054"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39303066879
+  run_id: 39307560301
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: track verified bundled resource indexes"
+  message: "feat: restore native authentication and separate navigation entries"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T18:30:38Z"
+  created_at: "2026-10-19T19:02:19Z"
