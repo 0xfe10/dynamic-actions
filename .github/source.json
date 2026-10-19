@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/labelix",
+    "repository_id": 1110430942,
+    "sha": "61171e254ff4c32b6da4ea890597aedab3a84584",
+    "ref_type": "branch",
+    "ref_name": "codex/spectra-memory-fix",
+    "run_id": 39181179491,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}

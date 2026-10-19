@@ -1,0 +1,1 @@
+fix(spectra): keep reporting backfill moving past memory failures
