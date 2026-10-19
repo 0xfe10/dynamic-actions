@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ca7a72a96048243fef63200467b2b156a9786174"
+  sha: "bb69235bc3b434f4619f66a106f78530f922fff2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39245169169
+  ref_name: "0xfe10/cosmos-12676"
+  run_id: 39252006250
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(signing): keep one current setup per app platform\n\nApp operators upload or remove the Android or iOS signing setup directly.\nDetaching a binding leaves shared assets, other apps, and historical\nmaterial versions in place, and a different install certificate is refused."
+  message: "Restore the 16 MiB App logo limit and synchronize integrated contracts"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T11:31:00Z"
+  created_at: "2026-10-19T12:26:06Z"
