@@ -1,1 +1,9 @@
-Merge current Spectra reporting release base
+feat(spectra): initialize cumulative totals before October UTC cutoff (#189)
+
+* fix(spectra): keep reporting backfill moving past memory failures
+
+* feat(spectra): preserve cumulative totals at UTC history cutoff
+
+---------
+
+Co-authored-by: Fangjc <admin@gcoll.top>
