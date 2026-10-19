@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d5a99462f3966d4e91e3ba5ef03b591fb6c7694a"
+  sha: "eab856bcd60c06155bf970e6bef5854cf3af4775"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39312952450
+  run_id: 39314162020
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: restore native language pages and registry labels"
+  message: "feat: bundle frozen registry languages in native app builds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T19:40:45Z"
+  created_at: "2026-10-19T19:49:32Z"
