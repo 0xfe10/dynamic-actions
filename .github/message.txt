@@ -1,1 +1,1 @@
-feat(spectra): preserve cumulative totals at UTC history cutoff
+Merge current Spectra reporting release base
