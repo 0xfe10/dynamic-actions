@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1c317b721f51ce740ca44260f458559c1f501519"
+  sha: "e36f273fc0db8593d6615ace5e2e1b40a802a561"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39312970215
+  run_id: 39314171724
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: preserve registry locale labels in runtime language bundles"
+  message: "feat: freeze complete language archives for native builds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T19:40:52Z"
+  created_at: "2026-10-19T19:49:39Z"
