@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2bb2fabe22f6c99e87ebbf02ef8ec49fec47c762"
+  sha: "ca7a72a96048243fef63200467b2b156a9786174"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-12675"
-  run_id: 39244156888
+  ref_name: "main"
+  run_id: 39245169169
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "feat(signing): keep one current setup per app platform\n\nApp operators upload or remove the Android or iOS signing setup directly.\nDetaching a binding leaves shared assets, other apps, and historical\nmaterial versions in place, and a different install certificate is refused."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T11:22:37Z"
+  created_at: "2026-10-19T11:31:00Z"
