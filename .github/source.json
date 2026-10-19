@@ -4,11 +4,11 @@
     "repository": "prtmax/labelix",
     "repository_id": 1110430942,
     "sha": "995aefa79392e110db96353aa7825d899ad678e2",
-    "ref_type": "branch",
-    "ref_name": "codex/spectra-reporting",
-    "run_id": 39181776902,
+    "ref_type": "tag",
+    "ref_name": "v0.0.132-spectra-reporting",
+    "run_id": 39181994738,
     "run_attempt": 1,
-    "workflow": ".github/workflows/trigger-branch.yml"
+    "workflow": ".github/workflows/trigger-tag.yml"
   },
   "execution_repository": "0xfe10/dynamic-actions",
   "policy": null
