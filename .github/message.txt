@@ -1,3 +1,1 @@
-fix(spectra): keep reporting backfill moving past memory failures (#188)
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+feat(spectra): preserve cumulative totals at UTC history cutoff
