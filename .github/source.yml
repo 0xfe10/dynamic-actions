@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "01a93f1ea8c7b3863865fbb4a942dcc2777be32a"
+  sha: "c771e05769cea5485b75d558f7249c52736dc436"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39322255733
+  run_id: 39333112053
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(native): require complete selected feature dependencies"
+  message: "feat: freeze selected presentation registry assets for builds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-19T20:47:44Z"
+  created_at: "2026-10-19T22:11:15Z"
