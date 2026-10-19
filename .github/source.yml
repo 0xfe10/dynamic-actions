@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d4d1f68f3a555a7e8cb70b0ea4831e05e1bfadc8"
+  sha: "78d29c32b7ce7d7a5e13cb92a7b1179da9c4dcbb"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39142001928
+  ref_name: "fix/console-description-cleanup"
+  run_id: 39216214714
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): organize app packaging settings into functional tabs (#371)"
+  message: "fix(vega): simplify console descriptions and link packaging tabs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-18T15:46:44Z"
+  created_at: "2026-10-19T07:28:45Z"
