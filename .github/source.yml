@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "dc925fe2c8ab3604cc82fd4954f23cd581226d26"
+  sha: "4c930e6355bc2a817cc86f1322e22e9b6a666663"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39412747749
+  run_id: 39414092116
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow-ui): restore plain text gallery artwork"
+  message: "fix(mellow-ui): complete text gallery previews and category row"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T11:07:53Z"
+  created_at: "2026-10-20T11:19:23Z"
