@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "261292a801a252913ad906f0349fc7bedd5fd5b7"
+  sha: "8199daa182786a464fcb415a7dc14b8bab8b46f4"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39358012694
+  run_id: 39361860697
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(editor): restore native canvas foundation and lifetimes"
+  message: "Restore native document nodes for the original image editor"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T02:16:35Z"
+  created_at: "2026-10-20T02:59:20Z"
