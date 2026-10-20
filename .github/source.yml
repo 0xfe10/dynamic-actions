@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "34599987cb1024c58a85b0180e124bc7d229d0a3"
+  sha: "6bb692b477fdcd9a9cdfe1a4c39aabb35bcfd902"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39432780933
+  run_id: 39434379365
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): restore text style grouping and selected semantics"
+  message: "fix(mellow): restore font catalog list presentation"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T13:42:56Z"
+  created_at: "2026-10-20T13:53:58Z"
