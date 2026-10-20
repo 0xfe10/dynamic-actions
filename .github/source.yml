@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4d1ecf636a7af7179906e24f16a9674076196e96"
+  sha: "37a154861dbb060c66ca0b1bb2ca03d45cee0020"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39407162560
+  run_id: 39408297757
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow-ui): restore rating page and profile navigation"
+  message: "fix(breeze-ui): restore rating page and mixed navigation"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T10:20:01Z"
+  created_at: "2026-10-20T10:29:39Z"
