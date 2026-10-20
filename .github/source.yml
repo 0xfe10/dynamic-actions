@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "dca028e3850a060d228ae283b8bcb97a6c577d4a"
+  sha: "d2e3bd5bf75a76239c4f577fe905be609c64f301"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39352690488
+  run_id: 39355615311
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): preserve printer name width in the home header"
+  message: "feat: restore native Mellow and Breeze document selection"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T01:18:33Z"
+  created_at: "2026-10-20T01:50:17Z"
