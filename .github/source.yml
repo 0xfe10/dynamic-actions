@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0ab645d624d3034c7733677510ac4a9dab335885"
+  sha: "b5ed49e7b931f1e4a63cf8884d860537cd45ab4d"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39441922779
+  run_id: 39442717148
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor: retire remaining App theme authoring and pin native host"
+  message: "fix(ci): authenticate private Flutter dependencies during bootstrap"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T14:44:09Z"
+  created_at: "2026-10-20T14:49:26Z"

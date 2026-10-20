@@ -61,6 +61,11 @@ jobs:
       - name: Install FVM
         run: dart pub global activate fvm 4.1.2
       - name: Bootstrap
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          GIT_CONFIG_COUNT: "1"
+          GIT_CONFIG_KEY_0: credential.https://github.com.helper
+          GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: just bootstrap
       - name: Check
         run: just check
@@ -165,6 +170,11 @@ jobs:
       - name: Install FVM
         run: dart pub global activate fvm 4.1.2
       - name: Bootstrap Orion
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          GIT_CONFIG_COUNT: "1"
+          GIT_CONFIG_KEY_0: credential.https://github.com.helper
+          GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: just --justfile orion/Justfile bootstrap
       - name: Rigel iOS simulator build
         run: cd orion/apps/rigel && fvm flutter build ios --simulator --no-codesign
