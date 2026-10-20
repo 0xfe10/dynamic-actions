@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b7cdfc11a58be63b1836c445a91d739707c4c813"
+  sha: "99eba9fce812f63aa522a9976f9e05941ba92b1e"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39426194288
+  run_id: 39427797930
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): align image adjustment panel with Lanhu"
+  message: "fix(mellow): restore Lanhu filter panel layout"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T12:56:26Z"
+  created_at: "2026-10-20T13:08:03Z"
