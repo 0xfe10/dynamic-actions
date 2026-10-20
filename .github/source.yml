@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a16a1841caa2b79700ef4671996c0df54ef99ab0"
+  sha: "54882f7d36cb8d903d62a5368ccdec2363a6f1b9"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39394885660
+  run_id: 39396577454
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor-ui): restore registered Lanhu editor icons and controls"
+  message: "fix(editor-ui): align Mellow text style panel with Lanhu"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T08:38:53Z"
+  created_at: "2026-10-20T08:52:52Z"
