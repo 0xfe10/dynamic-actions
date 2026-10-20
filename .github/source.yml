@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1e83988ad17c0bf4cdd20fca50cf59b388d6bb45"
+  sha: "31c14105e90279e9773ee195a7092ec6efbacb77"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39366619235
+  run_id: 39368892813
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: restore native compact image editor pages"
+  message: "feat(image-print): connect native selection and family presentations"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T03:53:18Z"
+  created_at: "2026-10-20T04:18:47Z"
