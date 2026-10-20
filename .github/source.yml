@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "993225d3d2c115187869007c6b76041252f04e2f"
+  sha: "e0d73f0b6a740ce8850ac71ceed1992de95d5148"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39421017587
+  run_id: 39422938026
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow-ui): restore graffiti canvas history and comparison controls"
+  message: "fix(assembly): freeze native image and proof presentations with original crop assets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T12:16:42Z"
+  created_at: "2026-10-20T12:31:48Z"
