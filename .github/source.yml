@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "3802df346e0cb340d2adc2916d2cfda1c6129d3f"
+  sha: "11733ee185036201a8ac381b2d8e1d3ad7630389"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39378655966
+  run_id: 39381248279
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(image-editor): persist solid and transparent document backgrounds"
+  message: "feat(image-editor): render editable native image outlines"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T06:08:12Z"
+  created_at: "2026-10-20T06:35:29Z"
