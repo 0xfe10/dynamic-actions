@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a6af061897fbc8afd3e11f12080ba4db9e7f3abd"
+  sha: "95a7876f81ed6408c1ef72f675632765da757eb5"
   ref_type: "branch"
   ref_name: "feat/ui-lanhu-parity"
-  run_id: 39493147679
+  run_id: 39495619103
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): align sticker panel safe area and keyboard layout"
+  message: "fix(editor): align compact graffiti drawing panel with Lanhu"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T20:34:44Z"
+  created_at: "2026-10-20T20:52:12Z"
