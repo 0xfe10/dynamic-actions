@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e8412f11ade51b3882489287ebb1bd8997f5de52"
+  sha: "9376ea38cd095477e4dc0698753779803a671115"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39383831011
+  run_id: 39384623551
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): preserve native adjustments and stroke comparison history"
+  message: "fix(image-editor): retain visible adjustments when cropping"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T07:01:18Z"
+  created_at: "2026-10-20T07:08:51Z"
