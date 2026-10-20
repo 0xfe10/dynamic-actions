@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d7bdf86601a2cd07c234854656191da198d820ee"
+  sha: "bb74859990a3bc96a7e2674d939563f0d52a8e70"
   ref_type: "branch"
   ref_name: "feat/ui-lanhu-parity"
-  run_id: 39504060968
+  run_id: 39509583999
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): align editor shelf label typography"
+  message: "feat(mellow): restore native Lanhu photo gallery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T21:54:22Z"
+  created_at: "2026-10-20T22:38:40Z"
