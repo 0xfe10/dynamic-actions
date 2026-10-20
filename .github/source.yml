@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5d6c8b426acc69b2838f814b8e2f7bfc9dcaa1c6"
+  sha: "dc925fe2c8ab3604cc82fd4954f23cd581226d26"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39411630761
+  run_id: 39412747749
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(breeze-ui): bundle original management registry icons"
+  message: "fix(mellow-ui): restore plain text gallery artwork"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T10:58:20Z"
+  created_at: "2026-10-20T11:07:53Z"
