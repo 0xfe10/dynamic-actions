@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "12d55a1b5e99b2626b52dca77c0aee5d137e8653"
+  sha: "308f6598caba7b7a6ed0607259742b7a3b4663a6"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39402023787
+  run_id: 39403379256
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor-ui): restore native text selection controls"
+  message: "fix(editor-ui): separate text gallery from copy editing"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T09:37:33Z"
+  created_at: "2026-10-20T09:48:40Z"
