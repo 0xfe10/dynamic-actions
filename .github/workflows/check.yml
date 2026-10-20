@@ -30,7 +30,13 @@ jobs:
         with:
           flutter-version: ${{ steps.toolchain.outputs.flutter }}
           channel: stable
-      - run: flutter pub get --enforce-lockfile
+      - name: Resolve dependencies including the private printer SDK
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          GIT_CONFIG_COUNT: "1"
+          GIT_CONFIG_KEY_0: credential.https://github.com.helper
+          GIT_CONFIG_VALUE_0: "!gh auth git-credential"
+        run: flutter pub get --enforce-lockfile
       - run: dart format --output=none --set-exit-if-changed .
       - run: flutter analyze --no-pub
       - run: dart run melos exec --dir-exists=test --concurrency=1 -- flutter test --no-pub
