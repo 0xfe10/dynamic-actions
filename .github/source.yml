@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "789b2bd283d6404d4fea4fc7232bb9250c797cca"
+  sha: "0ab645d624d3034c7733677510ac4a9dab335885"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39350454342
+  run_id: 39441922779
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test: include explicit network permission in native build vector"
+  message: "refactor: retire remaining App theme authoring and pin native host"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T00:55:10Z"
+  created_at: "2026-10-20T14:44:09Z"
