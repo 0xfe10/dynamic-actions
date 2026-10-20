@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6b96fde640995f463ddcb54d34bd06ffe0be5ef7"
+  sha: "1e83988ad17c0bf4cdd20fca50cf59b388d6bb45"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39365751097
+  run_id: 39366619235
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: restore original native jigsaw editor components"
+  message: "feat: restore native compact image editor pages"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T03:43:17Z"
+  created_at: "2026-10-20T03:53:18Z"
