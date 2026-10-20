@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c5b992b9867ffbc7bc9cab87f5b712c08c8a55a7"
+  sha: "59462f53992720faaa9fd640c87794e66f3278e1"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39350807925
+  run_id: 39351718019
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): authenticate private printer SDK dependency resolution"
+  message: "fix(mellow): restore live home printer connection state"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T00:58:51Z"
+  created_at: "2026-10-20T01:08:14Z"
