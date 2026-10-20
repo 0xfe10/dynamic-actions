@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "67ddf8c0a807b934abc055c7bdcbf9c2094e0315"
+  sha: "6b96fde640995f463ddcb54d34bd06ffe0be5ef7"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39363077286
+  run_id: 39365751097
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Restore the original native image crop component"
+  message: "feat: restore original native jigsaw editor components"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T03:12:48Z"
+  created_at: "2026-10-20T03:43:17Z"
