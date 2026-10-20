@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "9e7b4f26c0c6d26dbf6b85f243aa90d7eebee2e7"
+  sha: "1a994a3df469d227aac413c2fd0b74b1e87671c9"
   ref_type: "branch"
   ref_name: "feat/ui-lanhu-parity"
-  run_id: 39497741944
+  run_id: 39500640843
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): align text template panel insets and keyboard layout"
+  message: "fix(editor): align compact stroke controls with Lanhu"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T21:07:20Z"
+  created_at: "2026-10-20T21:28:35Z"
