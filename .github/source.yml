@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "60c79117a46a2ec99f9601aada1fef71bdbbadc9"
+  sha: "b7cdfc11a58be63b1836c445a91d739707c4c813"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39423926301
+  run_id: 39426194288
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow-ui): align rotation panel with original design"
+  message: "fix(mellow): align image adjustment panel with Lanhu"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T12:39:24Z"
+  created_at: "2026-10-20T12:56:26Z"
