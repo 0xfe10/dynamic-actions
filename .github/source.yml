@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6bb692b477fdcd9a9cdfe1a4c39aabb35bcfd902"
+  sha: "94a74c2cb48f721eb8b46e80eb2de73340c3284c"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39434379365
+  run_id: 39437267948
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): restore font catalog list presentation"
+  message: "fix(mellow): restore original adjustment registry glyphs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T13:53:58Z"
+  created_at: "2026-10-20T14:13:33Z"
