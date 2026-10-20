@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "941c43a40a266d9c57faa6603302d468c50d8fbe"
+  sha: "f7dd89a1bb2b60bf932e53c0d6fc7663d6f7378a"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39450897183
+  run_id: 39457530764
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test: register packaging language fixture region"
+  message: "chore: pin Orion to merged native foundation"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T15:42:41Z"
+  created_at: "2026-10-20T16:27:10Z"
