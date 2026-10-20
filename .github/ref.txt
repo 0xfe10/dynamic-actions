@@ -1,1 +1,1 @@
-codex/spectra-cumulative-empty-prefix
+codex/spectra-reporting
