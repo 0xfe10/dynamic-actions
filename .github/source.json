@@ -3,10 +3,10 @@
   "source": {
     "repository": "prtmax/labelix",
     "repository_id": 1110430942,
-    "sha": "292eb578d7823169d84682e733f0281f020f0048",
+    "sha": "be6eec9e3be4c277c1f19b058b6595c1fd707040",
     "ref_type": "branch",
-    "ref_name": "codex/spectra-cumulative-throughput",
-    "run_id": 39352601769,
+    "ref_name": "codex/spectra-reporting",
+    "run_id": 39352655638,
     "run_attempt": 1,
     "workflow": ".github/workflows/trigger-branch.yml"
   },
