@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "01fdd2152b87ec0d883c0765b0d4e7706b2213eb"
+  sha: "d8258984764bd510543885f5ae0e5cd4701c594b"
   ref_type: "branch"
   ref_name: "feat/ui-lanhu-parity"
-  run_id: 39482565066
+  run_id: 39486558676
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): restore Lanhu template search and history layouts"
+  message: "fix(ui): restore template result cards and pin search controls"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T19:20:18Z"
+  created_at: "2026-10-20T19:48:27Z"
