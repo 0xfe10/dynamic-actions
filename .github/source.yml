@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ec75297f0aa538fd16d41b0f097372a2dfd82ffb"
+  sha: "d7bdf86601a2cd07c234854656191da198d820ee"
   ref_type: "branch"
   ref_name: "feat/ui-lanhu-parity"
-  run_id: 39503209857
+  run_id: 39504060968
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): restore compact editor title typography"
+  message: "fix(ui): align editor shelf label typography"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T21:47:48Z"
+  created_at: "2026-10-20T21:54:22Z"
