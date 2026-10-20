@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f7dd89a1bb2b60bf932e53c0d6fc7663d6f7378a"
+  sha: "7d6ac66a734d43e52f733bf1b6ff1da402a02bfa"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39457530764
+  run_id: 39459310018
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore: pin Orion to merged native foundation"
+  message: "fix: retry aborted font cleanup transactions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T16:27:10Z"
+  created_at: "2026-10-20T16:39:12Z"
