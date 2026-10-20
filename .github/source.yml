@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "70fce8f2fb9691e5501a06fbe07a4f88e5cf8a7a"
+  sha: "789b2bd283d6404d4fea4fc7232bb9250c797cca"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39350093534
+  run_id: 39350454342
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: scope native catalog permission policies by platform"
+  message: "test: include explicit network permission in native build vector"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T00:51:28Z"
+  created_at: "2026-10-20T00:55:10Z"
