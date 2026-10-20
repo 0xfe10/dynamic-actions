@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f4f9c38bac4efabcf83f50c95da4339466d68a19"
+  sha: "941c43a40a266d9c57faa6603302d468c50d8fbe"
   ref_type: "branch"
   ref_name: "docs/native-flutter-transition"
-  run_id: 39447595466
+  run_id: 39450897183
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: split API admin and Android checks and pause iOS"
+  message: "test: register packaging language fixture region"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T15:21:22Z"
+  created_at: "2026-10-20T15:42:41Z"
