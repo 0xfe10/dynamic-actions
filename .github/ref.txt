@@ -1,1 +1,1 @@
-v0.0.135-spectra-reporting
+codex/spectra-cumulative-throughput
