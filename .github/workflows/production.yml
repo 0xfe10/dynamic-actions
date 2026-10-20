@@ -15,7 +15,8 @@ permissions:
   packages: write
 
 jobs:
-  quality:
+  api:
+    name: API Checks
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: postgres://postgres:ci-postgres-only@127.0.0.1:5432/mercury?sslmode=disable
@@ -34,44 +35,122 @@ jobs:
           --health-timeout 3s
           --health-retries 20
     steps:
-      - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - name: Check out workflow metadata
+        uses: actions/checkout@v6
+      - name: Check out Cosmos
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
-          submodules: recursive
-      - uses: actions/setup-go@v6
+      - name: Set up Go
+        uses: actions/setup-go@v6
         with:
           go-version-file: .go-version
           cache-dependency-path: solar/**/go.sum
-      - uses: pnpm/action-setup@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Set up Just
+        uses: extractions/setup-just@v3
+      - name: Install API dependencies
+        run: |
+          just --justfile solar/mercury/Justfile bootstrap
+          cd tools/openapi-compat && go mod download
+      - name: Check native contracts
+        run: just --justfile fornax/dalim/Justfile check
+      - name: Check API formatting and static analysis
+        run: |
+          just --justfile solar/mercury/Justfile format-check
+          just --justfile solar/mercury/Justfile lint
+          just --justfile solar/mercury/Justfile staticcheck
+      - name: Run API unit and race tests
+        run: just test-go
+      - name: Check OpenAPI compatibility
+        run: just openapi-compat
+      - name: Run migrations and PostgreSQL integration tests
+        env:
+          MERCURY_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
+        run: just migrate && just test-db
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build API image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: mercury
+          push: false
+          cache-from: type=gha,scope=mercury-worker
+          cache-to: type=gha,mode=max,scope=mercury-worker
+      - name: Build Worker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: worker
+          push: false
+          cache-from: type=gha,scope=mercury-worker
+          cache-to: type=gha,mode=max,scope=mercury-worker
+
+  admin:
+    name: Admin Checks
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://postgres:ci-postgres-only@127.0.0.1:5432/mercury?sslmode=disable
+    services:
+      postgres:
+        image: postgres:18.1-bookworm
+        env:
+          POSTGRES_DB: mercury
+          POSTGRES_PASSWORD: ci-postgres-only
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d mercury"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 20
+    steps:
+      - name: Check out workflow metadata
+        uses: actions/checkout@v6
+      - name: Check out Cosmos
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/cosmos
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: .go-version
+          cache-dependency-path: solar/**/go.sum
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
         with:
           package_json_file: lyra/package.json
-      - uses: actions/setup-node@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
           cache: pnpm
           cache-dependency-path: lyra/pnpm-lock.yaml
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: 3.47.2
-          cache: true
-      - uses: extractions/setup-just@v3
-      - name: Install FVM
-        run: dart pub global activate fvm 4.1.2
-      - name: Bootstrap
-        run: just bootstrap
-      - name: Check
-        run: just check
-      - name: Rigel Android build
-        run: just --justfile orion/Justfile rigel-android
-      - name: Mercury race tests
-        run: just test-go
-      - name: PostgreSQL integration tests
-        env:
-          MERCURY_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
-        run: just migrate && just test-db
+      - name: Set up Just
+        uses: extractions/setup-just@v3
+      - name: Install admin and test API dependencies
+        run: |
+          just --justfile lyra/Justfile bootstrap
+          just --justfile solar/mercury/Justfile bootstrap
+      - name: Check admin formatting
+        run: just --justfile lyra/Justfile format-check
+      - name: Lint admin
+        run: just --justfile lyra/Justfile lint
+      - name: Check admin types
+        run: just --justfile lyra/Justfile typecheck
+      - name: Run admin unit tests
+        run: just --justfile lyra/Justfile test
+      - name: Check generated platform API client
+        run: just generate-check platform
+      - name: Build admin production assets
+        run: pnpm --dir lyra build
       - name: Install Playwright Chromium
         run: pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium
       - name: Prepare browser E2E database
@@ -104,34 +183,111 @@ jobs:
           done
           curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null || { cat mercury-e2e.log; exit 1; }
           pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury"
-      - name: Lyra production build
-        run: pnpm --dir lyra build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build Vega image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          target: vega
+          push: false
+          build-args: |
+            VITE_MERCURY_BASE_URL=https://mercury.invalid
+          cache-from: type=gha,scope=vega
+          cache-to: type=gha,mode=max,scope=vega
 
-  ios-quality:
-    runs-on: macos-latest
+  android:
+    name: Android Checks
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - name: Check out workflow metadata
+        uses: actions/checkout@v6
+      - name: Check out Cosmos
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
           submodules: recursive
-      - uses: subosito/flutter-action@v2
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: .go-version
+          cache-dependency-path: solar/**/go.sum
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
           channel: stable
           flutter-version: 3.47.2
           cache: true
-      - uses: extractions/setup-just@v3
+      - name: Set up Just
+        uses: extractions/setup-just@v3
       - name: Install FVM
         run: dart pub global activate fvm 4.1.2
-      - name: Bootstrap Orion
+      - name: Install Orion dependencies
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          GIT_CONFIG_COUNT: "1"
+          GIT_CONFIG_KEY_0: credential.https://github.com.helper
+          GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: just --justfile orion/Justfile bootstrap
-      - name: Rigel iOS simulator build
-        run: cd orion/apps/rigel && fvm flutter build ios --simulator --no-codesign
+      - name: Check Orion formatting and static analysis
+        run: |
+          just --justfile orion/Justfile format-check
+          just --justfile orion/Justfile analyze
+      - name: Run Orion assembly and Flutter tests
+        run: just --justfile orion/Justfile test
+      - name: Install runtime API contract dependencies
+        run: just --justfile solar/mercury/Justfile bootstrap
+      - name: Check generated runtime API client
+        run: just generate-check runtime
+      - name: Build Android APK
+        run: just --justfile orion/Justfile rigel-android
+
+  # iOS Checks are temporarily disabled at the project owner's request.
+  # Restore this job and its deployment dependency after fixing printer SDK
+  # simulator linking (AYPrinter / BleHelper). A green CI does not validate iOS.
+  # ios:
+  #   name: iOS Checks
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: Check out workflow metadata
+  #       uses: actions/checkout@v6
+  #     - name: Check out Cosmos
+  #       uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+  #       with:
+  #         repository: prtmax/cosmos
+  #         token: ${{ secrets.GH_TOKEN_0XFE10 }}
+  #         submodules: recursive
+  #     - name: Set up Flutter
+  #       uses: subosito/flutter-action@v2
+  #       with:
+  #         channel: stable
+  #         flutter-version: 3.47.2
+  #         cache: true
+  #     - name: Set up Just
+  #       uses: extractions/setup-just@v3
+  #     - name: Install FVM
+  #       run: dart pub global activate fvm 4.1.2
+  #     - name: Install Orion dependencies
+  #       env:
+  #         GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+  #         GIT_CONFIG_COUNT: "1"
+  #         GIT_CONFIG_KEY_0: credential.https://github.com.helper
+  #         GIT_CONFIG_VALUE_0: "!gh auth git-credential"
+  #       run: just --justfile orion/Justfile bootstrap
+  #     - name: Check Orion
+  #       run: just --justfile orion/Justfile check
+  #     - name: Build iOS simulator app
+  #       run: cd orion/apps/rigel && fvm flutter build ios --simulator --no-codesign --no-pub
 
   build-and-deploy:
+    name: Deploy Production
     runs-on: ubuntu-latest
-    needs: [quality, ios-quality]
+    needs: [api, admin, android]
     steps:
       - uses: actions/checkout@v6
       - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
@@ -155,6 +311,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          target: mercury
           push: true
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:sha-${{ env.SHA }}
