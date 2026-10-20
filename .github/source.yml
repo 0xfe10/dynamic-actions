@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8157f57e1314682eea64e3050cefbe1231f36968"
+  sha: "01fdd2152b87ec0d883c0765b0d4e7706b2213eb"
   ref_type: "branch"
   ref_name: "feat/ui-lanhu-parity"
-  run_id: 39478326696
+  run_id: 39482565066
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): restore shared registry icons and Mellow feedback layout"
+  message: "fix(ui): restore Lanhu template search and history layouts"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T18:51:07Z"
+  created_at: "2026-10-20T19:20:18Z"
