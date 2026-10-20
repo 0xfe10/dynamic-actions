@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d2e3bd5bf75a76239c4f577fe905be609c64f301"
+  sha: "261292a801a252913ad906f0349fc7bedd5fd5b7"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39355615311
+  run_id: 39358012694
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: restore native Mellow and Breeze document selection"
+  message: "feat(editor): restore native canvas foundation and lifetimes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T01:50:17Z"
+  created_at: "2026-10-20T02:16:35Z"
