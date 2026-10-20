@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e9c01eeba969baaba564418d934c011aa55ec458"
+  sha: "993225d3d2c115187869007c6b76041252f04e2f"
   ref_type: "branch"
   ref_name: "feat/native-flutter-foundation"
-  run_id: 39419902527
+  run_id: 39421017587
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: reconcile Breeze artwork validation status"
+  message: "fix(mellow-ui): restore graffiti canvas history and comparison controls"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T12:07:41Z"
+  created_at: "2026-10-20T12:16:42Z"
