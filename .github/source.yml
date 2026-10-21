@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e85cd47aadf55697eea04746063363aea7009ecb"
+  sha: "c30edfc16c226eb6e89d4f5682442fdc23b666e5"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39548517945
+  ref_name: "0xfe10/cosmos-16789"
+  run_id: 39551850855
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Move App build activation and shell configuration into platform management (#383)\n\n* Add App-scoped native Release lifecycle and publication\n\n* Bind native Release operations to owned build attempts\n\n* Unify App interface and theme configuration with inherited defaults\n\n* Verify interface snapshots across Release retries and upgrades\n\n* Register trusted Orion main sources and pin App code versions\n\n* Freeze Release code from stable internal App source pins\n\n* Fix interface snapshot consistency and legacy navigation\n\n* Add platform-owned App activation and frozen shell configuration\n\n* Verify activation ownership, migration and immutable dual-surface snapshots\n\n* Integrate native builds and verified publication into App Releases\n\n* Reject unassembled document printing shell entries"
+  message: "Consolidate App packaging settings and separate signing submission"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T05:15:34Z"
+  created_at: "2026-10-21T05:50:44Z"
