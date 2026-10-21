@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8c3a4c7fb6161bf3b666dcb6ab02ac4f41bc2eaf"
+  sha: "75676b7d0bea205e529e165b89dda2fc67acc498"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39539780630
+  ref_name: "0xfe10/cosmos-16550"
+  run_id: 39540674986
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Add native App Release backend and verified publication (#380)\n\n* Add App-scoped native Release lifecycle and publication\n\n* Bind native Release operations to owned build attempts"
+  message: "Verify interface snapshots across Release retries and upgrades"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T03:39:42Z"
+  created_at: "2026-10-21T03:49:35Z"
