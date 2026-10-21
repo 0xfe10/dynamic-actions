@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "bb74859990a3bc96a7e2674d939563f0d52a8e70"
+  sha: "f52ea5be402efebf8f73a951c7a995a8bf3c4641"
   ref_type: "branch"
-  ref_name: "feat/ui-lanhu-parity"
-  run_id: 39509583999
+  ref_name: "0xfe10/cosmos-16550"
+  run_id: 39540375249
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): restore native Lanhu photo gallery"
+  message: "Support frozen per-feature presentation themes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T22:38:40Z"
+  created_at: "2026-10-21T03:46:13Z"
