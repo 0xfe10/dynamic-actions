@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "eb99cef55fceb704d4ddfd8e348d20c60dfd10b5"
+  sha: "49dde29c857cc24342b082b052e13eb32750eee8"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39546507848
+  ref_name: "0xfe10/cosmos-16630"
+  run_id: 39547846676
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Unify native App Releases with trusted source and build delivery (#382)\n\n* Add App-scoped native Release lifecycle and publication\n\n* Bind native Release operations to owned build attempts\n\n* Unify App interface and theme configuration with inherited defaults\n\n* Verify interface snapshots across Release retries and upgrades\n\n* Register trusted Orion main sources and pin App code versions\n\n* Freeze Release code from stable internal App source pins\n\n* Fix interface snapshot consistency and legacy navigation\n\n* Integrate native builds and verified publication into App Releases"
+  message: "Reject unassembled document printing shell entries"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T04:53:42Z"
+  created_at: "2026-10-21T05:08:14Z"
