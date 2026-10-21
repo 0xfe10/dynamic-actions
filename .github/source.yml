@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "75676b7d0bea205e529e165b89dda2fc67acc498"
+  sha: "089f05a8d895e5cd10366a999fe6d1c4565df964"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-16550"
-  run_id: 39540674986
+  ref_name: "0xfe10/cosmos-16595"
+  run_id: 39541990287
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Verify interface snapshots across Release retries and upgrades"
+  message: "Freeze Release code from stable internal App source pins"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T03:49:35Z"
+  created_at: "2026-10-21T04:04:16Z"
