@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b6738c34c488634dd49b07ce6f5caca8b6323049"
+  sha: "7af9034ab7a5c1c4013c17da1aebf7b643d47168"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39461212583
+  ref_name: "0xfe10/cosmos-16507"
+  run_id: 39537042639
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor!: retire dynamic delivery for native Flutter app builds (#379)\n\n* docs: plan native Flutter transition across Cosmos\n\n* refactor!: retire dynamic delivery for native Flutter builds\n\n* feat: preserve registry locale labels in runtime language bundles\n\n* feat: freeze complete language archives for native builds\n\n* fix(native): require complete selected feature dependencies\n\n* feat: freeze selected presentation registry assets for builds\n\n* feat: scope native catalog permission policies by platform\n\n* test: include explicit network permission in native build vector\n\n* refactor: retire remaining App theme authoring and pin native host\n\n* fix(ci): authenticate private Flutter dependencies during bootstrap\n\n* ci: split API admin and Android checks and pause iOS\n\n* test: register packaging language fixture region\n\n* chore: pin Orion to merged native foundation\n\n* fix: retry aborted font cleanup transactions"
+  message: "Add App-scoped native Release lifecycle and publication"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-20T16:52:27Z"
+  created_at: "2026-10-21T03:09:56Z"
