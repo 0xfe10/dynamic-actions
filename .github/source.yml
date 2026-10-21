@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e6db8935267564fc8c9410153a61a2df9bad1bc2"
+  sha: "46dcb29a4345970cb8b653e8f83c60908752b47a"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-16550"
-  run_id: 39542354008
+  ref_name: "0xfe10/cosmos-16595"
+  run_id: 39543346714
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Fix interface snapshot consistency and legacy navigation"
+  message: "Merge interface snapshot fixes into trusted source registration"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T04:08:16Z"
+  created_at: "2026-10-21T04:19:00Z"
