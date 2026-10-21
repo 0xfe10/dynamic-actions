@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "76119227a1ebb8a26d424b59bdcfd6806ec45595"
+  sha: "8fa1016ff1be44b83aaef8f0e54eecdebc8ef7e3"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-16630"
-  run_id: 39545386656
+  ref_name: "main"
+  run_id: 39548509605
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into 0xfe10/cosmos-16630\n\n# Conflicts:\n#\tapps/rigel/test/feature_theme_scope_test.dart\n#\topenwiki/architecture/build-assembly.md"
+  message: "Render platform-configured App navigation and personal menus (#223)\n\n* Support frozen per-feature presentation themes\n\n* Register trusted main capability catalogs through GitHub OIDC\n\n* Render frozen main navigation and personal menus without fallback entries\n\n* Regenerate platform build metadata and retire implicit personal menus"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T04:41:14Z"
+  created_at: "2026-10-21T05:15:29Z"
