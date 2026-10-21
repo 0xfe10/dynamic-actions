@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "939da2fb62b552edf71f4921bea161ae29e4aed9"
+  sha: "0353cedeb8d9983b52cdfe72832ce870dd3b5af2"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-16595"
-  run_id: 39545372953
+  ref_name: "0xfe10/cosmos-16630"
+  run_id: 39545397171
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge main after interface configuration delivery"
+  message: "Merge remote-tracking branch 'origin/main' into 0xfe10/cosmos-16630\n\n# Conflicts:\n#\tfornax/dalim/src/native-canonical.ts\n#\tfornax/dalim/test/native-contract.test.ts\n#\tlyra/apps/vega/src/app-studio-feature-routes.tsx\n#\tlyra/apps/vega/src/app-studio-nav-items.ts\n#\tlyra/apps/vega/src/native-configuration.test.tsx\n#\tlyra/apps/vega/src/router.tsx\n#\tlyra/apps/vega/src/workspace-navigation.tsx\n#\tsolar/mercury/db/migration-checksums.txt\n#\tsolar/mercury/internal/integration/interface_configuration_http_test.go\n#\tsolar/mercury/internal/integration/interface_configuration_test.go\n#\tsolar/mercury/internal/nativecatalog/api.go\n#\tsolar/mercury/internal/nativecatalog/interface_api.go\n#\tsolar/mercury/internal/nativecatalog/interface_directory.go\n#\tsolar/mercury/internal/nativecatalog/interface_resolver.go\n#\tsolar/mercury/internal/nativecatalog/interface_service.go\n#\tsolar/mercury/internal/nativecatalog/interface_snapshot.go\n#\tsolar/mercury/internal/platformfeature/style_theme_api.go\n#\tsolar/mercury/internal/releasebuild/app_release_postgres_test.go\n#\tsolar/mercury/internal/releasebuild/canonical_vectors_test.go\n#\tsolar/mercury/internal/releasebuild/service.go\n#\tsolar/mercury/internal/releasebuild/snapshot_postgres_integration_test.go"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T04:41:09Z"
+  created_at: "2026-10-21T04:41:23Z"
