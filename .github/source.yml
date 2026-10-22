@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7d6489d2bdb9f1c5d151503af61ac5574587f89f"
+  sha: "363085cc44feb592a062a4a8a0c2fb23b47b360b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39552805829
+  ref_name: "0xfe10/cosmos-20256"
+  run_id: 39808235789
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Consolidate App packaging settings and separate signing submission (#384)"
+  message: "fix: use Release versions when adopting App signing materials"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-21T06:00:44Z"
+  created_at: "2026-10-22T15:48:23Z"
