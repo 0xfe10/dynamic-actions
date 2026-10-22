@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/byteone"
   repository_id: 1036077198
-  sha: "834f9964c30b8cf9ba020104ff84ba7eea8f3101"
+  sha: "da12314349d7cd392ce8d90298e549cf5fc9ed84"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 39000701588
+  run_id: 39771001572
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Keep dynamic CI status icons under GitHub Actions (#41)\n\n* ci: migrate dynamic workflows to source metadata outputs\n\n* ci: include Windows source metadata compatibility fix\n\n* ci: track Kangumi actions on main\n\n* Enable source pending status and failed dispatch recovery\n\n* Report dynamic CI results with source GitHub Actions identity"
-  authors: ["0xfe10"]
+  message: "fix\uff1a\u4f18\u5316\u6279\u5904\u7406"
+  authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-10-17T03:56:53Z"
+  created_at: "2026-10-22T11:29:56Z"
