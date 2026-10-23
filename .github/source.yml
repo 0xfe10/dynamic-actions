@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0a72a82aa107e512273ca0bacbc46517dcfc4904"
+  sha: "00b0c601a0299de1e9338a3029be98769c832d30"
   ref_type: "branch"
   ref_name: "feat/app-appearance"
-  run_id: 39927380822
+  run_id: 39927867998
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Apply the exact remembered appearance draft"
+  message: "Regenerate runtime client for appearance build contracts"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T08:49:31Z"
+  created_at: "2026-10-23T08:53:36Z"
