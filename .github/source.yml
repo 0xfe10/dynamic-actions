@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "baecbacfec6239fec40d1c9720617b09d97312da"
+  sha: "7cc6bd074287b318373256cd0ddc6da4e8468340"
   ref_type: "branch"
-  ref_name: "0xfe10/cosmos-20257"
-  run_id: 39889842078
+  ref_name: "main"
+  run_id: 39891138807
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Harden release batch recovery and bulk orchestration"
+  message: "Add platform App Release batches (#386)\n\n* feat: orchestrate platform App Release batches\n\n* Harden release batch recovery and bulk orchestration"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T02:29:39Z"
+  created_at: "2026-10-23T02:43:48Z"
