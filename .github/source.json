@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/labelix",
+    "repository_id": 1110430942,
+    "sha": "af279b621bf0529412d3042ec923bbaa1ad8f406",
+    "ref_type": "branch",
+    "ref_name": "codex/spectra-exact-cumulative-uv",
+    "run_id": 39925498974,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}
