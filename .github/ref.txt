@@ -1,1 +1,1 @@
-codex/spectra-printer-pagination
+codex/spectra-reporting

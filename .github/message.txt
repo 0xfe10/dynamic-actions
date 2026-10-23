@@ -1,1 +1,3 @@
-fix(spectra): page printer Top100 locally
+fix(spectra): page printer Top100 locally (#196)
+
+Co-authored-by: Fangjc <admin@gcoll.top>
