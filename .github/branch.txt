@@ -1,1 +1,1 @@
-codex/spectra-exact-cumulative-uv
+codex/spectra-reporting

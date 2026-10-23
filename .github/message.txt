@@ -1,1 +1,9 @@
-fix(spectra): bound raw query intervals and prefilter merge generations
+fix(spectra): make cumulative UV exact and bound reporting scans (#194)
+
+* fix(spectra): use exact global cumulative print UV
+
+* fix(spectra): bound raw query intervals and prefilter merge generations
+
+---------
+
+Co-authored-by: Fangjc <admin@gcoll.top>
