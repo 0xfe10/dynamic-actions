@@ -1,1 +1,1 @@
-fix(spectra): use exact global cumulative print UV
+fix(spectra): bound raw query intervals and prefilter merge generations
