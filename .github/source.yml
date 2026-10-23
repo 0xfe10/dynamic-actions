@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ce9cfc0963ad3c2104204ff3d03a14caef90b2fe"
+  sha: "58bd3804de3baca01585dc988146e8682018e7bb"
   ref_type: "branch"
   ref_name: "feat/app-appearance"
-  run_id: 39927472204
+  run_id: 39929212489
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Pin reviewed Orion appearance implementation"
+  message: "Pin merged Orion appearance contracts and correct migration references"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T08:50:17Z"
+  created_at: "2026-10-23T09:04:40Z"
