@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "58bd3804de3baca01585dc988146e8682018e7bb"
+  sha: "0f0549612adc4edf82622630823d8f86a10098b4"
   ref_type: "branch"
-  ref_name: "feat/app-appearance"
-  run_id: 39929212489
+  ref_name: "main"
+  run_id: 39931164224
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Pin merged Orion appearance contracts and correct migration references"
+  message: "Configure and freeze App-wide styles and color themes (#387)\n\n* Configure and freeze App-wide styles and color themes\n\n* Pin reviewed Orion appearance implementation\n\n* Pin merged Orion appearance contracts and correct migration references"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T09:04:40Z"
+  created_at: "2026-10-23T09:20:45Z"
