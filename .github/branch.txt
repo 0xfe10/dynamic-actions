@@ -1,1 +1,1 @@
-codex/spectra-printer-throughput
+codex/spectra-reporting
