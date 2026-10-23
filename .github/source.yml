@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "00b0c601a0299de1e9338a3029be98769c832d30"
+  sha: "b4675e1a5a6e3b1768b84582fcfdbd0b715977a7"
   ref_type: "branch"
-  ref_name: "feat/app-appearance"
-  run_id: 39927867998
+  ref_name: "main"
+  run_id: 39928962365
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Regenerate runtime client for appearance build contracts"
+  message: "Support packaged App styles and color theme switching (#224)\n\n* Support packaged App styles and color theme switching\n\n* Restore appearance before exposing App routes\n\n* Apply the exact remembered appearance draft\n\n* Regenerate runtime client for appearance build contracts"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T08:53:36Z"
+  created_at: "2026-10-23T09:02:37Z"
