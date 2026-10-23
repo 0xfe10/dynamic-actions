@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "abb8ffb336e24492c634f207332f7faff52c38bd"
+  sha: "275561346496cfeb01f2512a8e317c6b6f26cbed"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 39747390858
+  run_id: 39884550607
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u4fee\u6539\u573a\u666f\u5b9a\u5236-\u7231\u5370"
+  message: "fix\uff1a\u4fee\u6539\u8017\u6750\u5206\u7c7b\u6839\u636e\u540d\u79f0\u83b7\u53d6\u5bbd\u9ad8"
   authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-10-22T08:23:50Z"
+  created_at: "2026-10-23T01:32:26Z"
