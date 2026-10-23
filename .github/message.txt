@@ -1,3 +1,1 @@
-fix(spectra): preserve time pruning in cutover readers (#195)
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+fix(spectra): page printer Top100 locally
