@@ -1,1 +1,1 @@
-codex/spectra-range-pruning
+codex/spectra-reporting

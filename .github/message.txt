@@ -1,1 +1,3 @@
-fix(spectra): preserve time pruning in cutover readers
+fix(spectra): preserve time pruning in cutover readers (#195)
+
+Co-authored-by: Fangjc <admin@gcoll.top>
