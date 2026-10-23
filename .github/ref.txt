@@ -1,1 +1,1 @@
-v0.0.138-spectra-reporting
+codex/spectra-range-pruning
