@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ed6ff17a19b9887db7af7e9096b24400f39b0e2e"
+  sha: "c57b7b6852cca60fcc958fc2410eca51793c73f4"
   ref_type: "branch"
   ref_name: "feat/app-appearance"
-  run_id: 39926561044
+  run_id: 39926900529
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Support packaged App styles and color theme switching"
+  message: "Restore appearance before exposing App routes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T08:42:42Z"
+  created_at: "2026-10-23T08:45:32Z"
