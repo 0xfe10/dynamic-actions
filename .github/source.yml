@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "69a059ed399783e96a902d37221ae3d9b46cf764"
+  sha: "762d72d4b11c39b8a6ee5686c15f204631e7c4b2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39885577084
+  ref_name: "0xfe10/cosmos-20257"
+  run_id: 39885903258
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: use Release versions when adopting App signing materials (#385)"
+  message: "Merge remote-tracking branch 'origin/main' into 0xfe10/cosmos-20257"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T01:43:22Z"
+  created_at: "2026-10-23T01:46:49Z"
