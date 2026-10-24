@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "repotea-workspace/sellworld"
+  repository_id: 1431156301
+  sha: "69ccd1e6afa4250a6554ede61e881ab9719b8899"
+  ref_type: "branch"
+  ref_name: "agt/dyn-ci-release"
+  run_id: 40056597786
+  run_attempt: 2
+  workflow: ".github/workflows/trigger-ci.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "Move validation to dynamic CI and publish tagged CLI release assets"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-10-24T03:25:54Z"

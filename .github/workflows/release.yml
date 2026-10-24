@@ -1,0 +1,105 @@
+name: "[sellworld] Release"
+on:
+  push:
+    tags: ['v*-sellworld']
+permissions:
+  contents: read
+concurrency:
+  group: sellworld-release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      sha: ${{ steps.source.outputs.sha }}
+      tag: ${{ steps.source.outputs.tag }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        id: source
+        with:
+          repository: repotea-workspace/sellworld
+          tags: 'v*'
+      - name: Require a source tag
+        env:
+          MATCHES: ${{ steps.source.outputs.matches }}
+        run: test "$MATCHES" = true
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/sellworld
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref: ${{ steps.source.outputs.sha }}
+      - name: Validate source tag identity
+        env:
+          SOURCE_TAG: ${{ steps.source.outputs.tag }}
+          SOURCE_SHA: ${{ steps.source.outputs.sha }}
+        run: python3 pulsar/scripts/release.py identity
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: pulsar/go.mod
+          cache-dependency-path: pulsar/go.sum
+      - run: bash pulsar/scripts/check.sh
+  build:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        goos: [linux, darwin]
+        goarch: [amd64, arm64]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/sellworld
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref: ${{ needs.verify.outputs.sha }}
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: pulsar/go.mod
+          cache-dependency-path: pulsar/go.sum
+      - name: Build release archive
+        env:
+          SOURCE_TAG: ${{ needs.verify.outputs.tag }}
+          SOURCE_SHA: ${{ needs.verify.outputs.sha }}
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: python3 pulsar/scripts/release.py package
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: sellworld-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: pulsar/dist/*.tar.gz
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+  publish:
+    needs: [verify, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/sellworld
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          ref: ${{ needs.verify.outputs.sha }}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: sellworld-*
+          path: pulsar/dist
+          merge-multiple: true
+      - name: Verify archives and prepare checksums
+        env:
+          SOURCE_TAG: ${{ needs.verify.outputs.tag }}
+          SOURCE_SHA: ${{ needs.verify.outputs.sha }}
+        run: |
+          python3 pulsar/scripts/release.py identity
+          python3 pulsar/scripts/release.py checksums
+      - name: Publish to the Sellworld repository
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
+          SOURCE_TAG: ${{ needs.verify.outputs.tag }}
+          SOURCE_SHA: ${{ needs.verify.outputs.sha }}
+        run: bash pulsar/scripts/publish-release.sh

@@ -1,0 +1,23 @@
+name: "[sellworld] Check"
+on:
+  push:
+    branches: [repotea-workspace/sellworld]
+permissions:
+  contents: read
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check out the immutable Sellworld source
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: repotea-workspace/sellworld
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: pulsar/go.mod
+          cache-dependency-path: pulsar/go.sum
+      - name: Validate source
+        run: bash pulsar/scripts/check.sh
