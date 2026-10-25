@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0f0549612adc4edf82622630823d8f86a10098b4"
+  sha: "8503ad5f61e58b0a2b58cedfa68a7e2c0d41aa8e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 39931164224
+  ref_name: "fix/legacy-features-document-print"
+  run_id: 40180957607
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Configure and freeze App-wide styles and color themes (#387)\n\n* Configure and freeze App-wide styles and color themes\n\n* Pin reviewed Orion appearance implementation\n\n* Pin merged Orion appearance contracts and correct migration references"
+  message: "feat: pin completed PDF proof implementations for appearance coverage"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-23T09:20:45Z"
+  created_at: "2026-10-25T09:31:01Z"
