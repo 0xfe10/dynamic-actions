@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "58590372a7166f259769dc7c726bf9454c1cbf54"
+  sha: "4936552944e3c7e3b00c3744f8ae7feeb88ecfce"
   ref_type: "branch"
-  ref_name: "fix/pdf-document-print"
-  run_id: 40180431253
+  ref_name: "main"
+  run_id: 40180924336
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: refresh bundled localization digest for PDF copy"
+  message: "Complete native PDF document proof for Mellow and Breeze (#225)\n\n* feat: render native PDF documents into multi-page print proof\n\n* docs: clarify PDF document proof and legacy feature ownership\n\n* fix: cancel PDF rasterization safely when identity changes\n\n* fix: refresh bundled localization digest for PDF copy"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-25T09:23:25Z"
+  created_at: "2026-10-25T09:30:36Z"
