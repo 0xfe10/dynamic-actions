@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "739de6108e6e0931b9723210ae327017032dafff"
+  sha: "58590372a7166f259769dc7c726bf9454c1cbf54"
   ref_type: "branch"
   ref_name: "fix/pdf-document-print"
-  run_id: 40180293988
+  run_id: 40180431253
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: cancel PDF rasterization safely when identity changes"
+  message: "fix: refresh bundled localization digest for PDF copy"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-25T09:21:28Z"
+  created_at: "2026-10-25T09:23:25Z"
