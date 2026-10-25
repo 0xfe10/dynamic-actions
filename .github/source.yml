@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "94d1c4d3957903c16fb75f9bf50b22eaf721061b"
+  sha: "739de6108e6e0931b9723210ae327017032dafff"
   ref_type: "branch"
   ref_name: "fix/pdf-document-print"
-  run_id: 40180041851
+  run_id: 40180293988
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: clarify PDF document proof and legacy feature ownership"
+  message: "fix: cancel PDF rasterization safely when identity changes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-25T09:17:53Z"
+  created_at: "2026-10-25T09:21:28Z"
