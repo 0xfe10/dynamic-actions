@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e09e85e8c7a3ddfd6131e7aa143ac1ec04361f7c"
+  sha: "94d1c4d3957903c16fb75f9bf50b22eaf721061b"
   ref_type: "branch"
   ref_name: "fix/pdf-document-print"
-  run_id: 40180021412
+  run_id: 40180041851
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: render native PDF documents into multi-page print proof"
+  message: "docs: clarify PDF document proof and legacy feature ownership"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-25T09:17:33Z"
+  created_at: "2026-10-25T09:17:53Z"
