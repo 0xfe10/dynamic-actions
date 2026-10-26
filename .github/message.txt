@@ -1,3 +1,1 @@
-feat(spectra): prioritize large Apps and guard cutover cleanup (#197)
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+fix(spectra): normalize comment delimiters for native migrations
