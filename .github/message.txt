@@ -1,3 +1,1 @@
-fix(spectra): page printer Top100 locally (#196)
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+feat(spectra): prioritize large Apps and guard one-time cutover cleanup
