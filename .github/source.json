@@ -3,10 +3,10 @@
   "source": {
     "repository": "prtmax/labelix",
     "repository_id": 1110430942,
-    "sha": "7445ac9611f428b5fb7b04fbc682c7d8bc948f92",
+    "sha": "767bbefe1b550978647bdae48774f3a08ef9f859",
     "ref_type": "branch",
-    "ref_name": "codex/spectra-priority-cleanup",
-    "run_id": 40256788762,
+    "ref_name": "codex/spectra-native-migrations",
+    "run_id": 40256811421,
     "run_attempt": 1,
     "workflow": ".github/workflows/trigger-branch.yml"
   },
