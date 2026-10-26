@@ -3,12 +3,12 @@
   "source": {
     "repository": "prtmax/labelix",
     "repository_id": 1110430942,
-    "sha": "a8f3c0348205d1781ee209542a3d5ee5e3b19153",
-    "ref_type": "tag",
-    "ref_name": "v0.0.140-spectra-reporting",
-    "run_id": 40257193531,
+    "sha": "e96776c75eb3f08eca15008c981252f7d4c57509",
+    "ref_type": "branch",
+    "ref_name": "codex/spectra-bounded-cleanup",
+    "run_id": 40259622295,
     "run_attempt": 1,
-    "workflow": ".github/workflows/trigger-tag.yml"
+    "workflow": ".github/workflows/trigger-branch.yml"
   },
   "execution_repository": "0xfe10/dynamic-actions",
   "policy": null
