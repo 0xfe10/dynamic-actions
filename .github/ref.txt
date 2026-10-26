@@ -1,1 +1,1 @@
-v0.0.141-spectra-reporting
+codex/spectra-dashboard-defaults

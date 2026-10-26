@@ -1,3 +1,1 @@
-fix(spectra): bound cleanup counts by app and partition (#199)
-
-Co-authored-by: Fangjc <admin@gcoll.top>
+fix(spectra): default candidate dashboards to last week
