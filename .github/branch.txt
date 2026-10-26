@@ -1,1 +1,1 @@
-codex/spectra-native-migrations
+codex/spectra-reporting

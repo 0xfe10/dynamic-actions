@@ -1,1 +1,3 @@
-fix(spectra): normalize comment delimiters for native migrations
+fix(spectra): normalize comment delimiters for native migrations (#198)
+
+Co-authored-by: Fangjc <admin@gcoll.top>
