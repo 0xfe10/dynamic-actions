@@ -1,1 +1,1 @@
-codex/spectra-priority-cleanup
+codex/spectra-reporting

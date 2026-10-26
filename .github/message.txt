@@ -1,1 +1,3 @@
-feat(spectra): prioritize large Apps and guard one-time cutover cleanup
+feat(spectra): prioritize large Apps and guard cutover cleanup (#197)
+
+Co-authored-by: Fangjc <admin@gcoll.top>
