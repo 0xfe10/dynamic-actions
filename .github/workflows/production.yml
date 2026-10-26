@@ -24,7 +24,6 @@ jobs:
         with:
           repository: prtmax/guestkey
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - name: Check
         run: |
@@ -62,7 +61,6 @@ jobs:
         with:
           repository: prtmax/guestkey
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
       - name: Deploy

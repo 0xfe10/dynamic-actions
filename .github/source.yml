@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/guestkey"
+  repository_id: 951994158
+  sha: "4a63da802ae7a0a3b63c6b1c3d11fd6ad5907d01"
+  ref_type: "tag"
+  ref_name: "v0.0.80"
+  run_id: 40252847443
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-tag.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "Merge remote-tracking branch 'origin/main'"
+  authors: ["fang-weiqiang"]
+dispatch:
+  created_at: "2026-10-26T01:10:03Z"
