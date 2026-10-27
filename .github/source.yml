@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e21c85b1c16511509bfda2a35007108297a2dcf8"
+  sha: "5a3a499905df2f683995c5903bde70b6fd451c97"
   ref_type: "branch"
-  ref_name: "feat/debug-build-spec"
-  run_id: 40469440707
+  ref_name: "main"
+  run_id: 40470520500
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: add spec-driven debug build command"
+  message: "feat: add spec-driven debug build command (#226)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-27T07:49:35Z"
+  created_at: "2026-10-27T08:00:00Z"
