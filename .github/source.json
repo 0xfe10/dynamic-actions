@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/endfather",
+    "repository_id": 925941850,
+    "sha": "30db6711311529e23ccfd836aefcdabb32ba0119",
+    "ref_type": "branch",
+    "ref_name": "hotfix-v0.0.295",
+    "run_id": 40472419888,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}
