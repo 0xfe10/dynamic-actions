@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "38fe7d7c7008e119fad3b8cf410a0bae486e684c"
+  sha: "75c061bcac2915140e9f6207f297c04444cf470d"
   ref_type: "branch"
   ref_name: "feat/debug-resource-api"
-  run_id: 40474295197
+  run_id: 40474656496
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: expose debug build resources"
+  message: "chore: update Orion debug build command"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-27T08:33:19Z"
+  created_at: "2026-10-27T08:36:23Z"
