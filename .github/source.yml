@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "78d37c64d10509226e9c7fbdf5d7877396c71b7e"
+  sha: "38fe7d7c7008e119fad3b8cf410a0bae486e684c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 40471497204
+  ref_name: "feat/debug-resource-api"
+  run_id: 40474295197
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: generate debug builds from app configuration (#390)"
+  message: "feat: expose debug build resources"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-27T08:09:08Z"
+  created_at: "2026-10-27T08:33:19Z"
