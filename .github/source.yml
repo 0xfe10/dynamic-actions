@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "55b0184986904386bb1a04848b73ee1c7b971eeb"
+  sha: "ba7780010b2d4fc82a4cf8cffec19b67e4566db8"
   ref_type: "branch"
-  ref_name: "fix/debug-build-readiness"
-  run_id: 40733825308
+  ref_name: "main"
+  run_id: 40736722248
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(build): report missing native source as readiness conflict"
+  message: "fix(build): report missing native source as readiness conflict (#394)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-28T17:14:47Z"
+  created_at: "2026-10-28T17:32:52Z"
