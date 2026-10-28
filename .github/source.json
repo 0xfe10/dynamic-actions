@@ -4,11 +4,11 @@
     "repository": "prtmax/endfather",
     "repository_id": 925941850,
     "sha": "ca0852c200a12f8b95dcf01a5c58bb7c01607adb",
-    "ref_type": "branch",
-    "ref_name": "hotfix-v0.0.295",
-    "run_id": 40481703843,
+    "ref_type": "tag",
+    "ref_name": "v0.0.296",
+    "run_id": 40614300424,
     "run_attempt": 1,
-    "workflow": ".github/workflows/trigger-branch.yml"
+    "workflow": ".github/workflows/trigger-tag.yml"
   },
   "execution_repository": "0xfe10/dynamic-actions",
   "policy": null
