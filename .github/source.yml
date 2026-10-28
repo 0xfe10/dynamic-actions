@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8db34f42d1d2c7af6325d1b829fd636af9a340fe"
+  sha: "691d98f4132bd025cb3a0a52ccc4aef7398ea95b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 40474809480
+  ref_name: "fix/yellow-default-star"
+  run_id: 40707714749
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: make Debug build command self-contained (#391)\n\n* feat: expose debug build resources\n\n* chore: update Orion debug build command"
+  message: "fix: keep default theme star visible"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-27T08:37:42Z"
+  created_at: "2026-10-28T14:37:16Z"
