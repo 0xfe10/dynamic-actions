@@ -32,7 +32,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - name: Build ${{ matrix.package }}
         run: |
@@ -78,7 +77,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: actions/download-artifact@v4
         with:
@@ -163,7 +161,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       #      - name: Migrate boogie
       #        uses: docker://liquibase/liquibase:4.23
@@ -233,7 +230,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: docker/login-action@v3
         with:
@@ -310,7 +306,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: docker/login-action@v3
         with:
@@ -389,7 +384,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: benjlevesque/short-sha@v3.0
 

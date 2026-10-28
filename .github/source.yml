@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/endfather"
+  repository_id: 925941850
+  sha: "e9f2e415bd81d244271fab81aa3095d32e4b02a2"
+  ref_type: "branch"
+  ref_name: "hotfix-v0.0.295"
+  run_id: 40614417741
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "Merge branch 'main' into hotfix-v0.0.295"
+  authors: ["0xfe10","caiwei12"]
+dispatch:
+  created_at: "2026-10-28T01:20:23Z"

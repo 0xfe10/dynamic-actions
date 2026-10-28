@@ -26,7 +26,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
 
       - name: Check ${{ matrix.package }}
@@ -57,7 +56,6 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-          ref_file: .github/ref.txt
 
       - uses: actions/setup-node@v4
         with:
