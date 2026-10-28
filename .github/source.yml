@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "470bfac74f337513c105120f132ae96ae65cadd9"
+  sha: "7892bb99b10609c67832b55df9fea6b645bfa128"
   ref_type: "branch"
-  ref_name: "fix/finalize-native-integration"
-  run_id: 40712808552
+  ref_name: "main"
+  run_id: 40715887964
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): pin reviewed native UI integration"
+  message: "fix(native): finalize reviewed UI integration and API contracts (#393)\n\n* fix(api): synchronize generated debug build endpoints\n\n* chore(orion): pin reviewed native UI integration"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-28T15:08:01Z"
+  created_at: "2026-10-28T15:26:09Z"
