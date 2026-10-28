@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4a5e71867c841cbf8bcf3f2a48ea8d9b0d10c92e"
+  sha: "527c1029025e85c228a1899a7e26e21500782027"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 40474407378
+  ref_name: "feat/ui-lanhu-parity"
+  run_id: 40711148532
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: make debug build self-contained (#227)"
+  message: "Merge main and preserve spec-driven debug permissions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-27T08:34:17Z"
+  created_at: "2026-10-28T14:58:07Z"
