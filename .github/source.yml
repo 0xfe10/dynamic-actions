@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ba7780010b2d4fc82a4cf8cffec19b67e4566db8"
+  sha: "6869b1e0aa68e114d0bbe924eb5129c2cb581a61"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 40736722248
+  ref_name: "fix/native-source-oidc-provenance"
+  run_id: 41062890593
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(build): report missing native source as readiness conflict (#394)"
+  message: "fix(build): accept trusted GitHub immutable source identities"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-28T17:32:52Z"
+  created_at: "2026-10-30T13:24:02Z"
