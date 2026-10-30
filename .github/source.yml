@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/byteone"
   repository_id: 1036077198
-  sha: "e9b36f8c878861924bb69ece2960a9525d7ae5cb"
-  ref_type: "tag"
-  ref_name: "v0.0.152"
-  run_id: 39882407091
+  sha: "5d27299c43ef898f8a5e144e381a72dd07ede91a"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 41015420277
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u4fee\u590d\u6b63\u5f0f\u73af\u5883\u6df7\u6dc6\u95ee\u9898"
+  message: "fix\uff1a\u4fee\u590d"
   authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-10-23T01:09:54Z"
+  created_at: "2026-10-30T06:40:17Z"
