@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6869b1e0aa68e114d0bbe924eb5129c2cb581a61"
+  sha: "d242efe12c5063d1ff4e54feaa655aa23dd8c056"
   ref_type: "branch"
-  ref_name: "fix/native-source-oidc-provenance"
-  run_id: 41062890593
+  ref_name: "main"
+  run_id: 41064852669
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(build): accept trusted GitHub immutable source identities"
+  message: "fix(build): accept trusted GitHub immutable source identities (#395)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-30T13:24:02Z"
+  created_at: "2026-10-30T13:38:05Z"
