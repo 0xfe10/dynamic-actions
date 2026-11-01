@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c8c9244dea00e1d712d2ac3298bc8be91ec99a91"
+  sha: "87a8eb781ee580ee8935671362c094ee9054eea2"
   ref_type: "branch"
-  ref_name: "fix/cross-platform-debug"
-  run_id: 41331268131
+  ref_name: "main"
+  run_id: 41331981210
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(debug): clarify SDK initialization and Windows cancellation limits"
+  message: "fix(debug): support shell-free cross-platform frozen builds (#229)\n\n* fix(debug): run frozen Orion builds without shell shims\n\n* docs(debug): clarify SDK initialization and Windows cancellation limits"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T17:24:09Z"
+  created_at: "2026-11-01T17:32:31Z"
