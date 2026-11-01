@@ -20,12 +20,7 @@ jobs:
       - name: Read the pinned Flutter version
         id: toolchain
         run: |
-          python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json
-          from pathlib import Path
-          version = json.loads(Path('.fvmrc').read_text())['flutter']
-          print(f'flutter={version}')
-          PY
+          echo "flutter=$(jq -er .flutter .fvmrc)" >> "$GITHUB_OUTPUT"
       - uses: subosito/flutter-action@fd55f4c5af5b953cc57a2be44cb082c8f6635e8e # v2.21.0
         with:
           flutter-version: ${{ steps.toolchain.outputs.flutter }}
@@ -40,5 +35,9 @@ jobs:
       - run: dart format --output=none --set-exit-if-changed .
       - run: flutter analyze --no-pub
       - name: Check frozen app assembly contracts
-        run: python3 -m unittest discover -s tools/app_assembler -p 'test_*.py'
+        working-directory: tools/rigel_build
+        run: |
+          dart pub get --enforce-lockfile
+          dart analyze
+          dart test
       - run: dart run melos exec --dir-exists=test --concurrency=1 -- flutter test --no-pub

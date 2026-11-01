@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7574d2e336f3d8164dc9d85b57677e80995c868f"
+  sha: "f04efc60d664a99d55bb7af0a860b610467f8d68"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 40712704552
+  ref_name: "feat/dart-build-toolchain"
+  run_id: 41312503735
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): align Mellow and Breeze with native design baselines (#220)\n\n* fix(ui): align compact editor chrome and background shelf with Lanhu\n\n* fix(ui): restore shared registry icons and Mellow feedback layout\n\n* fix(ui): restore Lanhu template search and history layouts\n\n* fix(ui): restore template result cards and pin search controls\n\n* fix(ui): restore Mellow button sizing and system localization\n\n* fix(ui): align compact cutout controls with Lanhu\n\n* fix(ui): align sticker panel safe area and keyboard layout\n\n* fix(editor): align compact graffiti drawing panel with Lanhu\n\n* fix(editor): align Mellow graffiti selection handles\n\n* fix(editor): align text template panel insets and keyboard layout\n\n* fix(editor): align compact stroke controls with Lanhu\n\n* fix(ui): restore compact editor title typography\n\n* fix(ui): align editor shelf label typography\n\n* feat(mellow): restore native Lanhu photo gallery"
+  message: "refactor(build): migrate Rigel assembly and registration to Dart"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-10-28T15:07:19Z"
+  created_at: "2026-11-01T13:42:01Z"
