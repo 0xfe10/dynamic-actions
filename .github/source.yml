@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "196540453cf3ad433d524bccefe181dd1c5fb788"
+  sha: "0c6f76858614c0fb016f01a5908382fb9cfce647"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41313945181
+  ref_name: "fix/cross-platform-debug"
+  run_id: 41331143106
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Replace Rigel Python build tooling with Dart (#228)\n\n* refactor(build): migrate Rigel assembly and registration to Dart\n\n* fix(ci): resolve Dart build tools before workspace analysis"
+  message: "fix(debug): run frozen Orion builds without shell shims"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T14:00:12Z"
+  created_at: "2026-11-01T17:22:41Z"
