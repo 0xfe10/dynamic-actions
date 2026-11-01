@@ -118,6 +118,11 @@ jobs:
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
+      - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1
+        with:
+          sdk: '3.13.2'
+      - name: Resolve locked Cosmos tools
+        run: dart pub get --enforce-lockfile --directory tools/cosmos_build
       - name: Set up Go
         uses: actions/setup-go@v6
         with:
@@ -139,6 +144,12 @@ jobs:
         run: |
           just --justfile lyra/Justfile bootstrap
           just --justfile solar/mercury/Justfile bootstrap
+      - name: Check Cosmos Dart tools
+        working-directory: tools/cosmos_build
+        run: |
+          dart format --output=none --set-exit-if-changed .
+          dart analyze
+          dart test
       - name: Check admin formatting
         run: just --justfile lyra/Justfile format-check
       - name: Lint admin
@@ -171,7 +182,7 @@ jobs:
           just migrate
           just --justfile solar/mercury/Justfile bootstrap-admin --email "$MERCURY_E2E_EMAIL" --display-name Browser-E2E --reason browser-e2e-setup --request-id "50000000-0000-4000-8000-000000000001"
           mkdir -p "$MERCURY_OBJECT_STORE_DIR"
-          python3 solar/mercury/scripts/serve_directory_objects.py "$MERCURY_OBJECT_STORE_DIR" 4190 >mercury-objects-e2e.log 2>&1 &
+          dart run tools/cosmos_build/bin/serve_directory_objects.dart "$MERCURY_OBJECT_STORE_DIR" 4190 >mercury-objects-e2e.log 2>&1 &
           object_pid=$!
           just run-api >mercury-e2e.log 2>&1 &
           api_pid=$!
@@ -240,6 +251,8 @@ jobs:
           just --justfile orion/Justfile analyze
       - name: Run Orion assembly and Flutter tests
         run: just --justfile orion/Justfile test
+      - name: Resolve locked Cosmos generation tools
+        run: dart pub get --enforce-lockfile --directory tools/cosmos_build
       - name: Install runtime API contract dependencies
         run: just --justfile solar/mercury/Justfile bootstrap
       - name: Check generated runtime API client
