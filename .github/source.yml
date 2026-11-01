@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5cde7f2e95dff4bd552d2bbe45f7f5dd09b60ce0"
+  sha: "8b53281679cf9302a4f30b91aaa4abd3fbde6798"
   ref_type: "branch"
-  ref_name: "feat/dart-build-toolchain"
-  run_id: 41314004622
+  ref_name: "main"
+  run_id: 41315376325
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "build: pin the merged Dart-only Orion toolchain"
+  message: "refactor(build): replace Python tooling with locked Dart packages (#396)\n\n* refactor(build): migrate Cosmos generation tools to Dart\n\n* build: pin the merged Dart-only Orion toolchain"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T14:00:43Z"
+  created_at: "2026-11-01T14:16:41Z"
