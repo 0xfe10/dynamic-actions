@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f04efc60d664a99d55bb7af0a860b610467f8d68"
+  sha: "31e1bb411e23afbbff6bb9dd0603085c1de1c00d"
   ref_type: "branch"
   ref_name: "feat/dart-build-toolchain"
-  run_id: 41312503735
+  run_id: 41313320414
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(build): migrate Rigel assembly and registration to Dart"
+  message: "fix(ci): resolve Dart build tools before workspace analysis"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T13:42:01Z"
+  created_at: "2026-11-01T13:52:12Z"

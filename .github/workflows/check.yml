@@ -32,12 +32,14 @@ jobs:
           GIT_CONFIG_KEY_0: credential.https://github.com.helper
           GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: flutter pub get --enforce-lockfile
+      - name: Resolve build tool dependencies
+        working-directory: tools/rigel_build
+        run: dart pub get --enforce-lockfile
       - run: dart format --output=none --set-exit-if-changed .
       - run: flutter analyze --no-pub
       - name: Check frozen app assembly contracts
         working-directory: tools/rigel_build
         run: |
-          dart pub get --enforce-lockfile
           dart analyze
           dart test
       - run: dart run melos exec --dir-exists=test --concurrency=1 -- flutter test --no-pub
