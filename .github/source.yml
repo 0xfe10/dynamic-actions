@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e2e62ef904506c1d2514bc70b8f2a502e502c12f"
+  sha: "f63c6174400cab5b6e443d42dcb671b4e188cbc1"
   ref_type: "branch"
-  ref_name: "build/cross-platform-orion-debug"
-  run_id: 41332043171
+  ref_name: "main"
+  run_id: 41333655586
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "build: pin shell-free cross-platform Orion Debug tools"
+  message: "build: pin shell-free cross-platform Orion Debug tools (#397)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T17:33:13Z"
+  created_at: "2026-11-01T17:52:22Z"
