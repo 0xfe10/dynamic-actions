@@ -3,11 +3,11 @@ source:
   repository: "prtmax/byteone"
   repository_id: 1036077198
   sha: "a48544930c4d563c6cfb26c69bdcccd36cb12bbc"
-  ref_type: "tag"
-  ref_name: "v0.7.45"
-  run_id: 41383502372
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 41383502587
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
