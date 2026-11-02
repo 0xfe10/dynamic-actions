@@ -1,0 +1,1 @@
+ci(rubus): build isolated production hotfix images
