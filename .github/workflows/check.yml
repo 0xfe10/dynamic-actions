@@ -29,6 +29,8 @@ jobs:
           channel: stable
       - name: Resolve locked development tools
         run: dart pub --directory tools/rigel_build get --enforce-lockfile
+      - name: Set up Just
+        uses: extractions/setup-just@v3
       - name: Resolve dependencies including the private printer SDK
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
@@ -37,3 +39,23 @@ jobs:
           GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: dart run tools/rigel_build/bin/develop.dart bootstrap
       - run: dart run tools/rigel_build/bin/develop.dart check
+
+  windows-just:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/orion
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+      - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1
+        with:
+          sdk: '3.13.2'
+      - uses: extractions/setup-just@v3
+      - name: Resolve locked Just smoke test dependencies
+        working-directory: tools/rigel_build
+        run: dart pub get --enforce-lockfile
+      - name: Verify Windows Just argument forwarding
+        working-directory: tools/rigel_build
+        run: dart test test/just_arguments_test.dart

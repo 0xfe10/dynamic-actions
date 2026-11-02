@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d01d3ef1d28ee7d93a1bff77de0b7b660be40d0b"
+  sha: "da201d8d8ed5e264398dff0b7097273f757fb008"
   ref_type: "branch"
   ref_name: "docs/just-development-entrypoints"
-  run_id: 41424489855
+  run_id: 41425367444
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Make Just the standard Orion development entrypoint"
+  message: "Preserve Just debug arguments and verify Windows entrypoints"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T09:54:56Z"
+  created_at: "2026-11-02T10:01:28Z"
