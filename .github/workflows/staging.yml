@@ -252,7 +252,12 @@ jobs:
           GIT_CONFIG_COUNT: "1"
           GIT_CONFIG_KEY_0: credential.https://github.com.helper
           GIT_CONFIG_VALUE_0: "!gh auth git-credential"
-        run: just --justfile orion/Justfile bootstrap
+        run: |
+          cd orion
+          fvm install
+          fvm flutter --version
+          fvm dart pub --directory tools/rigel_build get --enforce-lockfile
+          fvm dart run tools/rigel_build/bin/develop.dart bootstrap
       - name: Check Orion formatting and static analysis
         run: |
           just --justfile orion/Justfile format-check
