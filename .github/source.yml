@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e26df87853cdb7f233d3a0165d5ae02228c06099"
+  sha: "0b8d505005c2fbdfef1c445707ff801078fc81d2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41450754977
+  ref_name: "refactor/progressive-dashboard"
+  run_id: 41471958909
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): unblock Debug specs and safe SVG resources (#400)\n\nFreeze local Debug identity and verified App Studio resources without requiring Release signing or allocating Release versions. Support safe design-tool SVG metadata and bounded same-document references. Validated with API/Admin/Android CI and live Starc Spec/resource integrity checks."
+  message: "Merge remote-tracking branch 'origin/main' into refactor/progressive-dashboard"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T13:11:07Z"
+  created_at: "2026-11-02T15:28:59Z"
