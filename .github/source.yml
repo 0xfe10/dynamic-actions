@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f63c6174400cab5b6e443d42dcb671b4e188cbc1"
+  sha: "74b1974ea89a15e4d4a433acf650100c7dc1f907"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41333655586
+  ref_name: "fix/orion-dart-runtime-generation"
+  run_id: 41419369704
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "build: pin shell-free cross-platform Orion Debug tools (#397)"
+  message: "Use merged Orion Dart generator from Cosmos tools"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T17:52:22Z"
+  created_at: "2026-11-02T09:17:13Z"
