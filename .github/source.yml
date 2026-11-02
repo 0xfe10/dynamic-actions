@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d6ef7a3d226e0d92b04d28c198816b44056c6a02"
+  sha: "043097895837ff98c187ead5eb46d2748a263c54"
   ref_type: "branch"
-  ref_name: "docs/just-development-entrypoints"
-  run_id: 41426362117
+  ref_name: "main"
+  run_id: 41427889231
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Pin Just setup action to immutable reviewed revision"
+  message: "Make Just the standard Orion development entrypoint (#231)\n\n* Make Just the standard Orion development entrypoint\n\n* Preserve Just debug arguments and verify Windows entrypoints\n\n* Pin Just setup action to immutable reviewed revision"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T10:08:41Z"
+  created_at: "2026-11-02T10:19:46Z"
