@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a670b97d3f77072a7f7d59d68d0b875503132892"
+  sha: "d01d3ef1d28ee7d93a1bff77de0b7b660be40d0b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41419273556
+  ref_name: "docs/just-development-entrypoints"
+  run_id: 41424489855
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Replace remaining Orion shell tooling with Dart tasks (#230)\n\n* Replace remaining Orion shell tooling with Dart development tasks\n\n* Ignore recoverable Runtime client generation backups"
+  message: "Make Just the standard Orion development entrypoint"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T09:16:36Z"
+  created_at: "2026-11-02T09:54:56Z"
