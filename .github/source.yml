@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "87a8eb781ee580ee8935671362c094ee9054eea2"
+  sha: "4e2dda343b0488b368dd250f7a93b3dcbec27556"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41331981210
+  ref_name: "feat/dart-development-tools"
+  run_id: 41417326095
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(debug): support shell-free cross-platform frozen builds (#229)\n\n* fix(debug): run frozen Orion builds without shell shims\n\n* docs(debug): clarify SDK initialization and Windows cancellation limits"
+  message: "Replace remaining Orion shell tooling with Dart development tasks"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-01T17:32:31Z"
+  created_at: "2026-11-02T09:01:37Z"
