@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "884f5911d2efa570150f64d4b8e48c3be1902b7b"
+  sha: "85af15554d3985c20a3762341c133d7e61b51216"
   ref_type: "branch"
-  ref_name: "agt/rubus-snowflake-hotfix"
-  run_id: 41442616250
+  ref_name: "main"
+  run_id: 41442683319
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci(rubus): exclude one-off hotfix workflow from main"
+  message: "fix(rubus): merge production Snowflake hotfix into main (#201)\n\n* feat(spectra): add incremental reporting and Superset datasets\n\n* fix(spectra): include reporting migrations in Docker context\n\n* fix(spectra): bound entity snapshots and deduplicate backfill requests\n\n* fix(spectra): bound snapshot merges and qualify Superset sources\n\n* perf(spectra): batch empty history and prioritize recent backfills\n\n* fix(spectra): show isolated trend points and record rollout\n\n* fix(spectra): bound daily compaction by projection and output key\n\n* docs(spectra): record recent reconciliation and v125 production validation\n\n* fix(spectra): preserve hourly trends and optimize selected apps\n\n* perf(spectra): prioritize nonempty recent day compaction\n\n* docs(spectra): record v126 release and month-scale reconciliation\n\n* docs(spectra): record production daily reconciliation and storage\n\n* perf(spectra): omit daily branches from hourly chart queries\n\n* docs(spectra): record bounded concurrent production checks\n\n* fix(spectra): rank paginated reporting tables deterministically\n\n* fix(spectra): propose scoped Superset table rowcounts\n\n* fix(spectra): bound reporting rankings and clarify pending statistics\n\n* docs(spectra): record production status message rollout\n\n* fix(spectra): refresh immutable snapshots and localize reporting charts\n\n* fix(spectra): bound immutable snapshot copy memory\n\n* fix(rubus): coordinate Snowflake sequences across replicas\n\n* ci(rubus): build isolated production hotfix images\n\n* ci(rubus): exclude one-off hotfix workflow from main\n\n---------\n\nCo-authored-by: Fangjc <admin@gcoll.top>"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T12:11:22Z"
+  created_at: "2026-11-02T12:12:04Z"
