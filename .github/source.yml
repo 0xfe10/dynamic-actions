@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/labelix"
+  repository_id: 1110430942
+  sha: "2e8d055caee570f4d4c4ce373383aa3448687e44"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 41441024870
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "fix(rubus): coordinate Snowflake sequences across replicas"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-11-02T11:59:12Z"
