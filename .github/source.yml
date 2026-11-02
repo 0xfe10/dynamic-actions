@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2f2ce78d7fd3a352a1ec9c0fea5045f2ab99bb1b"
+  sha: "fd441aeb8c31015c76250806f0742fad481c582b"
   ref_type: "branch"
-  ref_name: "fix/orion-dart-runtime-generation"
-  run_id: 41420469056
+  ref_name: "main"
+  run_id: 41423482159
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Initialize pinned Flutter tool before Dart bootstrap in CI"
+  message: "Use merged Orion Dart generator from Cosmos tools (#398)\n\n* Use merged Orion Dart generator from Cosmos tools\n\n* Initialize pinned Flutter tool before Dart bootstrap in CI"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T09:25:15Z"
+  created_at: "2026-11-02T09:47:25Z"
