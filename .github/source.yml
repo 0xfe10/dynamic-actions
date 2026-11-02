@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "21447bd2548fc83475f2f603950fd401425768d9"
+  sha: "38d7ee36ad3300a2211549a324fff57e8eee06b6"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41430315100
+  ref_name: "fix/starc-debug-spec"
+  run_id: 41447997264
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Pin Orion Just development entrypoints (#399)"
+  message: "fix(mercury): freeze local Debug inputs without release signing\n\nResolve Debug identity from App Studio and server-owned endpoints, preserving trusted source, immutable resource and native permission checks without allocating Release versions. Accept safe design-tool SVG metadata and local references with bounded expansion. Add Debug, resource integrity and SVG security regression coverage."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T10:37:45Z"
+  created_at: "2026-11-02T12:50:52Z"
