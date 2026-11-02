@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "da201d8d8ed5e264398dff0b7097273f757fb008"
+  sha: "d6ef7a3d226e0d92b04d28c198816b44056c6a02"
   ref_type: "branch"
   ref_name: "docs/just-development-entrypoints"
-  run_id: 41425367444
+  run_id: 41426362117
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Preserve Just debug arguments and verify Windows entrypoints"
+  message: "Pin Just setup action to immutable reviewed revision"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T10:01:28Z"
+  created_at: "2026-11-02T10:08:41Z"
