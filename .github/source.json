@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/labelix",
+    "repository_id": 1110430942,
+    "sha": "d5c7bfe3561072d8fcb9bb2e894964a4dc47c41f",
+    "ref_type": "branch",
+    "ref_name": "agt/rubus-idgen-recovery-hotfix",
+    "run_id": 41446010209,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}
