@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a03d12e0e61d4e238215eff06fa3f672ff81e790"
+  sha: "a3a5c0ba4c3a8d3e20c1000bce1fd8039dde13b6"
   ref_type: "branch"
-  ref_name: "fix/notice-diagnostic-logging"
-  run_id: 41587911562
+  ref_name: "main"
+  run_id: 41589022839
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Harden diagnostic path redaction and cover notice wiring"
+  message: "Log shared notices and Runtime API failures without hiding errors (#233)\n\n* Log shared notices and runtime API failures without hiding errors\n\n* Harden diagnostic path redaction and cover notice wiring"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T06:07:40Z"
+  created_at: "2026-11-03T06:18:22Z"
