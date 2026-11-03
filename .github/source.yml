@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a05b6937a87b8ca5e49e3f02a6ea170064c474d6"
+  sha: "37b1f3e5a27378ba3e6bd50fe8aa6c29e5c24e73"
   ref_type: "branch"
-  ref_name: "feat/mellow-lanhu-pages"
-  run_id: 41611164252
+  ref_name: "main"
+  run_id: 41612961192
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): align Lanhu pages and integrate existing editor work"
+  message: "feat(mellow): align Lanhu pages and integrate existing editor work (#234)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T09:27:34Z"
+  created_at: "2026-11-03T09:40:52Z"
