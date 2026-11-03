@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "37b1f3e5a27378ba3e6bd50fe8aa6c29e5c24e73"
+  sha: "22de17e39c348b478e1bf4728fedec0f537ca405"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41612961192
+  ref_name: "fix/backend-managed-image-resources"
+  run_id: 41617789958
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): align Lanhu pages and integrate existing editor work (#234)"
+  message: "fix: download image assets from backend resource management"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T09:40:52Z"
+  created_at: "2026-11-03T10:15:57Z"
