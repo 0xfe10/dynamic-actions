@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b367cba4979fb64c1b037dcaf7fd163cb7add9a7"
+  sha: "007abda69e3d772010f7f9deff6c087ef8e6e69c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41578451804
+  ref_name: "chore/orion-notice-diagnostics"
+  run_id: 41589129384
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): unblock Mellow native debug build inputs (#402)\n\n* fix(mercury): unblock Mellow native debug build inputs\n\n* fix(platform-api): regenerate WebP upload content type"
+  message: "Update Orion for shared notice and API failure diagnostics"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T04:30:00Z"
+  created_at: "2026-11-03T06:19:34Z"
