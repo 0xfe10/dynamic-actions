@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "09b89bb7c05628696432fcccddb55a8873217fd5"
+  sha: "f451bd6c9c80fe4dac171cf328f3509b5554a40c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41565852239
+  ref_name: "fix/notice-diagnostic-logging"
+  run_id: 41586546281
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Top-right app notices with API error details; restart Mellow image print from gallery (#232)\n\n* fix(mellow): restart image print from the gallery on every entry\n\n* feat: shared top-right notices with API error details\n\n- app_notice component: top-right notice with close button, error batching\n  (newest message + \u5171 N \u6761) and a paged details dialog with collapsible\n  headers/bodies and copy.\n- runtime_api reports failed exchanges (status >= 400, transport failures)\n  with credentials redacted; app_shell shows them as error notices.\n- Developer center switch enables the \u67e5\u770b button on error notices.\n- Replace bottom SnackBars with app notices."
+  message: "Log shared notices and runtime API failures without hiding errors"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T02:24:03Z"
+  created_at: "2026-11-03T05:53:59Z"
