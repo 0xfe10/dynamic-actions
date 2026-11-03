@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c381616540fa4f4f79568951df7d5d9df27992e3"
+  sha: "b367cba4979fb64c1b037dcaf7fd163cb7add9a7"
   ref_type: "branch"
-  ref_name: "fix/starc-mellow-debug"
-  run_id: 41577133588
+  ref_name: "main"
+  run_id: 41578451804
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(platform-api): regenerate WebP upload content type"
+  message: "fix(mercury): unblock Mellow native debug build inputs (#402)\n\n* fix(mercury): unblock Mellow native debug build inputs\n\n* fix(platform-api): regenerate WebP upload content type"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T04:16:29Z"
+  created_at: "2026-11-03T04:30:00Z"
