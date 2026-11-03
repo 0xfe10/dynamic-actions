@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "22de17e39c348b478e1bf4728fedec0f537ca405"
+  sha: "4184b1396f496a9ffea4039db163f88934a84093"
   ref_type: "branch"
-  ref_name: "fix/backend-managed-image-resources"
-  run_id: 41617789958
+  ref_name: "main"
+  run_id: 41619293752
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: download image assets from backend resource management"
+  message: "fix: download image assets from backend resource management (#235)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T10:15:57Z"
+  created_at: "2026-11-03T10:26:46Z"
