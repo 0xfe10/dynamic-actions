@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "dcc51a86672735782d90ef2a4cfb93bf35d9d79a"
-  ref_type: "tag"
-  ref_name: "v0.7.67"
-  run_id: 41604592781
+  sha: "9682871fa93069cd10c7b8f13a3a389c67d2d5ce"
+  ref_type: "branch"
+  ref_name: "ci/remove-unused-keycloak-theme"
+  run_id: 41605669341
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge pull request #11 from prtmax/fix/psdk-docs-localization\n\nfix(landing-page): switch PSDK content with the selected language"
+  message: "ci: remove unused Keycloak theme release job"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T08:37:09Z"
+  created_at: "2026-11-03T08:45:49Z"
