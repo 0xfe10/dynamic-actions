@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5655dbf6142460f60a09e199d9f2893c1e4727b3"
+  sha: "10fb539bcf7dc1629953517dbebadcbf677967cf"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41475090283
+  ref_name: "fix/starc-mellow-debug"
+  run_id: 41576847881
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(vega): simplify dashboard workflows with progressive disclosure (#401)"
+  message: "fix(mercury): unblock Mellow native debug build inputs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-02T15:47:57Z"
+  created_at: "2026-11-03T04:13:45Z"
