@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "007abda69e3d772010f7f9deff6c087ef8e6e69c"
+  sha: "7239b21c14e3b70a9caa591ccaf246e218190ab2"
   ref_type: "branch"
-  ref_name: "chore/orion-notice-diagnostics"
-  run_id: 41589129384
+  ref_name: "main"
+  run_id: 41590569228
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Update Orion for shared notice and API failure diagnostics"
+  message: "Update Orion for shared notice and API failure diagnostics (#403)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T06:19:34Z"
+  created_at: "2026-11-03T06:33:04Z"
