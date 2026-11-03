@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "6d53049f6a5db9581af1818aad0076be67d07685"
+  sha: "dcc51a86672735782d90ef2a4cfb93bf35d9d79a"
   ref_type: "branch"
-  ref_name: "fix/psdk-docs-localization"
-  run_id: 41604322673
+  ref_name: "main"
+  run_id: 41604512657
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(landing-page): localize all PSDK documentation in English"
+  message: "Merge pull request #11 from prtmax/fix/psdk-docs-localization\n\nfix(landing-page): switch PSDK content with the selected language"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T08:34:56Z"
+  created_at: "2026-11-03T08:36:31Z"
