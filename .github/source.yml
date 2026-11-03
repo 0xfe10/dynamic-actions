@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bfa51db17c2b815cfb5e419b92b31f9941e9c4ce"
+  sha: "dd5c456d84c78018a6e7e9242a670fd4aaf209a8"
   ref_type: "branch"
-  ref_name: "feat/platform-ai-chat"
-  run_id: 41678554491
+  ref_name: "main"
+  run_id: 41682294923
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into feat/platform-ai-chat"
+  message: "refactor(vega): simplify management workflows and contextual help\n\nSquash merge after successful Admin, API, and Android checks. Local review and browser/unit validation completed; real backend acceptance remains outside mocked UI evidence."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T16:52:20Z"
+  created_at: "2026-11-03T17:14:52Z"
