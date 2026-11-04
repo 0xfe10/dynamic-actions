@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "3234476759e0b253af3a620b75c873c43df763dd"
+  sha: "350337b097ddfec219626e74a4eb2be075568a70"
   ref_type: "branch"
   ref_name: "codex/local-storage-shenzhen"
-  run_id: 41767594734
+  run_id: 41785389537
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(staging): pause online validation and delegate DNS to Terraform"
+  message: "revert(local-storage): restore storage flow before regional service"
   authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-04T03:31:07Z"
+  created_at: "2026-11-04T06:25:24Z"
