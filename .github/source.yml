@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "a9ee5fddc655b5d523450268f129c2ded0d73821"
+  sha: "a3583cd9b4915749ead07f662d3ca98ddc741bbb"
   ref_type: "branch"
   ref_name: "codex/local-storage-shenzhen"
-  run_id: 41765396694
+  run_id: 41766233686
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): publish ACR-compatible staging image manifests"
+  message: "fix(ci): dispatch cluster rollout in credential-owning GitOps repo"
   authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-04T03:10:15Z"
+  created_at: "2026-11-04T03:18:09Z"

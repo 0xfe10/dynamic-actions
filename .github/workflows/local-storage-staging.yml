@@ -81,7 +81,7 @@ jobs:
   deploy:
     name: Deploy sz1 storage before hk0 Rubus
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 50
     needs: build
     concurrency:
       group: labelix-local-storage-staging
@@ -100,28 +100,15 @@ jobs:
           ref: ${{ steps.source.outputs.sha }}
           ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY_0XFE10 }}
           path: source
-      - name: Checkout GitOps
-        uses: actions/checkout@v6
-        with:
-          repository: repotea-workflow/gitops-ayn
-          ref: main
-          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY_0XFE10 }}
-          path: gitops-repo
-      - uses: azure/setup-kubectl@v4
       - name: Prepare deployment runtime
         run: python3 -m pip install PyYAML==6.0.3
-      - name: Publish and verify staging
+      - name: Publish DNS and dispatch GitOps staging
         working-directory: source
         env:
-          KUBE_CONFIG_HK0: ${{ secrets.KUBE_CONFIG_CLUSTER_HK0_ALI }}
-          KUBE_CONFIG_SZ1: ${{ secrets.KUBE_CONFIG_CLUSTER_SZ1_ALI }}
           ALI_ACCESS_KEY: ${{ secrets.ALI_ACCESS_KEY_AYN_ECS }}
           ALI_SECRET_KEY: ${{ secrets.ALI_SECRET_KEY_AYN_ECS }}
-          GITOPS_DIRECTORY: ../gitops-repo
-          GITOPS_REF: main
+          GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
         run: |
           set -euo pipefail
-          RELEASE_TAG="sha-$(git rev-parse --short=7 HEAD)"
-          export LOCAL_STORAGE_IMAGE="registry.cn-hongkong.aliyuncs.com/xoohub/0xfe10_dynamic-actions_labelix-local-storage:$RELEASE_TAG"
-          export RUBUS_IMAGE="registry.cn-hongkong.aliyuncs.com/xoohub/0xfe10_dynamic-actions_labelix-rubus:$RELEASE_TAG"
-          python3 .github/scripts/deploy_local_storage_staging.py
+          python3 -u .github/scripts/deploy_local_storage_staging.py --dns-only
+          python3 -u .github/scripts/dispatch_local_storage_staging.py
