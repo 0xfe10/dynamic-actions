@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "436c84c2009c388ef15b68a5becb02ff178b8497"
+  sha: "79bce39e8f41672a73722b81c493b2e1830ca229"
   ref_type: "branch"
   ref_name: "fix/mellow-runtime-ux-20261104"
-  run_id: 41822839544
+  run_id: 41832075142
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: localize Mellow paper flows and bound online input waits"
+  message: "fix: localize Mellow editor controls"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T11:40:43Z"
+  created_at: "2026-11-04T12:45:58Z"
