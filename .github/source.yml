@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7140aac93963a3888bfdfeccce9da8c9a10713fa"
+  sha: "5c36d518f7b7b8232a399fde1987c186c513b430"
   ref_type: "branch"
-  ref_name: "fix/debug-trusted-main"
-  run_id: 41821191400
+  ref_name: "main"
+  run_id: 41837584875
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: record safe Debug build failure classifications"
+  message: "fix: repair trusted Debug inputs and runtime icon routing (#405)\n\n* fix: resolve local Debug resources from latest trusted main\n\n* fix: route encoded runtime resource identities\n\n* fix: record safe Debug build failure classifications"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T11:29:00Z"
+  created_at: "2026-11-04T13:23:12Z"
