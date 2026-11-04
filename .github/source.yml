@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4184b1396f496a9ffea4039db163f88934a84093"
+  sha: "5bcd08bd45eea2c03c660730917f215b56b24730"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41619293752
+  ref_name: "fix/mellow-source-registration"
+  run_id: 41790464140
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: download image assets from backend resource management (#235)"
+  message: "fix: complete native permission declarations for Mellow catalog"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-03T10:26:46Z"
+  created_at: "2026-11-04T07:10:58Z"
