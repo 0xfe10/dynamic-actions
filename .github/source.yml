@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "10029a343b3f3eb8523a4f91f07b6d2c35841da4"
+  sha: "e893e1f336c461329fa39b382c44225e7cb634ba"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41884787219
+  run_id: 41884986355
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): expose tenant signing library on platform routes\n\nAdd platform tenant signing-assets route and navigation, restore signing workflow tests against the platform path, and align progressive e2e entry points."
+  message: "feat(vega): manage app entitlements from platform routes\n\nAdd platform application entitlements page with control-plane navigation, gate access on platform.entitlements.manage, and restore API workflow tests on the platform path."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T18:12:27Z"
+  created_at: "2026-11-04T18:13:36Z"
