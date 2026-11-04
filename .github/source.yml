@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "79bce39e8f41672a73722b81c493b2e1830ca229"
+  sha: "a5d605161a9cb54a866abbd457581f108d7f0bf0"
   ref_type: "branch"
-  ref_name: "fix/mellow-runtime-ux-20261104"
-  run_id: 41832075142
+  ref_name: "main"
+  run_id: 41835561911
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: localize Mellow editor controls"
+  message: "fix: stabilize Mellow runtime resources and labels (#237)\n\n* fix: stabilize Mellow runtime resources and labels\n\n* fix: localize Mellow paper flows and bound online input waits\n\n* fix: localize Mellow editor controls"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T12:45:58Z"
+  created_at: "2026-11-04T13:09:46Z"
