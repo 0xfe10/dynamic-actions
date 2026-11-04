@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "377647878323a786cf1be401555fd626c52b4ce8"
+  sha: "c9faf888491b26312e354b4eff5954bad9f3b2b8"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41885529340
+  run_id: 41887391481
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): read-only platform app directory for non-managers\n\nAllow platform.apps.read to open the tenant application list while hiding create and edit actions without platform.apps.manage, and redirect tenant settings stubs to the app directory."
+  message: "docs(openwiki): document tenant vs platform Vega IA\n\nRecord P0\u2013P1 tenant center boundaries, platform-only control-plane routes, and Mercury IAM alignment for operators."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T18:16:46Z"
+  created_at: "2026-11-04T18:27:57Z"
