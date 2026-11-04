@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "7dfde9096d8136a2f38e060e80d6de65fdebe0be"
+  sha: "f87935211052216cef64721ddd3b0724f46c1922"
   ref_type: "branch"
   ref_name: "codex/local-storage-shenzhen"
-  run_id: 41764779046
+  run_id: 41764882832
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(local-storage): route Shenzhen OSS through regional service"
+  message: "fix(ci): select source branch through dynamic workflow metadata"
   authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-04T03:04:37Z"
+  created_at: "2026-11-04T03:05:31Z"

@@ -3,15 +3,29 @@ name: "[labelix] Shenzhen storage staging"
 on:
   push:
     branches:
-      - codex/local-storage-shenzhen
+      - "**"
 
 permissions:
   contents: read
   packages: write
 
 jobs:
+  ensure-source:
+    name: Select Shenzhen staging source
+    runs-on: ubuntu-latest
+    outputs:
+      matches: ${{ steps.source.outputs.matches }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/labelix
+          branches: codex/local-storage-shenzhen
   build:
     name: Validate and build ${{ matrix.project }}
+    needs: ensure-source
+    if: needs.ensure-source.outputs.matches == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
