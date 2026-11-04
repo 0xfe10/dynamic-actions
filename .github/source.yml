@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9e4098c157a2d163fa6d484dab841f52dac833c0"
+  sha: "900030980ecbc4f400d3b7a79ee7513580a9ff96"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41872929973
+  run_id: 41883697942
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): workspace scope rail and per-level theme (\u65b9\u6848 B)\n\nMake platform/tenant/app navigation visually obvious with scope accents and optional theme presets that follow the active workspace level."
+  message: "feat(vega): hide tenant control-plane surfaces (P0)\n\nDefault single-tenant entry to apps, strip control-plane nav and overview tasks, and redirect guarded tenant routes for members, signing, storage, entitlements, and releases."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T16:58:59Z"
+  created_at: "2026-11-04T18:06:20Z"
