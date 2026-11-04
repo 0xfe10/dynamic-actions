@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "a3583cd9b4915749ead07f662d3ca98ddc741bbb"
+  sha: "3234476759e0b253af3a620b75c873c43df763dd"
   ref_type: "branch"
   ref_name: "codex/local-storage-shenzhen"
-  run_id: 41766233686
+  run_id: 41767594734
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): dispatch cluster rollout in credential-owning GitOps repo"
+  message: "chore(staging): pause online validation and delegate DNS to Terraform"
   authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-04T03:18:09Z"
+  created_at: "2026-11-04T03:31:07Z"

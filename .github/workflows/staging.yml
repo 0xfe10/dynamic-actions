@@ -411,15 +411,12 @@ jobs:
           path: source
       - name: Prepare deployment runtime
         run: python3 -m pip install PyYAML==6.0.3
-      - name: Publish DNS and dispatch GitOps staging
+      - name: Dispatch and verify GitOps staging
         working-directory: source
         env:
-          ALI_ACCESS_KEY: ${{ secrets.ALI_ACCESS_KEY_AYN_ECS }}
-          ALI_SECRET_KEY: ${{ secrets.ALI_SECRET_KEY_AYN_ECS }}
           GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
         run: |
           set -euo pipefail
-          python3 -u .github/scripts/deploy_local_storage_staging.py --dns-only
           python3 -u .github/scripts/dispatch_local_storage_staging.py
 
   build-ar-recognition-image:
