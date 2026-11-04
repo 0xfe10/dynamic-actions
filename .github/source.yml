@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5bcd08bd45eea2c03c660730917f215b56b24730"
+  sha: "61ea264b7ddb7d07f27329273dec875fb78d6e70"
   ref_type: "branch"
-  ref_name: "fix/mellow-source-registration"
-  run_id: 41790464140
+  ref_name: "main"
+  run_id: 41791888869
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: complete native permission declarations for Mellow catalog"
+  message: "fix: complete native permission declarations for Mellow catalog (#236)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T07:10:58Z"
+  created_at: "2026-11-04T07:23:14Z"
