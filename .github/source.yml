@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "900030980ecbc4f400d3b7a79ee7513580a9ff96"
+  sha: "10029a343b3f3eb8523a4f91f07b6d2c35841da4"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41883697942
+  run_id: 41884787219
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): hide tenant control-plane surfaces (P0)\n\nDefault single-tenant entry to apps, strip control-plane nav and overview tasks, and redirect guarded tenant routes for members, signing, storage, entitlements, and releases."
+  message: "feat(vega): expose tenant signing library on platform routes\n\nAdd platform tenant signing-assets route and navigation, restore signing workflow tests against the platform path, and align progressive e2e entry points."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T18:06:20Z"
+  created_at: "2026-11-04T18:12:27Z"
