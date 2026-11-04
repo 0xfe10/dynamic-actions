@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5c36d518f7b7b8232a399fde1987c186c513b430"
+  sha: "9e4098c157a2d163fa6d484dab841f52dac833c0"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41837584875
+  run_id: 41872929973
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: repair trusted Debug inputs and runtime icon routing (#405)\n\n* fix: resolve local Debug resources from latest trusted main\n\n* fix: route encoded runtime resource identities\n\n* fix: record safe Debug build failure classifications"
+  message: "feat(vega): workspace scope rail and per-level theme (\u65b9\u6848 B)\n\nMake platform/tenant/app navigation visually obvious with scope accents and optional theme presets that follow the active workspace level."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T13:23:12Z"
+  created_at: "2026-11-04T16:58:59Z"
