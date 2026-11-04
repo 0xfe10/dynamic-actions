@@ -73,6 +73,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          provenance: false
+          sbom: false
           context: source
           file: source/rosaceae/cli/${{ matrix.project }}/Dockerfile
           tags: registry.cn-hongkong.aliyuncs.com/xoohub/0xfe10_dynamic-actions_labelix-${{ matrix.image }}:${{ steps.image.outputs.tag }}
