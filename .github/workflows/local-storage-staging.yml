@@ -1,0 +1,111 @@
+name: "[labelix] Shenzhen storage staging"
+
+on:
+  push:
+    branches:
+      - codex/local-storage-shenzhen
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    name: Validate and build ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: localStorage
+            image: local-storage
+          - project: rubus
+            image: rubus
+    steps:
+      - uses: actions/checkout@v6
+      - name: Resolve immutable source
+        id: source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/labelix
+      - name: Checkout source
+        uses: actions/checkout@v6
+        with:
+          repository: prtmax/labelix
+          ref: ${{ steps.source.outputs.sha }}
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY_0XFE10 }}
+          path: source
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: source/rosaceae/cli/${{ matrix.project }}/go.mod
+          cache-dependency-path: source/rosaceae/cli/${{ matrix.project }}/go.sum
+      - name: Validate Go service
+        working-directory: source/rosaceae/cli/${{ matrix.project }}
+        run: |
+          gofmt -l .
+          go vet ./...
+          go test ./...
+      - name: Image identity
+        id: image
+        working-directory: source
+        run: echo "tag=sha-$(git rev-parse --short=7 HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: docker/login-action@v3
+        with:
+          registry: registry.cn-hongkong.aliyuncs.com
+          username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
+          password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
+      - uses: docker/setup-buildx-action@v3
+      - name: Build and push immutable staging image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: source
+          file: source/rosaceae/cli/${{ matrix.project }}/Dockerfile
+          tags: registry.cn-hongkong.aliyuncs.com/xoohub/0xfe10_dynamic-actions_labelix-${{ matrix.image }}:${{ steps.image.outputs.tag }}
+  deploy:
+    name: Deploy sz1 storage before hk0 Rubus
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    needs: build
+    concurrency:
+      group: labelix-local-storage-staging
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v6
+      - name: Resolve immutable source
+        id: source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/labelix
+      - name: Checkout source
+        uses: actions/checkout@v6
+        with:
+          repository: prtmax/labelix
+          ref: ${{ steps.source.outputs.sha }}
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY_0XFE10 }}
+          path: source
+      - name: Checkout GitOps
+        uses: actions/checkout@v6
+        with:
+          repository: repotea-workflow/gitops-ayn
+          ref: main
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY_0XFE10 }}
+          path: gitops-repo
+      - uses: azure/setup-kubectl@v4
+      - name: Prepare deployment runtime
+        run: python3 -m pip install PyYAML==6.0.3
+      - name: Publish and verify staging
+        working-directory: source
+        env:
+          KUBE_CONFIG_HK0: ${{ secrets.KUBE_CONFIG_CLUSTER_HK0_ALI }}
+          KUBE_CONFIG_SZ1: ${{ secrets.KUBE_CONFIG_CLUSTER_SZ1_ALI }}
+          ALI_ACCESS_KEY: ${{ secrets.ALI_ACCESS_KEY_AYN_ECS }}
+          ALI_SECRET_KEY: ${{ secrets.ALI_SECRET_KEY_AYN_ECS }}
+          GITOPS_DIRECTORY: ../gitops-repo
+          GITOPS_REF: main
+        run: |
+          set -euo pipefail
+          RELEASE_TAG="sha-$(git rev-parse --short=7 HEAD)"
+          export LOCAL_STORAGE_IMAGE="registry.cn-hongkong.aliyuncs.com/xoohub/0xfe10_dynamic-actions_labelix-local-storage:$RELEASE_TAG"
+          export RUBUS_IMAGE="registry.cn-hongkong.aliyuncs.com/xoohub/0xfe10_dynamic-actions_labelix-rubus:$RELEASE_TAG"
+          python3 .github/scripts/deploy_local_storage_staging.py
