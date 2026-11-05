@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4cf375093292f5deafb07ed3d7b54feaa15fac0e"
+  sha: "97e9ed942e39699b99418a172fe5efa55aa4a179"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41981843832
+  run_id: 41981853556
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: add local static resources migration plan (#241)\n\nDocument P0\u2013P2 phases for Git-backed theme assets, verify-only builds,\nand bundle-only runtime registry; link from openwiki index and build docs."
+  message: "feat: local static resources P0 (verify build + bundle registry) (#242)\n\n* docs: add local static resources migration plan\n\nDocument P0\u2013P2 phases for Git-backed theme assets, verify-only builds,\nand bundle-only runtime registry; link from openwiki index and build docs.\n\n* feat: local static resources P0 (verify-only build, bundle registry)\n\nMove theme assets into MELLOW/BREEZE/_default paths in Git, replace\nremote fetch with verifyLocalResources, and resolve icons from bundled\nassets only (app-scoped lookup, no runtime platform file fetch).\nLanguagePackRepository.sync reads disk cache only for this migration phase.\n\n* fix: track rigel_build test fixture blobs for CI verify\n\nBootstrap runs verify-local-resources on all manifest outputs; eight\nassembly test blobs were gitignored and missing on fresh checkouts.\n\n* fix: track component and launcher assets for CI verify\n\nStop gitignoring lanhu editor, jigsaw, and app icon outputs so\nverify-local-resources passes on fresh checkouts."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T06:39:21Z"
+  created_at: "2026-11-05T06:39:26Z"
