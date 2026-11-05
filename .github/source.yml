@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7648d0bde8461557571e86b7e1e0e9d0cce38124"
+  sha: "951a8e423bc6e3e18c37235b795291a55cef6aa5"
   ref_type: "branch"
   ref_name: "feat/remove-platform-resource-center"
-  run_id: 41989717463
+  run_id: 41992398469
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Fix PR 407 CI: drop removed route and seed migration test."
+  message: "fix(vega): restore typecheck for release and localization tests\n\nUse regex link matching and zero-arg createRef for current Testing Library types."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T07:47:48Z"
+  created_at: "2026-11-05T08:10:16Z"
