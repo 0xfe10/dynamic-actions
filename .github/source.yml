@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5d29ac838268103c118cb5a83f3939c6fea0d5d6"
+  sha: "603cf6a94cc97d572c91b2b6e67ead9d19f06855"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42066438802
+  ref_name: "fix/rigel-build-git-feature-asset-fallback"
+  run_id: 42083450609
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "style(localization): format locale repository tests (#246)"
+  message: "fix(rigel_build): Git bundled_theme_assets when spec has no feature_asset\n\nPlatform P0 debug specs omit frozen feature_asset rows; assembly now\nfalls back to Git bundled_theme_assets for icons instead of failing."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T16:38:10Z"
+  created_at: "2026-11-05T18:21:44Z"
