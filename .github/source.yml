@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1daea5b118acf7c1f82c6371cdf010b79f9431a0"
+  sha: "420d11e185b7953a76a151b4581f4614d7f182b4"
   ref_type: "branch"
-  ref_name: "feat/local-resources-bc"
-  run_id: 42008741300
+  ref_name: "main"
+  run_id: 42013063246
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): satisfy analyze after local-resources changes"
+  message: "feat(rigel_build): local-resources backlog B/C/D/E/F (#244)\n\n* feat(rigel_build): product asset closure and offline debug-build\n\nShip assembly overlays with a narrowed pubspec asset list, default debug-build\nto offline fixtures and local resource blobs, and verify the App resource\nclosure before product builds.\n\n* fix(rigel_build): satisfy analyze after local-resources changes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T10:12:32Z"
+  created_at: "2026-11-05T10:43:35Z"
