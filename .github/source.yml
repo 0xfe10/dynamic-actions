@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "ea62b759b2aab870d32ebcf53366c5c6c6feb67f"
+  sha: "dd1fce19ecbb416486c6ad2d1ac9233247240a24"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41959191145
+  run_id: 41959288446
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): omit unsupported attestations from staging Rosaceae image"
-  authors: ["mijjjj"]
+  message: "fix\uff1a\u4fee\u6539\u673a\u578b\u5206\u7c7b\u4e2d\u6a21\u7248\u5206\u7c7b\u7684\u9009\u62e9\u987a\u5e8f"
+  authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-05T03:04:00Z"
+  created_at: "2026-11-05T03:04:53Z"
