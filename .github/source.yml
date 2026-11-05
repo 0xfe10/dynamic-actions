@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e34c6b569529d3601d95001f38493d20027e64ea"
+  sha: "9a1fb98b9d095b58bf722fe43e02574a8b0882e8"
   ref_type: "branch"
   ref_name: "feat/remove-platform-resource-center"
-  run_id: 41981604109
+  run_id: 41981880146
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): remove platform resource center APIs\n\nDelete platformresource package (platform browse/tree/upload routes and\nruntime GET /platform/files/{ref}) and Vega app-resource admin UI.\nBusiness runtime file APIs (storage, avatars, icons, etc.) unchanged."
+  message: "chore: bump orion submodule for local static resources P0\n\nPoints at squash merge of prtmax/orion#242 (local assets + verify-only build)."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T06:37:13Z"
+  created_at: "2026-11-05T06:39:39Z"
