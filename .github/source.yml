@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2e7f2b4872e684add321de826bf950f81f4744c0"
+  sha: "fc54a162b3b0fb80aa19e991e61eab8a2b06042a"
   ref_type: "branch"
-  ref_name: "fix/i18n-remote-sync-scope"
-  run_id: 42063539591
+  ref_name: "main"
+  run_id: 42063681011
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: retrigger dynamic dispatch"
+  message: "fix(i18n): restore Runtime language pack sync without platform files (#245)\n\n* fix(i18n): restore Runtime language pack sync without platform files\n\nSplit remote Fluent ZIP updates from bundle-only static resources by\nintroducing RuntimeI18nClient and wiring LanguagePackRepository sync\nagain with ETag, 304, and disk cache while bundled Fluent stays fallback.\n\n* ci: retrigger checks\n\n* ci: retrigger dynamic dispatch"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T16:21:27Z"
+  created_at: "2026-11-05T16:22:17Z"
