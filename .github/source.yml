@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "97e9ed942e39699b99418a172fe5efa55aa4a179"
+  sha: "be6ee66c421cd60245b9962abc1b2f254af58117"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41981853556
+  ref_name: "chore/sync-runtime-client-platform-file-removal"
+  run_id: 41984362090
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: local static resources P0 (verify build + bundle registry) (#242)\n\n* docs: add local static resources migration plan\n\nDocument P0\u2013P2 phases for Git-backed theme assets, verify-only builds,\nand bundle-only runtime registry; link from openwiki index and build docs.\n\n* feat: local static resources P0 (verify-only build, bundle registry)\n\nMove theme assets into MELLOW/BREEZE/_default paths in Git, replace\nremote fetch with verifyLocalResources, and resolve icons from bundled\nassets only (app-scoped lookup, no runtime platform file fetch).\nLanguagePackRepository.sync reads disk cache only for this migration phase.\n\n* fix: track rigel_build test fixture blobs for CI verify\n\nBootstrap runs verify-local-resources on all manifest outputs; eight\nassembly test blobs were gitignored and missing on fresh checkouts.\n\n* fix: track component and launcher assets for CI verify\n\nStop gitignoring lanhu editor, jigsaw, and app icon outputs so\nverify-local-resources passes on fresh checkouts."
+  message: "chore: regenerate runtime client after platform file API removal\n\nDrop generated platform file models and operations from mercury_runtime_client."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T06:39:26Z"
+  created_at: "2026-11-05T07:02:02Z"
