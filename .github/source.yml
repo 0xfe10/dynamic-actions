@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8e456492740d861b32a652c79de674f644a77454"
+  sha: "db2f005cfb54f47740360430157b4060e10bc912"
   ref_type: "branch"
   ref_name: "feat/local-resources-p0"
-  run_id: 41980396979
+  run_id: 41980648870
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: track rigel_build test fixture blobs for CI verify\n\nBootstrap runs verify-local-resources on all manifest outputs; eight\nassembly test blobs were gitignored and missing on fresh checkouts."
+  message: "fix: track component and launcher assets for CI verify\n\nStop gitignoring lanhu editor, jigsaw, and app icon outputs so\nverify-local-resources passes on fresh checkouts."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T06:26:23Z"
+  created_at: "2026-11-05T06:28:42Z"
