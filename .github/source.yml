@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3df55e122f281584c73e3836d966e1e5bf029e17"
+  sha: "f8c71a3c030663c179a107b0738093754b6c8a91"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42040025824
+  ref_name: "bump/orion-i18n-remote-sync"
+  run_id: 42063741046
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Align Vega style family tables with platform directory layout (#409)\n\n* Align style family tables with platform directory layout.\n\nRestore key and metadata columns on desktop, keep compact rows, and reserve mobile-only detail collapsibles so families and themes match roles/features scanning patterns.\n\n* Fix Prettier formatting in style family workflow test.\n\n* Retrigger CI after format verification."
+  message: "chore(orion): bump submodule for i18n remote sync fix\n\nPoints orion at the merge that restores Runtime language pack sync\nwhile keeping static resources bundle-only."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T13:55:12Z"
+  created_at: "2026-11-05T16:22:34Z"
