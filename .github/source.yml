@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9a1fb98b9d095b58bf722fe43e02574a8b0882e8"
+  sha: "c7405611413bc02360244a44720be6f2af88aeec"
   ref_type: "branch"
   ref_name: "feat/remove-platform-resource-center"
-  run_id: 41981880146
+  run_id: 41984414467
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore: bump orion submodule for local static resources P0\n\nPoints at squash merge of prtmax/orion#242 (local assets + verify-only build)."
+  message: "fix: satisfy staging CI after platform resource removal\n\ngofmt Mercury, regenerate Orion runtime client for removed platform file\nroutes, bump orion submodule, and run Prettier on Vega files failing format-check."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T06:39:39Z"
+  created_at: "2026-11-05T07:02:29Z"
