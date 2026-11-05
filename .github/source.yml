@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "69bcd3b03aaae0055c859134f546af39afbd86bb"
+  sha: "2c427035b09556558ba6ccdfa7c281fd3e3bed9d"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 41958236212
+  run_id: 41958331629
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rubus): expose intelligent scan phase timings"
-  authors: ["mijjjj"]
+  message: "fix\uff1a\u6587\u672c\u5ba1\u6838\u66f4\u6362\u963f\u91cc\u4e91\u6587\u672c\u5ba1\u6838\u670d\u52a1\uff0c\u4fee\u6539\u8f6e\u64ad\u56fe\u6761\u4ef6\u8fc7\u6ee4\u65e0\u6548"
+  authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-05T02:55:02Z"
+  created_at: "2026-11-05T02:55:51Z"
