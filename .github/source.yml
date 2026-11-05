@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "75240de3015985e4f7511d6223c1bc363f0cb332"
+  sha: "477d31e44d24154d108f2ee7c792ad677c578a2e"
   ref_type: "branch"
   ref_name: "feat/local-resources-scope"
-  run_id: 41999991069
+  run_id: 42006242346
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel_build): schema 1 scope and closure verify\n\nAdd required scope to development_resources.json, reject legacy manifest fields, and filter verify by assembly/app closure with optional --all."
+  message: "fix(rigel_build): format debug.dart for CI format-check"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T09:09:05Z"
+  created_at: "2026-11-05T09:54:35Z"
