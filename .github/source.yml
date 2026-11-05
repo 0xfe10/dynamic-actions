@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1175a921fe9cff4d0303dcff5e7428144863a0be"
+  sha: "469fee862eade944f35c058abe35d92b77305936"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41971970633
+  ref_name: "docs/local-resources-plan"
+  run_id: 41974085422
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(rigel): extract rigel_platform for native wiring (#240)\n\nMove buildFeatureScope and all Native* adapters into a dedicated workspace\npackage so the Rigel host stays a thin bootstrap while app_shell stays free\nof OS plugins."
+  message: "docs: add local static resources migration plan\n\nDocument P0\u2013P2 phases for Git-backed theme assets, verify-only builds,\nand bundle-only runtime registry; link from openwiki index and build docs."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T05:07:24Z"
+  created_at: "2026-11-05T05:27:13Z"
