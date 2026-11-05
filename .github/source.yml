@@ -4,8 +4,8 @@ source:
   repository_id: 1329504130
   sha: "b2d8ec8bb443e0f074a2fc911f88c1c2c5bfd141"
   ref_type: "branch"
-  ref_name: "chore/sync-runtime-client-platform-file-removal"
-  run_id: 41985459302
+  ref_name: "main"
+  run_id: 41997760165
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "fix: drop RuntimeResourceClient.platformFile after API removal\n\nRemove platform file resolution wrapper, safe-path template, and tests\nthat depended on the deleted runtime platform file endpoint."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T07:11:29Z"
+  created_at: "2026-11-05T08:52:09Z"
