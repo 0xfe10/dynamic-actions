@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "230ae9d850416473ce70ed768d1709c29d01b902"
+  sha: "7648d0bde8461557571e86b7e1e0e9d0cce38124"
   ref_type: "branch"
   ref_name: "feat/remove-platform-resource-center"
-  run_id: 41985460590
+  run_id: 41989717463
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: orion runtime client cleanup and Vega e2e lint\n\nBump orion for removed platformFile wrapper; fix prefer-const in release e2e."
+  message: "Fix PR 407 CI: drop removed route and seed migration test."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T07:11:27Z"
+  created_at: "2026-11-05T07:47:48Z"
