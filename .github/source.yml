@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a5d605161a9cb54a866abbd457581f108d7f0bf0"
+  sha: "13628c11be81666f0c0c93dc0823f9bd7d738301"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41835561911
+  ref_name: "chore/just-dotenv-load"
+  run_id: 41950882560
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: stabilize Mellow runtime resources and labels (#237)\n\n* fix: stabilize Mellow runtime resources and labels\n\n* fix: localize Mellow paper flows and bound online input waits\n\n* fix: localize Mellow editor controls"
+  message: "chore: load .env automatically in Just recipes\n\nEnable dotenv-load so debug-build and other just tasks pick up COSMOS_* from repository-root .env, and add .env.example for onboarding."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T13:09:46Z"
+  created_at: "2026-11-05T01:47:39Z"
