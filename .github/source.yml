@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "951a8e423bc6e3e18c37235b795291a55cef6aa5"
+  sha: "61b5e814e8da06d133d1d8388d295c0f28e81252"
   ref_type: "branch"
   ref_name: "feat/remove-platform-resource-center"
-  run_id: 41992398469
+  run_id: 41992447678
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): restore typecheck for release and localization tests\n\nUse regex link matching and zero-arg createRef for current Testing Library types."
+  message: "Fix migration test tenant seed and Vega typecheck."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T08:10:16Z"
+  created_at: "2026-11-05T08:10:39Z"
