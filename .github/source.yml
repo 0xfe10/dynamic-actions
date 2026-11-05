@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "cf7559d741f556b27e91ccc0a31247e04ad5b98d"
+  sha: "772e779865fb3a5656804c40c18eaba239365a2b"
   ref_type: "branch"
-  ref_name: "feat/vega-localization-and-platform-releases"
-  run_id: 41947796910
+  ref_name: "main"
+  run_id: 41947882568
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): read-only platform nested app releases\n\nDisable build/retry/publish actions on platform-scoped release routes,\nsurface capability notices, and align e2e coverage with nested read-only IA."
+  message: "feat(vega): localization workspace perf and platform release read-only (#406)\n\n* feat(vega): paginate and improve localization workspace UX\n\nAdd client-side paging with accessible result counts, sticky table headers,\nand better text wrapping for large translation matrices.\n\n* feat(vega): read-only platform nested app releases\n\nDisable build/retry/publish actions on platform-scoped release routes,\nsurface capability notices, and align e2e coverage with nested read-only IA."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T01:20:18Z"
+  created_at: "2026-11-05T01:20:57Z"
