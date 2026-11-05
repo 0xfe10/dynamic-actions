@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2f39931430dc420073884d5afb98cbb0984250fc"
+  sha: "77f119494b8dcb74c4cc0b6a71e276f81e66ccf1"
   ref_type: "branch"
-  ref_name: "chore/bump-orion-local-resources"
-  run_id: 42013101423
+  ref_name: "main"
+  run_id: 42026495042
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule for local-resources backlog\n\nPin Orion at 420d11e (schema 1 scope verify, product asset closure, offline debug-build, runtime static-resource cleanup)."
+  message: "chore(orion): bump submodule for local-resources backlog (#408)\n\nPin Orion at 420d11e (schema 1 scope verify, product asset closure, offline debug-build, runtime static-resource cleanup)."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T10:43:54Z"
+  created_at: "2026-11-05T12:22:03Z"
