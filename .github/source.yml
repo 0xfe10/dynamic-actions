@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "be6ee66c421cd60245b9962abc1b2f254af58117"
+  sha: "b2d8ec8bb443e0f074a2fc911f88c1c2c5bfd141"
   ref_type: "branch"
   ref_name: "chore/sync-runtime-client-platform-file-removal"
-  run_id: 41984362090
+  run_id: 41985459302
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore: regenerate runtime client after platform file API removal\n\nDrop generated platform file models and operations from mercury_runtime_client."
+  message: "fix: drop RuntimeResourceClient.platformFile after API removal\n\nRemove platform file resolution wrapper, safe-path template, and tests\nthat depended on the deleted runtime platform file endpoint."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T07:02:02Z"
+  created_at: "2026-11-05T07:11:29Z"
