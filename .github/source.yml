@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c19757336d053041209bda7bf7e33dd95d8cf56a"
+  sha: "1175a921fe9cff4d0303dcff5e7428144863a0be"
   ref_type: "branch"
-  ref_name: "feat/rigel-platform-thin-host"
-  run_id: 41970625099
+  ref_name: "main"
+  run_id: 41971970633
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(rigel): extract rigel_platform for native wiring\n\nMove buildFeatureScope and all Native* adapters into a dedicated workspace\npackage so the Rigel host stays a thin bootstrap while app_shell stays free\nof OS plugins."
+  message: "refactor(rigel): extract rigel_platform for native wiring (#240)\n\nMove buildFeatureScope and all Native* adapters into a dedicated workspace\npackage so the Rigel host stays a thin bootstrap while app_shell stays free\nof OS plugins."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T04:54:14Z"
+  created_at: "2026-11-05T05:07:24Z"
