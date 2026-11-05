@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "77f119494b8dcb74c4cc0b6a71e276f81e66ccf1"
+  sha: "d058eb1b35582baeec1e8c95c5d7f394352a1d1f"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42026495042
+  ref_name: "fix/vega-style-families-table-layout"
+  run_id: 42032048035
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule for local-resources backlog (#408)\n\nPin Orion at 420d11e (schema 1 scope verify, product asset closure, offline debug-build, runtime static-resource cleanup)."
+  message: "Align style family tables with platform directory layout.\n\nRestore key and metadata columns on desktop, keep compact rows, and reserve mobile-only detail collapsibles so families and themes match roles/features scanning patterns."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T12:22:03Z"
+  created_at: "2026-11-05T13:01:22Z"
