@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6cdeb4abc46fd65c142aa1954c89befa57a53766"
+  sha: "b405b0db24d944ccd8bd617425a7ffcd542bb0bb"
   ref_type: "branch"
-  ref_name: "docs/openwiki-refresh"
-  run_id: 41958613744
+  ref_name: "main"
+  run_id: 41958633746
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs: refresh openwiki for native rigel_build workflow\n\nReplace stale quickstart and assembly docs with current just debug-build\nand dotenv guidance, remove historical implementation-plan logs, and add a\nconcise status page as the single progress boundary."
+  message: "docs: refresh openwiki for native rigel_build workflow (#239)\n\nReplace stale quickstart and assembly docs with current just debug-build\nand dotenv guidance, remove historical implementation-plan logs, and add a\nconcise status page as the single progress boundary."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T02:58:39Z"
+  created_at: "2026-11-05T02:58:50Z"
