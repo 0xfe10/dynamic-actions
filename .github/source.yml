@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d058eb1b35582baeec1e8c95c5d7f394352a1d1f"
+  sha: "ff77bd2ca5505d6c4477fac33bc93749e14934b9"
   ref_type: "branch"
   ref_name: "fix/vega-style-families-table-layout"
-  run_id: 42032048035
+  run_id: 42035240580
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Align style family tables with platform directory layout.\n\nRestore key and metadata columns on desktop, keep compact rows, and reserve mobile-only detail collapsibles so families and themes match roles/features scanning patterns."
+  message: "Fix Prettier formatting in style family workflow test."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T13:01:22Z"
+  created_at: "2026-11-05T13:22:58Z"
