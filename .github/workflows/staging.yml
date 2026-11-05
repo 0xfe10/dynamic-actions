@@ -147,6 +147,7 @@ jobs:
           command: |
             docker buildx build \
               --push \
+              --provenance=false \
               --file rosaceae/Dockerfile \
               --tag "${{ steps.tags.outputs.ghcr_sha }}" \
               --tag "${{ steps.tags.outputs.ghcr_staging }}" \
