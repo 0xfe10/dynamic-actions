@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e7f438e42a261e6f49bcfb3bb616832919c9bd04"
+  sha: "3db6bb790c75cb0191c9dcf447b750f70fb0c92e"
   ref_type: "branch"
-  ref_name: "bump/orion-i18n-remote-sync"
-  run_id: 42067681229
+  ref_name: "main"
+  run_id: 42071893875
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci: retrigger dynamic dispatch"
+  message: "chore(orion): bump submodule for i18n remote sync (#410)\n\n* chore(orion): bump submodule for i18n remote sync fix\n\nPoints orion at the merge that restores Runtime language pack sync\nwhile keeping static resources bundle-only (includes format-check fix).\n\n* ci: retrigger dynamic dispatch"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T16:45:26Z"
+  created_at: "2026-11-05T17:10:07Z"
