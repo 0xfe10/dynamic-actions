@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c9faf888491b26312e354b4eff5954bad9f3b2b8"
+  sha: "cf7559d741f556b27e91ccc0a31247e04ad5b98d"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41887391481
+  ref_name: "feat/vega-localization-and-platform-releases"
+  run_id: 41947796910
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(openwiki): document tenant vs platform Vega IA\n\nRecord P0\u2013P1 tenant center boundaries, platform-only control-plane routes, and Mercury IAM alignment for operators."
+  message: "feat(vega): read-only platform nested app releases\n\nDisable build/retry/publish actions on platform-scoped release routes,\nsurface capability notices, and align e2e coverage with nested read-only IA."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-04T18:27:57Z"
+  created_at: "2026-11-05T01:20:18Z"
