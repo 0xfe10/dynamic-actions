@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "bda155d92e9f0f71584ecbdab6322fb46a42e10d"
+  sha: "1ac7454f121f40279537e83dfb84bc2d1713bf8e"
   ref_type: "branch"
-  ref_name: "feat/local-resources-bc"
-  run_id: 42007085477
+  ref_name: "main"
+  run_id: 42007386116
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel_build): product asset closure and offline debug-build\n\nShip assembly overlays with a narrowed pubspec asset list, default debug-build\nto offline fixtures and local resource blobs, and verify the App resource\nclosure before product builds."
+  message: "feat(rigel_build): schema 1 scope and closure verify (#243)\n\n* feat(rigel_build): schema 1 scope and closure verify\n\nAdd required scope to development_resources.json, reject legacy manifest fields, and filter verify by assembly/app closure with optional --all.\n\n* fix(rigel_build): format debug.dart for CI format-check"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T10:00:46Z"
+  created_at: "2026-11-05T10:02:54Z"
