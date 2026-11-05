@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "32865a898240533a33c4a090e22526bf1da15d25"
+  sha: "8e456492740d861b32a652c79de674f644a77454"
   ref_type: "branch"
   ref_name: "feat/local-resources-p0"
-  run_id: 41974091071
+  run_id: 41980396979
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat: local static resources P0 (verify-only build, bundle registry)\n\nMove theme assets into MELLOW/BREEZE/_default paths in Git, replace\nremote fetch with verifyLocalResources, and resolve icons from bundled\nassets only (app-scoped lookup, no runtime platform file fetch).\nLanguagePackRepository.sync reads disk cache only for this migration phase."
+  message: "fix: track rigel_build test fixture blobs for CI verify\n\nBootstrap runs verify-local-resources on all manifest outputs; eight\nassembly test blobs were gitignored and missing on fresh checkouts."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T05:27:17Z"
+  created_at: "2026-11-05T06:26:23Z"
