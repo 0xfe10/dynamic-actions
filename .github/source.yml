@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7b3744298291d51d3cf9a9c6d9b604218dd5c49a"
+  sha: "80819b61ce23c59bb51cece0a31504401fbd7fe6"
   ref_type: "branch"
-  ref_name: "feat/remove-platform-resource-center"
-  run_id: 41996586715
+  ref_name: "main"
+  run_id: 41997760806
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: clear PR 407 staging CI blockers\n\nRestore Vega typecheck and migration test seeding, enable nested release\nworkflow tests, and align platform member route gates with read-only access."
+  message: "feat(mercury): remove platform resource center APIs (#407)\n\n* feat(mercury): remove platform resource center APIs\n\nDelete platformresource package (platform browse/tree/upload routes and\nruntime GET /platform/files/{ref}) and Vega app-resource admin UI.\nBusiness runtime file APIs (storage, avatars, icons, etc.) unchanged.\n\n* chore: bump orion submodule for local static resources P0\n\nPoints at squash merge of prtmax/orion#242 (local assets + verify-only build).\n\n* fix: satisfy staging CI after platform resource removal\n\ngofmt Mercury, regenerate Orion runtime client for removed platform file\nroutes, bump orion submodule, and run Prettier on Vega files failing format-check.\n\n* fix: orion runtime client cleanup and Vega e2e lint\n\nBump orion for removed platformFile wrapper; fix prefer-const in release e2e.\n\n* Fix PR 407 CI: drop removed route and seed migration test.\n\n* fix(vega): restore typecheck for release and localization tests\n\nUse regex link matching and zero-arg createRef for current Testing Library types.\n\n* Fix migration test tenant seed and Vega typecheck.\n\n* fix: clear PR 407 staging CI blockers\n\nRestore Vega typecheck and migration test seeding, enable nested release\nworkflow tests, and align platform member route gates with read-only access."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T08:42:56Z"
+  created_at: "2026-11-05T08:52:05Z"
