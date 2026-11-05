@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "db2f005cfb54f47740360430157b4060e10bc912"
+  sha: "4cf375093292f5deafb07ed3d7b54feaa15fac0e"
   ref_type: "branch"
-  ref_name: "feat/local-resources-p0"
-  run_id: 41980648870
+  ref_name: "main"
+  run_id: 41981843832
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: track component and launcher assets for CI verify\n\nStop gitignoring lanhu editor, jigsaw, and app icon outputs so\nverify-local-resources passes on fresh checkouts."
+  message: "docs: add local static resources migration plan (#241)\n\nDocument P0\u2013P2 phases for Git-backed theme assets, verify-only builds,\nand bundle-only runtime registry; link from openwiki index and build docs."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T06:28:42Z"
+  created_at: "2026-11-05T06:39:21Z"
