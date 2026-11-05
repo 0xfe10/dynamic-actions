@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "772e779865fb3a5656804c40c18eaba239365a2b"
+  sha: "e34c6b569529d3601d95001f38493d20027e64ea"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 41947882568
+  ref_name: "feat/remove-platform-resource-center"
+  run_id: 41981604109
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): localization workspace perf and platform release read-only (#406)\n\n* feat(vega): paginate and improve localization workspace UX\n\nAdd client-side paging with accessible result counts, sticky table headers,\nand better text wrapping for large translation matrices.\n\n* feat(vega): read-only platform nested app releases\n\nDisable build/retry/publish actions on platform-scoped release routes,\nsurface capability notices, and align e2e coverage with nested read-only IA."
+  message: "feat(mercury): remove platform resource center APIs\n\nDelete platformresource package (platform browse/tree/upload routes and\nruntime GET /platform/files/{ref}) and Vega app-resource admin UI.\nBusiness runtime file APIs (storage, avatars, icons, etc.) unchanged."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T01:20:57Z"
+  created_at: "2026-11-05T06:37:13Z"
