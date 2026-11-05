@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "420d11e185b7953a76a151b4581f4614d7f182b4"
+  sha: "06cdc2087259a0a3105906ae6f64acfa424b8e4c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42013063246
+  ref_name: "fix/i18n-remote-sync-scope"
+  run_id: 42062044822
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel_build): local-resources backlog B/C/D/E/F (#244)\n\n* feat(rigel_build): product asset closure and offline debug-build\n\nShip assembly overlays with a narrowed pubspec asset list, default debug-build\nto offline fixtures and local resource blobs, and verify the App resource\nclosure before product builds.\n\n* fix(rigel_build): satisfy analyze after local-resources changes"
+  message: "fix(i18n): restore Runtime language pack sync without platform files\n\nSplit remote Fluent ZIP updates from bundle-only static resources by\nintroducing RuntimeI18nClient and wiring LanguagePackRepository sync\nagain with ETag, 304, and disk cache while bundled Fluent stays fallback."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-05T10:43:35Z"
+  created_at: "2026-11-05T16:12:34Z"
