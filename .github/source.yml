@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "488aa2d94867c066a3c5508d76d254497dfa41c4"
+  sha: "38870d15a7403c41878a2ac0a095f3c7e0186a66"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42145613311
+  run_id: 42145709506
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel_build): simplify Just to bootstrap/build/check/test/fmt\n\nReplace debug-build fetch flags with just build that always loads Platform\nspec and resources with disk cache and --force. Keeps git bundled theme\nfallback when specs omit feature_asset (603cf6a)."
+  message: "test(rigel_build): align development tests with simplified Just tasks\n\nUpdate expectations after removing run and check-runtime-api from develop.dart."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-06T01:42:36Z"
+  created_at: "2026-11-06T01:43:34Z"
