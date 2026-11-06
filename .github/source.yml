@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "ca5b8be2620a6887b19afadb66ec83f51ccf58f1"
+  sha: "e0c4ef21253ccd9276cd497f0a331a6816f4a92e"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42002643457
+  run_id: 42147763674
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(camellia): default backend selection to labelix"
-  authors: ["mijjjj"]
+  message: "fix\uff1a\u6e05\u7406\u6570\u636e"
+  authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-05T09:28:33Z"
+  created_at: "2026-11-06T02:02:58Z"
