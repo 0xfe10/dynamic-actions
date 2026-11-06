@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "603cf6a94cc97d572c91b2b6e67ead9d19f06855"
+  sha: "488aa2d94867c066a3c5508d76d254497dfa41c4"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42141851796
+  run_id: 42145613311
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): Git bundled_theme_assets when spec has no feature_asset\n\nPlatform P0 debug specs omit frozen feature_asset rows; assembly now\nfalls back to Git bundled_theme_assets for icons instead of failing."
+  message: "feat(rigel_build): simplify Just to bootstrap/build/check/test/fmt\n\nReplace debug-build fetch flags with just build that always loads Platform\nspec and resources with disk cache and --force. Keeps git bundled theme\nfallback when specs omit feature_asset (603cf6a)."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-06T01:09:12Z"
+  created_at: "2026-11-06T01:42:36Z"
