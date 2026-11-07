@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "3c7c5c3a3dcbf91e89a757d124b11a183942e9d5"
+  sha: "f605695060a5ca727c9da75106d29b05a434903b"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42156278525
+  run_id: 42347262025
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u8bbe\u5907\u589e\u52a0HAS_BATTERY\u5c5e\u6027"
+  message: "fix\uff1a\u667a\u80fd\u626b\u63cf\u548c\u53bb\u9664\u7b14\u8ff9\u4f18\u5316"
   authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-06T03:23:52Z"
+  created_at: "2026-11-07T06:30:03Z"
