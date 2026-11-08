@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "5d4cfd685080584eacc4df9c19c93e5e3fdbf4f2"
+  sha: "f682fe10087a2db45c2f39e28c9f959c73d6a7a4"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42464246938
+  run_id: 42472573794
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(ci): publish images under source repository namespace"
+  message: "feat(ci): emit Flux-compatible staging timestamp and production semver image tags"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-08T08:45:18Z"
+  created_at: "2026-11-08T10:42:56Z"

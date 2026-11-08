@@ -30,9 +30,11 @@ jobs:
       - name: Set source repo name
         env:
           SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
+          SOURCE_SHA: ${{ steps.dynamic_source.outputs.sha }}
         run: |
           echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
           echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=${SOURCE_SHA:0:7}" >> "$GITHUB_ENV"
 
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
@@ -59,9 +61,10 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_tag=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:${{ steps.dynamic_source.outputs.tag }}" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
           echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:latest" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
@@ -73,6 +76,7 @@ jobs:
           provenance: false
           sbom: false
           tags: |
+            ${{ steps.tags.outputs.ghcr_tag }}
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
           secrets: |
@@ -105,9 +109,11 @@ jobs:
       - name: Set source repo name
         env:
           SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
+          SOURCE_SHA: ${{ steps.dynamic_source.outputs.sha }}
         run: |
           echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
           echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=${SOURCE_SHA:0:7}" >> "$GITHUB_ENV"
 
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
@@ -134,9 +140,10 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_tag=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:${{ steps.dynamic_source.outputs.tag }}" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
           echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
           echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:latest" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
@@ -148,6 +155,7 @@ jobs:
           provenance: false
           sbom: false
           tags: |
+            ${{ steps.tags.outputs.ghcr_tag }}
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
 
@@ -181,9 +189,11 @@ jobs:
       - name: Set source repo name
         env:
           SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
+          SOURCE_SHA: ${{ steps.dynamic_source.outputs.sha }}
         run: |
           echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
           echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=${SOURCE_SHA:0:7}" >> "$GITHUB_ENV"
 
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
@@ -203,7 +213,7 @@ jobs:
           changes: |
             {
               "argocd/apps/coreprint-hk0/overlays/production/values.yaml": {
-                "app.metasequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHA }}",
-                "app.sequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHA }}"
+                "app.metasequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHORT_SHA }}",
+                "app.sequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHORT_SHA }}"
               }
             }
