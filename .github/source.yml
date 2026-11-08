@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "c954b920a40d7a38c76e96cbd1d2209cc2d8b73d"
+  sha: "5cce3cb056f3fb61e7c489079de3338b83d10ca7"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42480158109
+  run_id: 42495876759
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(ci): adopt kangumi clone-dyn source_context mode"
+  message: "feat(sequoia): add mysql baseline schema and metadata migration"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-08T12:25:20Z"
+  created_at: "2026-11-08T15:39:18Z"
