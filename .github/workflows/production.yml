@@ -21,26 +21,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Resolve source identity
-        id: dynamic_source
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
-        with:
-          repository: prtmax/coreprint-server
-
-      - name: Set source repo name
-        env:
-          SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
-          SOURCE_SHA: ${{ steps.dynamic_source.outputs.sha }}
-        run: |
-          echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
-          echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
-          echo "SHORT_SHA=${SOURCE_SHA:0:7}" >> "$GITHUB_ENV"
-
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: coreprint-metasequoia
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -56,17 +44,6 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_tag=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:${{ steps.dynamic_source.outputs.tag }}" >> $GITHUB_OUTPUT
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:latest" >> $GITHUB_OUTPUT
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
@@ -75,13 +52,8 @@ jobs:
           file: admin/apps/metasequoia/Dockerfile
           provenance: false
           sbom: false
-          tags: |
-            ${{ steps.tags.outputs.ghcr_tag }}
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
-          labels: |
-            org.opencontainers.image.source=https://github.com/${{ env.SOURCE_REPO }}
-            org.opencontainers.image.revision=${{ steps.dynamic_source.outputs.sha }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
           secrets: |
             github_token=${{ secrets.GH_TOKEN_0XFE10 }}
 
@@ -92,10 +64,10 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_latest }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}
 
   build-sequoia-image:
     name: Build sequoia image
@@ -103,26 +75,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Resolve source identity
-        id: dynamic_source
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
-        with:
-          repository: prtmax/coreprint-server
-
-      - name: Set source repo name
-        env:
-          SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
-          SOURCE_SHA: ${{ steps.dynamic_source.outputs.sha }}
-        run: |
-          echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
-          echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
-          echo "SHORT_SHA=${SOURCE_SHA:0:7}" >> "$GITHUB_ENV"
-
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: coreprint-sequoia
 
       - name: Docker login
         uses: docker/login-action@v3
@@ -138,17 +98,6 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_tag=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:${{ steps.dynamic_source.outputs.tag }}" >> $GITHUB_OUTPUT
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:latest" >> $GITHUB_OUTPUT
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
@@ -157,13 +106,8 @@ jobs:
           file: client/sequoia/Dockerfile
           provenance: false
           sbom: false
-          tags: |
-            ${{ steps.tags.outputs.ghcr_tag }}
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
-          labels: |
-            org.opencontainers.image.source=https://github.com/${{ env.SOURCE_REPO }}
-            org.opencontainers.image.revision=${{ steps.dynamic_source.outputs.sha }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -172,10 +116,10 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_latest }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}
 
   deploy-apps:
     name: Deploy Apps
@@ -186,28 +130,13 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Resolve source identity
-        id: dynamic_source
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
-        with:
-          repository: prtmax/coreprint-server
-
-      - name: Set source repo name
-        env:
-          SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
-          SOURCE_SHA: ${{ steps.dynamic_source.outputs.sha }}
-        run: |
-          echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
-          echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
-          echo "SHORT_SHA=${SOURCE_SHA:0:7}" >> "$GITHUB_ENV"
-
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
 
-      - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
