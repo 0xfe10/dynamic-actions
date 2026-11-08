@@ -79,6 +79,9 @@ jobs:
             ${{ steps.tags.outputs.ghcr_tag }}
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ env.SOURCE_REPO }}
+            org.opencontainers.image.revision=${{ steps.dynamic_source.outputs.sha }}
           secrets: |
             github_token=${{ secrets.GH_TOKEN_0XFE10 }}
 
@@ -158,6 +161,9 @@ jobs:
             ${{ steps.tags.outputs.ghcr_tag }}
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_latest }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ env.SOURCE_REPO }}
+            org.opencontainers.image.revision=${{ steps.dynamic_source.outputs.sha }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3

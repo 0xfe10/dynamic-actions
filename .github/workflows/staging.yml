@@ -79,8 +79,7 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          TS=$(date +%s)
-          echo "ghcr_sha_ts=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHORT_SHA }}-${TS}" >> $GITHUB_OUTPUT
+          echo "ghcr_sha_run=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
           echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
           echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:staging" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
@@ -95,9 +94,12 @@ jobs:
           provenance: false
           sbom: false
           tags: |
-            ${{ steps.tags.outputs.ghcr_sha_ts }}
+            ${{ steps.tags.outputs.ghcr_sha_run }}
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ env.SOURCE_REPO }}
+            org.opencontainers.image.revision=${{ steps.dynamic_source.outputs.sha }}
           secrets: |
             github_token=${{ secrets.GH_TOKEN_0XFE10 }}
 
@@ -162,8 +164,7 @@ jobs:
       - name: Set image tags
         id: tags
         run: |
-          TS=$(date +%s)
-          echo "ghcr_sha_ts=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHORT_SHA }}-${TS}" >> $GITHUB_OUTPUT
+          echo "ghcr_sha_run=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
           echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
           echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:staging" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHORT_SHA }}" >> $GITHUB_OUTPUT
@@ -178,9 +179,12 @@ jobs:
           provenance: false
           sbom: false
           tags: |
-            ${{ steps.tags.outputs.ghcr_sha_ts }}
+            ${{ steps.tags.outputs.ghcr_sha_run }}
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ env.SOURCE_REPO }}
+            org.opencontainers.image.revision=${{ steps.dynamic_source.outputs.sha }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3

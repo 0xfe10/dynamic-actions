@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "f682fe10087a2db45c2f39e28c9f959c73d6a7a4"
+  sha: "ee6ebfcdc52589dedb8df62f10844fdbf673b2c5"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42472573794
+  run_id: 42473430924
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(ci): emit Flux-compatible staging timestamp and production semver image tags"
+  message: "feat(ci): use github.run_number for staging tags and link GHCR packages to repo"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-08T10:42:56Z"
+  created_at: "2026-11-08T10:55:09Z"
