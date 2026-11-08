@@ -38,6 +38,20 @@ jobs:
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
+
+      - name: Resolve source identity
+        id: dynamic_source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/coreprint-server
+
+      - name: Set source repo name
+        env:
+          SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
+        run: |
+          echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
+          echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -47,8 +61,8 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -60,14 +74,11 @@ jobs:
 
       - uses: benjlevesque/short-sha@v3.0
 
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/coreprint-metasequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/coreprint-metasequoia:staging" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-metasequoia:staging" >> $GITHUB_OUTPUT
           echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
           echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:staging" >> $GITHUB_OUTPUT
 
@@ -77,6 +88,8 @@ jobs:
           push: true
           context: .
           file: admin/apps/metasequoia/Dockerfile
+          provenance: false
+          sbom: false
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
@@ -103,6 +116,20 @@ jobs:
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
+
+      - name: Resolve source identity
+        id: dynamic_source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/coreprint-server
+
+      - name: Set source repo name
+        env:
+          SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
+        run: |
+          echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
+          echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -112,8 +139,8 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -125,16 +152,13 @@ jobs:
 
       - uses: benjlevesque/short-sha@v3.0
 
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
       - name: Set image tags
         id: tags
         run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-sequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-sequoia:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-sequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-sequoia:staging" >> $GITHUB_OUTPUT
+          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/coreprint-sequoia:staging" >> $GITHUB_OUTPUT
+          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
+          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:staging" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
@@ -142,6 +166,8 @@ jobs:
           push: true
           context: .
           file: client/sequoia/Dockerfile
+          provenance: false
+          sbom: false
           tags: |
             ${{ steps.tags.outputs.ghcr_sha }}
             ${{ steps.tags.outputs.ghcr_staging }}
@@ -168,14 +194,25 @@ jobs:
     if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
+
+      - name: Resolve source identity
+        id: dynamic_source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/coreprint-server
+
+      - name: Set source repo name
+        env:
+          SOURCE_REPOSITORY: ${{ steps.dynamic_source.outputs.repository }}
+        run: |
+          echo "SOURCE_REPO=${SOURCE_REPOSITORY,,}" >> "$GITHUB_ENV"
+          echo "REPO_NAME=${SOURCE_REPOSITORY//\//_}" >> "$GITHUB_ENV"
+
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/coreprint-server
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
@@ -187,6 +224,6 @@ jobs:
             {
               "argocd/apps/coreprint-hk0/overlays/staging/values.yaml": {
                 "app.metasequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHA }}",
-                "app.sequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-sequoia:sha-${{ env.SHA }}"
+                "app.sequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHA }}"
               }
             }

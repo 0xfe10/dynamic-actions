@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "7974a5a99034af265558b038cc5011d185b33854"
+  sha: "5d4cfd685080584eacc4df9c19c93e5e3fdbf4f2"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42157248819
+  run_id: 42464246938
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u8bbe\u5907\u5c5e\u6027\u589e\u52a0HAS_BATTERY"
-  authors: ["caiwei1"]
+  message: "chore(ci): publish images under source repository namespace"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-06T03:33:24Z"
+  created_at: "2026-11-08T08:45:18Z"
