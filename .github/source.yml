@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c025a9d15dd132e257b634c9f0cf9b49a4f30dac"
+  sha: "16a86cb19b9d5b6805da3ec85d1b61b69915ebe7"
   ref_type: "branch"
-  ref_name: "chore/bump-orion-feature-navigation"
-  run_id: 42554851513
+  ref_name: "main"
+  run_id: 42554941801
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule for FeatureNavigation capability checks"
+  message: "chore(orion): bump submodule for FeatureNavigation capability checks (#411)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-09T03:10:07Z"
+  created_at: "2026-11-09T03:11:02Z"
