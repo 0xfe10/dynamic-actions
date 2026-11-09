@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "2e36de3231945268b965e2e79b17de222b4db80e"
+  sha: "d51cb89decd9600cffec7ef989480989d0056f99"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42571739199
+  run_id: 42579043982
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u4fee\u6539\u63a5\u53e3sql: no rows in result set\u9519\u8bef"
+  message: "fix\uff1a\u667a\u80fd\u626b\u63cf\u548c\u53bb\u9664\u7b14\u8ff9\u63a5\u53e3\u8def\u5f84\u6539\u4e3av3"
   authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-09T06:13:42Z"
+  created_at: "2026-11-09T07:23:42Z"
