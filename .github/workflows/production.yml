@@ -252,8 +252,9 @@ jobs:
           fvm dart run tools/rigel_build/bin/develop.dart bootstrap
       - name: Check Orion formatting and static analysis
         run: |
-          just --justfile orion/Justfile format-check
-          just --justfile orion/Justfile analyze
+          cd orion
+          fvm dart run tools/rigel_build/bin/develop.dart format-check
+          fvm dart run tools/rigel_build/bin/develop.dart analyze
       - name: Run Orion assembly and Flutter tests
         run: just --justfile orion/Justfile test
       - name: Resolve locked Cosmos generation tools
@@ -263,7 +264,7 @@ jobs:
       - name: Check generated runtime API client
         run: just generate-check runtime
       - name: Build Android APK
-        run: just --justfile orion/Justfile rigel-android
+        run: cd orion/apps/rigel && fvm flutter build apk --debug --no-pub
 
   # iOS Checks are temporarily disabled at the project owner's request.
   # Restore this job and its deployment dependency after fixing printer SDK
