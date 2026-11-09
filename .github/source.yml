@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "5cce3cb056f3fb61e7c489079de3338b83d10ca7"
+  sha: "d4a440bd8f1d8d7424ea7c7fd792464425c5bc79"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42495876759
+  run_id: 42670916045
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(sequoia): add mysql baseline schema and metadata migration"
+  message: "fix(ci): retire legacy Argo deployment writes for Coreprint"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-08T15:39:18Z"
+  created_at: "2026-11-09T18:06:25Z"

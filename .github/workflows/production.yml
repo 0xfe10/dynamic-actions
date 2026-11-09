@@ -7,7 +7,6 @@ on:
 env:
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
-  DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
 
 permissions:
   actions: write
@@ -120,35 +119,3 @@ jobs:
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
             docker push ${{ steps.checkout.outputs.ali_sha }}
             docker push ${{ steps.checkout.outputs.ali_latest }}
-
-  deploy-apps:
-    name: Deploy Apps
-    runs-on: ubuntu-latest
-    needs:
-      - build-metasequoia-image
-      - build-sequoia-image
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/coreprint-server
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          source_context: "true"
-
-      - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-production-coreprint-hk0
-          changes: |
-            {
-              "argocd/apps/coreprint-hk0/overlays/production/values.yaml": {
-                "app.metasequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-metasequoia:sha-${{ env.SHORT_SHA }}",
-                "app.sequoia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_coreprint-sequoia:sha-${{ env.SHORT_SHA }}"
-              }
-            }
