@@ -1,0 +1,102 @@
+name: "[knowledge] Staging"
+
+on:
+  push:
+    branches:
+      - "**"
+
+env:
+  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
+  DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
+
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
+jobs:
+  ensure-main:
+    name: Ensure main
+    runs-on: ubuntu-latest
+    outputs:
+      ENSURE_MAIN: ${{ steps.ensure_main.outputs.matches }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Ensure main
+        id: ensure_main
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/knowledge
+          branches: main
+
+  build-apps:
+    name: Build
+    runs-on: ubuntu-latest
+    needs:
+      - ensure-main
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
+    strategy:
+      matrix:
+        include:
+          - package: api
+            dockerfile: manifest/docker/Dockerfile
+          - package: web
+            dockerfile: manifest/docker/Dockerfile.web
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Checkout
+        id: checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/knowledge
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: knowledge-${{ matrix.package }}
+          acr_namespace: coohub
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
+          registry: ${{ env.DOCKER_REGISTRY }}
+
+      - name: Docker login (Aliyun)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
+          password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
+          registry: ${{ env.DOCKER_REGISTRY_ALI }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          provenance: false
+          sbom: false
+          context: .
+          file: ${{ matrix.dockerfile }}
+          platforms: linux/amd64
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker pull ${{ steps.checkout.outputs.ghcr_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
