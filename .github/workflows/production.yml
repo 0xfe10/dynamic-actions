@@ -10,6 +10,11 @@ env:
   DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
   BYTEONE_PROTECTED_BINARY_PROTECTION: garble
 
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
 jobs:
   build-apps:
     name: Build
@@ -23,12 +28,17 @@ jobs:
             context: pkgs/front
     steps:
       - uses: actions/checkout@v6
+
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/byteone
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           submodules: recursive
+          source_context: "true"
+          image_name: byteone-${{ matrix.package.name }}
+          acr_namespace: coohub
 
       - name: Check
         working-directory: pkgs/${{ matrix.package.name }}
@@ -38,8 +48,8 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -48,19 +58,6 @@ jobs:
           username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
           password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
-
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -74,18 +71,30 @@ jobs:
           push: true
           # Alibaba Cloud ACR (personal edition) rejects Buildx's OCI
           # provenance attestation manifest (application/vnd.oci.empty.v1+json).
-          # Disable attestations because this build is pushed to ACR and GHCR.
           provenance: false
+          sbom: false
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           platforms: linux/amd64
           build-args: |
             ${{ matrix.package.args || '' }}
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
-            ${{ steps.tags.outputs.ali_sha }}
-            ${{ steps.tags.outputs.ali_latest }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker pull ${{ steps.checkout.outputs.ghcr_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}
 
   build-release-apps:
     name: Build Release
@@ -99,17 +108,29 @@ jobs:
             context: pkgs/front
     steps:
       - uses: actions/checkout@v6
+
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/byteone
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           submodules: recursive
+          source_context: "true"
+          image_name: byteone-${{ matrix.package.name }}-release
+          acr_namespace: coohub
 
       - name: Check
         working-directory: pkgs/${{ matrix.package.name }}
         run: |
           ls -la
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
+          registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -117,17 +138,6 @@ jobs:
           username: ${{ secrets.CR_ALI_USERNAME_JOECHOW }}
           password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
-
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "release_sha=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}-release:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "release_latest=${{ env.DOCKER_REGISTRY_ALI }}/coohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}-release:latest" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -142,45 +152,27 @@ jobs:
           # Alibaba Cloud ACR (personal edition) rejects Buildx's OCI
           # provenance attestation manifest (application/vnd.oci.empty.v1+json).
           provenance: false
+          sbom: false
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           platforms: linux/amd64
           build-args: |
             BYTEONE_BINARY_PROTECTION=${{ env.BYTEONE_PROTECTED_BINARY_PROTECTION }}
             ${{ matrix.package.args || '' }}
-          tags: |
-            ${{ steps.tags.outputs.release_sha }}
-            ${{ steps.tags.outputs.release_latest }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
-  deploy-apps:
-    name: Deploy Apps
-    runs-on: ubuntu-latest
-    needs:
-      - build-release-apps
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - name: Push release to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
         with:
-          repository: prtmax/byteone
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - uses: benjlevesque/short-sha@v3.0
-      - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-production-byteone-sz1
-          changes: |
-            {
-              "argocd/apps/byteone-sz1/overlays/production/values.yaml": {
-                "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-core-release:sha-${{ env.SHA }}",
-                "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/coohub/${{ env.REPO_NAME }}_byteone-front-release:sha-${{ env.SHA }}"
-              }
-            }
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker pull ${{ steps.checkout.outputs.ghcr_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}

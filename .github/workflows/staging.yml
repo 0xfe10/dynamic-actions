@@ -9,6 +9,11 @@ env:
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
 
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
 jobs:
   ensure-main:
     name: Ensure main
@@ -40,12 +45,17 @@ jobs:
             context: pkgs/front
     steps:
       - uses: actions/checkout@v6
+
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/byteone
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
           submodules: recursive
+          source_context: "true"
+          image_name: byteone-${{ matrix.package.name }}
+          acr_namespace: xoohub
 
       - name: Check
         working-directory: pkgs/${{ matrix.package.name }}
@@ -55,29 +65,16 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
-      - name: Docker login
+      - name: Docker login (Aliyun)
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
-
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/byteone-${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_byteone-${{ matrix.package.name }}:staging" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -92,34 +89,47 @@ jobs:
           # Alibaba Cloud ACR (personal edition) rejects Buildx's OCI
           # provenance attestation manifest (application/vnd.oci.empty.v1+json).
           provenance: false
+          sbom: false
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           platforms: linux/amd64
           build-args: |
             ${{ matrix.package.args || '' }}
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
-            ${{ steps.tags.outputs.ali_sha }}
-            ${{ steps.tags.outputs.ali_staging }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            docker pull ${{ steps.checkout.outputs.ghcr_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
 
   deploy-apps:
     name: Deploy Apps
     runs-on: ubuntu-latest
     needs:
+      - ensure-main
       - build-apps
+    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true'
     steps:
       - uses: actions/checkout@v6
+
       - name: Checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/byteone
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
 
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - uses: benjlevesque/short-sha@v3.0
       - name: Deploy
         uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
         with:
@@ -131,7 +141,7 @@ jobs:
           changes: |
             {
               "argocd/apps/byteone-hk0/overlays/staging/values.yaml": {
-                "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHA }}",
-                "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHA }}"
+                "app.core.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-core:sha-${{ env.SHORT_SHA }}",
+                "app.front.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_byteone-front:sha-${{ env.SHORT_SHA }}"
               }
             }
