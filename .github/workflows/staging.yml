@@ -81,6 +81,10 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
             docker push ${{ steps.checkout.outputs.ali_sha }}
@@ -136,6 +140,10 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
             docker push ${{ steps.checkout.outputs.ali_sha }}
