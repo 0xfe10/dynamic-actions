@@ -108,6 +108,6 @@ jobs:
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
-            docker push ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
-            docker push ${{ steps.checkout.outputs.ali_sha }}
-            docker push ${{ steps.checkout.outputs.ali_staging }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_image }}:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_sha }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_staging }}

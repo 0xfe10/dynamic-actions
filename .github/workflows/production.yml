@@ -91,9 +91,9 @@ jobs:
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
-            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
-            docker push ${{ steps.checkout.outputs.ali_sha }}
-            docker push ${{ steps.checkout.outputs.ali_latest }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_sha }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_latest }}
 
   build-release-apps:
     name: Build Release
@@ -173,6 +173,6 @@ jobs:
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
             docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
-            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
-            docker push ${{ steps.checkout.outputs.ali_sha }}
-            docker push ${{ steps.checkout.outputs.ali_latest }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_sha }}
+            docker push --platform linux/amd64 ${{ steps.checkout.outputs.ali_latest }}
