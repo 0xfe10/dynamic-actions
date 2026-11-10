@@ -3,15 +3,15 @@ source:
   repository: "prtmax/onestore"
   repository_id: 1130085325
   sha: "8bd3c5adfb3ee3129e41b253f37961ecd2b67441"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 42735070998
+  ref_type: "tag"
+  ref_name: "v0.0.9"
+  run_id: 42804445186
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "chore(ci): adopt kangumi source_context image tagging and repository packages"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T01:20:28Z"
+  created_at: "2026-11-10T11:04:42Z"
