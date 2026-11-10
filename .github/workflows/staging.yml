@@ -8,6 +8,11 @@ env:
   DOCKER_REGISTRY: ghcr.io
   FRONTEND_API_URL: https://hub-stg.iprtapp.com
 
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
 jobs:
   build-apps:
     name: Build
@@ -20,12 +25,15 @@ jobs:
           - package: freesia
             build-args: "NEXT_PUBLIC_API_URL=https://hub-staging.iprtapp.com"
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/aynhub
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: aynhub-${{ matrix.package }}
 
       - name: Check
         working-directory: ${{ matrix.package }}
@@ -35,11 +43,9 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
-
-      - uses: benjlevesque/short-sha@v3.0
 
       - name: Build and publish docker image
         uses: docker/build-push-action@v6
@@ -47,37 +53,8 @@ jobs:
           push: true
           context: ${{ matrix.package }}
           file: ${{ matrix.package }}/Dockerfile
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-${{ matrix.package }}:sha-${{ env.SHA }}-staging
+          provenance: false
+          sbom: false
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
           build-args: ${{ matrix.build-args }}
-
-  deploy-apps:
-    name: Deploy Apps
-    runs-on: ubuntu-latest
-    needs:
-      - build-apps
-    steps:
-      - uses: actions/checkout@v5
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/aynhub
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-
-      - uses: benjlevesque/short-sha@v3.0
-      - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: cortex-staging-aynhub-hk0
-          changes: |
-            {
-              "argocd/cortex/aynhub-hk0/overlays/staging/begonia/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-begonia:sha-${{ env.SHA }}-staging"
-              },
-              "argocd/cortex/aynhub-hk0/overlays/staging/freesia/deployment-patch.yaml": {
-                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynhub-freesia:sha-${{ env.SHA }}-staging"
-              }
-            }
