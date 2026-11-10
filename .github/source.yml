@@ -3,15 +3,15 @@ source:
   repository: "prtmax/sw-aiot"
   repository_id: 1094647129
   sha: "f8c49e619cc5d02cb20771de7b5325c653cf2c8c"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 42735023804
+  ref_type: "tag"
+  ref_name: "v0.0.11"
+  run_id: 42804441628
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "chore(ci): adopt kangumi source_context image tagging and repository packages"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T01:20:09Z"
+  created_at: "2026-11-10T11:04:42Z"
