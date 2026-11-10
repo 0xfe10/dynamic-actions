@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/wiot"
   repository_id: 925925323
-  sha: "6fa9fdcfcb8bac936c318e920550332302986b8e"
-  ref_type: "tag"
-  ref_name: "v0.0.13"
-  run_id: 42804437402
+  sha: "230ae09678ca2c5599c234d8151ec1ba3401d645"
+  ref_type: "branch"
+  ref_name: "fix/supported-node-runtime"
+  run_id: 42804760983
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(ci): adopt kangumi source_context image tagging and repository packages"
+  message: "fix(build): use a supported Node.js runtime"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T11:04:42Z"
+  created_at: "2026-11-10T11:06:56Z"
