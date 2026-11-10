@@ -1,0 +1,17 @@
+schema_version: 2
+source:
+  repository: "prtmax/labelix"
+  repository_id: 1110430942
+  sha: "0418847a60a22ae2ade5c52a9cbcb67fda6516b7"
+  ref_type: "branch"
+  ref_name: "ops/spectra-reporting-releases"
+  run_id: 42807863932
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-branch.yml"
+execution_repository: "0xfe10/dynamic-actions"
+policy: null
+commit:
+  message: "fix(ci): isolate the reporting release image and Flux ownership (#205)"
+  authors: ["0xfe10"]
+dispatch:
+  created_at: "2026-11-10T11:29:34Z"

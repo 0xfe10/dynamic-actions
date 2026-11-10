@@ -1,3 +1,0 @@
-fix(spectra): default candidate dashboards to last week (#200)
-
-Co-authored-by: Fangjc <admin@gcoll.top>
