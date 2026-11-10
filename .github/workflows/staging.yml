@@ -60,6 +60,7 @@ jobs:
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
 
       - name: Build ${{ matrix.binary }} binary
         uses: houseabsolute/actions-rust-cross@v0
@@ -93,10 +94,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: labelix-rosaceae
+          acr_namespace: xoohub
 
       - name: Download binaries
         uses: actions/download-artifact@v4
@@ -111,8 +116,8 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -122,44 +127,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rosaceae:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rosaceae:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:staging" >> $GITHUB_OUTPUT
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build and push docker image (with retry)
-        uses: nick-fields/retry@v3
+      - name: Build and push docker image
+        uses: docker/build-push-action@v6
         with:
-          timeout_minutes: 30
-          max_attempts: 5
-          retry_wait_seconds: 30
-          command: |
-            docker buildx build \
-              --push \
-              --provenance=false \
-              --file rosaceae/Dockerfile \
-              --tag "${{ steps.tags.outputs.ghcr_sha }}" \
-              --tag "${{ steps.tags.outputs.ghcr_staging }}" \
-              rosaceae
-
-      - name: Pull GHCR image for Aliyun ACR (with retry)
-        uses: nick-fields/retry@v3
-        with:
-          timeout_minutes: 10
-          max_attempts: 5
-          retry_wait_seconds: 30
-          command: docker pull "${{ steps.tags.outputs.ghcr_sha }}"
+          push: true
+          provenance: false
+          sbom: false
+          context: rosaceae
+          file: rosaceae/Dockerfile
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -168,11 +145,14 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            set -e
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_staging }}
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
 
   build-camellia-image:
     name: Build camellia image
@@ -183,16 +163,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: labelix-camellia
+          acr_namespace: xoohub
 
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -202,28 +186,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-camellia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-camellia:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:staging" >> $GITHUB_OUTPUT
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
+          provenance: false
+          sbom: false
           context: .
           file: theaceae/apps/camellia/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
           secrets: |
             github_token=${{ secrets.GH_TOKEN_0XFE10 }}
 
@@ -234,10 +206,14 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_staging }}
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
 
   build-rubus-image:
     name: Build rubus image
@@ -248,16 +224,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: labelix-rubus
+          acr_namespace: xoohub
 
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -267,28 +247,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rubus:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-rubus:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rubus:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-rubus:staging" >> $GITHUB_OUTPUT
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
+          provenance: false
+          sbom: false
           context: .
           file: rosaceae/cli/rubus/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -297,31 +265,38 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_staging }}
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
 
   build-ar-recognition-image:
-    name: Build and deploy AR recognition image
+    name: Build AR recognition image
     runs-on: ubuntu-latest
     needs:
       - ensure-main
-      - deploy-apps
-    if: needs.ensure-main.outputs.ENSURE_MAIN == 'true' && vars.ENABLE_AR_RECOGNITION_RELEASE == 'true'
+    if: ${{ needs.ensure-main.outputs.ENSURE_MAIN == 'true' && vars.ENABLE_AR_RECOGNITION_RELEASE == 'true' }}
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: labelix-ar-recognition
+          acr_namespace: xoohub
 
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -331,28 +306,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-ar-recognition:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-ar-recognition:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-ar-recognition:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-ar-recognition:staging" >> $GITHUB_OUTPUT
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
+          provenance: false
+          sbom: false
           context: rosaceae/cli/ar_recognition
           file: rosaceae/cli/ar_recognition/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -361,25 +324,14 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_staging }}
-
-      - name: Deploy AR recognition
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-staging-labelix-hk0
-          changes: |
-            {
-              "argocd/apps/labelix-hk0/overlays/staging/values.yaml": {
-                "app.ar_recognition.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-ar-recognition:sha-${{ env.SHA }}"
-              }
-            }
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
 
   build-sorbus-image:
     name: Build sorbus image
@@ -390,16 +342,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/labelix
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: labelix-sorbus
+          acr_namespace: xoohub
 
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
@@ -409,28 +365,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-sorbus:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_staging=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/labelix-sorbus:staging" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-sorbus:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_labelix-sorbus:staging" >> $GITHUB_OUTPUT
-
       - name: Build and push docker image
         uses: docker/build-push-action@v6
         with:
           push: true
+          provenance: false
+          sbom: false
           context: .
           file: rosaceae/cli/sorbus/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_staging }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -439,52 +383,14 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_staging }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_staging }}
-
-  deploy-apps:
-    name: Deploy Apps
-    runs-on: ubuntu-latest
-    needs:
-      - build-rosaceae-image
-      - build-camellia-image
-      - build-rubus-image
-      - build-sorbus-image
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/labelix
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - uses: benjlevesque/short-sha@v3.0
-      - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-staging-labelix-hk0
-          changes: |
-            {
-              "argocd/apps/labelix-hk0/overlays/staging/values.yaml": {
-                "app.spectra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.kerria_serve.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.kerria_worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.malus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.pyrus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rosaceae:sha-${{ env.SHA }}",
-                "app.camellia.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-camellia:sha-${{ env.SHA }}",
-                "app.rubus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-rubus:sha-${{ env.SHA }}",
-                "app.sorbus.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_labelix-sorbus:sha-${{ env.SHA }}"
-              }
-            }
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            target_image="${{ steps.checkout.outputs.ali_image }}:${source_image##*:}"
+            docker tag "$source_image" "$target_image"
+            docker push "$target_image"
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_staging }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_staging }}
 
   cleanup-rosaceae-binary-artifacts:
     name: Cleanup rosaceae binary artifacts
@@ -493,8 +399,7 @@ jobs:
       - ensure-main
       - build-rosaceae-binaries
       - build-rosaceae-image
-      - deploy-apps
-    if: ${{ needs.ensure-main.outputs.ENSURE_MAIN == 'true' && needs.deploy-apps.result == 'success' }}
+    if: ${{ always() && needs.ensure-main.outputs.ENSURE_MAIN == 'true' }}
     steps:
       - name: Delete rosaceae binary artifacts
         uses: geekyeggo/delete-artifact@v6
