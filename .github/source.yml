@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/494ServiceSimulator"
   repository_id: 1271940592
-  sha: "2e10cc8d593a434ac1266ca822872ad53990c07f"
+  sha: "e80723a7ebfecab8fc05695bb2e1c1104a14c5b0"
   ref_type: "branch"
   ref_name: "fix/linked-image-publication"
-  run_id: 42804310238
+  run_id: 42804597889
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): associate published images with the source repository"
+  message: "fix(ci): mirror only the application platform image"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T11:03:51Z"
+  created_at: "2026-11-10T11:05:47Z"
