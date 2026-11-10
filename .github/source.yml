@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "cbcad10fc3731e19b65c414ac7e6072c70bea241"
+  sha: "404f5cf92c9b3bdb27e66df8ae28d95b62b581c9"
   ref_type: "branch"
-  ref_name: "fix/psdk-navigation"
-  run_id: 42794260522
+  ref_name: "main"
+  run_id: 42794514457
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(psdk): keep navigation consistent across documentation pages"
+  message: "fix(psdk): keep navigation consistent across documentation pages (#14)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T09:52:05Z"
+  created_at: "2026-11-10T09:53:51Z"
