@@ -3,15 +3,15 @@ source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
   sha: "106691daa91d14476fee9ba309ff150a944d892c"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 42789299573
+  ref_type: "tag"
+  ref_name: "v0.7.69"
+  run_id: 42789358450
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "docs(psdk): align bilingual references with SDK command implementations (#13)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T09:16:30Z"
+  created_at: "2026-11-10T09:16:52Z"
