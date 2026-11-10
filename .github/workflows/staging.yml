@@ -86,17 +86,16 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          # Alibaba Cloud ACR (personal edition) rejects Buildx's OCI
-          # provenance attestation manifest (application/vnd.oci.empty.v1+json).
-          provenance: false
+          # Publish an annotated OCI index to GHCR; the docker pull/tag/push
+          # mirror below sends only the platform image to Alibaba Cloud ACR.
+          provenance: mode=min
           sbom: false
           context: ${{ matrix.package.context }}
           file: pkgs/${{ matrix.package.name }}/Dockerfile
           platforms: linux/amd64
-          build-args: |
-            ${{ matrix.package.args || '' }}
           tags: ${{ steps.checkout.outputs.ghcr_tags }}
           labels: ${{ steps.checkout.outputs.oci_labels }}
+          annotations: index:org.opencontainers.image.source=${{ steps.checkout.outputs.oci_source }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
