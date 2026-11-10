@@ -3,15 +3,15 @@ source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
   sha: "bbd63a44762cc9f949c1ec0fb29e5a3b40c6ba1f"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 42672490818
-  run_attempt: 2
-  workflow: ".github/workflows/trigger-branch.yml"
+  ref_type: "tag"
+  ref_name: "v0.1.1"
+  run_id: 42771172671
+  run_attempt: 1
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "fix(ci): mirror numeric staging tags to Hong Kong ACR"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-09T18:45:42Z"
+  created_at: "2026-11-10T06:50:21Z"
