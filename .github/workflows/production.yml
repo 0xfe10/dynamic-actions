@@ -5,11 +5,14 @@ on:
     tags:
       - 'v*-endfather'
 env:
-  # DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
-  # DOCKER_REGISTRY: uhub.service.ucloud.cn
   DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+
+permissions:
+  actions: write
+  contents: read
+  packages: write
 
 jobs:
   build-app-java:
@@ -32,6 +35,7 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          source_context: 'true'
 
       - name: Build ${{ matrix.package }}
         run: |
@@ -56,8 +60,6 @@ jobs:
         package:
           - LAUNCHER: launchers/analysis
             SLUG: launcher-analysis
-          # - LAUNCHER: launchers/boogie
-          #   SLUG: launcher-boogie
           - LAUNCHER: launchers/labelexpert
             SLUG: launcher-labelexpert
           - LAUNCHER: launchers/metaprint
@@ -73,10 +75,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          source_context: 'true'
+          image_name: ${{ matrix.package.SLUG }}
+          acr_namespace: xoohub
 
       - uses: actions/download-artifact@v4
         with:
@@ -86,8 +92,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -96,28 +102,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v1.2
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ matrix.package.SLUG }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ matrix.package.SLUG }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ matrix.package.SLUG }}:latest" >> $GITHUB_OUTPUT
-
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: false
+          push: true
+          provenance: false
+          sbom: false
           context: babosa/${{ matrix.package.LAUNCHER }}
           file: babosa/${{ matrix.package.LAUNCHER }}/docker/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -126,10 +120,12 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_latest }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}
 
       - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: failure()
@@ -151,7 +147,6 @@ jobs:
     strategy:
       matrix:
         project:
-          #- boogie
           - cornerstone
           - analysis
     steps:
@@ -161,20 +156,7 @@ jobs:
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-
-      #      - name: Migrate boogie
-      #        uses: docker://liquibase/liquibase:4.23
-      #        if: ${{ matrix.project == 'boogie' }}
-      #        env:
-      #          LIQUIBASE_COMMAND_DRIVER: org.mariadb.jdbc.Driver
-      #        with:
-      #          args: >
-      #            --search-path=./traice/boogie/liquibase
-      #            update
-      #            --url="jdbc:mariadb://${{ secrets.BABOSA_DB_BOOGIE_HOST_PRD }}/boogie_prd?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
-      #            --username=${{ secrets.BABOSA_DB_BOOGIE_USER_PRD }}
-      #            --password=${{ secrets.BABOSA_DB_BOOGIE_PASSWORD_PRD }}
-      #            --changelog-file=master.xml
+          source_context: 'true'
 
       - name: Migrate cornerstone
         uses: docker://liquibase/liquibase:4.23
@@ -226,16 +208,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          source_context: 'true'
+          image_name: madman-${{ matrix.package }}
+          acr_namespace: xoohub
 
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -244,28 +230,16 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v1.2
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/madman-${{ matrix.package }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_madman-${{ matrix.package }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_madman-${{ matrix.package }}:latest" >> $GITHUB_OUTPUT
-
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: false
+          push: true
+          provenance: false
+          sbom: false
           context: madman
           file: madman/docker/${{ matrix.package }}.Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -274,10 +248,12 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_latest }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}
 
       - uses: repotea-workspace/kangumi/github-actions/tepusher@main
         if: failure()
@@ -302,16 +278,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/endfather
           token: '${{ secrets.GH_TOKEN_0XFE10 }}'
+          source_context: 'true'
+          image_name: frontend-${{ matrix.package.name }}
+          acr_namespace: xoohub
 
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -320,13 +300,9 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
 
-      - uses: benjlevesque/short-sha@v1.2
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
 
       - name: prepare deps
         working-directory: ${{ matrix.package.path }}
@@ -340,23 +316,16 @@ jobs:
           cd ${{ matrix.package.path }}
           mv ${{ matrix.package.dist }} target
 
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/frontend-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_frontend-${{ matrix.package.name }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_frontend-${{ matrix.package.name }}:latest" >> $GITHUB_OUTPUT
-
       - name: Publish docker image
         uses: docker/build-push-action@v6
         with:
-          push: false
+          push: true
+          provenance: false
+          sbom: false
           context: ${{ matrix.package.path }}
           file: ${{ matrix.package.path }}/docker/Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -365,53 +334,12 @@ jobs:
           max_attempts: 5
           retry_wait_seconds: 30
           command: |
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-            docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
-            docker push ${{ steps.tags.outputs.ali_sha }}
-            docker push ${{ steps.tags.outputs.ali_latest }}
-
-  deploy-apps:
-    name: Deploy Apps
-    runs-on: ubuntu-latest
-    needs:
-      - migrate-db
-      - build-docker-image-madman
-      - build-docker-image-frontend
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/endfather
-          token: '${{ secrets.GH_TOKEN_0XFE10 }}'
-
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: '${{ secrets.DEPLOY_KEY_GITOPS_AYN }}'
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-production-babosa-hk0
-          changes: |
-            {
-              "argocd/apps/babosa-hk0/production/values.yaml": {
-                "app.launcher_universal.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-universal:sha-${{ env.SHA }}",
-                "app.launcher_labelexpert.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-labelexpert:sha-${{ env.SHA }}",
-                "app.launcher_metaprint.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-metaprint:sha-${{ env.SHA }}",
-                "app.launcher_woodii.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-woodii:sha-${{ env.SHA }}",
-                "app.launcher_webhook.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-webhook:sha-${{ env.SHA }}",
-                "app.launcher_analysis.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_launcher-analysis:sha-${{ env.SHA }}",
-                "app.task_infra.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_task-infra:sha-${{ env.SHA }}",
-                "app.madman_realtime.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_madman-realtime:sha-${{ env.SHA }}",
-                "app.frontend_woodii.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/${{ env.REPO_NAME }}_frontend-woodii:sha-${{ env.SHA }}"
-              }
-            }
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_sha }}
+            docker tag ${{ steps.checkout.outputs.ghcr_sha }} ${{ steps.checkout.outputs.ali_latest }}
+            docker push ${{ steps.checkout.outputs.ali_image }}:${{ env.SOURCE_TAG }}
+            docker push ${{ steps.checkout.outputs.ali_sha }}
+            docker push ${{ steps.checkout.outputs.ali_latest }}
 
   clean-artifacts:
     name: Clean artifacts
