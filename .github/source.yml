@@ -3,15 +3,15 @@ source:
   repository: "prtmax/byteone"
   repository_id: 1036077198
   sha: "48871376b84f3d93b692c0cad8828aa482d445d5"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 42804824874
+  ref_type: "tag"
+  ref_name: "v0.7.47"
+  run_id: 42804935486
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "fix(ci): associate published images with the source repository (#42)\n\n* fix(ci): associate published images with the source repository\n\n* fix(ci): mirror only the application platform image"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T11:07:30Z"
+  created_at: "2026-11-10T11:08:13Z"
