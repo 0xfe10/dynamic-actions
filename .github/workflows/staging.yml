@@ -6,11 +6,16 @@ on:
       - "**"
 
 env:
+  DOCKER_REGISTRY: ghcr.io
   DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
   DOCKER_REGISTRY_ALI_SZ: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
   DOCKER_REGISTRY_ALI_SZ_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
-  IMAGE_NAME: image-review
+
+permissions:
+  actions: write
+  contents: read
+  packages: write
 
 jobs:
   ensure-main:
@@ -38,14 +43,21 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/Image-review
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: image-review
+          acr_namespace: xoohub
 
-      - name: Check
-        run: |
-          ls -la
+      - name: Docker login (GHCR)
+        uses: docker/login-action@v3
+        with:
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
+          registry: ${{ env.DOCKER_REGISTRY }}
 
       - name: Docker login (Aliyun)
         uses: docker/login-action@v3
@@ -61,22 +73,6 @@ jobs:
           password: ${{ secrets.CR_ALI_PASSWORD_JOECHOW }}
           registry: ${{ env.DOCKER_REGISTRY_ALI_SZ }}
 
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set image names
-        run: |
-          REPO_SLUG="$(echo "$GITHUB_REPOSITORY" | tr '[:upper:]' '[:lower:]')"
-          echo "REPO_SLUG=${REPO_SLUG}" >> $GITHUB_ENV
-          echo "REPO_NAME=${REPO_SLUG//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_staging=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:staging" >> $GITHUB_OUTPUT
-          echo "ali_sz_sha=${{ env.DOCKER_REGISTRY_ALI_SZ }}/coohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ali_sz_staging=${{ env.DOCKER_REGISTRY_ALI_SZ }}/coohub/${{ env.REPO_NAME }}_${{ env.IMAGE_NAME }}:staging" >> $GITHUB_OUTPUT
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -87,11 +83,26 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          provenance: false
+          sbom: false
           context: .
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ steps.tags.outputs.ali_sha }}
-            ${{ steps.tags.outputs.ali_staging }}
-            ${{ steps.tags.outputs.ali_sz_sha }}
-            ${{ steps.tags.outputs.ali_sz_staging }}
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
+
+      - name: Push to Aliyun ACR (with retry)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
+          command: |
+            source_image="${{ steps.checkout.outputs.ghcr_sha_run }}"
+            run_tag="${source_image##*:}"
+            docker buildx imagetools create -t "${{ steps.checkout.outputs.ali_image }}:${run_tag}" "$source_image"
+            docker buildx imagetools create -t "${{ steps.checkout.outputs.ali_sha }}" "$source_image"
+            docker buildx imagetools create -t "${{ steps.checkout.outputs.ali_staging }}" "$source_image"
+            docker buildx imagetools create -t "${{ env.DOCKER_REGISTRY_ALI_SZ }}/coohub/${{ env.REPO_NAME }}_image-review:${run_tag}" "$source_image"
+            docker buildx imagetools create -t "${{ env.DOCKER_REGISTRY_ALI_SZ }}/coohub/${{ env.REPO_NAME }}_image-review:sha-${{ env.SHORT_SHA }}" "$source_image"
+            docker buildx imagetools create -t "${{ env.DOCKER_REGISTRY_ALI_SZ }}/coohub/${{ env.REPO_NAME }}_image-review:staging" "$source_image"
