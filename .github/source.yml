@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "16a86cb19b9d5b6805da3ec85d1b61b69915ebe7"
+  sha: "680b0d2f12483fc5968debc22b1d1b5079b04e66"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42554941801
+  run_id: 42735095477
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule for FeatureNavigation capability checks (#411)"
+  message: "chore(ci): adopt kangumi source_context image tagging and repository packages"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-09T03:11:02Z"
+  created_at: "2026-11-10T01:20:46Z"
