@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/qurator"
   repository_id: 1035701413
-  sha: "d5d2efc5bb9115f4e34397731bbafec6bfe28692"
+  sha: "c6a02e6316ccc687cc80fbe9bda657836f040b62"
   ref_type: "branch"
-  ref_name: "fix/pinned-build-toolchain"
-  run_id: 42804938034
+  ref_name: "main"
+  run_id: 42805186943
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(build): pin pnpm to the lockfile-compatible toolchain"
+  message: "fix(build): pin pnpm to the lockfile-compatible toolchain (#6)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T11:08:13Z"
+  created_at: "2026-11-10T11:10:00Z"
