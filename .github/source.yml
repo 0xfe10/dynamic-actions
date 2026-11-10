@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "19ce881113ff899c49aac1426dcc558e0527e555"
+  sha: "106691daa91d14476fee9ba309ff150a944d892c"
   ref_type: "branch"
-  ref_name: "docs/align-psdk-reference"
-  run_id: 42789056726
+  ref_name: "main"
+  run_id: 42789299573
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(psdk): align bilingual references with SDK command implementations"
+  message: "docs(psdk): align bilingual references with SDK command implementations (#13)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T09:14:47Z"
+  created_at: "2026-11-10T09:16:30Z"
