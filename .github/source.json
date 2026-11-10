@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/labelix",
+    "repository_id": 1110430942,
+    "sha": "84a0e8c7a35c3ba52f5dbc83fb7c67bbe1bb7deb",
+    "ref_type": "branch",
+    "ref_name": "ops/spectra-reporting-releases",
+    "run_id": 42807630231,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}
