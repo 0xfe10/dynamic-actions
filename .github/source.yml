@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "4a089ac69cfd5f8804de65a25f0e71b8a23e5d7a"
+  sha: "b1f7ef9c332445225d0338ba92b0cc9f3e08ea28"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42735089302
+  ref_name: "fix/standard-image-releases"
+  run_id: 42798183911
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(ci): adopt kangumi source_context image tagging and repository packages"
+  message: "fix(ci): publish deployed AR worker through standard image releases"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T01:20:42Z"
+  created_at: "2026-11-10T10:19:51Z"
