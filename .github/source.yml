@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/aynhub"
   repository_id: 947932229
-  sha: "3287853735a6a30ee1bab1e499a5729772935312"
+  sha: "a7f23a1f8d845512f52caec5c54d800dbb6df360"
   ref_type: "branch"
-  ref_name: "fix/pinned-build-toolchain"
-  run_id: 42804946272
+  ref_name: "main"
+  run_id: 42805186988
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(build): pin pnpm to the lockfile-compatible toolchain"
+  message: "fix(build): pin pnpm to the lockfile-compatible toolchain (#12)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-10T11:08:15Z"
+  created_at: "2026-11-10T11:09:58Z"
