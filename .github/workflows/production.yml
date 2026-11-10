@@ -7,10 +7,11 @@ on:
 
 env:
   DOCKER_REGISTRY: ghcr.io
-  # DOCKER_REGISTRY_ALI: crpi-uhy920dintikwpn3.cn-shenzhen.personal.cr.aliyuncs.com
-  # DOCKER_REGISTRY_ALI_VPC: crpi-uhy920dintikwpn3-vpc.cn-shenzhen.personal.cr.aliyuncs.com
-  # DOCKER_REGISTRY_ALI: registry.cn-hongkong.aliyuncs.com
-  # DOCKER_REGISTRY_ALI_VPC: registry-vpc.cn-hongkong.aliyuncs.com
+
+permissions:
+  actions: write
+  contents: read
+  packages: write
 
 jobs:
   build-docker-image:
@@ -19,37 +20,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
+        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/wiot
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          source_context: "true"
+          image_name: wiot
 
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
           registry: ${{ env.DOCKER_REGISTRY }}
-
-      # - name: Docker login (Aliyun)
-      #   uses: docker/login-action@v3
-      #   with:
-      #     username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
-      #     password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
-      #     registry: ${{ env.DOCKER_REGISTRY_ALI }}
-
-      - uses: benjlevesque/short-sha@v3.0
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - name: Set image tags
-        id: tags
-        run: |
-          echo "ghcr_sha=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-          echo "ghcr_latest=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:latest" >> $GITHUB_OUTPUT
-      #     echo "ali_sha=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_wiot:sha-${{ env.SHA }}" >> $GITHUB_OUTPUT
-      #     echo "ali_latest=${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_wiot:latest" >> $GITHUB_OUTPUT
 
       - name: Build and push docker image
         uses: docker/build-push-action@v6
@@ -57,50 +41,7 @@ jobs:
           push: true
           context: .
           file: Dockerfile
-          tags: |
-            ${{ steps.tags.outputs.ghcr_sha }}
-            ${{ steps.tags.outputs.ghcr_latest }}
-
-      # - name: Push to Aliyun ACR (with retry)
-      #   uses: nick-fields/retry@v3
-      #   with:
-      #     timeout_minutes: 10
-      #     max_attempts: 5
-      #     retry_wait_seconds: 30
-      #     command: |
-      #       docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_sha }}
-      #       docker tag ${{ steps.tags.outputs.ghcr_sha }} ${{ steps.tags.outputs.ali_latest }}
-      #       docker push ${{ steps.tags.outputs.ali_sha }}
-      #       docker push ${{ steps.tags.outputs.ali_latest }}
-
-  deploy-apps:
-    name: Deploy Apps
-    runs-on: ubuntu-latest
-    needs:
-      - build-docker-image
-    steps:
-      - uses: actions/checkout@v6
-      - name: Checkout
-        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
-        with:
-          repository: prtmax/wiot
-          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-
-      - name: Set repo name
-        run: echo "REPO_NAME=${GITHUB_REPOSITORY//\//_}" >> $GITHUB_ENV
-
-      - uses: benjlevesque/short-sha@v3.0
-      - name: Deploy
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
-          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
-          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
-          app_name: apps-production-nova-hk0
-          changes: |
-            {
-              "argocd/apps/nova-hk0/overlays/production/wiot/deployment-patch.yaml": {
-                "0.value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/wiot:sha-${{ env.SHA }}"
-              }
-            }
+          provenance: false
+          sbom: false
+          tags: ${{ steps.checkout.outputs.ghcr_tags }}
+          labels: ${{ steps.checkout.outputs.oci_labels }}
