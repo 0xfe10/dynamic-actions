@@ -79,10 +79,11 @@ jobs:
           context: .
           file: Dockerfile
           platforms: linux/amd64
-          provenance: false
+          provenance: mode=min
           sbom: false
           tags: ${{ steps.checkout.outputs.ghcr_tags }}
           labels: ${{ steps.checkout.outputs.oci_labels }}
+          annotations: index:org.opencontainers.image.source=${{ steps.checkout.outputs.oci_source }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
