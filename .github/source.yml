@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8165dfcaea5909ad171e91323a201f71500a8ab5"
+  sha: "8fe75f4054287651c4318fee0c3c74f0d3a9fc53"
   ref_type: "branch"
-  ref_name: "chore/bump-orion-naming-assets"
-  run_id: 42991046315
+  ref_name: "main"
+  run_id: 42993149584
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): adopt normalized filenames and resource aliases"
+  message: "chore(orion): adopt normalized filenames and resource aliases (#420)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T08:56:56Z"
+  created_at: "2026-11-11T09:12:09Z"
