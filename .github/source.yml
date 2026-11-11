@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7bd720afadaa5b8b808c841df6b41e0730bdd1dd"
+  sha: "19ff160a0f0b78aa22fe386f26701fe1cf080c46"
   ref_type: "branch"
   ref_name: "feat/release-source-ref"
-  run_id: 42959938053
+  run_id: 42961983433
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(releasebuild): select Orion sources by Git ref"
+  message: "fix(releasebuild): authorize named executor refs and align generated client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T04:33:01Z"
+  created_at: "2026-11-11T04:52:07Z"
