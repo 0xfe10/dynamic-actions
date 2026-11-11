@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "538d2a7a8b5e8c4cfd769ea24a856447d90dca00"
+  sha: "f958a81985821f7d420cebb826eb1f23c0d4255e"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 43020631754
+  run_id: 43022101765
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): accelerate menu navigation and show a page skeleton (#428)"
+  message: "fix(vega): reset locale validation before refreshing the catalog (#429)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T12:28:36Z"
+  created_at: "2026-11-11T12:38:48Z"
