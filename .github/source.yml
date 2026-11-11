@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3d297eccd331d9131ca042c93ec13dfdfab8af3f"
+  sha: "1bf4c511518977791286d2a54af2ec633cafefb8"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43066116578
+  ref_name: "fix/action-run-callbacks"
+  run_id: 43083429228
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(releasebuild): trust the updated Runall stage workflows (#431)\n\n* fix(releasebuild): trust the updated Runall stage workflows\n\n* fix(ci): pin the Staging browser runner image"
+  message: "fix(releasebuild): accept multi-phase action run callbacks\n\nPrefix stored event fingerprints with sha256: so report-result satisfies the database check, and let executor phase updates plus a late finalize callback succeed without a conflict."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T17:14:04Z"
+  created_at: "2026-11-11T19:02:38Z"
