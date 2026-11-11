@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9cff9d82cb3e54329d7b8a918c92c09d5c3dd88e"
+  sha: "3d297eccd331d9131ca042c93ec13dfdfab8af3f"
   ref_type: "branch"
-  ref_name: "fix/oidc-stage-pins"
-  run_id: 43063126049
+  ref_name: "main"
+  run_id: 43066116578
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): pin the Staging browser runner image"
+  message: "fix(releasebuild): trust the updated Runall stage workflows (#431)\n\n* fix(releasebuild): trust the updated Runall stage workflows\n\n* fix(ci): pin the Staging browser runner image"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T16:55:58Z"
+  created_at: "2026-11-11T17:14:04Z"
