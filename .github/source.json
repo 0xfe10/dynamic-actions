@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "prtmax/aynguide",
+    "repository_id": 987538261,
+    "sha": "b754d1c6576d8bbb508d28700faa77c385ea1bb3",
+    "ref_type": "branch",
+    "ref_name": "file_print",
+    "run_id": 42938445831,
+    "run_attempt": 1,
+    "workflow": ".github/workflows/trigger-branch.yml"
+  },
+  "execution_repository": "0xfe10/dynamic-actions",
+  "policy": null
+}

@@ -7,11 +7,6 @@ on:
 env:
   DOCKER_REGISTRY: ghcr.io
 
-permissions:
-  actions: write
-  contents: read
-  packages: write
-
 jobs:
   build-apps:
     name: Build
@@ -24,13 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
-        id: checkout
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/aynguide
           token: "${{ secrets.GH_TOKEN_0XFE10 }}"
-          source_context: "true"
-          image_name: aynguide-${{ matrix.package }}
+          ref_file: .github/ref.txt
 
       - name: Check
         working-directory: ${{ matrix.package }}
@@ -40,17 +33,49 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: '0xfe10'
-          password: ${{ secrets.GH_TOKEN_0XFE10 }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.DOCKER_REGISTRY }}
 
-      - name: Publish docker image
+      - uses: benjlevesque/short-sha@v3.0
+
+      - name: Publish docker image hash
         uses: docker/build-push-action@v6
         with:
           push: true
           context: ${{ matrix.package }}
           file: ${{ matrix.package }}/Dockerfile
-          provenance: false
-          sbom: false
-          tags: ${{ steps.checkout.outputs.ghcr_tags }}
-          labels: ${{ steps.checkout.outputs.oci_labels }}
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-${{ matrix.package }}:sha-${{ env.SHA }}
+
+  deploy-apps:
+    name: Deploy Apps
+    runs-on: ubuntu-latest
+    needs:
+      - build-apps
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/aynguide
+          token: "${{ secrets.GH_TOKEN_0XFE10 }}"
+          ref_file: .github/ref.txt
+
+      - uses: benjlevesque/short-sha@v3.0
+      - name: Deploy
+        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
+        with:
+          repository: repotea-workflow/gitops-ayn
+          deploy_key: "${{ secrets.DEPLOY_KEY_GITOPS_AYN }}"
+          argocd_server: ${{ secrets.ARGOCD_AYN_SERVER }}
+          argocd_api_token: ${{ secrets.ARGOCD_AYN_API_TOKEN }}
+          app_name: apps-production-suite-hk0
+          changes: |
+            {
+              "argocd/apps/suite-hk0/overlays/production/aynguide/api/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-api:sha-${{ env.SHA }}"
+              },
+              "argocd/apps/suite-hk0/overlays/production/aynguide/frontend/deployment-patch.yaml": {
+                "[0].value": "${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/aynguide-frontend:sha-${{ env.SHA }}"
+              }
+            }
