@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "74663ca8c9c2db311f4f3de983f4f67bb3d8759a"
+  sha: "941997e54891bb20475e71e8a02ee546c2bbc30d"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42958550089
+  ref_name: "chore/sync-build-source-ref"
+  run_id: 42959412762
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(ci): retire native source registration workflow (#249)"
+  message: "chore(runtime-api): regenerate runtime client for BuildSource.ref"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T04:20:19Z"
+  created_at: "2026-11-11T04:28:10Z"
