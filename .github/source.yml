@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b36edb3461185f2e52522dcfa99c1853674c4aff"
+  sha: "3a40a0e3efeedb4148c7f0fbd26e72fafdae1e8b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43002480681
+  ref_name: "fix/vega-preferences-icon"
+  run_id: 43012037878
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule to d6c7714 (#422)"
+  message: "fix(vega): replace header preferences gear icon with PaletteIcon"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T10:18:26Z"
+  created_at: "2026-11-11T11:27:10Z"
