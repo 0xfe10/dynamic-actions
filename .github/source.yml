@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3a40a0e3efeedb4148c7f0fbd26e72fafdae1e8b"
+  sha: "016e86bec79dab097ac2780595c9cc0a3dd819e3"
   ref_type: "branch"
-  ref_name: "fix/vega-preferences-icon"
-  run_id: 43012037878
+  ref_name: "fix/vega-login-validation"
+  run_id: 43012209756
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): replace header preferences gear icon with PaletteIcon"
+  message: "fix(vega): reset field validation after successful submissions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T11:27:10Z"
+  created_at: "2026-11-11T11:28:28Z"
