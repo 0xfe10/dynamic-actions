@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "62adbc286c9d42dabea94203c5063b393c2a9f64"
+  sha: "e7e307fbac92fc66083330a02dd682a4ee580456"
   ref_type: "branch"
-  ref_name: "chore/bump-orion-widgets"
-  run_id: 42982638893
+  ref_name: "main"
+  run_id: 42984861885
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule for Orn* UI primitives"
+  message: "chore(orion): bump submodule for Orn* UI primitives (#418)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T07:52:20Z"
+  created_at: "2026-11-11T08:10:12Z"
