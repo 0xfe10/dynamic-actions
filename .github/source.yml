@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b07418e8d05911032d852d1a58017215cadb4c31"
+  sha: "e0fe4c07ef47a494c2ac999d1b920e58a5d0479a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42982460956
+  ref_name: "refactor/naming-and-assets"
+  run_id: 42987705688
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(widgets): introduce packages/core/widgets Orn* UI primitives and migrate presentations (#253)"
+  message: "refactor(orion): simplify internal filenames and asset aliases"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T07:50:48Z"
+  created_at: "2026-11-11T08:31:36Z"
