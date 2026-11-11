@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f958a81985821f7d420cebb826eb1f23c0d4255e"
+  sha: "d591b8a42aaa00aaf12e2b1496ae202dcd1f236e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43022101765
+  ref_name: "fix/oidc-stage-pins"
+  run_id: 43052339607
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): reset locale validation before refreshing the catalog (#429)"
+  message: "fix(releasebuild): trust the updated Runall stage workflows"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T12:38:48Z"
+  created_at: "2026-11-11T15:50:34Z"
