@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0e392da28888cae53ea851bdfabccd885623ecb7"
+  sha: "76f63966e010e0d74f575103f93f9d4e1953db6e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42995843241
+  ref_name: "refactor/core-packages"
+  run_id: 42997749873
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(localization): introduce LocaleKeys constants and remove style-specific key prefixes (#259)"
+  message: "refactor(core): consolidate packages/core and introduce packages/core/utils"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T09:31:22Z"
+  created_at: "2026-11-11T09:44:57Z"
