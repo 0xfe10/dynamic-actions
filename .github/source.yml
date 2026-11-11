@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c6b54a7ccefd4729b34e002ac8457381da4d2a31"
+  sha: "dbeaf7c409bc662186ca1adc655928d5708f61c8"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42493134294
+  ref_name: "chore/retire-source-registration"
+  run_id: 42957094372
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(presentation): add capability support checks to FeatureNavigation (#248)"
+  message: "chore(ci): retire native source registration workflow"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-08T15:07:03Z"
+  created_at: "2026-11-11T04:07:03Z"
