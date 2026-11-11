@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0555feb7ac2b6b946779243234ed75c7e5c9deb7"
+  sha: "a834261a1937aa79307514df1d49297e98ec06bc"
   ref_type: "branch"
-  ref_name: "fix/artifact-verify-streaming"
-  run_id: 43101272335
+  ref_name: "main"
+  run_id: 43104264062
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "fix(releasebuild): stream artifact verification in large chunks\n\nRead each verification window straight into the hasher and keep the action run fresh so a large APK is not re-downloaded from byte zero or reconciled as stalled."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T21:14:14Z"
+  created_at: "2026-11-11T21:34:53Z"
