@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a4fde1e3017f629859479f9fe9b0351598d88bb7"
+  sha: "1a1801d65dba3666b488f960170f7c4ab3050fe0"
   ref_type: "branch"
-  ref_name: "fix/rigel-build-skip-dirty-check"
-  run_id: 42979359497
+  ref_name: "main"
+  run_id: 42979505011
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): remove local git status check on overlay destinations"
+  message: "fix(rigel_build): remove local git status check on overlay destinations (#252)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T07:25:27Z"
+  created_at: "2026-11-11T07:26:31Z"
