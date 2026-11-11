@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1a1801d65dba3666b488f960170f7c4ab3050fe0"
+  sha: "64f0948c5c0eccee0419918fcf6fc3ac9338c74c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42979505011
+  ref_name: "feat/orn-widgets"
+  run_id: 42980885309
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): remove local git status check on overlay destinations (#252)"
+  message: "feat(widgets): introduce packages/core/widgets Orn* UI primitives and migrate presentations"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T07:26:31Z"
+  created_at: "2026-11-11T07:38:03Z"
