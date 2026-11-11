@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1bf4c511518977791286d2a54af2ec633cafefb8"
+  sha: "7c567d3e52c9a88f94236df74959c4718c816b37"
   ref_type: "branch"
-  ref_name: "fix/action-run-callbacks"
-  run_id: 43083429228
+  ref_name: "main"
+  run_id: 43087191265
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(releasebuild): accept multi-phase action run callbacks\n\nPrefix stored event fingerprints with sha256: so report-result satisfies the database check, and let executor phase updates plus a late finalize callback succeed without a conflict."
+  message: "fix(releasebuild): accept multi-phase action run callbacks\n\nPrefix stored event fingerprints with sha256: so report-result satisfies the database check, and let executor phase updates plus a late finalize callback succeed without a conflict.\n\nCloses #432"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T19:02:38Z"
+  created_at: "2026-11-11T19:26:28Z"
