@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e0fe4c07ef47a494c2ac999d1b920e58a5d0479a"
+  sha: "21d412c4d422759a6c0246e184a8c0e08a6bb5fa"
   ref_type: "branch"
   ref_name: "refactor/naming-and-assets"
-  run_id: 42987705688
+  run_id: 42988857296
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(orion): simplify internal filenames and asset aliases"
+  message: "fix(orion): read editor language fixtures from test directory"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T08:31:36Z"
+  created_at: "2026-11-11T08:40:17Z"
