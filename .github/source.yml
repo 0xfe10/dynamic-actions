@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "fe1dff32a97ac32a6d6b776eecc224001486f385"
+  sha: "cd7ff9da1edb99b1fce2ed5846e98697a76c8dbf"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 42937182896
+  run_id: 42946567118
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "java ISetShutdownTime \u4fee\u590d"
+  message: "emapi \u6253\u5370\u4e2d\u5f00\u76d6\u7f3a\u7eb8 \u505c\u6b62\u540e\u7eed\u5305\u53d1\u9001"
   authors: ["jiangchengze"]
 dispatch:
-  created_at: "2026-11-11T01:12:16Z"
+  created_at: "2026-11-11T02:31:24Z"
