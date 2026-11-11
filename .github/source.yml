@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8754fe009c10a71134b37dcab5e0ec9dbab54b48"
+  sha: "1178b6169522a7cd11133e0391f63812f7aae977"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42964370899
+  ref_name: "fix/oidc-stage-pins"
+  run_id: 42978389956
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(releasebuild): select Orion sources by Git ref (#416)\n\n* feat(releasebuild): select Orion sources by Git ref\n\n* fix(releasebuild): authorize named executor refs and align generated client"
+  message: "fix(releasebuild): align OIDC stage pins with current executor"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T05:13:57Z"
+  created_at: "2026-11-11T07:17:27Z"
