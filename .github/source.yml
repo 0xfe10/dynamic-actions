@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d8efc610e087bd84ff99d4b3dce0ab1b5d776c95"
+  sha: "251ed0da03070709f5b256643688f72863639604"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43015042604
+  ref_name: "feat/vega-nav-skeleton"
+  run_id: 43017830352
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): reset field validation after successful submissions (#427)"
+  message: "feat(vega): accelerate menu navigation and show a page skeleton"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T11:49:05Z"
+  created_at: "2026-11-11T12:09:07Z"
