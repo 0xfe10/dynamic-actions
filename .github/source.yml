@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/endfather"
   repository_id: 925941850
-  sha: "bcf9fe55e64430727ed485bd19b7d8b4d912b8f9"
-  ref_type: "tag"
-  ref_name: "v0.0.298"
-  run_id: 42982876928
+  sha: "ef180a8b1964e51543ea82c3201d755f95a80240"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 42983071551
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u4fee\u6539\u8e22\u8e6c\u8fd4\u56decode"
+  message: "fix\uff1a\u4fee\u6539\u8e22\u8e6c\u8fd4\u56decode (#578)"
   authors: ["caiwei12"]
 dispatch:
-  created_at: "2026-11-11T07:54:21Z"
+  created_at: "2026-11-11T07:55:57Z"
