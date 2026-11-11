@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e7e307fbac92fc66083330a02dd682a4ee580456"
+  sha: "8165dfcaea5909ad171e91323a201f71500a8ab5"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42984861885
+  ref_name: "chore/bump-orion-naming-assets"
+  run_id: 42991046315
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule for Orn* UI primitives (#418)"
+  message: "chore(orion): adopt normalized filenames and resource aliases"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T08:10:12Z"
+  created_at: "2026-11-11T08:56:56Z"
