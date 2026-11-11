@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8fe75f4054287651c4318fee0c3c74f0d3a9fc53"
+  sha: "5216fb0226830463d3dd76fe30c477bc78e45190"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42993149584
+  ref_name: "chore/orion-locale-keys"
+  run_id: 42996721724
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): adopt normalized filenames and resource aliases (#420)"
+  message: "chore(orion): bump submodule for style-neutral locale keys"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T09:12:09Z"
+  created_at: "2026-11-11T09:37:27Z"
