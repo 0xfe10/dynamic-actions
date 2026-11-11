@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/endfather"
   repository_id: 925941850
-  sha: "55823b3591e3d12cf89d4c99b095fe545ca664ed"
-  ref_type: "tag"
-  ref_name: "v0.0.297"
-  run_id: 42805130763
+  sha: "5a9e2c640e41ec8f88c8d9848369fbc8154db8c0"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 42981503408
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(ci): adopt kangumi source_context image tagging and repository packages"
-  authors: ["0xfe10"]
+  message: "fix\uff1a\u4fee\u6539\u8e22\u8e6c\u8fd4\u56decode"
+  authors: ["caiwei12"]
 dispatch:
-  created_at: "2026-11-10T11:09:33Z"
+  created_at: "2026-11-11T07:43:04Z"
