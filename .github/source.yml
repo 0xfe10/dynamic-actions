@@ -3,15 +3,15 @@ source:
   repository: "prtmax/psdk"
   repository_id: 925940162
   sha: "cfe8c4c14b16440f763bf1865c86484bc99367de"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 42948308793
+  ref_type: "tag"
+  ref_name: "v0.0.105"
+  run_id: 42948799116
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
   message: "dart ver 0.0.12"
   authors: ["jiangchengze"]
 dispatch:
-  created_at: "2026-11-11T02:46:50Z"
+  created_at: "2026-11-11T02:51:14Z"
