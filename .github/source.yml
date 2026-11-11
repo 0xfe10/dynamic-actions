@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "dbeaf7c409bc662186ca1adc655928d5708f61c8"
+  sha: "74663ca8c9c2db311f4f3de983f4f67bb3d8759a"
   ref_type: "branch"
-  ref_name: "chore/retire-source-registration"
-  run_id: 42957094372
+  ref_name: "main"
+  run_id: 42958550089
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(ci): retire native source registration workflow"
+  message: "chore(ci): retire native source registration workflow (#249)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T04:07:03Z"
+  created_at: "2026-11-11T04:20:19Z"
