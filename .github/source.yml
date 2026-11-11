@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ebab51c74bc4398c26ac86ed21204a9d476b0577"
+  sha: "434985b5fcc48317aec912dddc42684456ad901a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42990797775
+  ref_name: "refactor/locale-keys"
+  run_id: 42994200308
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(orion): simplify internal filenames and asset aliases (#257)\n\n* refactor(orion): simplify internal filenames and asset aliases\n\n* fix(orion): read editor language fixtures from test directory"
+  message: "refactor(localization): introduce LocaleKeys constants and remove style-specific key prefixes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T08:55:03Z"
+  created_at: "2026-11-11T09:19:39Z"
