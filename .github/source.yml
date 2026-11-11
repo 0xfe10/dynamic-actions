@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "00ecca57cbf0b77c1566dde88f794420a3cb7ea9"
+  sha: "a4fde1e3017f629859479f9fe9b0351598d88bb7"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42960892944
+  ref_name: "fix/rigel-build-skip-dirty-check"
+  run_id: 42979359497
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): regenerate runtime client for BuildSource.ref (#250)"
+  message: "fix(rigel_build): remove local git status check on overlay destinations"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T04:41:55Z"
+  created_at: "2026-11-11T07:25:27Z"
