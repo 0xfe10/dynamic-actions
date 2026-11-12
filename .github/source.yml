@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "27df0e072832a3547c2ee35895b47275cc94b612"
+  sha: "f217f417faf66850404b27ae223e10ec5848840a"
   ref_type: "branch"
-  ref_name: "fix/debug-build-readiness"
-  run_id: 43139640002
+  ref_name: "main"
+  run_id: 43140057416
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): synthesize fallback icon and catalog permissions for debug builds"
+  message: "fix(mercury): synthesize fallback icon and catalog permissions for debug builds (#435)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T02:11:39Z"
+  created_at: "2026-11-12T02:15:05Z"
