@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0e2bec73f352bf77c04a537b9e077d21078639a4"
+  sha: "afa3f8be552e2853bd5aa39e593c483738f7ad24"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43144184656
+  ref_name: "feat/bootstrap-app"
+  run_id: 43194342739
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): surface structured Problem JSON reasons and console guidance on HTTP errors (#262)"
+  message: "feat(rigel_build): pin bootstrap App configuration for IDE startup"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T02:50:59Z"
+  created_at: "2026-11-12T09:46:01Z"
