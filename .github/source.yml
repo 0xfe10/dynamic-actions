@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e803ceb421c027c7227723171e3aca2e97e84bbd"
+  sha: "8e2e58cd7a3411556386fda5f045d9dda4da8cf8"
   ref_type: "branch"
-  ref_name: "fix/debug-build-actionable-errors"
-  run_id: 43144111496
+  ref_name: "main"
+  run_id: 43144196676
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): aggregate actionable debug build readiness errors with console paths"
+  message: "fix(mercury): aggregate actionable debug build readiness errors with console paths (#437)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T02:50:27Z"
+  created_at: "2026-11-12T02:51:06Z"
