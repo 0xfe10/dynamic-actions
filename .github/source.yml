@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5d081731187290c873176744751a797384b6d206"
+  sha: "2870b0899240c068f9609b1eca7e0c039119a1b7"
   ref_type: "branch"
-  ref_name: "feat/chunked-batch-dispatch"
-  run_id: 43272106694
+  ref_name: "main"
+  run_id: 43274919272
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(oidc): pin stages with the artifact upload action runtime"
+  message: "feat(releasebuild): dispatch App batches in shared Runall chunks (#456)\n\n* feat(releasebuild): dispatch release batches in bounded App chunks\n\n* fix(releasebuild): preserve verification when cancelling completed chunks\n\n* fix(oidc): pin stages with the artifact upload action runtime"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T17:41:47Z"
+  created_at: "2026-11-12T17:58:27Z"
