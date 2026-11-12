@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d062e5567eac5cb1a347912a26d0eb14d485b160"
+  sha: "5f04ffc0600ea2b4a291f8e140388fe20955db38"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43178769846
+  ref_name: "fix/stream-artifact-download"
+  run_id: 43179033558
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega,ui): refine sidebar width/resize/persistence and header theme controls (#443)\n\n* feat(vega,ui): refine sidebar width/resize/persistence and header theme controls\n\n* fix(vega): use SIDEBAR_WIDTH fallback in sidebar style"
+  message: "fix(releasebuild): stream signed artifact downloads through Mercury"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T07:54:59Z"
+  created_at: "2026-11-12T07:57:10Z"
