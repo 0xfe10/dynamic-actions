@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d6c77147391e33c90d53c803a5406bef87c44cc5"
+  sha: "c347f67cd24f52b16080aa7dbc575c971d53c075"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 42999549829
+  ref_name: "fix/rigel-build-actionable-errors"
+  run_id: 43144020538
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(core): consolidate packages/core and introduce packages/core/utils (#261)"
+  message: "fix(rigel_build): surface structured Problem JSON reasons and console guidance on HTTP errors"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-11T09:57:50Z"
+  created_at: "2026-11-12T02:49:31Z"
