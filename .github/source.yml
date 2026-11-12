@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "32aae24c60788120a6acaf90411ddf90120e0617"
+  sha: "083333f42de84e08815ba29cfb44a15f4a3e7e84"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43182804546
+  ref_name: "chore/bump-orion-bootstrap"
+  run_id: 43198076355
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(releasebuild): stream signed artifact downloads through Mercury (#448)\n\n* fix(releasebuild): stream signed artifact downloads through Mercury\n\n* test(spec): require signed token for artifact file reads"
+  message: "chore(orion): pin App bootstrap support for IDE startup"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T08:25:32Z"
+  created_at: "2026-11-12T10:11:10Z"
