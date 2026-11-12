@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3b53911c1eb7ef9ad6db1f6bcb70b8607bc4cece"
+  sha: "b05e287f01cbe5036bc924af1ee4298505a72786"
   ref_type: "branch"
-  ref_name: "fix/stream-artifact-download"
-  run_id: 43180367911
+  ref_name: "main"
+  run_id: 43180681000
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(spec): require signed token for artifact file reads"
+  message: "chore(vega): remove refresh from release edit header (#446)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T08:07:29Z"
+  created_at: "2026-11-12T08:09:55Z"
