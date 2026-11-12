@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a607c9d5a3df17b8df62acaf2983c83191035a85"
+  sha: "5d081731187290c873176744751a797384b6d206"
   ref_type: "branch"
   ref_name: "feat/chunked-batch-dispatch"
-  run_id: 43269257611
+  run_id: 43272106694
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(releasebuild): preserve verification when cancelling completed chunks"
+  message: "fix(oidc): pin stages with the artifact upload action runtime"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T17:25:34Z"
+  created_at: "2026-11-12T17:41:47Z"
