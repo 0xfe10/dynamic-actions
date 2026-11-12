@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bdb6537249f43174991fc4670901127577e0c2e5"
+  sha: "d062e5567eac5cb1a347912a26d0eb14d485b160"
   ref_type: "branch"
-  ref_name: "chore/release-edit-refresh"
-  run_id: 43178635150
+  ref_name: "main"
+  run_id: 43178769846
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "merge(main): update release edit refresh branch with latest main"
+  message: "feat(vega,ui): refine sidebar width/resize/persistence and header theme controls (#443)\n\n* feat(vega,ui): refine sidebar width/resize/persistence and header theme controls\n\n* fix(vega): use SIDEBAR_WIDTH fallback in sidebar style"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T07:53:55Z"
+  created_at: "2026-11-12T07:54:59Z"
