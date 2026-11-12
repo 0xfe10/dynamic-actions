@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "00c7c98b691918b79e9ad1e32ec7c1745c8ac13e"
+  sha: "a607c9d5a3df17b8df62acaf2983c83191035a85"
   ref_type: "branch"
   ref_name: "feat/chunked-batch-dispatch"
-  run_id: 43266103031
+  run_id: 43269257611
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into feat/chunked-batch-dispatch"
+  message: "fix(releasebuild): preserve verification when cancelling completed chunks"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T17:07:51Z"
+  created_at: "2026-11-12T17:25:34Z"
