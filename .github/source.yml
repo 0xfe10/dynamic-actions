@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "27fc29d752c30684093f7aa2b18ecd79f2f7bbaf"
+  sha: "2622ea82c042a2b71aa9d41e3fc40469b98b766f"
   ref_type: "branch"
-  ref_name: "fix/release-batch-toolbar-ui"
-  run_id: 43258482577
+  ref_name: "main"
+  run_id: 43260148620
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): refine release batch detail toolbar status pills and actions"
+  message: "fix(vega): align release build package actions (#453)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T16:25:34Z"
+  created_at: "2026-11-12T16:34:39Z"
