@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "55b89176030b6be7d2c26c19c7c1940f0bdcb8f5"
+  sha: "62a4c50f6efe9cb79ddd8aa5c5297e89ec039361"
   ref_type: "branch"
-  ref_name: "feat/bootstrap-app"
-  run_id: 43195731747
+  ref_name: "main"
+  run_id: 43197853660
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): avoid native packaging work during IDE bootstrap"
+  message: "feat(rigel_build): pin bootstrap App configuration for IDE startup (#264)\n\n* feat(rigel_build): pin bootstrap App configuration for IDE startup\n\n* fix(rigel_build): avoid native packaging work during IDE bootstrap"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T09:55:30Z"
+  created_at: "2026-11-12T10:09:48Z"
