@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8dbb15696c82d44cdd18e5587a18408fc7f35ffa"
+  sha: "c13e86a2b36fc3226d679f9c8325b0505c968d92"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43201061000
+  ref_name: "fix/release-build-step2-ui"
+  run_id: 43256948425
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): pin App bootstrap support for IDE startup (#450)"
+  message: "fix(vega): align release build package actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T10:31:13Z"
+  created_at: "2026-11-12T16:17:10Z"
