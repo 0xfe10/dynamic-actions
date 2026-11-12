@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "083168dcd288757fe0bf65d20b10abde0794afb3"
+  sha: "bdb6537249f43174991fc4670901127577e0c2e5"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43176612660
+  ref_name: "chore/release-edit-refresh"
+  run_id: 43178635150
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(releasebuild): allow repeated packaging of release versions (#444)"
+  message: "merge(main): update release edit refresh branch with latest main"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T07:37:25Z"
+  created_at: "2026-11-12T07:53:55Z"
