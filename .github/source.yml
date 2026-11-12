@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "42541bba5c283de4738c0dee61a1d5f34b957d13"
+  sha: "67294dae1d46c929e86ba25920e9b2643f894e82"
   ref_type: "branch"
-  ref_name: "feat/sidebar-resize-persist"
-  run_id: 43173264533
+  ref_name: "main"
+  run_id: 43173668652
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega,ui): refine sidebar width/resize/persistence and header theme controls"
+  message: "feat(vega): refine release batch actions and preflight reasons (#440)\n\nStart or retry a single batch item, and replace the result controls with icon actions, compact downloads, and shorter readiness reasons."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T07:10:16Z"
+  created_at: "2026-11-12T07:13:38Z"
