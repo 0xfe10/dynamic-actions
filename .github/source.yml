@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a57d9e87ac994089539f1118f7127b3cd1a6da67"
+  sha: "f3fff9c295e572b780b9eb0a1eb0162b04810bce"
   ref_type: "branch"
-  ref_name: "feat/batch-artifact-download"
-  run_id: 43144313824
+  ref_name: "main"
+  run_id: 43144714259
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "merge(main): update batch artifact branch with latest main"
+  message: "feat(releasebuild): download and publish ready batch artifacts (#436)\n\n* feat(releasebuild): download and publish ready batch artifacts\n\nExpose verified packages on release batch items so a ready build can be downloaded and published from the batch detail page.\n\n* fix(vega): hide batch publish after the request succeeds\n\nKeep a ready batch item from sending a second publish while the table is still refreshing."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-12T02:52:10Z"
+  created_at: "2026-11-12T02:55:50Z"
