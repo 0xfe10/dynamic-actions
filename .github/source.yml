@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "75b5591d708b8c798a7f9f4696107025d6d2818a"
+  sha: "0e09ca6d8db878d467fe5aea5b0802acaa58a419"
   ref_type: "branch"
-  ref_name: "feat/mellow-device-filter-and-scan"
-  run_id: 43410240788
+  ref_name: "main"
+  run_id: 43411846725
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(device_management): filter printer models and wire QR scan connection\n\n- Add App-scoped PrinterModelCatalog allowlist and match rules in package:device_management to exclude generic Bluetooth broadcasts while sharing model artwork resolution across Mellow printer cards\n- Add PrinterQrScannerGateway, PrinterQrPayload parser (JSON, URI, key-value, MAC, ble:/classic:, WIFI:) and PrinterQrScanCubit connection handoff\n- Wire NativePrinterQrScannerGateway and catalog injection in package:rigel_platform buildFeatureScope while preserving honest unavailable fallback when no native camera scanner channel is registered\n- Wire MellowPrinterScanPage and MellowWifiConnectionPage to QR scan state, permission recovery, Bluetooth auto-connection and Wi-Fi SSID autofill\n- Adjust two-tab shell scroll viewport height in mellow_navigation_alignment_test after personal-center grid compaction\n\nRefs #276, Refs #277"
+  message: "feat(device_management): filter printer models and wire QR scan connection (#282)\n\n- Add App-scoped PrinterModelCatalog allowlist and match rules in package:device_management to exclude generic Bluetooth broadcasts while sharing model artwork resolution across Mellow printer cards\n- Add PrinterQrScannerGateway, PrinterQrPayload parser (JSON, URI, key-value, MAC, ble:/classic:, WIFI:) and PrinterQrScanCubit connection handoff\n- Wire NativePrinterQrScannerGateway and catalog injection in package:rigel_platform buildFeatureScope while preserving honest unavailable fallback when no native camera scanner channel is registered\n- Wire MellowPrinterScanPage and MellowWifiConnectionPage to QR scan state, permission recovery, Bluetooth auto-connection and Wi-Fi SSID autofill\n- Adjust two-tab shell scroll viewport height in mellow_navigation_alignment_test after personal-center grid compaction\n\nRefs #276, Refs #277"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T10:35:39Z"
+  created_at: "2026-11-13T10:47:53Z"
