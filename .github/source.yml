@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a6e25a422d53730465297ddb7fa656c699e3404e"
+  sha: "c94516c8c25c09db762c4aea270f3459cf4843a3"
   ref_type: "branch"
   ref_name: "feat/mercury-store-publishing"
-  run_id: 43495719110
+  run_id: 43496302536
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): integrate Pubox store publishing and audit tracking"
+  message: "style(mercury): format Pubox redirect test"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T19:49:07Z"
+  created_at: "2026-11-13T19:52:58Z"
