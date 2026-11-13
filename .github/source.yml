@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "76afa04e66c9aa2f0401db38de51d7784c5836ab"
+  sha: "528fea9ff50428eaf3cef1f0aa239fc9cc90359e"
   ref_type: "branch"
-  ref_name: "fix/navigation-transition-flash"
-  run_id: 43426949964
+  ref_name: "main"
+  run_id: 43428940923
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(navigation): remove route and tab rendering flashes\n\nRefs #283"
+  message: "fix(navigation): remove route and tab rendering flashes (#284)\n\nRefs #283"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T12:39:10Z"
+  created_at: "2026-11-13T12:53:35Z"
