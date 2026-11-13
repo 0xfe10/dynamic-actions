@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0147a5b7c0bfe26efc38cadbee47ae22785b2e3e"
+  sha: "79511915d76b86150ee767898280b8e66b3d1129"
   ref_type: "branch"
-  ref_name: "fix/mellow-feedback-attachment-remove"
-  run_id: 43397180959
+  ref_name: "main"
+  run_id: 43397204131
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(rigel): keep analysis_options.yaml unchanged (Refs #266)"
+  message: "fix(mellow): split home header tap zones for paper selection and device management (#273)\n\nRefs #269"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T08:56:36Z"
+  created_at: "2026-11-13T08:56:48Z"
