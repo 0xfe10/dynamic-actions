@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "109c77b5e1fc8e2031b018a9b728232b47e69802"
+  sha: "2aa66af7f8c9c656a93b7f8bc70bbb4820e7b5b0"
   ref_type: "branch"
-  ref_name: "fix/mellow-home-header-actions"
-  run_id: 43395321470
+  ref_name: "fix/mellow-feedback-attachment-remove"
+  run_id: 43397034638
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): split home header tap zones for paper selection and device management\n\nRefs #269"
+  message: "fix(mellow): ensure feedback attachment remove badge is visible and interactive (Refs #266)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T08:42:37Z"
+  created_at: "2026-11-13T08:55:41Z"
