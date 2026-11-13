@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2aa66af7f8c9c656a93b7f8bc70bbb4820e7b5b0"
+  sha: "0147a5b7c0bfe26efc38cadbee47ae22785b2e3e"
   ref_type: "branch"
   ref_name: "fix/mellow-feedback-attachment-remove"
-  run_id: 43397034638
+  run_id: 43397180959
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): ensure feedback attachment remove badge is visible and interactive (Refs #266)"
+  message: "chore(rigel): keep analysis_options.yaml unchanged (Refs #266)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T08:55:41Z"
+  created_at: "2026-11-13T08:56:36Z"
