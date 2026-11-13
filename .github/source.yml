@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "71ca173d2b256e2b7737090bd91bcd8dd237df02"
+  sha: "34ed628e39ba533893fa4931afd213bb72f54a63"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43400945390
+  ref_name: "fix/mellow-auth-suite"
+  run_id: 43401155995
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): wire session-scoped settings capabilities (#278)\n\nWire typed account security, social binding, app update, temporary cache and account closure capabilities through the Mellow feature scope. Fence pending account flows on session changes and preserve explicit unavailable behavior for unconfigured hosts.\n\nRefs #265"
+  message: "fix(mellow): align auth forms, email code mode and localized feedback\n\nRefs #270, Refs #271, Refs #272"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T09:23:54Z"
+  created_at: "2026-11-13T09:25:20Z"
