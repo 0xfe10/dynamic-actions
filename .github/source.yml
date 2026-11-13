@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ee660efc13abd94cc460700f07728e61a690c28d"
+  sha: "8e93112591ca57a4c4a0d86bb087ba4b8a67b426"
   ref_type: "branch"
-  ref_name: "chore/update-orion-gitlink-282"
-  run_id: 43412552387
+  ref_name: "main"
+  run_id: 43415253763
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): update orion submodule to 0e09ca6"
+  message: "chore(orion): update orion submodule to 0e09ca6 (#459)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T10:53:15Z"
+  created_at: "2026-11-13T11:13:08Z"
