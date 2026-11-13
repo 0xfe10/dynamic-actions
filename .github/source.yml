@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c94516c8c25c09db762c4aea270f3459cf4843a3"
+  sha: "0f8c2752fb3b0ca38e7e910fd75a7450b7d26721"
   ref_type: "branch"
-  ref_name: "feat/mercury-store-publishing"
-  run_id: 43496302536
+  ref_name: "main"
+  run_id: 43499621781
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "style(mercury): format Pubox redirect test"
+  message: "feat(mercury): integrate Pubox store publishing and audit tracking (#465)\n\nMercury can now configure Pubox, bind App store accounts, manage store listings, and publish verified Release artifacts to multiple stores. Android targets select AAB when supported (otherwise APK); iOS targets select IPA. Targets sharing an artifact and effective listing share a remote upload, while mixed artifacts retain one local publication with per-store results.\n\nProvider credentials and publication snapshots are encrypted and redacted. Version checks protect settings, bindings and listings. Publication-specific HMAC secrets authenticate callbacks, stale callbacks cannot regress upload progress, and uncertain submissions are never automatically replayed. Interrupted requests explicitly fail groups that were never submitted. Durable media references remain editable while separate preview URLs can expire safely.\n\nRoutes follow Mercury's existing `/api/platform/v1` base. The generated platform client includes the agreed Vega aliases. Migration 00168 adds the five store-publishing tables and scoped permissions; the migration policy permits only its four explicitly approved foreign-key relationships. PostgreSQL integration tests are included in `just test-db`.\n\nValidation:\n- Full Mercury unit/race suite, `go vet`, and staticcheck on Go 1.26.5.\n- Four PostgreSQL integration tests with `-race`: lifecycle, CAS/isolation, encrypted credential rotation, mixed artifact uploads, callback authentication/replay, listing round trips, rejection, cancellation and interrupted submissions.\n- Platform client regeneration, TypeScript check and Prettier check.\n- Platform/runtime OpenAPI breaking-change checks.\n- Independent review completed; all three findings fixed and re-reviewed.\n\nPubox HTTP behavior is verified with an `httptest.Server`; live store submission is not part of this validation. Abrupt process termination after a remote submission can require operator reconciliation and does not trigger automatic replay.\n\nFixes #461\nFixes #462"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T19:52:58Z"
+  created_at: "2026-11-13T20:14:04Z"
