@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "188e7f7e25af24a7571a53f7d7ec40d418190f21"
+  sha: "75b5591d708b8c798a7f9f4696107025d6d2818a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43405619618
+  ref_name: "feat/mellow-device-filter-and-scan"
+  run_id: 43410240788
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): align auth forms, email code mode and localized feedback (#281)\n\nUse one validated password field for registration and SMS setup, show localized authentication failures, route email choices to an honest verification-code form, and restore accessible skip icons.\n\nProvide compiled auth translation fallbacks for older Platform language packs while preserving pack overrides.\n\nRefs #270, Refs #271, Refs #272"
+  message: "feat(device_management): filter printer models and wire QR scan connection\n\n- Add App-scoped PrinterModelCatalog allowlist and match rules in package:device_management to exclude generic Bluetooth broadcasts while sharing model artwork resolution across Mellow printer cards\n- Add PrinterQrScannerGateway, PrinterQrPayload parser (JSON, URI, key-value, MAC, ble:/classic:, WIFI:) and PrinterQrScanCubit connection handoff\n- Wire NativePrinterQrScannerGateway and catalog injection in package:rigel_platform buildFeatureScope while preserving honest unavailable fallback when no native camera scanner channel is registered\n- Wire MellowPrinterScanPage and MellowWifiConnectionPage to QR scan state, permission recovery, Bluetooth auto-connection and Wi-Fi SSID autofill\n- Adjust two-tab shell scroll viewport height in mellow_navigation_alignment_test after personal-center grid compaction\n\nRefs #276, Refs #277"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T09:59:37Z"
+  created_at: "2026-11-13T10:35:39Z"
