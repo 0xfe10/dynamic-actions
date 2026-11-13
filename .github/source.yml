@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "64cb13488b09e2fe7391779ee435ecdc85f305aa"
+  sha: "60bfce4bfbbba645b101ef9cf09085990b4de499"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43431621112
+  ref_name: "feat/vega-store-publishing"
+  run_id: 43494879782
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): pin flash-free navigation update (#460)\n\nRefs prtmax/orion#283"
+  message: "feat(vega): add store publishing settings, app targets, listing editor, and release publish UI\n\nFixes #463"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T13:12:20Z"
+  created_at: "2026-11-13T19:43:40Z"
