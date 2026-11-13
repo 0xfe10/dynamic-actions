@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1e54e76a15b1090d9abfe48d9537d72141f9b3b0"
+  sha: "fe2f8376c39a21d6befe93ea74649bf3e78100cd"
   ref_type: "branch"
-  ref_name: "feat/artifact-download-links"
-  run_id: 43380475096
+  ref_name: "main"
+  run_id: 43382844870
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(releasebuild,vega): scope downloadUrl to platform schemas and harden URL resolution"
+  message: "feat(vega,mercury): render artifact downloads as direct links and integrate batch toolbar (#458)\n\n* feat(vega,mercury): render artifact downloads as direct links and integrate batch toolbar\n\n* fix(releasebuild,vega): scope downloadUrl to platform schemas and harden URL resolution"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T06:42:00Z"
+  created_at: "2026-11-13T07:02:28Z"
