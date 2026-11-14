@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "94f28df901ebe82d6dcf0319ecea6e284c49bb8d"
+  sha: "660bcfb3d0b5f8f172d97014171b4b8bd8d70b7b"
   ref_type: "branch"
-  ref_name: "fix/store-result-categories"
-  run_id: 43559263176
+  ref_name: "main"
+  run_id: 43560706216
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(publishing): preserve canonical Pubox result categories\n\nRefs #471"
+  message: "fix(publishing): preserve canonical Pubox result categories (#472)\n\nRefs #471"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T04:59:05Z"
+  created_at: "2026-11-14T05:16:22Z"
