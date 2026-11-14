@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5a955e75aef7802ae3072241c0db7562ed67fcd4"
+  sha: "a9029ddda06990e408c58c247275305c084e659b"
   ref_type: "branch"
-  ref_name: "fix/accepted-legacy-baseline"
-  run_id: 43607937782
+  ref_name: "main"
+  run_id: 43609965743
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(migration): admit an explicit target-bound legacy baseline"
+  message: "fix(migration): admit an explicit target-bound legacy baseline\n\nRefs #483, #463 and #468. Source-only guarded admission correction; runtime acceptance and at-rest completion remain separate."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T15:02:05Z"
+  created_at: "2026-11-14T15:24:06Z"
