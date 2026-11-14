@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a75e9b7165737b6e450d373dba1dd38e7ff8e665"
+  sha: "14e45c8103f344bcd0d345907f717fe9a6d5d9c5"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43506324619
+  ref_name: "fix/store-publishing-access"
+  run_id: 43551987551
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): add store publishing settings, app targets, listing editor, and release publish UI (#464)\n\n* feat(vega): add store publishing settings, app targets, listing editor, and release publish UI\n\nFixes #463\n\n* style(vega): format store publishing modules with prettier and support listing preview URLs\n\n* fix(vega): align store publishing permissions, target versions, listing actions, and media workflow\n\n* fix(vega): require usable media URLs for packaging icon fallback and prefer square_1024"
+  message: "fix(vega): preserve store publishing browser sessions\n\nInclude browser credentials on primary and fallback store transports. Cover cookie and CSRF delivery across origins and add opt-in real Mercury navigation acceptance. Refs #466."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-13T20:57:53Z"
+  created_at: "2026-11-14T03:30:42Z"
