@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "20ec46b68c06f3ba3a32b999d0b1724882301579"
+  sha: "34c2f64af2948242cc20f5fc1619f6df1299ff81"
   ref_type: "branch"
-  ref_name: "fix/listing-file-uploads"
-  run_id: 43572229016
+  ref_name: "main"
+  run_id: 43573718859
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(publishing): use the named redirect status in upload regression"
+  message: "fix(publishing): upload local listing icons and screenshots (#476)\n\n* fix(publishing): upload local listing icons and screenshots\n\nRefs #475, #463\n\n* test(publishing): use the named redirect status in upload regression"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T07:41:07Z"
+  created_at: "2026-11-14T08:00:38Z"
