@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "48b22de353614aea9cbeded5d9d43b3c1ee362be"
+  sha: "b319a9a6638e01b6c65d031b49b1acee5de959d9"
   ref_type: "branch"
-  ref_name: "fix/target-bound-migrator"
-  run_id: 43593287640
+  ref_name: "main"
+  run_id: 43595324518
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(migration): add opt-in target-bound owned expansion guard"
+  message: "fix(migration): add opt-in target-bound owned expansion guard (#488)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T12:08:03Z"
+  created_at: "2026-11-14T12:32:32Z"
