@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "14e45c8103f344bcd0d345907f717fe9a6d5d9c5"
+  sha: "6a06c5117879e7b161db1cd1a6f2018ac34d6748"
   ref_type: "branch"
   ref_name: "fix/store-publishing-access"
-  run_id: 43551987551
+  run_id: 43552086573
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): preserve store publishing browser sessions\n\nInclude browser credentials on primary and fallback store transports. Cover cookie and CSRF delivery across origins and add opt-in real Mercury navigation acceptance. Refs #466."
+  message: "test(vega): run store cookie regression in staging CI"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T03:30:42Z"
+  created_at: "2026-11-14T03:31:51Z"
