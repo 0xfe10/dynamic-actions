@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "668c701eea571f1f3368f01ad91651a1774938b0"
+  sha: "d82057211221ba555e22b3e264d24a2cc948c84c"
   ref_type: "branch"
-  ref_name: "fix/store-audit-approval"
-  run_id: 43563871925
+  ref_name: "main"
+  run_id: 43565682133
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(publishing): preserve callbacks during job polling\n\nSnapshot exact target rows before upstream job requests and retain only unchanged rows under the publication lock. Preserve equal-time provider progress and unaffected sibling updates.\n\nRefs #473"
+  message: "fix(publishing): distinguish audit approval from publication (#474)\n\nPreserve producer-derived audit classifications, classify fresh release audits using frozen package version evidence, and protect polling and refresh persistence against in-flight callbacks. Display unqualified approvals distinctly in Vega.\n\nRefs #473"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T05:56:14Z"
+  created_at: "2026-11-14T06:18:29Z"
