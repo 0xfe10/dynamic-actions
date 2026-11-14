@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b319a9a6638e01b6c65d031b49b1acee5de959d9"
+  sha: "5a955e75aef7802ae3072241c0db7562ed67fcd4"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43595324518
+  ref_name: "fix/accepted-legacy-baseline"
+  run_id: 43607937782
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(migration): add opt-in target-bound owned expansion guard (#488)"
+  message: "fix(migration): admit an explicit target-bound legacy baseline"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T12:32:32Z"
+  created_at: "2026-11-14T15:02:05Z"
