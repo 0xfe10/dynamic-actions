@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "660bcfb3d0b5f8f172d97014171b4b8bd8d70b7b"
+  sha: "5224937a6a87fdda3d74b01d7e28450e1a3c0ed0"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43560706216
+  ref_name: "fix/store-audit-approval"
+  run_id: 43561424030
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(publishing): preserve canonical Pubox result categories (#472)\n\nRefs #471"
+  message: "fix(publishing): preserve audit approval separately from publication\n\nRefs #473"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T05:16:22Z"
+  created_at: "2026-11-14T05:25:10Z"
