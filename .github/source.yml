@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0a733baa1c471974ac990a3d620f0e981e19c154"
+  sha: "48b22de353614aea9cbeded5d9d43b3c1ee362be"
   ref_type: "branch"
-  ref_name: "fix/endpoint-ciphertext-only-writers"
-  run_id: 43589561120
+  ref_name: "fix/target-bound-migrator"
+  run_id: 43593287640
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storepublishing): write encrypted endpoints without plaintext\n\nRefs #483"
+  message: "fix(migration): add opt-in target-bound owned expansion guard"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T11:20:41Z"
+  created_at: "2026-11-14T12:08:03Z"
