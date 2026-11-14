@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "cc61a1ee170fa902fd693c3395e0a2454b7c06eb"
+  sha: "8a671604770e83a8e84705298b145c50d7ceea62"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43553975098
+  ref_name: "fix/store-doctor-errors"
+  run_id: 43556336908
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): restore store publishing login and entry points (#467)\n\n* fix(vega): expose store publishing from app settings and release batches\n\nRefs #466\n\n* fix(vega): preserve store publishing browser sessions\n\nInclude browser credentials on primary and fallback store transports. Cover cookie and CSRF delivery across origins and add opt-in real Mercury navigation acceptance. Refs #466.\n\n* test(vega): run store cookie regression in staging CI"
+  message: "fix(publishing): preserve actionable doctor probe failures\n\nRefs #469"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T03:54:33Z"
+  created_at: "2026-11-14T04:22:41Z"
