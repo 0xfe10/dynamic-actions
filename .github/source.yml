@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "cd25045924aa5322ba149b03ad33f6ca1d38a16d"
+  sha: "94f28df901ebe82d6dcf0319ecea6e284c49bb8d"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43557907910
+  ref_name: "fix/store-result-categories"
+  run_id: 43559263176
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(publishing): preserve actionable Pubox doctor failures (#470)\n\nPubox failed doctor probes use `status: \"fail\"` and `error`, but Mercury decoded only `message`/`detail`. A failed Honor or Xiaomi check therefore displayed preceding successful probe messages while losing the actionable error.\n\nDecode the actual `error` field and prefer failed-probe diagnostics whenever a concrete failure is present. Preserve legacy message/detail fallback and successful/skipped probe behavior. Provider credentials and URL queries remain redacted through the existing client sanitizer, and verbose traces are never decoded or displayed.\n\nValidation:\n- Focused unit tests with `-race`: actual Pubox errors, failure priority, legacy fields, successful/skipped probes, multiple failures, empty errors and URL redaction.\n- Full storepublishing PostgreSQL integration suite with `-race` in a dedicated temporary PostgreSQL container. The new regression checks sanitized failure persistence/readback, unaffected successful siblings and clearing a prior failure after a successful doctor response.\n- Package vet, staticcheck, gofmt and diff checks.\n\nNo schema, provider configuration or platform contract changes. This diagnostic correction is independent of the live-submission acceptance work in #468 and does not establish store publication. Local API/worker rollout requires separate coordination.\n\nRefs #469"
+  message: "fix(publishing): preserve canonical Pubox result categories\n\nRefs #471"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T04:41:49Z"
+  created_at: "2026-11-14T04:59:05Z"
