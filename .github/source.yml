@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "cba1e182aa64d59afbe3a8fc550720347a25b1d3"
+  sha: "a78baef3dc2e3a04f7884f17dd712014894d3f34"
   ref_type: "branch"
-  ref_name: "fix/provider-endpoint-encryption"
-  run_id: 43583376952
+  ref_name: "fix/listing-pull-preservation"
+  run_id: 43583734911
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(publishing): integrate current main"
+  message: "fix(storepublishing): preserve unobserved listing fields on pull\n\nRefs #484, #461, #463"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T10:02:55Z"
+  created_at: "2026-11-14T10:07:20Z"
