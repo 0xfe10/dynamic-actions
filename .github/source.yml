@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a886152a6f6ef9cfbce39466dcf5c3d81efd2ec1"
+  sha: "668c701eea571f1f3368f01ad91651a1774938b0"
   ref_type: "branch"
   ref_name: "fix/store-audit-approval"
-  run_id: 43562769950
+  run_id: 43563871925
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(publishing): reconcile audit state with frozen package evidence\n\nPreserve producer-derived job classifications and query fresh release audits with the exact pinned artifact receipt version. Protect refresh persistence against newer callbacks.\n\nRefs #473"
+  message: "fix(publishing): preserve callbacks during job polling\n\nSnapshot exact target rows before upstream job requests and retain only unchanged rows under the publication lock. Preserve equal-time provider progress and unaffected sibling updates.\n\nRefs #473"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T05:41:59Z"
+  created_at: "2026-11-14T05:56:14Z"
