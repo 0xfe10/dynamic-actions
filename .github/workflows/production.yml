@@ -193,7 +193,7 @@ jobs:
             sleep 0.1
           done
           curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null || { cat mercury-e2e.log; exit 1; }
-          pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury"
+          pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury|listing uploads retain multipart bytes"
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Build Vega image
