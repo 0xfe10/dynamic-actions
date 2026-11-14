@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "34c2f64af2948242cc20f5fc1619f6df1299ff81"
+  sha: "ac192e487cd06814baf221cd2096f6360b267c6c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43573718859
+  ref_name: "fix/publishing-ui-fidelity"
+  run_id: 43575955812
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(publishing): upload local listing icons and screenshots (#476)\n\n* fix(publishing): upload local listing icons and screenshots\n\nRefs #475, #463\n\n* test(publishing): use the named redirect status in upload regression"
+  message: "fix(publishing): complete release scheduling and progress feedback\n\nHonor native listing bounds and units, expose error categories, localize audit and listing results, and observe active progress through local history reads.\n\nRefs #477, #478, #479, #480, #481, #463"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T08:00:38Z"
+  created_at: "2026-11-14T08:28:10Z"
