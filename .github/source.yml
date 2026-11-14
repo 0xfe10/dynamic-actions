@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "622f1dae357bc4559992f49d53087c03ec69f359"
+  sha: "322cf90730763fd3fd9eff125702539830060886"
   ref_type: "branch"
-  ref_name: "fix/provider-endpoint-encryption"
-  run_id: 43586959089
+  ref_name: "main"
+  run_id: 43588515585
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(publishing): clarify first-null recovery boundary"
+  message: "fix(publishing): add encrypted endpoint transition bridge (#485)\n\n* fix(publishing): add encrypted endpoint transition bridge\n\n* docs(publishing): clarify first-null recovery boundary"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T10:48:01Z"
+  created_at: "2026-11-14T11:07:42Z"
