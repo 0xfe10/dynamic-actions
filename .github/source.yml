@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a78baef3dc2e3a04f7884f17dd712014894d3f34"
+  sha: "2103deb4e9544ab3b274457b80f5f05bc1ea82bc"
   ref_type: "branch"
-  ref_name: "fix/listing-pull-preservation"
-  run_id: 43583734911
+  ref_name: "main"
+  run_id: 43585637682
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storepublishing): preserve unobserved listing fields on pull\n\nRefs #484, #461, #463"
+  message: "fix(storepublishing): preserve unobserved listing fields on pull (#486)\n\nRefs #484, #461, #463"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T10:07:20Z"
+  created_at: "2026-11-14T10:31:06Z"
