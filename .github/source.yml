@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "11b972782eead06ec756c5e8798f5d355a3b4076"
+  sha: "8e26d5722224d5bb4f218938bf33b076972b1cc4"
   ref_type: "branch"
   ref_name: "feat/app-management-implementation"
-  run_id: 43689579840
+  run_id: 43689953798
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(apps): read management metadata without tenant profile access"
+  message: "test(apps): align workspace and profile assertions with management shell"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T07:21:33Z"
+  created_at: "2026-11-15T07:26:36Z"
