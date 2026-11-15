@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3d5d5b345692ac929bd50da99da620361417387d"
+  sha: "1cfd5957cc2060a0d61fbc5f9ef7c3ea7414d10f"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43691458399
+  ref_name: "fix/route-pending-feedback"
+  run_id: 43696732239
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(apps): organize App management and version-specific store publishing\n\nRefs #492. Preserve scoped App capabilities and reuse Terms/Privacy from #491."
+  message: "fix(vega): show loading feedback during route initialization"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T07:47:00Z"
+  created_at: "2026-11-15T08:55:28Z"
