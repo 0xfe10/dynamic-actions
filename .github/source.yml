@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a8d834d983f53429d1535a88e6ca4175b411db8a"
+  sha: "59d1847167847d4f6b477cbb052ac383efff1e0a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43713390049
+  ref_name: "fix/store-publishing-catalog-resilience"
+  run_id: 43729430318
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align App management with approved Variant A prototype (#497)\n\n* fix(vega): align App management layout and workflows with Variant A prototype\n\nRefs #496\n\n* fix(vega): resolve App labels and release action translations\n\nRefs #496\n\n* fix(vega): preserve App shell for scoped signing readers\n\nRefs #496\n\n* test(vega): assert signing section within the App shell\n\nRefs #496"
+  message: "fix(vega): load store catalog on demand and guard PUBOX_UNAVAILABLE states\n\nRefs #498"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T12:21:22Z"
+  created_at: "2026-11-15T15:21:38Z"
