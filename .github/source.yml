@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6dfbfa106da8d322e20688e624c1b4e356e00387"
+  sha: "4ae79a91d4a5585a1378115a677ecc8818fbb13a"
   ref_type: "branch"
   ref_name: "feat/app-terms-privacy"
-  run_id: 43673964156
+  run_id: 43674870346
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(apps): manage Terms and Privacy with public links\n\nRefs #490, #463, #468"
+  message: "test(store-publishing): pin endpoint rollback fixture to migration 169"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T03:48:13Z"
+  created_at: "2026-11-15T04:01:08Z"
