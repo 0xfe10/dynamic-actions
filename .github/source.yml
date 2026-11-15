@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "26e15134a91294fc5fb4193b31fcf0fec200c5d2"
+  sha: "6dfbfa106da8d322e20688e624c1b4e356e00387"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43615788404
+  ref_name: "feat/app-terms-privacy"
+  run_id: 43673964156
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storepublishing): write encrypted endpoints without plaintext\n\nWrite SQL NULL to normal provider and publication legacy endpoint columns while retaining authenticated encrypted endpoints and legacy read compatibility. Preserve the accepted phase-one guard and baseline. Refs #483, #463, #468. Runtime activation and historical plaintext retirement remain separate operational gates."
+  message: "feat(apps): manage Terms and Privacy with public links\n\nRefs #490, #463, #468"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-14T16:28:36Z"
+  created_at: "2026-11-15T03:48:13Z"
