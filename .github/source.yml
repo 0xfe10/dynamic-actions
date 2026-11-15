@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "490fbdb38110b5a73f53fb3dc0738cecb42beea4"
+  sha: "444069aea615c93f7abf2670b86e9f932209bbb1"
   ref_type: "branch"
   ref_name: "fix/app-management-prototype-parity"
-  run_id: 43707891995
+  run_id: 43708406833
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align App management layout and workflows with Variant A prototype\n\nRefs #496"
+  message: "fix(vega): resolve App labels and release action translations\n\nRefs #496"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T11:13:49Z"
+  created_at: "2026-11-15T11:20:17Z"
