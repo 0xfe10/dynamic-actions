@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "65547ee21b1129c564e0cfbbe56b5b2240e99282"
+  sha: "a8d834d983f53429d1535a88e6ca4175b411db8a"
   ref_type: "branch"
-  ref_name: "fix/app-management-prototype-parity"
-  run_id: 43711722769
+  ref_name: "main"
+  run_id: 43713390049
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): assert signing section within the App shell\n\nRefs #496"
+  message: "fix(vega): align App management with approved Variant A prototype (#497)\n\n* fix(vega): align App management layout and workflows with Variant A prototype\n\nRefs #496\n\n* fix(vega): resolve App labels and release action translations\n\nRefs #496\n\n* fix(vega): preserve App shell for scoped signing readers\n\nRefs #496\n\n* test(vega): assert signing section within the App shell\n\nRefs #496"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T12:01:31Z"
+  created_at: "2026-11-15T12:21:22Z"
