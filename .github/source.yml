@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4ae79a91d4a5585a1378115a677ecc8818fbb13a"
+  sha: "c168b1c572fe43c403866c09bd18103393dbf2b2"
   ref_type: "branch"
   ref_name: "feat/app-terms-privacy"
-  run_id: 43674870346
+  run_id: 43676027575
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(store-publishing): pin endpoint rollback fixture to migration 169"
+  message: "test(migrations): isolate historical guarded migration fixtures"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T04:01:08Z"
+  created_at: "2026-11-15T04:16:30Z"
