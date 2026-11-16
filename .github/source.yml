@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5dcbf781a06b73c48bc98fc3e677af092f08737d"
+  sha: "e49389ecd5017c8e14e68e603c06f94cc87a70dc"
   ref_type: "branch"
   ref_name: "feat/openapi-redoc-docs"
-  run_id: 43802430095
+  run_id: 43803207947
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): render live OpenAPI documents locally\n\nServe browsable Platform and Runtime pages from the generated contracts with pinned Redoc assets, while preserving the existing JSON responses."
+  message: "fix(mercury): lock Redoc asset provenance and notices\n\nRegenerate the pinned Redoc bundle through an integrity-checked npm fetch and serve the third-party notices distributed with it."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T04:10:25Z"
+  created_at: "2026-11-16T04:17:42Z"
