@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "976b738074d9342c2c395eb26cd9f8b667285a23"
+  sha: "9b66ad9bf1925d7579df9f807806bbf9b4c1bae1"
   ref_type: "branch"
-  ref_name: "fix/openapi-redoc-readability"
-  run_id: 43809741447
+  ref_name: "feat/model-gateway"
+  run_id: 43825295752
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): improve OpenAPI documentation readability\n\nKeep the embedded Redoc renderer on an explicit light content theme so the surrounding page colors cannot hide its text."
+  message: "feat(models): add global settings and authorized inference gateway"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T05:22:01Z"
+  created_at: "2026-11-16T07:39:11Z"
