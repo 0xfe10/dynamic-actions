@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e4944e7b5c48bafa4c8fed6a70d94ef4cfb7339e"
+  sha: "8fed45b0817ee2f69a9bb34b5c88acab2d671b10"
   ref_type: "branch"
-  ref_name: "feat/reorganize-theme-shared-and-mellow-assets"
-  run_id: 43932307819
+  ref_name: "main"
+  run_id: 43934410834
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): deduplicate development_resources.json and reject duplicate refs"
+  message: "refactor(rigel,resources): scope editor and jigsaw assets to MELLOW and isolate truly shared _default icons (#293)\n\n* refactor(rigel,resources): scope editor and jigsaw assets to MELLOW and isolate truly shared _default icons\n\n* fix(rigel_build): deduplicate development_resources.json and reject duplicate refs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T18:46:22Z"
+  created_at: "2026-11-16T18:58:36Z"
