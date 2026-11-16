@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b72807d443c6fcedafaea9db72ecd8aa88fff1e5"
+  sha: "5cb4f934b2bdf37ed181b40212f53a807aa35a2b"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 43789270887
+  ref_name: "fix/icon-theme-scope"
+  run_id: 43799013549
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "1. \u767b\u5f55\uff0c\u7ffb\u8bd1\n2. \u767b\u5f55\uff0c\u9519\u8bef\u5410\u53f8\u5f39\u7a97\u63d0\u793a"
-  authors: ["ShuangZiMoYin"]
+  message: "fix(resources): inherit the active icon theme scope"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T01:57:48Z"
+  created_at: "2026-11-16T03:34:54Z"
