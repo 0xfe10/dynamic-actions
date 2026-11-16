@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "68d10cef24e06e35d0f3a77364ed3e9d447c1800"
+  sha: "0ee5aaacb58503fc69dae0cd2c86413a10a64517"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 43820528026
+  ref_name: "feat/nested-theme-resources"
+  run_id: 43918803370
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "\u9519\u8bef\u63d0\u793a \u5f39\u7a97\u63d0\u793a"
-  authors: ["ShuangZiMoYin"]
+  message: "feat(resources): support nested theme asset directories and centralize component artwork\n\nExpand Flutter pubspec asset directories recursively across selected theme families and App-scoped overrides, validate nested directory declarations during local resource verification, allow multi-segment relative resource aliases at runtime, and migrate color_graphics_editor and jigsaw static images into centralized host theme directories.\n\nFixes #291"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T06:59:12Z"
+  created_at: "2026-11-16T17:28:57Z"
