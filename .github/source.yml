@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5cb4f934b2bdf37ed181b40212f53a807aa35a2b"
+  sha: "e8212e870770d1bf22eb6da3cb256497facf4690"
   ref_type: "branch"
-  ref_name: "fix/icon-theme-scope"
-  run_id: 43799013549
+  ref_name: "main"
+  run_id: 43800548215
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(resources): inherit the active icon theme scope"
+  message: "fix(resources): inherit the active icon theme scope (#289)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T03:34:54Z"
+  created_at: "2026-11-16T03:50:56Z"
