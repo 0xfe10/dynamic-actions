@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "877d77710e5f05dcf97fe36d9d024046ebcdd934"
+  sha: "5dcbf781a06b73c48bc98fc3e677af092f08737d"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43731049017
+  ref_name: "feat/openapi-redoc-docs"
+  run_id: 43802430095
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): load store catalog on demand and guard PUBOX_UNAVAILABLE states (#499)\n\nRefs #498"
+  message: "feat(mercury): render live OpenAPI documents locally\n\nServe browsable Platform and Runtime pages from the generated contracts with pinned Redoc assets, while preserving the existing JSON responses."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-15T15:39:11Z"
+  created_at: "2026-11-16T04:10:25Z"
