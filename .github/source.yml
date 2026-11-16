@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "9573005db43644b05d0a3ec712e7da942b45f757"
+  sha: "cb62bf73d8c5ddb2160d8f45a8ac34cf33a5daa7"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43921322720
+  ref_name: "feat/reorganize-theme-shared-and-mellow-assets"
+  run_id: 43929093684
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(resources): support nested theme asset directories and centralize component artwork (#292)\n\nExpand Flutter pubspec asset directories recursively across selected theme families and App-scoped overrides, validate nested directory declarations during local resource verification, allow multi-segment relative resource aliases at runtime, and migrate color_graphics_editor and jigsaw static images into centralized host theme directories.\n\nFixes #291"
+  message: "refactor(rigel,resources): scope editor and jigsaw assets to MELLOW and isolate truly shared _default icons"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T17:43:24Z"
+  created_at: "2026-11-16T18:28:10Z"
