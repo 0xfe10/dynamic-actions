@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "528fea9ff50428eaf3cef1f0aa239fc9cc90359e"
+  sha: "b72807d443c6fcedafaea9db72ecd8aa88fff1e5"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43428940923
+  ref_name: "lxw"
+  run_id: 43789270887
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(navigation): remove route and tab rendering flashes (#284)\n\nRefs #283"
-  authors: ["0xfe10"]
+  message: "1. \u767b\u5f55\uff0c\u7ffb\u8bd1\n2. \u767b\u5f55\uff0c\u9519\u8bef\u5410\u53f8\u5f39\u7a97\u63d0\u793a"
+  authors: ["ShuangZiMoYin"]
 dispatch:
-  created_at: "2026-11-13T12:53:35Z"
+  created_at: "2026-11-16T01:57:48Z"
