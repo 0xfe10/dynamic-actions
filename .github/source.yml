@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2be033e5ad5fa1d2b9a19ea92aaf82e3102713a4"
+  sha: "b44894538c1fed31458123b13f606ec7f06a2332"
   ref_type: "branch"
-  ref_name: "fix/cold-start-feedback"
-  run_id: 43805181562
+  ref_name: "main"
+  run_id: 43806380825
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(startup): keep cold-start feedback visible"
+  message: "fix(startup): keep cold-start feedback visible (#290)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T04:37:12Z"
+  created_at: "2026-11-16T04:49:39Z"
