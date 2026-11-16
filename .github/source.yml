@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9b66ad9bf1925d7579df9f807806bbf9b4c1bae1"
+  sha: "f0498505e15d33452da47d3e8425e41157ce9f26"
   ref_type: "branch"
-  ref_name: "feat/model-gateway"
-  run_id: 43825295752
+  ref_name: "ao/update-this-repository/root"
+  run_id: 43825330644
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(models): add global settings and authorized inference gateway"
+  message: "docs: align guides with current delivery workflows\n\nCorrect toolchain pins, CI job names, appearance selection, store publishing, and legal URLs so the root README and openwiki match the tree. Record that Orion #219 and Cosmos #379 are merged."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T07:39:11Z"
+  created_at: "2026-11-16T07:39:26Z"
