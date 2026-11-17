@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "31181fcb55b776958ffb4957beb5a5c2d2b10e11"
+  sha: "ed6e3fbc0c90eaac135992f8973bce1fb88eb5ad"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 44067594336
+  ref_name: "main"
+  run_id: 44069861561
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(lxw): merge origin/lxw and retain NativeTheme cursor color"
-  authors: ["0xfe10"]
+  message: "feat(mellow,rigel_build): add publish-fluent CLI, adaptive home menu, auth l10n, and sign-out confirmation (#294)\n\n* \u9996\u9875\u8c03\u6574 1\n\n* 1. \u767b\u5f55\uff0c\u7ffb\u8bd1\n2. \u767b\u5f55\uff0c\u9519\u8bef\u5410\u53f8\u5f39\u7a97\u63d0\u793a\n\n* 1. \u9009\u62e9 \u56fe\u7247\n2. \u9009\u62e9 \u6587\u4ef6\n\n* 0\n\n* 0\n\n* \u9519\u8bef\u63d0\u793a \u5f39\u7a97\u63d0\u793a\n\n* \u56fe\u7247\u9009\u62e9 \u4fee\u6539\n\n* \u8d26\u53f7\u4fe1\u606f \u4fee\u6539\n\n* \u8bbe\u5907\u8fde\u63a5\u6309\u94ae\u6837\u5f0f\u4fee\u6539\n\n* \u7edf\u4e00\u6309\u94ae\n\n* fix(mellow,localization): remove legacy plugin bloat and restore UI and l10n contracts\n\n* fix(rigel_build): make publish-fluent dry-run side-effect free and isolate tests\n\n* docs(openwiki): restore repository workspace guidance in workflow.md\n\n---------\n\nCo-authored-by: 0xfe10 <0xfe10@proton.me>"
+  authors: ["ShuangZiMoYin"]
 dispatch:
-  created_at: "2026-11-17T10:44:31Z"
+  created_at: "2026-11-17T10:59:37Z"
