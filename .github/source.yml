@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f941ba60965664a0ca1e52f9017d2422a5afadd2"
+  sha: "c5539b45e1dedac72ae37ad4b8b6e924eeb190ae"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44006052566
+  ref_name: "docs/openapi-business-descriptions"
+  run_id: 44007712204
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(dev): persist the root Compose and same-origin proxy configuration (#511)\n\n* fix(dev): keep Compose and same-origin proxy configuration in the project\n\n* fix(dev): preserve the browser host port through the proxy"
+  message: "docs(api): regenerate clients for business descriptions\n\nRefresh platform client comments and point Orion at a4862bfb80ac1ef5c8733781931c3832bb34f939. Both generated diffs are description comments only."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:51:59Z"
+  created_at: "2026-11-17T03:05:53Z"
