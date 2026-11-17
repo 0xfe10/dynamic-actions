@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "bcdd57ba1a723602e62d68f783f6f5f94313420a"
+  sha: "5d0e958818e432d550dd2884874b1ed126cf4dc3"
   ref_type: "branch"
-  ref_name: "fix/auth-skip-icon"
-  run_id: 44149105631
+  ref_name: "fix/camera-qr-permissions"
+  run_id: 44149976813
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): use Lanhu skip-sign-in icon on auth pages\n\nReplace the Material close_rounded icon in mellowAuthSkipLabel with the bundled MELLOW auth-skip vector asset exported from Lanhu component icon/\u901a\u7528/\u8df3\u8fc7\u767b\u5f55 (16x16, #00A5FB) via RegisteredIcon across MellowAuthPage and MellowAuthProvidersPage, while preserving localized skip semantics, hit targets, navigation, and missing-resource safety.\n\nRefs #272"
+  message: "fix(scanner): implement native camera scanning and permission wiring"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T18:33:29Z"
+  created_at: "2026-11-17T18:38:18Z"
