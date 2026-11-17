@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b14f7e5d57f7970b123eb47c7f0bd613e0e70512"
+  sha: "073bfb7dccd7bc0133f083c6e150a2b140e1ecbe"
   ref_type: "branch"
-  ref_name: "fix/scoped-printer-catalog"
-  run_id: 44168025911
+  ref_name: "fix/registration-submit"
+  run_id: 44168171491
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(devices): filter Bluetooth discovery by the runtime application catalog"
+  message: "fix(mellow): align setup-password validation and actionable registration errors\n\nValidate registration email or phone identifiers client-side before sending requests, clarify the setup-password hint to require both letters and numbers, retain Problem error codes in SessionState, and map duplicate-account (409), password/identifier rejection (422), network, and 5xx failures to distinct localized messages.\n\nRefs #298"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T20:19:20Z"
+  created_at: "2026-11-17T20:20:10Z"
