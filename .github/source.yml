@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c7d535889d631aee4efd8ab418aec4ceccd987ea"
+  sha: "24988f5555aea954470009ffd39d4c589c17e6d9"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 43999441463
+  run_id: 44000647347
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into chenas\n\n# Conflicts:\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_copy.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_delete.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_locked.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_rotate.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_stretch.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_unlock.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/btn_edit_zoom.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/edit_function_font.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/edit_function_keyboard.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/edit_function_style.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/edit_function_texts.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/edit_swatches.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/edit_text_reset.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/form_ic_unfold_nor.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_font_ic_style_bold.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_font_ic_style_del.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_font_ic_style_italic.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_font_ic_style_under.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_ic_align_divider.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_ic_left_def.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_ic_mid_def.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_ic_right_def.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_text_ic_side_to_side.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/format_text_ic_vertical.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/function_sel_svg.svg\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_adjust_font_reduce.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_edit_minus.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_edit_minus_disable.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_edit_plus.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_edit_plus_disable.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_font_line_space.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/ic_font_word_space.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/icon_contrast_dis.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/icon_replacement_picture.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/icon_reset.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_adjust.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_border.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_cropping.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_cutout.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_effects.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_filters.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_graffiti.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_rotate_mirror.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_stickers.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_template.png\n#\tapps/rigel/assets/themes/MELLOW/jigsaw/picture_editor_text.png\n#\tapps/rigel/pubspec.yaml\n#\tpackages/components/jigsaw/lib/src/utils/image_utils.dart"
+  message: "1.\u56fe\u7247\u7f16\u8f91\u56684\uff08\u56fe\u6807\u8d44\u6e90\uff09"
   authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-17T01:57:52Z"
+  created_at: "2026-11-17T02:07:40Z"
