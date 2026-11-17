@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e730e54f74bf872e2ec0838810a75c787f64be9c"
+  sha: "a5b84d66b38b64230261ebb371bc28a55fb50014"
   ref_type: "branch"
-  ref_name: "fix/registration-submit"
-  run_id: 44168134381
+  ref_name: "fix/scoped-printer-catalog-pin"
+  run_id: 44172396555
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(appauth): align runtime app-user registration policy and login compatibility\n\nAllow 6-12 character ASCII letter-and-digit passwords and normalized email or phone identifiers on runtime app-user self-registration, emit explicit Problem error codes (INVALID_PASSWORD_FORMAT, INVALID_IDENTIFIER, APP_USER_EXISTS), preserve 12-1024 byte HashPassword enforcement for all platform/admin callers, and keep runtime sign-in compatible with both newly registered 6-12 character passwords and existing >12-character credentials.\n\nRefs prtmax/orion#298"
+  message: "fix(integration): pin the scoped printer catalog client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T20:19:58Z"
+  created_at: "2026-11-17T20:44:13Z"
