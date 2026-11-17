@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e2d54582aed4acaa92f5978c6261fd5fe28c773e"
+  sha: "f941ba60965664a0ca1e52f9017d2422a5afadd2"
   ref_type: "branch"
-  ref_name: "ops/dev-root-compose"
-  run_id: 44001982444
+  ref_name: "main"
+  run_id: 44006052566
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(dev): preserve the browser host port through the proxy"
+  message: "fix(dev): persist the root Compose and same-origin proxy configuration (#511)\n\n* fix(dev): keep Compose and same-origin proxy configuration in the project\n\n* fix(dev): preserve the browser host port through the proxy"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:18:30Z"
+  created_at: "2026-11-17T02:51:59Z"
