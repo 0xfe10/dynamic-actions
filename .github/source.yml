@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "04ead63e00c9283172560f75f7fc5f762b8a7908"
+  sha: "fe3557f5d8a280532d88be223e3154eb4cf5ceca"
   ref_type: "branch"
-  ref_name: "chore/checkpoint-app-management-prototype-20261117"
-  run_id: 44000092830
+  ref_name: "main"
+  run_id: 44000971793
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): prototype app management navigation"
+  message: "fix(mercury): improve OpenAPI documentation readability (#506)\n\nKeep the embedded Redoc renderer on an explicit light content theme so the surrounding page colors cannot hide its text."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:03:19Z"
+  created_at: "2026-11-17T02:10:19Z"
