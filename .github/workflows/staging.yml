@@ -101,7 +101,7 @@ jobs:
 
   admin:
     name: Admin Checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       DATABASE_URL: postgres://postgres:ci-postgres-only@127.0.0.1:5432/mercury?sslmode=disable
     services:
@@ -201,7 +201,7 @@ jobs:
             sleep 0.1
           done
           curl --fail --silent http://127.0.0.1:3001/health/ready >/dev/null || { cat mercury-e2e.log; exit 1; }
-          pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury"
+          pnpm --dir lyra --filter @cosmos/vega test:e2e --grep "real Mercury|store publishing reads and writes|listing uploads retain multipart bytes"
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Build Vega image
@@ -260,8 +260,9 @@ jobs:
           fvm dart run tools/rigel_build/bin/develop.dart bootstrap
       - name: Check Orion formatting and static analysis
         run: |
-          just --justfile orion/Justfile format-check
-          just --justfile orion/Justfile analyze
+          cd orion
+          fvm dart run tools/rigel_build/bin/develop.dart format-check
+          fvm dart run tools/rigel_build/bin/develop.dart analyze
       - name: Run Orion assembly and Flutter tests
         run: just --justfile orion/Justfile test
       - name: Resolve locked Cosmos generation tools
@@ -271,7 +272,7 @@ jobs:
       - name: Check generated runtime API client
         run: just generate-check runtime
       - name: Build Android APK
-        run: just --justfile orion/Justfile rigel-android
+        run: cd orion/apps/rigel && fvm flutter build apk --debug --no-pub
 
   # iOS Checks are temporarily disabled at the project owner's request.
   # Restore this job and its deployment dependency after fixing printer SDK
@@ -311,28 +312,30 @@ jobs:
   #       run: cd orion/apps/rigel && fvm flutter build ios --simulator --no-codesign --no-pub
 
   build-and-deploy:
-    name: Deploy Staging
+    name: Build Staging Images
     runs-on: ubuntu-latest
     needs: [api, admin, android]
     if: needs.api.outputs.main == 'true'
     steps:
       - uses: actions/checkout@v6
-      - uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+      - name: Checkout
+        id: checkout
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
           submodules: recursive
+          source_context: "true"
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: '0xfe10'
+          password: ${{ secrets.GH_TOKEN_0XFE10 }}
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.DOCKER_REGISTRY_ALI }}
           username: ${{ secrets.CR_ALI_USERNAME_PUNCHX }}
           password: ${{ secrets.CR_ALI_PASSWORD_PUNCHX }}
-      - uses: benjlevesque/short-sha@v3.0
       - name: Build and push image
         id: mercury_image
         uses: docker/build-push-action@v6
@@ -340,11 +343,16 @@ jobs:
           context: .
           target: mercury
           push: true
+          provenance: false
+          sbom: false
+          labels: ${{ steps.checkout.outputs.oci_labels }}
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury:staging
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury:staging
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-mercury:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-mercury:sha-${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-mercury:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury:sha-${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury:staging
       - name: Build and push worker image
         id: worker_image
         uses: docker/build-push-action@v6
@@ -352,11 +360,16 @@ jobs:
           context: .
           target: worker
           push: true
+          provenance: false
+          sbom: false
+          labels: ${{ steps.checkout.outputs.oci_labels }}
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury-worker:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-mercury-worker:staging
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker:staging
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-mercury-worker:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-mercury-worker:sha-${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-mercury-worker:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury-worker:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury-worker:sha-${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury-worker:staging
       - name: Build and push Vega image
         id: vega_image
         uses: docker/build-push-action@v6
@@ -364,22 +377,15 @@ jobs:
           context: .
           target: vega
           push: true
+          provenance: false
+          sbom: false
+          labels: ${{ steps.checkout.outputs.oci_labels }}
           build-args: |
             VITE_MERCURY_BASE_URL=https://mercury-stg.iprtapp.com
           tags: |
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/cosmos-vega:staging
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:sha-${{ env.SHA }}
-            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/0xfe10_dynamic-actions_cosmos-vega:staging
-      - name: Deploy Cosmos images
-        uses: repotea-workspace/kangumi/github-actions/gitops-deploy@main
-        with:
-          repository: repotea-workflow/gitops-ayn
-          deploy_key: ${{ secrets.DEPLOY_KEY_GITOPS_AYN }}
-          valueFile: argocd/apps/cosmos-hk0/overlays/staging/values.yaml
-          changes: |
-            {
-              "image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury@${{ steps.mercury_image.outputs.digest }}",
-              "worker.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-mercury-worker@${{ steps.worker_image.outputs.digest }}",
-              "vega.image": "${{ env.DOCKER_REGISTRY_ALI_VPC }}/xoohub/0xfe10_dynamic-actions_cosmos-vega@${{ steps.vega_image.outputs.digest }}"
-            }
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-vega:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-vega:sha-${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-vega:staging
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-vega:sha-${{ env.SHORT_SHA }}-${{ github.run_number }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-vega:sha-${{ env.SHORT_SHA }}
+            ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-vega:staging
