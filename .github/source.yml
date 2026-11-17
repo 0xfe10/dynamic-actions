@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2130a0837c00a8cd8ee5738b983c82a75ecf8994"
+  sha: "731153668ec5d863ff86a1d9cb4f52ab56d0613c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44009878841
+  ref_name: "fix/scoped-printer-catalog"
+  run_id: 44159977006
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(mercury): describe reviewed OpenAPI business behavior\n\nAdd Simplified Chinese business summaries and descriptions for the OpenAPI operations, parameters, and fields covered by the reviewed samples. Public paths, field names, operation IDs, requiredness, security, and SDK contracts stay unchanged.\n\nThis is an incremental batch for #507. It does not complete the issue.\n\nThe merged head is c5539b45e1dedac72ae37ad4b8b6e924eeb190ae. Compared with contracts generated from 9c676709eb9340a95ca933d8f0ee30f0f675e0ce, platform keeps 482 mappings and runtime keeps 37, with no non-documentation structure changes. Platform SHA256 9fd8e948c3cba28573d22c303e2035393ad54d5742b9b80ac750b1e7f6ad8d0b and runtime SHA256 493634fed449f0d1dfe8120bc5352722f39a22dba9c7e68844e121021544fb8b. The follow-up commit regenerates description comments only in the platform TypeScript client and points Orion at a4862bfb80ac1ef5c8733781931c3832bb34f939. It does not change the OpenAPI source.\n\n438 platform operations and 8 runtime operations still have no business summary. Shared BuildArtifact, ActionRun, BuildSpec, and NativeBuildInput field coverage remains incomplete."
+  message: "fix(devicecatalog): scope runtime printer models to the authenticated application"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T03:23:47Z"
+  created_at: "2026-11-17T19:34:21Z"
