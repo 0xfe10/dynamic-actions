@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b61896dad5da5675ba16aa25640a0a3514191fc1"
+  sha: "31181fcb55b776958ffb4957beb5a5c2d2b10e11"
   ref_type: "branch"
   ref_name: "lxw"
-  run_id: 44052327821
+  run_id: 44067594336
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "\u7edf\u4e00\u6309\u94ae"
-  authors: ["ShuangZiMoYin"]
+  message: "chore(lxw): merge origin/lxw and retain NativeTheme cursor color"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T09:05:27Z"
+  created_at: "2026-11-17T10:44:31Z"
