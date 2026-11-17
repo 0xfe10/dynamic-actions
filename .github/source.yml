@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ed6e3fbc0c90eaac135992f8973bce1fb88eb5ad"
+  sha: "bcdd57ba1a723602e62d68f783f6f5f94313420a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44069861561
+  ref_name: "fix/auth-skip-icon"
+  run_id: 44149105631
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow,rigel_build): add publish-fluent CLI, adaptive home menu, auth l10n, and sign-out confirmation (#294)\n\n* \u9996\u9875\u8c03\u6574 1\n\n* 1. \u767b\u5f55\uff0c\u7ffb\u8bd1\n2. \u767b\u5f55\uff0c\u9519\u8bef\u5410\u53f8\u5f39\u7a97\u63d0\u793a\n\n* 1. \u9009\u62e9 \u56fe\u7247\n2. \u9009\u62e9 \u6587\u4ef6\n\n* 0\n\n* 0\n\n* \u9519\u8bef\u63d0\u793a \u5f39\u7a97\u63d0\u793a\n\n* \u56fe\u7247\u9009\u62e9 \u4fee\u6539\n\n* \u8d26\u53f7\u4fe1\u606f \u4fee\u6539\n\n* \u8bbe\u5907\u8fde\u63a5\u6309\u94ae\u6837\u5f0f\u4fee\u6539\n\n* \u7edf\u4e00\u6309\u94ae\n\n* fix(mellow,localization): remove legacy plugin bloat and restore UI and l10n contracts\n\n* fix(rigel_build): make publish-fluent dry-run side-effect free and isolate tests\n\n* docs(openwiki): restore repository workspace guidance in workflow.md\n\n---------\n\nCo-authored-by: 0xfe10 <0xfe10@proton.me>"
-  authors: ["ShuangZiMoYin"]
+  message: "fix(mellow): use Lanhu skip-sign-in icon on auth pages\n\nReplace the Material close_rounded icon in mellowAuthSkipLabel with the bundled MELLOW auth-skip vector asset exported from Lanhu component icon/\u901a\u7528/\u8df3\u8fc7\u767b\u5f55 (16x16, #00A5FB) via RegisteredIcon across MellowAuthPage and MellowAuthProvidersPage, while preserving localized skip semantics, hit targets, navigation, and missing-resource safety.\n\nRefs #272"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T10:59:37Z"
+  created_at: "2026-11-17T18:33:29Z"
