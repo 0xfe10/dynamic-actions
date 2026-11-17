@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "10e81355bdac5fad631c4a3f68f1b6a6d3274925"
+  sha: "e2d54582aed4acaa92f5978c6261fd5fe28c773e"
   ref_type: "branch"
-  ref_name: "docs/openapi-business-descriptions"
-  run_id: 44001835317
+  ref_name: "ops/dev-root-compose"
+  run_id: 44001982444
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "merge(main): include the OpenAPI readability fix"
+  message: "fix(dev): preserve the browser host port through the proxy"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:17:14Z"
+  created_at: "2026-11-17T02:18:30Z"
