@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "31bfc6fed6bc10a6e1b5e69e67175f94d5073fdf"
+  sha: "08e41d8057f22d9b4fc59bdbce4b2c0069b9c021"
   ref_type: "branch"
-  ref_name: "fix/education-relations"
-  run_id: 44058412766
+  ref_name: "main"
+  run_id: 44058764099
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(education): preserve stage filters and follow linked question resources"
+  message: "fix(education): scope question types and resolve multi-hop resources (#206)\n\nPreserve stage filtering through Rubus and resolve linked knowledge resources consistently across question queries. Include PostgreSQL regression coverage and routing rollout notes."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T09:45:12Z"
+  created_at: "2026-11-17T09:47:26Z"
