@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "42cdfdb399d7e94cf5639f637eccec6d9d04f665"
+  sha: "7d1c1cbf7eeba97730eb201a86429446e682d9e2"
   ref_type: "branch"
-  ref_name: "ops/dev-root-compose"
-  run_id: 43999852371
+  ref_name: "chore/checkpoint-openapi-docs-20261117"
+  run_id: 43999892813
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(dev): keep Compose and same-origin proxy configuration in the project"
+  message: "docs(openapi): checkpoint reviewed business description samples"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:01:11Z"
+  created_at: "2026-11-17T02:01:29Z"
