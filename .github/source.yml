@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9c676709eb9340a95ca933d8f0ee30f0f675e0ce"
+  sha: "42cdfdb399d7e94cf5639f637eccec6d9d04f665"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 43830430135
+  ref_name: "ops/dev-root-compose"
+  run_id: 43999852371
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(model-gateway): add global model settings and inference gateway (#510)\n\nRefs #508."
+  message: "fix(dev): keep Compose and same-origin proxy configuration in the project"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-16T08:20:42Z"
+  created_at: "2026-11-17T02:01:11Z"
