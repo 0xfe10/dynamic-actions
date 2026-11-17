@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "fe3557f5d8a280532d88be223e3154eb4cf5ceca"
+  sha: "a317616450b680b5e5f837953779809fd42009b3"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44000971793
+  ref_name: "docs/openapi-business-descriptions"
+  run_id: 44001379624
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): improve OpenAPI documentation readability (#506)\n\nKeep the embedded Redoc renderer on an explicit light content theme so the surrounding page colors cannot hide its text."
+  message: "docs(mercury): describe reviewed OpenAPI business behavior"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:10:19Z"
+  created_at: "2026-11-17T02:13:35Z"
