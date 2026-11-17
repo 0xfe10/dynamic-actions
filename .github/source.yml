@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a317616450b680b5e5f837953779809fd42009b3"
+  sha: "10e81355bdac5fad631c4a3f68f1b6a6d3274925"
   ref_type: "branch"
   ref_name: "docs/openapi-business-descriptions"
-  run_id: 44001379624
+  run_id: 44001835317
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(mercury): describe reviewed OpenAPI business behavior"
+  message: "merge(main): include the OpenAPI readability fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:13:35Z"
+  created_at: "2026-11-17T02:17:14Z"
