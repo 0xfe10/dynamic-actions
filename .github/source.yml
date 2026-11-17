@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f65f1c5a1b3e881db11d777f87edae7e6f849f22"
+  sha: "a4862bfb80ac1ef5c8733781931c3832bb34f939"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 44002321614
+  ref_name: "docs/openapi-runtime-client-comments"
+  run_id: 44007622190
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge branch 'main' into lxw"
-  authors: ["0xfe10","ShuangZiMoYin"]
+  message: "docs(runtime-client): regenerate OpenAPI description comments"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T02:21:11Z"
+  created_at: "2026-11-17T03:05:14Z"
