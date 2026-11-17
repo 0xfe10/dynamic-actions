@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/byteone"
   repository_id: 1036077198
-  sha: "48871376b84f3d93b692c0cad8828aa482d445d5"
-  ref_type: "tag"
-  ref_name: "v0.7.47"
-  run_id: 42804935486
+  sha: "face54ae204f63e9bb688ef59ebf7544f8433ded"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 44050607646
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): associate published images with the source repository (#42)\n\n* fix(ci): associate published images with the source repository\n\n* fix(ci): mirror only the application platform image"
-  authors: ["0xfe10"]
+  message: "feat(ai): add configurable text and image moderation models"
+  authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-10T11:08:13Z"
+  created_at: "2026-11-17T08:53:41Z"
