@@ -3,9 +3,9 @@ source:
   repository: "prtmax/byteone"
   repository_id: 1036077198
   sha: "face54ae204f63e9bb688ef59ebf7544f8433ded"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 44050607646
+  ref_type: "tag"
+  ref_name: "v0.7.48"
+  run_id: 44050607374
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
