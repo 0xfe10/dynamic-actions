@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ea3694612b9d3dbdb1a06c9c992cd71f10c84779"
+  sha: "798ee48d93e0f58d39669ccb8a404bb3973a4c1a"
   ref_type: "branch"
-  ref_name: "feat/bluetooth-device-details"
-  run_id: 44159512568
+  ref_name: "fix/home-printer-power"
+  run_id: 44161219394
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): show verified Bluetooth details and setting feedback\n\nRefs #297"
+  message: "fix(rigel): keep home power tests on direct dependencies\n\nRead the rendered registered icon without importing the widgets package from\nthe app test.\n\nRefs #296"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T19:31:46Z"
+  created_at: "2026-11-17T19:41:20Z"
