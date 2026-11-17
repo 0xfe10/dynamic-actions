@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "798ee48d93e0f58d39669ccb8a404bb3973a4c1a"
+  sha: "b14f7e5d57f7970b123eb47c7f0bd613e0e70512"
   ref_type: "branch"
-  ref_name: "fix/home-printer-power"
-  run_id: 44161219394
+  ref_name: "fix/scoped-printer-catalog"
+  run_id: 44168025911
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): keep home power tests on direct dependencies\n\nRead the rendered registered icon without importing the widgets package from\nthe app test.\n\nRefs #296"
+  message: "fix(devices): filter Bluetooth discovery by the runtime application catalog"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T19:41:20Z"
+  created_at: "2026-11-17T20:19:20Z"
