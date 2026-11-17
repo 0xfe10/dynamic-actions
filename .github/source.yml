@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b5ccd63c9d0479ace04c12aac35ffd5a8daad1ca"
+  sha: "b6851589bd007005eeded20308bac96c5aaa5544"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 44038403958
+  run_id: 44045050939
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "1.\u56fe\u7247\u7f16\u8f91\u56685\uff08\u56fe\u6807\u8d44\u6e90\uff09"
+  message: "1.\u56fe\u7247\u7f16\u8f91\u56686\uff08\u672c\u5730\u5316\u8bed\u8a00\u7ffb\u8bd1\uff09"
   authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-17T07:24:14Z"
+  created_at: "2026-11-17T08:14:49Z"
