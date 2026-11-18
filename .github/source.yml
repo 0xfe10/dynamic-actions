@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0462431805fe5cbab2a7539d26f600eb20e4b93c"
+  sha: "58eb490295262022543f9e789dca5a2ff692ca60"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44220155061
+  run_id: 44220240240
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): use Lanhu skip-sign-in icon on auth pages (#300)\n\nRefs https://github.com/prtmax/orion/issues/272"
+  message: "fix(mellow): unify image print editor transition and loading state (#306)\n\nRefs https://github.com/prtmax/orion/issues/295"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:01:29Z"
+  created_at: "2026-11-18T02:02:07Z"
