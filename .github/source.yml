@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c902b5b8edc6410e34473371eded97850ce72ea5"
+  sha: "3a50abb693b10a17f0bb86ec6a53518db1545187"
   ref_type: "branch"
-  ref_name: "docs/project-theme-context"
-  run_id: 44270573572
+  ref_name: "fix/offline-catalog"
+  run_id: 44271736296
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(theme): clarify the local palette contract"
+  message: "chore(build): pin reviewed offline catalog runtime"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T08:51:30Z"
+  created_at: "2026-11-18T08:59:42Z"
