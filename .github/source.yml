@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "973933b5bdf667d6be665b2b27d655b2c925d933"
+  sha: "f411d660a06372b6b81299bde252d15f05904ca4"
   ref_type: "branch"
-  ref_name: "refactor/vega-workbenches"
-  run_id: 44378419195
+  ref_name: "fix/debug-resource-authority"
+  run_id: 44390469400
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega,mercury): preserve omitted internal profile fields and isolate workbench scopes\n\n- Preserve omitted internalNotes and customAttributes on PUT /tenants/{tenantId}/profile across all caller identities while retaining explicit platform edits/clears and 403 rejection for non-platform callers\n- Unify /resources/device-products, legacy /studio/device-products redirect, and resource tab visibility on effective appContext permissions\n- Bind TenantProfilePage save mutation variables and cache updates to the submitted tenant ID and isolate form state across tenant navigation\n- Scope TenantAppLanguagePacksPage dialog state, catalog snapshot, and mutation variables/cache updates by tenantId and appId, and fix status badge translation keys\n- Add PostgreSQL HTTP, Vitest router/cache, and real-Mercury Playwright regressions\n\nRefs #521"
+  message: "fix(build): scope staging debug file destinations to the selected app"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T19:14:47Z"
+  created_at: "2026-11-18T20:23:21Z"
