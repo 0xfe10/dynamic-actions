@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4288fc21c242f0541f7b839f6ab8d3e26acaff61"
+  sha: "75a63188c39c5ca758d066fb4c04e39f5fe3c80b"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44411674581
+  run_id: 44415637373
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): keep object grants on the session that requested them\n\nRegister historical ticket GETs from trusted read and update responses.\nRecord avatar and feedback grants only after header and media checks.\nA captured session epoch rejects a late response after logout, close, or\na switch. A single-object read cannot follow a redirect onto another\ngrant or an ordinary file."
+  message: "fix(rigel): reject loose ordinary-file paths and hosts\n\nEmpty path segments and a trailing slash no longer match a canonical object key. OSS ordinary files require one bucket label and one oss-region label. A local receiver records the encoded path and query on the first hop and after a redirect."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T22:27:09Z"
+  created_at: "2026-11-18T22:52:25Z"
