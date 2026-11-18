@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6b7a6070ac0d8dd4141750ce8eff17df4fa52f61"
+  sha: "c78ebf2eb7083de7fb5d8b869fb504032cd50a47"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 44226594387
+  ref_name: "main"
+  run_id: 44228577758
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): preserve working image flows behind the native header"
-  authors: ["0xfe10"]
+  message: "feat(mellow): add native editor header and refresh jigsaw assets (#307)\n\nRefs #295\n\nPreserve the existing editor tools, loading, export, draft and print workflows behind the native header; refresh all 55 affected jigsaw resource locks.\n\nVerified with just check (25 suites, 1,033 tests), exact-head Foundation CI and independent final-head review. Physical-device and printer acceptance remain pending."
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-18T02:54:24Z"
+  created_at: "2026-11-18T03:11:04Z"
