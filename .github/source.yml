@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "39fa6e8669daa537d4c4a6c8946479da0bc7810d"
+  sha: "800d1e8fd17228c162b7e7b5053f7101975f276c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44298081614
+  ref_name: "feat/starc-staging-default"
+  run_id: 44365968847
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(editor): integrate image rotation, mirroring and cropping (#315)\n\nUse the existing Mellow editor lifecycle for image tools, discard cancelled edits, and preserve standalone crop controls. Refs #316."
-  authors: ["chenanshun"]
+  message: "fix(rigel): default debug builds to project staging\n\nEmpty COSMOS_PLATFORM_URL now selects this project's staging platform API.\nDebug specs that use the development host, or a host other than the selected\nnon-loopback platform, fail before Flutter runs. The platform cache key\nincludes the endpoint, so a spec from another host is not reused.\n\nStaging profiles accept remote resources only from the runtime host or the\nOSS CDN. Production release signing and freeze stay unchanged."
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T11:49:05Z"
+  created_at: "2026-11-18T18:06:13Z"
