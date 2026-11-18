@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "21a4a30db536badf1b4b366d0d8506389c8d782b"
+  sha: "b0d06adcf48e8dd0449b9713b51207a22e8477a6"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 44221419788
+  ref_name: "main"
+  run_id: 44221973122
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "\u5408\u5e76\u4ee3\u7801"
-  authors: ["ShuangZiMoYin"]
+  message: "feat(devices): query Bluetooth details and verify auto-off settings (#302)\n\nRefs https://github.com/prtmax/orion/issues/297\nRefs https://github.com/prtmax/orion/issues/296"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:11:39Z"
+  created_at: "2026-11-18T02:16:09Z"
