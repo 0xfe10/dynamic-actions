@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c4db7fe9679496e18048d9cd738ae9c8a6c475fd"
+  sha: "9cffbbba023d919998684172d3ab959267869ee3"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 44258344762
+  ref_name: "refactor/theme-color-naming"
+  run_id: 44259901239
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(widgets): restore media helpers and safe home image entry"
+  message: "docs(theme): document design color display mappings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T07:22:27Z"
+  created_at: "2026-11-18T07:34:23Z"
