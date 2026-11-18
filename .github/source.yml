@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0b0e9441bd261ca9f6f6ce90f94cbd9705931494"
+  sha: "3862c469c365a97059db1db0b132ff8777e631db"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44371858162
+  run_id: 44377269802
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): close staging debug review findings\n\nThe profile IDE startup selects now defaults to project staging, while unpinned\nbootstrap stays offline. Remote images check every redirect hop and keep signed\nquery strings. Cached specs record a platform or offline-spec-file source, and\ndebug builds pass that marker as DEBUG_SPEC_SOURCE. IPv6 loopback is accepted,\nand a debug spec must match the selected platform scheme, port, and runtime path."
+  message: "fix(rigel): reject mismatched debug identity before cache reuse\n\nCompare the requested tenant and app with the spec envelope and buildInput\nbefore writing a cache record or starting Flutter. Cache source and spec now\nshare one atomic record, and a pinned IDE assembly carries that source instead\nof logging handwritten-default. Staging resource checks accept only signed\nvirtual-hosted OSS URLs, not every aliyuncs.com host."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T18:38:20Z"
+  created_at: "2026-11-18T19:08:28Z"
