@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0cc39b0c1fcfc49f2b7a792efd7dbc7e34670215"
+  sha: "ab3dab03a9b1ebee63e2ee0524f5139eb3a1f670"
   ref_type: "branch"
-  ref_name: "fix/scoped-printer-catalog"
-  run_id: 44226208583
+  ref_name: "main"
+  run_id: 44228166661
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(integration): pin Orion scoped printer discovery (#515)\n\nRefs https://github.com/prtmax/orion/issues/276"
+  message: "Scope runtime printer discovery to the authenticated application (#513)\n\nRefs https://github.com/prtmax/orion/issues/276"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:51:00Z"
+  created_at: "2026-11-18T03:07:37Z"
