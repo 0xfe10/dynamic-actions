@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b13656355078cca590437b93c3258e33af7e9a26"
+  sha: "181e46a75b3d7588b1b8abb85eaac349e9865fd7"
   ref_type: "branch"
-  ref_name: "fix/image-editor-transition"
-  run_id: 44176908485
+  ref_name: "feat/bluetooth-device-details"
+  run_id: 44220042981
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): unify image print editor transition and loading state\n\nAwait foreground resume and frame completion before mounting the editor after image selection, replace the transient titled GraphicsEditorPage loading Scaffold with a headerless Mellow loading surface, and pre-seed CompactEditorView's initial viewport so the canvas opens centered on frame 1.\n\nRefs #295"
+  message: "fix(mellow): show Lanhu home battery and connected state (#303)\n\nRefs https://github.com/prtmax/orion/issues/296"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-17T21:10:06Z"
+  created_at: "2026-11-18T02:00:42Z"
