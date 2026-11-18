@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0ac2b492dd41f0ec10cb7401245b35c28ecd950e"
+  sha: "0cc39b0c1fcfc49f2b7a792efd7dbc7e34670215"
   ref_type: "branch"
-  ref_name: "fix/scoped-printer-catalog-pin"
-  run_id: 44224124937
+  ref_name: "fix/scoped-printer-catalog"
+  run_id: 44226208583
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(integration): pin the merged Orion printer catalog"
+  message: "fix(integration): pin Orion scoped printer discovery (#515)\n\nRefs https://github.com/prtmax/orion/issues/276"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:33:33Z"
+  created_at: "2026-11-18T02:51:00Z"
