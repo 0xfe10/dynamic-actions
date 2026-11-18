@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1373c8e176b9e16d98bcf9e87f0e2764dc36e27c"
+  sha: "63220af665917781cfb9225d6840b610667b8232"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44275455249
+  ref_name: "refactor/vega-workbenches"
+  run_id: 44369777490
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Freeze allocated printer models into application build snapshots (#518)\n\nRefs https://github.com/prtmax/orion/issues/310 and https://github.com/prtmax/orion/issues/276."
+  message: "refactor(vega): separate Platform, Tenant, and App Studio workbenches\n\nSeparate Vega into three isolated workbenches (Platform, Tenant, and App Studio) and align minimal Mercury tenant self-service authorization:\n\n- Centralize all public catalog authoring and tenant/app control-plane administration under /platform without cross-workbench links or redirects into /tenants.\n- Add whitelisted Tenant profile self-service (/tenants/$tenantId/profile), read-only Tenant app directory (/tenants/$tenantId/apps), and Tenant per-app resource selection and custom authoring (/tenants/$tenantId/apps/$appId/resources/*) within the Tenant workbench shell.\n- Converge App Studio around app users/roles/permissions, translation overrides, banners, feedback, store publishing, and legal docs, with deterministic direct navigation back to /tenants/$tenantId/apps without relying on browser history.\n- Remove cross-workbench links across navigation, scope rail, developer dock, and store-publishing helpers, and tighten route-level authorization guards against cross-workbench, cross-tenant, and cross-app URL entry.\n- Grant tenant_administrator scoped tenant profile and per-app content permissions in Mercury while redacting and preserving platform-internal profile fields (internalNotes, customAttributes) and enforcing active/published app-region language-pack selection.\n\nRefs #521"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T09:23:33Z"
+  created_at: "2026-11-18T18:26:51Z"
