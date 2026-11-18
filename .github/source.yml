@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "046e87dd8e68a940e2cf49e567508bf9396ddb07"
+  sha: "66445718effa4bcf3ed0bc8888f583c78d28c2a7"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44268568240
+  ref_name: "fix/offline-catalog"
+  run_id: 44269788381
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(theme): describe design color naming and compatibility (#313)\n\nDocument the confirmed display-only mapping for existing theme color keys. Preserve all values, semantic roles, runtime APIs, frozen contracts and digests; retain the unresolved secondary-text mapping boundary.\n\nThe Cosmos companion PR519 merged first as 39772116f251cbe665896e870618e3096638fb6e, so the documentation reference resolves on main. Source head 9cffbbba023d919998684172d3ab959267869ee3 was independently reviewed with no actionable findings; Foundation run 44259936011 passed the full check and Windows argument forwarding.\n\nRefs #311. Keep the issue open for acceptance; management implementation tracks prtmax/cosmos#517."
+  message: "Merge remote-tracking branch 'origin/main' into fix/offline-catalog"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T08:37:24Z"
+  created_at: "2026-11-18T08:46:00Z"
