@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "76d50a579ac43cc3c9d40e303e7f5a49790b57c7"
+  sha: "1cba50dd463a5006a1367a92b625a23820bf198d"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 44294698507
+  run_id: 44295882051
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): apply image tool results through the active draft lifecycle"
+  message: "fix(crop): discard late route results and retain standalone icons"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T11:26:31Z"
+  created_at: "2026-11-18T11:34:21Z"
