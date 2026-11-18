@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0be2a5cc7e61a85164b397973232f68a16e625f7"
+  sha: "7e343881d5f46c659ccc5a3ced55b2eac89a9d85"
   ref_type: "branch"
-  ref_name: "fix/scoped-printer-catalog"
-  run_id: 44220544196
+  ref_name: "main"
+  run_id: 44220670487
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(integration): combine scoped discovery with scanner updates"
+  message: "fix(mellow): align setup-password validation and actionable registration errors (#305)\n\nRefs https://github.com/prtmax/orion/issues/298"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:04:34Z"
+  created_at: "2026-11-18T02:05:35Z"
