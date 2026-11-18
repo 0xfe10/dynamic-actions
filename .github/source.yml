@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "800d1e8fd17228c162b7e7b5053f7101975f276c"
+  sha: "0b0e9441bd261ca9f6f6ce90f94cbd9705931494"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44365968847
+  run_id: 44371858162
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): default debug builds to project staging\n\nEmpty COSMOS_PLATFORM_URL now selects this project's staging platform API.\nDebug specs that use the development host, or a host other than the selected\nnon-loopback platform, fail before Flutter runs. The platform cache key\nincludes the endpoint, so a spec from another host is not reused.\n\nStaging profiles accept remote resources only from the runtime host or the\nOSS CDN. Production release signing and freeze stay unchanged."
+  message: "fix(rigel): close staging debug review findings\n\nThe profile IDE startup selects now defaults to project staging, while unpinned\nbootstrap stays offline. Remote images check every redirect hop and keep signed\nquery strings. Cached specs record a platform or offline-spec-file source, and\ndebug builds pass that marker as DEBUG_SPEC_SOURCE. IPv6 loopback is accepted,\nand a debug spec must match the selected platform scheme, port, and runtime path."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T18:06:13Z"
+  created_at: "2026-11-18T18:38:20Z"
