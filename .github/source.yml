@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f270ec10798daa315bfc38b6217fc5ed4d4dec8b"
+  sha: "2c354a0734f088c171607ed80290a8da6e582ee8"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44400591425
+  run_id: 44405418747
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): bind trusted banner, avatar, and feedback objects\n\nThe current session records the exact URI and method from those Mercury\nresponses. Upload grant checks stay in place. A redirect, another method,\nanother object, or a later session does not inherit the grant. Release\npasses an empty DEBUG_SPEC_SOURCE and no longer rewrites the tracked\nlaunch library, so a later debug start still compiles that file."
+  message: "fix(rigel): bind ordinary-file checks to the sent target\n\nRelease assemble ignores a top-level authorizedResourceOrigins field so a\nfrozen release does not consume debug-only configuration outside the digest.\nDebug assemble and pinned IDE bootstrap still copy a validated list.\n\nTrusted OSS ordinary-file origins decode %2F once and then require an object\nid plus a 64-digit lowercase digest. Other origins keep literal path\nsegments. A raw target that is not the URI being sent is rejected, including\non each redirect."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T21:21:29Z"
+  created_at: "2026-11-18T21:49:39Z"
