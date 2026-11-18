@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "181e46a75b3d7588b1b8abb85eaac349e9865fd7"
+  sha: "26d19f7c4117fbd98ec6d777ec39757b9c99073c"
   ref_type: "branch"
-  ref_name: "feat/bluetooth-device-details"
-  run_id: 44220042981
+  ref_name: "main"
+  run_id: 44220114679
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): show Lanhu home battery and connected state (#303)\n\nRefs https://github.com/prtmax/orion/issues/296"
+  message: "fix(scanner): implement native camera scanning and permission wiring (#301)\n\nRefs https://github.com/prtmax/orion/issues/277"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:00:42Z"
+  created_at: "2026-11-18T02:01:09Z"
