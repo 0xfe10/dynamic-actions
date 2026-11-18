@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6925ab1d66c8c95ffafcef24d40a8b451db9a2b2"
+  sha: "f270ec10798daa315bfc38b6217fc5ed4d4dec8b"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44396027356
+  run_id: 44400591425
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): run the origin generator with the SDK dart\n\nThe profile test shells out to the Flutter SDK dart. CI does not provide fvm."
+  message: "fix(rigel): bind trusted banner, avatar, and feedback objects\n\nThe current session records the exact URI and method from those Mercury\nresponses. Upload grant checks stay in place. A redirect, another method,\nanother object, or a later session does not inherit the grant. Release\npasses an empty DEBUG_SPEC_SOURCE and no longer rewrites the tracked\nlaunch library, so a later debug start still compiles that file."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T20:55:17Z"
+  created_at: "2026-11-18T21:21:29Z"
