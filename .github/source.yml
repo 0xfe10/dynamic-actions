@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3a50abb693b10a17f0bb86ec6a53518db1545187"
+  sha: "fa4291af7565e0a1bbec151616d48a5e39756e2b"
   ref_type: "branch"
-  ref_name: "fix/offline-catalog"
-  run_id: 44271736296
+  ref_name: "main"
+  run_id: 44273865250
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(build): pin reviewed offline catalog runtime"
+  message: "docs(theme): clarify the local palette contract (#520)\n\nClarify the editable Cosmos palette contract and preserve configured success-color values. Refs #517."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T08:59:42Z"
+  created_at: "2026-11-18T09:13:24Z"
