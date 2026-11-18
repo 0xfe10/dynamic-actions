@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "fa4291af7565e0a1bbec151616d48a5e39756e2b"
+  sha: "1373c8e176b9e16d98bcf9e87f0e2764dc36e27c"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44273865250
+  run_id: 44275455249
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(theme): clarify the local palette contract (#520)\n\nClarify the editable Cosmos palette contract and preserve configured success-color values. Refs #517."
+  message: "Freeze allocated printer models into application build snapshots (#518)\n\nRefs https://github.com/prtmax/orion/issues/310 and https://github.com/prtmax/orion/issues/276."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T09:13:24Z"
+  created_at: "2026-11-18T09:23:33Z"
