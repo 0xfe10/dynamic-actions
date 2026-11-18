@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "58ab77d61a78d0c9d7678d94f562dc1265178a87"
+  sha: "25e9fcc6715033f3dba0a676f1f2b9b959ac23ce"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44378319757
+  run_id: 44384257111
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): keep the default IDE assembly formatter-stable\n\nThe check task writes the unpinned assembly before dart format. A blank line\nbetween the export and debugSpecSource keeps that file unchanged."
+  message: "fix(rigel): bind staging resource origins and release output\n\nStaging loads must match the runtime origin, including its effective port, or an explicitly configured project origin. Other buckets stay rejected when the storage profile does not name one. Nested buildInput ids must be canonical strings. Release assemble no longer labels a frozen spec as handwritten, and an older IDE assembly still compiles without replacing its pin."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T19:14:15Z"
+  created_at: "2026-11-18T19:49:06Z"
