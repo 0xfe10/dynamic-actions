@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "25e9fcc6715033f3dba0a676f1f2b9b959ac23ce"
+  sha: "a7f657df14308064777c21de5a64e06f82da404f"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44384257111
+  run_id: 44392668041
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): bind staging resource origins and release output\n\nStaging loads must match the runtime origin, including its effective port, or an explicitly configured project origin. Other buckets stay rejected when the storage profile does not name one. Nested buildInput ids must be canonical strings. Release assemble no longer labels a frozen spec as handwritten, and an older IDE assembly still compiles without replacing its pin."
+  message: "fix(rigel): wire resource origins and startup source\n\nCopy environment.authorizedResourceOrigins from the trusted build input into the standard assembly. An omitted list authorizes no external host. Direct launch uses a tracked source library, so an old embedded const and a missing sidecar both analyze, and an assembly with no binding proof stays unknown."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T19:49:06Z"
+  created_at: "2026-11-18T20:35:47Z"
