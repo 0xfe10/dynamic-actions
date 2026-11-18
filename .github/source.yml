@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1afdc331b88b99d5dfa089a8eef1be4d1d335bbf"
+  sha: "8e10fa63e1fa91b5d61239e14aead3c674b43d77"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 44260734061
+  ref_name: "lxw"
+  run_id: 44265857395
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "1.\u56fe\u7247\u7f16\u8f91\u56688\uff08\u65cb\u8f6c\u955c\u50cf\uff09"
-  authors: ["chenanshun"]
+  message: "Merge branch 'origin/lxw' into lxw"
+  authors: ["0xfe10","ShuangZiMoYin"]
 dispatch:
-  created_at: "2026-11-18T07:40:42Z"
+  created_at: "2026-11-18T08:18:38Z"
