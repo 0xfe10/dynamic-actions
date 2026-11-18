@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "9cffbbba023d919998684172d3ab959267869ee3"
+  sha: "eb24efcb3b48a185f5416ae8194aed0546ad8d6a"
   ref_type: "branch"
-  ref_name: "refactor/theme-color-naming"
-  run_id: 44259901239
+  ref_name: "main"
+  run_id: 44260393916
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(theme): document design color display mappings"
-  authors: ["0xfe10"]
+  message: "Restore shared media helpers and safe Mellow home image selection (#309)\n\nRestore the submitted shared media, permission, picker, dialog and button helpers and the three historical Mellow home image-selection actions. Preserve the existing editor export/save/draft/print/replace paths and direct gallery entry, with cancellation, lifecycle and session guards.\n\nRepair permission checks, dialog cleanup, localized helper fallbacks, dependency pins, environment precedence, publishing arguments and compatibility regressions. Remove scratch probes and retain inline paper and birthday validation.\n\nValidated with bootstrap (512 resources), full repository checks (25 suites / 1,063 tests), rendered widget captures and successful Foundation run 44258372426. Independently approved on c4db7fe9679496e18048d9cd738ae9c8a6c475fd. Native-device and printer acceptance remain unverified.\n\nRefs #308, #295. Keep both open for product acceptance."
+  authors: ["ShuangZiMoYin"]
 dispatch:
-  created_at: "2026-11-18T07:34:23Z"
+  created_at: "2026-11-18T07:38:04Z"
