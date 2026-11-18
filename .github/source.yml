@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "48cdd7c21ead1381b73d7bc85586263c0a8afcf6"
+  sha: "679e1a4d0fe6377d7e410b861a888d784ebf3049"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44220272146
+  run_id: 44222418931
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(appauth): align runtime app-user registration policy and login compatibility (#514)\n\nRefs https://github.com/prtmax/orion/issues/298"
+  message: "feat(mercury,vega): add manual localization key creation and archive-only lifecycle (#516)\n\nRefs https://github.com/prtmax/orion/issues/299"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:02:24Z"
+  created_at: "2026-11-18T02:19:52Z"
