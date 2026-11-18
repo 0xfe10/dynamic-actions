@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "75a63188c39c5ca758d066fb4c04e39f5fe3c80b"
+  sha: "59f7ce842c69e6a8d16e6f0fe9623efeff770ee4"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44415637373
+  run_id: 44419831640
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): reject loose ordinary-file paths and hosts\n\nEmpty path segments and a trailing slash no longer match a canonical object key. OSS ordinary files require one bucket label and one oss-region label. A local receiver records the encoded path and query on the first hop and after a redirect."
+  message: "fix(rigel): register object reads as one set\n\nHistorical attachment GETs are recorded only after every descriptor, URL, and originating session epoch is accepted. Banner and avatar call sites select single-object GET, so a target that also matches ordinary policy cannot hop to another ordinary target."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T22:52:25Z"
+  created_at: "2026-11-18T23:20:14Z"
