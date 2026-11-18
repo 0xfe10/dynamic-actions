@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6f3faa80661fbee45aed419ae36b1bbd65c52b92"
+  sha: "adbad1ba916376368a07cd6492080dbab11ff15b"
   ref_type: "branch"
-  ref_name: "fix/scoped-printer-catalog"
-  run_id: 44222181849
+  ref_name: "main"
+  run_id: 44224072373
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(integration): preserve scoped discovery and device telemetry"
+  message: "Use the application printer catalog for Bluetooth discovery (#304)\n\nRefs https://github.com/prtmax/orion/issues/276"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:17:51Z"
+  created_at: "2026-11-18T02:33:05Z"
