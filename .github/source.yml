@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "df71b1e809c9294ab235390aa47de1fc5f4057f5"
+  sha: "2a92d9cf46e3ea81cfdb3cfeb785cc61e1396a40"
   ref_type: "branch"
-  ref_name: "fix/offline-catalog"
-  run_id: 44258269482
+  ref_name: "refactor/theme-color-naming"
+  run_id: 44259898943
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(build): freeze the application printer catalog"
+  message: "refactor(theme): map color display names to design vocabulary"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T07:21:52Z"
+  created_at: "2026-11-18T07:34:23Z"
