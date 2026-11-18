@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1cba50dd463a5006a1367a92b625a23820bf198d"
+  sha: "39fa6e8669daa537d4c4a6c8946479da0bc7810d"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 44295882051
+  ref_name: "main"
+  run_id: 44298081614
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(crop): discard late route results and retain standalone icons"
-  authors: ["0xfe10"]
+  message: "feat(editor): integrate image rotation, mirroring and cropping (#315)\n\nUse the existing Mellow editor lifecycle for image tools, discard cancelled edits, and preserve standalone crop controls. Refs #316."
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-18T11:34:21Z"
+  created_at: "2026-11-18T11:49:05Z"
