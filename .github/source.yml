@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0b4884dd4b1a4a14ce1ece5115b61806252bc347"
+  sha: "c4db7fe9679496e18048d9cd738ae9c8a6c475fd"
   ref_type: "branch"
-  ref_name: "fix/offline-catalog"
-  run_id: 44258258675
+  ref_name: "lxw"
+  run_id: 44258344762
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(discovery): satisfy catalog analysis checks"
+  message: "fix(widgets): restore media helpers and safe home image entry"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T07:21:48Z"
+  created_at: "2026-11-18T07:22:27Z"
