@@ -79,6 +79,8 @@ jobs:
           tags: ${{ steps.checkout.outputs.ghcr_tags }}
           labels: ${{ steps.checkout.outputs.oci_labels }}
           annotations: index:org.opencontainers.image.source=${{ steps.checkout.outputs.oci_source }}
+          build-args: |
+            BYTEONE_VERSION=${{ env.SOURCE_TAG }}
 
       - name: Push to Aliyun ACR (with retry)
         uses: nick-fields/retry@v3
@@ -157,6 +159,7 @@ jobs:
           platforms: linux/amd64
           build-args: |
             BYTEONE_BINARY_PROTECTION=${{ env.BYTEONE_PROTECTED_BINARY_PROTECTION }}
+            BYTEONE_VERSION=${{ env.SOURCE_TAG }}
 
           tags: ${{ steps.checkout.outputs.ghcr_tags }}
           labels: ${{ steps.checkout.outputs.oci_labels }}
