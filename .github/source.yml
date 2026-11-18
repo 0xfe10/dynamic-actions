@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b0d06adcf48e8dd0449b9713b51207a22e8477a6"
+  sha: "6f3faa80661fbee45aed419ae36b1bbd65c52b92"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44221973122
+  ref_name: "fix/scoped-printer-catalog"
+  run_id: 44222181849
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(devices): query Bluetooth details and verify auto-off settings (#302)\n\nRefs https://github.com/prtmax/orion/issues/297\nRefs https://github.com/prtmax/orion/issues/296"
+  message: "chore(integration): preserve scoped discovery and device telemetry"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:16:09Z"
+  created_at: "2026-11-18T02:17:51Z"
