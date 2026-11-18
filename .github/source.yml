@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "66445718effa4bcf3ed0bc8888f583c78d28c2a7"
+  sha: "c0e152b28b4d593230a89759fc586b5c8ad69a5c"
   ref_type: "branch"
-  ref_name: "fix/offline-catalog"
-  run_id: 44269788381
+  ref_name: "main"
+  run_id: 44271627556
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into fix/offline-catalog"
+  message: "Fix offline printer catalog discovery (#312)\n\nRefs #310 and #276."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T08:46:00Z"
+  created_at: "2026-11-18T08:58:55Z"
