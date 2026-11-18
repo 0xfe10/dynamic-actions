@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a186179ca59711e8454cb9c57cda1dcb2cdba19e"
+  sha: "21a4a30db536badf1b4b366d0d8506389c8d782b"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 44220768226
+  ref_name: "lxw"
+  run_id: 44221419788
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into chenas\n\n# Conflicts:\n#\tpackages/presentations/mellow/lib/src/image_print/page.dart"
-  authors: ["0xfe10","ShuangZiMoYin","chenanshun"]
+  message: "\u5408\u5e76\u4ee3\u7801"
+  authors: ["ShuangZiMoYin"]
 dispatch:
-  created_at: "2026-11-18T02:06:19Z"
+  created_at: "2026-11-18T02:11:39Z"
