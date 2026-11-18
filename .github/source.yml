@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2c354a0734f088c171607ed80290a8da6e582ee8"
+  sha: "cb403f964a53206c4f487e2d0eaa7b07baab12f1"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44405418747
+  run_id: 44406114639
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): bind ordinary-file checks to the sent target\n\nRelease assemble ignores a top-level authorizedResourceOrigins field so a\nfrozen release does not consume debug-only configuration outside the digest.\nDebug assemble and pinned IDE bootstrap still copy a validated list.\n\nTrusted OSS ordinary-file origins decode %2F once and then require an object\nid plus a 64-digit lowercase digest. Other origins keep literal path\nsegments. A raw target that is not the URI being sent is rejected, including\non each redirect."
+  message: "fix(rigel): drop a redundant redirect assertion\n\nFoundation check fails on the unnecessary non-null assertion in the banner\ngrant test."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T21:49:39Z"
+  created_at: "2026-11-18T21:53:45Z"
