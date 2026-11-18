@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2cabafd8f825e484aa71ca0311acfe8b2a4f4b3f"
+  sha: "39772116f251cbe665896e870618e3096638fb6e"
   ref_type: "branch"
-  ref_name: "refactor/theme-color-naming"
-  run_id: 44261619267
+  ref_name: "main"
+  run_id: 44268331029
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(devicecatalog): use valid registration fixture password"
+  message: "refactor(theme): align color display labels with design names (#519)\n\nAlign the existing theme color display labels and accessible control names in English, Simplified Chinese and Traditional Chinese. Preserve semantic keys, color values, submitted configuration, previews and frozen contracts. Document confirmed mappings and the unresolved text-tier boundary.\n\nRetain the focused theme regressions and correct the printer-catalog registration password fixture without changing production policy or removing assertions.\n\nFinal source 2cabafd8f825e484aa71ca0311acfe8b2a4f4b3f was independently reviewed with no actionable findings. Downstream Staging run 44261644411 passed API, Android and Admin checks, including integration and browser tests; staging image publication was skipped. The separate dispatch context remained pending and was not manually changed.\n\nRefs #517. Keep the issue open for acceptance. Companion Orion documentation is PR313."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T07:47:31Z"
+  created_at: "2026-11-18T08:35:44Z"
