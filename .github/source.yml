@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "cb403f964a53206c4f487e2d0eaa7b07baab12f1"
+  sha: "4288fc21c242f0541f7b839f6ab8d3e26acaff61"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44406114639
+  run_id: 44411674581
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): drop a redundant redirect assertion\n\nFoundation check fails on the unnecessary non-null assertion in the banner\ngrant test."
+  message: "fix(rigel): keep object grants on the session that requested them\n\nRegister historical ticket GETs from trusted read and update responses.\nRecord avatar and feedback grants only after header and media checks.\nA captured session epoch rejects a late response after logout, close, or\na switch. A single-object read cannot follow a redirect onto another\ngrant or an ordinary file."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T21:53:45Z"
+  created_at: "2026-11-18T22:27:09Z"
