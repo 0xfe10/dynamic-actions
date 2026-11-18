@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ac4f3062254a0241202729b29ceeb006710d4d63"
+  sha: "d1f5e0945fa4fc2626510df074a73c7fb61f4caf"
   ref_type: "branch"
-  ref_name: "lxw"
-  run_id: 44233941152
+  ref_name: "chenas"
+  run_id: 44246158935
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix: restore OrnButton tapTargetSize after main merge"
-  authors: ["0xfe10","ShuangZiMoYin","chenanshun"]
+  message: "1.\u56fe\u7247\u7f16\u8f91\u56687\uff08\u5408\u5e76\u62a5\u9519\uff09"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-18T03:57:27Z"
+  created_at: "2026-11-18T05:43:07Z"
