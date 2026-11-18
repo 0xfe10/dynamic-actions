@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "88ed647a63dac20b930f9c5be5452818e645da08"
+  sha: "48cdd7c21ead1381b73d7bc85586263c0a8afcf6"
   ref_type: "branch"
-  ref_name: "feat/localization-key-archive"
-  run_id: 44219979004
+  ref_name: "main"
+  run_id: 44220272146
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): remove unused isCoded helper failing staticcheck"
+  message: "fix(appauth): align runtime app-user registration policy and login compatibility (#514)\n\nRefs https://github.com/prtmax/orion/issues/298"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T02:00:10Z"
+  created_at: "2026-11-18T02:02:24Z"
