@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a7f657df14308064777c21de5a64e06f82da404f"
+  sha: "c0caa15b7695fdda9d75d8a11e6dbc693f8878f6"
   ref_type: "branch"
   ref_name: "feat/starc-staging-default"
-  run_id: 44392668041
+  run_id: 44395782335
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): wire resource origins and startup source\n\nCopy environment.authorizedResourceOrigins from the trusted build input into the standard assembly. An omitted list authorizes no external host. Direct launch uses a tracked source library, so an old embedded const and a missing sidecar both analyze, and an assembly with no binding proof stays unknown."
+  message: "fix(rigel): read debug-spec resource origins\n\nCopy authorizedResourceOrigins from the top-level debug spec into the shared Android, iOS, and IDE assembly. buildInput stays unchanged. An OSS key encoded with %2F is decoded once for the path check, and the original signed URI is what gets sent."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-18T20:35:47Z"
+  created_at: "2026-11-18T20:53:51Z"
