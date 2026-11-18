@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7e343881d5f46c659ccc5a3ced55b2eac89a9d85"
+  sha: "a186179ca59711e8454cb9c57cda1dcb2cdba19e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44220670487
+  ref_name: "chenas"
+  run_id: 44220768226
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): align setup-password validation and actionable registration errors (#305)\n\nRefs https://github.com/prtmax/orion/issues/298"
-  authors: ["0xfe10"]
+  message: "Merge remote-tracking branch 'origin/main' into chenas\n\n# Conflicts:\n#\tpackages/presentations/mellow/lib/src/image_print/page.dart"
+  authors: ["0xfe10","ShuangZiMoYin","chenanshun"]
 dispatch:
-  created_at: "2026-11-18T02:05:35Z"
+  created_at: "2026-11-18T02:06:19Z"
