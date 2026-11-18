@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c0e152b28b4d593230a89759fc586b5c8ad69a5c"
+  sha: "b18453f8b6853efee286419583def92a74807edb"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44271627556
+  ref_name: "chenas"
+  run_id: 44280294385
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Fix offline printer catalog discovery (#312)\n\nRefs #310 and #276."
-  authors: ["0xfe10"]
+  message: "1.\u56fe\u7247\u7f16\u8f91\u56688\uff08\u88c1\u526a\u65cb\u8f6c\u955c\u50cf\uff0c\u88c1\u526a\uff09"
+  authors: ["ShuangZiMoYin","chenanshun"]
 dispatch:
-  created_at: "2026-11-18T08:58:55Z"
+  created_at: "2026-11-18T09:54:36Z"
