@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b4a2b0549741379fe8a89201b47eed1720b8fea0"
+  sha: "1004b98d72d6e05352efa224bbd8a7a0bdd24a4f"
   ref_type: "branch"
-  ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44604676458
+  ref_name: "main"
+  run_id: 44607416839
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel_build): stabilize startup compatibility analysis"
+  message: "fix(rigel): align auth tests and format after #322/#323 (#324)\n\n* fix(rigel): remove low-value auth and lanhu tests\n\nDelete stale Mellow auth, language, and Lanhu flow widget tests instead\nof rewriting them for post-#322 feedback changes. Drop the auth_toast\nhelper that existed only for those tests.\n\n* fix(ci): clear editor analyzer findings after #323\n\nResolve strict inference and lint issues in editor_color_jigsaw, jigsaw, and\nwidgets slider without changing editor runtime behavior.\n\n* fix(rigel_build): sync editor asset contracts after #323\n\nUpdate frozen assembly fixtures for new adjust icon requirements and align\nthe image resource contract test with the post-#323 Mellow editor layout.\n\n* fix(jigsaw): restore editor node test invariants\n\nStabilize InteractiveImageNode JSON export, init coalescing, copy isolation,\nand disposal cleanup so native editor tests pass after #323 strict analysis work.\n\n* fix(jigsaw): silence initializing-formal lints in node ctor\n\n* fix(jigsaw): surface invalid image init as failed futures\n\nValidate binary content before coalesced init so widget tests can expect\nFormatException without uncaught async errors.\n\n* test(rigel): exercise the current native editor flows\n\n* test(rigel): refresh the bundled locale fixture digest\n\n* fix(editor): dispose native editor work and handle back once (#340)\n\n* test(rigel): settle startup notices before selecting a photo\n\n* test(rigel_build): stabilize startup compatibility analysis"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T20:03:29Z"
+  created_at: "2026-11-19T20:19:14Z"
