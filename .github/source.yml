@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d0908d142855ff7becee03d72a3677ac116cfa1b"
+  sha: "ca76e2244110332a62f43de4d772917298b0d9f7"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 44449051927
+  ref_name: "main"
+  run_id: 44450710043
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): allow the full foundation suite to finish"
-  authors: ["0xfe10"]
+  message: "fix(editor): restore the native Mellow Jigsaw editor and host delivery (#319)\n\nRestore the native editor, crop and rotation routes, and Jigsaw 1.0 documents. Connect host delivery and document history, verify legacy image drafts, and allow the full Foundation suite to finish."
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-19T03:06:27Z"
+  created_at: "2026-11-19T03:20:22Z"
