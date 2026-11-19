@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "56a4f42af063cb85311f77dc5929147bd9c987e2"
+  sha: "dee82159425406e1e246a456da342158ed5f5603"
   ref_type: "branch"
-  ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44593136876
+  ref_name: "fix/native-editor-lifecycle"
+  run_id: 44593137130
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel): exercise the current native editor flows"
+  message: "fix(editor): dispose native editor work and handle back once"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T18:57:01Z"
+  created_at: "2026-11-19T18:57:03Z"
