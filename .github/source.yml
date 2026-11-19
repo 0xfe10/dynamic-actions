@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4226c746674f12f1ee5ab15d56f805f7f002c01c"
+  sha: "e9d38a497c4991bba3f1b26ce94102f0662439ba"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 44441558354
+  run_id: 44446028609
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): add chenas support dependencies and adapt host integration"
-  authors: ["chenanshun"]
+  message: "fix(editor): wire restored canvas lifecycle and host delivery"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T02:04:15Z"
+  created_at: "2026-11-19T02:40:37Z"
