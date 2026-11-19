@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e225b919895547e69318a3b706e2e9b52f86107a"
+  sha: "ec61f0bf30c6275050e882988eb1dc41ed58a5c5"
   ref_type: "branch"
   ref_name: "feat/vega-three-door-links-guards"
-  run_id: 44553713608
+  run_id: 44583418159
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): enforce workbench door mutex and drop in-shell switching\n\nPersist the platform vs tenant door chosen on /workspaces (or first landing) and reject cross-prefix navigation. Remove header and account workspace switchers, trim scope-rail cross-door links, and land tenant picks on the app list."
+  message: "style(vega): run Prettier on three-door Phase 1 files"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T15:20:49Z"
+  created_at: "2026-11-19T18:01:55Z"
