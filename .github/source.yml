@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5a860fb05879b6622e3851a92cd35c8e8ad4c1f7"
+  sha: "f1e7622ea96de478991d108d2498493a6f937aa2"
   ref_type: "branch"
-  ref_name: "fix/native-editor-lifecycle"
-  run_id: 44596217042
+  ref_name: "fix/ci-foundation-after-322-323"
+  run_id: 44599304118
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge branch 'fix/ci-foundation-after-322-323' into fix/native-editor-lifecycle"
+  message: "fix(editor): dispose native editor work and handle back once (#340)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:14:28Z"
+  created_at: "2026-11-19T19:32:12Z"
