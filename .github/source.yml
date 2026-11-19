@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "80464b509116a5d8dca6b0acd4886c3d95bfd730"
+  sha: "35fa9aed2264a9d6e6a646faad14373586fec799"
   ref_type: "branch"
-  ref_name: "refactor/vega-resource-workbench"
-  run_id: 44599396396
+  ref_name: "main"
+  run_id: 44602394565
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge branch 'feat/vega-three-door-links-guards' into refactor/vega-resource-workbench"
+  message: "test(mercury): consolidate retired route and asset assertions (#529)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:32:46Z"
+  created_at: "2026-11-19T19:50:12Z"
