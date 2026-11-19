@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "59f7ce842c69e6a8d16e6f0fe9623efeff770ee4"
+  sha: "905d8d58749e6131ac84d973605701cf82d9c3fa"
   ref_type: "branch"
-  ref_name: "feat/starc-staging-default"
-  run_id: 44419831640
+  ref_name: "chenas"
+  run_id: 44436644591
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): register object reads as one set\n\nHistorical attachment GETs are recorded only after every descriptor, URL, and originating session epoch is accepted. Banner and avatar call sites select single-object GET, so a target that also matches ordinary policy cannot hop to another ordinary target."
-  authors: ["0xfe10"]
+  message: "chore(editor): restore three component directories to chenas snapshot"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-18T23:20:14Z"
+  created_at: "2026-11-19T01:24:26Z"
