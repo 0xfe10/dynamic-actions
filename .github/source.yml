@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "06ebcde0b2f33f9e96d3ffd20720fdd6273ae513"
+  sha: "a90f87f6e51f50d0ac4bcd3f3b9eff2753ed7d9c"
   ref_type: "branch"
   ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44569158101
+  run_id: 44570039332
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): silence initializing-formal lints in node ctor"
+  message: "fix(jigsaw): surface invalid image init as failed futures\n\nValidate binary content before coalesced init so widget tests can expect\nFormatException without uncaught async errors."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T16:42:48Z"
+  created_at: "2026-11-19T16:47:30Z"
