@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e4a9a1d1c8402290ddd1d4f771a274f286898564"
+  sha: "b7629ece1ef3a91f376e0cfeb7b69044eaeae135"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44440018984
+  ref_name: "chore/update-orion-678ede55"
+  run_id: 44460385651
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(build): scope staging debug file destinations to the selected app (#524)\n\nRefs #523. Refs https://github.com/prtmax/orion/issues/317."
+  message: "chore(orion): update orion submodule to 678ede55"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T01:51:32Z"
+  created_at: "2026-11-19T04:44:50Z"
