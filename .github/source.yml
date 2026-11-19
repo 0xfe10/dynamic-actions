@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "45834aef66db51609f872f122881a060a1ad1184"
+  sha: "e15af11aec55bb22bf78dc50298fcdf0c5bf0c63"
   ref_type: "branch"
-  ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44549615539
+  ref_name: "fix/foundation-ci-post-322-323"
+  run_id: 44559168477
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): align auth tests and format after #322/#323\n\nRun dart format on editor jigsaw and slider sources from Foundation check\nand assert auth failure feedback via toasts instead of modal dialogs."
+  message: "fix(ci): format and align mellow auth tests after #322\n\nRestore SmartDialog toasts for auth feedback after #322 switched to\nFluttertoast, and update rigel auth alignment tests to assert toasts with\nstable pumps instead of modal Dialog expectations."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T14:58:59Z"
+  created_at: "2026-11-19T15:49:47Z"
