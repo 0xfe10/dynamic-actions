@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b71a63aadad4e46ebd447032a4cf34e18a26df8f"
+  sha: "061fbaee6d1664740cb353b60572098bf8c31994"
   ref_type: "branch"
   ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44602008470
+  run_id: 44603407318
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): integrate the current Orion main branch"
+  message: "test(rigel): settle startup notices before selecting a photo"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:47:55Z"
+  created_at: "2026-11-19T19:56:08Z"
