@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "49bbd466a6108dd5fb8ff695643977e1b60eba12"
+  sha: "77dd3f658c3918a59ae5503b74def2f38088547f"
   ref_type: "branch"
-  ref_name: "chore/remove-itsaplan-doc"
-  run_id: 44465971724
+  ref_name: "main"
+  run_id: 44466053387
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(openwiki): remove the retired itsaplan workflow"
+  message: "docs(openwiki): remove the retired itsaplan workflow (#526)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T05:33:33Z"
+  created_at: "2026-11-19T05:34:14Z"
