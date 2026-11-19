@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "061fbaee6d1664740cb353b60572098bf8c31994"
+  sha: "47f31d2ce6933b5b91be5202b45c69d331e963ef"
   ref_type: "branch"
-  ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44603407318
+  ref_name: "fix/mellow-image-editor-entry"
+  run_id: 44604287250
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel): settle startup notices before selecting a photo"
+  message: "fix(mellow): enter native jigsaw editor directly with in-canvas loading\n\n- Remove retired MellowPhotoGallery (photo_gallery.dart, photo_tile.dart) and MellowLoadingStatus transition page\n- Launch image print, cutting print, and image replacement through PickUtil bottom sheet with foreground-resume gating and session-reset dismissal\n- Mount EditorColorJigsawPage chrome on frame 1 with centered OrnLoading until template metrics and image rasters finish decoding\n- Restore single-pop back navigation, save/draft/print callbacks, and owned subroute cleanup on session reset\n\nRefs #295"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:56:08Z"
+  created_at: "2026-11-19T20:01:16Z"
