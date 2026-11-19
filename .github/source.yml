@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9898cde27c05b95aaa25a9779cd3f201e0bca328"
+  sha: "7b424fd6961a3bc89b500b92bbea021c7aab4e7a"
   ref_type: "branch"
-  ref_name: "feat/vega-three-door-links-guards"
-  run_id: 44593338194
+  ref_name: "chore/audit-mercury-tests"
+  run_id: 44598318884
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): keep workbench choice tied to navigation and sessions"
+  message: "test(mercury): consolidate retired route and asset assertions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T18:58:13Z"
+  created_at: "2026-11-19T19:26:30Z"
