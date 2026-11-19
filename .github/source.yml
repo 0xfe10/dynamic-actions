@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "678ede551aca7f298dd09f9ce9ff3f67cc397468"
+  sha: "a8e4146760eb82791417718b0f00ac3cd8d7f42e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44460137307
+  ref_name: "lxw-1"
+  run_id: 44478000911
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): allow public tenant and app codes to resolve to snowflake IDs (#320)"
-  authors: ["0xfe10"]
+  message: "\u767b\u5f55 \u63d0\u793a\u4fee\u6539"
+  authors: ["ShuangZiMoYin"]
 dispatch:
-  created_at: "2026-11-19T04:42:27Z"
+  created_at: "2026-11-19T07:14:01Z"
