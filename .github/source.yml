@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "adf588c334ba5934f16ccb25181cc954acaa38eb"
+  sha: "06ebcde0b2f33f9e96d3ffd20720fdd6273ae513"
   ref_type: "branch"
   ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44568572694
+  run_id: 44569158101
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): restore editor node test invariants\n\nStabilize InteractiveImageNode JSON export, init coalescing, copy isolation,\nand disposal cleanup so native editor tests pass after #323 strict analysis work."
+  message: "fix(jigsaw): silence initializing-formal lints in node ctor"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T16:39:42Z"
+  created_at: "2026-11-19T16:42:48Z"
