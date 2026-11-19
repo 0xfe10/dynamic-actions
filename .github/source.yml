@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "8a80fbda42b5830b3ea44838b8188c5ce05429ab"
-  ref_type: "tag"
-  ref_name: "v0.0.106"
-  run_id: 44252603429
+  sha: "30838e4522605f719914a9ff6d9a9a7a8a186069"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 44453332087
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(bluetooth): recover early discovery stops and require serial 0.1.7"
+  message: "java \u4f18\u5316udp\u626b\u63cf"
   authors: ["jiangchengze"]
 dispatch:
-  created_at: "2026-11-18T06:36:44Z"
+  created_at: "2026-11-19T03:42:52Z"
