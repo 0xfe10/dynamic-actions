@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ee2530571e2b5e305908c3f3c74b6c58011285d4"
+  sha: "e17cb9281a3cf553c9f07fca9e4779f222346684"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44559339771
+  ref_name: "fix/ci-foundation-after-322-323"
+  run_id: 44559764502
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): format and align mellow auth tests after #322 (#325)\n\n* fix(rigel): align auth tests and format after #322/#323\n\nRun dart format on editor jigsaw and slider sources from Foundation check\nand assert auth failure feedback via toasts instead of modal dialogs.\n\n* fix(ci): format and align mellow auth tests after #322\n\nRestore SmartDialog toasts for auth feedback after #322 switched to\nFluttertoast, and update rigel auth alignment tests to assert toasts with\nstable pumps instead of modal Dialog expectations."
+  message: "fix(rigel): remove low-value auth and lanhu tests\n\nDelete stale Mellow auth, language, and Lanhu flow widget tests instead\nof rewriting them for post-#322 feedback changes. Drop the auth_toast\nhelper that existed only for those tests."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T15:50:42Z"
+  created_at: "2026-11-19T15:52:57Z"
