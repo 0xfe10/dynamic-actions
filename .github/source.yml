@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ec61f0bf30c6275050e882988eb1dc41ed58a5c5"
+  sha: "9898cde27c05b95aaa25a9779cd3f201e0bca328"
   ref_type: "branch"
   ref_name: "feat/vega-three-door-links-guards"
-  run_id: 44583418159
+  run_id: 44593338194
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "style(vega): run Prettier on three-door Phase 1 files"
+  message: "fix(vega): keep workbench choice tied to navigation and sessions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T18:01:55Z"
+  created_at: "2026-11-19T18:58:13Z"
