@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bbaca871263d1f9a85f248b76511d730334ced96"
+  sha: "3de101741d7d0db775665a929a8a558e0fc7266f"
   ref_type: "branch"
-  ref_name: "chore/audit-vega-tests"
-  run_id: 44603816680
+  ref_name: "main"
+  run_id: 44608423444
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): consolidate workspace directory coverage"
+  message: "fix(vega): finish tenant App resource workbench adoption (#530)\n\n* feat(vega): enforce workbench door mutex and drop in-shell switching\n\nPersist the platform vs tenant door chosen on /workspaces (or first landing) and reject cross-prefix navigation. Remove header and account workspace switchers, trim scope-rail cross-door links, and land tenant picks on the app list.\n\n* style(vega): run Prettier on three-door Phase 1 files\n\n* fix(vega): keep workbench choice tied to navigation and sessions\n\n* test(vega): select a workbench before entering tenant flows\n\n* fix(vega): finish tenant App resource workbench adoption"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:58:39Z"
+  created_at: "2026-11-19T20:25:03Z"
