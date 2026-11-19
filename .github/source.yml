@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "766f92d625cd82d9b65498cf6d5ba976098fde19"
+  sha: "d0908d142855ff7becee03d72a3677ac116cfa1b"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 44447069829
+  run_id: 44449051927
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(editor): describe integrated native editor behavior"
+  message: "fix(ci): allow the full foundation suite to finish"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T02:49:30Z"
+  created_at: "2026-11-19T03:06:27Z"
