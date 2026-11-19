@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "77bdbf826b0af6bf6d9ac755eefbd138f3176be7"
+  sha: "adf588c334ba5934f16ccb25181cc954acaa38eb"
   ref_type: "branch"
   ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44564530040
+  run_id: 44568572694
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): sync editor asset contracts after #323\n\nUpdate frozen assembly fixtures for new adjust icon requirements and align\nthe image resource contract test with the post-#323 Mellow editor layout."
+  message: "fix(jigsaw): restore editor node test invariants\n\nStabilize InteractiveImageNode JSON export, init coalescing, copy isolation,\nand disposal cleanup so native editor tests pass after #323 strict analysis work."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T16:18:14Z"
+  created_at: "2026-11-19T16:39:42Z"
