@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fbaa77dc1fd682c56c8e1fd7e3e50ef246dedea6"
+  sha: "59b6ff54db49636df41224fca9f9b67451798089"
   ref_type: "branch"
-  ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44595759673
+  ref_name: "main"
+  run_id: 44596112611
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel): refresh the bundled locale fixture digest"
+  message: "fix(rigel): show home on the first frame (#341)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:11:47Z"
+  created_at: "2026-11-19T19:13:47Z"
