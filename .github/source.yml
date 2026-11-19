@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7f41e0479f3064176a758c3dbdd1448725e785ef"
+  sha: "77bdbf826b0af6bf6d9ac755eefbd138f3176be7"
   ref_type: "branch"
   ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44562483397
+  run_id: 44564530040
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ci): clear editor analyzer findings after #323\n\nResolve strict inference and lint issues in editor_color_jigsaw, jigsaw, and\nwidgets slider without changing editor runtime behavior."
+  message: "fix(rigel_build): sync editor asset contracts after #323\n\nUpdate frozen assembly fixtures for new adjust icon requirements and align\nthe image resource contract test with the post-#323 Mellow editor layout."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T16:07:26Z"
+  created_at: "2026-11-19T16:18:14Z"
