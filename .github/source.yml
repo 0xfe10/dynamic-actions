@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7b424fd6961a3bc89b500b92bbea021c7aab4e7a"
+  sha: "33c140d4b0cfb7d407d4db9a002972b4973dd9a9"
   ref_type: "branch"
-  ref_name: "chore/audit-mercury-tests"
-  run_id: 44598318884
+  ref_name: "feat/vega-three-door-links-guards"
+  run_id: 44598986961
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(mercury): consolidate retired route and asset assertions"
+  message: "test(vega): select a workbench before entering tenant flows"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:26:30Z"
+  created_at: "2026-11-19T19:30:26Z"
