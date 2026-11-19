@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "095db5f5c3e572371d2e74f1aeb1ee8fe1d66961"
+  sha: "a323bbf0afcab08dc1b235dc20b4afac2b9bce9a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44603138312
+  ref_name: "refactor/vega-resource-workbench"
+  run_id: 44603351208
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): three-door Phase 1 \u2014 cross-door links and workbench mutex (#527)\n\n* feat(vega): enforce workbench door mutex and drop in-shell switching\n\nPersist the platform vs tenant door chosen on /workspaces (or first landing) and reject cross-prefix navigation. Remove header and account workspace switchers, trim scope-rail cross-door links, and land tenant picks on the app list.\n\n* style(vega): run Prettier on three-door Phase 1 files\n\n* fix(vega): keep workbench choice tied to navigation and sessions\n\n* test(vega): select a workbench before entering tenant flows"
+  message: "Merge remote-tracking branch 'origin/main' into refactor/vega-resource-workbench"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:54:32Z"
+  created_at: "2026-11-19T19:55:57Z"
