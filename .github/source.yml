@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a323bbf0afcab08dc1b235dc20b4afac2b9bce9a"
+  sha: "bbaca871263d1f9a85f248b76511d730334ced96"
   ref_type: "branch"
-  ref_name: "refactor/vega-resource-workbench"
-  run_id: 44603351208
+  ref_name: "chore/audit-vega-tests"
+  run_id: 44603816680
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into refactor/vega-resource-workbench"
+  message: "test(vega): consolidate workspace directory coverage"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T19:55:57Z"
+  created_at: "2026-11-19T19:58:39Z"
