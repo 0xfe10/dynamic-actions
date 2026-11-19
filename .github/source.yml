@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e9d38a497c4991bba3f1b26ce94102f0662439ba"
+  sha: "893443e6aab04b2549afdb1465b202a0c155c49c"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 44446028609
+  run_id: 44446964192
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): wire restored canvas lifecycle and host delivery"
+  message: "fix(editor): connect native cutout and document history"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T02:40:37Z"
+  created_at: "2026-11-19T02:48:34Z"
