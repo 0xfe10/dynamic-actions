@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e17cb9281a3cf553c9f07fca9e4779f222346684"
+  sha: "7f41e0479f3064176a758c3dbdd1448725e785ef"
   ref_type: "branch"
   ref_name: "fix/ci-foundation-after-322-323"
-  run_id: 44559764502
+  run_id: 44562483397
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): remove low-value auth and lanhu tests\n\nDelete stale Mellow auth, language, and Lanhu flow widget tests instead\nof rewriting them for post-#322 feedback changes. Drop the auth_toast\nhelper that existed only for those tests."
+  message: "fix(ci): clear editor analyzer findings after #323\n\nResolve strict inference and lint issues in editor_color_jigsaw, jigsaw, and\nwidgets slider without changing editor runtime behavior."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T15:52:57Z"
+  created_at: "2026-11-19T16:07:26Z"
