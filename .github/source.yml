@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "cb3daec052c79558647405e8fe54529dd837fb78"
+  sha: "678ede551aca7f298dd09f9ce9ff3f67cc397468"
   ref_type: "branch"
-  ref_name: "fix/debug-identity-code-resolution"
-  run_id: 44458675506
+  ref_name: "main"
+  run_id: 44460137307
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): allow public tenant and app codes to resolve to snowflake IDs"
+  message: "fix(rigel_build): allow public tenant and app codes to resolve to snowflake IDs (#320)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T04:29:37Z"
+  created_at: "2026-11-19T04:42:27Z"
