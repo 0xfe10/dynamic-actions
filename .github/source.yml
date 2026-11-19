@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e041d6a55fad984e15edb19c0c37830610f8e3b9"
+  sha: "259bd47b52c0e0b66c02a603ea46a1b23c9b15a9"
   ref_type: "branch"
-  ref_name: "chore/retire-legacy-editor-tests"
-  run_id: 44607536749
+  ref_name: "main"
+  run_id: 44610523564
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel): verify the selected photo reaches the canvas"
+  message: "test(rigel): retire unused legacy editor tests (#345)\n\n* test(editor): retire tests for the removed workspace editor\n\n* test(rigel): verify the selected photo reaches the canvas"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T20:19:55Z"
+  created_at: "2026-11-19T20:37:22Z"
