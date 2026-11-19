@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "dee82159425406e1e246a456da342158ed5f5603"
+  sha: "5339aa52d103e4b3f9199254ca8632c4af5d1a23"
   ref_type: "branch"
-  ref_name: "fix/native-editor-lifecycle"
-  run_id: 44593137130
+  ref_name: "fix/rigel-home-startup"
+  run_id: 44595349390
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): dispose native editor work and handle back once"
+  message: "fix(rigel): show home on the first frame"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T18:57:03Z"
+  created_at: "2026-11-19T19:09:30Z"
