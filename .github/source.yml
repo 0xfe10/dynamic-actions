@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f0abfdb402ebd2f4f222b0e183bb4937ad58730f"
+  sha: "1c6423e4593c297f41fd983ce93c331522269a4c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44679710772
+  ref_name: "fix/printer-catalog-description"
+  run_id: 44704157867
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore: batch test runner, add CI caches, and consolidate redundant tests (#350)"
+  message: "docs(runtime): regenerate printer catalog assignment description"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T05:14:44Z"
+  created_at: "2026-11-20T08:38:33Z"
