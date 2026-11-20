@@ -15,11 +15,91 @@ permissions:
   packages: write
 
 jobs:
+  prepare:
+    name: Prepare Lanes
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      ref_name: ${{ steps.source.outputs.ref_name }}
+      main: ${{ steps.source.outputs.matches }}
+      api: ${{ steps.lanes.outputs.api }}
+      admin: ${{ steps.lanes.outputs.admin }}
+      android: ${{ steps.lanes.outputs.android }}
+    steps:
+      - name: Check out workflow metadata
+        uses: actions/checkout@v6
+      - name: Resolve source branch
+        id: source
+        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
+        with:
+          repository: prtmax/cosmos
+          branches: main
+      - name: Check out Cosmos
+        uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
+        with:
+          repository: prtmax/cosmos
+          token: ${{ secrets.GH_TOKEN_0XFE10 }}
+      - name: Select verification lanes
+        id: lanes
+        shell: bash
+        env:
+          IS_MAIN: ${{ steps.source.outputs.matches }}
+        run: |
+          set -euo pipefail
+          api=false
+          admin=false
+          android=false
+          if [ "${IS_MAIN}" = "true" ]; then
+            api=true
+            admin=true
+            android=true
+          else
+            if ! git rev-parse --verify origin/main >/dev/null 2>&1; then
+              git fetch --no-tags --depth=1 origin main:refs/remotes/origin/main || true
+            fi
+            if changed="$(git diff --name-only origin/main...HEAD 2>/dev/null)" && [ -n "${changed}" ]; then
+              while IFS= read -r file; do
+                case "${file}" in
+                  *.md|openwiki/*|docs/*)
+                    ;;
+                  lyra/*)
+                    admin=true
+                    ;;
+                  orion)
+                    android=true
+                    ;;
+                  fornax/*|solar/*)
+                    api=true
+                    admin=true
+                    android=true
+                    ;;
+                  *)
+                    api=true
+                    admin=true
+                    android=true
+                    ;;
+                esac
+              done <<< "${changed}"
+            else
+              api=true
+              admin=true
+              android=true
+            fi
+          fi
+          {
+            echo "api=${api}"
+            echo "admin=${admin}"
+            echo "android=${android}"
+          } >> "$GITHUB_OUTPUT"
+
   api:
     name: API Checks
+    needs: prepare
+    if: needs.prepare.outputs.api == 'true'
     runs-on: ubuntu-latest
-    outputs:
-      main: ${{ steps.source.outputs.matches }}
+    concurrency:
+      group: cosmos-api-${{ needs.prepare.outputs.ref_name || github.run_id }}
+      cancel-in-progress: ${{ needs.prepare.outputs.main != 'true' }}
     env:
       DATABASE_URL: postgres://postgres:ci-postgres-only@127.0.0.1:5432/mercury?sslmode=disable
     services:
@@ -39,12 +119,6 @@ jobs:
     steps:
       - name: Check out workflow metadata
         uses: actions/checkout@v6
-      - name: Resolve source branch for staging deployment
-        id: source
-        uses: repotea-workspace/kangumi/github-actions/dyn-source@main
-        with:
-          repository: prtmax/cosmos
-          branches: main
       - name: Check out Cosmos
         uses: repotea-workspace/kangumi/github-actions/clone-dyn@main
         with:
@@ -101,7 +175,12 @@ jobs:
 
   admin:
     name: Admin Checks
+    needs: prepare
+    if: needs.prepare.outputs.admin == 'true'
     runs-on: ubuntu-24.04
+    concurrency:
+      group: cosmos-admin-${{ needs.prepare.outputs.ref_name || github.run_id }}
+      cancel-in-progress: ${{ needs.prepare.outputs.main != 'true' }}
     env:
       DATABASE_URL: postgres://postgres:ci-postgres-only@127.0.0.1:5432/mercury?sslmode=disable
     services:
@@ -170,8 +249,19 @@ jobs:
         run: just generate-check platform
       - name: Build admin production assets
         run: pnpm --dir lyra build
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('lyra/pnpm-lock.yaml') }}
       - name: Install Playwright Chromium
-        run: pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium
+        run: |
+          if [ "${{ steps.playwright-cache.outputs.cache-hit }}" = "true" ]; then
+            pnpm --dir lyra --filter @cosmos/vega exec playwright install-deps chromium
+          else
+            pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium
+          fi
       - name: Prepare browser E2E database
         run: docker exec "${{ job.services.postgres.id }}" createdb -U postgres mercury_browser_e2e
       - name: Mercury and Vega browser E2E
@@ -217,7 +307,12 @@ jobs:
 
   android:
     name: Android Checks
+    needs: prepare
+    if: needs.prepare.outputs.android == 'true'
     runs-on: ubuntu-latest
+    concurrency:
+      group: cosmos-android-${{ needs.prepare.outputs.ref_name || github.run_id }}
+      cancel-in-progress: ${{ needs.prepare.outputs.main != 'true' }}
     steps:
       - name: Check out workflow metadata
         uses: actions/checkout@v6
@@ -236,16 +331,33 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
+      - name: Read pinned Flutter version
+        id: toolchain
+        run: python3 -c "import json; print('flutter=' + json.load(open('orion/.fvmrc'))['flutter'])" >> "$GITHUB_OUTPUT"
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.47.2
+          flutter-version: ${{ steps.toolchain.outputs.flutter }}
           cache: true
       - name: Set up Just
         uses: extractions/setup-just@v3
-      - name: Install FVM
-        run: dart pub global activate fvm 4.1.2
+      - name: Cache Orion Pub packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: orion-pub-${{ runner.os }}-${{ hashFiles('orion/pubspec.lock', 'orion/tools/rigel_build/pubspec.lock', 'orion/tools/tonik/pubspec.lock') }}
+          restore-keys: |
+            orion-pub-${{ runner.os }}-
+      - name: Cache Android Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: orion-gradle-${{ runner.os }}-${{ hashFiles('orion/apps/rigel/android/**/*.gradle*', 'orion/apps/rigel/android/**/gradle-wrapper.properties', 'orion/pubspec.lock') }}
+          restore-keys: |
+            orion-gradle-${{ runner.os }}-
       - name: Install Orion dependencies
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_0XFE10 }}
@@ -254,17 +366,18 @@ jobs:
           GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: |
           cd orion
-          fvm install
-          fvm flutter --version
-          fvm dart pub --directory tools/rigel_build get --enforce-lockfile
-          fvm dart run tools/rigel_build/bin/develop.dart bootstrap
+          flutter --version
+          dart pub --directory tools/rigel_build get --enforce-lockfile
+          dart run tools/rigel_build/bin/develop.dart bootstrap
       - name: Check Orion formatting and static analysis
         run: |
           cd orion
-          fvm dart run tools/rigel_build/bin/develop.dart format-check
-          fvm dart run tools/rigel_build/bin/develop.dart analyze
+          dart run tools/rigel_build/bin/develop.dart format-check
+          dart run tools/rigel_build/bin/develop.dart analyze
       - name: Run Orion assembly and Flutter tests
-        run: just --justfile orion/Justfile test
+        run: |
+          cd orion
+          dart run tools/rigel_build/bin/develop.dart test
       - name: Resolve locked Cosmos generation tools
         run: dart pub get --enforce-lockfile --directory tools/cosmos_build
       - name: Install runtime API contract dependencies
@@ -272,7 +385,7 @@ jobs:
       - name: Check generated runtime API client
         run: just generate-check runtime
       - name: Build Android APK
-        run: cd orion/apps/rigel && fvm flutter build apk --debug --no-pub
+        run: cd orion/apps/rigel && flutter build apk --debug --no-pub
 
   # iOS Checks are temporarily disabled at the project owner's request.
   # Restore this job and its deployment dependency after fixing printer SDK
@@ -314,8 +427,8 @@ jobs:
   build-and-deploy:
     name: Build Staging Images
     runs-on: ubuntu-latest
-    needs: [api, admin, android]
-    if: needs.api.outputs.main == 'true'
+    needs: [prepare, api, admin, android]
+    if: ${{ success() && needs.prepare.outputs.main == 'true' }}
     steps:
       - uses: actions/checkout@v6
       - name: Checkout
