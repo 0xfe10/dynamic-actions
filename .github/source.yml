@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "63122be699e21bb2428e886928f2669836a82834"
+  sha: "17be5db6f2a0bc2c5ce4923ed3470566d1509219"
   ref_type: "branch"
-  ref_name: "feat/vega-ux-adjustments"
-  run_id: 44699553828
+  ref_name: "fix/device-product-tenant-assignments"
+  run_id: 44701198811
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): support app creation without profile access"
+  message: "fix(mercury): align device product visibility with assignments"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T08:03:49Z"
+  created_at: "2026-11-20T08:16:26Z"
