@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d0fa2802821aa7c9949ce0ed49704b6cf7e5bd9d"
+  sha: "40eeef7ddb14fa7b2857281d959fac9111e226a2"
   ref_type: "branch"
-  ref_name: "chore/update-orion-submodule"
-  run_id: 44665067260
+  ref_name: "main"
+  run_id: 44667408526
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): update submodule and align runtime i18n OpenAPI contract\n\nUpdate the `orion` submodule pointer to `fbc5cfe3e94e10d081931974972de8cfe7af0f17`\n(incorporating prtmax/orion#346, prtmax/orion#347, and prtmax/orion#343).\n\nAlign Mercury's `getRuntimeI18nBundle` and `getRuntimeI18nLocale` Huma\noperation contracts with their runtime behavior (`200 application/zip`\nbinary schema and bodyless `304 Not Modified`), add spec assertions, and\nrefresh `compiled_presentations.json` and `openapi-baseline/runtime.json`.\n\nRefs prtmax/orion#295 and prtmax/orion#344."
+  message: "chore(orion): update submodule and align runtime i18n OpenAPI contract (#532)\n\nUpdate the `orion` submodule pointer to `fbc5cfe3e94e10d081931974972de8cfe7af0f17`\n(incorporating prtmax/orion#346, prtmax/orion#347, and prtmax/orion#343).\n\nAlign Mercury's `getRuntimeI18nBundle` and `getRuntimeI18nLocale` Huma\noperation contracts with their runtime behavior (`200 application/zip`\nbinary schema and bodyless `304 Not Modified`), add spec assertions, and\nrefresh `compiled_presentations.json` and `openapi-baseline/runtime.json`.\n\nRefs prtmax/orion#295 and prtmax/orion#344."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T03:03:32Z"
+  created_at: "2026-11-20T03:23:48Z"
