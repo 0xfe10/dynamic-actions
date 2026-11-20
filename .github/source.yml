@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "486c4e81ac92ee82d735631d2089d4d45115d542"
+  sha: "cb1e81ca30582878fa95b221a9a7fda67b16ad04"
   ref_type: "branch"
-  ref_name: "fix/vega-tabs-scrollbar-and-i18n"
-  run_id: 44746669668
+  ref_name: "fix/vega-table-actions-alignment"
+  run_id: 44747605682
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): contain tab scrolling and validate static translation keys"
+  message: "test(vega): check style details at the active breakpoint"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T13:42:46Z"
+  created_at: "2026-11-20T13:48:58Z"
