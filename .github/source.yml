@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "02d94bd2734bdb91dbae986505cf09f0bcbf5a14"
+  sha: "47792ee257860cd91b6706e195fc0c04e84050e3"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44777829084
+  ref_name: "chore/cleanup-app-releases-page"
+  run_id: 44778013394
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Keep contextual help beside Vega admin titles and labels (#551)\n\n* feat(vega): keep descriptive help beside admin headings and labels\n\nCloses #547\n\n* test(vega): select legal document fields by textbox role"
+  message: "chore(vega): retire redundant application /releases list page"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T16:53:25Z"
+  created_at: "2026-11-20T16:54:31Z"
