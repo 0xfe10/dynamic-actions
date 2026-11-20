@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "280cc155932f5af2dadb5b49e34e1921d63c2e56"
+  sha: "2dcac3da40a1659f4310560bf8a82e4350495df8"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44770879132
+  ref_name: "fix/wizard-step-url-history"
+  run_id: 44772757535
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Fetch and import provider models from model settings (#542)\n\n* feat(modelgateway): import selected models from provider catalogs\n\n* fix(modelgateway): fall back to model IDs for unusable display names"
+  message: "fix(vega): preserve wizard steps and packaging drafts across navigation"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T16:11:50Z"
+  created_at: "2026-11-20T16:22:51Z"
