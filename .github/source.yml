@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "45a5c5631508841e5fd8ffad7b304344e4cb339f"
+  sha: "548c6ce059ef83fc6dc56869ff422572e3ab2ed7"
   ref_type: "branch"
-  ref_name: "fix/vega-table-actions-alignment"
-  run_id: 44750306954
+  ref_name: "main"
+  run_id: 44752057382
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): reserve fixed table widths and separate storage verification actions"
+  message: "fix(vega): align table action headers and icon positions (#540)\n\n* fix(vega): align table action headers and reserve distinct icon slots\n\n* test(vega): check style details at the active breakpoint\n\n* fix(vega): reserve fixed table widths and separate storage verification actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T14:06:45Z"
+  created_at: "2026-11-20T14:17:49Z"
