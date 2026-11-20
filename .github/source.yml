@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1d6396f5a2faf67f5e27f6b11138cd9f8b15e03c"
+  sha: "adbf301ff6eb00f7d6a38d35b12f978964a94d40"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44705528468
+  ref_name: "chenas"
+  run_id: 44715467938
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(runtime): regenerate printer catalog assignment description (#351)"
-  authors: ["0xfe10"]
+  message: "1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u6d82\u9e26 ui \u672a\u5b8c\u5584\uff09\n2.widgets image_util.dart \u5f03\u7528\uff0c\u6539\u4e3a utils image_util.dart"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-20T08:49:01Z"
+  created_at: "2026-11-20T10:00:25Z"
