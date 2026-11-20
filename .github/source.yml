@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "adbf301ff6eb00f7d6a38d35b12f978964a94d40"
+  sha: "45735c594708a3bee4e8db7937db85acc63e85ff"
   ref_type: "branch"
   ref_name: "chenas"
-  run_id: 44715467938
+  run_id: 44716674164
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u6d82\u9e26 ui \u672a\u5b8c\u5584\uff09\n2.widgets image_util.dart \u5f03\u7528\uff0c\u6539\u4e3a utils image_util.dart"
-  authors: ["chenanshun"]
+  message: "Merge main into chenas and reconcile graffiti navigation tests"
+  authors: ["0xfe10","chenanshun"]
 dispatch:
-  created_at: "2026-11-20T10:00:25Z"
+  created_at: "2026-11-20T10:08:44Z"
