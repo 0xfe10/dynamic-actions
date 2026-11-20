@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "548c6ce059ef83fc6dc56869ff422572e3ab2ed7"
+  sha: "30d4bdb82925ca3d454f992f8e04fb5a2b416107"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44752057382
+  ref_name: "feat/provider-fetch-models"
+  run_id: 44764887507
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align table action headers and icon positions (#540)\n\n* fix(vega): align table action headers and reserve distinct icon slots\n\n* test(vega): check style details at the active breakpoint\n\n* fix(vega): reserve fixed table widths and separate storage verification actions"
+  message: "feat(modelgateway): import selected models from provider catalogs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T14:17:49Z"
+  created_at: "2026-11-20T15:36:09Z"
