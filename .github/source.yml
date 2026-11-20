@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e304d017168f9836819e2ea4352ccf3f69978cb0"
+  sha: "81b77af453d2ead6870ef580864c56fc86e04b9e"
   ref_type: "branch"
-  ref_name: "chore/optimize-ci-and-tests"
-  run_id: 44681845213
+  ref_name: "main"
+  run_id: 44683594121
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): make protectedvalue test ID sequence atomic and tune test-db race scope"
+  message: "chore: optimize CI pipelines, advance orion submodule, and consolidate tests (#534)\n\n* chore: optimize CI pipelines, advance orion submodule, and consolidate tests\n\n* fix(mercury): make protectedvalue test ID sequence atomic and tune test-db race scope"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T05:33:54Z"
+  created_at: "2026-11-20T05:49:45Z"
