@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ff47dc09c6b527f138839a89297431c45dd89743"
+  sha: "a25efa8ada5c9bae555c76077c8ff91923a42081"
   ref_type: "branch"
-  ref_name: "fix/wizard-step-url-history"
-  run_id: 44775178221
+  ref_name: "fix/enforce-shadcn-controls"
+  run_id: 44775157572
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): enforce wizard prerequisites on history navigation"
+  message: "fix(vega): enforce shared form controls and localize store channels"
   authors: ["0xfe10"]
 dispatch:
   created_at: "2026-11-20T16:37:18Z"
