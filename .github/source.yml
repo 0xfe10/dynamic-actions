@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "40eeef7ddb14fa7b2857281d959fac9111e226a2"
+  sha: "0bc8a41b0c2da66e29549625acd22bbb0d22766d"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44667408526
+  ref_name: "feat/register-ar-photo"
+  run_id: 44668442164
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): update submodule and align runtime i18n OpenAPI contract (#532)\n\nUpdate the `orion` submodule pointer to `fbc5cfe3e94e10d081931974972de8cfe7af0f17`\n(incorporating prtmax/orion#346, prtmax/orion#347, and prtmax/orion#343).\n\nAlign Mercury's `getRuntimeI18nBundle` and `getRuntimeI18nLocale` Huma\noperation contracts with their runtime behavior (`200 application/zip`\nbinary schema and bodyless `304 Not Modified`), add spec assertions, and\nrefresh `compiled_presentations.json` and `openapi-baseline/runtime.json`.\n\nRefs prtmax/orion#295 and prtmax/orion#344."
+  message: "feat(nativecatalog): register AR_PHOTO in embedded Orion catalog"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T03:23:48Z"
+  created_at: "2026-11-20T03:32:50Z"
