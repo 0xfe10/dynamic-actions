@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "72b329951c5d54c2e0ed1608abf9b8e4748c6d77"
+  sha: "0ee62bb448b9e4bff7047bfea4ab889edf905187"
   ref_type: "branch"
-  ref_name: "fix/vega-wait-for-tenant-mock-fill"
-  run_id: 44706401497
+  ref_name: "main"
+  run_id: 44706579393
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): wait for generated mock draft fields"
+  message: "Fix overlapping device product assignments in Mercury and Vega (#537)\n\n* fix(device-catalog): explain and prevent overlapping product assignments\n\n* fix(vega): reject stale assignment targets and restore Traditional Chinese hints"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T08:55:41Z"
+  created_at: "2026-11-20T08:57:00Z"
