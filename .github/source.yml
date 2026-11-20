@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4b1f0b3f7f76fd661c1df1492b7be1a9e3161c21"
+  sha: "fbc5cfe3e94e10d081931974972de8cfe7af0f17"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44664612633
+  run_id: 44664706469
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime-api): align i18n bundle client with Mercury ZIP and empty 304 responses (#347)\n\nAdd Tonik configuration mapping `application/zip` to raw bytes and\nregenerate `mercury_runtime_client` against Mercury's runtime i18n\ncontract (`200 application/zip` binary payload and bodyless `304`).\nReplace mock JSON base64 test doubles in localization repository tests\nwith real ZIP/empty-304 fixtures and add HTTP client and repository\nround-trip tests covering `200 application/zip`, disk cache reload, and\nconditional `If-None-Match` -> `304`.\n\nCloses #344"
+  message: "fix(mellow): enter native jigsaw editor directly with in-canvas loading (#343)\n\n- Remove retired MellowPhotoGallery (photo_gallery.dart, photo_tile.dart) and MellowLoadingStatus transition page\n- Launch image print, cutting print, and image replacement through PickUtil bottom sheet with foreground-resume gating and session-reset dismissal\n- Mount EditorColorJigsawPage chrome on frame 1 with centered OrnLoading until template metrics and image rasters finish decoding\n- Restore single-pop back navigation, save/draft/print callbacks, and owned subroute cleanup on session reset\n\nRefs #295"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T02:59:40Z"
+  created_at: "2026-11-20T03:00:29Z"
