@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ad80cff5203b60729b6fe0ffafc62884a6268ef9"
+  sha: "d66d070e0f545d5631826efbaa593efe3d442142"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44776089650
+  ref_name: "fix/enforce-shadcn-controls"
+  run_id: 44776655127
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Enforce increasing platform Release versions and guide version entry (#546)\n\n* feat(releases): enforce increasing platform versions and guide version entry\n\n* fix(releases): verify the catalog and find historical duplicates"
+  message: "fix(vega): enforce shared form controls and localize store channels"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T16:42:54Z"
+  created_at: "2026-11-20T16:46:16Z"
