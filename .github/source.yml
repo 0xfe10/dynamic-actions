@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4ff8c2620a93057f96a0e612f1806099488060d5"
+  sha: "d512d8ebaccfdd20ba7f14900cfe8e75077000eb"
   ref_type: "branch"
-  ref_name: "refactor/unified-photo-source-sheet"
-  run_id: 44671376797
+  ref_name: "main"
+  run_id: 44673389258
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(widgets): harden action sheet pop, covered invalidation, and disposal guards"
+  message: "refactor(mellow): unify photo source action sheet and retire gallery plumbing (#349)\n\n* refactor(mellow): unify photo source action sheet and retire gallery plumbing\n\n* fix(widgets): harden action sheet pop, covered invalidation, and disposal guards"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T03:59:43Z"
+  created_at: "2026-11-20T04:17:26Z"
