@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fbc5cfe3e94e10d081931974972de8cfe7af0f17"
+  sha: "f8f0b07bde98acf9a8ae0e1158685a2f75c57c11"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44664706469
+  ref_name: "feat/mellow-home-ar-entry"
+  run_id: 44666590466
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): enter native jigsaw editor directly with in-canvas loading (#343)\n\n- Remove retired MellowPhotoGallery (photo_gallery.dart, photo_tile.dart) and MellowLoadingStatus transition page\n- Launch image print, cutting print, and image replacement through PickUtil bottom sheet with foreground-resume gating and session-reset dismissal\n- Mount EditorColorJigsawPage chrome on frame 1 with centered OrnLoading until template metrics and image rasters finish decoding\n- Restore single-pop back navigation, save/draft/print callbacks, and owned subroute cleanup on session reset\n\nRefs #295"
+  message: "feat(mellow): surface AR photo and image cut on home tools first page"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T03:00:29Z"
+  created_at: "2026-11-20T03:16:35Z"
