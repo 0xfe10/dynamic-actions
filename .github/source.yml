@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4b527a3cbe02c810deca23009b7e4fbfe9b0dd27"
+  sha: "45a5c5631508841e5fd8ffad7b304344e4cb339f"
   ref_type: "branch"
   ref_name: "fix/vega-table-actions-alignment"
-  run_id: 44749533807
+  run_id: 44750306954
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "fix(vega): reserve fixed table widths and separate storage verification actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T14:01:50Z"
+  created_at: "2026-11-20T14:06:45Z"
