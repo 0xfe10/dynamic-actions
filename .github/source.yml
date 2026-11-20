@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f338783a64f10b10c8feb30b7d5514719f1fef22"
+  sha: "7ffa033ea3a74c1d4a2f6290cd2682ea48507062"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44704157168
+  ref_name: "fix/device-assignment-overlap"
+  run_id: 44704663380
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): restore workspace switching and unify app navigation (#535)\n\n* feat(vega): restore workspace switching and unify app navigation\n\n* fix(vega): honor app access and close mobile navigation\n\n* fix(vega): support app creation without profile access"
+  message: "fix(vega): reject stale assignment targets and restore Traditional Chinese hints"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T08:38:31Z"
+  created_at: "2026-11-20T08:42:27Z"
