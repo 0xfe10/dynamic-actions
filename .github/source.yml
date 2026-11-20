@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0bc8a41b0c2da66e29549625acd22bbb0d22766d"
+  sha: "40369ce5c78463599136b6f60f34a9d5641bf56d"
   ref_type: "branch"
-  ref_name: "feat/register-ar-photo"
-  run_id: 44668442164
+  ref_name: "main"
+  run_id: 44668878342
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(nativecatalog): register AR_PHOTO in embedded Orion catalog"
+  message: "feat(nativecatalog): register AR_PHOTO in embedded Orion catalog (#533)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T03:32:50Z"
+  created_at: "2026-11-20T03:36:38Z"
