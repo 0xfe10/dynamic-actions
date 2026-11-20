@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d4a3fad5a17bdd2cba87c14f2357e1a1552fd533"
+  sha: "fb69cc90494aea64238559a3542fa2b44ea5e3df"
   ref_type: "branch"
-  ref_name: "feat/mellow-lanhu-full-alignment"
-  run_id: 44623942227
+  ref_name: "fix/mellow-image-editor-entry"
+  run_id: 44655542381
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(openwiki): record Mellow Lanhu alignment emulator verification"
+  message: "Merge branch 'main' into fix/mellow-image-editor-entry"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-19T21:57:52Z"
+  created_at: "2026-11-20T01:42:27Z"
