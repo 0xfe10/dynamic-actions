@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f8f0b07bde98acf9a8ae0e1158685a2f75c57c11"
+  sha: "f10b6d191f29b41a740306d3d90e3c99f71afbf7"
   ref_type: "branch"
-  ref_name: "feat/mellow-home-ar-entry"
-  run_id: 44666590466
+  ref_name: "main"
+  run_id: 44668143896
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): surface AR photo and image cut on home tools first page"
+  message: "feat(mellow): surface AR photo and image cut on home tools first page (#348)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T03:16:35Z"
+  created_at: "2026-11-20T03:30:17Z"
