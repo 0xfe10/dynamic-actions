@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d512d8ebaccfdd20ba7f14900cfe8e75077000eb"
+  sha: "fd0b80ccd68be4ee0d1125ca34116bda01dbfa76"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44673389258
+  ref_name: "chore/optimize-tests-and-ci"
+  run_id: 44677051247
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(mellow): unify photo source action sheet and retire gallery plumbing (#349)\n\n* refactor(mellow): unify photo source action sheet and retire gallery plumbing\n\n* fix(widgets): harden action sheet pop, covered invalidation, and disposal guards"
+  message: "chore: batch test runner, add CI caches, and consolidate redundant tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T04:17:26Z"
+  created_at: "2026-11-20T04:50:32Z"
