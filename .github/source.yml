@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b4ccc2347d4450c326564c58bdb9a0220a09d42e"
+  sha: "4b527a3cbe02c810deca23009b7e4fbfe9b0dd27"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44749344245
+  ref_name: "fix/vega-table-actions-alignment"
+  run_id: 44749533807
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): contain tab scrolling and validate static translation keys (#539)\n\n* fix(vega): contain tab scrolling and validate static translation keys\n\n* test(vega): trace translation tables and check localized plural forms"
+  message: "fix(vega): reserve fixed table widths and separate storage verification actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T14:00:39Z"
+  created_at: "2026-11-20T14:01:50Z"
