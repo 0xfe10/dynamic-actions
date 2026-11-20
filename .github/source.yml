@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "30d4bdb82925ca3d454f992f8e04fb5a2b416107"
+  sha: "ed3ef7fb54585603b9f31d500a790b56ce1680f1"
   ref_type: "branch"
   ref_name: "feat/provider-fetch-models"
-  run_id: 44764887507
+  run_id: 44766554948
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(modelgateway): import selected models from provider catalogs"
+  message: "fix(modelgateway): fall back to model IDs for unusable display names"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T15:36:09Z"
+  created_at: "2026-11-20T15:46:10Z"
