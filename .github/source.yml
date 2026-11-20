@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1de04be8053d5f4cbb02038a491c3a94a7346c75"
+  sha: "ad80cff5203b60729b6fe0ffafc62884a6268ef9"
   ref_type: "branch"
-  ref_name: "feat/admin-helptip-descriptions"
-  run_id: 44776037841
+  ref_name: "main"
+  run_id: 44776089650
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): select legal document fields by textbox role"
+  message: "Enforce increasing platform Release versions and guide version entry (#546)\n\n* feat(releases): enforce increasing platform versions and guide version entry\n\n* fix(releases): verify the catalog and find historical duplicates"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T16:42:32Z"
+  created_at: "2026-11-20T16:42:54Z"
