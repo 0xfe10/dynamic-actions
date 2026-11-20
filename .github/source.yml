@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d66d070e0f545d5631826efbaa593efe3d442142"
+  sha: "6329b9012f2d6b9f6999c5b08ff4e652b31477f4"
   ref_type: "branch"
-  ref_name: "fix/enforce-shadcn-controls"
-  run_id: 44776655127
+  ref_name: "fix/hide-internal-ids"
+  run_id: 44776866155
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): enforce shared form controls and localize store channels"
+  message: "fix(vega): show human-readable labels for internal records"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T16:46:16Z"
+  created_at: "2026-11-20T16:47:31Z"
