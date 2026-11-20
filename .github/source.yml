@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1a42bdad975a230635089d934fecf468c5cc46aa"
+  sha: "578cb5d84e6bce5e638ea26ebf4c420f67de2fc5"
   ref_type: "branch"
-  ref_name: "fix/vega-model-nav-icon"
-  run_id: 44747709334
+  ref_name: "fix/vega-tabs-scrollbar-and-i18n"
+  run_id: 44747736023
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): distinguish the models settings icon"
+  message: "test(vega): trace translation tables and check localized plural forms"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T13:49:39Z"
+  created_at: "2026-11-20T13:49:50Z"
