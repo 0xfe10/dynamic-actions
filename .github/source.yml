@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "22e87290cf040ee1862a0b076b72a04d3ee3ea9b"
+  sha: "4b1f0b3f7f76fd661c1df1492b7be1a9e3161c21"
   ref_type: "branch"
-  ref_name: "fix/runtime-i18n-zip-bundle"
-  run_id: 44661158570
+  ref_name: "main"
+  run_id: 44664612633
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime-api): align i18n bundle client with Mercury ZIP and empty 304 responses\n\nAdd Tonik configuration mapping `application/zip` to raw bytes and\nregenerate `mercury_runtime_client` against Mercury's runtime i18n\ncontract (`200 application/zip` binary payload and bodyless `304`).\nReplace mock JSON base64 test doubles in localization repository tests\nwith real ZIP/empty-304 fixtures and add HTTP client and repository\nround-trip tests covering `200 application/zip`, disk cache reload, and\nconditional `If-None-Match` -> `304`.\n\nCloses #344"
+  message: "fix(runtime-api): align i18n bundle client with Mercury ZIP and empty 304 responses (#347)\n\nAdd Tonik configuration mapping `application/zip` to raw bytes and\nregenerate `mercury_runtime_client` against Mercury's runtime i18n\ncontract (`200 application/zip` binary payload and bodyless `304`).\nReplace mock JSON base64 test doubles in localization repository tests\nwith real ZIP/empty-304 fixtures and add HTTP client and repository\nround-trip tests covering `200 application/zip`, disk cache reload, and\nconditional `If-None-Match` -> `304`.\n\nCloses #344"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T02:29:33Z"
+  created_at: "2026-11-20T02:59:40Z"
