@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "87cc7a03b03e2655bc37dec9c397d08fa0d018d7"
+  sha: "63122be699e21bb2428e886928f2669836a82834"
   ref_type: "branch"
   ref_name: "feat/vega-ux-adjustments"
-  run_id: 44698422175
+  run_id: 44699553828
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): honor app access and close mobile navigation"
+  message: "fix(vega): support app creation without profile access"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T07:54:44Z"
+  created_at: "2026-11-20T08:03:49Z"
