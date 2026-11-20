@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/openapps"
   repository_id: 1026076912
-  sha: "2d090d48dcb6db43d2c72ca63f7109de3ed26798"
-  ref_type: "tag"
-  ref_name: "v0.7.71"
-  run_id: 42975168328
+  sha: "7bdf559329e80932786d7d6cd37f70cdf0157f83"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 44648725582
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "\u4fee\u6539 baseURL"
-  authors: ["fang-weiqiang"]
+  message: "fix(landing): add QR488 and QR588 instruction redirects"
+  authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-11T06:50:08Z"
+  created_at: "2026-11-20T00:48:13Z"
