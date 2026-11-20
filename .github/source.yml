@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f21611e23faf80b5c3d8b146c096b8226fd437d5"
+  sha: "f0abfdb402ebd2f4f222b0e183bb4937ad58730f"
   ref_type: "branch"
-  ref_name: "chore/optimize-tests-and-ci"
-  run_id: 44678847286
+  ref_name: "main"
+  run_id: 44679710772
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore: merge main and align consolidated tests with unified photo source sheet"
+  message: "chore: batch test runner, add CI caches, and consolidate redundant tests (#350)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T05:07:07Z"
+  created_at: "2026-11-20T05:14:44Z"
