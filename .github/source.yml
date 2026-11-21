@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "57d0d17adde5cb1b9860e00c6966d3f4024301e0"
+  sha: "9825876c7a0c24711b8dc455c4cbbaa1720b9f21"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44891924883
+  run_id: 44892791322
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Add frontend AI chat history and floating assistant (#569)\n\n* feat(vega): add local AI chat history and floating assistant\n\nShare persisted conversation threads between the overview workspace and an optional draggable assistant, without adding backend chat APIs.\n\n* fix(vega): isolate AI chat threads and dock gestures\n\nKeep streamed replies on their own thread, ignore tiny pointer jitter, and anchor the assistant inside narrow viewports.\n\n* style(vega): format Playwright project config\n\nWrap the Chromium test ignore list so admin formatting passes on the current main."
+  message: "fix(vega): show human-readable labels for internal records (#557)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:56:32Z"
+  created_at: "2026-11-21T10:07:22Z"
