@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6747b2d4c3a73f0dadcc54e091fff1ef2dea8368"
+  sha: "8c404fc74303a86d43ec4624ff088cb45f1228a0"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-vega-v1"
-  run_id: 44954013122
+  ref_name: "fix/track1c-store-diagnostics"
+  run_id: 44954083577
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address creative catalog review findings"
+  message: "fix(publishing): bind audit evidence to the observed revision"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:55:27Z"
+  created_at: "2026-11-21T21:56:20Z"
