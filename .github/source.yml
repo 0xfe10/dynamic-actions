@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "590f2931c1a161360b7139bf6ac75cf440f37798"
+  sha: "558e60b361a284da5ee0dc3f0bb1fdae1e99251a"
   ref_type: "branch"
-  ref_name: "feat/me-legal-about-support"
-  run_id: 44953591640
+  ref_name: "feat/creative-catalog-m2-m3"
+  run_id: 44953952655
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(legal-support): add Legal Docs v2, Platform Legal Templates, App Support/About APIs, and Vega UI"
+  message: "fix(creative): retain inactive selections and verify embedded frame openings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:50:24Z"
+  created_at: "2026-11-21T21:54:48Z"
