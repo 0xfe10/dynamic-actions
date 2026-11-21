@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "bb4c3f636d0112de43fab795542927f98fb57371"
+  sha: "ad08bd8e9e82e9724d67fb2c2e5d8fafb9dfbf99"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44963662167
+  ref_name: "feat/orion-me-wave1"
+  run_id: 44963698742
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): add account closure and compliance endpoints to runtime client (#366)"
+  message: "fix(personal-center): address PR #367 lifecycle, fencing, and launcher review findings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:49:53Z"
+  created_at: "2026-11-21T23:50:20Z"
