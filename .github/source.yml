@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "978b1d086c025d734ba1cda4f77bc6c7687ade7a"
+  sha: "bb4c3f636d0112de43fab795542927f98fb57371"
   ref_type: "branch"
-  ref_name: "feat/orion-template-plaza"
-  run_id: 44962772349
+  ref_name: "main"
+  run_id: 44963662167
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(template-plaza): wire unified mobile template plaza to M4 creative catalog"
+  message: "chore(runtime-api): add account closure and compliance endpoints to runtime client (#366)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:38:45Z"
+  created_at: "2026-11-21T23:49:53Z"
