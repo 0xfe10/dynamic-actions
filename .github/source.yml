@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "df35eeaf19cd89b8d4a97d2a2c22df050e160134"
+  sha: "b91a4623b2c8a843ab1d539916069ea5c3fa6519"
   ref_type: "branch"
-  ref_name: "feat/me-help-center"
-  run_id: 44942551868
+  ref_name: "feat/home-shell-mercury"
+  run_id: 44942892848
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(helpcenter): add Help Center / FAQ library, distribution, runtime API, and Vega console"
+  message: "chore(orion): pin the home shell runtime client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T19:44:44Z"
+  created_at: "2026-11-21T19:48:36Z"
