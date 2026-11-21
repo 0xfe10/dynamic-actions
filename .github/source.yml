@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2c828803426ee1eb9e20360e4ab3406f1e3d6a3a"
+  sha: "78bb7badbbaa0827a52026e090c527294b3a1021"
   ref_type: "branch"
-  ref_name: "chore/runtime-client-default-api-order"
-  run_id: 44959456494
+  ref_name: "main"
+  run_id: 44960157486
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): align default_api.dart with canonical Tonik generation"
+  message: "feat(runtime-api): generate the creative catalog and template plaza client (#363)\n\n* fix(runtime-api): generate bearer parameters and redirect-free creative grants\n\n* fix(runtime-api): expose explicit creative redirects to callers"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:58:52Z"
+  created_at: "2026-11-21T23:07:04Z"
