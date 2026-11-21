@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "eaee529e7c578271b5520c223683815729ed97be"
+  sha: "0b2bb1cedc7853f987fad89b88a594c89cd2ed90"
   ref_type: "branch"
-  ref_name: "feat/home-shell-mercury"
-  run_id: 44940431713
+  ref_name: "feat/release-store-ux"
+  run_id: 44940462608
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): preserve shell used flags and catalog conversion\n\nKeep bottom bar and Me used tied to enabled build features, and mark Home\nused only when a surface row exists. Convert catalog entries directly so\nstaticcheck accepts the public catalog."
+  message: "fix(vega): use document origin for direct download CORS fallback\n\n- Keep API-origin comparison (sameApiOrigin) for fetch credentials while checking document origin (sameDocumentOrigin) when deciding whether a fetch TypeError falls back to native anchor navigation\n- Cover third-party storage, split-origin Mercury API, and same-document-origin cases in artifact-download.test.ts"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T19:20:56Z"
+  created_at: "2026-11-21T19:21:11Z"
