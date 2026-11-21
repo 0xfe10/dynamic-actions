@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2974a1453c5520e2573f7a3eabd98a4518658ba7"
+  sha: "eab8f9d1b029bfcf720104c90a5118af9ab81a39"
   ref_type: "branch"
-  ref_name: "feat/me-feedback-polish"
-  run_id: 44953215917
+  ref_name: "main"
+  run_id: 44954349200
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): regenerate Mercury runtime client for feedback polish endpoints"
+  message: "chore(runtime-api): regenerate Mercury runtime client for Legal Docs v2 and App About endpoints (#359)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:46:02Z"
+  created_at: "2026-11-21T21:59:39Z"
