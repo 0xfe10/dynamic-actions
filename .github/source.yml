@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "51309062fd5c1977b6134f2972b47157324af210"
+  sha: "d0d2405b6e1171267565df01b1ba89d742a6e06c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44955245613
+  ref_name: "feat/me-legal-about-support"
+  run_id: 44955579411
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creative): distribute scoped catalogs and publish verified assets (#588)\n\n* feat(creative): distribute scoped catalogs and publish verified assets\n\n* fix(creative): verify asset provenance and preserve scoped grant decisions\n\n* fix(creative): retain inactive selections and verify embedded frame openings"
+  message: "fix(legal-support): enforce archived template immutability, 409 reload recovery, and bump orion submodule"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:09:30Z"
+  created_at: "2026-11-21T22:13:23Z"
