@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "aee59e0ae610f2ed3b9044088b0a35a2a8ad1ec9"
+  sha: "4acc18c8f0b11ae56e86bc398b18ee465501317b"
   ref_type: "branch"
-  ref_name: "feat/release-store-ux"
-  run_id: 44937433084
+  ref_name: "feat/home-shell-mercury"
+  run_id: 44937848294
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): preserve legacy release drafts, gate drawer readiness, and stream direct downloads\n\n- Keep AppStoreReleaseSelector mounted when switching away from legacy #publish/#history hashes so unsaved release notes survive browser Back while hiding legacy tab triggers on Listing Info and Store Channels\n- Gate drawer store selection and submission until targets, listing, and catalog readiness queries settle, and expose an explicit Retry control on readiness errors\n- Display the channel catalog maxScreenshots limit in store listing readiness failure reasons\n- Stream direct artifact downloads through raw transport fetch and blob completion with origin-scoped credentials instead of a fixed 600ms launch timer\n- Validate root-relative image preview URLs against the application origin via URL parsing to reject backslash-normalized cross-origin escapes"
+  message: "feat(mercury): add the per-app HOME shell surface\n\nStore a closed Home entry catalog on the existing app shell and expose it\nthrough the platform shell API and a public runtime read. Home rows stay out\nof the native build spec."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T18:47:42Z"
+  created_at: "2026-11-21T18:52:19Z"
