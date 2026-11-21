@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f6652c7e6f787c6e3eae70765d363f2633e829b0"
+  sha: "21a8a75fb8f54d837ac9a6d8848de1a2e0ca1ffc"
   ref_type: "branch"
-  ref_name: "feat/me-help-center"
-  run_id: 44939283526
+  ref_name: "main"
+  run_id: 44940304542
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(helpcenter): add Help Center / FAQ library, distribution, runtime API, and Vega console"
+  message: "feat(mercury): preserve store publishing outcomes and evidence (#579)\n\n* feat(mercury): preserve store publishing outcomes and evidence\n\n* fix(mercury): correlate publishing and listing evidence\n\n* fix(mercury): propagate live observations and honor account secrets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T19:08:17Z"
+  created_at: "2026-11-21T19:19:35Z"
