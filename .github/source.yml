@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "817fabd5393432f680d665f94d3a0c369fb0235e"
+  sha: "cd7f89325c6c84466e58ac2d882a9bfefbc58d2d"
   ref_type: "branch"
-  ref_name: "feat/me-help-center-runtime-api"
-  run_id: 44941025942
+  ref_name: "chore/orion-runtime-client-home-shell"
+  run_id: 44941637156
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): regenerate Mercury runtime client for Help Center endpoints"
+  message: "chore(runtime): regenerate the home shell client\n\nAdd the generated GET /apps/{appId}/home client so Cosmos can pin this\nruntime contract. No hand-written app behavior changes."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T19:27:42Z"
+  created_at: "2026-11-21T19:34:43Z"
