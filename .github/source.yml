@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "03b6c20a3e6bfd0caa8716f2edd226fc424d90cf"
+  sha: "ad39a5005a56032360bbd6a611d53e24359be92a"
   ref_type: "branch"
-  ref_name: "feat/home-shell-vega"
-  run_id: 44951485682
+  ref_name: "main"
+  run_id: 44952725021
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): add the Home tab to the app shell\n\nOperators can customize each app Home from the platform shell page.\nAn unconfigured app keeps the built-in Home until the draft is saved.\nPrimary and More enforce the 32, 5, and 16 limits, and image-print doors stay separate."
+  message: "fix(tenancy): authorize legal document writes at platform scope (#587)\n\n* fix(tenancy): authorize legal writes at platform scope\n\n* test(tenancy): cover non-owner legal document permissions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:26:12Z"
+  created_at: "2026-11-21T21:40:19Z"
