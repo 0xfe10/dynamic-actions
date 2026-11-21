@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a467173f8d3b7545c02c52b6371c1200cd45e6f1"
+  sha: "14b4edfaf3d11473a3b68225b9995dcf936f0eb8"
   ref_type: "branch"
-  ref_name: "feat/orion-me-wave1"
-  run_id: 44962339243
+  ref_name: "chore/runtime-client-account-closure-compliance"
+  run_id: 44962558808
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(personal-center): wire Wave 1 runtime APIs for Mellow and Breeze"
+  message: "chore(runtime-api): add account closure and compliance endpoints to runtime client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:33:13Z"
+  created_at: "2026-11-21T23:35:49Z"
