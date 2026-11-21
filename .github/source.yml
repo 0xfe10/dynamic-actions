@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3e5f1fd251dd9980341498fc7b31b88b75d4a0f8"
+  sha: "89041e0ea0723ee8d9c949f61f13f5681d9e2dd1"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44890365642
+  run_id: 44890452562
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): simplify store listing scope switcher and legal links summary (#563)"
+  message: "feat(legal): upgrade legal documents to Markdown editor with single-save UX (#561)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:37:24Z"
+  created_at: "2026-11-21T09:37:49Z"
