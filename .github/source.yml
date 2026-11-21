@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "fc36d5eb921af9b58f1227d189b89c94e67789f6"
+  sha: "9ca7747f96ead20b531e8a105ea7b9d6ea40f557"
   ref_type: "branch"
-  ref_name: "feat/me-user-profiles"
-  run_id: 44955645207
+  ref_name: "main"
+  run_id: 44955809338
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(appuserprofile): add extended profile, connected device history, and Vega read-only view"
+  message: "fix(publishing): report confirmed store results and wait for listing data (#590)\n\n* fix(publishing): report confirmed store results and wait for listing data\n\n* test(publishing): distinguish pending audit from review evidence\n\n* fix(publishing): bind audit evidence to the observed revision\n\n* fix(vega): validate the displayed listing revision"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:13:56Z"
+  created_at: "2026-11-21T22:15:49Z"
