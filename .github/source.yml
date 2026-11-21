@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "13367dc949397996472f541c8330f1dce30fa34c"
+  sha: "e555e2566245ffdf98dacae36203a83b840f48f9"
   ref_type: "branch"
-  ref_name: "feat/account-security"
-  run_id: 44959911360
+  ref_name: "feat/creative-catalog-vega-v2"
+  run_id: 44961742402
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(security): name unique constraints, lock user row on social unbind, and show inline toggle errors"
+  message: "fix(vega): address creative catalog v2 review findings\n\n- Preserve unsaved editor state, activeTab, uploaded metadata, custom roles, and sync manifest payload in-place across asset uploads without remounting ItemEditorWorkspace\n- Clear multi-select state on filter, search, and scope changes across items, categories, and studio library views, and after single-item distribution apply\n- Guard studio library Select All and batch include/exclude against ineligible rows and disable Preview on ineligible inherited rows\n- Add 409 Conflict Reload latest recovery in item directory row transitions, open Publish dialog, open Library Detail modal, and CategoryFormDialog\n- Localize revision badge, manifest asset label, version binding roles, and draft/archived eligibility reasons; validate 0-byte EMPTY_FILE and alpha-only frame/sticker MIME; tighten opening-rect bounds tolerance to 0\n- Add Vitest regression coverage for all review fixes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:04:07Z"
+  created_at: "2026-11-21T23:25:57Z"
