@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f78da3bfd8f8fa1f1eb68d261b3f47e5a3806f38"
+  sha: "3e5f1fd251dd9980341498fc7b31b88b75d4a0f8"
   ref_type: "branch"
-  ref_name: "feat/simplify-store-listing-ux"
-  run_id: 44782252619
-  run_attempt: 3
+  ref_name: "main"
+  run_id: 44890365642
+  run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): simplify store listing scope switcher and legal links summary"
+  message: "feat(vega): simplify store listing scope switcher and legal links summary (#563)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:24:07Z"
+  created_at: "2026-11-21T09:37:24Z"
