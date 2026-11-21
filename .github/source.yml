@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ecac14d5ede1098692bcce5622ee582dccfbe02b"
+  sha: "d80a23cbe839f14319036f63755a8f78e96439e8"
   ref_type: "branch"
-  ref_name: "chore/cleanup-app-releases-page"
-  run_id: 44890791201
+  ref_name: "fix/hide-internal-ids"
+  run_id: 44890840705
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(vega): retire redundant application /releases list page"
+  message: "fix(vega): show human-readable labels for internal records"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:41:59Z"
+  created_at: "2026-11-21T09:42:41Z"
