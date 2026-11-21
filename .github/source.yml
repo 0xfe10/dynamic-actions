@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f1a7c41c13f8b7f414e606a3443afc9523ecb97e"
+  sha: "c8943894ed635980fd32c0db10ca6b97fea61199"
   ref_type: "branch"
-  ref_name: "fix/wizard-step-url-history"
-  run_id: 44779838151
+  ref_name: "chore/cleanup-app-releases-page"
+  run_id: 44779481322
   run_attempt: 3
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): synchronize wizard assertions with rendered destinations"
+  message: "chore(vega): retire redundant application /releases list page"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:20:26Z"
+  created_at: "2026-11-21T09:20:30Z"
