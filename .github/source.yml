@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "579cf0b576dd5388dc44bfd4b83718f6a7c68e80"
+  sha: "f1a7c41c13f8b7f414e606a3443afc9523ecb97e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44880710272
-  run_attempt: 2
+  ref_name: "fix/wizard-step-url-history"
+  run_id: 44779838151
+  run_attempt: 3
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "ci(actions): switch dyn-actions bridge workflows to ubuntu-slim (#570)"
+  message: "test(vega): synchronize wizard assertions with rendered destinations"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:18:47Z"
+  created_at: "2026-11-21T09:20:26Z"
