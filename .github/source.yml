@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "21a8a75fb8f54d837ac9a6d8848de1a2e0ca1ffc"
+  sha: "eaee529e7c578271b5520c223683815729ed97be"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44940304542
+  ref_name: "feat/home-shell-mercury"
+  run_id: 44940431713
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): preserve store publishing outcomes and evidence (#579)\n\n* feat(mercury): preserve store publishing outcomes and evidence\n\n* fix(mercury): correlate publishing and listing evidence\n\n* fix(mercury): propagate live observations and honor account secrets"
+  message: "fix(mercury): preserve shell used flags and catalog conversion\n\nKeep bottom bar and Me used tied to enabled build features, and mark Home\nused only when a surface row exists. Convert catalog entries directly so\nstaticcheck accepts the public catalog."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T19:19:35Z"
+  created_at: "2026-11-21T19:20:56Z"
