@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "50e1559eaf67347ea8eaaa9197d560cedf6140e3"
+  sha: "aee59e0ae610f2ed3b9044088b0a35a2a8ad1ec9"
   ref_type: "branch"
-  ref_name: "feat/store-publishing-v5-mercury"
-  run_id: 44935585979
+  ref_name: "feat/release-store-ux"
+  run_id: 44937433084
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): preserve store publishing outcomes and evidence"
+  message: "fix(vega): preserve legacy release drafts, gate drawer readiness, and stream direct downloads\n\n- Keep AppStoreReleaseSelector mounted when switching away from legacy #publish/#history hashes so unsaved release notes survive browser Back while hiding legacy tab triggers on Listing Info and Store Channels\n- Gate drawer store selection and submission until targets, listing, and catalog readiness queries settle, and expose an explicit Retry control on readiness errors\n- Display the channel catalog maxScreenshots limit in store listing readiness failure reasons\n- Stream direct artifact downloads through raw transport fetch and blob completion with origin-scoped credentials instead of a fixed 600ms launch timer\n- Validate root-relative image preview URLs against the application origin via URL parsing to reject backslash-normalized cross-origin escapes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T18:27:09Z"
+  created_at: "2026-11-21T18:47:42Z"
