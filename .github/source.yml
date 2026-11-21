@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "469de5ed3c162ba533819c1171b3b2c9600cae6a"
+  sha: "9ee6e752d6dc9a41cf3568a47ecffd6dc226fa15"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44945140224
+  ref_name: "feat/me-device-materials-runtime-api"
+  run_id: 44945918750
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): align print preview and Neutral UI flows (#354)\n\n* fix(mellow): align preview overlays and neutral UI flows\n\n* fix(mellow): isolate preview labels and gate AR printing\n\n* fix(localization): retain offline account closure warnings"
+  message: "chore(runtime-api): regenerate Mercury runtime client for Device Support endpoints"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T20:13:43Z"
+  created_at: "2026-11-21T20:22:27Z"
