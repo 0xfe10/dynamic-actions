@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c8943894ed635980fd32c0db10ca6b97fea61199"
+  sha: "cfff31914f064a55b08abe6c2b42ed88507712e9"
   ref_type: "branch"
-  ref_name: "chore/cleanup-app-releases-page"
-  run_id: 44779481322
+  ref_name: "fix/sidebar-active-and-app-logo"
+  run_id: 44778472278
   run_attempt: 3
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(vega): retire redundant application /releases list page"
+  message: "fix(vega): improve sidebar active contrast and load app logo in headers"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:20:30Z"
+  created_at: "2026-11-21T09:20:37Z"
