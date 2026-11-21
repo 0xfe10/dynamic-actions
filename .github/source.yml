@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8dac941fd7f83cf68928a4e7617cdaf2b4afbf3e"
+  sha: "cb133b6b18747eab54d861a30bd7ab1860437d12"
   ref_type: "branch"
-  ref_name: "feat/me-app-updates"
-  run_id: 44957896326
+  ref_name: "feat/creative-catalog-m4-runtime"
+  run_id: 44958580468
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(appupdate): enforce https downloadUrl, 409 reload recovery, preserve edit fields, and harden semver"
+  message: "fix(creative): verify runtime grants and bind paging to app visibility"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:39:57Z"
+  created_at: "2026-11-21T22:48:10Z"
