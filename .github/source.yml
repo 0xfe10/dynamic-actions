@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2fc2f2f4d71b2dca1c14be44538f2f79431bd27a"
+  sha: "2aff4630a8d49473bc8b492efa77354d6bd28d7e"
   ref_type: "branch"
-  ref_name: "feat/me-device-materials"
-  run_id: 44946036677
+  ref_name: "main"
+  run_id: 44946048904
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(device-materials): add runtime device support APIs, App-scoped materials, and Vega UI"
+  message: "feat(mercury): add scoped creative catalog authoring (#582)\n\n* feat(mercury): add scoped creative catalog authoring\n\n* fix(mercury): enforce creative catalog tree and search invariants\n\n* fix(mercury): compare category references by numeric ID on retry"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T20:23:47Z"
+  created_at: "2026-11-21T20:23:55Z"
