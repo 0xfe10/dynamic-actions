@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "95d86d47dc3b299ba97441dfdfc03cb131c2fab2"
+  sha: "a0124c0708dc569215f56d099b5dbc2bcf33b7ac"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-m1"
-  run_id: 44938220859
+  ref_name: "feat/release-store-ux"
+  run_id: 44938537188
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): add scoped creative catalog authoring"
+  message: "fix(vega): enforce configured store catalog schemas, fallback CORS downloads, and return absolute preview URLs\n\n- Require catalogQuery.data.configured === true and a matching catalog schema entry per enabled store target in the publish drawer, surfacing Retry when unconfigured and blocking missing-schema targets\n- Fall back to native browser anchor download when cross-origin direct signed artifact streaming fails with a CORS/network TypeError while preserving same-origin network errors\n- Return validated absolute resolved.href from toSafeImagePreviewUrl for root-relative paths instead of stripping the validated origin"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T18:56:36Z"
+  created_at: "2026-11-21T19:00:20Z"
