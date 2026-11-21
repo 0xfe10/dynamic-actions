@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ec2dfa13da3b67479ea7dda51c80e1610783b1cf"
+  sha: "ee1dbf9c0587f76e8fedd18be65283054168d120"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-m4-runtime"
-  run_id: 44962007465
+  ref_name: "main"
+  run_id: 44963214675
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creative): deliver the app-scoped runtime catalog and pin its Orion client"
+  message: "feat(runtime): integrate app updates, user profiles and creative catalog (#595)\n\n* feat(appupdate): add App Version & Update Policy backend, runtime check, and Vega studio UI\n\n* feat(appuserprofile): add app profiles and connected device history\n\n* feat(creative): deliver the app-scoped runtime catalog and pin its Orion client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:29:17Z"
+  created_at: "2026-11-21T23:44:11Z"
