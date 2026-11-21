@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "40dbea1130c071821b9fb3622c411fd2be488cba"
+  sha: "ecac14d5ede1098692bcce5622ee582dccfbe02b"
   ref_type: "branch"
-  ref_name: "feat/ai-chat-history-and-dock"
-  run_id: 44890649597
+  ref_name: "chore/cleanup-app-releases-page"
+  run_id: 44890791201
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): isolate AI chat threads and dock gestures\n\nKeep streamed replies on their own thread, ignore tiny pointer jitter, and anchor the assistant inside narrow viewports."
+  message: "chore(vega): retire redundant application /releases list page"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:40:12Z"
+  created_at: "2026-11-21T09:41:59Z"
