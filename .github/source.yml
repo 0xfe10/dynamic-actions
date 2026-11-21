@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9f7863a89aa048f14bbb12f58279f2b294c11f2a"
+  sha: "afcc9c961c47299896c3d71219ad384659352641"
   ref_type: "branch"
   ref_name: "fix/track1c-legal-write-scope"
-  run_id: 44950469358
+  run_id: 44951044730
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(tenancy): authorize legal writes at platform scope"
+  message: "test(tenancy): cover non-owner legal document permissions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:14:30Z"
+  created_at: "2026-11-21T21:20:57Z"
