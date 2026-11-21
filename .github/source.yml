@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "9e9cfad6e90f65d804e9440c6c6f584ecfaacb0e"
+  sha: "a1a667462d23f96535d6f1d51e0dc9df49383276"
   ref_type: "branch"
-  ref_name: "feat/runtime-home-menu"
-  run_id: 44946629200
+  ref_name: "main"
+  run_id: 44946747825
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(home): load per-App runtime HOME shell on device\n\nWire RuntimeHomeMenuProvider through the closed entry catalog, offline snapshot\nstore, and Breeze/Mellow HomeMenuCubit scopes so operators can customize tiles\nwithout Image Print editor changes."
+  message: "chore(runtime-api): regenerate Mercury runtime client for Device Support endpoints (#357)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T20:30:39Z"
+  created_at: "2026-11-21T20:31:59Z"
