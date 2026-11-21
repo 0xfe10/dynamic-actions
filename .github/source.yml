@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "caa55287959523340d8a805936cf83bf2b4e58eb"
+  sha: "0bbf99f082014e5b2863ab3486e0143cb53b952c"
   ref_type: "branch"
-  ref_name: "fix/release-batch-publish-mutex"
-  run_id: 44922466800
+  ref_name: "feat/release-store-ux"
+  run_id: 44931813075
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): show row spinner and serialize release batch publish actions\n\nSerialize row-level Release publish mutations in ReleaseBatchResults so only the active row renders Spinner while sibling unpublished rows disable without spinning across results and attention tabs. Also render Spinner only on active row-level start and retry commands.\n\nCloses #571"
+  message: "feat(vega): redesign release batch store drawer, popovers, and store settings\n\nRedesign the Release Batch detail table and App Store Publishing settings workspace for #573:\n\n- Isolate per-row concurrency across build start/retry, finalize/lock, store submission, and artifact downloads so sibling rows and background refetches never block other rows.\n- Thread platform.store_publishing.manage alongside platform.store_publishing.read into batch routes, detail page, row popovers, and store drawer.\n- Replace inline App/tenant store links and raw artifact lists with HoverPopover Store status and Packages (N) pills plus fixed-width right-aligned icon-only row actions.\n- Add a right-side Sheet drawer on Release Batch detail for one-click store submission, audit progress tracking, single-channel resubmit, and returnBatchId Store Settings round-trips.\n- Redesign App Store Publishing settings into a 2-tab Listing Info and Store Channels layout with HelpFieldLabel rules, live counters, visual upload previews, Channel binding Dialog, and legacy #publish/#release-*/#history* deep-link support.\n- Enforce zero raw HTML form/button elements across release-batch and store-publishing modules via AST guard and expand Vitest and Playwright coverage."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T16:03:51Z"
+  created_at: "2026-11-21T17:46:03Z"
