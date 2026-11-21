@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "cb133b6b18747eab54d861a30bd7ab1860437d12"
+  sha: "9733c5d9f6f6f97ac40fb57dc5e064f29ab3c764"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-m4-runtime"
-  run_id: 44958580468
+  ref_name: "feat/account-security"
+  run_id: 44958916756
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(creative): verify runtime grants and bind paging to app visibility"
+  message: "feat(security): add account security OTP challenges, password controls, and social OAuth providers"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:48:10Z"
+  created_at: "2026-11-21T22:52:08Z"
