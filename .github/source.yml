@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b8ecc9b507e1f280b0f61f9b99902e0221af0227"
+  sha: "c89bd86307dc41b13b957cf116e3cab8178c3305"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-m2-m3"
-  run_id: 44953140923
+  ref_name: "fix/track1c-store-diagnostics"
+  run_id: 44953192614
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(creative): verify asset provenance and preserve scoped grant decisions"
+  message: "test(publishing): distinguish pending audit from review evidence"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:45:13Z"
+  created_at: "2026-11-21T21:45:41Z"
