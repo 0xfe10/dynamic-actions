@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d8eaaa38de8e17f7f94171aba13b5ef96c8f03ad"
+  sha: "73c5013f6b8e56459b3ddd8bcc471eeb973ace18"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44891538505
+  ref_name: "fix/hide-internal-ids"
+  run_id: 44891814713
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(vega): retire redundant application /releases list page (#558)"
+  message: "fix(vega): show human-readable labels for internal records"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:51:32Z"
+  created_at: "2026-11-21T09:55:11Z"
