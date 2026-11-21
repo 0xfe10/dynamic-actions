@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7556aa0b119b6fa45617f4521042b6df1369c886"
+  sha: "826d9e50a56ce3c1866dd243fd4d9e0f5befe14c"
   ref_type: "branch"
-  ref_name: "chore/runtime-client-user-profiles"
-  run_id: 44957513924
+  ref_name: "main"
+  run_id: 44958428341
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): add App User Profile and connected device endpoints to runtime client"
+  message: "chore(runtime-api): add App User Profile and connected device endpoints to runtime client (#361)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:35:24Z"
+  created_at: "2026-11-21T22:46:15Z"
