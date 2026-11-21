@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d80a23cbe839f14319036f63755a8f78e96439e8"
+  sha: "fc0b81c01935c3b219c704f2756523bc388155f9"
   ref_type: "branch"
-  ref_name: "fix/hide-internal-ids"
-  run_id: 44890840705
+  ref_name: "feat/ai-chat-history-and-dock"
+  run_id: 44891040294
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): show human-readable labels for internal records"
+  message: "style(vega): format Playwright project config\n\nWrap the Chromium test ignore list so admin formatting passes on the current main."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T09:42:41Z"
+  created_at: "2026-11-21T09:45:13Z"
