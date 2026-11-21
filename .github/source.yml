@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "eaeaa2e523be2851599842a347f3bad1230af182"
+  sha: "15a5109ee2d59aef21872adb4a5a0899b1b4c983"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44957007141
+  ref_name: "feat/creative-catalog-m4-runtime"
+  run_id: 44957191910
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(legal-support): add Legal Docs v2, Platform Legal Templates, App Support/About APIs, and Vega UI (#592)\n\n* feat(legal-support): add Legal Docs v2, Platform Legal Templates, App Support/About APIs, and Vega UI\n\n* fix(legal-support): enforce archived template immutability, 409 reload recovery, and bump orion submodule"
+  message: "fix(creative): use portable Unicode normalization for runtime search"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:29:43Z"
+  created_at: "2026-11-21T22:31:44Z"
