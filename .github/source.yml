@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0bed9e7e60a10ef9127f71b75f00cddef818a5ae"
+  sha: "caa55287959523340d8a805936cf83bf2b4e58eb"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44896457211
+  ref_name: "fix/release-batch-publish-mutex"
+  run_id: 44922466800
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): unify scoped date-time and pagination preferences (#568)\n\n* feat(vega): unify scoped date-time and pagination preferences\n\n* test(vega): verify scoped defaults and responsive preference updates\n\n* fix(vega): restore disabled release pagination styling\n\n* fix(vega): align merged release labels and AI history formatting\n\n* test(vega): allow full workbench isolation scenario to finish"
+  message: "fix(vega): show row spinner and serialize release batch publish actions\n\nSerialize row-level Release publish mutations in ReleaseBatchResults so only the active row renders Spinner while sibling unpublished rows disable without spinning across results and attention tabs. Also render Spinner only on active row-level start and retry commands.\n\nCloses #571"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T10:53:34Z"
+  created_at: "2026-11-21T16:03:51Z"
