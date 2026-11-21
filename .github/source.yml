@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8f65eb649ebb0f0c58702f92cab7459a9e8c4e73"
+  sha: "4e3c87d1a592b6a7fadb74ac9d568a7bce8edb5d"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44951954420
+  ref_name: "chore/runtime-client-legal-about-support"
+  run_id: 44952423585
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(home): runtime HOME shell for Mellow and Breeze (#358)\n\n* feat(home): load per-App runtime HOME shell on device\n\nWire RuntimeHomeMenuProvider through the closed entry catalog, offline snapshot\nstore, and Breeze/Mellow HomeMenuCubit scopes so operators can customize tiles\nwithout Image Print editor changes.\n\n* fix(home): clear offline snapshot when runtime HOME is unconfigured\n\nAdd Breeze gating, snapshot/provider regression tests, and optional widget\nPNG capture for review evidence."
+  message: "chore(runtime-api): regenerate Mercury runtime client for Legal Docs v2 and App About endpoints"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T21:31:44Z"
+  created_at: "2026-11-21T21:36:42Z"
