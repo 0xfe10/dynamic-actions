@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "43df9242ad3a9161c07d1eb95eade5f1d93c1e7d"
+  sha: "eaeaa2e523be2851599842a347f3bad1230af182"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-m4-runtime"
-  run_id: 44956521580
+  ref_name: "main"
+  run_id: 44957007141
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creative): serve the app-scoped runtime catalog and template plaza"
+  message: "feat(legal-support): add Legal Docs v2, Platform Legal Templates, App Support/About APIs, and Vega UI (#592)\n\n* feat(legal-support): add Legal Docs v2, Platform Legal Templates, App Support/About APIs, and Vega UI\n\n* fix(legal-support): enforce archived template immutability, 409 reload recovery, and bump orion submodule"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:23:56Z"
+  created_at: "2026-11-21T22:29:43Z"
