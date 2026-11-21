@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e555e2566245ffdf98dacae36203a83b840f48f9"
+  sha: "2ff705ca5770d99ac88a09e89caafd06c8dd07b7"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-vega-v2"
-  run_id: 44961742402
+  ref_name: "feat/account-closure-compliance"
+  run_id: 44961758610
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address creative catalog v2 review findings\n\n- Preserve unsaved editor state, activeTab, uploaded metadata, custom roles, and sync manifest payload in-place across asset uploads without remounting ItemEditorWorkspace\n- Clear multi-select state on filter, search, and scope changes across items, categories, and studio library views, and after single-item distribution apply\n- Guard studio library Select All and batch include/exclude against ineligible rows and disable Preview on ineligible inherited rows\n- Add 409 Conflict Reload latest recovery in item directory row transitions, open Publish dialog, open Library Detail modal, and CategoryFormDialog\n- Localize revision badge, manifest asset label, version binding roles, and draft/archived eligibility reasons; validate 0-byte EMPTY_FILE and alpha-only frame/sticker MIME; tighten opening-rect bounds tolerance to 0\n- Add Vitest regression coverage for all review fixes"
+  message: "feat(mercury,vega): add account closure lifecycle, compliance hub, and admin console"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:25:57Z"
+  created_at: "2026-11-21T23:26:07Z"
