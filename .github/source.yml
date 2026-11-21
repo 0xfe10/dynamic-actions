@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7fed58ababab3349a71749747a5dc83b73a8f167"
+  sha: "4583148906276c41244b24f3e3d86be6167f2bba"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-vega-v2"
-  run_id: 44958975905
+  ref_name: "main"
+  run_id: 44959056876
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): add M2/M3 creative distribution, uploads, publishing, and studio visibility controls"
+  message: "feat(feedback): add reply attachments, read tracking, ticket metadata, and Vega UI upgrade (#591)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:53:12Z"
+  created_at: "2026-11-21T22:53:46Z"
