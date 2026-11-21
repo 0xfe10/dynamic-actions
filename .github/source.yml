@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "79e0971dbd8b7cd59f7aebb5055d59a13c65de02"
+  sha: "990130bd259d41cfc8c1cdd774fa4054c053afa0"
   ref_type: "branch"
-  ref_name: "feat/me-help-center"
-  run_id: 44948836789
+  ref_name: "main"
+  run_id: 44949579141
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(helpcenter): add Help Center / FAQ library, distribution, runtime API, and Vega console"
+  message: "feat(vega): show per-store publishing outcomes and readiness (#585)\n\n* feat(vega): show per-store publishing outcomes and readiness\n\n* fix(vega): distinguish simulated uploads and track pending jobs\n\n* fix(publishing): preserve confirmed store intent and evidence\n\n* fix(vega): localize drawer readiness errors and guard store settings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T20:55:54Z"
+  created_at: "2026-11-21T21:04:22Z"
