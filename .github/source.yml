@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ee1dbf9c0587f76e8fedd18be65283054168d120"
+  sha: "bfc7c7094c2fb7ceaa687c682fa57c5847dd33c1"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44963214675
+  run_id: 44963311037
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime): integrate app updates, user profiles and creative catalog (#595)\n\n* feat(appupdate): add App Version & Update Policy backend, runtime check, and Vega studio UI\n\n* feat(appuserprofile): add app profiles and connected device history\n\n* feat(creative): deliver the app-scoped runtime catalog and pin its Orion client"
+  message: "feat(vega): add creative catalog M2/M3 distribution, uploads, publishing, and studio visibility (#598)\n\n* feat(vega): add M2/M3 creative distribution, uploads, publishing, and studio visibility controls\n\n* fix(vega): address creative catalog v2 review findings\n\n- Preserve unsaved editor state, activeTab, uploaded metadata, custom roles, and sync manifest payload in-place across asset uploads without remounting ItemEditorWorkspace\n- Clear multi-select state on filter, search, and scope changes across items, categories, and studio library views, and after single-item distribution apply\n- Guard studio library Select All and batch include/exclude against ineligible rows and disable Preview on ineligible inherited rows\n- Add 409 Conflict Reload latest recovery in item directory row transitions, open Publish dialog, open Library Detail modal, and CategoryFormDialog\n- Localize revision badge, manifest asset label, version binding roles, and draft/archived eligibility reasons; validate 0-byte EMPTY_FILE and alpha-only frame/sticker MIME; tighten opening-rect bounds tolerance to 0\n- Add Vitest regression coverage for all review fixes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:44:11Z"
+  created_at: "2026-11-21T23:45:31Z"
