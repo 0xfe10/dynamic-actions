@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5bccf141126dda8351d92a8d823a9b008b147075"
+  sha: "579cf0b576dd5388dc44bfd4b83718f6a7c68e80"
   ref_type: "branch"
-  ref_name: "feat/simplify-store-listing-ux"
-  run_id: 44778181880
-  run_attempt: 1
+  ref_name: "main"
+  run_id: 44880710272
+  run_attempt: 2
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): simplify store listing scope switcher and legal links summary"
+  message: "ci(actions): switch dyn-actions bridge workflows to ubuntu-slim (#570)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T16:55:32Z"
+  created_at: "2026-11-21T09:18:47Z"
