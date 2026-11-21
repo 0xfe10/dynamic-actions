@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2ff705ca5770d99ac88a09e89caafd06c8dd07b7"
+  sha: "ec2dfa13da3b67479ea7dda51c80e1610783b1cf"
   ref_type: "branch"
-  ref_name: "feat/account-closure-compliance"
-  run_id: 44961758610
+  ref_name: "feat/creative-catalog-m4-runtime"
+  run_id: 44962007465
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury,vega): add account closure lifecycle, compliance hub, and admin console"
+  message: "feat(creative): deliver the app-scoped runtime catalog and pin its Orion client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:26:07Z"
+  created_at: "2026-11-21T23:29:17Z"
