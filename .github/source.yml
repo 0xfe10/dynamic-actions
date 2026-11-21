@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "96b27f41a1945f1e6aff45a25c92ac77ff0c8373"
+  sha: "d6718ecac030d2f2c211b5b3f212edece4cf432c"
   ref_type: "branch"
-  ref_name: "chore/runtime-client-account-security"
-  run_id: 44960282858
+  ref_name: "main"
+  run_id: 44961285989
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): add Account Security endpoints to Mercury runtime client"
+  message: "chore(runtime-api): add Account Security endpoints to Mercury runtime client (#364)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:08:29Z"
+  created_at: "2026-11-21T23:20:39Z"
