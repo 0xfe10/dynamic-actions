@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "62eabd57b5b8144e573ff236d9726d50f7dca393"
+  sha: "0a2a6be8a2e8d4063776b62a1a9ab66048d6f263"
   ref_type: "branch"
-  ref_name: "chore/runtime-client-app-updates"
-  run_id: 44956420231
+  ref_name: "feat/creative-catalog-m4-runtime"
+  run_id: 44956934041
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): regenerate Mercury runtime client for App Update Check endpoint"
+  message: "feat(runtime-api): generate the creative catalog and plaza client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T22:22:46Z"
+  created_at: "2026-11-21T22:28:49Z"
