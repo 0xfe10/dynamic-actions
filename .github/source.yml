@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6497c62fb8b6af6507f72b9d78ed091dc3e767e8"
+  sha: "bad658ab838851604562add905be8d23501acfbc"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44995766953
+  ref_name: "feat/creative-catalog-ux-157"
+  run_id: 45000374236
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(release): streamline batch navigation and single-app store publishing (#600)"
+  message: "test(catalog): locate authoring fixtures across result pages"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T06:53:59Z"
+  created_at: "2026-11-22T07:55:11Z"
