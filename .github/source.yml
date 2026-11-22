@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "88f3f9fa797b43e8dc99d96e32dc96fecb61c134"
+  sha: "2f7090ecf5b9c07f999e8b7f0762fd6a6bb69dab"
   ref_type: "branch"
-  ref_name: "feat/region-disable-visibility"
-  run_id: 45020190060
+  ref_name: "feat/code-first-urls"
+  run_id: 45022890740
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(regions): retain unavailable packs and match locale casing"
+  message: "fix(urls): prefer app codes in remaining public legal links"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T12:02:07Z"
+  created_at: "2026-11-22T12:33:36Z"
