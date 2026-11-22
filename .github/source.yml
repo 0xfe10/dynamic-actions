@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "adceedfebb5e3ef64068bccdfba533b704c9d7ee"
+  sha: "e472e2056d12f7abd73b1967ab7b42d36a881a8a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45065245348
+  ref_name: "fix/orion-317-staging-auth-e2e"
+  run_id: 45065817245
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(local-workflows): harden PDF proofing, drafts and unit preferences (#409)"
+  message: "fix(staging): restore legal links and Android rating fallback"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:14:05Z"
+  created_at: "2026-11-22T20:20:03Z"
