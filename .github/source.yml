@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5a87e32bf3bb589e0dc07505f839b19e447dd97c"
+  sha: "03893d9acaa93c7693788c700bc301f83a34e771"
   ref_type: "branch"
-  ref_name: "fix/dedupe-app-profile-edit"
-  run_id: 45027032780
+  ref_name: "feat/store-listing-ux-redesign"
+  run_id: 45028344188
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): expect profile route after app creation"
+  message: "feat(store-publishing): redesign store listing UX and align Pubox v0.2.11 media slots\n\nRedesign Vega store listing workflows and update Mercury Pubox integration for multi-device media_slots and standalone listing capability discovery (Pubox v0.2.11 compatible with v0.2.10 fallback):\n\n- Reuse App packaging icon as default store icon with explicit override, restore, and lightbox preview (yet-another-react-lightbox).\n- Support multi-device media slots across 14 store catalogs, canonical slot normalization, dimension inspection, same_dimensions validation, and per-slot rules.\n- Replace modal legal link management with persistent 2-card legal status links backed by public legal URL verification and zero SQL migrations.\n- Surface per-store action results in a review/retry modal with bundled_with_release and unsupported_standalone handling and a default-collapsed history bar."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T13:21:25Z"
+  created_at: "2026-11-22T13:36:22Z"
