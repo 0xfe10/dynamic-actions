@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "323ffd7ea925e952675cb6e9b94916e2109ee0e0"
+  sha: "9d0adb65d6a341e1ddba611ae4e3d86126f25587"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 44967714979
+  ref_name: "ao/release-publishing/store-ux"
+  run_id: 44990342661
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury,vega): add account security (00186) + account closure lifecycle, compliance hub, and Vega /user-closures (00187) (#599)\n\n* feat(security): add account security OTP challenges, password controls, and social OAuth providers\n\n* feat(mercury,vega): add account closure lifecycle, compliance hub, and admin console"
+  message: "feat(releases): open fixed batches and publish each app to stores"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T00:40:02Z"
+  created_at: "2026-11-22T05:39:43Z"
