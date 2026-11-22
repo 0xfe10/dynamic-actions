@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ad8c51ae55bdf499b034cc61a295b59174bf2345"
+  sha: "5f154ed4a8c4b73e6d0d5f428975ba9af54f985a"
   ref_type: "branch"
-  ref_name: "feat/ask-ai-diagnostic-handoff"
-  run_id: 45041599321
+  ref_name: "fix/remove-header-publish-button"
+  run_id: 45041993376
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): connect Ask AI to the resizable assistant dock"
+  message: "fix(vega): remove the redundant header publish shortcut\n\nDrop the top-right Publish to stores action from the app header.\nKeep the sidebar Store Publishing destination and the release store\npublishing actions."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T16:02:51Z"
+  created_at: "2026-11-22T16:07:02Z"
