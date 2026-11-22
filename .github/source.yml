@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d3bb2201ed5f4f346b6a48f2b940e14a5d5d6c0d"
+  sha: "edccb01625901c8439930f7779fe680f41561212"
   ref_type: "branch"
-  ref_name: "fix/unify-region-locale-pickers"
-  run_id: 45074197604
+  ref_name: "main"
+  run_id: 45074205164
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): hold region pickers until catalogs load\n\nKeep the app-region dialog on a loading state until both region queries\nsucceed, and hide platform locale tags until the catalog is loaded."
+  message: "fix(vega): separate stacked profile cards and align borders (#624)\n\n* fix(vega): separate stacked profile cards and align borders\n\nTenant profile rendered the profile form and General preferences as\nadjacent fragments, so the cards touched and their borders did not match.\nStack them in one page shell, use the shared card ring and border token,\nand keep form footers in the card gap.\n\n* fix(vega): soften active tab borders and focus rings\n\nActive tabs drew a hard foreground bar plus a second focus outline, which\nread as a black box. Keep one ring, a primary underline, and the same\ncard ring on the creative workbench navigation."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:49:08Z"
+  created_at: "2026-11-22T21:49:14Z"
