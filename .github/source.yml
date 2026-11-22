@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2cac4fee224b4783d3371e0d4da924b111fe6351"
+  sha: "6b0e6f81058c26b1ad2a2b6abcef85e0df130b1c"
   ref_type: "branch"
-  ref_name: "feat/orion-template-plaza"
-  run_id: 44964879263
+  ref_name: "main"
+  run_id: 44965742033
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(template-plaza): bound 409 cursor resets, fail-closed favorites, and localize device families"
+  message: "chore(runtime-api): align default_api.dart with canonical Tonik generation (#369)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T00:05:11Z"
+  created_at: "2026-11-22T00:15:49Z"
