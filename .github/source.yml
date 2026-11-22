@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "833a3ca56b1735ad081a9646e78b7b545e84e432"
+  sha: "2901fd75e85ddd0cfd0167ba081b78876abd143d"
   ref_type: "branch"
-  ref_name: "feat/resource-source-option-4"
-  run_id: 45068707742
+  ref_name: "feat/banners-option-2"
+  run_id: 45069226168
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): keep source rail selectors after merging main\n\nFonts, icons, help center, and localization still use the source rail.\nCreative catalog keeps the workbench flow that landed on main."
+  message: "fix(vega): align banner template gallery copy\n\nUse mainland Simplified Chinese for template wording, and describe the gallery the same way in English, Simplified Chinese, and Traditional Chinese."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:50:53Z"
+  created_at: "2026-11-22T20:56:29Z"
