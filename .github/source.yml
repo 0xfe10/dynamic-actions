@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1ae8c9f1102115558b49617deef1168fa274b441"
+  sha: "2e3378f516d7463209cf2038b5a66f575416e77a"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45036245802
+  run_id: 45036252424
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(regions): disable regions across catalogs and retain existing bindings (#606)\n\n* feat(regions): disable regions across catalogs and retain existing bindings\n\n* fix(regions): remove obsolete region set comparison\n\n* test(regions): register the printer purchase fixture locale\n\n* perf(regions): reuse locale options while editing app details\n\n* fix(mercury): preserve historical region bindings across updates\n\n* fix(vega): preserve disabled selections across resource editors\n\n* fix(regions): retain unavailable packs and match locale casing"
+  message: "fix(vega): align form labels with inline contextual help (#610)\n\n* fix(vega): align form labels with inline contextual help\n\n* test(vega): reuse real form alignment fixtures\n\n* fix(vega): match channel description label spacing\n\n* test(vega): measure form alignment after motion settles"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:04:33Z"
+  created_at: "2026-11-22T15:05:02Z"
