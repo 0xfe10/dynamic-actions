@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bad658ab838851604562add905be8d23501acfbc"
+  sha: "f9a084dd744e52a6b60a372326bc0df66f4958a7"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-ux-157"
-  run_id: 45000374236
+  ref_name: "feat/workspace-consolidation-601"
+  run_id: 45004390518
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(catalog): locate authoring fixtures across result pages"
+  message: "feat(workspace): consolidate app configuration and generate legal documents"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T07:55:11Z"
+  created_at: "2026-11-22T08:46:57Z"
