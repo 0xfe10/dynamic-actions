@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b73851bb4f585f3e2df31b71adc32136e5d59312"
+  sha: "c4f896e23165af838bf8bd4eb88366afdcaebc20"
   ref_type: "branch"
-  ref_name: "feat/ai-dock-resize-modes"
-  run_id: 45032802729
+  ref_name: "feat/store-listing-ux-redesign"
+  run_id: 45033016461
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): restore the sidebar after expanded focus\n\nKeep the temporary sidebar collapse out of the saved preference so a\nrefresh during in-page focus can put the previous open or closed state\nback."
+  message: "fix(store-publishing): address PR #614 review findings\n\n- Sync and clear primary-slot mediaSlots on default and override edits so post-pull screenshot edits cannot be shadowed by stale primary media_slot_asset_ids, and initialize non-primary override edits from inherited fallback slots cleanly\n- Make per-store inherit default icon button delete iconUrl/iconPreviewUrl via clearOverrideIcon instead of spreading previous state\n- Gate Retry actions in Store Actions Result Modal on row.retryable !== false while preserving legacy v0.2.10 undefined retryability\n- Resolve App packaging icon bytes via applogo.Service.ReadPackagingIcon when standalone Validate/Push or CreatePublish runs with an empty listing iconUrl\n- Constrain compact slot upload draft text width inside narrow w-28/w-36 gallery cards"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T14:26:22Z"
+  created_at: "2026-11-22T14:28:50Z"
