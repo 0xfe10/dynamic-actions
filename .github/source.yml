@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7c84a7db09dd8365e665f8a706f59ac44dbc5ff0"
+  sha: "c58dc70ba66e15b13aac1fec2bba7719e82defc7"
   ref_type: "branch"
-  ref_name: "fix/unify-region-locale-pickers"
-  run_id: 45067895686
+  ref_name: "fix/vega-global-style-polish"
+  run_id: 45067992952
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): hold region pickers until catalogs load\n\nKeep the app-region dialog on a loading state until both region queries\nsucceed, and hide platform locale tags until the catalog is loaded."
+  message: "fix(vega): soften active tab borders and focus rings\n\nActive tabs drew a hard foreground bar plus a second focus outline, which\nread as a black box. Keep one ring, a primary underline, and the same\ncard ring on the creative workbench navigation."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:42:17Z"
+  created_at: "2026-11-22T20:43:08Z"
