@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "514c33d7412cc07b1876989f224acc95bda77c0f"
+  sha: "b79ef77a902f9eaa674285ebbd0ddbc268376762"
   ref_type: "branch"
-  ref_name: "fix/remove-storefront-entry-name"
-  run_id: 45016105341
+  ref_name: "fix/dedupe-app-profile-edit"
+  run_id: 45016149305
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(support): retire configurable storefront entry name"
+  message: "fix(vega): consolidate app status and profile settings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:11:55Z"
+  created_at: "2026-11-22T11:12:40Z"
