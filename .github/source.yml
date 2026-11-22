@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5ad9c630350ea937a8396bc723b9785607941278"
+  sha: "a2ed425a2d296a6c80d185fbbd30ed9ad84cbd34"
   ref_type: "branch"
   ref_name: "feat/orion-me-wave2"
-  run_id: 44968448568
+  run_id: 44969702192
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(personal-center): wire app updates, profile, security, closure, and compliance\n\nComplete Track 4 Orion mobile wiring Wave 2 across Mellow and Breeze:\n- App version & update checks via MercuryAppUpdateGateway, AppUpdateCubit, release notes modal (optional/recommended/force), red dot badges, and image cache cleanup\n- Extended user profile editing (nickname, gender, birthday, region, bio) with optimistic expectedVersion + 409 conflict reload, camera/gallery avatar capture, and authenticated connected device sync\n- Live account security (phone/email/password with OTP challenge countdown, honest 503 messaging-unconfigured feedback, current password + revokeOtherSessions) and dynamic social bindings (hiding unconfigured providers, handling 409 LAST_AUTH_METHOD)\n- Account closure lifecycle with presigned evidence uploads, clickable closure notice legal document, immediate local session clear on submission, and 409 ACCOUNT_PENDING_CLOSURE re-login revocation dialog\n- Data compliance hub with localized profile snapshot, connected devices, markdown privacy/SDK disclosures, and JSON export"
+  message: "fix(personal-center): address PR #370 i18n and cubit hardening feedback\n\n- Add zh-CN and zh-Hant-TW translations for common-close\n- Guard AccountProfileCubit.refresh() writeback with monotonic request sequence and version check\n- Clear AccountSecurityCubit._lastSubmittedClosure on new user login\n- Add loading spinner and error/retry states to BreezeDataCompliancePage"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T00:49:11Z"
+  created_at: "2026-11-22T01:04:47Z"
