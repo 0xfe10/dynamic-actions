@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d113eddd1aade92bddb327ca528bfb761b7e6595"
+  sha: "4a725edd3a42367ddf3e722b07fedb537047869b"
   ref_type: "branch"
-  ref_name: "feat/social-providers-structured"
-  run_id: 45077710870
+  ref_name: "main"
+  run_id: 45077791660
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(integration): pin compatible generated runtime client"
+  message: "feat(vega): redesign ops settings with a left workbench rail (#625)\n\n* feat(vega): redesign ops settings with a left workbench rail\n\nReplace stacked cards and tabs on entitlements, device models, and object storage with one left rail and a single focused panel.\n\n* fix(vega): align device-model rail counts with visible rows\n\nCount every rendered model row and make material badges follow the active tab and search."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:26:31Z"
+  created_at: "2026-11-22T22:27:18Z"
