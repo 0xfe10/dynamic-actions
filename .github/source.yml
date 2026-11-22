@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "93c775fe6cae2a0d7eb987df437a19d6bdaf19eb"
+  sha: "323ffd7ea925e952675cb6e9b94916e2109ee0e0"
   ref_type: "branch"
-  ref_name: "feat/account-closure-compliance"
-  run_id: 44966047608
+  ref_name: "main"
+  run_id: 44967714979
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury,vega): add account closure lifecycle, compliance hub, and admin console"
+  message: "feat(mercury,vega): add account security (00186) + account closure lifecycle, compliance hub, and Vega /user-closures (00187) (#599)\n\n* feat(security): add account security OTP challenges, password controls, and social OAuth providers\n\n* feat(mercury,vega): add account closure lifecycle, compliance hub, and admin console"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T00:19:34Z"
+  created_at: "2026-11-22T00:40:02Z"
