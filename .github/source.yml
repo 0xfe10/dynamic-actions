@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "da21d186d0e3e6b37583f13f6fb5704b54c2687c"
+  sha: "38086e5dbaaaf20034b0aee784bd54dab145e3d4"
   ref_type: "branch"
   ref_name: "feat/orion-314-pixso-creative"
-  run_id: 45076855471
+  run_id: 45077114482
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): skip absent legacy text decoration assets"
+  message: "fix(editor): guard decoration context after manifest loading"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:17:22Z"
+  created_at: "2026-11-22T22:20:07Z"
