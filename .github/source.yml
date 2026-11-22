@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2da6283e6034803610fd85bcbba0ef17ee1fe88c"
+  sha: "6dafa865f99c01ef76fd9caefceed5648b7f9b48"
   ref_type: "branch"
-  ref_name: "fix/orion-393-unit-sheet-polish"
-  run_id: 45073733063
+  ref_name: "chore/runtime-client-consumables"
+  run_id: 45073824068
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(units): map inches to runtime profile contract"
+  message: "chore(runtime-api): regenerate Mercury runtime client for consumables"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:44:10Z"
+  created_at: "2026-11-22T21:45:13Z"
