@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "68484cc813b690890f589d49002f6222bdbb0469"
+  sha: "3f874d5afe6e4e04681e36beff53bff2a76294f5"
   ref_type: "branch"
   ref_name: "feat/workspace-consolidation-601"
-  run_id: 45009690824
+  run_id: 45009930917
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(studio): count app icons available in the target regions"
+  message: "test(studio): return available icons in the app logo fixture"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T09:53:15Z"
+  created_at: "2026-11-22T09:56:26Z"
