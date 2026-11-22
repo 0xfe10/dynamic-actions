@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bc15b490ac3355009802c53088af4fee33aa34d0"
+  sha: "d3bb2201ed5f4f346b6a48f2b940e14a5d5d6c0d"
   ref_type: "branch"
-  ref_name: "feat/banners-option-2"
-  run_id: 45073810333
+  ref_name: "fix/unify-region-locale-pickers"
+  run_id: 45074197604
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align banner template gallery copy\n\nUse mainland Simplified Chinese for template wording, and describe the gallery the same way in English, Simplified Chinese, and Traditional Chinese."
+  message: "fix(vega): hold region pickers until catalogs load\n\nKeep the app-region dialog on a loading state until both region queries\nsucceed, and hide platform locale tags until the catalog is loaded."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:45:08Z"
+  created_at: "2026-11-22T21:49:08Z"
