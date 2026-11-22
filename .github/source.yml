@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7184db123504cd23d7c9329eff3f86aeb83793e9"
+  sha: "bc15b490ac3355009802c53088af4fee33aa34d0"
   ref_type: "branch"
-  ref_name: "feat/ops-config-option-2"
-  run_id: 45073506158
+  ref_name: "feat/banners-option-2"
+  run_id: 45073810333
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align ops rail counts and reset labels\n\nKeep the runtime Chinese reset wording and make device-model rail badges match the rows on screen."
+  message: "fix(vega): align banner template gallery copy\n\nUse mainland Simplified Chinese for template wording, and describe the gallery the same way in English, Simplified Chinese, and Traditional Chinese."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:41:39Z"
+  created_at: "2026-11-22T21:45:08Z"
