@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c58dc70ba66e15b13aac1fec2bba7719e82defc7"
+  sha: "d99c8981825c3ac186e7af175544fbfd9065f8bd"
   ref_type: "branch"
-  ref_name: "fix/vega-global-style-polish"
-  run_id: 45067992952
+  ref_name: "main"
+  run_id: 45068669559
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): soften active tab borders and focus rings\n\nActive tabs drew a hard foreground bar plus a second focus outline, which\nread as a black box. Keep one ring, a primary underline, and the same\ncard ring on the creative workbench navigation."
+  message: "feat(vega): focus build settings on summary cards (#621)\n\n* feat(vega): focus build settings on summary cards\n\nReplace the stacked platform, capability, and signing forms with\nsummary cards, capability presets, platform tabs, and a signing drawer.\n\n* fix(vega): use shared textarea and scroll signing tables"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:43:08Z"
+  created_at: "2026-11-22T20:50:23Z"
