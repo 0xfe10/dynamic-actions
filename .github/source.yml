@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "aadaff08d7386fde75d0a65d6a0f1a2735ee04fe"
+  sha: "a6253c7ea0b438eec8b86804d707c459a9ff1c74"
   ref_type: "branch"
-  ref_name: "feat/resource-source-option-4"
-  run_id: 45057096318
+  ref_name: "main"
+  run_id: 45057640560
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): keep resource sources below the page title\n\nMove app fonts, icons, banners, help, localization, and consumables\ninto a source rail under the page header. Fonts and icons can switch\nbetween card and table views, and adding a resource stays in one menu."
+  message: "feat(vega): redesign app profile settings (#617)\n\n* feat(vega): redesign app profile settings\n\nSplit the profile page into an identity strip, basic info, and an operations sidebar. Confirm disable and re-enable in a dialog, and keep card footers clear of the last field.\n\n* fix(vega): move profile card explanations into help tips\n\nRemove the subtitle under each profile card title and keep the short explanation on the help button.\n\n* fix(vega): use mainland wording for profile build copy\n\nSay \u6784\u5efa instead of \u5efa\u7f6e in the Simplified Chinese profile enable and impact text."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T18:48:02Z"
+  created_at: "2026-11-22T18:54:07Z"
