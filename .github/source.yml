@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1dec4f697ca4eea6789d8210b5264ce6e8add49e"
+  sha: "c4c7697b6db0b9af9ef684c92c8b50f76dcceb86"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-ux-157"
-  run_id: 45008968264
+  ref_name: "feat/ai-chat-model-picker"
+  run_id: 45009096368
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): refresh derived covers in the version editor"
+  message: "feat(chat): add a shared authorized model picker"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T09:44:52Z"
+  created_at: "2026-11-22T09:45:53Z"
