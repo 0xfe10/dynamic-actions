@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c4f896e23165af838bf8bd4eb88366afdcaebc20"
+  sha: "1ae8c9f1102115558b49617deef1168fa274b441"
   ref_type: "branch"
-  ref_name: "feat/store-listing-ux-redesign"
-  run_id: 45033016461
+  ref_name: "main"
+  run_id: 45036245802
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(store-publishing): address PR #614 review findings\n\n- Sync and clear primary-slot mediaSlots on default and override edits so post-pull screenshot edits cannot be shadowed by stale primary media_slot_asset_ids, and initialize non-primary override edits from inherited fallback slots cleanly\n- Make per-store inherit default icon button delete iconUrl/iconPreviewUrl via clearOverrideIcon instead of spreading previous state\n- Gate Retry actions in Store Actions Result Modal on row.retryable !== false while preserving legacy v0.2.10 undefined retryability\n- Resolve App packaging icon bytes via applogo.Service.ReadPackagingIcon when standalone Validate/Push or CreatePublish runs with an empty listing iconUrl\n- Constrain compact slot upload draft text width inside narrow w-28/w-36 gallery cards"
+  message: "feat(regions): disable regions across catalogs and retain existing bindings (#606)\n\n* feat(regions): disable regions across catalogs and retain existing bindings\n\n* fix(regions): remove obsolete region set comparison\n\n* test(regions): register the printer purchase fixture locale\n\n* perf(regions): reuse locale options while editing app details\n\n* fix(mercury): preserve historical region bindings across updates\n\n* fix(vega): preserve disabled selections across resource editors\n\n* fix(regions): retain unavailable packs and match locale casing"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T14:28:50Z"
+  created_at: "2026-11-22T15:04:33Z"
