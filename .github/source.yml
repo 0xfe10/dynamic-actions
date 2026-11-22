@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a14974a84a9aa6a1065ef8833b07bffeea8876da"
+  sha: "9b1f3178f792680b38766572a4a0d145a1698fab"
   ref_type: "branch"
-  ref_name: "feat/orion-template-plaza"
-  run_id: 44963902457
+  ref_name: "main"
+  run_id: 44964460935
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(template-plaza): bound 409 cursor resets, fail-closed favorites, and localize device families"
+  message: "feat(personal-center): wire Wave 1 runtime APIs for Mellow and Breeze (#367)\n\n* feat(personal-center): wire Wave 1 runtime APIs for Mellow and Breeze\n\n* fix(personal-center): address PR #367 lifecycle, fencing, and launcher review findings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-21T23:52:52Z"
+  created_at: "2026-11-22T00:00:14Z"
