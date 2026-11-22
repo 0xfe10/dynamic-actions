@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2ccb57f380bb554525604589742d9fcba72592d6"
+  sha: "ad8c51ae55bdf499b034cc61a295b59174bf2345"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45039559109
+  ref_name: "feat/ask-ai-diagnostic-handoff"
+  run_id: 45041599321
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(urls): prefer tenant and app codes in public and Vega links (#612)\n\n* feat(urls): prefer tenant and app codes in public and Vega links\n\nPublic legal routes accept a globally unique app code or a numeric id, and returned public URLs use the code. Vega navigation uses tenant and app codes while numeric bookmarks still resolve to the same records.\n\n* fix(urls): prefer app codes in remaining public legal links"
+  message: "fix(vega): connect Ask AI to the resizable assistant dock"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:40:11Z"
+  created_at: "2026-11-22T16:02:51Z"
