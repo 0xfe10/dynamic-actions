@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "41cef84cf02034e8e61aa9107a3c11673d250a2a"
+  sha: "93a47c01a4d8528c16b16bdfa1e6972851bb3587"
   ref_type: "branch"
   ref_name: "feat/social-providers-structured"
-  run_id: 45070263797
+  run_id: 45071157404
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): stabilize provider integration fixtures and concurrent unbinds"
+  message: "fix(vega): keep provider flow checkbox compact"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:07:21Z"
+  created_at: "2026-11-22T21:16:30Z"
