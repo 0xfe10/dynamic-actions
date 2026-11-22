@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "902ac0247b202df6870f3af2b78b3ebc363b64a3"
+  sha: "f28b565f318aeb0a0b92773e45f0d8e69f27b06e"
   ref_type: "branch"
-  ref_name: "feat/ai-chat-model-picker"
-  run_id: 45013119942
+  ref_name: "fix/table-action-icon-buttons"
+  run_id: 45013263577
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(chat): preserve cross-tab edits during storage recovery"
+  message: "fix(vega): expose disabled action tooltips to keyboard users"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T10:34:51Z"
+  created_at: "2026-11-22T10:36:32Z"
