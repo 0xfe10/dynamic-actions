@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a063af4af2ed99ded58ccc6e9993817d18ad6eb7"
+  sha: "f703c3269c3162b1de0dc24027587c1c65c75f36"
   ref_type: "branch"
-  ref_name: "feat/ask-ai-diagnostic-handoff"
-  run_id: 45016643782
+  ref_name: "main"
+  run_id: 45016663648
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): keep diagnostic warnings readable on mobile"
+  message: "fix(vega): restore the creative item tag button import (#607)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:18:28Z"
+  created_at: "2026-11-22T11:18:43Z"
