@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "fc40904e86e2016874c1413832d99b29a73afbf3"
+  sha: "900dc9b1a10142666e027144e25495e70be78dba"
   ref_type: "branch"
-  ref_name: "fix/unify-region-locale-pickers"
-  run_id: 45064242314
+  ref_name: "feat/banners-option-2"
+  run_id: 45064253793
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega,mercury): limit locale choices to the region catalog\n\nApp and platform screens now pick languages from active regions instead\nof typed tags. New locales must exist in the catalog, and app content\nmust also use a region bound to that app."
+  message: "fix(vega): align banner template gallery copy\n\nUse mainland Simplified Chinese for template wording, and describe the gallery the same way in English, Simplified Chinese, and Traditional Chinese."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:03:46Z"
+  created_at: "2026-11-22T20:03:54Z"
