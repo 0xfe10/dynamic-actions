@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b79ef77a902f9eaa674285ebbd0ddbc268376762"
+  sha: "65ccad149222cdb291276b6b30e6985a5a7ca603"
   ref_type: "branch"
-  ref_name: "fix/dedupe-app-profile-edit"
-  run_id: 45016149305
+  ref_name: "fix/form-label-help-alignment"
+  run_id: 45016278889
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): consolidate app status and profile settings"
+  message: "fix(vega): align form labels with inline contextual help"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:12:40Z"
+  created_at: "2026-11-22T11:13:58Z"
