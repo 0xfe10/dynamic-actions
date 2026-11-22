@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "58729eadeb9808bca7dad91ac881ac18d47892c2"
+  sha: "2ccb57f380bb554525604589742d9fcba72592d6"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45039190641
+  run_id: 45039559109
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): add resizable assistant dock modes (#615)\n\n* feat(vega): add resizable assistant dock modes\n\nKeep the compact bottom-right window, and add drag resize, a right-side drawer, and in-page focus that restores the previous sidebar state.\n\n* fix(vega): restore the sidebar after expanded focus\n\nKeep the temporary sidebar collapse out of the saved preference so a\nrefresh during in-page focus can put the previous open or closed state\nback."
+  message: "feat(urls): prefer tenant and app codes in public and Vega links (#612)\n\n* feat(urls): prefer tenant and app codes in public and Vega links\n\nPublic legal routes accept a globally unique app code or a numeric id, and returned public URLs use the code. Vega navigation uses tenant and app codes while numeric bookmarks still resolve to the same records.\n\n* fix(urls): prefer app codes in remaining public legal links"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:35:56Z"
+  created_at: "2026-11-22T15:40:11Z"
