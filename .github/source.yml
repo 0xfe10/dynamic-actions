@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6b0e6f81058c26b1ad2a2b6abcef85e0df130b1c"
+  sha: "ae011a2078b5673235c0a59d0cc910459fa27023"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44965742033
+  run_id: 44965754540
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): align default_api.dart with canonical Tonik generation (#369)"
+  message: "feat(template-plaza): wire mobile template plaza to M4 creative catalog (#368)\n\n* feat(template-plaza): wire unified mobile template plaza to M4 creative catalog\n\n* fix(template-plaza): bound 409 cursor resets, fail-closed favorites, and localize device families"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T00:15:49Z"
+  created_at: "2026-11-22T00:16:10Z"
