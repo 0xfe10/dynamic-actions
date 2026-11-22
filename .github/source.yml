@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "48e83aacb9b07fd987371e5857404152123e3530"
+  sha: "6497c62fb8b6af6507f72b9d78ed091dc3e767e8"
   ref_type: "branch"
-  ref_name: "ao/release-publishing/store-ux"
-  run_id: 44992776382
+  ref_name: "main"
+  run_id: 44995766953
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): honor the selected mode for new store submissions"
+  message: "feat(release): streamline batch navigation and single-app store publishing (#600)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T06:14:01Z"
+  created_at: "2026-11-22T06:53:59Z"
