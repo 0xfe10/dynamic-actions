@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "25e6706165e3219a93986ed575f4d0372e2a5277"
+  sha: "f0499141fe45f828336fce9eda7c79bbaac0ee8e"
   ref_type: "branch"
-  ref_name: "feat/consumables-lanhu-option3"
-  run_id: 45078731544
+  ref_name: "main"
+  run_id: 45079372951
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump submodule to f3cbfb94 for consumables runtime client"
+  message: "fix(vega,mercury): limit locale choices to the region catalog (#622)\n\n* fix(vega,mercury): limit locale choices to the region catalog\n\nApp and platform screens now pick languages from active regions instead\nof typed tags. New locales must exist in the catalog, and app content\nmust also use a region bound to that app.\n\n* fix(vega): hold region pickers until catalogs load\n\nKeep the app-region dialog on a loading state until both region queries\nsucceed, and hide platform locale tags until the catalog is loaded."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:37:17Z"
+  created_at: "2026-11-22T22:44:29Z"
