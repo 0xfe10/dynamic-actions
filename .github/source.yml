@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b6503cf40b97be38a9d6f2bebbbb1fcdc653b666"
+  sha: "6e2b29c5edbf29af0ef1aa91248d158361c38c59"
   ref_type: "branch"
   ref_name: "feat/social-providers-structured"
-  run_id: 45062368896
+  run_id: 45062787377
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(auth): structure social and phone login provider settings"
+  message: "fix(vega): label provider region search consistently"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T19:43:41Z"
+  created_at: "2026-11-22T19:48:11Z"
