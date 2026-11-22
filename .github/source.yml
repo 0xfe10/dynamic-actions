@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5cd7c39996a57c1ef6f06d72166f31178c2dd91b"
+  sha: "be89831a0d9dd779b087bad0335313e30cdcd3dc"
   ref_type: "branch"
   ref_name: "feat/consumables-lanhu-option3"
-  run_id: 45080050489
+  run_id: 45080881505
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury,vega): guard migration 00190 duplicates and align picker conflict check"
+  message: "fix(consumablecatalog,vega): scope uniqueness checks to active consumables"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:51:50Z"
+  created_at: "2026-11-22T23:01:12Z"
