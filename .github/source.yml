@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "be89831a0d9dd779b087bad0335313e30cdcd3dc"
+  sha: "41744b54df60fc6ad14d1d22d6f1af8812c921d6"
   ref_type: "branch"
-  ref_name: "feat/consumables-lanhu-option3"
-  run_id: 45080881505
+  ref_name: "main"
+  run_id: 45085032582
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(consumablecatalog,vega): scope uniqueness checks to active consumables"
+  message: "feat(consumables): align Lanhu specs and Option 3 management UI (#626)\n\n* feat(consumablecatalog,devicecatalog): align consumables with Lanhu specs and Option 3\n\n* feat(vega): redesign consumables and paper types for Option 3\n\n* fix(consumablecatalog,devicecatalog,vega): address PR #626 review findings\n\n* chore(orion): bump submodule to f3cbfb94 for consumables runtime client\n\n* fix(vega): remove unused resource source tabs in platform app settings\n\n* fix(mercury,vega): guard migration 00190 duplicates and align picker conflict check\n\n* fix(consumablecatalog,vega): scope uniqueness checks to active consumables"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T23:01:12Z"
+  created_at: "2026-11-22T23:46:55Z"
