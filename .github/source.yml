@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c134f965bf9146f6769eacf417fc179cf1984865"
+  sha: "adceedfebb5e3ef64068bccdfba533b704c9d7ee"
   ref_type: "branch"
-  ref_name: "fix/orion-390-local-workflows"
-  run_id: 45064293753
+  ref_name: "main"
+  run_id: 45065245348
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(local-workflows): harden PDF proofing, drafts and unit preferences"
+  message: "fix(local-workflows): harden PDF proofing, drafts and unit preferences (#409)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:04:16Z"
+  created_at: "2026-11-22T20:14:05Z"
