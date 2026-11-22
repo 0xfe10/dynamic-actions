@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f20c216e0cfbe2a6a0bd43befb52a773d65ec17c"
+  sha: "adaa064a7e50c9ff37ade5f84141bafb574136f8"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45073226923
+  run_id: 45073379000
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): keep resource sources below the page title (#619)\n\n* feat(vega): keep resource sources below the page title\n\nMove app fonts, icons, banners, help, localization, and consumables\ninto a source rail under the page header. Fonts and icons can switch\nbetween card and table views, and adding a resource stays in one menu.\n\n* fix(vega): limit the source rail to fonts, icons, help, and localization\n\nLeave banners, device models, and consumables on their current source\ncontrols so their dedicated redesigns do not overlap this change.\n\n* fix(vega): align resource source counts and labels\n\nKeep each language-pack key in one source, match Help Center counts to the visible rows, and use Simplified Chinese for create actions.\n\n* fix(vega): select app resources from the source rail in e2e\n\nUse the source rail buttons for fonts, icons, help center, and localization instead of the retired source tabs."
+  message: "fix(vega): drop duplicate appProfile i18n keys (#627)\n\nKeep the original copied and reset strings so the merged profile\nlocales stay key-equal and Simplified Chinese stays in zh-CN."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:38:50Z"
+  created_at: "2026-11-22T21:40:44Z"
