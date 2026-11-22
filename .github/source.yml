@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f35c53176d55288d29542cad3ce9e0425ebbea07"
+  sha: "b69bc0700b602cb8a0c384a0dfe219458010cf35"
   ref_type: "branch"
-  ref_name: "feat/workspace-consolidation-601"
-  run_id: 45011000380
+  ref_name: "feat/region-disable-visibility"
+  run_id: 45012895036
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(workspace): consolidate app configuration and parameterize legal templates"
+  message: "feat(regions): disable regions across catalogs and retain existing bindings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T10:09:11Z"
+  created_at: "2026-11-22T10:32:13Z"
