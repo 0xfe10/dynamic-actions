@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ca12c73a9433111a380f64513576dd76a8f388b5"
+  sha: "586ee4757ae621e178af6aba3f1322e649036760"
   ref_type: "branch"
-  ref_name: "feat/orion-314-pixso-creative"
-  run_id: 45083974906
+  ref_name: "main"
+  run_id: 45084954117
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): preserve history when resizing creative frames\n\nResize catalog frame canvases without calling the history-resetting template update. Cover an earlier sticker edit followed by frame apply and clear through all undo and redo steps."
+  message: "feat(editor): wire Mercury creative catalog into Pixso editing (#413)\n\n* feat(editor): wire Mercury creative catalog into Pixso editing\n\n* fix(editor): honor native template text alignment bounds\n\n* fix(editor): preserve template text bounds during initialization\n\n* fix(editor): skip absent legacy text decoration assets\n\n* fix(editor): guard decoration context after manifest loading\n\n* fix(editor): address creative catalog rendering and retry defects\n\nAlign catalog frame openings and overlays in one canvas transform. Preserve contain fill through native copy, reload and export. Show explicit copywriting loading, failure, retry and empty states, with pixel and widget regressions.\n\n* fix(editor): preserve history when resizing creative frames\n\nResize catalog frame canvases without calling the history-resetting template update. Cover an earlier sticker edit followed by frame apply and clear through all undo and redo steps."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T23:34:39Z"
+  created_at: "2026-11-22T23:45:44Z"
