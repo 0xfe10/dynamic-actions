@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "edccb01625901c8439930f7779fe680f41561212"
+  sha: "5db92d3b61b9497071df5e4c34d2c2c796ee9f75"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45074205164
+  run_id: 45075558311
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): separate stacked profile cards and align borders (#624)\n\n* fix(vega): separate stacked profile cards and align borders\n\nTenant profile rendered the profile form and General preferences as\nadjacent fragments, so the cards touched and their borders did not match.\nStack them in one page shell, use the shared card ring and border token,\nand keep form footers in the card gap.\n\n* fix(vega): soften active tab borders and focus rings\n\nActive tabs drew a hard foreground bar plus a second focus outline, which\nread as a black box. Keep one ring, a primary underline, and the same\ncard ring on the creative workbench navigation."
+  message: "feat(vega): open app banners in a template gallery drawer (#620)\n\n* feat(vega): open app banners in a template gallery drawer\n\nLand /settings/banners on the app banner workspace, with status counts, card and table views, and a slide-over platform template gallery.\n\n* fix(vega): align banner template gallery copy\n\nUse mainland Simplified Chinese for template wording, and describe the gallery the same way in English, Simplified Chinese, and Traditional Chinese."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:49:14Z"
+  created_at: "2026-11-22T22:04:04Z"
