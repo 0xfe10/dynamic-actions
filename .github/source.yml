@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6a87ee78e45f1a2cacd5a7233fe23f6bf14bfc18"
+  sha: "8e6f614d174fd00f8c4e37cf94cfaa96d878d302"
   ref_type: "branch"
-  ref_name: "feat/build-config-option-1"
-  run_id: 45066912118
+  ref_name: "feat/resource-source-option-4"
+  run_id: 45067563354
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): use shared textarea and scroll signing tables"
+  message: "fix(vega): select app resources from the source rail in e2e\n\nUse the source rail buttons for fonts, icons, help center, and localization instead of the retired source tabs."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:31:43Z"
+  created_at: "2026-11-22T20:38:35Z"
