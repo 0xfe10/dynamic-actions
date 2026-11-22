@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "741e05172326b622bd0ac41fb89bffd6f0f134fd"
+  sha: "c38fc4bc951e44db401bd9083b8e70a34f9816b7"
   ref_type: "branch"
-  ref_name: "feat/workspace-consolidation-601"
-  run_id: 45014191363
+  ref_name: "feat/region-disable-visibility"
+  run_id: 45014338932
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(workspace): record single-app consumable pool and custom views"
+  message: "test(regions): register the printer purchase fixture locale"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T10:48:24Z"
+  created_at: "2026-11-22T10:50:15Z"
