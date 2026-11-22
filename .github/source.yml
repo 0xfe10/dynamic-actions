@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5e9ec24edc6e93b57c951f3c255eae802fcf9902"
+  sha: "1dec4f697ca4eea6789d8210b5264ce6e8add49e"
   ref_type: "branch"
-  ref_name: "feat/workspace-consolidation-601"
-  run_id: 45008328771
+  ref_name: "feat/creative-catalog-ux-157"
+  run_id: 45008968264
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(workspace): verify the mounted device assignment panel"
+  message: "fix(mercury): refresh derived covers in the version editor"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T09:36:10Z"
+  created_at: "2026-11-22T09:44:52Z"
