@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "900dc9b1a10142666e027144e25495e70be78dba"
+  sha: "7446ab64773a2d16798c4c3f37959b4dd2c314b5"
   ref_type: "branch"
-  ref_name: "feat/banners-option-2"
-  run_id: 45064253793
+  ref_name: "feat/social-providers-structured"
+  run_id: 45064448510
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align banner template gallery copy\n\nUse mainland Simplified Chinese for template wording, and describe the gallery the same way in English, Simplified Chinese, and Traditional Chinese."
+  message: "fix(vega): preserve shared region picker defaults"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:03:54Z"
+  created_at: "2026-11-22T20:06:00Z"
