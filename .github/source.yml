@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7ed773bfbcc01e0a8dd8ed70d029b9678c37389b"
+  sha: "b145ab37f4ff31fe6554d9dd1f7ec32b6a2070fc"
   ref_type: "branch"
-  ref_name: "feat/workspace-consolidation-601"
-  run_id: 45005322332
+  ref_name: "feat/creative-catalog-ux-157"
+  run_id: 45007865025
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(workspace): exercise platform edits and tenant redirects in CI"
+  message: "fix(mercury): refresh derived covers when artwork changes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T08:59:30Z"
+  created_at: "2026-11-22T09:30:42Z"
