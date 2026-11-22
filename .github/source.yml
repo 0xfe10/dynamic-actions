@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5de55c11f573355c3a273bd39973fa15a853b009"
+  sha: "7ed773bfbcc01e0a8dd8ed70d029b9678c37389b"
   ref_type: "branch"
-  ref_name: "feat/creative-catalog-ux-157"
-  run_id: 45005091802
+  ref_name: "feat/workspace-consolidation-601"
+  run_id: 45005322332
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(catalog): isolate studio fixture application keys"
+  message: "test(workspace): exercise platform edits and tenant redirects in CI"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T08:56:07Z"
+  created_at: "2026-11-22T08:59:30Z"
