@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d99c8981825c3ac186e7af175544fbfd9065f8bd"
+  sha: "833a3ca56b1735ad081a9646e78b7b545e84e432"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45068669559
+  ref_name: "feat/resource-source-option-4"
+  run_id: 45068707742
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): focus build settings on summary cards (#621)\n\n* feat(vega): focus build settings on summary cards\n\nReplace the stacked platform, capability, and signing forms with\nsummary cards, capability presets, platform tabs, and a signing drawer.\n\n* fix(vega): use shared textarea and scroll signing tables"
+  message: "fix(vega): keep source rail selectors after merging main\n\nFonts, icons, help center, and localization still use the source rail.\nCreative catalog keeps the workbench flow that landed on main."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:50:23Z"
+  created_at: "2026-11-22T20:50:53Z"
