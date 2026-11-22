@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "27793d59cd3b6b2c2dcc4f53d54eeaa1d2f44ee2"
+  sha: "f1e4fc7ee8aa03a0cedf23618cce2257a7748eeb"
   ref_type: "branch"
-  ref_name: "fix/vega-global-style-polish"
-  run_id: 45065408439
+  ref_name: "feat/resource-source-option-4"
+  run_id: 45065827075
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): separate stacked profile cards and align borders\n\nTenant profile rendered the profile form and General preferences as\nadjacent fragments, so the cards touched and their borders did not match.\nStack them in one page shell, use the shared card ring and border token,\nand keep form footers in the card gap."
+  message: "fix(vega): align resource source counts and labels\n\nKeep each language-pack key in one source, match Help Center counts to the visible rows, and use Simplified Chinese for create actions."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:15:44Z"
+  created_at: "2026-11-22T20:20:07Z"
