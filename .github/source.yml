@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e472e2056d12f7abd73b1967ab7b42d36a881a8a"
+  sha: "e409197196a5afe707417e738430f77d4705fb35"
   ref_type: "branch"
-  ref_name: "fix/orion-317-staging-auth-e2e"
-  run_id: 45065817245
+  ref_name: "main"
+  run_id: 45066837517
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(staging): restore legal links and Android rating fallback"
+  message: "fix(staging): restore legal links and Android rating fallback (#410)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:20:03Z"
+  created_at: "2026-11-22T20:30:58Z"
