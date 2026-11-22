@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ecf0f628e42bc6d189a83d3e52341eaeea29f028"
+  sha: "514c33d7412cc07b1876989f224acc95bda77c0f"
   ref_type: "branch"
-  ref_name: "feat/workspace-consolidation-601"
-  run_id: 45015676635
+  ref_name: "fix/remove-storefront-entry-name"
+  run_id: 45016105341
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): retain creative tag controls and target the selected app in tests"
+  message: "fix(support): retire configurable storefront entry name"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:06:46Z"
+  created_at: "2026-11-22T11:11:55Z"
