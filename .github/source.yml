@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c38fc4bc951e44db401bd9083b8e70a34f9816b7"
+  sha: "da991baf6e94edff14dfac85598c26a11e558067"
   ref_type: "branch"
-  ref_name: "feat/region-disable-visibility"
-  run_id: 45014338932
+  ref_name: "main"
+  run_id: 45014605625
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(regions): register the printer purchase fixture locale"
+  message: "fix(vega): unify table action icons and tooltips (#605)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T10:50:15Z"
+  created_at: "2026-11-22T10:53:35Z"
