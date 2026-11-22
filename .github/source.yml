@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8d86746ec3649a51379a360d13898afef44d9b0e"
+  sha: "3447d2c459b18decc94845dd13ad4c19049856a4"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45036434726
+  run_id: 45036451204
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(chat): add a shared authorized model picker (#604)\n\n* feat(chat): add a shared authorized model picker\n\n* fix(chat): restore picker focus and retain unsaved choices\n\n* fix(chat): preserve cross-tab edits during storage recovery"
+  message: "fix(vega): consolidate app status and profile settings (#609)\n\n* fix(vega): consolidate app status and profile settings\n\n* fix(vega): expect profile route after app creation\n\n* fix(vega): create a disposable tenant for profile e2e"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:06:37Z"
+  created_at: "2026-11-22T15:07:02Z"
