@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6e2b29c5edbf29af0ef1aa91248d158361c38c59"
+  sha: "fc40904e86e2016874c1413832d99b29a73afbf3"
   ref_type: "branch"
-  ref_name: "feat/social-providers-structured"
-  run_id: 45062787377
+  ref_name: "fix/unify-region-locale-pickers"
+  run_id: 45064242314
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): label provider region search consistently"
+  message: "fix(vega,mercury): limit locale choices to the region catalog\n\nApp and platform screens now pick languages from active regions instead\nof typed tags. New locales must exist in the catalog, and app content\nmust also use a region bound to that app."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T19:48:11Z"
+  created_at: "2026-11-22T20:03:46Z"
