@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e7fa4d77f035514aad96d064d33a6b0f3db7b89f"
+  sha: "42ec3832aec8d4f016756c949f722b9ff64328c6"
   ref_type: "branch"
   ref_name: "ao/release-publishing/store-ux"
-  run_id: 44990607509
+  run_id: 44992002188
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(mercury): verify optional batch metadata on the wire"
+  message: "fix(vega): preserve store retry modes and verified job progress"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T05:43:23Z"
+  created_at: "2026-11-22T06:03:20Z"
