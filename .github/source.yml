@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c575bff19e55ac843e9170ddf99131791728afec"
+  sha: "94c745f8844ab4e8a4e5fea288723dd7d864becb"
   ref_type: "branch"
-  ref_name: "fix/remove-header-publish-button"
-  run_id: 45037208600
+  ref_name: "feat/ai-dock-resize-modes"
+  run_id: 45037382024
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): remove the redundant header publish shortcut\n\nDrop the top-right Publish to stores action from the app header.\nKeep the sidebar Store Publishing destination and the release store\npublishing actions."
+  message: "fix(vega): restore the sidebar after expanded focus\n\nKeep the temporary sidebar collapse out of the saved preference so a\nrefresh during in-page focus can put the previous open or closed state\nback."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:14:48Z"
+  created_at: "2026-11-22T15:16:37Z"
