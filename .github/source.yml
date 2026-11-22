@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "016c25622c74ea50d5d885ff0381b1502074737b"
+  sha: "54aadf2c9ccfba593082d5bd2407bc68bcf6bea1"
   ref_type: "branch"
-  ref_name: "feat/social-providers-runtime-client"
-  run_id: 45075213923
+  ref_name: "feat/orion-314-pixso-creative"
+  run_id: 45076174964
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime-api): generate structured login provider client"
+  message: "fix(editor): preserve template text bounds during initialization"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:00:35Z"
+  created_at: "2026-11-22T22:10:20Z"
