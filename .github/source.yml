@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1b38f2f606bb10b7fc0b6178fbdef37dff152355"
+  sha: "55853c817747f739f848f6844990ac4ec5857ffa"
   ref_type: "branch"
-  ref_name: "feat/ask-ai-diagnostic-handoff"
-  run_id: 45016505649
+  ref_name: "fix/form-label-help-alignment"
+  run_id: 45016561583
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): capture the complete Ask AI handoff"
+  message: "test(vega): reuse real form alignment fixtures"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:16:48Z"
+  created_at: "2026-11-22T11:17:24Z"
