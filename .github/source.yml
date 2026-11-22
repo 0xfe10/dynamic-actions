@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f0499141fe45f828336fce9eda7c79bbaac0ee8e"
+  sha: "f5f9a643030f3aa8b4b6ac2a716cf92fa518fe92"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45079372951
+  ref_name: "feat/consumables-lanhu-option3"
+  run_id: 45079391802
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega,mercury): limit locale choices to the region catalog (#622)\n\n* fix(vega,mercury): limit locale choices to the region catalog\n\nApp and platform screens now pick languages from active regions instead\nof typed tags. New locales must exist in the catalog, and app content\nmust also use a region bound to that app.\n\n* fix(vega): hold region pickers until catalogs load\n\nKeep the app-region dialog on a loading state until both region queries\nsucceed, and hide platform locale tags until the catalog is loaded."
+  message: "fix(vega): remove unused resource source tabs in platform app settings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:44:29Z"
+  created_at: "2026-11-22T22:44:40Z"
