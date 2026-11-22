@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0b8985b007cac03325bc3ec3741cdf3e19380def"
+  sha: "8d86746ec3649a51379a360d13898afef44d9b0e"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45036362131
+  run_id: 45036434726
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(store-publishing): redesign store listing UX and align Pubox v0.2.11 media slots (#614)\n\n* feat(store-publishing): redesign store listing UX and align Pubox v0.2.11 media slots\n\nRedesign Vega store listing workflows and update Mercury Pubox integration for multi-device media_slots and standalone listing capability discovery (Pubox v0.2.11 compatible with v0.2.10 fallback):\n\n- Reuse App packaging icon as default store icon with explicit override, restore, and lightbox preview (yet-another-react-lightbox).\n- Support multi-device media slots across 14 store catalogs, canonical slot normalization, dimension inspection, same_dimensions validation, and per-slot rules.\n- Replace modal legal link management with persistent 2-card legal status links backed by public legal URL verification and zero SQL migrations.\n- Surface per-store action results in a review/retry modal with bundled_with_release and unsupported_standalone handling and a default-collapsed history bar.\n\n* fix(store-publishing): address PR #614 review findings\n\n- Sync and clear primary-slot mediaSlots on default and override edits so post-pull screenshot edits cannot be shadowed by stale primary media_slot_asset_ids, and initialize non-primary override edits from inherited fallback slots cleanly\n- Make per-store inherit default icon button delete iconUrl/iconPreviewUrl via clearOverrideIcon instead of spreading previous state\n- Gate Retry actions in Store Actions Result Modal on row.retryable !== false while preserving legacy v0.2.10 undefined retryability\n- Resolve App packaging icon bytes via applogo.Service.ReadPackagingIcon when standalone Validate/Push or CreatePublish runs with an empty listing iconUrl\n- Constrain compact slot upload draft text width inside narrow w-28/w-36 gallery cards"
+  message: "feat(chat): add a shared authorized model picker (#604)\n\n* feat(chat): add a shared authorized model picker\n\n* fix(chat): restore picker focus and retain unsaved choices\n\n* fix(chat): preserve cross-tab edits during storage recovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:05:42Z"
+  created_at: "2026-11-22T15:06:37Z"
