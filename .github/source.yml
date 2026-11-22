@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8e6f614d174fd00f8c4e37cf94cfaa96d878d302"
+  sha: "7c84a7db09dd8365e665f8a706f59ac44dbc5ff0"
   ref_type: "branch"
-  ref_name: "feat/resource-source-option-4"
-  run_id: 45067563354
+  ref_name: "fix/unify-region-locale-pickers"
+  run_id: 45067895686
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): select app resources from the source rail in e2e\n\nUse the source rail buttons for fonts, icons, help center, and localization instead of the retired source tabs."
+  message: "fix(vega): hold region pickers until catalogs load\n\nKeep the app-region dialog on a loading state until both region queries\nsucceed, and hide platform locale tags until the catalog is loaded."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:38:35Z"
+  created_at: "2026-11-22T20:42:17Z"
