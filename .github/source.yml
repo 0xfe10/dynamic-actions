@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "65ccad149222cdb291276b6b30e6985a5a7ca603"
+  sha: "1b38f2f606bb10b7fc0b6178fbdef37dff152355"
   ref_type: "branch"
-  ref_name: "fix/form-label-help-alignment"
-  run_id: 45016278889
+  ref_name: "feat/ask-ai-diagnostic-handoff"
+  run_id: 45016505649
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align form labels with inline contextual help"
+  message: "test(vega): capture the complete Ask AI handoff"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:13:58Z"
+  created_at: "2026-11-22T11:16:48Z"
