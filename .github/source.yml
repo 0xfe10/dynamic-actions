@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b9f2f251b8075df7a8a29a543677dcb39f156f83"
+  sha: "e68d23c4fafd0c15924912d837f2803a0a801cbe"
   ref_type: "branch"
   ref_name: "feat/app-profile-option-c"
-  run_id: 45054366602
+  run_id: 45055400419
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): move profile card explanations into help tips\n\nRemove the subtitle under each profile card title and keep the short explanation on the help button."
+  message: "fix(vega): use mainland wording for profile build copy\n\nSay \u6784\u5efa instead of \u5efa\u7f6e in the Simplified Chinese profile enable and impact text."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T18:19:45Z"
+  created_at: "2026-11-22T18:30:00Z"
