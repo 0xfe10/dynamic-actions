@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "54aadf2c9ccfba593082d5bd2407bc68bcf6bea1"
+  sha: "da21d186d0e3e6b37583f13f6fb5704b54c2687c"
   ref_type: "branch"
   ref_name: "feat/orion-314-pixso-creative"
-  run_id: 45076174964
+  run_id: 45076855471
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): preserve template text bounds during initialization"
+  message: "fix(editor): skip absent legacy text decoration assets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T22:10:20Z"
+  created_at: "2026-11-22T22:17:22Z"
