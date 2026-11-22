@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8310afa7c096788404ce6a40e47825a8ee6c6fea"
+  sha: "8c4a5c29154a55a9dafd5a8cab26d6d423955c2b"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45043959850
+  run_id: 45044008717
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): remove the redundant header publish shortcut (#613)\n\nDrop the top-right Publish to stores action from the app header.\nKeep the sidebar Store Publishing destination and the release store\npublishing actions."
+  message: "Add Ask AI handoff for Vega diagnostics (#611)\n\n* feat(vega): hand off diagnostics to the AI assistant\n\n* test(vega): capture the complete Ask AI handoff\n\n* fix(vega): keep diagnostic warnings readable on mobile\n\n* fix(vega): harden Ask AI handoff after review\n\n* test(vega): verify Ask AI with the authorized model picker\n\n* fix(vega): connect Ask AI to the resizable assistant dock"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T16:27:51Z"
+  created_at: "2026-11-22T16:28:24Z"
