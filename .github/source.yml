@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5c3ce5cb139f4b3275c5172f88624261e05959b9"
+  sha: "042e8f1f184d171ba62a33053ddd250c8e6815e2"
   ref_type: "branch"
   ref_name: "feat/creative-catalog-option-1"
-  run_id: 45053392494
+  run_id: 45054405731
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): keep creative menu actions on one line"
+  message: "fix(vega): keep creative catalog guidance in tooltips"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T18:09:04Z"
+  created_at: "2026-11-22T18:19:39Z"
