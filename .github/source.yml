@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f3cbfb94d75eabd582faba6fc948abba38cc6588"
+  sha: "8ce368b110a79cb7300308a1e4edce3e6dc11f88"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45074818063
+  ref_name: "feat/orion-314-pixso-creative"
+  run_id: 45075171078
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): regenerate Mercury runtime client for consumables (#412)"
+  message: "fix(editor): honor native template text alignment bounds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:56:05Z"
+  created_at: "2026-11-22T22:00:16Z"
