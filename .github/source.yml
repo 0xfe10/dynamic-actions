@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "26ea5932f7d38c06df3227bbca510a2b6f44a361"
+  sha: "f6099aad26a38d13c59f88dff5fe86a193465805"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45010605209
+  ref_name: "fix/table-action-icon-buttons"
+  run_id: 45010809383
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(catalog): unify creative asset authoring across six domains (#602)"
+  message: "fix(vega): unify table action icons and tooltips"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T10:04:34Z"
+  created_at: "2026-11-22T10:06:56Z"
