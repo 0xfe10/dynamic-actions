@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7446ab64773a2d16798c4c3f37959b4dd2c314b5"
+  sha: "27793d59cd3b6b2c2dcc4f53d54eeaa1d2f44ee2"
   ref_type: "branch"
-  ref_name: "feat/social-providers-structured"
-  run_id: 45064448510
+  ref_name: "fix/vega-global-style-polish"
+  run_id: 45065408439
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): preserve shared region picker defaults"
+  message: "fix(vega): separate stacked profile cards and align borders\n\nTenant profile rendered the profile form and General preferences as\nadjacent fragments, so the cards touched and their borders did not match.\nStack them in one page shell, use the shared card ring and border token,\nand keep form footers in the card gap."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T20:06:00Z"
+  created_at: "2026-11-22T20:15:44Z"
