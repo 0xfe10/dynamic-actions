@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6dafa865f99c01ef76fd9caefceed5648b7f9b48"
+  sha: "65126842e9bcdb5713e1837a6aa1d1be0dafcd33"
   ref_type: "branch"
-  ref_name: "chore/runtime-client-consumables"
-  run_id: 45073824068
+  ref_name: "feat/orion-314-pixso-creative"
+  run_id: 45074092530
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime-api): regenerate Mercury runtime client for consumables"
+  message: "feat(editor): wire Mercury creative catalog into Pixso editing"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T21:45:13Z"
+  created_at: "2026-11-22T21:48:04Z"
