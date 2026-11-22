@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "860585107a9773bfe627efdc7426954e73767f9d"
+  sha: "58729eadeb9808bca7dad91ac881ac18d47892c2"
   ref_type: "branch"
-  ref_name: "feat/ask-ai-diagnostic-handoff"
-  run_id: 45038727393
+  ref_name: "main"
+  run_id: 45039190641
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): verify Ask AI with the authorized model picker"
+  message: "feat(vega): add resizable assistant dock modes (#615)\n\n* feat(vega): add resizable assistant dock modes\n\nKeep the compact bottom-right window, and add drag resize, a right-side drawer, and in-page focus that restores the previous sidebar state.\n\n* fix(vega): restore the sidebar after expanded focus\n\nKeep the temporary sidebar collapse out of the saved preference so a\nrefresh during in-page focus can put the previous open or closed state\nback."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:31:18Z"
+  created_at: "2026-11-22T15:35:56Z"
