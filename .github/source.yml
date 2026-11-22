@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "55853c817747f739f848f6844990ac4ec5857ffa"
+  sha: "07b81b1a024651e5b5ff3f35d873446b00c57950"
   ref_type: "branch"
-  ref_name: "fix/form-label-help-alignment"
-  run_id: 45016561583
+  ref_name: "fix/dedupe-app-profile-edit"
+  run_id: 45016595542
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): reuse real form alignment fixtures"
+  message: "chore(vega): integrate main icon action updates"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T11:17:24Z"
+  created_at: "2026-11-22T11:18:17Z"
