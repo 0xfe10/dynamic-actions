@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3447d2c459b18decc94845dd13ad4c19049856a4"
+  sha: "ce11a0175d1438307ee3258ff9e4305ab8c8aeaf"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45036451204
+  run_id: 45036557378
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): consolidate app status and profile settings (#609)\n\n* fix(vega): consolidate app status and profile settings\n\n* fix(vega): expect profile route after app creation\n\n* fix(vega): create a disposable tenant for profile e2e"
+  message: "feat(mercury,vega): show app logos as fixed-size image cards (#616)\n\nReturn a short-lived preview URL for the original upload and render every logo asset in an equal-sized card with its role and dimensions. Clicking a card opens a larger preview."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:07:02Z"
+  created_at: "2026-11-22T15:07:49Z"
