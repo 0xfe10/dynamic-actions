@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9d0adb65d6a341e1ddba611ae4e3d86126f25587"
+  sha: "e7fa4d77f035514aad96d064d33a6b0f3db7b89f"
   ref_type: "branch"
   ref_name: "ao/release-publishing/store-ux"
-  run_id: 44990342661
+  run_id: 44990607509
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(releases): open fixed batches and publish each app to stores"
+  message: "test(mercury): verify optional batch metadata on the wire"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T05:39:43Z"
+  created_at: "2026-11-22T05:43:23Z"
