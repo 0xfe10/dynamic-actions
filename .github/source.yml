@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ce11a0175d1438307ee3258ff9e4305ab8c8aeaf"
+  sha: "c575bff19e55ac843e9170ddf99131791728afec"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45036557378
+  ref_name: "fix/remove-header-publish-button"
+  run_id: 45037208600
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury,vega): show app logos as fixed-size image cards (#616)\n\nReturn a short-lived preview URL for the original upload and render every logo asset in an equal-sized card with its role and dimensions. Clicking a card opens a larger preview."
+  message: "fix(vega): remove the redundant header publish shortcut\n\nDrop the top-right Publish to stores action from the app header.\nKeep the sidebar Store Publishing destination and the release store\npublishing actions."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-22T15:07:49Z"
+  created_at: "2026-11-22T15:14:48Z"
