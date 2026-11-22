@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e90b40524b9786edaab61718188518c33ff828b5"
+  sha: "d632b94ec86392bae153c9d2cef3e1d953dcd61d"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 44999997612
+  ref_name: "main"
+  run_id: 45000759914
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(widgets): exercise the palette used by the graffiti editor"
-  authors: ["0xfe10"]
+  message: "feat(editor): add graffiti to the single-image editor (#352)\n\nAdd drawing tools and layer confirmation to the single-image editor, share the palette and color picker, and cover editing and theme changes in widget tests."
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-22T07:50:05Z"
+  created_at: "2026-11-22T08:00:52Z"
