@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6e22604b53fb43544fe000baa3dc8dc723417953"
+  sha: "65a331eb014266f7d6e29a9b06395c49d833b907"
   ref_type: "branch"
-  ref_name: "feat/social-providers-runtime-client"
-  run_id: 45090889517
+  ref_name: "main"
+  run_id: 45090992393
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime-api): generate structured login provider client"
+  message: "feat(consumables): use Mercury runtime paper catalog (#416)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T00:48:23Z"
+  created_at: "2026-11-23T00:49:29Z"
