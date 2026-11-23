@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "47d867cb860e9290d0e7ef22e86ededbca0c20eb"
+  sha: "72e07d3b626aaa3c96ca7a2379bd7ecb753c2b76"
   ref_type: "branch"
-  ref_name: "fix/inkjet-h100-e2e-stability"
-  run_id: 45151766511
+  ref_name: "main"
+  run_id: 45151895208
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(inkjet): harden H100 XSL/XPL recovery, LAN fallback, and Android color_core build"
+  message: "fix(inkjet): harden H100 XSL/XPL recovery, LAN fallback, and Android color_core build (#77)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:58:23Z"
+  created_at: "2026-11-23T09:59:13Z"
