@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/coreprint-server"
   repository_id: 1411090934
-  sha: "9256f7f1ecbb5c1ec59a122e7cf78199005c9e1b"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 44679372889
+  sha: "4690142b42a66d1b7dc5ad07549a56159909275d"
+  ref_type: "tag"
+  ref_name: "v0.1.6"
+  run_id: 45141602530
   run_attempt: 1
-  workflow: ".github/workflows/trigger-branch.yml"
+  workflow: ".github/workflows/trigger-tag.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix\uff1a\u8017\u6750\u5206\u7c7b\u589e\u52a0\u6807\u9898"
-  authors: ["caiwei1"]
+  message: "ci(actions): switch dyn-actions bridge workflows to ubuntu-slim (#6)"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-20T05:11:50Z"
+  created_at: "2026-11-23T08:48:40Z"
