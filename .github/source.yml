@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7fa5f43e525dec8f7bf29f7e2720f47d59700582"
+  sha: "574f1039245b710ff9c41644831c143a10638936"
   ref_type: "branch"
   ref_name: "feat/orion-394-jigsaw-entry"
-  run_id: 45210800294
+  run_id: 45215459346
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): reject over-budget collage drafts before decoding photos\n\nReopened drafts kept the original bytes and a smaller cropped render.\nMeasure that original content header and fail closed before image init."
+  message: "fix(jigsaw): size reopened collage drafts before decoding photos\n\nRead original dimensions from ImageDescriptor headers and reject\nover-budget drafts before any photo init allocates originImage."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T15:56:28Z"
+  created_at: "2026-11-23T16:21:14Z"
