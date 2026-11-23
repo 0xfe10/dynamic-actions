@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "9216ffeeaa27dc5662c76133d0329e1dfef1366b"
+  sha: "47d867cb860e9290d0e7ef22e86ededbca0c20eb"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45118913110
+  ref_name: "fix/inkjet-h100-e2e-stability"
+  run_id: 45151766511
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main'"
-  authors: ["jiangchengze"]
+  message: "fix(inkjet): harden H100 XSL/XPL recovery, LAN fallback, and Android color_core build"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T05:37:37Z"
+  created_at: "2026-11-23T09:58:23Z"
