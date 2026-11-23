@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e1f2fb583e744196972c7a53c9288a092d71c0d6"
+  sha: "3416767e79bd157ef3dd505d77c0f5f19e9068eb"
   ref_type: "branch"
-  ref_name: "feat/orion-395-template-handoff"
-  run_id: 45095300427
+  ref_name: "main"
+  run_id: 45096379546
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(template-plaza): open supported templates in native editors"
+  message: "feat(template-plaza): open supported templates in native editors (#417)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T01:34:30Z"
+  created_at: "2026-11-23T01:45:57Z"
