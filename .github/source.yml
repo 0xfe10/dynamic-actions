@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "953d8cb6ee23a77a97f5041ab7051ba13d54488e"
+  sha: "e2f2eaf0da4d7030bac3c54188508ef84084696b"
   ref_type: "branch"
   ref_name: "fix/appbar-feature-dropdown"
-  run_id: 45125542829
+  run_id: 45129569477
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(shell): allow compiled Mellow navigation features in APP_BAR and PERSONAL_CENTER"
+  message: "chore(build): prebuild contract-server before polling in Justfile recipes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T06:39:22Z"
+  created_at: "2026-11-23T07:13:58Z"
