@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "73de7b4a111438b060e313dd83151e346df83f4b"
+  sha: "862d64d7c65ed74750182bca02acd9e0a0e1e55c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45136996699
+  ref_name: "refactor/generic-shell-menu"
+  run_id: 45137054004
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(editor): wire Pixso cutout and image eraser tool boundaries (#432)"
+  message: "refactor(rigel-build): derive shell menu targets from catalog metadata\n\nStop hardcoding shell and personal-center feature keys. A compiled\nimplementation is a shell entry unless its catalog role is structural or\ncapability, or it is a dependency implementation. Personal-center rows opt\nin with personalCenterEntry, so new features do not require another allowlist."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:14:44Z"
+  created_at: "2026-11-23T08:15:01Z"
