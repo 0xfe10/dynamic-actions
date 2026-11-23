@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "393bcda0b8c299be8a0e9c8a3136741c70013a79"
+  sha: "33c17e2227fd18471276d1e9c2e9514403ac08cf"
   ref_type: "branch"
-  ref_name: "fix/vega-e2e-login-redirect-timeout"
-  run_id: 45189907132
+  ref_name: "main"
+  run_id: 45197482378
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): drop cached catalog when the session probe fails\n\nA failed principal probe left the previous catalog in place. Evict that\nentry, matching a failed reload, so the next same-version check loads\na fresh catalog instead of trusting the old snapshot."
+  message: "fix(mercury): batch workspace permission checks\n\nWorkspace projection authorized every management permission separately\nfor each tenant and app, and each check reloaded the authorization\ncatalog. After browser E2E seeded tenants and apps, GET /session/workspaces\nheld Vega on / past the 5s login wait.\n\nEvaluate each scope from one catalog load. Re-read principal and session\nstate on every cached load, reload roles and bindings when the\nauthorization version advances, and drop the cached catalog if the session\nprobe or reload fails. Give the shared real Mercury login helper 15s to\nreach the workspace."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T14:02:38Z"
+  created_at: "2026-11-23T14:45:02Z"
