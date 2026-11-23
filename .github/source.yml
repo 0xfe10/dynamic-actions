@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e1376e833dfbee301341976a6ef02704166b07c8"
+  sha: "fc1709fba72f868829c5e07938fee12b83106b5c"
   ref_type: "branch"
-  ref_name: "feat/orion-288-sms-captcha-email-code"
-  run_id: 45190115251
+  ref_name: "feat/orion-394-jigsaw-entry"
+  run_id: 45190622844
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): enforce verification code dispatch safeguards"
+  message: "fix(home): expect five default tiles when collage, AI Photo, and handwriting are unassembled\n\nRemove Handwriting now requires its own destination, so the default\nsecondary page drops that tile along with collage and AI Photo."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T14:03:54Z"
+  created_at: "2026-11-23T14:06:38Z"
