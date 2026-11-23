@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "03f65136203ea0605c6260b1ad549c8f478a41da"
+  sha: "545ee29e8fa7baf8bfa6954d4e035b135bd43d0d"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45150209299
+  run_id: 45151967299
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(shell): allow distributed entry features in menus (#630)\n\nUse effective entry grants for shell menu eligibility. Apply compiled catalog roles during native release builds while preserving legacy catalog compatibility."
+  message: "fix(storage): read detailed OSS object metadata (#632)\n\nUse the detailed OSS HEAD request so upload finalize can verify stored metadata."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:47:45Z"
+  created_at: "2026-11-23T09:59:41Z"
