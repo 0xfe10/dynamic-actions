@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "edfde517aed7047cda190975c3c1632da4a46ebf"
+  sha: "d76602156ec6cabd75c9a1d80ce7f6e7efed6a7c"
   ref_type: "branch"
-  ref_name: "fix/shell-menu-entry-features"
-  run_id: 45135654834
+  ref_name: "main"
+  run_id: 45135958042
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(shell): allow distributed entry features in menus"
+  message: "fix(vega): resolve Snowflake IDs before querying scoped platform APIs (#629)\n\nMercury's PlatformResourceResolutionMiddleware rewrites :tenantId and :appId path segments only, while query and JSON body SnowflakeID parameters enforce ^[0-9]{1,19}$. When Vega navigated via tenant/app slug URLs\u2014especially on cold loads where workspace projection lacked tenantAccess or directory queries were still pending\u2014several pages and shared hooks passed raw route slugs to GET /api/platform/v1/regions, GET /api/platform/v1/platform/legal-templates, GET /api/platform/v1/authorization/audit-events, and PUT /api/platform/v1/device-products/{productId}/assignments, resulting in 422 INVALID_REQUEST.\n\nGate Snowflake-scoped queries on validated decimal Snowflake IDs and resolve canonical numeric tenant/app IDs from workspace projection and path-resolved management endpoints across all slug-routed tenant, application, settings, resource, and studio subpages."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:04:17Z"
+  created_at: "2026-11-23T08:06:36Z"
