@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "fba6dfe98e9b6dcd58456e5f20ffb66d203509a0"
+  sha: "3a361b9e82151b4a2177f050d1f7e132e695dbd3"
   ref_type: "branch"
-  ref_name: "feat/social-providers-structured"
-  run_id: 45094760811
+  ref_name: "main"
+  run_id: 45114940755
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(integration): reuse shared regions and pin merged runtime client"
+  message: "feat(auth): structure social and phone login providers (#623)\n\nConfigure nine structured social and phone login providers across Mercury and Vega, with encrypted credentials, strict provider and app-region validation, safe public initialization config, and localized forms.\n\nIncludes additive forward-only migration 00191_structured_login_providers.sql and the merged Orion runtime client. Validated by green Staging CI and independent exact-head review. Migration merge explicitly approved by the user."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T01:28:35Z"
+  created_at: "2026-11-23T04:58:42Z"
