@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fac920becf5ab1f533120c98224e60f814216b8b"
+  sha: "40953407374e162e9a9b16be71213617f72d290c"
   ref_type: "branch"
   ref_name: "refactor/generic-shell-menu"
-  run_id: 45142454985
+  run_id: 45143986114
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel-build): fail closed on shell roles and render custom entries\n\nMissing, null, and unknown shell roles now fail instead of defaulting to entry.\nEntry features may depend on helpers, while structural and capability features stay off both shell menus. Configured personal-center rows are emitted, and Mellow and Breeze open unknown compiled keys through their route instead of a fixed destination lookup."
+  message: "fix(mellow): show only unknown personal-center keys beyond the design menu\n\nKnown destinations that are outside the Mellow menu stay hidden. A configured key with no compiled destination still renders and opens by route."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:55:08Z"
+  created_at: "2026-11-23T09:06:12Z"
