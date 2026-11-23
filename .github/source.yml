@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "139aa8d25cdfb0a1006d2235139d95df8d5ce529"
+  sha: "c5c20e641cc57da0dac638474e0f7507241fffce"
   ref_type: "branch"
-  ref_name: "feat/orion-397-398-wifi-cloud-printers"
-  run_id: 45134246484
+  ref_name: "feat/orion-408-cutout-eraser"
+  run_id: 45134438114
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(devices): wire fail-closed Wi-Fi and cloud printer boundaries\n\nDefine typed Wi-Fi discovery/provisioning contracts (WifiPrinterGateway,\nWifiProvisioningRequest, WifiPrinterCubit) and cloud-printer ownership,\ndirectory, and command contracts (CloudPrinterScope, CloudPrinterRole,\nCloudPrinterGateway, CloudPrinterCubit) in device_management.\n\nWire both gateways fail-closed by default through buildFeatureScope in\nrigel_platform with App/account scope fencing and live snapshot projection,\nconnect Mellow Wi-Fi and cloud printer screens plus cloud QR binding to\nthe typed controllers, add comprehensive unit and widget tests, and update\nopenwiki/development/status.md with current boundaries and remaining\nexternal runtime/hardware gates.\n\nRefs #397\nRefs #398"
+  message: "feat(editor): wire Pixso cutout and image eraser tool boundaries"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T07:52:39Z"
+  created_at: "2026-11-23T07:54:09Z"
