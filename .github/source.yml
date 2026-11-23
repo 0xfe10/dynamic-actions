@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2b7a48d0a143eda6bb30ba716b62e0fbccb727db"
+  sha: "f790e164ffd72414e3e4f6a3c43a08f9cac605eb"
   ref_type: "branch"
-  ref_name: "feat/orion-371-social-login"
-  run_id: 45143987328
+  ref_name: "feat/orion-401-ai-portrait"
+  run_id: 45144836728
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): scope adoption cancellation, pop invalidation, region wiring, and carrier retry errors\n\n- Add SessionCancellationToken to SessionCubit.authenticate so cancelling a social/carrier adoption aborts only its own generation without disturbing newer unrelated authentications or clearing their sessions.\n- Recognize own terminal SessionState emissions across Bloc broadcast microtasks in SocialLoginCubit._handleSessionChange so adoption failures preserve carrier preview and error state instead of being treated as external transitions.\n- Cancel pending social/carrier auth immediately on route pop (ModalRoute.popped and PopScope) in MellowAuthPage, MellowAuthProvidersPage, and MellowCarrierLoginSheet rather than waiting for post-animation dispose().\n- Wire production loginRegion in buildFeatureScope from explicit loginRegion, APP_REGION, or live LocaleCubit via SocialLoginScopeSync; fail closed on empty regionKeys and validate non-empty, type-matching provider settings.\n- Keep MellowCarrierLoginSheet open on closure-retry adoption failure so the localized failure dialog renders cleanly without a duplicate background toast from MellowAuthPage.\n- Add regression tests for blocked store.write adoption cancellation, reverse route-pop animation cancellation, LocaleCubit default region wiring, empty regionKeys/settings fail-closed checks, and carrier closure-retry adoption failure and success."
+  message: "feat(ai-portrait): add fail-closed mobile portrait workflow\n\nReplace the home placeholder with a typed portrait flow. The production\nprovider stays unconfigured until Mercury publishes the operation, so the\napp does not invent styles, quota, or photos. Capture, bounds, consent,\ncancel, account fencing, and print handoff fail closed and are tested.\n\nRefs #401"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:06:15Z"
+  created_at: "2026-11-23T09:11:57Z"
