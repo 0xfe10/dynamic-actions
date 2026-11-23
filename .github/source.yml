@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "40953407374e162e9a9b16be71213617f72d290c"
+  sha: "976fc8354fb9b640f29f886ba55b402c948af3e8"
   ref_type: "branch"
-  ref_name: "refactor/generic-shell-menu"
-  run_id: 45143986114
+  ref_name: "fix/feedback-preview-and-diagnostics"
+  run_id: 45143997370
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): show only unknown personal-center keys beyond the design menu\n\nKnown destinations that are outside the Mellow menu stay hidden. A configured key with no compiled destination still renders and opens by route."
+  message: "fix(feedback): show the latest preview and hide diagnostics\n\nKeep a list preview aligned with the newest message when a ticket response\nomits it, and strip the submitted Diagnostics block from user-facing summaries."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:06:12Z"
+  created_at: "2026-11-23T09:06:14Z"
