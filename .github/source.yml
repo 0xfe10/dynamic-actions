@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "97dca1c1ba227c8a7660a4fbb36856c471d62c69"
+  sha: "a0ff89c3ac61a217fe1c74ce23ff5ac96d80a006"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45114227194
+  run_id: 45115315767
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): separate highlights and expose graffiti reset (#418)"
+  message: "fix(icons): honor frozen presentation artwork assignments\n\nRefs #388."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T04:50:55Z"
+  created_at: "2026-11-23T05:02:33Z"
