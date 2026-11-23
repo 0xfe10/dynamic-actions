@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f7eccf8d711b2f4ef15851a50b88ed18414cb518"
+  sha: "48d2fd16e9abb5db17e9ba6c49a6d6625da13e8f"
   ref_type: "branch"
-  ref_name: "feat/orion-400-scan-print"
-  run_id: 45192947752
+  ref_name: "main"
+  run_id: 45193123684
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(scan-print): discard stale picker data before capture"
+  message: "fix(auth): enforce verification code dispatch safeguards (#446)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T14:19:33Z"
+  created_at: "2026-11-23T14:20:48Z"
