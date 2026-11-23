@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "8a60f3219be5f10df21e29e0a980d35cea255afb"
+  sha: "f975270018ae6a30957624c776fca1fad5d551d0"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45103296899
+  ref_name: "fix/education-question-grade-scope"
+  run_id: 45110347188
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(camellia): dynamically search question bank textbooks"
-  authors: ["mijjjj"]
+  message: "fix(education): scope question grade filtering for general textbooks and linked nodes"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T02:59:42Z"
+  created_at: "2026-11-23T04:12:45Z"
