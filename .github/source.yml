@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "2d43571929a5437649e9a904294edef7adb24baa"
+  sha: "8a60f3219be5f10df21e29e0a980d35cea255afb"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44538974903
+  run_id: 45103296899
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(camellia): deduplicate @codemirror/state for Malus YAML editor (#207)"
-  authors: ["0xfe10"]
+  message: "fix(camellia): dynamically search question bank textbooks"
+  authors: ["mijjjj"]
 dispatch:
-  created_at: "2026-11-19T13:59:44Z"
+  created_at: "2026-11-23T02:59:42Z"
