@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "175afcc610993259dd64baff9e8efed436794338"
+  sha: "b2cea11ce2fd8ec99f6bc78ef828ce8a62a8e6e6"
   ref_type: "branch"
-  ref_name: "feat/orion-404-web-print"
-  run_id: 45185557804
+  ref_name: "feat/orion-401-ai-portrait"
+  run_id: 45185672306
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(web-print): add local web page capture and print handoff\n\nAccept only hierarchical http(s) addresses, fail closed when capture is\nunavailable, and hand an armed capture to print preview even when that\ncubit is created lazily."
+  message: "fix(ai-portrait): keep borrowed gallery files and still images\n\nGallery picks stay untouched even when their path is under temp or cache.\nCamera copies are deleted only from the app cache directory. APNG chunks\nare rejected, and GIF checks walk blocks instead of searching for 0x3B."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T13:36:42Z"
+  created_at: "2026-11-23T13:37:39Z"
