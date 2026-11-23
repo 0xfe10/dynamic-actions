@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e24ecac27ae03dcf07428fe0bf206d3c9cf697e0"
+  sha: "912e4dc6bac518bf69439c778e423338ae627637"
   ref_type: "branch"
-  ref_name: "fix/feedback-ticket-preview"
-  run_id: 45142578607
+  ref_name: "ao/huma-binding/fix-huma-unexported-embedded-inputs"
+  run_id: 45143009541
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(feedback): exercise latest preview on the shared database\n\nMove same-timestamp, older-message, Diagnostics, and image preview cases into the migrated integration suite. The previous test never ran in Staging and could drop Mercury tables."
+  message: "fix(mercury): bind exported Huma request inputs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:56:04Z"
+  created_at: "2026-11-23T08:59:12Z"
