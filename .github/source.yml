@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "3487cdd6d995b09540aa2a3eb68edf200c0f03de"
+  sha: "c2f5cbc82668fc80dfed9934ab102ff1965e9977"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45153223252
+  run_id: 45153470805
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(rigel-build): derive shell menu targets from catalog metadata\n\nAccept any compiled entry with an explicit shellRole instead of a hardcoded menu key list. Fail closed on missing, unknown, or non-entry roles in every appearance style, export features[].shellRole, and render every configured personal-center row."
+  message: "feat(auth): wire social-provider and carrier quick-login boundaries (#428)\n\nRefs #371"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T10:07:52Z"
+  created_at: "2026-11-23T10:09:36Z"
