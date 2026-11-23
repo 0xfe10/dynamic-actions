@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "f975270018ae6a30957624c776fca1fad5d551d0"
+  sha: "bcb1ab3655f31dd08e0560c26b4e1757ae2a5088"
   ref_type: "branch"
   ref_name: "fix/education-question-grade-scope"
-  run_id: 45110347188
+  run_id: 45111484762
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(education): scope question grade filtering for general textbooks and linked nodes"
+  message: "fix(education): normalize blank and padded question filter parameters"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T04:12:45Z"
+  created_at: "2026-11-23T04:22:53Z"
