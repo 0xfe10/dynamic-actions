@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "912e4dc6bac518bf69439c778e423338ae627637"
+  sha: "b67b56ec97d5629310d12b87cf502e63e89730e5"
   ref_type: "branch"
-  ref_name: "ao/huma-binding/fix-huma-unexported-embedded-inputs"
-  run_id: 45143009541
+  ref_name: "fix/shell-menu-entry-features"
+  run_id: 45146341981
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): bind exported Huma request inputs"
+  message: "fix(releasebuild): honor compiled shell roles"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:59:12Z"
+  created_at: "2026-11-23T09:22:08Z"
