@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "71d8a1e5427190e913ce367998392ced2b4d6789"
+  sha: "0c55355cd5b328463dad201e22c50eeedff102a1"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45126953091
+  run_id: 45127262316
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(devices): fail closed when Bluetooth discovery hangs (#422)\n\nBound discovery start and stop so a hung native call becomes scanFailed or\nstopScanFailed, releases the serialized gateway queue, and adds no printers.\nAn empty device list and a hung QR handoff show that failure instead of a\ncompleted search or a connection."
+  message: "feat(runtime-controls): align live feature decisions, effective access and experiments (#423)\n\nAdd typed Mercury runtime-control transport, generation-fenced App and user control hydration (including stale-generation 401/403 protection), live navigation and feature gating, effective access projection, deterministic Home layout experiment consumption with idempotent exposure/conversion events, and Developer Center diagnostics.\n\nRefs #383"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T06:51:30Z"
+  created_at: "2026-11-23T06:54:13Z"
