@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "56d9a8a2a19a7f3302567616bc578c5043fe2902"
+  sha: "734be69bd6b683a81c743230a88ca97a235cafa6"
   ref_type: "branch"
-  ref_name: "feat/orion-401-ai-portrait"
-  run_id: 45188198581
+  ref_name: "feat/orion-400-scan-print"
+  run_id: 45188416169
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ai-portrait): keep borrowed gallery files and still images\n\nGallery picks stay untouched even when their path is under temp or cache.\nCamera copies are deleted only from the app cache directory. APNG chunks\nare rejected, and GIF checks walk blocks instead of searching for 0x3B."
+  message: "fix(scan-print): fence picker ownership and verify single-frame decoding"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T13:52:21Z"
+  created_at: "2026-11-23T13:53:42Z"
