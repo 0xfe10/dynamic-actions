@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "617e55f65812afcd7c7b0053a8ec63dd1c6ff4fe"
+  sha: "25d8e0edfe5b001ef8db69c89d77a1213f6dff49"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45157109346
+  ref_name: "feat/orion-401-ai-portrait"
+  run_id: 45158764382
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(ai-photo): add scoped mobile workflow (#441)\n\nRefs #403"
+  message: "fix(ai-portrait): declare the entry shell role"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T10:33:19Z"
+  created_at: "2026-11-23T10:44:09Z"
