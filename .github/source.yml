@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "b7f430316b67702fb139cff8f539adf8d066c625"
+  sha: "8a3cc2cffd301313398cd9062f7feb02e94952a2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45131562232
+  ref_name: "fix/education-1hop-and-textbook-pagination"
+  run_id: 45219055278
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(education): enforce strict grade scope on question traversal and results (#211)"
+  message: "fix(education): restrict cross-textbook questions to 1 hop and load all textbook pages"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T07:30:32Z"
+  created_at: "2026-11-23T16:40:13Z"
