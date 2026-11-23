@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "379ce3cb896f25cafc8ad3eee62a121fd039e3f2"
+  sha: "d88ee7d93668e56cf6197664cb8ba0681e628ab4"
   ref_type: "branch"
-  ref_name: "feat/orion-397-398-wifi-cloud-printers"
-  run_id: 45216636395
+  ref_name: "feat/orion-394-jigsaw-entry"
+  run_id: 45218621909
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(device-management): preserve cloud auth denial and distinct Wi-Fi orphans"
+  message: "fix(jigsaw): size collage photos from headers without decoding frames\n\nTry the header parser, then ImageDescriptor, and fail closed when neither\ncan read dimensions instead of decoding a full frame."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T16:27:14Z"
+  created_at: "2026-11-23T16:37:48Z"
