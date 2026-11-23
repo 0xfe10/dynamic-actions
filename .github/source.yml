@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a8db7f6b502a312906be16400ad8a0b5dd25d5a1"
+  sha: "6d891a7fa8ac85b4e505e2b9a9dc1666353569af"
   ref_type: "branch"
-  ref_name: "feat/orion-399-ar-photo"
-  run_id: 45138069032
+  ref_name: "feat/orion-400-scan-print"
+  run_id: 45139192754
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ar-photo): merge restore state, verify 15s video duration, and clean up local media"
+  message: "fix(scan-print): scope retrieveLostData ownership, single-frame decode, and permission check fence"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:22:26Z"
+  created_at: "2026-11-23T08:30:51Z"
