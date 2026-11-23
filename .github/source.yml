@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "623e206ecb35dad2507d12e99f61f05a9b30980a"
+  sha: "b10d51d9307cd6025568a5ac4b6c18b0932a0c8a"
   ref_type: "branch"
-  ref_name: "fix/printer-connection-lifecycle"
-  run_id: 45120761990
+  ref_name: "feat/orion-383-runtime-controls"
+  run_id: 45123869298
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into fix/printer-connection-lifecycle"
+  message: "feat(runtime-controls): align live feature decisions, effective access and experiments\n\nAdd typed Mercury runtime-control transport, generation-fenced App and user control hydration, live navigation and feature gating, effective access projection, deterministic Home layout experiment consumption with idempotent exposure/conversion events, and Developer Center diagnostics.\n\nRefs #383"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T05:55:25Z"
+  created_at: "2026-11-23T06:24:29Z"
