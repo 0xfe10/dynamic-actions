@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5e53e81db9425b01873ea1547343117a56c1c3ce"
+  sha: "b804103ca06019a0bef0c899a04b202aaab36ba6"
   ref_type: "branch"
-  ref_name: "feat/social-providers-runtime-client"
-  run_id: 45092166986
+  ref_name: "main"
+  run_id: 45093258320
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime-api): adapt social binding enum transport"
+  message: "feat(runtime-api): generate structured login provider client (#414)\n\n* feat(runtime-api): generate structured login provider client\n\n* fix(runtime-api): adapt social binding enum transport"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T01:01:41Z"
+  created_at: "2026-11-23T01:12:59Z"
