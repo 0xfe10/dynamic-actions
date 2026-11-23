@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "545ee29e8fa7baf8bfa6954d4e035b135bd43d0d"
+  sha: "2b2ab148201d87178f11b4d647f7fa8106e993af"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45151967299
+  ref_name: "fix/vega-e2e-login-redirect-timeout"
+  run_id: 45152190122
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storage): read detailed OSS object metadata (#632)\n\nUse the detailed OSS HEAD request so upload finalize can verify stored metadata."
+  message: "fix(mercury): batch workspace permission checks\n\nWorkspace projection authorized every management permission separately\nfor each tenant and app, and each check reloaded the authorization\ncatalog. After browser E2E seeded tenants and apps, GET /session/workspaces\nheld Vega on / past the 5s login wait.\n\nEvaluate each scope from one catalog load and give the shared real\nMercury login helper 15s to reach the workspace."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:59:41Z"
+  created_at: "2026-11-23T10:01:18Z"
