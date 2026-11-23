@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1495cb841cf8045e42f1a0d543924fff5cfd9bf6"
+  sha: "aba678b3f16bb550e47568d589536c64b69f3fb1"
   ref_type: "branch"
-  ref_name: "feat/orion-394-jigsaw-entry"
-  run_id: 45187217730
+  ref_name: "main"
+  run_id: 45187237673
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(home): expect six default tiles when collage and AI Photo are unassembled\n\nBoth collage and AI Photo now require assembled destinations, so the\ndefault secondary page drops both placeholders rather than only one."
+  message: "feat(remove-handwriting): add scoped mobile workflow (#442)\n\nRefs #405."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T13:46:34Z"
+  created_at: "2026-11-23T13:46:41Z"
