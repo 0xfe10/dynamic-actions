@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "dc92db69bdc87d24a8d0a7eef74c445c3dc2671d"
+  sha: "0af674a090903938e3279554749948d67bc568c6"
   ref_type: "branch"
-  ref_name: "fix/shell-menu-allowlist"
-  run_id: 45128042436
+  ref_name: "main"
+  run_id: 45129741695
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel-build): align shell menu allowlist with compiled Mellow features"
+  message: "fix(rigel-build): align shell menu allowlist with compiled Mellow features (#425)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T07:01:01Z"
+  created_at: "2026-11-23T07:15:26Z"
