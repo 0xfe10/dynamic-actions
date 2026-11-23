@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a0ff89c3ac61a217fe1c74ce23ff5ac96d80a006"
+  sha: "017ef7a26b13af1c47867a6fe8b173065b316570"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45115315767
+  ref_name: "fix/prtmax-257-print-submission"
+  run_id: 45117261020
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(icons): honor frozen presentation artwork assignments\n\nRefs #388."
+  message: "fix(print): submit preview raster and record device acknowledgements"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T05:02:33Z"
+  created_at: "2026-11-23T05:21:41Z"
