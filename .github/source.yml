@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2e39fc6f7c9a175f2f25c38fdc65dec5dfb225b4"
+  sha: "ef591f0afd30f4d7e119a02935d5bfdbc5b997e3"
   ref_type: "branch"
-  ref_name: "feat/orion-387-catalog-fonts"
-  run_id: 45097874597
+  ref_name: "main"
+  run_id: 45098877193
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(fonts): authorize versioned restores and serialize document history"
+  message: "feat(fonts): wire granted catalog faces into Pixso editing and reload (#415)\n\n* feat(fonts): wire granted catalog faces into Pixso editing and reload\n\n* fix(fonts): authorize versioned restores and serialize document history"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T02:02:25Z"
+  created_at: "2026-11-23T02:12:46Z"
