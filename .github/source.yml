@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3a361b9e82151b4a2177f050d1f7e132e695dbd3"
+  sha: "953d8cb6ee23a77a97f5041ab7051ba13d54488e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45114940755
+  ref_name: "fix/appbar-feature-dropdown"
+  run_id: 45125542829
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(auth): structure social and phone login providers (#623)\n\nConfigure nine structured social and phone login providers across Mercury and Vega, with encrypted credentials, strict provider and app-region validation, safe public initialization config, and localized forms.\n\nIncludes additive forward-only migration 00191_structured_login_providers.sql and the merged Orion runtime client. Validated by green Staging CI and independent exact-head review. Migration merge explicitly approved by the user."
+  message: "fix(shell): allow compiled Mellow navigation features in APP_BAR and PERSONAL_CENTER"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T04:58:42Z"
+  created_at: "2026-11-23T06:39:22Z"
