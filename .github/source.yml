@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "892c239b3adc6a1d79326281f281ec54a11afe44"
+  sha: "1378d66f535882f0b1af72a84532a4f910a5525b"
   ref_type: "branch"
-  ref_name: "feat/orion-394-jigsaw-entry"
-  run_id: 45135477861
+  ref_name: "feat/orion-400-scan-print"
+  run_id: 45136592391
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(jigsaw): connect multi-image collage entry and Mercury catalog materials\n\nConnects both Mellow Home collage entry keys (collage-card and collage) to /features/IMAGE_PRINT/collage with fail-closed multi-image selection (1-9 photos), native free/fixed/stitch layout modes, validated Mercury slotLayout@1 template application with slotCount checking, shared catalog stickers/borders/text/fonts, layer z-order and slot reordering, and editable Jigsaw 1.0 draft save/reopen while preserving single-image Pixso and cutting flows intact.\n\nRefs #394"
+  message: "fix(scan-print): address review findings for permissions, document filter, locking, memory, retry, and lost data"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:02:48Z"
+  created_at: "2026-11-23T08:11:36Z"
