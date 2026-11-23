@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2b2ab148201d87178f11b4d647f7fa8106e993af"
+  sha: "8eba97e4b7415ef2865e2989aa1687e5d8fb6897"
   ref_type: "branch"
-  ref_name: "fix/vega-e2e-login-redirect-timeout"
-  run_id: 45152190122
+  ref_name: "fix/feedback-ticket-preview"
+  run_id: 45155102791
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): batch workspace permission checks\n\nWorkspace projection authorized every management permission separately\nfor each tenant and app, and each check reloaded the authorization\ncatalog. After browser E2E seeded tenants and apps, GET /session/workspaces\nheld Vega on / past the 5s login wait.\n\nEvaluate each scope from one catalog load and give the shared real\nMercury login helper 15s to reach the workspace."
+  message: "test(feedback): delete only owner rows this test created\n\nSnapshot role, permission, and authorization-version ids before bootstrap. Cleanup removes those new primary keys and the new identity, and leaves pre-existing roles and authorization versions in place."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T10:01:18Z"
+  created_at: "2026-11-23T10:20:06Z"
