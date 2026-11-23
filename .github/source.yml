@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d97a60f898704e8f2da7de9bf9af3ed0db19f73b"
+  sha: "1f6f2a1d08a4cdec1961ab1a18c2723d0f4a5959"
   ref_type: "branch"
-  ref_name: "fix/huma-cross-package-schema-collisions"
-  run_id: 45198887665
+  ref_name: "fix/feedback-ticket-preview"
+  run_id: 45200928333
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(mercury): sync workspace authorization fix from main"
+  message: "test(feedback): scope owner cleanup to fixture rows"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T14:52:40Z"
+  created_at: "2026-11-23T15:04:04Z"
