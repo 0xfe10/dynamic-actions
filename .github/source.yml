@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d1fbf60b037d37cc4f7354c7e2b9334698b2755f"
+  sha: "fac920becf5ab1f533120c98224e60f814216b8b"
   ref_type: "branch"
-  ref_name: "feat/orion-394-jigsaw-entry"
-  run_id: 45142104284
+  ref_name: "refactor/generic-shell-menu"
+  run_id: 45142454985
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): address PR #434 review blockers and add regression tests\n\n- Preserve singImage on photoEdit templates and keep photoEdit template entry distinct from collage tools (including #432 cutout/eraser tools in collage mode)\n- Fix templateScale coordinate scaling in decodeCreativeNativeDocument and live catalog/photo additions so canvas, slot, draft, and export dimensions match when templateScale != 1\n- Fence async history font restoration in JigsawController without moving the cursor before await, discard stale restores on concurrent mutations, and gate toolbar/layers/canvas mutations during in-flight operations\n- Clamp and uniformly scale stitch padding/gaps so 9-photo vertical and horizontal stitch layouts never overflow canvas bounds at large margin\n- Enforce aggregate multi-image collage byte (48 MiB) and pixel (36 MP) budgets across picker, cubit, editor startup/add-photo, sequential initial node decodes, and bounded document history snapshot eviction (64 MiB default)\n- Validate manifest/version font bindings and fail closed on undeclared fontKey or text-border fontId instead of silent fallback"
+  message: "fix(rigel-build): fail closed on shell roles and render custom entries\n\nMissing, null, and unknown shell roles now fail instead of defaulting to entry.\nEntry features may depend on helpers, while structural and capability features stay off both shell menus. Configured personal-center rows are emitted, and Mellow and Breeze open unknown compiled keys through their route instead of a fixed destination lookup."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:52:32Z"
+  created_at: "2026-11-23T08:55:08Z"
