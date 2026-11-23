@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ba1bbfd27c87a413348a7237f298388885a2ada3"
+  sha: "1749d0bd3bd02d297079343c80adabb31fc862ae"
   ref_type: "branch"
-  ref_name: "feat/orion-404-web-print"
-  run_id: 45241732831
+  ref_name: "main"
+  run_id: 45244309966
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(web-print): fail a repeated load instead of replaying it\n\nA second onLoadStart does not know the HTTP method, so it cannot open a\nreplacement GET. Retire that WebView and fail closed before Android's\nPOST intercept runs."
+  message: "feat(web-print): add local web page capture and print handoff\n\nAdds the local Mellow web-printing flow for #404.\n\nAddresses are accepted only as hierarchical http or https URLs. Capture fails closed when the WebView is unconfigured, and in-flight work is cancelled on navigation, route exit, or account change."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T18:45:35Z"
+  created_at: "2026-11-23T19:00:33Z"
