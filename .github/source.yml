@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "87a0b2b21583ba3b8d53b89bedb33eb1cf31d8e9"
+  sha: "3487cdd6d995b09540aa2a3eb68edf200c0f03de"
   ref_type: "branch"
-  ref_name: "fix/feedback-preview-and-diagnostics"
-  run_id: 45152915423
+  ref_name: "main"
+  run_id: 45153223252
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(feedback): keep authored diagnostics and fresher previews\n\nStrip only a trailing structured diagnostics block, including JSON cut off\nby the body limit, and ignore a cached thread that is not newer than the\nlist ticket."
+  message: "refactor(rigel-build): derive shell menu targets from catalog metadata\n\nAccept any compiled entry with an explicit shellRole instead of a hardcoded menu key list. Fail closed on missing, unknown, or non-entry roles in every appearance style, export features[].shellRole, and render every configured personal-center row."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T10:05:51Z"
+  created_at: "2026-11-23T10:07:52Z"
