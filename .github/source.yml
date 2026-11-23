@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "de842ed0ab30541e33980160b8055ebf1ee0767a"
+  sha: "7ebae8f7218eca5f2562ea7c34d845363058666f"
   ref_type: "branch"
-  ref_name: "fix/personal-center-252"
-  run_id: 45124409264
+  ref_name: "feat/orion-383-runtime-controls"
+  run_id: 45126216093
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(personal-center): dismiss exports when account sessions change"
+  message: "fix(runtime-controls): fence stale 401 and 403 responses across session generations\n\nCheck _currentUserLoad(generation, seq, expectedOwner) before clearing user controls on unauthorized or forbidden responses so delayed errors from a previous user or superseded refresh sequence cannot wipe active controls.\n\nRefs #383"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T06:29:24Z"
+  created_at: "2026-11-23T06:45:14Z"
