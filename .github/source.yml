@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "98b108b9b08f2dff1aaf44d9c4311e4377156cf5"
+  sha: "03f65136203ea0605c6260b1ad549c8f478a41da"
   ref_type: "branch"
-  ref_name: "fix/feedback-ticket-preview"
-  run_id: 45147462470
+  ref_name: "main"
+  run_id: 45150209299
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(feedback): scope preview owner cleanup to the actor\n\nThe shared owner cleanup also deletes integration fixtures by name. Remove only the owner this test created and rows keyed by that actor."
+  message: "fix(shell): allow distributed entry features in menus (#630)\n\nUse effective entry grants for shell menu eligibility. Apply compiled catalog roles during native release builds while preserving legacy catalog compatibility."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:29:31Z"
+  created_at: "2026-11-23T09:47:45Z"
