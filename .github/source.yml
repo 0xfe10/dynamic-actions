@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a73810099cf59ef864e1c96d40fd2e13bf8fec37"
+  sha: "4cb33a9c764e41ad805fd48b65dadf4418041517"
   ref_type: "branch"
-  ref_name: "fix/oss-stat-detailed-meta"
-  run_id: 45138842954
+  ref_name: "fix/shell-menu-entry-features"
+  run_id: 45140905857
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storage): read detailed OSS object metadata"
+  message: "fix(releasebuild): use shared shell menu eligibility"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:28:21Z"
+  created_at: "2026-11-23T08:43:33Z"
