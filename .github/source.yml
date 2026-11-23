@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "46259ead68f77a0e13ce0b5d853a90e4a4c43427"
+  sha: "4aa4d07f42a63b79a75fdb1e93264bb78285f8c9"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45185922060
+  ref_name: "feat/orion-400-scan-print"
+  run_id: 45186535680
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(feedback): show the latest preview and hide diagnostics\n\nFixes #426\nFixes #430\n\nShow the latest feedback message on the list, and hide the operator diagnostics block from user-facing summaries.\n\nTicket responses that omit preview no longer wipe a known list preview. A trailing Diagnostics block is removed for the summary card and list only when it is the diagnostic log object {\"entries\":[...]}, or a prefix of that object cut off at the body limit. Authored notes, Contact text, and chat bubbles stay unchanged."
+  message: "fix(scan-print): fence picker ownership and verify single-frame decoding"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T13:38:39Z"
+  created_at: "2026-11-23T13:42:28Z"
