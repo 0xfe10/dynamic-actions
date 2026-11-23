@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ab798eccaf24b0af92f12a83d64066d9ffd1d185"
+  sha: "ba1bbfd27c87a413348a7237f298388885a2ada3"
   ref_type: "branch"
   ref_name: "feat/orion-404-web-print"
-  run_id: 45238477119
+  run_id: 45241732831
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(web-print): block android posts and retire a reused web view\n\nIntercept a main-frame non-GET, and any non-http(s) request, before\nAndroid can send it. A second onLoadStart retires that WebView so its\nlater stop or error cannot finish the document that replaces it."
+  message: "fix(web-print): fail a repeated load instead of replaying it\n\nA second onLoadStart does not know the HTTP method, so it cannot open a\nreplacement GET. Retire that WebView and fail closed before Android's\nPOST intercept runs."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T18:27:11Z"
+  created_at: "2026-11-23T18:45:35Z"
