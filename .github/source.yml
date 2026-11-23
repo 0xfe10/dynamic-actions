@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6bfece8d805a5fe169af8185ae9ef60b8edb4b0b"
+  sha: "d1fbf60b037d37cc4f7354c7e2b9334698b2755f"
   ref_type: "branch"
-  ref_name: "feat/orion-397-398-wifi-cloud-printers"
-  run_id: 45141660587
+  ref_name: "feat/orion-394-jigsaw-entry"
+  run_id: 45142104284
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(device-management): harden cloud read ordering, QR serial matching and Wi-Fi write serialization\n\nAddress remaining review edge cases for #397 and #398:\n- Sequence cloud detail and list reads with monotonic per-printer freshness tracking so older detail or stale list replies cannot overwrite fresher snapshots.\n- Require explicit non-empty matching serials on serial-only cloud QR bind replies instead of accepting null or blank serials.\n- Route Wi-Fi provisioning, connect, and disconnect through one shared serialized write gate with cooperative cancellation and zero cross-operation overlap.\n\nRefs #397\nRefs #398"
+  message: "fix(jigsaw): address PR #434 review blockers and add regression tests\n\n- Preserve singImage on photoEdit templates and keep photoEdit template entry distinct from collage tools (including #432 cutout/eraser tools in collage mode)\n- Fix templateScale coordinate scaling in decodeCreativeNativeDocument and live catalog/photo additions so canvas, slot, draft, and export dimensions match when templateScale != 1\n- Fence async history font restoration in JigsawController without moving the cursor before await, discard stale restores on concurrent mutations, and gate toolbar/layers/canvas mutations during in-flight operations\n- Clamp and uniformly scale stitch padding/gaps so 9-photo vertical and horizontal stitch layouts never overflow canvas bounds at large margin\n- Enforce aggregate multi-image collage byte (48 MiB) and pixel (36 MP) budgets across picker, cubit, editor startup/add-photo, sequential initial node decodes, and bounded document history snapshot eviction (64 MiB default)\n- Validate manifest/version font bindings and fail closed on undeclared fontKey or text-border fontId instead of silent fallback"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:49:08Z"
+  created_at: "2026-11-23T08:52:32Z"
