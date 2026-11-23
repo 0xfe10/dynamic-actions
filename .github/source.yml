@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ef591f0afd30f4d7e119a02935d5bfdbc5b997e3"
+  sha: "852fe7b417c9be313c3d0a1296a2d2e78db6575a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45098877193
+  ref_name: "fix/orion-316-pixso-tools-e2e"
+  run_id: 45111535220
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(fonts): wire granted catalog faces into Pixso editing and reload (#415)\n\n* feat(fonts): wire granted catalog faces into Pixso editing and reload\n\n* fix(fonts): authorize versioned restores and serialize document history"
+  message: "fix(editor): separate highlights and expose graffiti reset"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T02:12:46Z"
+  created_at: "2026-11-23T04:23:22Z"
