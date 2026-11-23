@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "22388f9b92f76046acf85d768ac8a365c1eeb06b"
+  sha: "6a14843f73ae672600bd297d657aaecce22cb3c4"
   ref_type: "branch"
-  ref_name: "feat/orion-394-jigsaw-entry"
-  run_id: 45149049673
+  ref_name: "refactor/generic-shell-menu"
+  run_id: 45149352743
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): preserve photoEdit slot geometry and reconcile collage/history budgets\n\n- Gate JigsawController.singLayoutDelegate on singImage && isUseImageSize so inset and rotated photoEdit manifest slots keep their exact authored geometry while preserving singImage template routing\n- Enforce aggregate collage byte (24 MiB) and decoded pixel (36 MP) budgets consistently across initial load, incremental onAddImage, and photo replacement (accounting for the replaced slot delta)\n- Reconcile maximumCollageTotalBytes (24 MiB raw -> ~32 MiB base64 JSON) with defaultMaxDocumentHistoryBytes (72 MiB) and enforce totalBytes <= budget unconditionally in JigsawController history"
+  message: "merge(main): bring shell menu branch up to date\n\nGive CERTIFICATE_PHOTO an explicit entry shell role so catalog export\nstays fail-closed without rejecting the new compiled feature."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:39:52Z"
+  created_at: "2026-11-23T09:41:50Z"
