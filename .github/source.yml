@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5ff702ec40a3e9dbff65ea467dbd3caf665c93f4"
+  sha: "b8c8acd5df88f2de1fcf874e45dec3c923ee9a61"
   ref_type: "branch"
-  ref_name: "feat/orion-397-398-wifi-cloud-printers"
-  run_id: 45137238083
+  ref_name: "feat/orion-371-social-login"
+  run_id: 45137702047
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(devices): harden Wi-Fi and cloud printer fail-closed invariants\n\nAddress all 6 review findings on PR #431:\n- Require explicit matching tenantId, appId, viewerId, and non-null role\n  on CloudPrinterDirectory and CloudPrinter records; never default missing\n  role to owner or stamp missing scope metadata onto accepted replies.\n- Sequence per-printer and directory mutations in CloudPrinterCubit so\n  stale refreshes or out-of-order mutations cannot resurrect unbound\n  printers or overwrite newer commits.\n- Correlate exact printer ID and command kind on cloud reads, mutations,\n  and receipts, and require authoritative offline printer status on\n  disconnect acknowledgements instead of fabricating offline state locally.\n- Guard cloud share-code, firmware-status, and calibration dialogs with\n  both opening scope and CloudPrinterCubit generation so sign-out or\n  account switches dismiss open dialogs immediately.\n- Add WifiCancellationToken to WifiPrinterGateway and wire cubit cancel,\n  scope change, close, and retry paths to interrupt active native\n  operations and prevent overlapping provisioning or connection writes.\n- Require exact target printer ID on Wi-Fi connect replies and explicit\n  acknowledgement plus request correlation on WifiProvisioningResult.\n- Add targeted unit and widget regression tests covering all 6 findings.\n\nRefs #397\nRefs #398"
+  message: "fix(auth): tighten social/carrier gating and async cancellation races\n\nAddress independent review findings on social-provider and carrier quick-login:\n- Fail closed on unconfigured catalogs and gate loaded visibility/invocation strictly on applicable region, non-null configuration, and host support while keeping Email sign-in available.\n- Pass active login region through SocialLoginCubit/buildFeatureScope and enforce regionKeys policy client-side as defense-in-depth.\n- Invalidate in-flight social and carrier attempts on Skip/route exit and external session/account changes all the way through session adoption.\n- Reserve a shared single-flight slot before awaiting catalog loads so concurrent callers cannot overlap exchanges.\n- Require a valid carrier preview and configuration in both SocialLoginCubit and carrier_login_sheet before enabling or invoking submission.\n- Inspect explicit pending-closure retry outcomes in Mellow social and carrier flows so failed retries surface localized errors instead of closing silently or mistaking an unrelated session.\n\nRefs #371"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:16:18Z"
+  created_at: "2026-11-23T08:19:46Z"
