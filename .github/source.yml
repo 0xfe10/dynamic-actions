@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5150bb55cb87334183f31b411b187b49ff5c05c6"
+  sha: "2e39fc6f7c9a175f2f25c38fdc65dec5dfb225b4"
   ref_type: "branch"
   ref_name: "feat/orion-387-catalog-fonts"
-  run_id: 45096509285
+  run_id: 45097874597
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "fix(fonts): authorize versioned restores and serialize document history"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T01:47:16Z"
+  created_at: "2026-11-23T02:02:25Z"
