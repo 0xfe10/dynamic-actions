@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "f1d32f4d22948c534570e9e1fdea7a27b4c15ecc"
-  ref_type: "tag"
-  ref_name: "v0.0.153"
-  run_id: 45116078447
+  sha: "eb3b991b4dcec30ef49d0fd5369573d455f46458"
+  ref_type: "branch"
+  ref_name: "fix/education-question-knowledge-scope-tightening"
+  run_id: 45123690560
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(education): scope question grade filtering for general textbooks and linked nodes (#209)\n\n* fix(education): scope question grade filtering for general textbooks and linked nodes\n\n* fix(education): normalize blank and padded question filter parameters"
+  message: "fix(education): tighten question knowledge graph scoping and ordering"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T05:10:24Z"
+  created_at: "2026-11-23T06:22:57Z"
