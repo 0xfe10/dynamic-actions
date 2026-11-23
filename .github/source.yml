@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4aa4d07f42a63b79a75fdb1e93264bb78285f8c9"
+  sha: "e7b5d5db15d5a84e53e438487d18fc16bcd5c70c"
   ref_type: "branch"
-  ref_name: "feat/orion-400-scan-print"
-  run_id: 45186535680
+  ref_name: "feat/orion-397-398-wifi-cloud-printers"
+  run_id: 45186680056
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(scan-print): fence picker ownership and verify single-frame decoding"
+  message: "fix(device-management): harden cloud read ordering, QR serial matching and Wi-Fi write serialization\n\nAddress remaining review edge cases for #397 and #398:\n- Sequence cloud detail and list reads with monotonic per-printer freshness tracking so older detail or stale list replies cannot overwrite fresher snapshots.\n- Require explicit non-empty matching serials on serial-only cloud QR bind replies instead of accepting null or blank serials.\n- Route Wi-Fi provisioning, connect, and disconnect through one shared serialized write gate with cooperative cancellation and zero cross-operation overlap.\n\nRefs #397\nRefs #398"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T13:42:28Z"
+  created_at: "2026-11-23T13:43:17Z"
