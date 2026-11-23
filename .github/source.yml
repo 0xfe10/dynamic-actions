@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e58b6ba8388a90d93f8143da6e223949fe942596"
+  sha: "ab798eccaf24b0af92f12a83d64066d9ffd1d185"
   ref_type: "branch"
   ref_name: "feat/orion-404-web-print"
-  run_id: 45234676797
+  run_id: 45238477119
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(web-print): reset navigations and probe cookie clears\n\nCancel empty and about URLs, start a new generation for every http(s)\nGET after the first load, and drop readiness from onLoadStart when\nAndroid skips the override. A main-frame POST is cancelled instead of\nreplayed as a GET. Prove the Android cookie jar is alive by planting a\nsentinel before deleteAllCookies."
+  message: "fix(web-print): block android posts and retire a reused web view\n\nIntercept a main-frame non-GET, and any non-http(s) request, before\nAndroid can send it. A second onLoadStart retires that WebView so its\nlater stop or error cannot finish the document that replaces it."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T18:06:08Z"
+  created_at: "2026-11-23T18:27:11Z"
