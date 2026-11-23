@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f637a188bb8e1329b08bed183ecdddc5f6f1be0f"
+  sha: "505e75ea617d541e98b4f9282761f9084feb765e"
   ref_type: "branch"
-  ref_name: "feat/orion-401-ai-portrait"
-  run_id: 45155669660
+  ref_name: "fix/feedback-preview-and-diagnostics"
+  run_id: 45156969142
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ai-portrait): fence jobs, media files, capture, and first print\n\nRecheck the account fence after result cleanup before a billable submit.\nGive every operation its own file and hash account directories so a delayed\ndelete cannot erase a newer portrait or collide with another account.\nDeliver the first print when preview mounts, cancel capture after the\npermission prompt before the picker, and decode one real image frame."
+  message: "fix(feedback): keep fresher ticket metadata and strip diagnostics once\n\nDo not treat a short note such as [paper jam] as truncated diagnostics, and\ndo not strip while merging a preview that the list strips again. An older\nresponse also keeps a newer revision, preview, and last-message time."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T10:23:46Z"
+  created_at: "2026-11-23T10:32:36Z"
