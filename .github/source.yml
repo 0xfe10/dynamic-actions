@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b2cea11ce2fd8ec99f6bc78ef828ce8a62a8e6e6"
+  sha: "46259ead68f77a0e13ce0b5d853a90e4a4c43427"
   ref_type: "branch"
-  ref_name: "feat/orion-401-ai-portrait"
-  run_id: 45185672306
+  ref_name: "main"
+  run_id: 45185922060
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ai-portrait): keep borrowed gallery files and still images\n\nGallery picks stay untouched even when their path is under temp or cache.\nCamera copies are deleted only from the app cache directory. APNG chunks\nare rejected, and GIF checks walk blocks instead of searching for 0x3B."
+  message: "fix(feedback): show the latest preview and hide diagnostics\n\nFixes #426\nFixes #430\n\nShow the latest feedback message on the list, and hide the operator diagnostics block from user-facing summaries.\n\nTicket responses that omit preview no longer wipe a known list preview. A trailing Diagnostics block is removed for the summary card and list only when it is the diagnostic log object {\"entries\":[...]}, or a prefix of that object cut off at the body limit. Authored notes, Contact text, and chat bubbles stay unchanged."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T13:37:39Z"
+  created_at: "2026-11-23T13:38:39Z"
