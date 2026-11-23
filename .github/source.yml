@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "30838e4522605f719914a9ff6d9a9a7a8a186069"
+  sha: "9216ffeeaa27dc5662c76133d0329e1dfef1366b"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 44453332087
+  run_id: 45118913110
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "java \u4f18\u5316udp\u626b\u63cf"
+  message: "Merge remote-tracking branch 'origin/main'"
   authors: ["jiangchengze"]
 dispatch:
-  created_at: "2026-11-19T03:42:52Z"
+  created_at: "2026-11-23T05:37:37Z"
