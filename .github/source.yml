@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b5fc28805375b7c3860ee2e56472e990201d5389"
+  sha: "45d8da14052b2f5e797cc5e00acbd297eadca671"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45206838605
+  run_id: 45208489276
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(feedback): return the latest message as ticket preview (#631)\n\nRefs prtmax/orion#426"
+  message: "fix(mercury): disambiguate platform Huma schemas (#635)\n\nRestore the app banner upload request schema, disambiguate the remaining platform schema names, and guard the assembled API against collisions."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T15:35:10Z"
+  created_at: "2026-11-23T15:44:13Z"
