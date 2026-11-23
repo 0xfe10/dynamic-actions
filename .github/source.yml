@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "ecb5a42b92474e912505ef68716833c0088c3486"
+  sha: "b7f430316b67702fb139cff8f539adf8d066c625"
   ref_type: "branch"
-  ref_name: "fix/education-question-strict-grade-traversal"
-  run_id: 45130820284
+  ref_name: "main"
+  run_id: 45131562232
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(education): enforce strict grade scope on question traversal and results"
+  message: "fix(education): enforce strict grade scope on question traversal and results (#211)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T07:24:23Z"
+  created_at: "2026-11-23T07:30:32Z"
