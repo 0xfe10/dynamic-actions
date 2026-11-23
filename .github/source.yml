@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "05f05a2335a16364b3a13c7f3ffb725390e20868"
+  sha: "6bfece8d805a5fe169af8185ae9ef60b8edb4b0b"
   ref_type: "branch"
-  ref_name: "feat/orion-371-social-login"
-  run_id: 45141149840
+  ref_name: "feat/orion-397-398-wifi-cloud-printers"
+  run_id: 45141660587
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(auth): merge origin/main (#427) into feat/orion-371-social-login"
+  message: "fix(device-management): harden cloud read ordering, QR serial matching and Wi-Fi write serialization\n\nAddress remaining review edge cases for #397 and #398:\n- Sequence cloud detail and list reads with monotonic per-printer freshness tracking so older detail or stale list replies cannot overwrite fresher snapshots.\n- Require explicit non-empty matching serials on serial-only cloud QR bind replies instead of accepting null or blank serials.\n- Route Wi-Fi provisioning, connect, and disconnect through one shared serialized write gate with cooperative cancellation and zero cross-operation overlap.\n\nRefs #397\nRefs #398"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:45:22Z"
+  created_at: "2026-11-23T08:49:08Z"
