@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6d891a7fa8ac85b4e505e2b9a9dc1666353569af"
+  sha: "5002f5b2166bbf281c7536fef8f16fba71704a1c"
   ref_type: "branch"
-  ref_name: "feat/orion-400-scan-print"
-  run_id: 45139192754
+  ref_name: "feat/orion-371-social-login"
+  run_id: 45139459467
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(scan-print): scope retrieveLostData ownership, single-frame decode, and permission check fence"
+  message: "chore(auth): merge origin/main into feat/orion-371-social-login"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:30:51Z"
+  created_at: "2026-11-23T08:33:06Z"
