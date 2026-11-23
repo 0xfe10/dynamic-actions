@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "76f4f5098cc791e1e5a6263d3fe4e1b2da3f346e"
+  sha: "92fba38175603ccbb90a398acd15d6a4f5834fbb"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 45220616498
+  ref_name: "feat/orion-397-398-wifi-cloud-printers"
+  run_id: 45221275868
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): align checks with themed graffiti controls"
-  authors: ["0xfe10","chenanshun"]
+  message: "fix(device-management): fence scope switches and stale cloud invites"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T16:48:44Z"
+  created_at: "2026-11-23T16:52:08Z"
