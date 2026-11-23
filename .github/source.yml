@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "04699a92a6fe056e670fdc4bb5c7dddb0a02eb3e"
+  sha: "a73810099cf59ef864e1c96d40fd2e13bf8fec37"
   ref_type: "branch"
-  ref_name: "fix/feedback-ticket-preview"
-  run_id: 45137416996
+  ref_name: "fix/oss-stat-detailed-meta"
+  run_id: 45138842954
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(feedback): return the latest message as ticket preview\n\nSingle-ticket reads left preview empty, so create, reply, mark-read, and status responses replaced a list card with a blank summary. Share the list query's latest-message rule with getTicket without changing the stored body."
+  message: "fix(storage): read detailed OSS object metadata"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:17:42Z"
+  created_at: "2026-11-23T08:28:21Z"
