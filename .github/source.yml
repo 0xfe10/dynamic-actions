@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b7cdbf58debce9b243ee8450e380480867eff0aa"
+  sha: "71d8a1e5427190e913ce367998392ced2b4d6789"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45126220899
+  run_id: 45126953091
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(personal-center): clear open data exports on account changes (#424)\n\nDismiss open personal-data export dialogs when the account session changes, and add logout regression coverage for Mellow and Breeze.\n\nValidate profile, connected-device history, compliance and settings against disposable local Mercury and isolated Android QEMU; retain documented acceptance gates for separate follow-up."
+  message: "fix(devices): fail closed when Bluetooth discovery hangs (#422)\n\nBound discovery start and stop so a hung native call becomes scanFailed or\nstopScanFailed, releases the serialized gateway queue, and adds no printers.\nAn empty device list and a hung QR handoff show that failure instead of a\ncompleted search or a connection."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T06:45:18Z"
+  created_at: "2026-11-23T06:51:30Z"
