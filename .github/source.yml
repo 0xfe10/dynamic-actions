@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5002f5b2166bbf281c7536fef8f16fba71704a1c"
+  sha: "bfdd0c233e8bc3ab29766be38e2a24b3c63e7c5e"
   ref_type: "branch"
-  ref_name: "feat/orion-371-social-login"
-  run_id: 45139459467
+  ref_name: "main"
+  run_id: 45140803829
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(auth): merge origin/main into feat/orion-371-social-login"
+  message: "feat(ar-photo): wire local capture and fail-closed recognition and cloud sync boundaries (#427)\n\n* feat(ar-photo): wire local capture and fail-closed recognition and cloud sync boundaries\n\n* fix(ar-photo): merge restore state, verify 15s video duration, and clean up local media"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:33:06Z"
+  created_at: "2026-11-23T08:42:46Z"
