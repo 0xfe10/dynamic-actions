@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "92fba38175603ccbb90a398acd15d6a4f5834fbb"
+  sha: "7c9f202dda0acb8bd901306f649c73b0cd20c6dd"
   ref_type: "branch"
-  ref_name: "feat/orion-397-398-wifi-cloud-printers"
-  run_id: 45221275868
+  ref_name: "feat/orion-394-jigsaw-entry"
+  run_id: 45223960122
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(device-management): fence scope switches and stale cloud invites"
+  message: "test(jigsaw): cover descriptor failure on mixed collage drafts\n\nReopen a valid photo followed by unrecognized bytes and reject the header\nbefore any original image is decoded."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T16:52:08Z"
+  created_at: "2026-11-23T17:06:35Z"
