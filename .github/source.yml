@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "3416767e79bd157ef3dd505d77c0f5f19e9068eb"
+  sha: "5150bb55cb87334183f31b411b187b49ff5c05c6"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45096379546
+  ref_name: "feat/orion-387-catalog-fonts"
+  run_id: 45096509285
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(template-plaza): open supported templates in native editors (#417)"
+  message: "fix(fonts): authorize versioned restores and serialize document history"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T01:45:57Z"
+  created_at: "2026-11-23T01:47:16Z"
