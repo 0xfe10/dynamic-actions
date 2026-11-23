@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1378d66f535882f0b1af72a84532a4f910a5525b"
+  sha: "73de7b4a111438b060e313dd83151e346df83f4b"
   ref_type: "branch"
-  ref_name: "feat/orion-400-scan-print"
-  run_id: 45136592391
+  ref_name: "main"
+  run_id: 45136996699
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(scan-print): address review findings for permissions, document filter, locking, memory, retry, and lost data"
+  message: "feat(editor): wire Pixso cutout and image eraser tool boundaries (#432)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T08:11:36Z"
+  created_at: "2026-11-23T08:14:44Z"
