@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8594b9a452edc0c03a9fb029351d835470c20f0d"
+  sha: "623e206ecb35dad2507d12e99f61f05a9b30980a"
   ref_type: "branch"
   ref_name: "fix/printer-connection-lifecycle"
-  run_id: 45120702771
+  run_id: 45120761990
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(devices): fail closed when Bluetooth discovery hangs\n\nBound discovery start and stop so a hung native call becomes scanFailed or\nstopScanFailed, releases the serialized gateway queue, and adds no printers.\nAn empty device list and a hung QR handoff show that failure instead of a\ncompleted search or a connection."
+  message: "Merge remote-tracking branch 'origin/main' into fix/printer-connection-lifecycle"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T05:54:52Z"
+  created_at: "2026-11-23T05:55:25Z"
