@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4a5fa212d02042bdbe36f6bac4e233a0d12ad9b1"
+  sha: "98b108b9b08f2dff1aaf44d9c4311e4377156cf5"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45147306686
+  ref_name: "fix/feedback-ticket-preview"
+  run_id: 45147462470
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): bind exported Huma request inputs"
+  message: "test(feedback): scope preview owner cleanup to the actor\n\nThe shared owner cleanup also deletes integration fixtures by name. Remove only the owner this test created and rows keyed by that actor."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:28:27Z"
+  created_at: "2026-11-23T09:29:31Z"
