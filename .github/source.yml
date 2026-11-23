@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a888f36c3e32559e00978cdce941ee59e4c8633c"
+  sha: "40f2e9a526373d467b1552e5e03de475f698afea"
   ref_type: "branch"
-  ref_name: "ao/orion-311-theme-naming/color-naming"
-  run_id: 45117523804
+  ref_name: "main"
+  run_id: 45118706939
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(theme): align color display names with the design specification\n\nKeep the serialized color keys, historical hex values, and distinct\nsurface, container, and disabled roles. Match the Vega management labels\nand lock the compatible contract with tests."
+  message: "fix(print): submit preview raster and record device acknowledgements (#420)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T05:24:11Z"
+  created_at: "2026-11-23T05:35:27Z"
