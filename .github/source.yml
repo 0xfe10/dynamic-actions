@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "57243dc15477f61512b0e243521805ffab15f7bb"
+  sha: "22388f9b92f76046acf85d768ac8a365c1eeb06b"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 45148733626
+  ref_name: "feat/orion-394-jigsaw-entry"
+  run_id: 45149049673
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u6d82\u9e26 \u5b8c\u6574ui\uff09"
-  authors: ["chenanshun"]
+  message: "fix(jigsaw): preserve photoEdit slot geometry and reconcile collage/history budgets\n\n- Gate JigsawController.singLayoutDelegate on singImage && isUseImageSize so inset and rotated photoEdit manifest slots keep their exact authored geometry while preserving singImage template routing\n- Enforce aggregate collage byte (24 MiB) and decoded pixel (36 MP) budgets consistently across initial load, incremental onAddImage, and photo replacement (accounting for the replaced slot delta)\n- Reconcile maximumCollageTotalBytes (24 MiB raw -> ~32 MiB base64 JSON) with defaultMaxDocumentHistoryBytes (72 MiB) and enforce totalBytes <= budget unconditionally in JigsawController history"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:37:44Z"
+  created_at: "2026-11-23T09:39:52Z"
