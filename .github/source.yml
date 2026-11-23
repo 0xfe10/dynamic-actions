@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f33a73ce8201e2b7355ea61b9dd192b0086ed612"
+  sha: "daf872f0a53aa902d740ca792c6583b9c6d398cd"
   ref_type: "branch"
-  ref_name: "feat/orion-401-ai-portrait"
-  run_id: 45191728669
+  ref_name: "main"
+  run_id: 45191942509
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ai-portrait): remove iOS camera files from sandbox tmp\n\npath_provider maps getTemporaryDirectory to Library/Caches on iOS, while\nimage_picker writes camera output to NSTemporaryDirectory. Clean that\napp-private temp root only when Platform.isIOS is true."
+  message: "feat(sudoku): add local pocket printing workflow (#443)\n\nRefs #407."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T14:12:53Z"
+  created_at: "2026-11-23T14:14:00Z"
