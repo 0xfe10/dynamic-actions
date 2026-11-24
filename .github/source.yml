@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "aae4ac21c544f164c91c90ab8c48cb7184415ce6"
+  sha: "3c3cc582b398a2b4e5d65431fc95621eced77836"
   ref_type: "branch"
   ref_name: "fix/wave4-staging-runtime-404"
-  run_id: 45320796922
+  run_id: 45321284772
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): address review on unpinned runtime define handling\n\nTrim RUNTIME_APP_BINDING and ORION_DEV_APP_ID, validate trimmed runtime\nURLs before AppProfile, and document RUNTIME_* precedence over ORION_DEV_*.\nRemove live staging HTTP unit tests; add offline assembly call-path coverage.\n\nRefs #449, #450, #451"
+  message: "chore(rigel): dart format after review fixes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:37:36Z"
+  created_at: "2026-11-24T03:41:57Z"
