@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "78be3f891b6e18a759afe90a342f6accf3848a4c"
+  sha: "c03c784ddc41a11572553f9d7209232cf8ba3a9c"
   ref_type: "branch"
-  ref_name: "ao/vega-platform-models/device-redesign-s2-platform"
-  run_id: 45480428563
+  ref_name: "feat/feature-flags-slice1"
+  run_id: 45484123551
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "style(vega): format platform device redesign files with Prettier"
+  message: "fix(mercury): enforce rollout and experiment targeting boundaries"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T20:24:24Z"
+  created_at: "2026-11-24T20:45:47Z"
