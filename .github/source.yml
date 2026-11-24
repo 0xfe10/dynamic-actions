@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "747de8d66eb7f809713f1eaa47dbf78b8fd963c3"
+  sha: "91e2f89f43950900cc429004fc80e0c0e3d8c610"
   ref_type: "branch"
-  ref_name: "ao/execute-slice-w2/vega-plan-w-slice-w2"
-  run_id: 45380388450
+  ref_name: "main"
+  run_id: 45380378149
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address Plan W Slice W2 review findings"
+  message: "fix(storepublishing): respect Pubox top-level secret_keys (#645)\n\n* fix(storepublishing): respect Pubox top-level secret_keys\n\n* fix(storepublishing): sanitize persisted secrets and handle inactive or padded keys\n\n* fix(storepublishing): preserve params on outage, reuse client, and align key trimming\n\n* fix(storepublishing): guard snapshot mismatch, sort legacy keys, and preload catalog\n\n* fix(storepublishing): guard configure/save on unavailable params and avoid post-commit catalog fetch\n\n* test(storepublishing): arm catalog outage after setup in concurrency test"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T11:02:19Z"
+  created_at: "2026-11-24T11:02:29Z"
