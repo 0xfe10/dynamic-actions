@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f81c717823c1afedad6f12632844648b20699a3b"
+  sha: "46c8059a77c9ce122d0e152551ca25ac1b1881a2"
   ref_type: "branch"
-  ref_name: "feat/cosmos-14-color-theme-and-vega-ui"
-  run_id: 45363173345
+  ref_name: "docs/cosmos-507-openapi-descriptions"
+  run_id: 45365673659
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(theme): sync main, renumber migration to 00194, and bump orion\n\nMerge origin/main (4c1e7e18), renumber the style-theme 14-color semantic palette migration from 00192 to 00194 after 00192_device_support_distribution and 00193_messaging_channels_and_bindings, and advance the orion submodule gitlink to af39c6cf9eefed689f8f35d483bba5b09fdad3c3.\n\nRefs prtmax/orion#439"
+  message: "docs(mercury): describe messaging and device selection APIs\n\nDocument the platform messaging and device-material selection operations from their handlers, and regenerate the platform contract without changing runtime output."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T09:13:56Z"
+  created_at: "2026-11-24T09:29:43Z"
