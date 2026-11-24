@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3275b230782718fff181a5ed51bdacc48b27b7e8"
+  sha: "7d3ffb8efa08b8d5c3e6c66c06fe53bf2ab50d43"
   ref_type: "branch"
   ref_name: "docs/cosmos-507-openapi-descriptions"
-  run_id: 45328954380
+  run_id: 45332866203
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(mercury): describe handler path values and single reads\n\nDocument path parameters by the values their handlers accept when the\npublished Snowflake pattern is only the generic fallback. Describe\nsingle-resource reads as one record, and state the store-target\ndelete version check. Schemas and runtime OpenAPI stay unchanged.\n\nRefs #507"
+  message: "docs(mercury): separate download targets from single reads\n\nDescribe the platform artifact download route as issuing a URL, and\nkeep signed-claim checks on the file stream. Allow the optional\nleading minus on localization entry IDs for both reads and writes.\nState that an app role, a category tree, and the workspace projection\nare not looked up by an invented path ID.\n\nRefs #507"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:49:01Z"
+  created_at: "2026-11-24T05:22:43Z"
