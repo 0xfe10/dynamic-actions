@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a8c2a307c92832cfa7f5b5bb17b028f515a088e0"
+  sha: "3275b230782718fff181a5ed51bdacc48b27b7e8"
   ref_type: "branch"
-  ref_name: "feat/device-bound-support-content"
-  run_id: 45326115157
+  ref_name: "docs/cosmos-507-openapi-descriptions"
+  run_id: 45328954380
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): pin document navigation test fix"
+  message: "docs(mercury): describe handler path values and single reads\n\nDocument path parameters by the values their handlers accept when the\npublished Snowflake pattern is only the generic fallback. Describe\nsingle-resource reads as one record, and state the store-target\ndelete version check. Schemas and runtime OpenAPI stay unchanged.\n\nRefs #507"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:24:13Z"
+  created_at: "2026-11-24T04:49:01Z"
