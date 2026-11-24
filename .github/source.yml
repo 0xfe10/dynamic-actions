@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9086b94ae9d85153ce52aea16a9507e61eeb751e"
+  sha: "73d41fb671ec2b8187504f4ecbb79ea1057801ba"
   ref_type: "branch"
-  ref_name: "feat/cosmos-288-otp-worker-slice2"
-  run_id: 45369969733
+  ref_name: "ao/pubox-secret-keys/fix-642"
+  run_id: 45370426022
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(messaging): address PR #641 Round 2 review findings\n\nAddress all 5 findings from Round 2 review:\n\n- Complete verifyPreSendFence in messagingworker.Runner with send_deadline and\n  challenge liveness/invalidation/supersession checks, anchoring absolute lease\n  and send deadlines before DB query execution and bounding Send via\n  context.WithDeadline(ctx, min(externalDeadline, leaseDeadline, sendDeadline)).\n- Enforce verification_ready_at for all async-queued security challenges\n  (including Phase 1 null-mac_key_id rows) while preserving true pre-migration\n  legacy row verification, and gate API async OTP delivery behind explicit\n  MERCURY_OTP_ASYNC_DELIVERY_ENABLED with fail-fast config validation.\n- Call smtp.Client.Hello explicitly before Extension(\"STARTTLS\") so greeting\n  disconnects and timeouts are classified as retryable instead of permanent.\n- Isolate provider_reference validation per adapter source and derive an opaque\n  job-bound hash token (aliyun:<24-hex>) for Aliyun SMS so verbatim upstream\n  text is never stored in DB or written to logs.\n- Lock parent csm_jobs rows in ascending id order (FOR UPDATE OF j) before\n  deleting csm_otp_delivery rows during account closure purge to prevent\n  lock-order deadlocks with worker and reaper transactions."
+  message: "fix(storepublishing): sanitize persisted secrets and handle inactive or padded keys"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T09:57:05Z"
+  created_at: "2026-11-24T09:59:48Z"
