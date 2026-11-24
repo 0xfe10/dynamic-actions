@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4c3f84ac4aece5870e7f909acf58c7bb42962c2e"
+  sha: "4440f58b35afac36ddaa25c09d5c08cb3156edfa"
   ref_type: "branch"
-  ref_name: "ao/device-redesign/device-redesign-slice1"
-  run_id: 45467206461
+  ref_name: "main"
+  run_id: 45467243694
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(device-catalog): harden conflict probe fallback and contention test barrier"
+  message: "fix(creative): return presigned preview URLs and polish Vega asset previews (#651)\n\n* fix(creative): return presigned preview URLs and polish Vega asset previews\n\n* test(creative): query copywriting domain in category tree icon test\n\n* fix(creative): harden preview signing, replay freshness, and Vega fallbacks\n\nAddress Round 1 review findings across Mercury and Vega:\n- Gate inherited creative library thumbnail URLs on recipient eligibility\n- Cache storage profiles on the active transaction via ReadSigner to avoid nested pool connections\n- Strip volatile preview URLs from authoring idempotency cache and re-sign replays after verifying provenance\n- Enforce safe non-active MIME allowlists on OSS uploads and presigned response content types\n- Match upload-slot artwork strictly by assetId, prefer fresher server URLs, add expiry-aware query refresh and payload panel image error fallbacks, and localize/restore focus in the preview lightbox\n\n* fix(creative): sign library detail outside pgx rows, lock editor revision, and align MIME parity\n\nAddress Round 2 review findings and Staging CI integration test:\n- Collect and close pgx rows before signing library detail asset preview URLs to avoid busy connections on cold-cache multi-profile reads\n- Enforce safe non-active MIME allowlist parity in DirectoryStore Put/Stat/PresignGetWithContentType and ReadSigner\n- Lock baseline editingRevision in CreativeItemEditPage and keep unsaved form edits mounted on failed background refetches\n- Wire version inspect and category edit dialogs to expiry-aware TanStack Query hooks\n- Seed csm_app_regions in TestCreativeLibraryThumbnailVisibilityGates and add multi-profile MaxConns=1 integration and Vega polling regression tests\n\n* fix(creative): freeze category create dialog session, retry version inspect, and clamp object server MIME\n\nAddress remaining Round 3 P2 review findings:\n- Freeze dialogSession and locked dialogTreeRevision when opening New/Add-Child Category dialogs so background tree polling never remounts unsaved create forms\n- Retry version inspect fetch when re-clicking Inspect on the same version or clicking Retry after a transient failure\n- Honor safe allowlisted response-content-type query params and clamp active MIME types in tools/cosmos_build/lib/object_server.dart\n\n* fix(creative): guard initial category tree revision and failed Reload latest\n\nAddress remaining Round 4 P2 edge cases:\n- Disable New category trigger while initial treeQuery data is unresolved and avoid freezing dialogTreeRevision to 0\n- Verify treeQuery.refetch() succeeds with fresh data before bumping dialogSession or resetting conflict state on Reload latest, preserving unsaved form fields with a retryable error alert on failure\n- Add regression test in creative-editor-polling.test.tsx\n\n* fix(creative): ignore stale category Reload latest resolutions after dialog close\n\nTrack activeDialogSessionRef across dialog open, reopen, and close in category-tree.tsx so an in-flight Reload latest promise that settles after the dialog closes never mutates or remounts a newly opened dialog. Add regression test in creative-editor-polling.test.tsx."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T19:09:42Z"
+  created_at: "2026-11-24T19:09:50Z"
