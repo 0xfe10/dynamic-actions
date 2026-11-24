@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "58039a152688ebdb2a77b69664fa97c84a5d3c02"
+  sha: "6e756a8dd8f755350e6675e81dd22e06a1a02a90"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45373032268
+  ref_name: "ao/execute-slice-w1/vega-ux-w1"
+  run_id: 45374728155
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(mercury): describe platform OpenAPI business behavior (#638)\n\nDocument Platform OpenAPI operations and parameters from handler behavior, including messaging channels and device-material selection, without changing wire schemas or Runtime output.\n\nCloses #507"
+  message: "feat(vega): converge creative catalog and banners to full-width workspace\n\n- Wrap all remaining App control-plane settings pages (creative, banners, help-center, icons, fonts, consumables, social-providers, updates) with AppControlPlaneSubnav\n- Add reusable full-width catalog workspace primitives (CatalogWorkspace, CatalogDomainTabs, CatalogPillFilterGroup, CatalogViewToggle, CatalogToolbar, CatalogTableCard, CatalogMoreActionsMenu) with zero inner left rails\n- Converge Platform and App Creative Catalog onto horizontal domain tabs, toolbar source pills, full-page /new and /edit authoring routes, unified table/cards toggle defaulting to table, locale and advanced filters, clickable platform distribution summary badges, and icon-only row/card actions\n- Converge Platform and App Banners onto shared BannerListWorkspace defaulting to table view with Table/Cards toggle, status pills with counts, platform distribution badge column, and Archive nested under More actions"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T10:15:37Z"
+  created_at: "2026-11-24T10:26:15Z"
