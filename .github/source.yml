@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6b07dddb1520716c80019cea9443b9a15aa790de"
+  sha: "4d72465c13ad19bf1075f4bd49360d9cef801c90"
   ref_type: "branch"
-  ref_name: "feat/device-bound-support-content"
-  run_id: 45320117597
+  ref_name: "feat/cosmos-288-messaging-channels"
+  run_id: 45320679723
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): pin regenerated support runtime client"
+  message: "feat(messaging): add scoped SMS and email channel settings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:31:43Z"
+  created_at: "2026-11-24T03:36:46Z"
