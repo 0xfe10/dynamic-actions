@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d47f04675dd412bb03d61b7986f8aea14a26d888"
+  sha: "e96c694929247c76957c6a3f348d204f6b4eea18"
   ref_type: "branch"
-  ref_name: "ao/vega-slice-w3/vega-ux-w3"
-  run_id: 45400438417
+  ref_name: "ao/execute-slice-w1/vega-ux-w1"
+  run_id: 45402135449
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): unify remaining workspaces on full-width tables and retire inner rails"
+  message: "fix(vega): commit Edit manifest replacement and derived bindings atomically\n\n- Replace standalone manifest finalize + separate draft PUT on Edit with Mercury atomic stage + existing-item commit via replaceItemManifestAtomically\n- Propagate commit errors (missing/inactive font 404, revision conflict 409, network errors) cleanly to RoleUploadSlot so success toasts and state updates never fire on failed commits\n- Preserve unsaved local form edits during atomic manifest replacement using persisted draft fields + expectedRevision\n- Add regression test for atomic Edit commit rejection (404 / 409) and reload coherence in creative-catalog-font-sync.test.tsx"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T13:09:11Z"
+  created_at: "2026-11-24T13:19:05Z"
