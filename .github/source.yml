@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2503d96357ee874c30d604aac6e4d68b9717165e"
+  sha: "8dfdc3c436a2e236d906d70242dae38c619c5ead"
   ref_type: "branch"
-  ref_name: "fix/localization-test-teardown-race"
-  run_id: 45415699921
+  ref_name: "main"
+  run_id: 45417870661
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(localization): drain disk queue before temp dir teardown"
+  message: "test(localization): drain disk queue before temp dir teardown (#469)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T14:35:13Z"
+  created_at: "2026-11-24T14:46:51Z"
