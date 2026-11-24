@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "dc3af2f2e295bb41ee1604dc53c38bc3767f34dc"
+  sha: "51c6f8631c15563345a818abac379838e5e3f936"
   ref_type: "branch"
   ref_name: "ao/vega-slice-w3/vega-ux-w3"
-  run_id: 45411180825
+  run_id: 45413806994
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): harden messaging, help center, and theme preview states"
+  message: "fix(vega): preserve draft on failed channel reload and derive live theme preview"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T14:10:59Z"
+  created_at: "2026-11-24T14:25:05Z"
