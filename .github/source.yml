@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b5019c726416e720c606ba998ed9744016410a7a"
+  sha: "93f22a49d8544d30349ac47a68cdbbec401617f4"
   ref_type: "branch"
-  ref_name: "ao/device-categories/device-redesign-s3-app"
-  run_id: 45478673518
+  ref_name: "ao/vega-platform-models/device-redesign-s2-platform"
+  run_id: 45478997986
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): implement App 2-layer device categories, shuttle, and readonly model drawer (Slice 3)"
+  message: "feat(vega): redesign platform device models, unified distribution, and paper type library"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T20:14:41Z"
+  created_at: "2026-11-24T20:16:33Z"
