@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "cb948b1d993a5cb697c32c250b3220a1f117308b"
+  sha: "a98ffc2a71d4b3ede4d91db1b953dce8d72dc7ac"
   ref_type: "branch"
-  ref_name: "feat/device-bound-support-content"
-  run_id: 45313040996
+  ref_name: "main"
+  run_id: 45314639663
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "feat(support): filter content by connected printer"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T02:31:54Z"
+  created_at: "2026-11-24T02:45:13Z"
