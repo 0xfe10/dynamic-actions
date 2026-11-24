@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "2773e50996e95f9213de51ec7de76f6eee105717"
+  sha: "f507534012dc5ccb676887945c86639d0b104b0f"
   ref_type: "branch"
-  ref_name: "ao/you-are-implementing-2/vega-table-summary-popover"
-  run_id: 45429418397
+  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
+  run_id: 45435231101
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): unify multi-item table cells with TableSummaryPopover"
+  message: "fix(creative): return presigned preview URLs and polish Vega asset previews"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T15:47:05Z"
+  created_at: "2026-11-24T16:17:13Z"
