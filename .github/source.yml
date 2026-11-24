@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6f0d8b99ddc2550395c907b730bb492af64dbd8a"
+  sha: "6a649be56510040ce546feac63731af2c9bd0d6b"
   ref_type: "branch"
-  ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
-  run_id: 45389653210
+  ref_name: "ao/execute-slice-w1/vega-ux-w1"
+  run_id: 45392089757
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): address PR #648 Round 1 security and concurrency findings\n\nAddress all 7 security and concurrency findings from Round 1 review on prtmax/cosmos#648:\n\n- Serialize password Login and session Refresh with OTP password reset by locking csm_app_users (FOR SHARE) before locking session/credential rows and revalidating credentials and revocation state inside the transaction.\n- Add dedicated MERCURY_OTP_ANONYMOUS_AUTH_ENABLED rollout gate (default false, requiring MERCURY_OTP_ASYNC_DELIVERY_ENABLED) isolating anonymous auth jobs from Slice 2 signed-in OTP delivery during mixed-version deployments.\n- Close anti-enumeration timing and error differences by validating enqueue prerequisites upfront, executing equivalent ID and AEAD sealing work for suppressed sends, and applying a 25ms minimum dispatch latency floor.\n- Enforce one canonical lock order across resend and redemption (sorted rate limits -> CAPTCHA -> sorted contact advisory locks -> csm_app_users -> csm_app_auth_otp_challenges -> credentials/sessions) to eliminate resend/redeem deadlocks.\n- Lock csm_app_users FOR SHARE during OTP eligibility checks to prevent post-closure challenge/delivery creation racing account closure purge.\n- Harden procedural slider CAPTCHA by matching real and decoy notch shading and adding independent per-pixel surface noise between background and piece cutouts.\n- Drop X-Real-IP fallback when no trusted XFF hop is present, sample post-lock clock_timestamp() once after acquiring all sorted rate-limit locks, and add PostgreSQL -race regression tests for all fixes."
+  message: "merge: sync origin/main (Plan W Slice W2 #647) into Slice W1 branch"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T12:02:18Z"
+  created_at: "2026-11-24T12:17:53Z"
