@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d1d52f9bdd961793fd69bba9be009c0451ae0201"
+  sha: "b1c93a5404f6b649d37b0130d1e0f5c5adbc02f9"
   ref_type: "branch"
-  ref_name: "ao/device-redesign/device-redesign-slice1"
-  run_id: 45450436843
+  ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
+  run_id: 45450654117
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(devicecatalog): implement Device & Printer Redesign Slice 1 APIs and schema\n\nAdd migration 00197_device_catalog_redesign.sql, DeviceProduct native fields and filtering (Gap 2), paper type consumable library grouping metadata with unique default per group (Gap 3), per-model attribute sort ordering (Gap 5), derived model config import API (Gap 4), unified product distribution replace API (UX Fix 1), and two-layer App device categories with cross-category deduplication shuttle and runtime connect-page catalog API (Gap 1). Regenerate OpenAPI baselines and @cosmos/platform-api with zero breaking changes."
+  message: "test(vega): tighten tab guard pagination exclusion and Tailwind important matching"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T17:36:38Z"
+  created_at: "2026-11-24T17:38:12Z"
