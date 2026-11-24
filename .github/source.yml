@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d55422239879cc8dc1f160b726d52e1847c23a2a"
+  sha: "e6e043e37bdc31a83f43161f398addba1678bfc2"
   ref_type: "branch"
   ref_name: "ao/implement-slice-4/orion-288-slice-4"
-  run_id: 45404684594
+  run_id: 45406126438
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): render live captcha cooldown and refine accepted notice"
+  message: "fix(auth): avoid duplicate toast on timed captcha verify cooldown"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T13:34:05Z"
+  created_at: "2026-11-24T13:42:12Z"
