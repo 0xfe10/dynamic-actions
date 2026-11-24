@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "93f22a49d8544d30349ac47a68cdbbec401617f4"
+  sha: "78be3f891b6e18a759afe90a342f6accf3848a4c"
   ref_type: "branch"
   ref_name: "ao/vega-platform-models/device-redesign-s2-platform"
-  run_id: 45478997986
+  run_id: 45480428563
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): redesign platform device models, unified distribution, and paper type library"
+  message: "style(vega): format platform device redesign files with Prettier"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T20:16:33Z"
+  created_at: "2026-11-24T20:24:24Z"
