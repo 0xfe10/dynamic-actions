@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e096f2211398e1bf63cd56e47deb97803f4d8117"
+  sha: "ecdb281525e44470d203716c9596b1bc923915ba"
   ref_type: "branch"
-  ref_name: "ao/vega-slice-w3/vega-ux-w3"
-  run_id: 45415948172
+  ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
+  run_id: 45418027796
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): disable messaging channel form during explicit reload"
+  message: "chore(orion): bump Orion submodule to 8dfdc3c4 for localization test teardown fix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T14:36:29Z"
+  created_at: "2026-11-24T14:47:42Z"
