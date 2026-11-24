@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7e69ef95eb0654f067da50291af91a5c315aacca"
+  sha: "4549db35455c1cb3dadea1f7e2e12ded47189932"
   ref_type: "branch"
   ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
-  run_id: 45392991077
+  run_id: 45394892241
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): close Round 2 anti-enumeration, captcha decoy, and concurrency test gaps"
+  message: "fix(auth): align captcha slot x-bounds and frosted interior fill parity"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T12:23:39Z"
+  created_at: "2026-11-24T12:35:08Z"
