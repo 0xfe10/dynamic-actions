@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ad0fd2c802339789ade9d7d0a5a614cabe773cf8"
+  sha: "6b07dddb1520716c80019cea9443b9a15aa790de"
   ref_type: "branch"
-  ref_name: "docs/cosmos-507-openapi-descriptions"
-  run_id: 45319794003
+  ref_name: "feat/device-bound-support-content"
+  run_id: 45320117597
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(mercury): describe platform OpenAPI business behavior\n\nDocument every public platform operation and parameter from the\nowning behavior. Paths, status codes, requiredness, and wire shapes\nstay unchanged. Runtime operation summaries remain for a later Orion\npin bump because description text drifts the pinned generated client.\n\nRefs #507"
+  message: "chore(orion): pin regenerated support runtime client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:29:15Z"
+  created_at: "2026-11-24T03:31:43Z"
