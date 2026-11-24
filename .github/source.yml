@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "07d7b5cb07138533d24c447ba6b760b6918deef2"
+  sha: "42177fe2228d3bcacff82c61460c61131865bc5f"
   ref_type: "branch"
-  ref_name: "feat/orion-14-color-theme-and-ui-skill"
-  run_id: 45324938154
+  ref_name: "main"
+  run_id: 45325897905
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(theme): tighten color guard, preserve dark media stages, and align display names\n\nAddress Round 1 review findings on the 14-color theme contract and UI migration:\n- Tighten no_hardcoded_ui_colors_test to catch import-prefixed (ui.Color, material.Colors) and multiline expressions across full files, and replace file-level skipping with exact per-line // orion-color-allow: marker counts.\n- Migrate editor_color_jigsaw graffiti UI chrome and ImageToolSuperview to semantic context.colors tokens while keeping canvas ink on AppLimit.defaultInkColor and stage backdrop on OrnMediaBackdrop.\n- Add OrnMediaBackdrop so fullscreen media lightboxes, video fallbacks, and the dark avatar cropper stay genuinely dark even under light-textPrimary themes.\n- Use high-contrast context.colors.textPrimary copy on scan_print's tinted error banner (>= 14:1 contrast).\n- Align colors.surfaceDisabled English display name ('Sand gray (default/disabled fill)') word-for-word with Cosmos #637.\n\nRefs #439"
+  message: "fix(rigel): stabilize document submission widget tests\n\nMock secure storage during the Mellow submission tests and target the six-page confirmation dialog."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:14:13Z"
+  created_at: "2026-11-24T04:22:21Z"
