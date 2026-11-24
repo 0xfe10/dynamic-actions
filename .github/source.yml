@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b0c642d678b028611d9b4cfb517e19ee7b6bc591"
+  sha: "09ba865a7c553288f311f5b1898eb1ee2efd4fb5"
   ref_type: "branch"
-  ref_name: "feat/feature-flags-slice2"
-  run_id: 45497218316
+  ref_name: "ao/device-categories/device-redesign-s3-app"
+  run_id: 45497629080
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): upgrade feature rollouts and experiments"
+  message: "fix(vega): address PR #656 Round 4 review findings (P1, P2-1..P2-4)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T22:03:51Z"
+  created_at: "2026-11-24T22:06:16Z"
