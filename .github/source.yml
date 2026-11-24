@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c7bae9727396bcc63dd822cb63233c6996f7f12b"
+  sha: "164b12694827e0699c7aad945d8b8e28eaf71280"
   ref_type: "branch"
-  ref_name: "feat/device-materials-upgrade"
-  run_id: 45463418513
+  ref_name: "ao/device-redesign/device-redesign-slice1"
+  run_id: 45463730285
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address device material editor review findings"
+  message: "fix(device-catalog): address Round 3 review findings for redesign Slice 1"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T18:48:34Z"
+  created_at: "2026-11-24T18:50:07Z"
