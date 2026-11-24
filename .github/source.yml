@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "72e07d3b626aaa3c96ca7a2379bd7ecb753c2b76"
+  sha: "db2472b4c2c725633da6c0347928557998be1554"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45151895208
+  ref_name: "fix/z11-sublimation-hardware-fixes"
+  run_id: 45356565116
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(inkjet): harden H100 XSL/XPL recovery, LAN fallback, and Android color_core build (#77)"
+  message: "fix(sublimation): align Z11 hardware RPC/card behavior and enable TCP_NODELAY"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-23T09:59:13Z"
+  created_at: "2026-11-24T08:29:45Z"
