@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "80e3c4b95781c36a2e6f22dbf63bb347ca2ec214"
+  sha: "07d7b5cb07138533d24c447ba6b760b6918deef2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45324700024
+  ref_name: "feat/orion-14-color-theme-and-ui-skill"
+  run_id: 45324938154
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): honor RUNTIME_APP_BINDING in unpinned offline staging bootstrap (#454)\n\n* fix(rigel): honor runtime app binding in unpinned bootstrap\n\nWave 4C offline vividprint staging builds export the handwritten development\nbootstrap when assemble cannot replace the gitignored generated assembly.\nThose builds already pass RUNTIME_APP_BINDING and RUNTIME_BASE_URL via\nflutter --dart-define, but developmentProfile still defaulted to\norion-foundation. Requests then hit /apps/orion-foundation/* and return\nNot Found while staging vividprint endpoints return 200.\n\nAdd a small resolver for assembly dart-defines, regression tests, and a\nlive staging check tying orion-foundation 404s to the Wave 4C symptoms.\n\nRefs #449, #450, #451\n\n* fix(rigel): address review on unpinned runtime define handling\n\nTrim RUNTIME_APP_BINDING and ORION_DEV_APP_ID, validate trimmed runtime\nURLs before AppProfile, and document RUNTIME_* precedence over ORION_DEV_*.\nRemove live staging HTTP unit tests; add offline assembly call-path coverage.\n\nRefs #449, #450, #451\n\n* chore(rigel): dart format after review fixes\n\n* test(rigel): assert unpinned assembly RUNTIME define wiring offline\n\nExport resolveUnpinnedAssemblyDevelopmentProfile with shared define constants\nand add source-level wiring tests so CI fails if development_assembly bypasses\nRUNTIME_APP_BINDING. Remove no-op dart-define early returns.\n\nRefs #449, #450, #451\n\n* style(rigel): satisfy prefer_interpolation_to_compose_strings in wiring test"
+  message: "fix(theme): tighten color guard, preserve dark media stages, and align display names\n\nAddress Round 1 review findings on the 14-color theme contract and UI migration:\n- Tighten no_hardcoded_ui_colors_test to catch import-prefixed (ui.Color, material.Colors) and multiline expressions across full files, and replace file-level skipping with exact per-line // orion-color-allow: marker counts.\n- Migrate editor_color_jigsaw graffiti UI chrome and ImageToolSuperview to semantic context.colors tokens while keeping canvas ink on AppLimit.defaultInkColor and stage backdrop on OrnMediaBackdrop.\n- Add OrnMediaBackdrop so fullscreen media lightboxes, video fallbacks, and the dark avatar cropper stay genuinely dark even under light-textPrimary themes.\n- Use high-contrast context.colors.textPrimary copy on scan_print's tinted error banner (>= 14:1 contrast).\n- Align colors.surfaceDisabled English display name ('Sand gray (default/disabled fill)') word-for-word with Cosmos #637.\n\nRefs #439"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:12:12Z"
+  created_at: "2026-11-24T04:14:13Z"
