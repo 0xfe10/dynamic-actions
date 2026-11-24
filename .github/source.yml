@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a805a7e5f83b872d00bc2e5f8a58f87cdf647c2f"
+  sha: "51f2cb7c2b76364bc6b6fe166f7e4f128e5e08ba"
   ref_type: "branch"
-  ref_name: "feat/device-materials-upgrade"
-  run_id: 45451456372
+  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
+  run_id: 45452561416
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): upgrade device material editors and lists"
+  message: "fix(creative): sign library detail outside pgx rows, lock editor revision, and align MIME parity\n\nAddress Round 2 review findings and Staging CI integration test:\n- Collect and close pgx rows before signing library detail asset preview URLs to avoid busy connections on cold-cache multi-profile reads\n- Enforce safe non-active MIME allowlist parity in DirectoryStore Put/Stat/PresignGetWithContentType and ReadSigner\n- Lock baseline editingRevision in CreativeItemEditPage and keep unsaved form edits mounted on failed background refetches\n- Wire version inspect and category edit dialogs to expiry-aware TanStack Query hooks\n- Seed csm_app_regions in TestCreativeLibraryThumbnailVisibilityGates and add multi-profile MaxConns=1 integration and Vega polling regression tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T17:42:26Z"
+  created_at: "2026-11-24T17:48:22Z"
