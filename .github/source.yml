@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0d2f74a5af0a9619e5dbd74ce3f7cd64d050aa07"
+  sha: "a6819571df008e0e9dff77f4dba79741521c8e6f"
   ref_type: "branch"
-  ref_name: "feat/cosmos-288-messaging-channels"
-  run_id: 45339317626
+  ref_name: "fix/devicecatalog-material-cleanup-owner"
+  run_id: 45341618566
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(messaging): merge device support baseline"
+  message: "fix(mercury): set source_owner_id when expiring device material uploads"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T06:17:21Z"
+  created_at: "2026-11-24T06:35:57Z"
