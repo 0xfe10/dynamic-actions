@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5bea61eb986ffb71338af6d800b6c4feb725ea20"
+  sha: "96534ad8c8b746a474333ed70c9b9af140539bf7"
   ref_type: "branch"
-  ref_name: "feat/cosmos-288-messaging-channels"
-  run_id: 45342651831
+  ref_name: "main"
+  run_id: 45345868461
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(mercury): wait for listeners before timing shutdown"
+  message: "feat(messaging): add scoped SMS and email channel settings (#639)\n\n* feat(messaging): add scoped SMS and email channel settings\n\n* test(mercury): wait for listeners before timing shutdown"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T06:44:22Z"
+  created_at: "2026-11-24T07:10:02Z"
