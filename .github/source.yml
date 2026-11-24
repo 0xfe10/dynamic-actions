@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "953ff4726e4e5735309555e46aa54f75d7bd998a"
+  sha: "e5af0bb4563005f6a31f91b2b38d927199664788"
   ref_type: "branch"
-  ref_name: "feat/device-materials-upgrade"
-  run_id: 45455968568
+  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
+  run_id: 45457974764
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(vega): preserve compatibility with Markdown tab styling"
+  message: "Merge remote-tracking branch 'origin/main' into ao/urgent-boss-bug/fix-creative-preview-images\n\n# Conflicts:\n#\tlyra/apps/vega/src/creative-catalog/category-form-dialog.tsx"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T18:07:10Z"
+  created_at: "2026-11-24T18:18:30Z"
