@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a61f233ea0bc0548e1e2f0bf983933619a840f4a"
+  sha: "45822afb077515934bef5629a3c592ada9282002"
   ref_type: "branch"
   ref_name: "fix/orion-308-fixed-paper-picker-scrim"
-  run_id: 45332561093
+  run_id: 45334212074
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): use the shared scrim for fixed paper picker"
+  message: "test(mellow): assert the fixed paper sheet route scrim"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T05:20:09Z"
+  created_at: "2026-11-24T05:34:18Z"
