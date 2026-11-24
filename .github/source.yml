@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "884dab8f9e09b1172c9db632640160618368cea7"
+  sha: "944c2be9a37b13c3dcc5012bbe2afdc38042d021"
   ref_type: "branch"
   ref_name: "feat/ble-ap-credentials-query"
-  run_id: 45382011029
+  run_id: 45395978248
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(sublimation,inkjet): add BLE SoftAP credential query for Z11 and H100"
+  message: "feat(network,frame_cloud,sublimation,inkjet): add printer Wi-Fi plugin and Direct AP discovery"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T11:12:30Z"
+  created_at: "2026-11-24T12:41:48Z"
