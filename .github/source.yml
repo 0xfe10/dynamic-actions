@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "27fd1f294a649db2a299540b518fb5da47db6b45"
+  sha: "b7330d150881431ee42560b62bc737caadf55c09"
   ref_type: "branch"
-  ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
-  run_id: 45396689460
+  ref_name: "ao/execute-slice-w1/vega-ux-w1"
+  run_id: 45398635832
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): eliminate partial-mask source correlation across captcha piece and notches"
+  message: "fix(vega): strictly preflight-validate uploaded manifests and persist coherent bindings on Edit\n\n- Enforce Mercury closed manifest keys and explicit fallback:\"systemSans\" font entries on uploaded manifest JSON files in manifest-font-sync.ts (rejecting wrapped {\"manifest\":...} payloads and normalized shortcuts)\n- Track async manifest File.text() parsing state to disable Save on Create while in flight and re-validate/derive fontBindings inside save.mutationFn before staging\n- Preflight-validate manifest JSON files before upload-intent creation on Edit and immediately persist derived fontBindings alongside finalized manifestAssetId without overwriting unsaved form edits\n- Add regression tests in creative-catalog-font-sync.test.tsx covering delayed File.text(), invalid manifest preflight rejection, strict parser/wrapper/fallback checks, and immediate Edit coherence"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T12:46:10Z"
+  created_at: "2026-11-24T12:58:18Z"
