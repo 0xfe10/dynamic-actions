@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6a62626aa2b5325b3d3fb04e5550e895b78ff4b2"
+  sha: "e6a9da0ff852df544b0254b5c75a3bc3fa385675"
   ref_type: "branch"
   ref_name: "fix/wave4f-ux-bugs-465-466"
-  run_id: 45371723314
+  run_id: 45373189296
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor_color_jigsaw,l10n): make graffiti clear pill opaque and preserve packaged fallback locales\n\n- Give GraffitiPage Key('graffiti-clear-pill') a solid opaque semantic surface fill (gradient: null, border: colors.border) with colors.textTertiary (disabled) and colors.textPrimary (enabled) foregrounds so both states have legible contrast over the dark canvas (#466).\n- Add FluentLocalizer.supportsPackagedFallback and preserve saved/selected packaged-fallback locales in LocaleCubit.select and LocaleCubit._apply when remote/bundled packs omit them (#465).\n- Update Graffiti clear pill tests to assert no translucent gradient and legible contrast across both disabled and enabled states on default and custom palettes, and add LocaleCubit regression tests for remote-English-only + saved zh-CN jigsaw resolution."
+  message: "fix(editor_color_jigsaw): force full opacity on graffiti clear pill fill\n\n- Normalize clearPillDecoration fill to colors.surface.withValues(alpha: 1.0) in GraffitiPage so translucent #RRGGBBAA surface tokens cannot let the dark canvas bleed through (#466).\n- Exercise a translucent surface token (Color(0x40FFFFFF)) in wave4f_collage_graffiti_ux_test.dart verifying rendered fill opacity is 1.0 and contrast meets thresholds across disabled and enabled states."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T10:07:36Z"
+  created_at: "2026-11-24T10:16:36Z"
