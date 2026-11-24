@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "af479377012178b48762ba5d85622965923dcfd3"
+  sha: "b113a0e057796a8e11b8de57c1f5eed2fae10ea2"
   ref_type: "branch"
   ref_name: "feat/device-bound-support-content"
-  run_id: 45312466023
+  run_id: 45312672029
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): unify device support content delivery"
+  message: "fix(vega): remove unused distribution editor import"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T02:27:36Z"
+  created_at: "2026-11-24T02:28:58Z"
