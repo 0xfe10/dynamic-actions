@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6da5be70b67e71090f5c6fba7ad3ddfa628ce399"
+  sha: "ad0fd2c802339789ade9d7d0a5a614cabe773cf8"
   ref_type: "branch"
-  ref_name: "feat/cosmos-14-color-theme-and-vega-ui"
-  run_id: 45318104683
+  ref_name: "docs/cosmos-507-openapi-descriptions"
+  run_id: 45319794003
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(theme): adopt 14-color semantic palette and rename vega-ui skill\n\nMigrate platform style themes directly to the 14-color semantic schema (brand, auxiliary, text neutrals, and surface/border neutrals) via forward SQL migration 00192_style_theme_14_semantic_colors.sql, removing legacy onSurface, onSurfaceVariant, outline, and surfaceCanvas keys without dual-key aliases.\n\nUpdate Mercury token normalization and runtime merging to enforce the 14-color contract (20 runtime tokens including fixed typography, spacing, and radius defaults), upgrade the Vega theme editor, preview card, and i18n labels to the 4 semantic groups, and rename .agents/skills/cosmos-admin-design-system to .agents/skills/vega-ui.\n\nRefs prtmax/orion#439"
+  message: "docs(mercury): describe platform OpenAPI business behavior\n\nDocument every public platform operation and parameter from the\nowning behavior. Paths, status codes, requiredness, and wire shapes\nstay unchanged. Runtime operation summaries remain for a later Orion\npin bump because description text drifts the pinned generated client.\n\nRefs #507"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:14:43Z"
+  created_at: "2026-11-24T03:29:15Z"
