@@ -2,10 +2,10 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7cd3ef8627b33d73c4b71e72740460d59300c051"
+  sha: "87fa0cfe8184b38db2558bc661539b5b1b0e539a"
   ref_type: "branch"
   ref_name: "feat/feature-flags-slice1"
-  run_id: 45472552967
+  run_id: 45473454313
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "feat(mercury): add feature rollout lifecycle and targeting APIs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T19:39:52Z"
+  created_at: "2026-11-24T19:45:05Z"
