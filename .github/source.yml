@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c67b1a85b239520f08856a86ceed80080018960a"
+  sha: "8b51b2eca09e1fee32aaaa38c4efc77893a8a6ff"
   ref_type: "branch"
   ref_name: "fix/wave4e-ux-bugs-461-462-463"
-  run_id: 45346621213
+  run_id: 45363089286
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): resolve Wave 4E closure exit, pending-closure toast, and paper picker i18n\n\n- Return to guest Personal Center via GoRouter (or root route) after acknowledging account closure confirmation when the session is revoked (#461).\n- Suppress expected HTTP 409 ACCOUNT_PENDING_CLOSURE confirmation challenges from RuntimeApiClient failure reporting and app-shell error notices so only the localized revocation dialog appears (#462).\n- Localize A4-Pocket paper picker, consumable detail, and preview copy across en, zh-CN, and zh-Hant-TW Fluent bundles and fallback maps (#463).\n- Add unit and widget regression tests covering all three fixes, narrow/scaled layout, and semantic theme tokens."
+  message: "fix(auth,l10n): scope pending-closure failure suppression and prioritize selected-locale fallbacks\n\n- Replace global 409 ACCOUNT_PENDING_CLOSURE suppression with request-scoped runtimeApiExpectedProblemCodesKey opt-in used only on initial interactive sign-in attempts that present the cancel-closure dialog; repeated 409 failures on revokePendingClosure: true retries still emit failure reports and surface both the runtime error notice and auth feedback (#462).\n- Reorder FluentLocalizer resolution so selected-locale remote, bundled, and packaged fallbacks take precedence over reference fallbackLocale bundles, preventing shipped builds with older or English-ahead packs from leaking English paper-picker strings under zh-CN (#463).\n- Add unit and widget regression tests for retry 409 error reporting and shipped-pack locale precedence."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T07:16:02Z"
+  created_at: "2026-11-24T09:13:22Z"
