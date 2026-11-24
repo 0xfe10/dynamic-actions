@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1e00d5383b261ce1e611226f1a94d9c4b7bb2954"
+  sha: "aa1c868b154723a500db6854cdb863e65533bec8"
   ref_type: "branch"
-  ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
-  run_id: 45384743300
+  ref_name: "ao/execute-slice-w2/vega-plan-w-slice-w2"
+  run_id: 45385522267
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(auth): add anonymous runtime OTP auth, slider CAPTCHA, and rate limits\n\nImplement Slice 3 of prtmax/cosmos#288 on top of Slice 1 (#639) and Slice 2 (#641):\n\n- Add forward-only migration 00196_app_auth_captcha_otp_and_rate_limits.sql, checksum entry, and FK allowlist entries for csm_app_auth_captchas, csm_app_auth_otp_challenges, csm_otp_delivery.auth_challenge_id, and csm_app_auth_rate_limits.\n- Add procedural PNG slider CAPTCHA generation (360x180 background + 48x48 transparent piece, zero targetRatio exposure, 3-attempt / 120s budget, single-use proof token).\n- Add PostgreSQL sorted multi-bucket rate limiter with dual-fingerprint key-rotation support, trusted proxy CIDR resolution (MERCURY_TRUSTED_PROXIES), and shared appusersecurity send limits.\n- Register anonymous Runtime auth endpoints under /api/v1/runtime/apps/{appId}: GET /auth/channels, POST /auth/captcha/challenges, POST /auth/captcha/challenges/{challengeId}/verify, POST /auth/otp/challenges (202 anti-enumeration), POST /session/otp (SMS auto-signup without dummy password), and POST /auth/password/reset (204 revoking all sessions/refresh families).\n- Extend messagingworker runner/reaper and appuserclosure purge for auth OTP challenges and expired CAPTCHA/rate-limit cleanup, and update openapi-baseline/runtime.json."
+  message: "fix(vega): pin initial implicit region on bare scoped storage binding create"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T11:30:25Z"
+  created_at: "2026-11-24T11:35:19Z"
