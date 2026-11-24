@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "46c8059a77c9ce122d0e152551ca25ac1b1881a2"
+  sha: "e634a5f0c46d405e2db93df97c965cb721c7e2c6"
   ref_type: "branch"
-  ref_name: "docs/cosmos-507-openapi-descriptions"
-  run_id: 45365673659
+  ref_name: "main"
+  run_id: 45366533843
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "docs(mercury): describe messaging and device selection APIs\n\nDocument the platform messaging and device-material selection operations from their handlers, and regenerate the platform contract without changing runtime output."
+  message: "feat(theme): adopt 14-color semantic palette and rename vega-ui skill (#637)\n\nMigrate platform style themes directly to the 14-color semantic schema (brand, auxiliary, text neutrals, and surface/border neutrals) via forward SQL migration 00194_style_theme_14_semantic_colors.sql, removing legacy onSurface, onSurfaceVariant, outline, and surfaceCanvas keys without dual-key aliases.\n\nUpdate Mercury token normalization and runtime merging to enforce the 14-color contract (20 runtime tokens including fixed typography, spacing, and radius defaults), upgrade the Vega theme editor, preview card, and i18n labels to the 4 semantic groups, rename .agents/skills/cosmos-admin-design-system to .agents/skills/vega-ui, and advance the orion submodule to af39c6cf9eefed689f8f35d483bba5b09fdad3c3.\n\nRefs prtmax/orion#439"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T09:29:43Z"
+  created_at: "2026-11-24T09:35:00Z"
