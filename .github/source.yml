@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f507534012dc5ccb676887945c86639d0b104b0f"
+  sha: "38c91fd9a5321589acd4ffb257d9827864bed5f7"
   ref_type: "branch"
-  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
-  run_id: 45435231101
+  ref_name: "ao/you-are-implementing-2/vega-table-summary-popover"
+  run_id: 45437101418
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(creative): return presigned preview URLs and polish Vega asset previews"
+  message: "fix(vega): address PR #650 review findings for TableSummaryPopover"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T16:17:13Z"
+  created_at: "2026-11-24T16:26:52Z"
