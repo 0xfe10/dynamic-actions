@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "889fa6251522c86a68a132ee052a00e50d84790d"
+  sha: "e4db6146674e73bd06e7092240e0b4e28ad6fd7c"
   ref_type: "branch"
-  ref_name: "feat/cosmos-288-otp-worker-slice2"
-  run_id: 45367847026
+  ref_name: "docs/cosmos-507-openapi-descriptions"
+  run_id: 45369924822
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(integration): finalize Round 2 pre-send fence and closure purge checks"
+  message: "docs(mercury): correct channel create and provider changes\n\nCreating a messaging channel always returns disabled, and changing its provider returns 409 only while the channel is active."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T09:43:29Z"
+  created_at: "2026-11-24T09:56:36Z"
