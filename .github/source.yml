@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "09ba865a7c553288f311f5b1898eb1ee2efd4fb5"
+  sha: "978d1e124d65bed33cd3414ec2324ff0bedfa06e"
   ref_type: "branch"
   ref_name: "ao/device-categories/device-redesign-s3-app"
-  run_id: 45497629080
+  run_id: 45500396000
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address PR #656 Round 4 review findings (P1, P2-1..P2-4)"
+  message: "fix(vega): address PR #656 Round 5 review findings (P2-1, P2-2)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T22:06:16Z"
+  created_at: "2026-11-24T22:23:13Z"
