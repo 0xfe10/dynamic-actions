@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "aa1c868b154723a500db6854cdb863e65533bec8"
+  sha: "7be77130e5e123a5276619c7347cac341eb7ae2c"
   ref_type: "branch"
-  ref_name: "ao/execute-slice-w2/vega-plan-w-slice-w2"
-  run_id: 45385522267
+  ref_name: "ao/execute-slice-w1/vega-ux-w1"
+  run_id: 45387408594
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): pin initial implicit region on bare scoped storage binding create"
+  message: "fix(vega): sync template font bindings, align studio catalog columns, and extract app catalog routes\n\n- Enforce bidirectional inline manifest.fonts and fontBindings sync on JSON edit and Save, and lock immutable uploaded manifestAssetId bindings on Edit\n- Lock font binding edits while Manifest JSON is invalid so invalid JSON text and errors are never wiped by remounting\n- Align App All, Library, and Owned table columns (including Updated), resolve imported item category names from library category lookups, and expose the Source filter in Advanced options\n- Extract App Icon, Font, and Banner sub-routes into app-catalog-routes.tsx, reducing router.tsx below origin/main\n- Expand Plan W tests across All/Library/Owned pills and add creative-catalog-font-sync.test.tsx covering JSON sync, invalid JSON lock, and manifestAssetId lock"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T11:35:19Z"
+  created_at: "2026-11-24T11:47:43Z"
