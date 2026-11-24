@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "635874907b54293656fc839ade54a2165674ba9e"
+  sha: "c3a5fb6ccbf827c28d6c8a348d9679ee9777208c"
   ref_type: "branch"
-  ref_name: "ao/execute-slice-w1/vega-ux-w1"
-  run_id: 45382851592
+  ref_name: "ao/execute-slice-w2/vega-plan-w-slice-w2"
+  run_id: 45383783120
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address Plan W Slice W1 review findings\n\n- Complete dirty-state detection on CreativeItemCreatePage (kind, payload, metadata, keywords, fonts, invalid JSON)\n- Redirect App Save Draft to source=owned so newly saved drafts remain visible immediately\n- Converge Creative directory filters, table columns, and imported row artwork/metadata across Platform and App views\n- Wire real catalog font bindings and unified form shell/sections across Creative Create and Edit pages\n- Add exact browser titles for Creative/Banner Create & Edit and all App settings entry/sub-routes\n- Wrap direct App Icon, Font, and Banner sub-routes with AppManagementPageLayout/AppControlPlaneSubnav\n- Split Plan W test coverage into creative-catalog-plan-w.test.tsx and expand subnav sub-route tests"
+  message: "fix(vega): enforce create-only eligibility and preserve draft on scoped storage binding create"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T11:17:55Z"
+  created_at: "2026-11-24T11:23:59Z"
