@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1df3b1e37db70473e5f9f12b03943f4b6b39b35f"
+  sha: "0d2f74a5af0a9619e5dbd74ce3f7cd64d050aa07"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45338637517
+  ref_name: "feat/cosmos-288-messaging-channels"
+  run_id: 45339317626
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): unify device support content delivery\n\nAdd App opt-in, device bindings, and connected-device filtering for manuals, tutorials, and Help Center. Update Vega and pin the matching Orion Runtime client."
+  message: "chore(messaging): merge device support baseline"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T06:11:56Z"
+  created_at: "2026-11-24T06:17:21Z"
