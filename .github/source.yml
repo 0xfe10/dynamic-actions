@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "346eb1e00c9f3525e62670999a5cb69c695dde93"
+  sha: "3251a598ff44b209e9901b6c8e098c37a9a3c207"
   ref_type: "branch"
   ref_name: "ao/vega-platform-models/device-redesign-s2-platform"
-  run_id: 45487833772
+  run_id: 45490392052
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): harden schema enum option sync, retry recovery, and Add/Save exclusion"
+  message: "fix(vega): enforce UTF-8 option limit, disabled-enum guard, and superseded retry check"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T21:07:39Z"
+  created_at: "2026-11-24T21:22:29Z"
