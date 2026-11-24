@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ee1270130f5d25435c4d30d8b5d931658b021a27"
+  sha: "fb5f16e2f606408db13bafbef709ea653e13a511"
   ref_type: "branch"
-  ref_name: "fix/wave4-staging-runtime-404"
-  run_id: 45318941568
+  ref_name: "main"
+  run_id: 45319839022
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): honor runtime app binding in unpinned bootstrap\n\nWave 4C offline vividprint staging builds export the handwritten development\nbootstrap when assemble cannot replace the gitignored generated assembly.\nThose builds already pass RUNTIME_APP_BINDING and RUNTIME_BASE_URL via\nflutter --dart-define, but developmentProfile still defaulted to\norion-foundation. Requests then hit /apps/orion-foundation/* and return\nNot Found while staging vividprint endpoints return 200.\n\nAdd a small resolver for assembly dart-defines, regression tests, and a\nlive staging check tying orion-foundation 404s to the Wave 4C symptoms.\n\nRefs #449, #450, #451"
+  message: "chore(runtime): regenerate client from Cosmos 636 (#452)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:21:45Z"
+  created_at: "2026-11-24T03:29:25Z"
