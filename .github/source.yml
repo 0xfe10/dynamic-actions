@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2a7798a5c73fa65e9e319bca48a1af1d5ddc4da5"
+  sha: "80e3c4b95781c36a2e6f22dbf63bb347ca2ec214"
   ref_type: "branch"
-  ref_name: "fix/document-navigation-test-assembly"
-  run_id: 45324105635
+  ref_name: "main"
+  run_id: 45324700024
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): stabilize document submission widget tests"
+  message: "fix(rigel): honor RUNTIME_APP_BINDING in unpinned offline staging bootstrap (#454)\n\n* fix(rigel): honor runtime app binding in unpinned bootstrap\n\nWave 4C offline vividprint staging builds export the handwritten development\nbootstrap when assemble cannot replace the gitignored generated assembly.\nThose builds already pass RUNTIME_APP_BINDING and RUNTIME_BASE_URL via\nflutter --dart-define, but developmentProfile still defaulted to\norion-foundation. Requests then hit /apps/orion-foundation/* and return\nNot Found while staging vividprint endpoints return 200.\n\nAdd a small resolver for assembly dart-defines, regression tests, and a\nlive staging check tying orion-foundation 404s to the Wave 4C symptoms.\n\nRefs #449, #450, #451\n\n* fix(rigel): address review on unpinned runtime define handling\n\nTrim RUNTIME_APP_BINDING and ORION_DEV_APP_ID, validate trimmed runtime\nURLs before AppProfile, and document RUNTIME_* precedence over ORION_DEV_*.\nRemove live staging HTTP unit tests; add offline assembly call-path coverage.\n\nRefs #449, #450, #451\n\n* chore(rigel): dart format after review fixes\n\n* test(rigel): assert unpinned assembly RUNTIME define wiring offline\n\nExport resolveUnpinnedAssemblyDevelopmentProfile with shared define constants\nand add source-level wiring tests so CI fails if development_assembly bypasses\nRUNTIME_APP_BINDING. Remove no-op dart-define early returns.\n\nRefs #449, #450, #451\n\n* style(rigel): satisfy prefer_interpolation_to_compose_strings in wiring test"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:07:09Z"
+  created_at: "2026-11-24T04:12:12Z"
