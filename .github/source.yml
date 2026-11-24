@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "38d661f4ea89a751a79ab84be59c094d6a72edd0"
-  ref_type: "tag"
-  ref_name: "v0.0.154"
-  run_id: 45303136789
+  sha: "e9140b6218547624d6c69025d51740bc95a4abc5"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 45356483443
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(education): restrict cross-textbook questions to 1 hop and load all textbook pages (#212)\n\n* fix(education): restrict cross-textbook questions to 1 hop and load all textbook pages\n\n* fix(camellia): guard non-finite pagination metadata and normalize total_row"
-  authors: ["0xfe10"]
+  message: "fix\uff1a\u4fee\u6539\u4e0a\u4f20\u56fa\u4ef6\u94fe\u63a5\u4e3a\u7a7a\u95ee\u9898"
+  authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-24T01:11:47Z"
+  created_at: "2026-11-24T08:29:09Z"
