@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4d72465c13ad19bf1075f4bd49360d9cef801c90"
+  sha: "dc36e1cf93ce1b07a1c578381b08012297149d05"
   ref_type: "branch"
-  ref_name: "feat/cosmos-288-messaging-channels"
-  run_id: 45320679723
+  ref_name: "docs/cosmos-507-openapi-descriptions"
+  run_id: 45324652969
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(messaging): add scoped SMS and email channel settings"
+  message: "docs(mercury): correct platform OpenAPI business descriptions\n\nReplace templated operation and parameter text with the published\ncontract: method, declared errors, requiredness, and schema pattern.\nKeep the documentation pass on the platform API so runtime OpenAPI\nbytes stay identical to main.\n\nRefs #507"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:36:46Z"
+  created_at: "2026-11-24T04:11:45Z"
