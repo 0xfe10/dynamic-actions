@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a5b0fa6818c2939c8b8cfaec2ca9d4ff92a00f49"
+  sha: "195e80837ab4c06e3348b6844ee2c7201b25e427"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45491338184
+  ref_name: "ao/vega-platform-models/device-redesign-s2-platform"
+  run_id: 45492688254
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): add feature rollout and experiment APIs (#655)\n\n* feat(mercury): add feature rollout lifecycle and targeting APIs\n\n* fix(mercury): enforce rollout and experiment targeting boundaries"
+  message: "fix(vega): handle Create/Edit reload recovery, partial staged sync, and carried option UTF-8 check"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T21:28:02Z"
+  created_at: "2026-11-24T21:35:57Z"
