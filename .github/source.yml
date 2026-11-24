@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "28aadd4d092118b546eeaccce481326c056c52a4"
+  sha: "9edf77626b80d19773fc718ca88e3f3882eec1e4"
   ref_type: "branch"
-  ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
-  run_id: 45445552203
+  ref_name: "main"
+  run_id: 45445936657
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address PR #652 Round 2 tab review findings"
+  message: "feat(vega): unify multi-item table cells with TableSummaryPopover (#650)\n\n* feat(vega): unify multi-item table cells with TableSummaryPopover\n\n* fix(vega): address PR #650 review findings for TableSummaryPopover\n\n* fix(vega): address PR #650 Round 2 review polish items"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T17:10:54Z"
+  created_at: "2026-11-24T17:12:39Z"
