@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d96440358f499fe68a3ec754d5e6b202e7841a9d"
+  sha: "346eb1e00c9f3525e62670999a5cb69c695dde93"
   ref_type: "branch"
   ref_name: "ao/vega-platform-models/device-redesign-s2-platform"
-  run_id: 45485127951
+  run_id: 45487833772
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address PR #657 review findings for platform device models"
+  message: "fix(vega): harden schema enum option sync, retry recovery, and Add/Save exclusion"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T20:51:48Z"
+  created_at: "2026-11-24T21:07:39Z"
