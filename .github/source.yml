@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7c69427e1d57cf40db996ce6453e5a89692400af"
+  sha: "aa4c164fe3dad019cf275f52bed062084f9490bb"
   ref_type: "branch"
-  ref_name: "ao/execute-slice-w2/vega-plan-w-slice-w2"
-  run_id: 45375864317
+  ref_name: "ao/pubox-secret-keys/fix-642"
+  run_id: 45376330029
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): align device models, materials, and storage UX to Plan W"
+  message: "fix(storepublishing): guard configure/save on unavailable params and avoid post-commit catalog fetch"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T10:33:25Z"
+  created_at: "2026-11-24T10:36:41Z"
