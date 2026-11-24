@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "73c442ebd344beadecb97fea2e0d5ec85a91ad8a"
+  sha: "277793d678b70ae7901734192277ba48f0a8cea2"
   ref_type: "branch"
-  ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
-  run_id: 45439687393
+  ref_name: "ao/you-are-implementing-2/vega-table-summary-popover"
+  run_id: 45441066967
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): unify site-wide tabs on segmented-pill standard"
+  message: "fix(vega): address PR #650 Round 2 review polish items"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T16:39:50Z"
+  created_at: "2026-11-24T16:46:57Z"
