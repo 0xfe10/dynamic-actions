@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "db2472b4c2c725633da6c0347928557998be1554"
+  sha: "dd17fc7ba7ffff7427358e01b4b2cd3645361e58"
   ref_type: "branch"
-  ref_name: "fix/z11-sublimation-hardware-fixes"
-  run_id: 45356565116
+  ref_name: "main"
+  run_id: 45358811385
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(sublimation): align Z11 hardware RPC/card behavior and enable TCP_NODELAY"
+  message: "fix(sublimation): align Z11 hardware RPC/card behavior and enable TCP_NODELAY (#78)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T08:29:45Z"
+  created_at: "2026-11-24T08:45:02Z"
