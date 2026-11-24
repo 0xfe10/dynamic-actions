@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7b2e07600b10b282b0ccfacedbf1807ceb5dce27"
+  sha: "2503d96357ee874c30d604aac6e4d68b9717165e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45408386500
+  ref_name: "fix/localization-test-teardown-race"
+  run_id: 45415699921
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(auth): wire Mercury OTP and server slider CAPTCHA flows (#468)\n\n* feat(auth): wire Mercury OTP and server slider CAPTCHA flows\n\n* fix(auth): address Slice 4 review findings and wire server captchaRequired\n\n* fix(auth): render live captcha cooldown and refine accepted notice\n\n* fix(auth): avoid duplicate toast on timed captcha verify cooldown"
+  message: "test(localization): drain disk queue before temp dir teardown"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T13:55:15Z"
+  created_at: "2026-11-24T14:35:13Z"
