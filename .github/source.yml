@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "af1d5bd62cc4dc3e1d68917298fc530bbee5abbb"
+  sha: "7beb5bf7aa25c54aa37450116e3b9155be9875bc"
   ref_type: "branch"
   ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
-  run_id: 45447509138
+  run_id: 45449242563
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(vega): merge origin/main into segmented-pill tabs branch"
+  message: "fix(vega): refine tab guard AST checks and dark-mode zoom pill contrast"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T17:20:54Z"
+  created_at: "2026-11-24T17:30:15Z"
