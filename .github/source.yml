@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0af04e8ff5668cabfe19120f993c096a2b45b7e8"
+  sha: "2ae5814cea8933cbfe1cbfc2eb4e310d40bfae59"
   ref_type: "branch"
-  ref_name: "feat/orion-14-color-theme-and-ui-skill"
-  run_id: 45329179628
+  ref_name: "fix/android-apk-inappwebview-proguard"
+  run_id: 45329439210
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(widgets): preserve multi-declarator splitting after arrow initializers\n\nTrack top-level field '=' separately from member '=>' bodies (and tokenize multi-character comparison/compound-assignment operators atomically) so arrow closures inside field initializers never suppress comma-separated declarator splitting.\n\nRefs #439"
+  message: "fix(rigel): use AGP-compatible InAppWebView for Android"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:50:56Z"
+  created_at: "2026-11-24T04:53:15Z"
