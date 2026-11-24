@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "022a4b5e325888e5a3bc53f4a67ae3f708f88613"
+  sha: "73c442ebd344beadecb97fea2e0d5ec85a91ad8a"
   ref_type: "branch"
-  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
-  run_id: 45437475657
+  ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
+  run_id: 45439687393
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(creative): query copywriting domain in category tree icon test"
+  message: "feat(vega): unify site-wide tabs on segmented-pill standard"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T16:28:26Z"
+  created_at: "2026-11-24T16:39:50Z"
