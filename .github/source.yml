@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f9dcfa3bfb3be059bc6c4dce4113269cc17d9cfa"
+  sha: "0af04e8ff5668cabfe19120f993c096a2b45b7e8"
   ref_type: "branch"
   ref_name: "feat/orion-14-color-theme-and-ui-skill"
-  run_id: 45328189833
+  run_id: 45329179628
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(widgets): split multi-declarator fields in symbol-bound color guard\n\nPrevent comma-separated multi-variable declarations from piggybacking onto an approved field exemption:\n- Split field/variable statements at top-level commas (outside (), [], {}, and generic <...> type argument lists) so each declarator resolves its own symbol and span, and reject exemptions on multi-declarator statements.\n- Add unit self-test covering comma-separated multi-variable piggybacking inside AppLimit.\n\nRefs #439"
+  message: "test(widgets): preserve multi-declarator splitting after arrow initializers\n\nTrack top-level field '=' separately from member '=>' bodies (and tokenize multi-character comparison/compound-assignment operators atomically) so arrow closures inside field initializers never suppress comma-separated declarator splitting.\n\nRefs #439"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:42:20Z"
+  created_at: "2026-11-24T04:50:56Z"
