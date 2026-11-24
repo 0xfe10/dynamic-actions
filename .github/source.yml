@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a6f4350332d894e133a74688bdad9f6232baf65e"
+  sha: "747de8d66eb7f809713f1eaa47dbf78b8fd963c3"
   ref_type: "branch"
-  ref_name: "ao/pubox-secret-keys/fix-642"
-  run_id: 45377241206
+  ref_name: "ao/execute-slice-w2/vega-plan-w-slice-w2"
+  run_id: 45380388450
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(storepublishing): arm catalog outage after setup in concurrency test"
+  message: "fix(vega): address Plan W Slice W2 review findings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T10:42:07Z"
+  created_at: "2026-11-24T11:02:19Z"
