@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "164b12694827e0699c7aad945d8b8e28eaf71280"
+  sha: "94a577fda88719592a456916e27ac1be4c7c622a"
   ref_type: "branch"
-  ref_name: "ao/device-redesign/device-redesign-slice1"
-  run_id: 45463730285
+  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
+  run_id: 45463792572
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(device-catalog): address Round 3 review findings for redesign Slice 1"
+  message: "fix(creative): ignore stale category Reload latest resolutions after dialog close\n\nTrack activeDialogSessionRef across dialog open, reopen, and close in category-tree.tsx so an in-flight Reload latest promise that settles after the dialog closes never mutates or remounts a newly opened dialog. Add regression test in creative-editor-polling.test.tsx."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T18:50:07Z"
+  created_at: "2026-11-24T18:50:47Z"
