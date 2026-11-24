@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b1c93a5404f6b649d37b0130d1e0f5c5adbc02f9"
+  sha: "a805a7e5f83b872d00bc2e5f8a58f87cdf647c2f"
   ref_type: "branch"
-  ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
-  run_id: 45450654117
+  ref_name: "feat/device-materials-upgrade"
+  run_id: 45451456372
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): tighten tab guard pagination exclusion and Tailwind important matching"
+  message: "feat(vega): upgrade device material editors and lists"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T17:38:12Z"
+  created_at: "2026-11-24T17:42:26Z"
