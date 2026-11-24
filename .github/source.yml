@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c03c784ddc41a11572553f9d7209232cf8ba3a9c"
+  sha: "58050df58a7ed31c6573e7fce272e1b2901b9dee"
   ref_type: "branch"
-  ref_name: "feat/feature-flags-slice1"
-  run_id: 45484123551
+  ref_name: "ao/device-categories/device-redesign-s3-app"
+  run_id: 45484169617
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): enforce rollout and experiment targeting boundaries"
+  message: "fix(vega): address PR #656 Round 2 review findings (P1-1..P1-3, P2-4..P2-8)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T20:45:47Z"
+  created_at: "2026-11-24T20:46:08Z"
