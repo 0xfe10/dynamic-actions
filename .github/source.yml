@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "af39c6cf9eefed689f8f35d483bba5b09fdad3c3"
+  sha: "c67b1a85b239520f08856a86ceed80080018960a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45335675980
+  ref_name: "fix/wave4e-ux-bugs-461-462-463"
+  run_id: 45346621213
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): use the shared scrim for fixed paper picker (#459)\n\nRefs #308."
+  message: "fix(mellow): resolve Wave 4E closure exit, pending-closure toast, and paper picker i18n\n\n- Return to guest Personal Center via GoRouter (or root route) after acknowledging account closure confirmation when the session is revoked (#461).\n- Suppress expected HTTP 409 ACCOUNT_PENDING_CLOSURE confirmation challenges from RuntimeApiClient failure reporting and app-shell error notices so only the localized revocation dialog appears (#462).\n- Localize A4-Pocket paper picker, consumable detail, and preview copy across en, zh-CN, and zh-Hant-TW Fluent bundles and fallback maps (#463).\n- Add unit and widget regression tests covering all three fixes, narrow/scaled layout, and semantic theme tokens."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T05:46:48Z"
+  created_at: "2026-11-24T07:16:02Z"
