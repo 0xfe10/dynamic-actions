@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fb5f16e2f606408db13bafbef709ea653e13a511"
+  sha: "e4729128b68274fb50073dc1d0854c453ef7ea94"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45319839022
+  run_id: 45320580212
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(runtime): regenerate client from Cosmos 636 (#452)"
+  message: "feat(image-cut): add slice margins and PNG tile export (#453)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:29:25Z"
+  created_at: "2026-11-24T03:36:01Z"
