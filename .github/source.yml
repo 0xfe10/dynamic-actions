@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "ecdb281525e44470d203716c9596b1bc923915ba"
+  sha: "f35a13388790bf7413f3b211ed8523d9fcc84257"
   ref_type: "branch"
-  ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
-  run_id: 45418027796
+  ref_name: "main"
+  run_id: 45420588446
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): bump Orion submodule to 8dfdc3c4 for localization test teardown fix"
+  message: "feat(vega): unify remaining workspaces on full-width tables (Plan W Slice W3) (#649)\n\n* feat(vega): unify remaining workspaces on full-width tables and retire inner rails\n\n* fix(vega): address Plan W Slice W3 review findings\n\n* fix(vega): harden messaging, help center, and theme preview states\n\n* fix(vega): preserve draft on failed channel reload and derive live theme preview\n\n* fix(vega): disable messaging channel form during explicit reload"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T14:47:42Z"
+  created_at: "2026-11-24T15:01:40Z"
