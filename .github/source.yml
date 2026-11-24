@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4204051e9ab7e1b9b4771d6035aa4bb72c6a890e"
+  sha: "4c1e7e18d94321ea9435320f303698d9aee002dc"
   ref_type: "branch"
-  ref_name: "fix/devicecatalog-material-cleanup-owner"
-  run_id: 45346033714
+  ref_name: "main"
+  run_id: 45362447415
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): set source_owner_id when expiring device material uploads"
+  message: "fix(mercury): set source_owner_id when expiring device material uploads (#640)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T07:11:18Z"
+  created_at: "2026-11-24T09:09:17Z"
