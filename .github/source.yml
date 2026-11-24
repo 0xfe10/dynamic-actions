@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d2ea430a9b8f1be0ea677fbb333c7fd0128b36a5"
+  sha: "e7f71afc81a42ae7ea018ea3bb982841f0c77b48"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45331160869
+  run_id: 45331495169
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): use AGP-compatible InAppWebView for Android (#458)"
+  message: "feat(theme): enforce 14-color semantic contract, migrate UI colors, and add orion-ui skill (#456)\n\nUpgrade Orion's native theme token contract to the 20-key schema (14 semantic colors + 6 typography/spacing/radius tokens) without legacy alias keys:\n- Replace legacy 10-color tokens with the 14 semantic colors across NativeTheme, NativeColors ThemeExtension, ThemeData.colors / BuildContext.colors, trilingual themeColorDisplayNames (42/42 parity with Cosmos #637), rigel_build validation, and all 74 assembly test fixtures.\n- Migrate shared UI widgets in packages/core/widgets, presentation packages (breeze and mellow), and editor_color_jigsaw graffiti UI chrome / ImageToolSuperview to semantic context.colors tokens while keeping fullscreen media lightboxes and dark canvases invariant via OrnMediaBackdrop.\n- Add string-aware Dart lexer and symbol-bound hardcoded UI color guard test (no_hardcoded_ui_colors_test.dart) plus native_colors_widgets_test.dart inside workspace just test / just check.\n- Add .agents/skills/orion-ui/ and link it as mandatory UI guidance in AGENTS.md.\n\nRefs #439"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T05:08:27Z"
+  created_at: "2026-11-24T05:11:22Z"
