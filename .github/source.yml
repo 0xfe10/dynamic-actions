@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e8f5bcac1a21f3c2e78ef930d3c4b998ef83cdfb"
+  sha: "1df3b1e37db70473e5f9f12b03943f4b6b39b35f"
   ref_type: "branch"
-  ref_name: "docs/cosmos-507-openapi-descriptions"
-  run_id: 45336231206
+  ref_name: "main"
+  run_id: 45338637517
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(mercury): require reviewed OpenAPI parameter checks\n\nFail when the creative draft revision parameter is missing, and\nrequire the localization entry ID description to state its\n255-character limit.\n\nRefs #507"
+  message: "feat(mercury): unify device support content delivery\n\nAdd App opt-in, device bindings, and connected-device filtering for manuals, tutorials, and Help Center. Update Vega and pin the matching Orion Runtime client."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T05:51:44Z"
+  created_at: "2026-11-24T06:11:56Z"
