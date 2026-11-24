@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "36b3ef89c25b3bc7e02baa3e29764a1b5c312abc"
+  sha: "58039a152688ebdb2a77b69664fa97c84a5d3c02"
   ref_type: "branch"
-  ref_name: "ao/pubox-secret-keys/fix-642"
-  run_id: 45372703165
+  ref_name: "main"
+  run_id: 45373032268
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storepublishing): preserve params on outage, reuse client, and align key trimming"
+  message: "docs(mercury): describe platform OpenAPI business behavior (#638)\n\nDocument Platform OpenAPI operations and parameters from handler behavior, including messaging channels and device-material selection, without changing wire schemas or Runtime output.\n\nCloses #507"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T10:14:23Z"
+  created_at: "2026-11-24T10:15:37Z"
