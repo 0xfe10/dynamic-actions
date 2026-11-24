@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2ae5814cea8933cbfe1cbfc2eb4e310d40bfae59"
+  sha: "d2ea430a9b8f1be0ea677fbb333c7fd0128b36a5"
   ref_type: "branch"
-  ref_name: "fix/android-apk-inappwebview-proguard"
-  run_id: 45329439210
+  ref_name: "main"
+  run_id: 45331160869
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): use AGP-compatible InAppWebView for Android"
+  message: "fix(rigel): use AGP-compatible InAppWebView for Android (#458)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T04:53:15Z"
+  created_at: "2026-11-24T05:08:27Z"
