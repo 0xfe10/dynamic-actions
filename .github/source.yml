@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "051bce764c2a54160acfc26734b37163d7101ebe"
+  sha: "af1d5bd62cc4dc3e1d68917298fc530bbee5abbb"
   ref_type: "branch"
-  ref_name: "ao/urgent-boss-bug/fix-creative-preview-images"
-  run_id: 45446117068
+  ref_name: "ao/vega-tabs/unify-segmented-pill-tabs"
+  run_id: 45447509138
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(creative): harden preview signing, replay freshness, and Vega fallbacks\n\nAddress Round 1 review findings across Mercury and Vega:\n- Gate inherited creative library thumbnail URLs on recipient eligibility\n- Cache storage profiles on the active transaction via ReadSigner to avoid nested pool connections\n- Strip volatile preview URLs from authoring idempotency cache and re-sign replays after verifying provenance\n- Enforce safe non-active MIME allowlists on OSS uploads and presigned response content types\n- Match upload-slot artwork strictly by assetId, prefer fresher server URLs, add expiry-aware query refresh and payload panel image error fallbacks, and localize/restore focus in the preview lightbox"
+  message: "chore(vega): merge origin/main into segmented-pill tabs branch"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T17:13:35Z"
+  created_at: "2026-11-24T17:20:54Z"
