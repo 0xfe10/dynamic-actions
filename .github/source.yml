@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3f0c1167e39b179d06477e33d139e8d2a29d59d6"
+  sha: "36b3ef89c25b3bc7e02baa3e29764a1b5c312abc"
   ref_type: "branch"
-  ref_name: "feat/cosmos-288-otp-worker-slice2"
-  run_id: 45371522999
+  ref_name: "ao/pubox-secret-keys/fix-642"
+  run_id: 45372703165
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(messaging): use clock_timestamp and pre-BeginTx anchors for lease fencing\n\nAddress the remaining P1 from Round 3 review on PR #641:\n\n- Use PostgreSQL clock_timestamp() instead of transaction-start now() for lease\n  validity predicates and remaining lease/send_deadline duration queries in\n  jobs.LockOwnedTx/CompleteTx/FailTx/DeadTx/RetryTx and runner.verifyPreSendFence.\n- Capture Go monotonic deadline anchors before BeginTx in runner.preflight and\n  runner.verifyPreSendFence so server BEGIN latency and scheduler pauses can\n  never overstate remaining lease or send_deadline budgets.\n- Add PostgreSQL integration regression tests simulating post-BEGIN delay past\n  lease_expires_at (both direct pg_sleep and delayed BeginTx in Runner.ProcessOne)\n  verifying expired leases are rejected and never invoke the provider."
+  message: "fix(storepublishing): preserve params on outage, reuse client, and align key trimming"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T10:06:26Z"
+  created_at: "2026-11-24T10:14:23Z"
