@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "902693163b17dd813992f5e770db9142e8fd1011"
+  sha: "7b0c3efbcec5c8151ba215801e54df71e24f9d67"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45468575576
+  run_id: 45472003636
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Upgrade Vega device material editors and lists (#654)\n\n* feat(vega): upgrade device material editors and lists\n\n* refactor(vega): preserve compatibility with Markdown tab styling\n\n* fix(vega): address device material editor review findings"
+  message: "feat(devicecatalog): Device & Printer Redesign Slice 1 (Mercury schema, APIs, OpenAPI, platform-api) (#653)\n\n* feat(devicecatalog): implement Device & Printer Redesign Slice 1 APIs and schema\n\nAdd migration 00197_device_catalog_redesign.sql, DeviceProduct native fields and filtering (Gap 2), paper type consumable library grouping metadata with unique default per group (Gap 3), per-model attribute sort ordering (Gap 5), derived model config import API (Gap 4), unified product distribution replace API (UX Fix 1), and two-layer App device categories with cross-category deduplication shuttle and runtime connect-page catalog API (Gap 1). Regenerate OpenAPI baselines and @cosmos/platform-api with zero breaking changes.\n\n* fix(device-catalog): address Round 1 review findings for redesign Slice 1\n\n* fix(device-catalog): address Round 2 review findings for redesign Slice 1\n\n* fix(device-catalog): address Round 3 review findings for redesign Slice 1\n\n* fix(device-catalog): map SERIALIZABLE contention errors to 409 Conflict\n\n* fix(device-catalog): harden conflict probe fallback and contention test barrier"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T19:17:26Z"
+  created_at: "2026-11-24T19:36:46Z"
