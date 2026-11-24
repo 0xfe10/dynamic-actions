@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "392ee9a75ffd08758f6205d532a680049639479e"
+  sha: "6f71a21544049786700953dbe9eaab20cf8feda8"
   ref_type: "branch"
-  ref_name: "feat/feature-flags-slice2"
-  run_id: 45504522185
+  ref_name: "main"
+  run_id: 45507624820
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): preserve rollout drafts and targeting feedback"
+  message: "feat(vega): upgrade feature rollouts and experiments (#658)\n\n* feat(vega): upgrade feature rollouts and experiments\n\n* fix(vega): preserve rollout drafts and targeting feedback"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T22:49:54Z"
+  created_at: "2026-11-24T23:10:34Z"
