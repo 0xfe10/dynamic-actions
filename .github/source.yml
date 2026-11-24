@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "666dbc261b315e3042d1a4240766fbf065091660"
+  sha: "d47f04675dd412bb03d61b7986f8aea14a26d888"
   ref_type: "branch"
-  ref_name: "ao/implement-slice-3/cosmos-288-slice-3"
-  run_id: 45399687269
+  ref_name: "ao/vega-slice-w3/vega-ux-w3"
+  run_id: 45400438417
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(auth): expose captchaRequired on runtime auth channel capabilities"
+  message: "feat(vega): unify remaining workspaces on full-width tables and retire inner rails"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T13:04:48Z"
+  created_at: "2026-11-24T13:09:11Z"
