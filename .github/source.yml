@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "53f66d076992360932ed76c316cede063c9eb683"
+  sha: "e27d46d4fabd157bbf5ab40098cc8d665d01ee4d"
   ref_type: "branch"
   ref_name: "fix/wave4-staging-runtime-404"
-  run_id: 45322767041
+  run_id: 45323217873
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel): assert unpinned assembly RUNTIME define wiring offline\n\nExport resolveUnpinnedAssemblyDevelopmentProfile with shared define constants\nand add source-level wiring tests so CI fails if development_assembly bypasses\nRUNTIME_APP_BINDING. Remove no-op dart-define early returns.\n\nRefs #449, #450, #451"
+  message: "style(rigel): satisfy prefer_interpolation_to_compose_strings in wiring test"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T03:55:20Z"
+  created_at: "2026-11-24T03:59:27Z"
