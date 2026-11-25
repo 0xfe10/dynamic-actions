@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c7594825750e2fd5d09759dce08a10923fd8b3fb"
+  sha: "9ea8a5215b84fe458543491aa079246a5b6d20a9"
   ref_type: "branch"
   ref_name: "feat/orion-472-personal-drafts-records"
-  run_id: 45667892803
+  run_id: 45670945143
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): align personal drafts and print records"
+  message: "fix(mellow): use uniform list menu icon tint"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T17:44:35Z"
+  created_at: "2026-11-25T18:02:18Z"
