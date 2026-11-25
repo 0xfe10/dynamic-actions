@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "7ad194fa26232e38ba0e14bc31d8e7cd72c1b83f"
+  sha: "e6905f95df67e6b93cf9399f912280cc3346d0b7"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45396705263
+  ref_name: "feat/unified-lan-discovery-and-inkjet-band-streaming"
+  run_id: 45576301287
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(sublimation,inkjet,network,frame_cloud): BLE SoftAP query, Direct AP discovery & printer Wi-Fi plugin (#79)\n\n* feat(sublimation,inkjet): add BLE SoftAP credential query for Z11 and H100\n\n* feat(network,frame_cloud,sublimation,inkjet): add printer Wi-Fi plugin and Direct AP discovery"
+  message: "feat(network,inkjet,color_core,frame_cloud): unify Wi-Fi LAN discovery and stream Inkjet raster bands\n\n- Add protocol-agnostic LanPrinterDiscovery and defaultResolveWifiInterfaceName in psdk_network\n- Normalize mDNS _printer._tcp. port 515 to 9100 and extract TXT model/serial/mac fields\n- Guard UDP 22368/1901 sends against 0.0.0.0 SocketException closing RawDatagramSocket and keep probing cached IPs\n- Upgrade placeholder display names during DiscoveredCloudPrinter.mergeWith in psdk_frame_cloud\n- Add streaming psdk_cc_dither_strip in clang/color_core & psdk_color_core\n- Refactor InkjetRasterPipeline.encodeSheet to composite & dither band-by-band in a cancellable background isolate"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-24T12:46:28Z"
+  created_at: "2026-11-25T08:26:47Z"
