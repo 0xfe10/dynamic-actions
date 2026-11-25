@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "48efa747c6b16c2215bd05a83d55a8800b3f5fb9"
+  sha: "1448d43883e9d3858297c2f173d9d49fb6f0c53b"
   ref_type: "branch"
-  ref_name: "fix/hide-archived-sitewide"
-  run_id: 45546947825
+  ref_name: "main"
+  run_id: 45547270477
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): finish archived localization cleanup"
+  message: "Preserve banner artwork across metadata edits (#661)\n\n* fix(banner): preserve artwork across version edits\n\n* fix(banner): verify and preview saved artwork"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T04:28:17Z"
+  created_at: "2026-11-25T04:30:52Z"
