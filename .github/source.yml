@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ffbff21f474824a7e99ab9c23285579877668609"
+  sha: "d7ea04432c767bb4a65ad46863eec18b5acf1fcf"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45674676038
+  ref_name: "feat/orion-472-personal-drafts-records"
+  run_id: 45675653786
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): enable a default home tool in cold-start tests (#479)"
+  message: "Merge remote-tracking branch 'origin/main' into feat/orion-472-personal-drafts-records"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:23:48Z"
+  created_at: "2026-11-25T18:29:58Z"
