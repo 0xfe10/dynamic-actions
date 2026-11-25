@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3753dc71adf2d7d9355934f7eb7cf78f6707034a"
+  sha: "0fada55205e3e2e9330a6af748432e8229e01e67"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45571691026
+  ref_name: "fix/audit-all-media-files"
+  run_id: 45660841158
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): use inline pin in help center article tables (#668)"
+  message: "fix(media): address PR #670 round 2 storage and Vega media review"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T07:53:47Z"
+  created_at: "2026-11-25T17:04:58Z"
