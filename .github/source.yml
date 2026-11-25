@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "275fce78105c61d3d72d70bffc9dd50852dc46cd"
+  sha: "ffbff21f474824a7e99ab9c23285579877668609"
   ref_type: "branch"
-  ref_name: "fix/orion-473-feedback-emoji-panel"
-  run_id: 45673793774
+  ref_name: "main"
+  run_id: 45674676038
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(android): resolve the chat panel AAR from JitPack"
+  message: "fix(rigel): enable a default home tool in cold-start tests (#479)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:18:40Z"
+  created_at: "2026-11-25T18:23:48Z"
