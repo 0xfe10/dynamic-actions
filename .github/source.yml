@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d7ea04432c767bb4a65ad46863eec18b5acf1fcf"
+  sha: "0624ea687d592e1164b68fee5f01bb47758fe7af"
   ref_type: "branch"
-  ref_name: "feat/orion-472-personal-drafts-records"
-  run_id: 45675653786
+  ref_name: "fix/orion-471-template-plaza"
+  run_id: 45675715333
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into feat/orion-472-personal-drafts-records"
+  message: "Merge remote-tracking branch 'origin/main' into fix/orion-471-template-plaza"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:29:58Z"
+  created_at: "2026-11-25T18:30:39Z"
