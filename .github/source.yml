@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3aecffe9bf591b4d0ee92b017178db3028b39af4"
+  sha: "5dee41ca6b259a9cd863d2ca157cac070edd89e3"
   ref_type: "branch"
-  ref_name: "fix/audit-all-media-files"
-  run_id: 45684092329
+  ref_name: "main"
+  run_id: 45688408823
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(media): round 5 font finalize SVG gate and media tests"
+  message: "fix(media): site-wide image and file audit (#670)\n\n* fix(media): harden OSS MIME, presign inline, and Vega media UX\n\nStore declared MIME on server-side puts, request inline OSS GET disposition, tolerate legacy octet-stream on finalize, and add shared Vega media thumb plus presigned URL cache limits.\n\n* fix(vega): align media errors and signed-url cache TTL\n\nReset sticky image failures per URL, cap React Query stale time under presign TTL, and defer blob URL revocation for downloads and local previews.\n\n* fix(media): address PR #670 round 2 storage and Vega media review\n\n* fix(media): round 3 MIME, font hash, cache and blob revoke\n\n* fix(media): round 4 CI MIME fonts cache and RawImage sweep\n\n* fix(media): round 5 font finalize SVG gate and media tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T19:19:59Z"
+  created_at: "2026-11-25T19:46:11Z"
