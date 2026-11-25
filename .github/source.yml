@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "28d9b4e724dc377506d0ea241d436e8b9859b4d8"
+  sha: "241c8682e1a3202dd6fec7260cadb449b2bfda4e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45448751015
+  ref_name: "chenas"
+  run_id: 45591130051
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ui): align feedback composer, stabilize keyboard focus, clean auth copy and default home tools (#470)"
-  authors: ["0xfe10"]
+  message: "1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u8d34\u7eb8 \uff09"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-24T17:27:33Z"
+  created_at: "2026-11-25T10:02:48Z"
