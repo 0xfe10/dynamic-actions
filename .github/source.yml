@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fbae35980b456f017934588d29e2f694b221848c"
+  sha: "b66bdedc7537f9fcdab91e05b83c59f975260400"
   ref_type: "branch"
-  ref_name: "fix/orion-473-feedback-emoji-panel"
-  run_id: 45676503965
+  ref_name: "main"
+  run_id: 45678348611
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into fix/orion-473-feedback-emoji-panel"
+  message: "feat(mellow): align personal drafts and print records (#478)\n\n* feat(mellow): align personal drafts and print records\n\n* fix(mellow): use uniform list menu icon tint"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:34:31Z"
+  created_at: "2026-11-25T18:45:32Z"
