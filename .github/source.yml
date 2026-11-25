@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0c7943368a81990742e03fe55eaea4c11c3e64ea"
+  sha: "6a4565f9c12d93de62693f4fdcd133b2ce77ce57"
   ref_type: "branch"
   ref_name: "fix/optional-change-reason-sitewide"
-  run_id: 45552636969
+  run_id: 45555786773
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(cosmos): make human change reasons optional"
+  message: "fix(storepublishing): verify optional upload change reasons"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T05:18:29Z"
+  created_at: "2026-11-25T05:45:51Z"
