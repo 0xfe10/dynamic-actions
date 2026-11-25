@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "867c3a3b2b67e59d41eff887900525adcb7328e4"
+  sha: "275fce78105c61d3d72d70bffc9dd50852dc46cd"
   ref_type: "branch"
-  ref_name: "fix/orion-471-template-plaza"
-  run_id: 45672928415
+  ref_name: "fix/orion-473-feedback-emoji-panel"
+  run_id: 45673793774
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): resolve template plaza audit findings"
+  message: "fix(android): resolve the chat panel AAR from JitPack"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:13:47Z"
+  created_at: "2026-11-25T18:18:40Z"
