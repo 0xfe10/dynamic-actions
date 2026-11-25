@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "16a5949c0f509d1b47b68743a90acb9fa9989b61"
+  sha: "6f09f507f88499f54b3e96fe7d48be901a270cb6"
   ref_type: "branch"
-  ref_name: "fix/optional-change-reason-sitewide"
-  run_id: 45548562010
+  ref_name: "main"
+  run_id: 45550236384
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(cosmos): make human change reasons optional"
+  message: "fix(admin): hide archived records from management lists (#664)\n\n* fix(admin): hide archived records from management lists\n\n* fix(vega): finish archived localization cleanup"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T04:42:16Z"
+  created_at: "2026-11-25T04:57:34Z"
