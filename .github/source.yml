@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "9ea8a5215b84fe458543491aa079246a5b6d20a9"
+  sha: "fa1b20d93903cf039598f3d2f239011dcd2dac72"
   ref_type: "branch"
-  ref_name: "feat/orion-472-personal-drafts-records"
-  run_id: 45670945143
+  ref_name: "fix/orion-cold-start-home-tools"
+  run_id: 45671813506
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): use uniform list menu icon tint"
+  message: "fix(rigel): enable a default home tool in cold-start tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:02:18Z"
+  created_at: "2026-11-25T18:07:20Z"
