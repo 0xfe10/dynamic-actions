@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d1a32d71c9fb7f7686f0522c6095d5c0d7f35201"
+  sha: "b5dff8b20f0cb985df00018cada52c6173ce9700"
   ref_type: "branch"
-  ref_name: "fix/orion-473-feedback-emoji-panel"
-  run_id: 45666324067
+  ref_name: "fix/orion-471-template-plaza"
+  run_id: 45666798756
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(feedback): add the emoji reply panel"
+  message: "fix(mellow): align template plaza with Lanhu layout"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T17:35:26Z"
+  created_at: "2026-11-25T17:38:14Z"
