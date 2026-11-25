@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d70bdfbbba4125a17c4ad3a17304d6e3119a6db9"
+  sha: "e280e92dbe64048c323d8aa890918652f8b3f48b"
   ref_type: "branch"
-  ref_name: "fix/oss-presign-content-type"
-  run_id: 45543160100
+  ref_name: "fix/hide-archived-sitewide"
+  run_id: 45544409200
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storage): stop overriding OSS response content type\n\nAliyun default endpoints reject presigned GET URLs that set response-content-type. Sign plain GET URLs so Creative Catalog thumbnails load, while uploads still store a sniffed Content-Type."
+  message: "fix(admin): hide archived records from management lists"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T03:54:44Z"
+  created_at: "2026-11-25T04:06:22Z"
