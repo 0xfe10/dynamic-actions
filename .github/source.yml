@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6c9ce8f32322f8f2231be10f748bc01ec7f0f232"
+  sha: "3aecffe9bf591b4d0ee92b017178db3028b39af4"
   ref_type: "branch"
   ref_name: "fix/audit-all-media-files"
-  run_id: 45676479491
+  run_id: 45684092329
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(media): round 4 CI MIME fonts cache and RawImage sweep"
+  message: "fix(media): round 5 font finalize SVG gate and media tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:34:27Z"
+  created_at: "2026-11-25T19:19:59Z"
