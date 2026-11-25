@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9bbfd0f7f327d0a701464457b3554a526ca018cd"
+  sha: "27c7c479c52e340b6bba7e4e2ef07ae9595872c2"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45545329943
+  run_id: 45545675375
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): rename device schema labels to device attributes (#662)"
+  message: "fix(storage): stop overriding OSS response content type (#663)\n\nAliyun default endpoints reject presigned GET URLs that set response-content-type. Sign plain GET URLs so Creative Catalog thumbnails load, while uploads still store a sniffed Content-Type."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T04:14:07Z"
+  created_at: "2026-11-25T04:16:54Z"
