@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5946e7a57c428c5de15d332395c1cd1223d82bbd"
+  sha: "faa6866008459e11a3aa71f98813a624d2a46ec5"
   ref_type: "branch"
-  ref_name: "fix/tutorial-tags-column"
-  run_id: 45560584694
+  ref_name: "main"
+  run_id: 45560680366
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): show tutorial tags in their own column\n\nMove tutorial tags out of the title cell on the platform and app tutorial tables so the title stays clean and empty tags use the existing dash fallback. Manuals tables are unchanged."
+  message: "fix(cosmos): make human change reasons optional (#666)\n\n* fix(cosmos): make human change reasons optional\n\n* fix(storepublishing): verify optional upload change reasons"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T06:26:48Z"
+  created_at: "2026-11-25T06:27:16Z"
