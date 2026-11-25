@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5323ea0307a5244060fe588363cc35466bdda616"
+  sha: "43153a2a8ce927bff2b9992b7a8e3dbfefc695f7"
   ref_type: "branch"
-  ref_name: "fix/remove-icon-edit-locales"
-  run_id: 45541171214
+  ref_name: "main"
+  run_id: 45541707876
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): remove duplicate icon group locale action"
+  message: "feat(rollouts): add platform rollout and experiment policies (#659)\n\n* feat(rollouts): add platform rollout and experiment policies\n\n* fix(rollouts): update platform metadata under lock"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T03:36:59Z"
+  created_at: "2026-11-25T03:41:40Z"
