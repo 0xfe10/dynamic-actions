@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7bf1d9849143fc2e33835278762cb422c47cc9d2"
+  sha: "4a0b45a3c34ed22b208069b4fdbe9c1def85671a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45564225780
+  ref_name: "fix/help-center-pinned-indicator"
+  run_id: 45566729655
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): show tutorial tags in their own column (#667)\n\nMove tutorial tags out of the title cell on the platform and app tutorial tables so the title stays clean and empty tags use the existing dash fallback. Manuals tables are unchanged."
+  message: "fix(vega): use inline pin in help center article tables"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T06:55:50Z"
+  created_at: "2026-11-25T07:15:52Z"
