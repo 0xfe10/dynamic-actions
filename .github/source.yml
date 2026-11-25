@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1448d43883e9d3858297c2f173d9d49fb6f0c53b"
+  sha: "db721949fd668a1483f9c435f9b5fffecf391cfd"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45547270477
+  ref_name: "feat/platform-rollouts-slice2"
+  run_id: 45547679261
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Preserve banner artwork across metadata edits (#661)\n\n* fix(banner): preserve artwork across version edits\n\n* fix(banner): verify and preview saved artwork"
+  message: "fix(vega): complete rollout review follow-ups"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T04:30:52Z"
+  created_at: "2026-11-25T04:34:28Z"
