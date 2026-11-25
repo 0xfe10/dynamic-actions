@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "43153a2a8ce927bff2b9992b7a8e3dbfefc695f7"
+  sha: "4dabe4cd352318641fa00d93964de2b8259d86f7"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45541707876
+  ref_name: "fix/upload-edit-preservation"
+  run_id: 45542455175
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rollouts): add platform rollout and experiment policies (#659)\n\n* feat(rollouts): add platform rollout and experiment policies\n\n* fix(rollouts): update platform metadata under lock"
+  message: "fix(banner): preserve artwork across version edits"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T03:41:40Z"
+  created_at: "2026-11-25T03:48:21Z"
