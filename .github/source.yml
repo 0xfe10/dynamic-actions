@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "75655880c3bd83b987f518f02988aca257d2644b"
+  sha: "2946bb4e334f2fc9f005320c2a9dcc37483b8b5e"
   ref_type: "branch"
-  ref_name: "fix/shorten-rollout-experiment-titles"
-  run_id: 45566778029
+  ref_name: "fix/audit-all-media-files"
+  run_id: 45567946782
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): shorten rollout and experiment titles"
+  message: "fix(vega): align media errors and signed-url cache TTL\n\nReset sticky image failures per URL, cap React Query stale time under presign TTL, and defer blob URL revocation for downloads and local previews."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T07:16:26Z"
+  created_at: "2026-11-25T07:25:09Z"
