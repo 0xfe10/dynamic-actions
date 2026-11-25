@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0fada55205e3e2e9330a6af748432e8229e01e67"
+  sha: "12b857ab01d4c25043b1ef927b6e71dce2010b8c"
   ref_type: "branch"
   ref_name: "fix/audit-all-media-files"
-  run_id: 45660841158
+  run_id: 45668030774
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(media): address PR #670 round 2 storage and Vega media review"
+  message: "fix(media): round 3 MIME, font hash, cache and blob revoke"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T17:04:58Z"
+  created_at: "2026-11-25T17:45:52Z"
