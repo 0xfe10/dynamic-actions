@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0624ea687d592e1164b68fee5f01bb47758fe7af"
+  sha: "fbae35980b456f017934588d29e2f694b221848c"
   ref_type: "branch"
-  ref_name: "fix/orion-471-template-plaza"
-  run_id: 45675715333
+  ref_name: "fix/orion-473-feedback-emoji-panel"
+  run_id: 45676503965
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Merge remote-tracking branch 'origin/main' into fix/orion-471-template-plaza"
+  message: "Merge remote-tracking branch 'origin/main' into fix/orion-473-feedback-emoji-panel"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:30:39Z"
+  created_at: "2026-11-25T18:34:31Z"
