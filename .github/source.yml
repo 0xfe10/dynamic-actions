@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6f09f507f88499f54b3e96fe7d48be901a270cb6"
+  sha: "2f01a8ba187f69b25914ca9ecc9353911f31ddd2"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45550236384
+  run_id: 45550261898
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(admin): hide archived records from management lists (#664)\n\n* fix(admin): hide archived records from management lists\n\n* fix(vega): finish archived localization cleanup"
+  message: "feat(vega): add platform rollout and experiment management (#665)\n\n* feat(vega): add platform rollout and experiment management\n\n* fix(vega): complete rollout review follow-ups"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T04:57:34Z"
+  created_at: "2026-11-25T04:57:57Z"
