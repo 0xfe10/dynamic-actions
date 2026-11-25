@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6527207a3a095fa4734fb10822ea853dfe2b0c53"
+  sha: "d70bdfbbba4125a17c4ad3a17304d6e3119a6db9"
   ref_type: "branch"
-  ref_name: "fix/remove-icon-edit-locales"
-  run_id: 45543044752
+  ref_name: "fix/oss-presign-content-type"
+  run_id: 45543160100
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): cover icon locale recovery on the edit page"
+  message: "fix(storage): stop overriding OSS response content type\n\nAliyun default endpoints reject presigned GET URLs that set response-content-type. Sign plain GET URLs so Creative Catalog thumbnails load, while uploads still store a sniffed Content-Type."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T03:53:40Z"
+  created_at: "2026-11-25T03:54:44Z"
