@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fa1b20d93903cf039598f3d2f239011dcd2dac72"
+  sha: "867c3a3b2b67e59d41eff887900525adcb7328e4"
   ref_type: "branch"
-  ref_name: "fix/orion-cold-start-home-tools"
-  run_id: 45671813506
+  ref_name: "fix/orion-471-template-plaza"
+  run_id: 45672928415
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): enable a default home tool in cold-start tests"
+  message: "fix(mellow): resolve template plaza audit findings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:07:20Z"
+  created_at: "2026-11-25T18:13:47Z"
