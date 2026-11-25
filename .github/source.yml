@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "db721949fd668a1483f9c435f9b5fffecf391cfd"
+  sha: "16a5949c0f509d1b47b68743a90acb9fa9989b61"
   ref_type: "branch"
-  ref_name: "feat/platform-rollouts-slice2"
-  run_id: 45547679261
+  ref_name: "fix/optional-change-reason-sitewide"
+  run_id: 45548562010
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): complete rollout review follow-ups"
+  message: "fix(cosmos): make human change reasons optional"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T04:34:28Z"
+  created_at: "2026-11-25T04:42:16Z"
