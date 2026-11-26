@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "34dfdd82be152898b05d0dd3272bc54ca62c38bc"
+  sha: "543aded511618675ad2fb2b03496f8baeaa4f7b3"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45784483914
+  ref_name: "chenas-11-26-14-30"
+  run_id: 45805633359
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): rebuild home consumable selection flow per Lanhu design (#492)"
-  authors: ["0xfe10"]
+  message: "1.\u56fe\u7247\u7f16\u8f91\u566810\uff08\u56fe\u7247\u8fb9\u6846\uff09"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-26T08:35:50Z"
+  created_at: "2026-11-26T10:54:32Z"
