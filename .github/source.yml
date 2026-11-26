@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "723b59cdd8378779bafc26b88f9c5d2710398315"
+  sha: "258ca7e00f9d9175c977da44222ec2236d191d46"
   ref_type: "branch"
-  ref_name: "feat/orion-509-runtime-asset-links"
-  run_id: 45873027096
+  ref_name: "chenas-11-26-14-30"
+  run_id: 45875216050
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime): fail-close malformed Mercury URLs and pin hop-1 storage dialing\n\n- Classify URLs into canonical Mercury asset endpoints, malformed same-origin Mercury /api/... or relative references, and unrelated external links so malformed same-origin URLs fail closed before legacy media loaders while preserving #fragments on external links\n- Reserve injected HttpClient strictly for hop 0 and enforce validated-IP pinning with original-hostname TLS SNI on every hop-1 storage redirect\n- Propagate cancellation into the hop-1 connection factory so cancelling during pending DNS lookup aborts without opening a storage connection\n- Add bounded fallback across validated DNS addresses on hop-1 storage reads\n- Preserve #fragments on external consumable media and purchase URLs across NativeSavedConsumableStore save/load round trips while rejecting malformed same-origin Mercury references\n- Add Round 2 regression tests across runtime, widgets, device_manual, and rigel_platform"
-  authors: ["0xfe10"]
+  message: "fix(editor): merge main and fix photo border checks\n\nPreserve border previews, editor assets, and the shared updates from main. Guard border picker opens and category loading, deduplicate asset records, and update the frozen assembly and editor tests."
+  authors: ["0xfe10","chenanshun"]
 dispatch:
-  created_at: "2026-11-26T18:05:08Z"
+  created_at: "2026-11-26T18:21:20Z"
