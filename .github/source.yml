@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4c7b26e0422bee21e2e91ef7f03e1c17476abb93"
+  sha: "c3d2cb75ef1977a246c18af9ab391058f1e88705"
   ref_type: "branch"
-  ref_name: "fix/device-transport-tabs"
-  run_id: 45817960766
+  ref_name: "main"
+  run_id: 45820203915
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): hide cloud printer tab and make transport icons transparent"
+  message: "fix(mellow): hide cloud printer tab and make transport icons transparent (#495)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T12:16:04Z"
+  created_at: "2026-11-26T12:30:16Z"
