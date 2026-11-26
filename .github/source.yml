@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "128f6afb1d8b75557d53df3f0330ae99234f95fb"
+  sha: "0b39f5fbbb5920aa169caa9101d543f8f495a8e4"
   ref_type: "branch"
   ref_name: "feat/icc-color-profiles"
-  run_id: 45762185013
+  run_id: 45766627873
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(devices): add ICC color profiles"
+  message: "fix(devices): address ICC profile review findings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T05:31:54Z"
+  created_at: "2026-11-26T06:12:54Z"
