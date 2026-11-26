@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4e0d3b0cf569f905d39c1e91fbc2497e4420c084"
+  sha: "7a36c56011bbbd3abf6756af6e87dcd7400afa21"
   ref_type: "branch"
-  ref_name: "feat/orion-521-ar-domain-scorer"
-  run_id: 45892389402
+  ref_name: "main"
+  run_id: 45892713754
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ar_photo): resolve Round 3 media pinning, revision, replay, and merge guards\n\nResolve all 5 Round 3 P1 audit findings for Slice 1 (Part of #521):\n- Pin in-flight candidate/item media paths across writes, uploads, and print dispatch so concurrent draft replacement or discard never deletes active media, and capture target-edit generation before awaiting initial restore\n- Share canonical effectiveRemoteId semantics across cubit and merger for legacy synced rows and reject null or non-positive assetRevision on versioned cloud updates\n- Preserve original baselineAssetRevision on ArPendingCloudAttempt for exact-key replay, correlate attempts across draft and item namespaces via localItemId/videoPath/remoteId, and reconcile ambiguous net-new attempts before minting fresh keys so each item produces strictly one remote row\n- Retain unresolved pendingAttempts during batch syncPending unless a returned synced row explicitly confirms the specific idempotencyKey and full payload\n- Remove cover-hash-only revision reuse across unknown-to-known transitions and retain the established assetRevision floor across unversioned replies to prevent rollback when timestamps are absent"
+  message: "feat(local_storage): add shared Drift WAL and filesystem local storage vault (#529)\n\n* feat(local_storage): add shared Drift WAL and filesystem local storage vault\n\n* fix(local_storage): add Dart Stopwatch retry for SQLITE_BUSY on BEGIN IMMEDIATE"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T20:37:39Z"
+  created_at: "2026-11-26T20:40:27Z"
