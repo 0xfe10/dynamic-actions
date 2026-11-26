@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1f8d264a976d28d5b39d272f52c7b1be9491668b"
+  sha: "2d711b7997454a1b036030892b328aeaa75a0af7"
   ref_type: "branch"
   ref_name: "feat/orion-499-bluetooth-direct-flow"
-  run_id: 45846204121
+  run_id: 45846789118
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(bluetooth): verify direct printer connections by model"
+  message: "test(bluetooth): accept Mellow permission rationale"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T15:09:31Z"
+  created_at: "2026-11-26T15:13:11Z"
