@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9f9938ad99f438c5de91da757429d7805d8869ec"
+  sha: "092c51bd04a1eb3074e804f295ad5b1eb28d4226"
   ref_type: "branch"
   ref_name: "feat/ios-platform-init-apple-ca"
-  run_id: 45753544862
+  run_id: 45754095660
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(platform): allow first-time mobile identifiers and bundle Apple Root CA"
+  message: "fix(mercury): make bundled Apple Root CA accessible to runtime user"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T04:10:57Z"
+  created_at: "2026-11-26T04:16:03Z"
