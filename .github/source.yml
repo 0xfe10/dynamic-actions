@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d7b5e30163f999e375b27210c50e8b9382dee0cd"
+  sha: "a6829e9b5d7fbf8583856c8b66a6a1ec76ced7ca"
   ref_type: "branch"
-  ref_name: "feat/cosmos-675-presign-ttl"
-  run_id: 45853250912
+  ref_name: "feat/cosmos-682-v1-platform"
+  run_id: 45854582640
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storage): synchronize in-flight read TTL invalidation test\n\nSignal lookup start on a channel so the race detector no longer sees the test and the stub share an unsynchronized counter."
+  message: "test(vega): match migrated store publishing paths"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T15:52:08Z"
+  created_at: "2026-11-26T16:00:28Z"
