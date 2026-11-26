@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "53c94022f17866242823b69a17195f15fc367e5c"
+  sha: "846a1eb8a923424f90fc25dcc5b79d451ea094a9"
   ref_type: "branch"
-  ref_name: "feat/orion-498-wifi-permissions-scan"
-  run_id: 45829494734
+  ref_name: "feat/orion-497-psdk-family-contracts"
+  run_id: 45829652252
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel,rigel-build): add Android nearby Wi-Fi scan channel and Wi-Fi/Local Network permissions\n\n- Implement Android NearbyWifiScanChannel (com.aiyin.rigel/nearby_wifi) wired into MainActivity for nearby SSID enumeration, runtime permission and location-service checks, scan throttling fallback, cancellation, and system settings navigation.\n- Freeze-remove psdk_network and nearby Wi-Fi permissions in main/AndroidManifest.xml and re-enable them in debug/AndroidManifest.xml without capping location permissions at API 30.\n- Declare NSLocalNetworkUsageDescription and NSBonjourServices (_printer._tcp) in iOS Info.plist, and strip/inject them cleanly in tools/rigel_build assembly while keeping HotspotConfiguration entitlement opt-in.\n- Update MELLOW and BREEZE DEVICE_MANAGEMENT requiredNativePermissions in implementations.json and add Cosmos-compatible permission assembly tests."
+  message: "feat(device-management): add PSDK family dispatch and connection contracts"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T13:28:49Z"
+  created_at: "2026-11-26T13:29:45Z"
