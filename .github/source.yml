@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "98563ab285117903113b5c600266e0b4f64989e3"
+  sha: "137497eeaf9353cb154ba9a3171dcd3581990aed"
   ref_type: "branch"
-  ref_name: "feat/cosmos-683-vega-api-host"
-  run_id: 45881182899
+  ref_name: "feat/cosmos-686-unify-sort-order-desc"
+  run_id: 45881539164
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): unify asset host resolution and guard retired runtimes\n\n- Reuse canonical resolveMercuryAssetUrl from api-client across Vega logo and creative asset previews via EffectiveApiHostProvider\n- Validate raw authority suffixes before URL dot-segment normalization in validateApiHostOrigin\n- Retire outgoing AppRuntime instances cleanly with shared browser history scoping, AbortSignal racing, and disposed callback guards\n- Pin mounted AiConversation surfaces to their live bound thread so diagnostic Ask AI handoffs do not hijack concurrent workspace streams"
+  message: "fix(migration): align creative lock order with draft saves"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T19:07:11Z"
+  created_at: "2026-11-26T19:10:01Z"
