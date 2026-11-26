@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d1fcafa22a716e839c8ab8da6d8b68f41e1925d8"
+  sha: "29c8fae42be1eba64ced6754dbc55bab4ddb61e6"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45867142431
+  ref_name: "feat/cosmos-683-vega-api-host"
+  run_id: 45869626860
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(platform): unify the Mercury Platform API prefix (#684)\n\n* feat(platform): unify the Mercury Platform API prefix\n\n* test(vega): match migrated store publishing paths\n\n* fix(vega): validate Mercury asset download URLs\n\n* fix(platform): regenerate presign TTL schema examples"
+  message: "fix(vega): unify asset host resolution and guard retired runtimes\n\n- Reuse canonical resolveMercuryAssetUrl from api-client across Vega logo and creative asset previews via EffectiveApiHostProvider\n- Validate raw authority suffixes before URL dot-segment normalization in validateApiHostOrigin\n- Retire outgoing AppRuntime instances cleanly with shared browser history scoping, AbortSignal racing, and disposed callback guards\n- Pin mounted AiConversation surfaces to their live bound thread so diagnostic Ask AI handoffs do not hijack concurrent workspace streams"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T17:22:23Z"
+  created_at: "2026-11-26T17:40:07Z"
