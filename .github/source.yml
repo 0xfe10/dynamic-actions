@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e0c98a5ea42ddb4d45854590ad109a2667b4b036"
+  sha: "0e0d65cf43d74f480fa6a6c3c097d580f6947e22"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45792539248
+  ref_name: "feat/cosmos-675-presign-ttl"
+  run_id: 45841156530
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Source App Shell and Home layout from Build Features (#673)\n\n* feat(shell): source app layouts from build features\n\n* fix(shell): address dynamic Home review findings\n\n* chore(shell): pin Orion dynamic Home runtime\n\n* test(shell): exercise feature picker against Mercury"
+  message: "feat(platform): configure presigned read URL expiry\n\nStore a platform-wide presigned object read and download URL lifetime, editable from Platform General Settings, and use it for later read URL issuance.\n\nCloses #675"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T09:30:39Z"
+  created_at: "2026-11-26T14:39:20Z"
