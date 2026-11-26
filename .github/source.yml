@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "de7db0d6f4c30b887c02a9d5a5abd1bbc41b4f29"
+  sha: "d3b33347d6fc84e9c541f71d33453ce6e68df106"
   ref_type: "branch"
-  ref_name: "chenas-11-26"
-  run_id: 45770658788
+  ref_name: "main"
+  run_id: 45772250548
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(editor): fix sticker panel formatting, lint, and tests"
-  authors: ["0xfe10"]
+  message: "feat(editor): \u5b8c\u5584\u8d34\u7eb8 UI \u4e0e\u4f7f\u7528\u8bb0\u5f55\u672c\u5730\u7f13\u5b58 (#485)\n\n* 1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u8d34\u7eb8 \uff09\n\n* 1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u8d34\u7eb8 \u5b8c\u6574\u7248\uff09\n\n* 1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u8d34\u7eb8 ui\u8c03\u6574\uff09\n\n* 1.\u56fe\u7247\u7f16\u8f91\u56689\uff08\u8d34\u7eb8\u7528\u8fc7\u7684\u8d34\u7eb8\u672c\u5730\u7f13\u5b58\uff09\n\n* test(editor): fix sticker panel formatting, lint, and tests\n\n---------\n\nCo-authored-by: 0xfe10 <0xfe10@proton.me>"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-26T06:47:49Z"
+  created_at: "2026-11-26T07:01:34Z"
