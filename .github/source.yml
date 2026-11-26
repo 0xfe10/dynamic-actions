@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "55bd3c7cda604d716438f99bec65b8cbc70635de"
+  sha: "1f8d264a976d28d5b39d272f52c7b1be9491668b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45841712478
+  ref_name: "feat/orion-499-bluetooth-direct-flow"
+  run_id: 45846204121
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(device-management): add PSDK family dispatch and connection contracts (#503)\n\n* feat(device-management): add PSDK family dispatch and connection contracts\n\n* fix(device-management): preserve Wi-Fi sessions during connection flows\n\n* test(rigel-platform): verify explicit Wi-Fi disconnect after discovery"
+  message: "feat(bluetooth): verify direct printer connections by model"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T14:42:46Z"
+  created_at: "2026-11-26T15:09:31Z"
