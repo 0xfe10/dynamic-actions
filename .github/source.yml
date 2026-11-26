@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8e060c76f59314eee5a48ee018cdf18380be8774"
+  sha: "c98660ae115cd3cbd1a768e942538d7e878a530e"
   ref_type: "branch"
-  ref_name: "feat/orion-509-runtime-asset-links"
-  run_id: 45866124541
+  ref_name: "main"
+  run_id: 45867915947
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime): harden Mercury asset redirects, video playback, and legacy media\n\n- Download Mercury tutorial videos via redirect-disabled guarded transport into bounded temp files cleaned up on dispose and play with VideoPlayerController.file while keeping legacy HTTPS videos on networkUrl.\n- Classify Mercury vs legacy external URLs before selecting guarded transport so legacy direct/redirecting HTTPS media works across staging and production and external support/purchase #fragments are preserved.\n- Require HTTPS unconditionally on hop-1 storage redirects and validate resolved destination IPs against loopback/private/link-local/CGNAT/unique-local/mapped ranges before connecting.\n- Cancel active response stream subscriptions immediately on cancellation and reject oversized or non-200 responses without unbounded body draining.\n- Track hop and Mercury endpoint kind on RemoteResourceHttpException so only hop-0 runtime asset 401 errors trigger session refresh.\n- Fetch all Mercury OrnImage assets through guarded transport and select SVG vs raster decoding from verified MIME type or bytes."
+  message: "refactor(tools): align platform API prefix (#510)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T17:15:20Z"
+  created_at: "2026-11-26T17:28:11Z"
