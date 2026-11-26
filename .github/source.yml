@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e3710f87b66c45bee1e4bd188650e343e854673e"
+  sha: "540f72ef4a99ad0e5876bbe9707e8fc29411a139"
   ref_type: "branch"
-  ref_name: "feat/orion-501-mellow-wifi-ui"
-  run_id: 45886801350
+  ref_name: "feat/orion-521-ar-domain-scorer"
+  run_id: 45888441219
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): guard Direct exit navigation when GoRouter is absent"
+  message: "fix(ar_photo): harden print guards, sync reconciliation, and scorer bounds\n\nResolve Round 2 audit findings for Slice 1 (Part of #521):\n- Guard all async save/print checkpoints with target-edit generation so late draft or preview edits never dispatch stale prints or overwrite active state\n- Require exact remote ID preservation on linked updates, reject tombstoned IDs on net-new registrations, and enforce monotonic assetRevision\n- Fingerprint full cloud save payloads before reusing idempotency keys, reconcile uncommitted cloud saves before follow-ups, and retain ambiguous attempts when switching to localOnly\n- Keep linked cloud rows intact on ordinary local save by inserting a distinct localOnly copy\n- Require deletionAuthoritative or point-lookup confirmation before detaching omitted linked items and preserve tombstones, snapshotGeneration, and pendingAttempts across bare syncPending snapshots\n- Clear stale revision asset metadata when remote assetRevision advances or transitions from unknown to known\n- Capture manual-pick and draft-slot epochs before video cleanup, bound FrameScorer input copy sizes, harden JSON numerics and scale-invariant homography checks, expose unmodifiable snapshot/selection views, and add regression tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T19:52:10Z"
+  created_at: "2026-11-26T20:05:31Z"
