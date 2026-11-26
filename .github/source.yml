@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "219a6ecfcfe02c057afe6533b1c2ad5fff7bb569"
+  sha: "ffa07f39e9ea7ac3733033ec1e737b61029f9a3a"
   ref_type: "branch"
   ref_name: "feat/cosmos-686-unify-sort-order-desc"
-  run_id: 45870672935
+  run_id: 45872319470
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(catalog): unify descending sort order and create defaults"
+  message: "test(releasebuild): align snapshot fixtures with descending sort order"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T17:47:35Z"
+  created_at: "2026-11-26T18:00:03Z"
