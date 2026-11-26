@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a6829e9b5d7fbf8583856c8b66a6a1ec76ced7ca"
+  sha: "a60444d3215aa4721a7de3613f825bfb2c138d33"
   ref_type: "branch"
-  ref_name: "feat/cosmos-682-v1-platform"
-  run_id: 45854582640
+  ref_name: "feat/cosmos-683-vega-api-host"
+  run_id: 45857180535
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): match migrated store publishing paths"
+  message: "feat(vega): add developer-settings API host switcher\n\nAdd runtime API host override validation, persistence, and reset helpers backed by the build-time VITE_MERCURY_BASE_URL default, wire Vega runtime re-initialization on host changes, expose an API host switcher card in Developer Settings, and render an active custom-host recovery banner on login and session failure views.\n\nCloses #683"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T16:00:28Z"
+  created_at: "2026-11-26T16:16:29Z"
