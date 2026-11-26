@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3cfe27c76e4f07d1bf6f7a5d9c0c36c65a3b3f65"
+  sha: "d1fcafa22a716e839c8ab8da6d8b68f41e1925d8"
   ref_type: "branch"
-  ref_name: "feat/cosmos-682-v1-platform"
-  run_id: 45862952330
+  ref_name: "main"
+  run_id: 45867142431
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(platform): regenerate presign TTL schema examples"
+  message: "feat(platform): unify the Mercury Platform API prefix (#684)\n\n* feat(platform): unify the Mercury Platform API prefix\n\n* test(vega): match migrated store publishing paths\n\n* fix(vega): validate Mercury asset download URLs\n\n* fix(platform): regenerate presign TTL schema examples"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T16:54:17Z"
+  created_at: "2026-11-26T17:22:23Z"
