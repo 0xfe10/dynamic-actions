@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9b67fbdfb1dee79519c91570b8bc548e3aa757eb"
+  sha: "24100ea51e5281b78df47057029ea99919cab053"
   ref_type: "branch"
-  ref_name: "feat/dynamic-home-shell"
-  run_id: 45771166704
+  ref_name: "main"
+  run_id: 45773925075
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(shell): source app layouts from build features"
+  message: "Add ICC color profiles for devices and consumables (#672)\n\n* feat(devices): add ICC color profiles\n\n* fix(devices): address ICC profile review findings\n\n* chore(orion): update pin for ICC runtime client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T06:52:21Z"
+  created_at: "2026-11-26T07:15:28Z"
