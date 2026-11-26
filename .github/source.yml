@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6f7ca2a29b4a9906bbab15db8ef7529e838549da"
+  sha: "7b9cf988af60c27955a6265d1a2ae379ff2f306a"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45888576030
+  run_id: 45889335247
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(print_library): add folder tree, lazy draft loading, and cubit v2 (#514)\n\nCloses #514"
+  message: "feat(mellow): build Wi-Fi STA and Direct Path A/B connection flows (#511)\n\n* feat(mellow): build Wi-Fi STA and Direct Path A/B connection flows\n\n* fix(mellow): preserve active router Wi-Fi printer when browsing Direct paths\n\n* fix(mellow): guard Direct exit navigation when GoRouter is absent"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T20:06:38Z"
+  created_at: "2026-11-26T20:12:44Z"
