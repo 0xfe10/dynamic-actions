@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "653a5488662b7a0c5fe1bc69a9e7334a473b0744"
+  sha: "2c2e92f1f262362906d16f36c3d78e197b6a1805"
   ref_type: "branch"
-  ref_name: "feat/orion-524-login-align"
-  run_id: 45894974689
+  ref_name: "feat/orion-521-ar-domain-scorer"
+  run_id: 45896310965
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(auth): guard carrier readiness and SDK lifecycle"
+  message: "fix(ar_photo): enforce owner-scoped pins, strong ID correlation, non-mutating recovery, and revision asset guards\n\nResolve all 5 Round 4 P1 audit findings for Slice 1 (Part of #521):\n- Scope in-flight media pins to their originating owner and revision so pin release never evaluates cleanup against another owner's state or while closing\n- Correlate pending attempts strictly by localItemId or effectiveRemoteId (removing videoPath-only matching) and propagate explicit draftId from drafts to materialized items so distinct Save-copies sharing a video path never inherit another item's binding or attempt\n- Remove mutating probe fallbacks that submitted changed payloads under an older idempotencyKey, fail closed when no non-mutating lookup can resolve an ambiguous net-new attempt, and store discovered revisions in resolvedAssetRevision while keeping baselineAssetRevision immutable\n- Include verifiable canonicalVideoIdentity (preferring videoSha256) in save payload fingerprinting and validation, and keep the local pendingAttempts journal authoritative in syncPending by merging unknown gateway entries first and applying confirmed removals last\n- Preserve existing verified versioned asset fields alongside the retained numeric assetRevision when an unversioned reply arrives during ArPhotoSyncMerger.merge"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T21:00:02Z"
+  created_at: "2026-11-26T21:11:01Z"
