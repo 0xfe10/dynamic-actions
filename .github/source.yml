@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0e5cf537d1a3cb48f7aaf63b81520f5b46172a4e"
+  sha: "b335bccb749c9fa656d09d2da2272fb374f6171f"
   ref_type: "branch"
-  ref_name: "feat/orion-509-runtime-asset-links"
-  run_id: 45878855759
+  ref_name: "main"
+  run_id: 45880900385
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime): fail-close shared Mercury routes, guard PDF Dio, and bound hop-1 connect\n\n- Reject malformed same-origin Mercury /api/... references before any request or resolver return in readRemoteResource and resolveMercuryAssetRedirectHop, reject ordinary redirects into reserved Mercury routes, and enforce fail-closed classification in buildMellowEditorResourceLoader\n- Route canonical Mercury PDF manuals unconditionally through guarded readRemoteResourceBytes even when a Dio client is injected, reserving Dio strictly for external PDFs\n- Enforce a finite per-attempt TCP and TLS deadline on hop-1 storage dialing, cancelling stalled tasks/sockets before advancing to the next validated address with the original TLS hostname\n- Extract GuardedNetworkImage into guarded_network_image.dart and add Round 3 regression tests across runtime, mellow_presentation, and rigel_platform"
+  message: "feat(wifi): add native printer provisioning and Direct connections (#507)\n\n* feat(wifi): wire native printer provisioning and direct connections\n\n* fix(wifi): retain direct retry and recover iOS access\n\n* fix(wifi): use verified Bluetooth sessions\n\n* fix(wifi): enforce verified direct retry and live printer state\n\n* fix(wifi): expose connection cancellation and recovery\n\n* fix(wifi): retry hotspot teardown and preserve flow state"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T18:48:50Z"
+  created_at: "2026-11-26T19:05:05Z"
