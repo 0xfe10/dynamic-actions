@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "182fb6fa058efed5a7e1d7a647cd700b4bf09340"
+  sha: "160985c1acb90bfc4ce8fa35be68979cc5b85dc5"
   ref_type: "branch"
-  ref_name: "feat/cosmos-683-vega-api-host"
-  run_id: 45876855020
+  ref_name: "feat/cosmos-677-asset-links"
+  run_id: 45877901839
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): unify asset host resolution and guard retired runtimes\n\n- Reuse canonical resolveMercuryAssetUrl from api-client across Vega logo and creative asset previews via EffectiveApiHostProvider\n- Validate raw authority suffixes before URL dot-segment normalization in validateApiHostOrigin\n- Retire outgoing AppRuntime instances cleanly with shared browser history scoping, AbortSignal racing, and disposed callback guards\n- Pin mounted AiConversation surfaces to their live bound thread so diagnostic Ask AI handoffs do not hijack concurrent workspace streams"
+  message: "refactor(mercury): register asset redirects on publicRouter and renumber 00206\n\nMount GET /api/v1/assets/{publicId}, GET /api/v1/platform/assets/{publicId}, and GET /api/v1/runtime/assets/{publicId} symmetrically on publicRouter outside generated OpenAPI specs with strict auth isolation and 307 security headers (Cache-Control: no-store, Referrer-Policy: no-referrer, X-Content-Type-Options: nosniff, and Vary: Cookie, Authorization on authenticated routes). Renumber csm_asset_links migration to 00206_asset_links.sql."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T18:33:28Z"
+  created_at: "2026-11-26T18:41:40Z"
