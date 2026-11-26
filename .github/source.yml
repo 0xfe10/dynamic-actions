@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "137497eeaf9353cb154ba9a3171dcd3581990aed"
+  sha: "631cbacbf817553918b7ac40887804a96ad0268d"
   ref_type: "branch"
-  ref_name: "feat/cosmos-686-unify-sort-order-desc"
-  run_id: 45881539164
+  ref_name: "feat/cosmos-694-aliyun-one-click-login"
+  run_id: 45883642204
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(migration): align creative lock order with draft saves"
+  message: "fix(vega): verify public carrier SDK key projection"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T19:10:01Z"
+  created_at: "2026-11-26T19:26:29Z"
