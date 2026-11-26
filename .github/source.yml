@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2d711b7997454a1b036030892b328aeaa75a0af7"
+  sha: "5d99e98bf8b5f7882d4638121f8ededdf84136df"
   ref_type: "branch"
-  ref_name: "feat/orion-499-bluetooth-direct-flow"
-  run_id: 45846789118
+  ref_name: "feat/orion-500-native-wifi-gateway"
+  run_id: 45848228263
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(bluetooth): accept Mellow permission rationale"
+  message: "feat(wifi): wire native printer provisioning and direct connections"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T15:13:11Z"
+  created_at: "2026-11-26T15:21:23Z"
