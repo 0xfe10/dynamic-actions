@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0b39f5fbbb5920aa169caa9101d543f8f495a8e4"
+  sha: "91287ff527c0370f080f098a85ed6e2b4232bc3b"
   ref_type: "branch"
   ref_name: "feat/icc-color-profiles"
-  run_id: 45766627873
+  run_id: 45770354726
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(devices): address ICC profile review findings"
+  message: "chore(orion): update pin for ICC runtime client"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T06:12:54Z"
+  created_at: "2026-11-26T06:45:12Z"
