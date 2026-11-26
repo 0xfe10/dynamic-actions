@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "bc5a0c39c36f99bf9f616d9fb149b26f83722f22"
+  sha: "e618fb9d13b62a4a0eee2b0575b6cfce21dfbd97"
   ref_type: "branch"
-  ref_name: "feat/orion-515-rigel-vault"
-  run_id: 45905782922
+  ref_name: "main"
+  run_id: 45907491476
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel_platform): cut over NativePrintLibraryStore to LocalStorageVault (#515)"
+  message: "feat(rigel_platform): cut over NativePrintLibraryStore to LocalStorageVault (#515)\n\nCloses #515\nRelated to #493"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T22:35:48Z"
+  created_at: "2026-11-26T22:52:38Z"
