@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6565acb0fe110901d02be680cd0d51b49d025bb4"
+  sha: "4aacf6dcf3abb77d45a580f93ff6244d2ab727bc"
   ref_type: "branch"
-  ref_name: "feat/orion-500-native-wifi-gateway"
-  run_id: 45872608155
+  ref_name: "main"
+  run_id: 45872705707
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(wifi): expose connection cancellation and recovery"
+  message: "refactor(catalog): align client sort order with descending ranks (#520)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T18:01:59Z"
+  created_at: "2026-11-26T18:02:45Z"
