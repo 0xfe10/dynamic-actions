@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c3d2cb75ef1977a246c18af9ab391058f1e88705"
+  sha: "53c94022f17866242823b69a17195f15fc367e5c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45820203915
+  ref_name: "feat/orion-498-wifi-permissions-scan"
+  run_id: 45829494734
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): hide cloud printer tab and make transport icons transparent (#495)"
+  message: "feat(rigel,rigel-build): add Android nearby Wi-Fi scan channel and Wi-Fi/Local Network permissions\n\n- Implement Android NearbyWifiScanChannel (com.aiyin.rigel/nearby_wifi) wired into MainActivity for nearby SSID enumeration, runtime permission and location-service checks, scan throttling fallback, cancellation, and system settings navigation.\n- Freeze-remove psdk_network and nearby Wi-Fi permissions in main/AndroidManifest.xml and re-enable them in debug/AndroidManifest.xml without capping location permissions at API 30.\n- Declare NSLocalNetworkUsageDescription and NSBonjourServices (_printer._tcp) in iOS Info.plist, and strip/inject them cleanly in tools/rigel_build assembly while keeping HotspotConfiguration entitlement opt-in.\n- Update MELLOW and BREEZE DEVICE_MANAGEMENT requiredNativePermissions in implementations.json and add Cosmos-compatible permission assembly tests."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T12:30:16Z"
+  created_at: "2026-11-26T13:28:49Z"
