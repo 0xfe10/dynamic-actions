@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "bfbdae13d663a6c359c770d9c85414c4bb00978b"
+  sha: "b2e257ee10eb1e73b2c1067bcc4329c595ef7c08"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45782911753
+  run_id: 45782995612
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(home): map runtime feature-sourced shell rows (#490)"
+  message: "fix(mellow): align feedback thread bubbles and emoji panel with Lanhu (#491)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T08:25:01Z"
+  created_at: "2026-11-26T08:25:26Z"
