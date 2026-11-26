@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/labelix"
   repository_id: 1110430942
-  sha: "56a7fd2401d0c14094461f18ff9d331a8ef78ffc"
-  ref_type: "tag"
-  ref_name: "v0.0.156"
-  run_id: 45576570308
+  sha: "06b1f59d9a57b6178dd36808e52a5bd03847fd05"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 45725792845
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rubus): preserve mall user lookup without app session"
-  authors: ["caiwei12"]
+  message: "fix\uff1a\u5e7f\u573a\u5ba1\u6838\u901a\u8fc7\u4e5f\u80fd\u4eba\u5de5\u5ba1\u6838"
+  authors: ["caiwei1"]
 dispatch:
-  created_at: "2026-11-25T08:28:46Z"
+  created_at: "2026-11-26T00:03:09Z"
