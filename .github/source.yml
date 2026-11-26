@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "51a052ec1c1dc16c195bd15134a5b311aa2d239a"
+  sha: "f3c4f6a370a06132062061dd10e168b7a0da63b1"
   ref_type: "branch"
-  ref_name: "feat/cosmos-683-vega-api-host"
-  run_id: 45887237762
+  ref_name: "feat/cosmos-677-asset-links"
+  run_id: 45888153316
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): align HTTP asset origins, fixed-prop retirement, and chat model scope\n\n- Allow configured non-loopback HTTP origins for /api/v1/ assets and validate HTTPS assets independently of base in resolveMercuryAssetUrl\n- Increment a retirement epoch in App so reset or apply on a fixed apiBaseUrl prop mounts a fresh runtime at the explicit host\n- Guard synchronous transport throws in raceWithAbort so attached abort listeners are removed immediately\n- Scope ChatModelPicker selection through AiConversation's bound thread ID while preserving blank-conversation defaults"
+  message: "feat(mercury): add permanent asset link registry and 307 redirect endpoints\n\nAdd mercury.csm_asset_links (00206_asset_links.sql) with canonical relative object key limits (<= 1,023 physical bytes including enforced_prefix), live owner tuple/resource validation on registration and redirect, immutable owner and revoked-state preservation on Upsert, distinct release_build vs native_app_release download RBAC, post-auth backing-object Stat checks, and symmetric 307 Temporary Redirect endpoints across /api/v1/assets/{publicId}, /api/v1/platform/assets/{publicId}, and /api/v1/runtime/assets/{publicId}."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T19:55:48Z"
+  created_at: "2026-11-26T20:03:24Z"
