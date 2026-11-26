@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c714069b9efc7778243d8c40f0fdffaf0091e41d"
+  sha: "8fb1647d988c87d4195a606dab00ad0365141569"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45881264280
+  ref_name: "feat/orion-521-ar-domain-scorer"
+  run_id: 45881792454
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime): support Mercury permanent asset links and 307 redirects (#512)\n\n* feat(runtime): support Mercury permanent asset links and 307 redirects\n\nResolve site-relative /api/v1/assets/{publicId} and /api/v1/runtime/assets/{publicId} URLs against AppProfile.runtimeApiBaseUri, enforce a single validated 307 storage hop with Authorization/Cookie stripping, scope end-user Bearer tokens strictly to same-origin /api/v1/runtime/assets/ hop 0, and adapt non-creative Orion media consumers while keeping legacy absolute URLs compatible.\n\n* fix(runtime): harden Mercury asset redirects, video playback, and legacy media\n\n- Download Mercury tutorial videos via redirect-disabled guarded transport into bounded temp files cleaned up on dispose and play with VideoPlayerController.file while keeping legacy HTTPS videos on networkUrl.\n- Classify Mercury vs legacy external URLs before selecting guarded transport so legacy direct/redirecting HTTPS media works across staging and production and external support/purchase #fragments are preserved.\n- Require HTTPS unconditionally on hop-1 storage redirects and validate resolved destination IPs against loopback/private/link-local/CGNAT/unique-local/mapped ranges before connecting.\n- Cancel active response stream subscriptions immediately on cancellation and reject oversized or non-200 responses without unbounded body draining.\n- Track hop and Mercury endpoint kind on RemoteResourceHttpException so only hop-0 runtime asset 401 errors trigger session refresh.\n- Fetch all Mercury OrnImage assets through guarded transport and select SVG vs raster decoding from verified MIME type or bytes.\n\n* fix(runtime): fail-close malformed Mercury URLs and pin hop-1 storage dialing\n\n- Classify URLs into canonical Mercury asset endpoints, malformed same-origin Mercury /api/... or relative references, and unrelated external links so malformed same-origin URLs fail closed before legacy media loaders while preserving #fragments on external links\n- Reserve injected HttpClient strictly for hop 0 and enforce validated-IP pinning with original-hostname TLS SNI on every hop-1 storage redirect\n- Propagate cancellation into the hop-1 connection factory so cancelling during pending DNS lookup aborts without opening a storage connection\n- Add bounded fallback across validated DNS addresses on hop-1 storage reads\n- Preserve #fragments on external consumable media and purchase URLs across NativeSavedConsumableStore save/load round trips while rejecting malformed same-origin Mercury references\n- Add Round 2 regression tests across runtime, widgets, device_manual, and rigel_platform\n\n* fix(runtime): fail-close shared Mercury routes, guard PDF Dio, and bound hop-1 connect\n\n- Reject malformed same-origin Mercury /api/... references before any request or resolver return in readRemoteResource and resolveMercuryAssetRedirectHop, reject ordinary redirects into reserved Mercury routes, and enforce fail-closed classification in buildMellowEditorResourceLoader\n- Route canonical Mercury PDF manuals unconditionally through guarded readRemoteResourceBytes even when a Dio client is injected, reserving Dio strictly for external PDFs\n- Enforce a finite per-attempt TCP and TLS deadline on hop-1 storage dialing, cancelling stalled tasks/sockets before advancing to the next validated address with the original TLS hostname\n- Extract GuardedNetworkImage into guarded_network_image.dart and add Round 3 regression tests across runtime, mellow_presentation, and rigel_platform"
+  message: "fix(ar_photo): harden print fencing, idempotent cloud recovery, sync safety, and scorer bounds"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T19:07:53Z"
+  created_at: "2026-11-26T19:12:09Z"
