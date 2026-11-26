@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b26b254e3fe928c4392e4aba442a758af56b59d0"
+  sha: "e0c98a5ea42ddb4d45854590ad109a2667b4b036"
   ref_type: "branch"
-  ref_name: "feat/dynamic-home-shell"
-  run_id: 45788900759
+  ref_name: "main"
+  run_id: 45792539248
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(shell): exercise feature picker against Mercury"
+  message: "Source App Shell and Home layout from Build Features (#673)\n\n* feat(shell): source app layouts from build features\n\n* fix(shell): address dynamic Home review findings\n\n* chore(shell): pin Orion dynamic Home runtime\n\n* test(shell): exercise feature picker against Mercury"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T09:06:38Z"
+  created_at: "2026-11-26T09:30:39Z"
