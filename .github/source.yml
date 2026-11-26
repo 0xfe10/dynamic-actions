@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "7a36c56011bbbd3abf6756af6e87dcd7400afa21"
+  sha: "653a5488662b7a0c5fe1bc69a9e7334a473b0744"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45892713754
+  ref_name: "feat/orion-524-login-align"
+  run_id: 45894974689
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(local_storage): add shared Drift WAL and filesystem local storage vault (#529)\n\n* feat(local_storage): add shared Drift WAL and filesystem local storage vault\n\n* fix(local_storage): add Dart Stopwatch retry for SQLITE_BUSY on BEGIN IMMEDIATE"
+  message: "fix(auth): guard carrier readiness and SDK lifecycle"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T20:40:27Z"
+  created_at: "2026-11-26T21:00:02Z"
