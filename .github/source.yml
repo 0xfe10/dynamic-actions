@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5dee41ca6b259a9cd863d2ca157cac070edd89e3"
+  sha: "9f9938ad99f438c5de91da757429d7805d8869ec"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45688408823
+  ref_name: "feat/ios-platform-init-apple-ca"
+  run_id: 45753544862
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(media): site-wide image and file audit (#670)\n\n* fix(media): harden OSS MIME, presign inline, and Vega media UX\n\nStore declared MIME on server-side puts, request inline OSS GET disposition, tolerate legacy octet-stream on finalize, and add shared Vega media thumb plus presigned URL cache limits.\n\n* fix(vega): align media errors and signed-url cache TTL\n\nReset sticky image failures per URL, cap React Query stale time under presign TTL, and defer blob URL revocation for downloads and local previews.\n\n* fix(media): address PR #670 round 2 storage and Vega media review\n\n* fix(media): round 3 MIME, font hash, cache and blob revoke\n\n* fix(media): round 4 CI MIME fonts cache and RawImage sweep\n\n* fix(media): round 5 font finalize SVG gate and media tests"
+  message: "fix(platform): allow first-time mobile identifiers and bundle Apple Root CA"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T19:46:11Z"
+  created_at: "2026-11-26T04:10:57Z"
