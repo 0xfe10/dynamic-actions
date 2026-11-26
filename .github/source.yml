@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "271d325081ac6f232972e3fa94400626d28e3cb6"
+  sha: "44f76bb1c0b9b34a6ccd51475bcfd8976bdb73d3"
   ref_type: "branch"
-  ref_name: "feat/orion-501-mellow-wifi-ui"
-  run_id: 45854049602
+  ref_name: "feat/orion-499-bluetooth-direct-flow"
+  run_id: 45856421632
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): build Wi-Fi STA and Direct Path A/B connection flows\n\nImplement Mellow Wi-Fi STA classic router provisioning, Direct Path A Bluetooth SoftAP credential read with immediate Bluetooth release on Wi-Fi join, Direct Path B Android NearbyWifiSheet vs iOS System Settings guidance, local-network permission gating, failure recovery screens, and en/zh-CN/zh-Hant-TW localization for #501."
+  message: "fix(bluetooth): isolate protocol reads and honor permission state"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T15:57:06Z"
+  created_at: "2026-11-26T16:11:48Z"
