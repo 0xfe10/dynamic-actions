@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1f9791f6a64ad51c848ea0559866a14d8d871ac9"
+  sha: "6ca12fc5e3f8fe90bcc1017e49840ba027e7bb9b"
   ref_type: "branch"
-  ref_name: "feat/cosmos-677-asset-links"
-  run_id: 45894293582
+  ref_name: "main"
+  run_id: 45895360368
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): enforce resource scope/object matching, product-image archival, and SQL/Go whitespace parity\n\n- Match asset-bearing owner_resource_id rows against declared (tenant_id, app_id, user_id) scope and (storage_profile_id, object_key) during registration and redirect resolution, including banner_assets, release_build_artifacts (joined to action runs/build specs), native_app_releases, and app_user_avatars\n- Require device_product_images links to reference at least one active device_product via an active version or active tutorial cover so archiving the sole product invalidates redirects\n- Align 00206_asset_links.sql btrim whitespace characters with Go unicode.IsSpace/strings.TrimSpace and enforce UTF-8 validity in ValidCanonicalObjectKey\n- Add Round 2 PostgreSQL integration and Unicode whitespace parity regression tests"
+  message: "feat(cosmos): advance Orion and sync native permissions (#697)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T20:53:50Z"
+  created_at: "2026-11-26T21:03:16Z"
