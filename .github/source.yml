@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e8191fc8dcca06d39983d74570f8a8ad96b9ad92"
+  sha: "b26b254e3fe928c4392e4aba442a758af56b59d0"
   ref_type: "branch"
   ref_name: "feat/dynamic-home-shell"
-  run_id: 45784224696
+  run_id: 45788900759
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(shell): pin Orion dynamic Home runtime"
+  message: "test(shell): exercise feature picker against Mercury"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T08:34:09Z"
+  created_at: "2026-11-26T09:06:38Z"
