@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "dd7b4d88413198d9c99d554be72af5e41dcfc579"
+  sha: "c62a59f5c28aeed0382f32521dec1cfc26e3fb9a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45680665686
+  ref_name: "chenas"
+  run_id: 45741624622
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): align template plaza with Lanhu layout (#477)\n\n* fix(mellow): align template plaza with Lanhu layout\n\n* fix(mellow): resolve template plaza audit findings"
+  message: "fix(orion): align sticker tests and frozen resources"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-25T18:59:36Z"
+  created_at: "2026-11-26T02:19:38Z"
