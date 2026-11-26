@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "91287ff527c0370f080f098a85ed6e2b4232bc3b"
+  sha: "9b67fbdfb1dee79519c91570b8bc548e3aa757eb"
   ref_type: "branch"
-  ref_name: "feat/icc-color-profiles"
-  run_id: 45770354726
+  ref_name: "feat/dynamic-home-shell"
+  run_id: 45771166704
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(orion): update pin for ICC runtime client"
+  message: "feat(shell): source app layouts from build features"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T06:45:12Z"
+  created_at: "2026-11-26T06:52:21Z"
