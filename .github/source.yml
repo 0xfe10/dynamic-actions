@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "31280202bae8bfe86e45b1a7a3fc98a50d25bc62"
+  sha: "c08593cb8ce972455a12df23e116be74d391d82f"
   ref_type: "branch"
-  ref_name: "feat/orion-497-psdk-family-contracts"
-  run_id: 45836725858
+  ref_name: "main"
+  run_id: 45838139465
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(rigel-platform): verify explicit Wi-Fi disconnect after discovery"
+  message: "feat(rigel,rigel-build): add Android nearby Wi-Fi scan channel and Wi-Fi/Local Network permissions (#502)\n\n* feat(rigel,rigel-build): add Android nearby Wi-Fi scan channel and Wi-Fi/Local Network permissions\n\n- Implement Android NearbyWifiScanChannel (com.aiyin.rigel/nearby_wifi) wired into MainActivity for nearby SSID enumeration, runtime permission and location-service checks, scan throttling fallback, cancellation, and system settings navigation.\n- Freeze-remove psdk_network and nearby Wi-Fi permissions in main/AndroidManifest.xml and re-enable them in debug/AndroidManifest.xml without capping location permissions at API 30.\n- Declare NSLocalNetworkUsageDescription and NSBonjourServices (_printer._tcp) in iOS Info.plist, and strip/inject them cleanly in tools/rigel_build assembly while keeping HotspotConfiguration entitlement opt-in.\n- Update MELLOW and BREEZE DEVICE_MANAGEMENT requiredNativePermissions in implementations.json and add Cosmos-compatible permission assembly tests.\n\n* fix(rigel): harden Android nearby Wi-Fi permission upgrade, scan freshness, and SSID decoding\n\n- Request ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION together on API 31+ whenever precise location is missing, keep approximate-only grants eligible for upgrade, and derive permanent denial strictly from an explicit fine-location denial response plus rationale state.\n- Serialize and coalesce concurrent requestAccess calls onto a single active Android permission dialog instead of cancelling the waiting caller or invoking requestPermissions twice.\n- Check WifiManager.EXTRA_RESULTS_UPDATED on SCAN_RESULTS_AVAILABLE_ACTION so asynchronous scan failures wait within the remaining deadline or fail with scan_failed rather than returning stale cached results.\n- Preserve exact untrimmed SSIDs and strictly decode API 33+ WifiSsid.getBytes() as UTF-8 with CodingErrorAction.REPORT without falling back to WifiSsid.toString()."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T14:13:08Z"
+  created_at: "2026-11-26T14:21:31Z"
