@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a122570479ed392e61b3ca88cf3ec8a44043dfeb"
+  sha: "9de65f372fe70921b0d7a9ba9049932e5ef41b46"
   ref_type: "branch"
-  ref_name: "feat/cosmos-677-asset-links"
-  run_id: 45885726304
+  ref_name: "main"
+  run_id: 45886338618
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): harden asset link RBAC, owner liveness, upsert, and key bounds\n\nResolve all Round 1 audit findings on permanent asset links:\n- Split ModuleNativeAppRelease (platform.app_releases.download/manage) from ModuleReleaseBuild (platform.releases.read/manage) and exclude metadata-only platform.app_releases.read.\n- Enforce live tenant/app/user/resource ownership at both registration and redirect resolution, plus RevokeByOwnerUser helper and avatar integrity check.\n- Preserve exact owner tuple and revoked status on idempotent Upsert retries; require explicit Reactivate to restore revoked links.\n- Verify backing object existence via Stat after authorization before issuing 307 redirects so deleted objects return 404 instead of 307.\n- Enforce canonical relative object keys (no dot or empty segments) and the 1,023-byte physical key limit including enforced_prefix in SQL, registration, and signing."
+  message: "refactor(catalog): unify descending sort order across Mercury and Vega (#691)\n\n* refactor(catalog): unify descending sort order and create defaults\n\n* test(releasebuild): align snapshot fixtures with descending sort order\n\n* fix(catalog): preserve legacy sort order and validate edits\n\n* fix(migration): align creative lock order with draft saves"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T19:43:27Z"
+  created_at: "2026-11-26T19:48:24Z"
