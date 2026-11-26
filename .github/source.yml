@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "160985c1acb90bfc4ce8fa35be68979cc5b85dc5"
+  sha: "af0c4aadd7eddaa1cd74fe5d38f4dcba70a74517"
   ref_type: "branch"
-  ref_name: "feat/cosmos-677-asset-links"
-  run_id: 45877901839
+  ref_name: "feat/cosmos-688-template-v2-backend"
+  run_id: 45878571879
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(mercury): register asset redirects on publicRouter and renumber 00206\n\nMount GET /api/v1/assets/{publicId}, GET /api/v1/platform/assets/{publicId}, and GET /api/v1/runtime/assets/{publicId} symmetrically on publicRouter outside generated OpenAPI specs with strict auth isolation and 307 security headers (Cache-Control: no-store, Referrer-Policy: no-referrer, X-Content-Type-Options: nosniff, and Vary: Cookie, Authorization on authenticated routes). Renumber csm_asset_links migration to 00206_asset_links.sql."
+  message: "fix(creativecatalog): reserve migration 00207 for templates"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T18:41:40Z"
+  created_at: "2026-11-26T18:46:41Z"
