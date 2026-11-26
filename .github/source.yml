@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "fcb84ea6097ffc3984473e6d5d3422b4692b97d0"
+  sha: "161fdc6f8c9bdb7da4e3e07c255518a534c375c2"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45861689575
+  ref_name: "feat/cosmos-682-v1-platform"
+  run_id: 45862328665
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(platform): configure presigned read URL expiry (#676)\n\n* feat(platform): configure presigned read URL expiry\n\nStore a platform-wide presigned object read and download URL lifetime, editable from Platform General Settings, and use it for later read URL issuance.\n\nCloses #675\n\n* fix(platform): keep presigned read expiry off a busy connection\n\nResolve the platform read TTL through the caller's transaction, close result sets before signing, and stop caching failed lookups or stale invalidations.\n\n* fix(storage): synchronize in-flight read TTL invalidation test\n\nSignal lookup start on a channel so the race detector no longer sees the test and the stub share an unsynchronized counter."
+  message: "fix(vega): validate Mercury asset download URLs"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T16:45:43Z"
+  created_at: "2026-11-26T16:50:07Z"
