@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e6fc0ab3c142e91124199ac1f6c826e7123613f8"
+  sha: "97c94a2c13e376ef683340354b2429052ff74b9f"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 46020241845
+  ref_name: "refactor/orion-549-home-empty-state"
+  run_id: 46023203297
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(orion): reconcile the Alphix cutout update"
+  message: "refactor(home): render unconfigured home as an empty state"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T14:55:34Z"
+  created_at: "2026-11-27T15:15:49Z"
