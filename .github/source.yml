@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "babcad58f382de7d4fba284505ee1047b653e4e7"
+  sha: "28eb940dc5cc003c0e04b7faa4c784e3e82ec68a"
   ref_type: "branch"
   ref_name: "feat/cosmos-719-canvas-templates"
-  run_id: 46074682288
+  run_id: 46076888684
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(storage): sign the original creative cover for large previews"
+  message: "fix(creative): expose verified binding integrity metadata"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T22:07:52Z"
+  created_at: "2026-11-27T22:29:28Z"
