@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "be532839c247b962df2422cc99d7e9c97c687d86"
+  sha: "b7f86e5505652a18bd639fd7e0d6ef1a5025591a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45921547863
+  ref_name: "feat/cosmos-694-aliyun-one-click-login"
+  run_id: 45923558715
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): add developer-settings API host switcher (#685)\n\n* feat(vega): add developer-settings API host switcher\n\nAdd runtime API host override validation, persistence, and reset helpers backed by the build-time VITE_MERCURY_BASE_URL default, wire Vega runtime re-initialization on host changes, expose an API host switcher card in Developer Settings, and render an active custom-host recovery banner on login and session failure views.\n\nCloses #683\n\n* fix(vega): unify asset host resolution and guard retired runtimes\n\n- Reuse canonical resolveMercuryAssetUrl from api-client across Vega logo and creative asset previews via EffectiveApiHostProvider\n- Validate raw authority suffixes before URL dot-segment normalization in validateApiHostOrigin\n- Retire outgoing AppRuntime instances cleanly with shared browser history scoping, AbortSignal racing, and disposed callback guards\n- Pin mounted AiConversation surfaces to their live bound thread so diagnostic Ask AI handoffs do not hijack concurrent workspace streams\n\n* fix(vega): align HTTP asset origins, fixed-prop retirement, and chat model scope\n\n- Allow configured non-loopback HTTP origins for /api/v1/ assets and validate HTTPS assets independently of base in resolveMercuryAssetUrl\n- Increment a retirement epoch in App so reset or apply on a fixed apiBaseUrl prop mounts a fresh runtime at the explicit host\n- Guard synchronous transport throws in raceWithAbort so attached abort listeners are removed immediately\n- Scope ChatModelPicker selection through AiConversation's bound thread ID while preserving blank-conversation defaults\n\n* fix(vega): retire and publish API host overrides synchronously\n\n- Make AppRuntimeLifecycle.retire synchronous and invoke setApiHostOverride/resetApiHostOverride in the same turn without awaiting intermediate state\n- Key both fixed-prop and runtime-derived App instances directly on apiHost.generation so Apply and Reset mount a single replacement runtime with zero requests to the previous origin"
+  message: "feat(appauth): publish carrier login runtime contract"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T01:15:52Z"
+  created_at: "2026-11-27T01:37:07Z"
