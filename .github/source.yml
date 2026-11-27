@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bfdaa6647006c18414d4bc5400b6a4474db1234a"
+  sha: "6424366027a341ee987364b4b19db9b161d81ac8"
   ref_type: "branch"
-  ref_name: "fix/cosmos-711-home-empty-state"
-  run_id: 46038589064
+  ref_name: "fix/vega-locale-region-display"
+  run_id: 46038812137
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega,mercury): align unconfigured Home with the empty state\n\nCloses #711"
+  message: "fix(vega): use the Region Catalog for locale authoring and labels\n\nPart of #716"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T17:02:40Z"
+  created_at: "2026-11-27T17:04:15Z"
