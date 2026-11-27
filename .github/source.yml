@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1ba5d8701906e1af843ad4bf3681704f866ac07e"
+  sha: "664781ed080d1f16eec8f3d7a0fc5635eb9c05b1"
   ref_type: "branch"
-  ref_name: "feat/template-management-workbench"
-  run_id: 45996173445
+  ref_name: "main"
+  run_id: 45998688948
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(cosmos): verify audited template workflows"
+  message: "fix(nativecatalog): align AR_PHOTO shellRole to entry (#709) (#710)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:08:56Z"
+  created_at: "2026-11-27T12:26:59Z"
