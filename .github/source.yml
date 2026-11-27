@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "94e7b2a22ab135b5c592063ae8b4af37db7f91f5"
+  sha: "107ea2f51f96aab79ff59e035e75b1e91e9a90fc"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46042925345
+  ref_name: "fix/vega-locale-region-display"
+  run_id: 46049764484
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega,mercury): align unconfigured Home with the empty state (#717)\n\nCloses #711"
+  message: "fix(vega): resolve locale and catalog audit findings\n\nPart of #716"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T17:34:51Z"
+  created_at: "2026-11-27T18:28:56Z"
