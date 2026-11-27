@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1d31492cf8bb8b00b8ac7ada90bf64717e0789e1"
+  sha: "9c7626baab600f0361b77b1c269638e3405664d2"
   ref_type: "branch"
-  ref_name: "feat/cosmos-687-ar-photo-runtime-openapi"
-  run_id: 46032159305
+  ref_name: "main"
+  run_id: 46036948370
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(arphoto): bound multipart reads to the request deadline\n\nPart of #687"
+  message: "feat(arphoto): publish Mercury runtime OpenAPI (#714)\n\n* feat(arphoto): publish Mercury runtime OpenAPI\n\nPart of #687\n\n* fix(arphoto): bound multipart reads to the request deadline\n\nPart of #687"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T16:16:26Z"
+  created_at: "2026-11-27T16:50:33Z"
