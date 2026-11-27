@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "664781ed080d1f16eec8f3d7a0fc5635eb9c05b1"
+  sha: "37fb1aaa93c7e6f62ba100d8b5ee5c0cb2d9142c"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45998688948
+  ref_name: "feat/template-management-workbench"
+  run_id: 46003136157
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(nativecatalog): align AR_PHOTO shellRole to entry (#709) (#710)"
+  message: "fix(vega): honor app creative grants and preflight canvas templates"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:26:59Z"
+  created_at: "2026-11-27T12:59:02Z"
