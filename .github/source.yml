@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6274586826abfa77a41a1372b69ae24e8aafd9d1"
+  sha: "3445bf4ebc04e3f5e30ca1104de5a1079baaa903"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45930562440
+  run_id: 45931166976
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): compile SQLite Android plugin with SDK 36 (#533)"
+  message: "feat(rigel): wire Alphix automatic photo cutout (#535)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T02:49:27Z"
+  created_at: "2026-11-27T02:55:47Z"
