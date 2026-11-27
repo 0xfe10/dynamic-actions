@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e18eff7f453c92d3bdea427dcdf28df4abc51aeb"
+  sha: "3bbcbae55be3218d9a7ce4fc20599af2d9c2aa8b"
   ref_type: "branch"
-  ref_name: "feat/cosmos-694-aliyun-one-click-login"
-  run_id: 45941264500
+  ref_name: "fix/vega-unified-distribution-editor"
+  run_id: 45942122469
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(appauth): harden Aliyun carrier login"
+  message: "fix(vega): unify distribution scope editors"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T04:40:16Z"
+  created_at: "2026-11-27T04:49:10Z"
