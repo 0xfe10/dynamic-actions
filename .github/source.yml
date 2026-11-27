@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e977efbf210f62529a51c1aaf4dd0bfae8d7f178"
+  sha: "ff6b0df9a9a15f41ba895e6ac0d4fa760535a617"
   ref_type: "branch"
-  ref_name: "chenas"
-  run_id: 45989481889
+  ref_name: "feat/orion-531-mellow-matting"
+  run_id: 45993694571
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(orion): reconcile main with the editor update"
+  message: "feat(mellow): complete photo cutout editing with Alphix"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T11:19:22Z"
+  created_at: "2026-11-27T11:50:21Z"
