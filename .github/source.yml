@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bdc77b054ea9dd6eefedd954214b664538faffdc"
+  sha: "0c4ef1aa877b9db5c0c257ddaab9fbf67881b91b"
   ref_type: "branch"
-  ref_name: "feat/cosmos-694-aliyun-one-click-login"
-  run_id: 45933748371
+  ref_name: "fix/vega-creative-sidebar-pool"
+  run_id: 45936281088
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(android): pin Orion with SQLite compile SDK support"
+  message: "fix(vega): move Creative Assets into the resource pool"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T03:22:15Z"
+  created_at: "2026-11-27T03:48:33Z"
