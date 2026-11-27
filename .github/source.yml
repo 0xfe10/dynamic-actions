@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4e773ec452a021ebfa82f73c00c68a1729be0d22"
+  sha: "0b6509b85556ef1a104df953f927b2aa81559d8e"
   ref_type: "branch"
-  ref_name: "feat/orion-687-ar-photo-runtime-client"
-  run_id: 45972869058
+  ref_name: "main"
+  run_id: 45979009829
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime-api): regenerate Mercury runtime client for AR Photo endpoints\n\nPart of prtmax/cosmos#687"
+  message: "fix(editor): preserve photo border previews and history (#544)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T09:20:32Z"
+  created_at: "2026-11-27T10:04:58Z"
