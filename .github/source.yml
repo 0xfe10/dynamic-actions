@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bb12cb3a8c6fbf404b38f1d8f9e92d1fe7c85e69"
+  sha: "5f31e336e9d200167d3fe0af42c4364bb8204789"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45968070593
+  ref_name: "fix/vega-separate-templates-creative"
+  run_id: 45972247820
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Unify Vega region selection (#705)\n\n* fix(vega): unify region selection\n\n* fix(vega): address region selector audit"
+  message: "fix(vega): separate templates from creative assets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T08:45:12Z"
+  created_at: "2026-11-27T09:16:12Z"
