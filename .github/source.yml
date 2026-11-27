@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c0e2a174d0e5ccd412b9589da6dea27b076fd5fe"
+  sha: "c0a216921cf3a531492a6d63d0d2c7ca1b7ffc2a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46059064887
+  ref_name: "feat/cosmos-712-banner-capability"
+  run_id: 46061950591
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): use the Region Catalog for locale authoring and labels (#718)\n\n* fix(vega): use the Region Catalog for locale authoring and labels\n\nPart of #716\n\n* test(vega): exercise configured labels in existing workflows\n\nPart of #716\n\n* test(vega): target the native default locale badge\n\nPart of #716\n\n* test(vega): verify app creation without an English locale\n\nPart of #716\n\n* fix(vega): resolve locale and catalog audit findings\n\nPart of #716\n\n* fix(vega): align Help Center preview locale fallback\n\nPart of #716"
+  message: "feat(mercury,vega): register standalone banner capability"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T19:46:55Z"
+  created_at: "2026-11-27T20:12:00Z"
