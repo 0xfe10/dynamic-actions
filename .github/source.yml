@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3d34750b06775cfaf315b2e5f337d2ea42908eed"
+  sha: "ef77763f9189a1cecf1dda77400ed4fa984e859c"
   ref_type: "branch"
   ref_name: "fix/vega-locale-region-display"
-  run_id: 46039343705
+  run_id: 46040080348
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): exercise configured labels in existing workflows\n\nPart of #716"
+  message: "test(vega): target the native default locale badge\n\nPart of #716"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T17:08:03Z"
+  created_at: "2026-11-27T17:13:40Z"
