@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "da72f869ad41ea8cb15e42f50485c74b478ec6b3"
+  sha: "30bb855af640410b48b31d69a884bb19a49ba015"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45929191400
+  run_id: 45930305212
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creativecatalog): add Template System V2 backend (#695)"
+  message: "fix(vega): keep deferred host requests alive in abort tests (#698)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T02:35:17Z"
+  created_at: "2026-11-27T02:46:48Z"
