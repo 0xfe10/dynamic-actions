@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "9c7626baab600f0361b77b1c269638e3405664d2"
+  sha: "bfdaa6647006c18414d4bc5400b6a4474db1234a"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46036948370
+  ref_name: "fix/cosmos-711-home-empty-state"
+  run_id: 46038589064
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(arphoto): publish Mercury runtime OpenAPI (#714)\n\n* feat(arphoto): publish Mercury runtime OpenAPI\n\nPart of #687\n\n* fix(arphoto): bound multipart reads to the request deadline\n\nPart of #687"
+  message: "fix(vega,mercury): align unconfigured Home with the empty state\n\nCloses #711"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T16:50:33Z"
+  created_at: "2026-11-27T17:02:40Z"
