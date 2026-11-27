@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "90bf5837c9f3ffc08c4e9f6e6acfe7669c409856"
+  sha: "78c7228d218c1a177ede2864850123f8e36e709f"
   ref_type: "branch"
-  ref_name: "feat/orion-539-image-shaders"
-  run_id: 45957067012
+  ref_name: "main"
+  run_id: 45957820693
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(image_shaders): internalize GLSL fragment shaders and remove flutter_image_filters"
+  message: "feat(template-plaza): query Mercury by semantic template kind (#538)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T07:14:39Z"
+  created_at: "2026-11-27T07:21:04Z"
