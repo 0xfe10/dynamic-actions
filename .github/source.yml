@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0b6509b85556ef1a104df953f927b2aa81559d8e"
+  sha: "a2784e4c74ecc9d29cf86cbebf452a3b6dae7642"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45979009829
+  ref_name: "feat/orion-687-ar-photo-runtime-client"
+  run_id: 45979587517
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): preserve photo border previews and history (#544)"
+  message: "fix(runtime-api): redact AR Photo failure reports and harden contract tests\n\nPart of prtmax/cosmos#687"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T10:04:58Z"
+  created_at: "2026-11-27T10:08:47Z"
