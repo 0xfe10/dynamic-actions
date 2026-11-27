@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c10e7e34e7e62fcd2c00a24e7fd6f69e4f39fa0c"
+  sha: "57da309eb2e5996f2e962803fe82389bd99ec7ea"
   ref_type: "branch"
   ref_name: "feat/orion-531-mellow-matting"
-  run_id: 46001675445
+  run_id: 46006750506
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): address cutout review findings"
+  message: "fix(mellow): wait for background reads before confirming"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:48:24Z"
+  created_at: "2026-11-27T13:24:06Z"
