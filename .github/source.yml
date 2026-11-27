@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f92a6b6e52deb6de0e91e47376b284f60b7aa06b"
+  sha: "0db2a86d58cd541a78031da7508c2af5f3d2c967"
   ref_type: "branch"
-  ref_name: "feat/cosmos-712-banner-capability"
-  run_id: 46067763650
+  ref_name: "main"
+  run_id: 46071363194
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): enforce banner user audience on save"
+  message: "feat(mercury,vega): register standalone banner capability (#722)\n\n* feat(mercury,vega): register standalone banner capability\n\n* fix(vega): enforce banner user audience on save"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T21:03:47Z"
+  created_at: "2026-11-27T21:36:19Z"
