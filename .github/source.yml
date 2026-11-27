@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "20204bfb65c0884e58230e92f2637d069fdba874"
+  sha: "5a0e038c80a965fd031ea5de928e2ab3fbd4df76"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45962121260
+  ref_name: "fix/vega-unified-region-selector"
+  run_id: 45963085340
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): rebuild the Template V2 authoring workbench (#704)\n\n* feat(vega): rebuild the Template V2 authoring workbench\n\n* fix(vega): address Template V2 workbench audit findings\n\nCloses #690"
+  message: "fix(vega): address region selector audit"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T07:58:21Z"
+  created_at: "2026-11-27T08:06:18Z"
