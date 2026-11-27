@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "1e76e1b2344e1319ae62689e5e1e61a983ab53da"
+  sha: "92ba86f3d9fd8d2ef50e7948f2fff483f2d2b54d"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45996978266
+  run_id: 45999857715
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime-api): regenerate Mercury runtime client for AR Photo endpoints (#543)\n\n* feat(runtime-api): regenerate Mercury runtime client for AR Photo endpoints\n\nPart of prtmax/cosmos#687\n\n* fix(runtime-api): redact AR Photo failure reports and harden contract tests\n\nPart of prtmax/cosmos#687\n\n* fix(runtime-api): strip full AR Photo fragments and validate form-data disposition\n\nPart of prtmax/cosmos#687\n\n* fix(runtime-api): guard percent decoding, full fragment strip, and closing boundary\n\nSafely decode percent-encoded AR Photo URI parts without throwing on non-UTF-8 escapes, strip all non-whitespace fragment characters on query-free relative AR Photo excerpts with safe fallback, and enforce strict RFC/Go closing boundary line matching in multipart loopback tests.\n\nPart of prtmax/cosmos#687\n\n* test(runtime-api): require CRLF or EOF on multipart closing boundary\n\nMatch Go mime/multipart.Reader CRLF mode in the loopback multipart test helper by requiring CRLF or EOF after optional horizontal whitespace on the closing delimiter, and add negative mixed-line-ending and positive EOF-padded tests.\n\nPart of prtmax/cosmos#687"
+  message: "fix(shell): honor PERSONAL_CENTER shell config, preserve raw-label custom entries, and set AR_PHOTO shellRole to entry (#547) (#548)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:14:38Z"
+  created_at: "2026-11-27T12:35:32Z"
