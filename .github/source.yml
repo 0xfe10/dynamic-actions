@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5fd71c1e8807bf09eee191684c239e972cffd472"
+  sha: "38fec20853fd9b07454390c3353553933a14c0ec"
   ref_type: "branch"
-  ref_name: "feat/cosmos-690-template-v2-workbench"
-  run_id: 45950924580
+  ref_name: "feat/cosmos-687-ar-photo-backend"
+  run_id: 45952165103
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): rebuild the Template V2 authoring workbench"
+  message: "fix(mercury): add monotonic cleanup claim generation and 4K-safe homography check\n\nAddress Round 4 review findings on PR #699:\n- R4-P2-01: add never-reset monotonic claim_generation to\n  csm_ar_photo_cleanup_objects (00208_ar_photos.sql + checksum), increment on\n  every claim and ON CONFLICT reschedule while keeping attempts=0 retry reset,\n  fence all cleanup cancel/liveness/defer/delete/retry statements by\n  claim_generation, and add a full Worker 1 -> reschedule -> Worker 2 reclaim\n  takeover integration test.\n- R4-P2-02: replace global Frobenius-norm determinant cutoff with column-\n  equilibrated invert3x3 and normalized coordinate-frame validation\n  (N_dst * H * N_src^-1) so valid 4K-edge small overlays (960x720 -> 3840x2160\n  at s=0.1, tx=3500, ty=1900) and scaled identities (1e-12*I, 1e12*I) pass\n  while zero and rank-deficient matrices fail closed."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T06:17:57Z"
+  created_at: "2026-11-27T06:29:34Z"
