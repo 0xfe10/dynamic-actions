@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/onestore"
   repository_id: 1130085325
-  sha: "d3ae8f511a1d9dc07e1adbf0ed6977974435f86c"
-  ref_type: "tag"
-  ref_name: "v0.0.10"
-  run_id: 45766547229
+  sha: "9f8ed33b544bd796370dc281dbb2ba49b5629b78"
+  ref_type: "branch"
+  ref_name: "main"
+  run_id: 45954040406
   run_attempt: 1
-  workflow: ".github/workflows/trigger-tag.yml"
+  workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(histore): bump HiStore version to 2.7.7-7"
+  message: "chore(histore): bump HiStore version to 2.7.7-8"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-26T06:12:13Z"
+  created_at: "2026-11-27T06:46:53Z"
