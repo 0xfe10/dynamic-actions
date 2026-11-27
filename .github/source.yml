@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b46c72623fcbc145b70b5ec4c4ce1758f17b8485"
+  sha: "f1301cd368ec88b2768a5a08a8fba56badbedbb4"
   ref_type: "branch"
-  ref_name: "feat/template-management-workbench"
-  run_id: 45985915417
+  ref_name: "fix/vega-separate-templates-creative"
+  run_id: 45989272792
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): implement template management workbench"
+  message: "fix(vega): hide template placement in asset previews"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T10:53:51Z"
+  created_at: "2026-11-27T11:17:56Z"
