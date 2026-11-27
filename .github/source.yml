@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b2d0178873ac4c2b19e81477e6764aae8c109275"
+  sha: "f075fd1ac72fcbbf1a6590054f2956925e7a701b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46021188111
+  ref_name: "feat/cosmos-687-ar-photo-runtime-openapi"
+  run_id: 46022445433
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Implement the Vega template management workbench (#708)\n\n* feat(vega): implement template management workbench\n\n* fix(cosmos): address template workbench audit findings\n\n* fix(cosmos): verify audited template workflows\n\n* fix(vega): honor app creative grants and preflight canvas templates\n\n* fix(vega): honor app settings grants and validate frame openings"
+  message: "feat(arphoto): publish Mercury runtime OpenAPI\n\nPart of #687"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T15:01:59Z"
+  created_at: "2026-11-27T15:10:18Z"
