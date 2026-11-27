@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "07a81c4e6dc34ab22836fb985f6cca2babdf86c6"
+  sha: "5144bdf34b8a908f85ef02af95a488f7b4c93dd9"
   ref_type: "branch"
-  ref_name: "chore/orion-540-sqlite3-v3"
-  run_id: 45962529878
+  ref_name: "main"
+  run_id: 45964858277
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel_build): isolate workspace tests depending on sqlite3 native build hooks"
+  message: "chore(local_storage): upgrade drift/sqlite3 to v3 native hooks, remove sqlite3_flutter_libs, and enforce Android 16KB ELF check (#540) (#542)\n\n* chore(local_storage): upgrade drift/sqlite3 to v3 native hooks, remove sqlite3_flutter_libs, and add 16KB ELF check\n\n* fix(rigel_build): isolate workspace tests depending on sqlite3 native build hooks"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T08:01:55Z"
+  created_at: "2026-11-27T08:20:21Z"
