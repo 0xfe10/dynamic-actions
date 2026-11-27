@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8320faad915de9c2ea6e838806ba94aecb1df566"
+  sha: "8ca9be10e60289d1d697468d0f2bb862dffeca8b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46079771937
+  ref_name: "feat/orion-551-runtime-config"
+  run_id: 46083165609
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(editor): add the unified Web template editor (#558)\n\n* feat(editor): add the dual-canvas Web template editor\n\n* fix(editor): read encoded image dimensions on Web\n\n* fix(editor): initialize shared dialogs in the Web host\n\n* fix(editor): align the Vega bridge and Mercury canvas contract\n\n* test(editor): inspect bridge replies across browser frames\n\n* fix(editor): address template editor audit findings\n\n* fix(editor): close template editor round two findings\n\n* fix(editor): match pinned dither and Mercury bindings"
+  message: "fix(rigel): bound the cutout cache and validate config identity"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T22:58:32Z"
+  created_at: "2026-11-27T23:33:45Z"
