@@ -3,9 +3,9 @@ source:
   repository: "prtmax/onestore"
   repository_id: 1130085325
   sha: "9f8ed33b544bd796370dc281dbb2ba49b5629b78"
-  ref_type: "branch"
-  ref_name: "main"
-  run_id: 45954040406
+  ref_type: "tag"
+  ref_name: "v0.0.11"
+  run_id: 45954045714
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
@@ -14,4 +14,4 @@ commit:
   message: "chore(histore): bump HiStore version to 2.7.7-8"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T06:46:53Z"
+  created_at: "2026-11-27T06:46:55Z"
