@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4e8c6999a897e7324bd9103967d6bffc4aff68bd"
+  sha: "977de780f4077c455186e85b126f1f52e8ce8358"
   ref_type: "branch"
   ref_name: "feat/orion-522-template-v2"
-  run_id: 45939619409
+  run_id: 45944483758
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(template-plaza): preserve device scope and paginate semantic results"
+  message: "fix(template-plaza): restore Mellow printer family wiring"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T04:23:24Z"
+  created_at: "2026-11-27T05:13:29Z"
