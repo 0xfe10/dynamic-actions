@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "cbb9ec746cfda9cc70f1e4aa15571d1f0ce5c53c"
+  sha: "ef9028d95c99e4f9748d63219053318523d9f54e"
   ref_type: "branch"
-  ref_name: "feat/orion-551-runtime-config"
-  run_id: 46074355861
+  ref_name: "main"
+  run_id: 46074653960
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(rigel): resolve the cutout model from runtime config"
+  message: "Wire mobile AR Photo cloud sync and native tracking (#557)\n\n* feat(ar-photo): connect mobile cloud sync and native tracking\n\n* fix(ar-photo): address mobile print and scanner audit findings\n\n* fix(ar-photo): handle Q2 aliases and scanner teardown races\n\n* fix(ar-photo): recover from native scanner reset failures\n\n* fix(ar-photo): release tracking assets after Android view disposal"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T22:04:51Z"
+  created_at: "2026-11-27T22:07:37Z"
