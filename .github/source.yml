@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a2784e4c74ecc9d29cf86cbebf452a3b6dae7642"
+  sha: "8494b460d398463de75357f6e7b8b33a378c5682"
   ref_type: "branch"
-  ref_name: "feat/orion-687-ar-photo-runtime-client"
-  run_id: 45979587517
+  ref_name: "chenas"
+  run_id: 45980344012
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(runtime-api): redact AR Photo failure reports and harden contract tests\n\nPart of prtmax/cosmos#687"
-  authors: ["0xfe10"]
+  message: "1.\u56fe\u7247\u7f16\u8f91\u566811\uff08\u6ee4\u955c\u672a\u5b8c\u6210\uff0cInteractiveImageNode\u8c03\u6574\uff0c\u6a61\u76ae\u64e6\u529f\u80fd\u6682\u65f6\u5173\u95ed\uff09"
+  authors: ["chenanshun"]
 dispatch:
-  created_at: "2026-11-27T10:08:47Z"
+  created_at: "2026-11-27T10:14:16Z"
