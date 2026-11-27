@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "3bbcbae55be3218d9a7ce4fc20599af2d9c2aa8b"
+  sha: "3f2a9bf4a134ec40591ee7110e33e07ad955057a"
   ref_type: "branch"
-  ref_name: "fix/vega-unified-distribution-editor"
-  run_id: 45942122469
+  ref_name: "main"
+  run_id: 45942803684
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): unify distribution scope editors"
+  message: "fix(vega): compact native permissions into tables (#703)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T04:49:10Z"
+  created_at: "2026-11-27T04:56:31Z"
