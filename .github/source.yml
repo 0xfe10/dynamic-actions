@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "b51efafeb8ede5dffdd47c4646cb2083f14ec993"
+  sha: "f741d2033dd9cd7c61e29125782eb9467b555fec"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46023580492
+  ref_name: "refactor/orion-549-home-empty-state"
+  run_id: 46029094128
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(editor): \u8c03\u6574\u56fe\u7247\u8282\u70b9\u5e76\u6682\u65f6\u5173\u95ed\u6a61\u76ae\u64e6 (#545)\n\n* 1.\u56fe\u7247\u7f16\u8f91\u566811\uff08\u6ee4\u955c\u672a\u5b8c\u6210\uff0cInteractiveImageNode\u8c03\u6574\uff0c\u6a61\u76ae\u64e6\u529f\u80fd\u6682\u65f6\u5173\u95ed\uff09\n\n* fix(orion): preserve source image node behavior\n\n* fix(editor): synchronize border previews and retain template crops\n\n---------\n\nCo-authored-by: 0xfe10 <0xfe10@proton.me>"
-  authors: ["chenanshun"]
+  message: "refactor(home): render unconfigured home as an empty state (#549)\n\nCloses #549"
+  authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T15:17:42Z"
+  created_at: "2026-11-27T15:55:40Z"
