@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "a3b4e5e42b0d340919c6732b2648efd16f4ce35f"
+  sha: "85f1b48ad735c9d891db4cca674d39f71d8524f8"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45992958247
+  ref_name: "fix/cosmos-709-ar-photo-role"
+  run_id: 45995424710
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Separate Templates and Creative Assets in Vega (#707)\n\n* fix(vega): separate templates from creative assets\n\n* fix(vega): separate asset placement and upload copy\n\n* fix(vega): hide template placement in asset previews"
+  message: "fix(nativecatalog): align AR_PHOTO shellRole to entry (#709)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T11:44:54Z"
+  created_at: "2026-11-27T12:03:29Z"
