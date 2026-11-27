@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "e6c88b5f4df9dc52c9ebc4c559d46ccbdd5157d2"
+  sha: "45a4caa9e85158efd4b5f8e37935c64b9078dbe0"
   ref_type: "branch"
-  ref_name: "feat/cosmos-688-template-v2-backend"
-  run_id: 45926047015
+  ref_name: "fix/vega-api-host-abort-flake"
+  run_id: 45926577034
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creativecatalog): add Template System V2 backend"
+  message: "fix(vega): keep deferred host requests alive in abort tests"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T02:03:43Z"
+  created_at: "2026-11-27T02:08:44Z"
