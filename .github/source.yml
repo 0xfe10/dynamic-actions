@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "1c5871ad2f08c5745a68563b450ceef3fb4ec477"
+  sha: "b2d0178873ac4c2b19e81477e6764aae8c109275"
   ref_type: "branch"
-  ref_name: "feat/template-management-workbench"
-  run_id: 46013854227
+  ref_name: "main"
+  run_id: 46021188111
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): honor app settings grants and validate frame openings"
+  message: "Implement the Vega template management workbench (#708)\n\n* feat(vega): implement template management workbench\n\n* fix(cosmos): address template workbench audit findings\n\n* fix(cosmos): verify audited template workflows\n\n* fix(vega): honor app creative grants and preflight canvas templates\n\n* fix(vega): honor app settings grants and validate frame openings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T14:13:13Z"
+  created_at: "2026-11-27T15:01:59Z"
