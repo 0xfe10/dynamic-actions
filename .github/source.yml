@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "92ba86f3d9fd8d2ef50e7948f2fff483f2d2b54d"
+  sha: "6aee7e39a43fbfe0b22799417b9ed715ee82d9c1"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45999857715
+  ref_name: "chenas"
+  run_id: 46000263714
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(shell): honor PERSONAL_CENTER shell config, preserve raw-label custom entries, and set AR_PHOTO shellRole to entry (#547) (#548)"
+  message: "fix(orion): preserve source image node behavior"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:35:32Z"
+  created_at: "2026-11-27T12:38:12Z"
