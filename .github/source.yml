@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f29277a7e668568bfa622fa51c31611a6e3729e5"
+  sha: "4e8c6999a897e7324bd9103967d6bffc4aff68bd"
   ref_type: "branch"
-  ref_name: "feat/orion-517-drafts-folders"
-  run_id: 45937257143
+  ref_name: "feat/orion-522-template-v2"
+  run_id: 45939619409
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): add multi-level draft folders UI and lazy reopen\n\nAdd PrintLibraryCubit.peekFolder, lazy draft document loading in MellowSavedDraftPage, multi-level folder navigation/breadcrumbs, anti-cycle folder picker, cascade delete confirmation, batch management actions, tri-lingual localization fallbacks, and tests."
+  message: "fix(template-plaza): preserve device scope and paginate semantic results"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T03:59:16Z"
+  created_at: "2026-11-27T04:23:24Z"
