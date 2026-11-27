@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ff6b0df9a9a15f41ba895e6ac0d4fa760535a617"
+  sha: "5483778ce3ef761c5dcb99d90722e9874cd03b7c"
   ref_type: "branch"
-  ref_name: "feat/orion-531-mellow-matting"
-  run_id: 45993694571
+  ref_name: "feat/orion-687-ar-photo-runtime-client"
+  run_id: 45994674261
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mellow): complete photo cutout editing with Alphix"
+  message: "test(runtime-api): require CRLF or EOF on multipart closing boundary\n\nMatch Go mime/multipart.Reader CRLF mode in the loopback multipart test helper by requiring CRLF or EOF after optional horizontal whitespace on the closing delimiter, and add negative mixed-line-ending and positive EOF-padded tests.\n\nPart of prtmax/cosmos#687"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T11:50:21Z"
+  created_at: "2026-11-27T11:57:50Z"
