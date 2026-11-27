@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "fb05a792cf73c8d559a12095a6a785f1081b9bab"
+  sha: "3ff97107f7674399f5155557e8a89b669c8527be"
   ref_type: "branch"
-  ref_name: "feat/orion-521-ar-photo-e2e"
-  run_id: 46056837555
+  ref_name: "feat/orion-556-web-template-editor"
+  run_id: 46057036058
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ar-photo): address mobile print and scanner audit findings"
+  message: "fix(editor): read encoded image dimensions on Web"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T19:27:55Z"
+  created_at: "2026-11-27T19:29:39Z"
