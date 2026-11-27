@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "860e810adfb3c3cce4c4fac097b98725216604b7"
+  sha: "4c1cbe76b5142fe1e6152b6d95de4cd2581f6e53"
   ref_type: "branch"
-  ref_name: "ao/android-compilesdk/fix-orion-android-compilesdk"
-  run_id: 45927924719
+  ref_name: "feat/orion-523-alphix-wire"
+  run_id: 45928023844
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): compile SQLite Android plugin with SDK 36"
+  message: "feat(rigel): wire Alphix automatic photo cutout"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T02:22:29Z"
+  created_at: "2026-11-27T02:23:29Z"
