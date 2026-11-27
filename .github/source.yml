@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "04f2a986cf3098ef58667c63a13fbd300799b5c3"
+  sha: "94e7b2a22ab135b5c592063ae8b4af37db7f91f5"
   ref_type: "branch"
-  ref_name: "fix/vega-locale-region-display"
-  run_id: 46041033343
+  ref_name: "main"
+  run_id: 46042925345
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(vega): verify app creation without an English locale\n\nPart of #716"
+  message: "fix(vega,mercury): align unconfigured Home with the empty state (#717)\n\nCloses #711"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T17:20:37Z"
+  created_at: "2026-11-27T17:34:51Z"
