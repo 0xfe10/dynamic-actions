@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c94ce2c7b5d1c4a9a2c33b024a0edf57bafe5031"
+  sha: "bb12cb3a8c6fbf404b38f1d8f9e92d1fe7c85e69"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45965131276
+  run_id: 45968070593
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creativecatalog): expose semantic runtime template kinds (#706)\n\nCloses #692"
+  message: "Unify Vega region selection (#705)\n\n* fix(vega): unify region selection\n\n* fix(vega): address region selector audit"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T08:22:27Z"
+  created_at: "2026-11-27T08:45:12Z"
