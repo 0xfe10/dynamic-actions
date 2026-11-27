@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "3ff97107f7674399f5155557e8a89b669c8527be"
+  sha: "a08632a2eaa89ed502aa3dca0b5f9f17c60db1e6"
   ref_type: "branch"
   ref_name: "feat/orion-556-web-template-editor"
-  run_id: 46057036058
+  run_id: 46057952859
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): read encoded image dimensions on Web"
+  message: "fix(editor): initialize shared dialogs in the Web host"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T19:29:39Z"
+  created_at: "2026-11-27T19:37:28Z"
