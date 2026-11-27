@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "8bbc10a6dbb49c7366e3a580732338cf9f1881a7"
+  sha: "c579a11802d687bb91d96f7c6af45592487f591a"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 45944778198
+  run_id: 45945981338
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(appauth): add Aliyun carrier one-click login (#696)\n\n* feat(appauth): add Aliyun carrier one-click login\n\n* fix(vega): verify public carrier SDK key projection\n\n* feat(appauth): publish carrier login runtime contract\n\n* fix(android): pin Orion with SQLite compile SDK support\n\n* fix(appauth): harden Aliyun carrier login"
+  message: "fix(vega): unify distribution scope editors (#702)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T05:16:16Z"
+  created_at: "2026-11-27T05:28:22Z"
