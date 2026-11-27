@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5f31e336e9d200167d3fe0af42c4364bb8204789"
+  sha: "f7a06e2dd82ea493e6b7b007b83f145d5b21e4ac"
   ref_type: "branch"
   ref_name: "fix/vega-separate-templates-creative"
-  run_id: 45972247820
+  run_id: 45983058019
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): separate templates from creative assets"
+  message: "fix(vega): separate asset placement and upload copy"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T09:16:12Z"
+  created_at: "2026-11-27T10:33:30Z"
