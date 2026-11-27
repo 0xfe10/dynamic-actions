@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0838a70e9288a990c130e1cde41c211b23adf659"
+  sha: "8bbc10a6dbb49c7366e3a580732338cf9f1881a7"
   ref_type: "branch"
-  ref_name: "feat/cosmos-687-ar-photo-backend"
-  run_id: 45943586813
+  ref_name: "main"
+  run_id: 45944778198
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): harden AR photo grant races, index fencing, and integrity checks\n\nAddress Round 2 review findings on PR #699:\n- R2-P1-01: lock and conditionally consume unexpired pending upload grants\n  before creating asset links in registration; cancel active-link cleanup\n  rows without recording terminal deleted status until confirmed OSS deletion.\n- R2-P2-01: commit partial-presign failure expiry and cleanup enqueue\n  atomically and recover expired unqueued grants in CleanupRunner.\n- R2-P2-02: treat replayed index jobs for already-ready revisions as\n  idempotent no-ops and fence publish/status mutations to active job leases.\n- R2-P2-03: unconditionally assert <=60s AR read presign TTL via object-store spy.\n- R2-P2-04: couple AR photo and vector integrity checks to revision roles and\n  add corrupt-row integrity regression tests.\n- R2-P2-05: verify disabled owners hide previously matched public photos.\n- R2-P2-06: preserve malformed JSON decode failures and reject degenerate\n  homographies before returning matched.\n- R2-P2-07: add cold pgvector GUC, unsorted RRF, and incompatible-version\n  recall exclusion tests."
+  message: "feat(appauth): add Aliyun carrier one-click login (#696)\n\n* feat(appauth): add Aliyun carrier one-click login\n\n* fix(vega): verify public carrier SDK key projection\n\n* feat(appauth): publish carrier login runtime contract\n\n* fix(android): pin Orion with SQLite compile SDK support\n\n* fix(appauth): harden Aliyun carrier login"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T05:04:37Z"
+  created_at: "2026-11-27T05:16:16Z"
