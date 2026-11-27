@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "c0f0828e7793ba5604f378308499ca7a50c05f50"
+  sha: "cbb9ec746cfda9cc70f1e4aa15571d1f0ce5c53c"
   ref_type: "branch"
-  ref_name: "feat/orion-521-ar-photo-e2e"
-  run_id: 46072030834
+  ref_name: "feat/orion-551-runtime-config"
+  run_id: 46074355861
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(ar-photo): release tracking assets after Android view disposal"
+  message: "feat(rigel): resolve the cutout model from runtime config"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T21:42:42Z"
+  created_at: "2026-11-27T22:04:51Z"
