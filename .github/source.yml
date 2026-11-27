@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "94e38c7b749536e1192284c5c90328fdd91d769b"
+  sha: "caaff9f2b67dbc98953fee0fd93dd3240488fd13"
   ref_type: "branch"
-  ref_name: "ao/template-v2/feat/cosmos-689-template-v2-workspace"
-  run_id: 45932763405
+  ref_name: "feat/cosmos-687-ar-photo-backend"
+  run_id: 45933211350
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): add the region-scoped Template V2 workspace"
+  message: "feat(arphoto): add AR photo backend, pgvector recognition pipeline, and Vega quota settings\n\nImplement the complete AR photo backend, pgvector dual-embedding indexing and\nrecognition pipeline, internal Python algorithm service client boundary, and\nVega admin AR photo configuration surface for #687.\n\n- Schema & Infrastructure:\n  - Add forward-only migration 00208_ar_photos.sql (reserved after #695's 00207)\n    with non-superuser RDS-safe pgvector extension guard, dual vector(256)\n    xfeat_embedding + vector(512) rootsift_embedding columns with HNSW cosine\n    indexes, upload grants, revisions, and OSS cleanup queue.\n  - Update compose.yml and dynamic CI workflows to pgvector/pgvector:pg18.\n  - Extend assetlink (ar_photo module with owner/public runtime private-scope\n    enforcement), storage active-reservation accounting, and integrity checks.\n- Backend & Worker:\n  - Add typed HTTPAlgorithmClient for the live ar_recognition v0.0.156 contract\n    (/healthz, /v1/extract, /v1/match) with bounded in-flight semaphore, circuit\n    breaker, strict request/response validation, and fail-closed degradation when\n    AR_ALGORITHM_BASE_URL is unset.\n  - Add AR photo lifecycle service, two-pass pgvector HNSW + RRF recognition\n    pipeline with homography rescaling, IndexRunner & CleanupRunner workers,\n    authenticated runtime routes (/api/v1/runtime/ar-photos/*), and Huma\n    platform admin routes (/tenants/{tenantId}/apps/{appId}/ar-photo-config).\n- Vega Admin UI:\n  - Add AppARPhotoSettingsPage (quota, HTTPS example/guide links, optimistic\n    locking, read-only RBAC mode, live indexing and pipeline version metrics)\n    with en/zh-CN/zh-TW translations and regenerated platform-api client types."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T03:12:15Z"
+  created_at: "2026-11-27T03:16:46Z"
