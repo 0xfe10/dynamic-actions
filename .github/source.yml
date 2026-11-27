@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "ef9028d95c99e4f9748d63219053318523d9f54e"
+  sha: "c29cd738846607e93f2f304b2299b45e6e864731"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46074653960
+  ref_name: "feat/orion-556-web-template-editor"
+  run_id: 46077411259
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "Wire mobile AR Photo cloud sync and native tracking (#557)\n\n* feat(ar-photo): connect mobile cloud sync and native tracking\n\n* fix(ar-photo): address mobile print and scanner audit findings\n\n* fix(ar-photo): handle Q2 aliases and scanner teardown races\n\n* fix(ar-photo): recover from native scanner reset failures\n\n* fix(ar-photo): release tracking assets after Android view disposal"
+  message: "fix(editor): match pinned dither and Mercury bindings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T22:07:37Z"
+  created_at: "2026-11-27T22:34:05Z"
