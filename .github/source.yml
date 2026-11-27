@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "57da309eb2e5996f2e962803fe82389bd99ec7ea"
+  sha: "fdf30124180e35289d02d4096f608166813ab16f"
   ref_type: "branch"
-  ref_name: "feat/orion-531-mellow-matting"
-  run_id: 46006750506
+  ref_name: "main"
+  run_id: 46017480424
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mellow): wait for background reads before confirming"
+  message: "feat(mellow): complete photo cutout editing with Alphix (#546)\n\n* feat(mellow): complete photo cutout editing with Alphix\n\n* fix(mellow): address cutout review findings\n\n* fix(mellow): wait for background reads before confirming"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T13:24:06Z"
+  created_at: "2026-11-27T14:37:00Z"
