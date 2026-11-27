@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f741d2033dd9cd7c61e29125782eb9467b555fec"
+  sha: "5d3a3bff8f352ea1397c8960a36cbd858858bc35"
   ref_type: "branch"
-  ref_name: "refactor/orion-549-home-empty-state"
-  run_id: 46029094128
+  ref_name: "main"
+  run_id: 46032496548
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(home): render unconfigured home as an empty state (#549)\n\nCloses #549"
+  message: "refactor(home): render unconfigured home as an empty state (#549) (#552)\n\nCloses #549"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T15:55:40Z"
+  created_at: "2026-11-27T16:18:49Z"
