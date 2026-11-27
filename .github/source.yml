@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "37fb1aaa93c7e6f62ba100d8b5ee5c0cb2d9142c"
+  sha: "1c5871ad2f08c5745a68563b450ceef3fb4ec477"
   ref_type: "branch"
   ref_name: "feat/template-management-workbench"
-  run_id: 46003136157
+  run_id: 46013854227
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): honor app creative grants and preflight canvas templates"
+  message: "fix(vega): honor app settings grants and validate frame openings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:59:02Z"
+  created_at: "2026-11-27T14:13:13Z"
