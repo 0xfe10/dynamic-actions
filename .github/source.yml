@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "30bb855af640410b48b31d69a884bb19a49ba015"
+  sha: "94e38c7b749536e1192284c5c90328fdd91d769b"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45930305212
+  ref_name: "ao/template-v2/feat/cosmos-689-template-v2-workspace"
+  run_id: 45932763405
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): keep deferred host requests alive in abort tests (#698)"
+  message: "feat(vega): add the region-scoped Template V2 workspace"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T02:46:48Z"
+  created_at: "2026-11-27T03:12:15Z"
