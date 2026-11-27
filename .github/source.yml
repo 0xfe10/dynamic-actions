@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5ce760e59a8b46a34feffc0c9317db856cb78460"
+  sha: "3bac3e5727940442acc21b838b24321fc805a748"
   ref_type: "branch"
-  ref_name: "fix/vega-unified-distribution-editor"
-  run_id: 45936430974
+  ref_name: "ao/template-v2/feat/cosmos-689-template-v2-workspace"
+  run_id: 45937523205
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): unify distribution scope editors"
+  message: "fix(vega): address Template V2 workspace audit findings"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T03:50:14Z"
+  created_at: "2026-11-27T04:01:58Z"
