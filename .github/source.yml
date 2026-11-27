@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "85f1b48ad735c9d891db4cca674d39f71d8524f8"
+  sha: "1ba5d8701906e1af843ad4bf3681704f866ac07e"
   ref_type: "branch"
-  ref_name: "fix/cosmos-709-ar-photo-role"
-  run_id: 45995424710
+  ref_name: "feat/template-management-workbench"
+  run_id: 45996173445
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(nativecatalog): align AR_PHOTO shellRole to entry (#709)"
+  message: "fix(cosmos): verify audited template workflows"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T12:03:29Z"
+  created_at: "2026-11-27T12:08:56Z"
