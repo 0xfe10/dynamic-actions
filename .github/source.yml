@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "107ea2f51f96aab79ff59e035e75b1e91e9a90fc"
+  sha: "626ccaa435f18059d16e17c8cce9be08a59f91e6"
   ref_type: "branch"
   ref_name: "fix/vega-locale-region-display"
-  run_id: 46049764484
+  run_id: 46055836672
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): resolve locale and catalog audit findings\n\nPart of #716"
+  message: "fix(vega): align Help Center preview locale fallback\n\nPart of #716"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T18:28:56Z"
+  created_at: "2026-11-27T19:19:18Z"
