@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "5a0e038c80a965fd031ea5de928e2ab3fbd4df76"
+  sha: "c94ce2c7b5d1c4a9a2c33b024a0edf57bafe5031"
   ref_type: "branch"
-  ref_name: "fix/vega-unified-region-selector"
-  run_id: 45963085340
+  ref_name: "main"
+  run_id: 45965131276
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): address region selector audit"
+  message: "feat(creativecatalog): expose semantic runtime template kinds (#706)\n\nCloses #692"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T08:06:18Z"
+  created_at: "2026-11-27T08:22:27Z"
