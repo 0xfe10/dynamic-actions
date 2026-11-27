@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5144bdf34b8a908f85ef02af95a488f7b4c93dd9"
+  sha: "ab80e09ad9ae7adfd9c98530348bd6994efac92e"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 45964858277
+  ref_name: "fix/orion-532-border-editor"
+  run_id: 45972759649
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(local_storage): upgrade drift/sqlite3 to v3 native hooks, remove sqlite3_flutter_libs, and enforce Android 16KB ELF check (#540) (#542)\n\n* chore(local_storage): upgrade drift/sqlite3 to v3 native hooks, remove sqlite3_flutter_libs, and add 16KB ELF check\n\n* fix(rigel_build): isolate workspace tests depending on sqlite3 native build hooks"
+  message: "fix(editor): preserve photo border previews and history"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T08:20:21Z"
+  created_at: "2026-11-27T09:19:46Z"
