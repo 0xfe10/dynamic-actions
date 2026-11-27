@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6424366027a341ee987364b4b19db9b161d81ac8"
+  sha: "3d34750b06775cfaf315b2e5f337d2ea42908eed"
   ref_type: "branch"
   ref_name: "fix/vega-locale-region-display"
-  run_id: 46038812137
+  run_id: 46039343705
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): use the Region Catalog for locale authoring and labels\n\nPart of #716"
+  message: "test(vega): exercise configured labels in existing workflows\n\nPart of #716"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T17:04:15Z"
+  created_at: "2026-11-27T17:08:03Z"
