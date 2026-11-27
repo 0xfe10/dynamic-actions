@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "640b8c8b3ee266a6d508da156aa6480bf80bff8b"
+  sha: "55110823159fb8eed2c1b135b226fee08a200228"
   ref_type: "branch"
-  ref_name: "feat/cosmos-719-canvas-templates"
-  run_id: 46056075758
+  ref_name: "feat/cosmos-712-banner-capability"
+  run_id: 46057910982
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creative): store and distribute native canvas templates"
+  message: "feat(mercury,vega): register standalone banner capability"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T19:21:17Z"
+  created_at: "2026-11-27T19:36:51Z"
