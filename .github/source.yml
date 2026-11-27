@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "f1301cd368ec88b2768a5a08a8fba56badbedbb4"
+  sha: "a3b4e5e42b0d340919c6732b2648efd16f4ce35f"
   ref_type: "branch"
-  ref_name: "fix/vega-separate-templates-creative"
-  run_id: 45989272792
+  ref_name: "main"
+  run_id: 45992958247
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): hide template placement in asset previews"
+  message: "Separate Templates and Creative Assets in Vega (#707)\n\n* fix(vega): separate templates from creative assets\n\n* fix(vega): separate asset placement and upload copy\n\n* fix(vega): hide template placement in asset previews"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T11:17:56Z"
+  created_at: "2026-11-27T11:44:54Z"
