@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "8ca9be10e60289d1d697468d0f2bb862dffeca8b"
+  sha: "6e2682f5e78fb879f9eeda5a359b19fe4211587b"
   ref_type: "branch"
   ref_name: "feat/orion-551-runtime-config"
-  run_id: 46083165609
+  run_id: 46086075313
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): bound the cutout cache and validate config identity"
+  message: "fix(rigel): coordinate model cache leases across isolates"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T23:33:45Z"
+  created_at: "2026-11-28T00:06:24Z"
