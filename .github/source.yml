@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "4cac6d7869a87d089cb8ca5c478297a1c1190735"
+  sha: "d566bb59164ad4807703ab561c48fa02635b8f91"
   ref_type: "branch"
-  ref_name: "ao/orion-554/editable-graffiti"
-  run_id: 46107142175
+  ref_name: "ao/issue-feasibility/orion-rasto"
+  run_id: 46109383799
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): bound dashed path expansion before replay"
+  message: "feat(image): bind mobile image operations to the Rasto C ABI"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T04:21:30Z"
+  created_at: "2026-11-28T04:50:39Z"
