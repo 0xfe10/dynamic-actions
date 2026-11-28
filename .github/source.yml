@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "fef96fe9624c4bc423d28ec02024efbf3b1e83c0"
+  sha: "8fc3e030203873d341e211f8758a822875f7adae"
   ref_type: "branch"
   ref_name: "feat/ble-low-energy-adapter"
-  run_id: 46152674297
+  run_id: 46153603916
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(bluetooth_ble): run Flutter adapter contracts in Dart CI"
+  message: "fix(bluetooth_ble): serialize native GATT operations during polling"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T14:03:33Z"
+  created_at: "2026-11-28T14:14:18Z"
