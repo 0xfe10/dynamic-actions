@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "75422300f5644bcd6a138bb1774ad76e5e3ec2cd"
+  sha: "cae44ab433203420809d1d79849f4af6c615a24f"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46125719425
+  ref_name: "fix/android-bluetooth-access-provider"
+  run_id: 46125779408
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): restore embedded web editing tools (#563)\n\n* fix(editor): restore embedded web editing tools\n\n* test(editor): verify embedded tools and asset bootstrap"
+  message: "fix(bluetooth): use Classic SPP for native Android access and upgrade ble_plugin to 1.5.2"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T08:25:23Z"
+  created_at: "2026-11-28T08:26:04Z"

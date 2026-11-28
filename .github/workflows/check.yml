@@ -67,7 +67,6 @@ jobs:
           GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: dart run tools/rigel_build/bin/develop.dart bootstrap
       - run: dart run tools/rigel_build/bin/develop.dart check
-      - uses: ./.github/actions/bundle-template-editor
 
   windows-just:
     needs: prepare
