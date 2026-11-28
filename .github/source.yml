@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "9629f4fc0d3e9f753eb991c9b9e167d0abfcdbae"
+  sha: "a4abbbfccd79136ce5a224abc6f268af0c0048d0"
   ref_type: "branch"
   ref_name: "ao/orion-554/editable-graffiti"
-  run_id: 46104617909
+  run_id: 46106317859
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(jigsaw): persist and reopen vector graffiti strokes"
+  message: "fix(jigsaw): preserve graffiti layer order and validate dash lengths"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T03:48:59Z"
+  created_at: "2026-11-28T04:11:05Z"
