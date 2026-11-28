@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "4c02003bfd7983190eb223f30b0d99c7c5ce43a9"
+  sha: "0ec03d953f6621b65256a2b5fbc9598383341e2e"
   ref_type: "branch"
   ref_name: "feat/vega-template-studio"
-  run_id: 46120108445
+  run_id: 46123225498
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega): unify the six template editors in a device studio"
+  message: "fix(vega): preserve studio recovery and package conversion"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T07:12:31Z"
+  created_at: "2026-11-28T07:53:12Z"
