@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bb932293ee8bed93faabb8b11e3f8593b11587f4"
+  sha: "6ce67f8153ee3a023a90a5ebca7f4d6553b095f0"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46096213075
+  ref_name: "feat/cosmos-ai-2-mercury-agent-bff"
+  run_id: 46097853567
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(creative): simplify native canvas template storage and distribution (#721)\n\n* feat(creative): store and distribute native canvas templates\n\n* feat(fonts): expose signed Platform preview URLs\n\n* fix(creative): address canvas template audit findings\n\n* feat(creative): expose owned font previews and published region filtering\n\n* fix(storage): sign the original creative cover for large previews\n\n* fix(creative): expose verified binding integrity metadata\n\n* fix(creative): preserve template dependency eligibility\n\n* fix(creative): match dependency placement to runtime paths\n\n* fix(creative): cover unfiltered surfaces and upgrade label placements"
+  message: "feat(mercury): add operator-scoped agent gateway and sandbox keys"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T02:04:14Z"
+  created_at: "2026-11-28T02:23:57Z"
