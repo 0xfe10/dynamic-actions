@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e133748dd2b712c19629ac58866291b234bd79c2"
+  sha: "b2e79e3bc1de9e5edd0141fd3e3e53b3630237ab"
   ref_type: "branch"
-  ref_name: "feat/orion-551-runtime-config"
-  run_id: 46092346490
+  ref_name: "main"
+  run_id: 46093962481
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(alphix): use constants for lock host errors"
+  message: "feat(rigel): resolve the cutout model from runtime config (#559)\n\n* feat(rigel): resolve the cutout model from runtime config\n\n* fix(rigel): harden cutout config scope and model caching\n\n* fix(rigel): bound the cutout cache and validate config identity\n\n* fix(rigel): coordinate model cache leases across isolates\n\n* fix(alphix): release cache locks on isolate exit\n\n* fix(alphix): keep POSIX lock ownership outside caller isolates\n\n* fix(alphix): use constants for lock host errors"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T01:17:41Z"
+  created_at: "2026-11-28T01:37:06Z"
