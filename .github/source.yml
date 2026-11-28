@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a4abbbfccd79136ce5a224abc6f268af0c0048d0"
+  sha: "4cac6d7869a87d089cb8ca5c478297a1c1190735"
   ref_type: "branch"
   ref_name: "ao/orion-554/editable-graffiti"
-  run_id: 46106317859
+  run_id: 46107142175
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(jigsaw): preserve graffiti layer order and validate dash lengths"
+  message: "fix(jigsaw): bound dashed path expansion before replay"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T04:11:05Z"
+  created_at: "2026-11-28T04:21:30Z"
