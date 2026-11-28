@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "c875d5bf5b0dcba5ee2713909f1b547774a494d4"
+  sha: "bee5e310f6245436357d40f87cb99488ee550b87"
   ref_type: "branch"
-  ref_name: "feat/vega-template-studio"
-  run_id: 46123954844
+  ref_name: "main"
+  run_id: 46125889522
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): fit retained canvas covers to package limits"
+  message: "feat(vega): unify six template kinds in a full-canvas studio (#734)\n\n* feat(vega): unify the six template editors in a device studio\n\n* fix(vega): preserve studio recovery and package conversion\n\n* fix(vega): fit retained canvas covers to package limits"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T08:02:52Z"
+  created_at: "2026-11-28T08:27:38Z"
