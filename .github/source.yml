@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "2523c69c9b81dcc0022b0cc8604549fab90cdd91"
+  sha: "bbe80c3d6d1109e2d547731efc96d769b14f942d"
   ref_type: "branch"
   ref_name: "fix/android-bluetooth-access-provider"
-  run_id: 46137210935
+  run_id: 46137892500
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(bluetooth): use case-insensitive prefix matching and filter BLE suffixes in Android SPP"
+  message: "fix(mellow): clip failure dialog corners to hide opaque header background"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T10:52:41Z"
+  created_at: "2026-11-28T11:01:59Z"
