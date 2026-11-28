@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "bf2e3a4591a0132bc628441765c27b7f773fc23f"
+  sha: "d46b5277348b22f86933b85a3cfde2e3b6d435ae"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 46104689366
+  run_id: 46105037241
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega,ci): embed unified dual-canvas template editor via same-origin iframe and static Web bundle (#729)\n\n* feat(vega,ci): embed the unified template editor\n\n* fix(vega): preserve saves for legacy native canvases"
+  message: "feat(mercury): add operator-scoped AI sandbox keys and agent gateway (#728)\n\n* feat(mercury): add operator-scoped agent gateway and sandbox keys\n\n* fix(mercury): scope tenant key management and revoke keys after lost resets"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T03:49:54Z"
+  created_at: "2026-11-28T03:54:28Z"
