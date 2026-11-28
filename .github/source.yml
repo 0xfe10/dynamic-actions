@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "d46b5277348b22f86933b85a3cfde2e3b6d435ae"
+  sha: "0af313916615f16a9ed35b13d236730f621a9982"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46105037241
+  ref_name: "feat/cosmos-725-vega-ai-chat"
+  run_id: 46105454454
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): add operator-scoped AI sandbox keys and agent gateway (#728)\n\n* feat(mercury): add operator-scoped agent gateway and sandbox keys\n\n* fix(mercury): scope tenant key management and revoke keys after lost resets"
+  message: "feat(vega): connect admin chat to durable agent threads"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T03:54:28Z"
+  created_at: "2026-11-28T04:00:19Z"
