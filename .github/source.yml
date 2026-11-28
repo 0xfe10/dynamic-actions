@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "a4ae60a81f29ebfd420ee6919ac6cce9c1c5536e"
+  sha: "282cdbe990211874377fdd6f63c36a6cfd23713d"
   ref_type: "branch"
   ref_name: "feat/rasto-web"
-  run_id: 46126731554
+  run_id: 46127175897
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "chore(editor): integrate the template editor bundle workflow"
+  message: "build(image): bundle the verified Rasto main artifact"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T08:38:12Z"
+  created_at: "2026-11-28T08:44:14Z"
