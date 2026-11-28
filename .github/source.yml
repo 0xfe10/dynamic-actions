@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "6e2682f5e78fb879f9eeda5a359b19fe4211587b"
+  sha: "917149da7c1eeed953f32f0bcccee21e3d144233"
   ref_type: "branch"
   ref_name: "feat/orion-551-runtime-config"
-  run_id: 46086075313
+  run_id: 46088696751
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(rigel): coordinate model cache leases across isolates"
+  message: "fix(alphix): release cache locks on isolate exit"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T00:06:24Z"
+  created_at: "2026-11-28T00:35:36Z"
