@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "72f14c27509a383548b6f3f263ea9afce614fbb0"
+  sha: "5ca43a630f8712470b3e87cb3ed4d93e0e61221a"
   ref_type: "branch"
   ref_name: "feat/mercury-runtime-printer-metadata"
-  run_id: 46142277503
+  run_id: 46145628491
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): expose runtime printer model metadata"
+  message: "fix(mercury): describe printer metadata JSON shapes"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T11:57:29Z"
+  created_at: "2026-11-28T12:38:12Z"
