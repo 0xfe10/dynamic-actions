@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "5d1bc81e35167c5b4f0e6bf62a9e2bb29429d4cc"
+  sha: "aabfa97a86b65954aa6c7edc1d8ce7e0ccf6e2d4"
   ref_type: "branch"
-  ref_name: "ao/capabilities-catalog/refactor/orion-capabilities-yaml"
-  run_id: 46155555979
+  ref_name: "main"
+  run_id: 46157481922
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "refactor(rigel-build): declare Orion capabilities in YAML"
+  message: "refactor(rigel-build): declare Orion capabilities in YAML (#567)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T14:36:52Z"
+  created_at: "2026-11-28T14:59:56Z"
