@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6a13f0a5d673f9fb90c693ce10ac2b6e75fe7e85"
+  sha: "95a4d20f6de86617d94f12d304ad4095c8631ced"
   ref_type: "branch"
-  ref_name: "fix/vega-nginx-ssl-depth"
-  run_id: 46109936621
+  ref_name: "main"
+  run_id: 46111886711
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(vega): set proxy_ssl_verify_depth 4 for upstream TLS chains"
+  message: "fix(vega): set proxy_ssl_verify_depth 4 for upstream TLS chains (#733)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T04:58:25Z"
+  created_at: "2026-11-28T05:23:35Z"
