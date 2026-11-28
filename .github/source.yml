@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "62044455938c9a59ac6e2783716db989ba936947"
+  sha: "e36fbbfa69b4d99455cdd16cda3d10ee3655a942"
   ref_type: "branch"
-  ref_name: "feat/cosmos-713-runtime-config"
-  run_id: 46105512702
+  ref_name: "main"
+  run_id: 46105699036
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury,vega): add schema-backed runtime config center"
+  message: "fix(mercury): align content locales with the Region Catalog (#730)\n\n* fix(mercury): enforce catalog-backed content locales\n\nRequire active catalog entries for new content locales and honor app region assignments. Preserve existing locale keys through edits and resolve runtime preferences deterministically among stored translations.\n\n* fix(mercury): allow default platform legal templates"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T04:00:59Z"
+  created_at: "2026-11-28T04:03:12Z"
