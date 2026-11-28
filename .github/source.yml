@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "7eb0c70e2e887ca1c1d04ca4e607587477cb972c"
+  sha: "8c687468da72ee428c9ab1b253ed2393371d2a30"
   ref_type: "branch"
-  ref_name: "feat/cosmos-720-template-editor-iframe"
-  run_id: 46099194636
+  ref_name: "feat/cosmos-716-region-catalog"
+  run_id: 46100208115
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(vega,ci): embed the unified template editor"
+  message: "fix(mercury): enforce catalog-backed content locales\n\nRequire active catalog entries for new content locales and honor app region assignments. Preserve existing locale keys through edits and resolve runtime preferences deterministically among stored translations."
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T02:40:16Z"
+  created_at: "2026-11-28T02:53:18Z"
