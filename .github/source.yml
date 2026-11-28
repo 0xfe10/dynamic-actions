@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/psdk"
   repository_id: 925940162
-  sha: "3de2abf5636d5a61f4e5b4c91354b9a040631726"
+  sha: "fef96fe9624c4bc423d28ec02024efbf3b1e83c0"
   ref_type: "branch"
   ref_name: "feat/ble-low-energy-adapter"
-  run_id: 46152508272
+  run_id: 46152674297
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(bluetooth_ble): support Android GATT through bluetooth_low_energy"
+  message: "test(bluetooth_ble): run Flutter adapter contracts in Dart CI"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T14:01:37Z"
+  created_at: "2026-11-28T14:03:33Z"

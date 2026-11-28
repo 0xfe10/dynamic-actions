@@ -149,11 +149,19 @@ jobs:
       - name: Setup melos
         run: dart pub global activate melos
 
+      - name: Bootstrap Dart packages
+        working-directory: dart
+        run: melos bootstrap
+
+      - name: Check BLE adapter and Flutter contracts
+        working-directory: dart/devices/bluetooth_ble
+        run: |
+          dart analyze . --fatal-infos
+          flutter test --no-pub --concurrency=1
+
       - name: Lint psdk
         working-directory: dart
-        run: |
-          melos bootstrap
-          melos run lint:all --no-select
+        run: melos run lint:all --no-select
 
       - name: Check psdk
         working-directory: dart
