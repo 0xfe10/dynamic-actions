@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "e7f3ee4b31efeaa7f5ef88871b70f979a3d2df43"
+  sha: "21e1458744465f9edd986ef3b070277accc36203"
   ref_type: "branch"
-  ref_name: "fix/orion-web-editor"
-  run_id: 46122108646
+  ref_name: "feat/rasto-web"
+  run_id: 46125646853
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "test(editor): verify embedded tools and asset bootstrap"
+  message: "fix(image): propagate Rasto processing failures on Web"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T07:38:18Z"
+  created_at: "2026-11-28T08:24:26Z"
