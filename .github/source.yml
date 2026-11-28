@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "b720454dcdc4e579799f9c28ec16cdac424b3405"
+  sha: "bf2e3a4591a0132bc628441765c27b7f773fc23f"
   ref_type: "branch"
-  ref_name: "feat/cosmos-716-region-catalog"
-  run_id: 46103011659
+  ref_name: "main"
+  run_id: 46104689366
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(mercury): allow default platform legal templates"
+  message: "feat(vega,ci): embed unified dual-canvas template editor via same-origin iframe and static Web bundle (#729)\n\n* feat(vega,ci): embed the unified template editor\n\n* fix(vega): preserve saves for legacy native canvases"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T03:28:36Z"
+  created_at: "2026-11-28T03:49:54Z"

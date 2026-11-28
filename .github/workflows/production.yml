@@ -118,6 +118,7 @@ jobs:
         with:
           repository: prtmax/cosmos
           token: ${{ secrets.GH_TOKEN_0XFE10 }}
+          submodules: recursive
       - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1
         with:
           sdk: '3.13.2'
@@ -160,10 +161,18 @@ jobs:
         run: just --justfile lyra/Justfile test
       - name: Check generated platform API client
         run: just generate-check platform
+      - name: Bundle template editor
+        uses: ./.github/actions/bundle-template-editor
+        with:
+          github-token: ${{ secrets.GH_TOKEN_0XFE10 }}
       - name: Build admin production assets
         run: pnpm --dir lyra build
       - name: Install Playwright Chromium
         run: pnpm --dir lyra --filter @cosmos/vega exec playwright install --with-deps chromium
+      - name: Test bundled template editor in Chromium
+        env:
+          VEGA_E2E_BUILT: "1"
+        run: pnpm --dir lyra --filter @cosmos/vega test:e2e template-editor.spec.ts
       - name: Prepare browser E2E database
         run: docker exec "${{ job.services.postgres.id }}" createdb -U postgres mercury_browser_e2e
       - name: Mercury and Vega browser E2E
@@ -202,8 +211,6 @@ jobs:
           context: .
           target: vega
           push: false
-          build-args: |
-            VITE_MERCURY_BASE_URL=https://mercury.invalid
           cache-from: type=gha,scope=vega
           cache-to: type=gha,mode=max,scope=vega
 
@@ -361,6 +368,10 @@ jobs:
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury-worker:${{ env.SOURCE_TAG }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury-worker:sha-${{ env.SHORT_SHA }}
             ${{ env.DOCKER_REGISTRY_ALI }}/xoohub/${{ env.REPO_NAME }}_cosmos-mercury-worker:latest
+      - name: Bundle template editor
+        uses: ./.github/actions/bundle-template-editor
+        with:
+          github-token: ${{ secrets.GH_TOKEN_0XFE10 }}
       - name: Build and push Vega image
         id: vega_image
         uses: docker/build-push-action@v6
@@ -372,7 +383,7 @@ jobs:
           sbom: false
           labels: ${{ steps.checkout.outputs.oci_labels }}
           build-args: |
-            VITE_MERCURY_BASE_URL=https://mercury.iprtapp.com
+            MERCURY_UPSTREAM=https://mercury.iprtapp.com
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-vega:${{ env.SOURCE_TAG }}
             ${{ env.DOCKER_REGISTRY }}/${{ env.SOURCE_REPO }}/cosmos-vega:sha-${{ env.SHORT_SHA }}
