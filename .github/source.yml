@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "efe8220c5d1a8e74bafc58870a6db1a506c72f9c"
+  sha: "0187a292de7cb5cb105fe6306907b037fa434ac3"
   ref_type: "branch"
-  ref_name: "feat/rasto-web"
-  run_id: 46119105114
+  ref_name: "fix/orion-web-editor"
+  run_id: 46119585261
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(image): use the Rasto C ABI on Web"
+  message: "fix(editor): restore embedded web editing tools"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T06:59:43Z"
+  created_at: "2026-11-28T07:05:45Z"
