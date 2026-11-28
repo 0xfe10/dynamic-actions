@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "318e9b43609a5c48f2c15d28f4454cb629708cf0"
+  sha: "3018cc7b5b7487e845327dec3e1c15df4dfa4a13"
   ref_type: "branch"
-  ref_name: "feat/runtime-printer-metadata"
-  run_id: 46145917121
+  ref_name: "main"
+  run_id: 46146795669
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(runtime-api): decode Mercury printer metadata"
+  message: "feat(jigsaw): store graffiti as editable vector strokes (#560)\n\n* feat(jigsaw): persist and reopen vector graffiti strokes\n\n* fix(jigsaw): preserve graffiti layer order and validate dash lengths\n\n* fix(jigsaw): bound dashed path expansion before replay\n\n* fix(jigsaw): render persisted stroke geometry on first capture"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T12:41:54Z"
+  created_at: "2026-11-28T12:52:33Z"
