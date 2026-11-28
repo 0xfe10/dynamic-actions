@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "0bc0cbc76e9eb95e74e2824ad71c9951f0a6a090"
+  sha: "b739e81b7f315c3a5adb6dc3bb2ae320248f79a0"
   ref_type: "branch"
   ref_name: "main"
-  run_id: 46107635786
+  run_id: 46107928326
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury,vega): add schema-backed runtime config center (#732)"
+  message: "feat(vega): connect admin chat to durable agent threads (#731)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T04:27:44Z"
+  created_at: "2026-11-28T04:31:30Z"
