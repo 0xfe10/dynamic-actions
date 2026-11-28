@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "99850b7b7282a830c23b441b5fc1e3f90991dcc2"
+  sha: "c433ec2c6efdaa24e156940fbdeefc362b3e31b2"
   ref_type: "branch"
   ref_name: "feat/cosmos-719-canvas-templates"
-  run_id: 46082398233
+  run_id: 46088042349
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(creative): preserve template dependency eligibility"
+  message: "fix(creative): match dependency placement to runtime paths"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-27T23:25:39Z"
+  created_at: "2026-11-28T00:28:27Z"
