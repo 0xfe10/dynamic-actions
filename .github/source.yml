@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "13b617fab1448e2e9222a92ea2200db3bcc3fca1"
+  sha: "e133748dd2b712c19629ac58866291b234bd79c2"
   ref_type: "branch"
   ref_name: "feat/orion-551-runtime-config"
-  run_id: 46091954723
+  run_id: 46092346490
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(alphix): keep POSIX lock ownership outside caller isolates"
+  message: "fix(alphix): use constants for lock host errors"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T01:13:05Z"
+  created_at: "2026-11-28T01:17:41Z"
