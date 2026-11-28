@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "0187a292de7cb5cb105fe6306907b037fa434ac3"
+  sha: "e7f3ee4b31efeaa7f5ef88871b70f979a3d2df43"
   ref_type: "branch"
   ref_name: "fix/orion-web-editor"
-  run_id: 46119585261
+  run_id: 46122108646
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(editor): restore embedded web editing tools"
+  message: "test(editor): verify embedded tools and asset bootstrap"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T07:05:45Z"
+  created_at: "2026-11-28T07:38:18Z"
