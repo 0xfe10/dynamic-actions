@@ -67,19 +67,6 @@ jobs:
           GIT_CONFIG_VALUE_0: "!gh auth git-credential"
         run: dart run tools/rigel_build/bin/develop.dart bootstrap
       - run: dart run tools/rigel_build/bin/develop.dart check
-      - uses: ./.github/actions/bundle-template-editor
-      - name: Verify Rasto bundle and template editor browser tests
-        working-directory: apps/template_editor_web
-        run: |
-          (cd build/web/assets/packages/rasto_image/assets/wasm && sha256sum --check SHA256SUMS)
-          ln -s ../build/web/assets test/assets
-          trap 'unlink test/assets' EXIT
-          for suite in browser_contract_test browser_host_test; do
-            flutter test --no-pub --platform chrome \
-              --dart-define="ORION_BROWSER_RUN=$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$suite" "test/$suite.dart"
-          done
-          flutter test --no-pub --platform chrome --wasm \
-            test/browser_contract_test.dart test/browser_host_test.dart
 
   windows-just:
     needs: prepare

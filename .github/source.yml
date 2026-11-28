@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "f673da447be62459aa13059441d37dab71c8ed7e"
+  sha: "2523c69c9b81dcc0022b0cc8604549fab90cdd91"
   ref_type: "branch"
-  ref_name: "main"
-  run_id: 46129378116
+  ref_name: "fix/android-bluetooth-access-provider"
+  run_id: 46137210935
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(image): use the Rasto C ABI on Web (#562)\n\n* feat(image): use the Rasto C ABI on Web\n\n* fix(image): propagate Rasto processing failures on Web\n\n* build(image): bundle the verified Rasto main artifact"
+  message: "fix(bluetooth): use case-insensitive prefix matching and filter BLE suffixes in Android SPP"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T09:12:49Z"
+  created_at: "2026-11-28T10:52:41Z"
