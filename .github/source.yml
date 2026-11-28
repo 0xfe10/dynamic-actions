@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/cosmos"
   repository_id: 1329498630
-  sha: "6ce67f8153ee3a023a90a5ebca7f4d6553b095f0"
+  sha: "7eb0c70e2e887ca1c1d04ca4e607587477cb972c"
   ref_type: "branch"
-  ref_name: "feat/cosmos-ai-2-mercury-agent-bff"
-  run_id: 46097853567
+  ref_name: "feat/cosmos-720-template-editor-iframe"
+  run_id: 46099194636
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(mercury): add operator-scoped agent gateway and sandbox keys"
+  message: "feat(vega,ci): embed the unified template editor"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T02:23:57Z"
+  created_at: "2026-11-28T02:40:16Z"
