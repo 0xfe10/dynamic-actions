@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "d566bb59164ad4807703ab561c48fa02635b8f91"
+  sha: "775a51ae16bb961914ac1f37d135555843dcc27a"
   ref_type: "branch"
-  ref_name: "ao/issue-feasibility/orion-rasto"
-  run_id: 46109383799
+  ref_name: "main"
+  run_id: 46110970136
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "feat(image): bind mobile image operations to the Rasto C ABI"
+  message: "feat(image): bind mobile image operations to the Rasto C ABI (#561)"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T04:50:39Z"
+  created_at: "2026-11-28T05:12:00Z"
