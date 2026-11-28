@@ -2,16 +2,16 @@ schema_version: 2
 source:
   repository: "prtmax/orion"
   repository_id: 1329504130
-  sha: "cae44ab433203420809d1d79849f4af6c615a24f"
+  sha: "a4ae60a81f29ebfd420ee6919ac6cce9c1c5536e"
   ref_type: "branch"
-  ref_name: "fix/android-bluetooth-access-provider"
-  run_id: 46125779408
+  ref_name: "feat/rasto-web"
+  run_id: 46126731554
   run_attempt: 1
   workflow: ".github/workflows/trigger-branch.yml"
 execution_repository: "0xfe10/dynamic-actions"
 policy: null
 commit:
-  message: "fix(bluetooth): use Classic SPP for native Android access and upgrade ble_plugin to 1.5.2"
+  message: "chore(editor): integrate the template editor bundle workflow"
   authors: ["0xfe10"]
 dispatch:
-  created_at: "2026-11-28T08:26:04Z"
+  created_at: "2026-11-28T08:38:12Z"
